@@ -42,7 +42,7 @@ load_dotenv(ENV_PATH, override=True)
 
 from tools.fyers_token_refresh import exchange_auth_code, save_token_to_env  # reuse
 
-SEND_OTP_URL   = "https://api-t2.fyers.in/vagator/v2/send_login_otp"
+SEND_OTP_URL   = "https://api-t2.fyers.in/vagator/v2/send_login_otp_v2"
 VERIFY_OTP_URL = "https://api-t2.fyers.in/vagator/v2/verify_otp"
 VERIFY_PIN_URL = "https://api-t2.fyers.in/vagator/v2/verify_pin"
 TOKEN_URL      = "https://api-t1.fyers.in/api/v3/token"
@@ -60,6 +60,35 @@ def _require(name: str) -> str:
     return val
 
 
+def _verify_totp(totp_key: str, request_key: str, retries: int = 2) -> str:
+    """
+    Verify the TOTP, tolerant of the 30s code-rollover boundary.
+    If <5s remain in the current window, wait for a fresh code first.
+    Retries once with a regenerated code on transient 'invalid totp'.
+    """
+    import time as _time
+
+    totp = pyotp.TOTP(totp_key)
+    last_err = ""
+    for attempt in range(retries):
+        # Avoid using a code that's about to expire mid-request
+        seconds_left = totp.interval - (int(_time.time()) % totp.interval)
+        if seconds_left < 5:
+            _time.sleep(seconds_left + 1)
+        code = totp.now()
+        r = requests.post(VERIFY_OTP_URL, json={"request_key": request_key, "otp": code}, timeout=30)
+        if r.status_code == 200 and r.json().get("request_key"):
+            return r.json()["request_key"]
+        last_err = r.text[:200]
+        logger.warning("TOTP verify attempt {} failed: {}", attempt + 1, last_err)
+        _time.sleep(2)
+    raise RuntimeError(
+        f"TOTP verification failed after {retries} attempts: {last_err}. "
+        "If this persists, check that the server clock is correct (TOTP is time-based) "
+        "and that FYERS_TOTP_SECRET matches your current authenticator."
+    )
+
+
 def fetch_auth_code() -> str:
     """Run the headless TOTP login and return a fresh auth_code."""
     fy_id    = _require("FYERS_FY_ID")
@@ -74,11 +103,8 @@ def fetch_auth_code() -> str:
     request_key = r.json()["request_key"]
     logger.info("Step 1/4 — login OTP requested")
 
-    # 2) verify TOTP
-    otp = pyotp.TOTP(totp_key).now()
-    r = requests.post(VERIFY_OTP_URL, json={"request_key": request_key, "otp": otp}, timeout=30)
-    r.raise_for_status()
-    request_key = r.json()["request_key"]
+    # 2) verify TOTP (robust to 30s window boundary + one retry)
+    request_key = _verify_totp(totp_key, request_key)
     logger.info("Step 2/4 — TOTP verified")
 
     # 3) verify PIN -> login token
