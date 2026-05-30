@@ -44,7 +44,7 @@ from tools.fyers_token_refresh import exchange_auth_code, save_token_to_env  # r
 
 SEND_OTP_URL   = "https://api-t2.fyers.in/vagator/v2/send_login_otp_v2"
 VERIFY_OTP_URL = "https://api-t2.fyers.in/vagator/v2/verify_otp"
-VERIFY_PIN_URL = "https://api-t2.fyers.in/vagator/v2/verify_pin"
+VERIFY_PIN_URL = "https://api-t2.fyers.in/vagator/v2/verify_pin_v2"
 TOKEN_URL      = "https://api-t1.fyers.in/api/v3/token"
 
 
