@@ -1,0 +1,16 @@
+# AXIOM / Stark Industries — Streamlit theme + server config
+[theme]
+base = "dark"
+primaryColor = "#00c8ff"            # Arc Reactor Blue
+backgroundColor = "#020912"         # deep space
+secondaryBackgroundColor = "#081526"
+textColor = "#c8e8ff"
+font = "monospace"
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false

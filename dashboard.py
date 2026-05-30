@@ -2260,7 +2260,22 @@ def render_sidebar() -> str:
 # MAIN
 # ─────────────────────────────────────────────────────────────────
 
+def _bridge_streamlit_secrets() -> None:
+    """
+    On Streamlit Community Cloud there is no .env file — secrets are provided via
+    st.secrets. Copy them into os.environ so the existing os.getenv() calls work.
+    No-op locally (where .env is used).
+    """
+    try:
+        for key, val in st.secrets.items():
+            if isinstance(val, str):
+                os.environ.setdefault(key, val)
+    except Exception:
+        pass  # no secrets configured / running locally
+
+
 def main() -> None:
+    _bridge_streamlit_secrets()
     st.set_page_config(
         page_title="AXIOM OS · Stark Industries",
         page_icon="⚡",

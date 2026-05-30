@@ -4,6 +4,7 @@
 credentials.json
 token.json
 *.pem
+.streamlit/secrets.toml
 
 # ── Python ──
 __pycache__/
