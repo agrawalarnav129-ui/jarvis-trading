@@ -53,7 +53,7 @@ def exchange_auth_code(app_id: str, secret_key: str, auth_code: str) -> str:
     raw = f"{app_id}:{secret_key}"
     app_id_hash = hashlib.sha256(raw.encode()).hexdigest()
 
-    url = "https://api-t2.fyers.in/api/v3/validate-authcode"
+    url = "https://api-t1.fyers.in/api/v3/validate-authcode"
     payload = {
         "grant_type":  "authorization_code",
         "appIdHash":   app_id_hash,
