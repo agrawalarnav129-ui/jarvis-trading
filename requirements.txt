@@ -1,0 +1,15 @@
+pandas>=2.0
+numpy>=1.25
+yfinance>=0.2.40
+requests>=2.31
+python-dotenv>=1.0
+loguru>=0.7
+pytest>=7.4
+fastapi>=0.110
+uvicorn[standard]>=0.24
+APScheduler>=3.10
+# groq uses requests (already listed) — no extra package needed
+streamlit>=1.35
+plotly>=5.20
+fpdf2>=2.7.0
+pyotp>=2.9          # headless Fyers TOTP auto-login

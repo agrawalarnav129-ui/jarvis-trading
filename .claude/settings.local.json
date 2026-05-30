@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import ast; ast.parse\\(open\\('data/market_context.py',encoding='utf-8'\\).read\\(\\)\\); ast.parse\\(open\\('ai/brain.py',encoding='utf-8'\\).read\\(\\)\\); print\\('SYNTAX OK'\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(grep -v \"FutureWarning\\\\|df\\\\[\\\\|caveats\\\\|chained\\\\|pandas\\\\|setting\\\\|intermediate\\\\|typical\\\\|See the\\\\|^$\\\\|behaviour\\\\|Use \\\\`\\\\|A typical\\\\|^  \")",
+      "Bash(grep -v \"FutureWarning\\\\|df\\\\[\\\\|caveats\\\\|chained\\\\|pandas\\\\|setting val\\\\|intermediate\\\\|^  out\\\\|See the\\\\|behaviour\\\\|Use \\\\`\\\\|A typical\")"
+    ]
+  }
+}

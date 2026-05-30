@@ -1,0 +1,47 @@
+name: Intraday Scanner
+
+# Every 15 min, 09:30–15:15 IST  =  04:00–09:45 UTC, Mon–Fri
+# (run_intraday self-skips outside the exact 09:30–15:15 window)
+on:
+  schedule:
+    - cron: "*/15 4-9 * * 1-5"
+  workflow_dispatch:
+
+# Allow committing the dedup state file back to the repo
+permissions:
+  contents: write
+
+# Avoid overlapping runs if one is slow
+concurrency:
+  group: intraday-scanner
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Kolkata
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Run one intraday scan pass
+        run: python -m jobs.run_intraday
+
+      - name: Persist dedup state
+        run: |
+          git config user.name  "jarvis-bot"
+          git config user.email "jarvis-bot@users.noreply.github.com"
+          git add data/state/ 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: intraday dedup state [skip ci]"
+            git push
+          else
+            echo "No state change to commit."
+          fi

@@ -1,0 +1,36 @@
+# ── SECRETS — never commit ──
+.env
+.env.*
+credentials.json
+token.json
+*.pem
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# ── Data / caches (regenerable) ──
+data/cache/
+.tmp/
+*.parquet
+
+# ── Local DB (lives on host volume / Oracle disk, not in git) ──
+data/app.db
+data/*.db
+
+# ── Generated reports ──
+data/reports/*.pdf
+
+# ── Logs ──
+*.log
+
+# ── OS / IDE ──
+.DS_Store
+.idea/
+.vscode/
+
+# NOTE: data/state/ IS committed (intraday dedup state) — do not ignore it.

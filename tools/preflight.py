@@ -1,0 +1,126 @@
+"""
+AXIOM Preflight — go-live readiness check.
+
+Validates that every required secret is present and that the critical external
+services respond, BEFORE you trust the automation. Run locally:
+    python -m tools.preflight
+Or as a one-off GitHub Actions job (workflow_dispatch) to verify Secrets.
+
+Exit code 0 = ready; non-zero = something needs fixing.
+"""
+from __future__ import annotations
+
+import os
+import sys
+
+from dotenv import load_dotenv
+load_dotenv(override=True)
+
+from loguru import logger
+
+REQUIRED = [
+    "GROQ_API_KEY",
+    "FYERS_CLIENT_ID", "FYERS_SECRET_KEY", "FYERS_REDIRECT_URI",
+    "FYERS_FY_ID", "FYERS_PIN", "FYERS_TOTP_SECRET",
+    "SMTP_HOST", "SMTP_PORT", "SMTP_USERNAME", "SMTP_PASSWORD",
+    "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID",
+]
+
+
+def check_env() -> list[str]:
+    missing = [k for k in REQUIRED if not os.getenv(k, "").strip()]
+    for k in REQUIRED:
+        status = "OK " if os.getenv(k, "").strip() else "MISSING"
+        logger.info("  [{}] {}", status, k)
+    return missing
+
+
+def check_telegram() -> bool:
+    try:
+        from monitors.telegram_bot import send_message
+        ok, info = send_message("🔧 <b>AXIOM preflight</b> — Telegram reachable.")
+        logger.info("Telegram: {} ({})", "OK" if ok else "FAIL", info)
+        return ok
+    except Exception as exc:
+        logger.error("Telegram check failed: {}", exc)
+        return False
+
+
+def check_groq() -> bool:
+    try:
+        from ai.brain import _call_groq
+        out = _call_groq("You are a test.", "Reply with the single word OK.", max_tokens=5)
+        ok = bool(out)
+        logger.info("Groq AI: {} ({})", "OK" if ok else "FAIL", out[:40])
+        return ok
+    except Exception as exc:
+        logger.error("Groq check failed: {}", exc)
+        return False
+
+
+def check_fyers_login() -> bool:
+    try:
+        from tools.fyers_auto_login import fetch_auth_code
+        from tools.fyers_token_refresh import exchange_auth_code
+        code = fetch_auth_code()
+        token = exchange_auth_code(os.getenv("FYERS_CLIENT_ID", ""), os.getenv("FYERS_SECRET_KEY", ""), code)
+        logger.info("Fyers headless login: OK (token ...{})", token[-6:])
+        return True
+    except Exception as exc:
+        logger.error("Fyers headless login FAILED: {}", exc)
+        return False
+
+
+def check_data() -> bool:
+    try:
+        from data.fetcher import load_universe
+        n = len(load_universe())
+        logger.info("Universe load: OK ({} symbols)", n)
+        return n > 0
+    except Exception as exc:
+        logger.error("Universe load failed: {}", exc)
+        return False
+
+
+def main() -> None:
+    logger.info("=== AXIOM PREFLIGHT ===")
+    logger.info("-- 1. Environment variables --")
+    missing = check_env()
+
+    logger.info("-- 2. Data universe --")
+    data_ok = check_data()
+
+    logger.info("-- 3. Telegram --")
+    tg_ok = check_telegram() if "TELEGRAM_BOT_TOKEN" not in missing else False
+
+    logger.info("-- 4. Groq AI --")
+    groq_ok = check_groq() if "GROQ_API_KEY" not in missing else False
+
+    logger.info("-- 5. Fyers headless login --")
+    fyers_required = not any(k in missing for k in ["FYERS_FY_ID", "FYERS_PIN", "FYERS_TOTP_SECRET"])
+    fyers_ok = check_fyers_login() if fyers_required else False
+
+    logger.info("=== SUMMARY ===")
+    results = {
+        "env vars": not missing,
+        "data": data_ok,
+        "telegram": tg_ok,
+        "groq": groq_ok,
+        "fyers login": fyers_ok,
+    }
+    for name, ok in results.items():
+        logger.info("  {} {}", "✅" if ok else "❌", name)
+
+    if missing:
+        logger.error("Missing secrets: {}", ", ".join(missing))
+
+    if all(results.values()):
+        logger.success("ALL CHECKS PASSED — ready to go live.")
+        sys.exit(0)
+    else:
+        logger.error("Preflight FAILED — fix the ❌ items above before relying on automation.")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
