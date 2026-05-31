@@ -24,6 +24,7 @@ import pandas as pd
 import yfinance as yf
 from loguru import logger
 
+from data.fii_dii import fetch_fii_dii
 from utils.indicators import adx_full, rsi
 
 # ── Ticker groups ─────────────────────────────────────────────────
@@ -272,8 +273,10 @@ def build_briefing_context() -> dict:
         "top_sectors": top_sectors,
         "weak_sectors": weak_sectors,
         "all_sectors": sectors,
+        # ── Institutional flows (real, from NSE) ──
+        "fii_dii": fetch_fii_dii(),
         # ── Honesty flags ──
-        "fii_dii": None,
-        "data_notes": "FII/DII flows and economic-calendar events are NOT in this "
-                      "dataset — do not fabricate numbers; flag them as 'confirm manually'.",
+        "data_notes": "FII/DII flows are real NSE provisional figures (₹ crore). If "
+                      "fii_dii.available is False, say 'confirm manually'. Economic-calendar "
+                      "events are NOT in this dataset — do not fabricate them.",
     }
