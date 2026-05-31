@@ -71,6 +71,22 @@ def check_fyers_login() -> bool:
         return False
 
 
+def check_fii_dii() -> bool:
+    try:
+        from data.fii_dii import fetch_fii_dii
+        d = fetch_fii_dii()
+        if d.get("available"):
+            fii = d.get("fii", {}).get("net")
+            dii = d.get("dii", {}).get("net")
+            logger.info("FII/DII ({}): OK  FII net {} | DII net {}", d.get("date"), fii, dii)
+            return True
+        logger.warning("FII/DII: unavailable — {}", d.get("note"))
+        return False
+    except Exception as exc:
+        logger.error("FII/DII check failed: {}", exc)
+        return False
+
+
 def check_data() -> bool:
     try:
         from data.fetcher import load_universe
@@ -99,6 +115,11 @@ def main() -> None:
     logger.info("-- 5. Fyers headless login --")
     fyers_required = not any(k in missing for k in ["FYERS_FY_ID", "FYERS_PIN", "FYERS_TOTP_SECRET"])
     fyers_ok = check_fyers_login() if fyers_required else False
+
+    # Informational (non-fatal): NSE may block datacenter IPs; briefing degrades gracefully
+    logger.info("-- 6. FII/DII (NSE, informational) --")
+    fii_ok = check_fii_dii()
+    logger.info("  {} fii/dii (non-fatal)", "✅" if fii_ok else "⚠️")
 
     logger.info("=== SUMMARY ===")
     results = {
