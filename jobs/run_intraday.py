@@ -26,7 +26,7 @@ STATE_DIR = Path("data/state")
 
 
 def _state_path() -> Path:
-    return STATE_DIR / f"intraday_fired_{date.today()}.json"
+    return STATE_DIR / f"intraday_fired_{datetime.now(IST).date()}.json"
 
 
 def _load_fired() -> dict[str, set[str]]:

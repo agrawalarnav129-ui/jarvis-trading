@@ -27,6 +27,7 @@ from ai.brain import (
     generate_task_list,
     generate_trade_journal_summary,
 )
+from utils.timez import now_ist
 from analytics.footprint import APPROXIMATION_NOTE, build_footprint, fetch_intraday
 from backtest.backtest import BacktestConfig, backtest_symbol
 from data.fetcher import fetch_symbol_history, load_universe
@@ -757,7 +758,7 @@ _NC_LOGO_SVG = """
 # ─────────────────────────────────────────────────────────────────
 
 def render_hud_header() -> None:
-    now = datetime.now()
+    now = now_ist()
     is_market = 9 <= now.hour < 16 and now.weekday() < 5
     mkt_color = "#00d68f" if is_market else "#234460"
     mkt_label = "MARKET OPEN" if is_market else "MARKET CLOSED"
@@ -1151,7 +1152,7 @@ def show_overview() -> None:
             briefing = generate_market_briefing(context)
         st.session_state["last_briefing"] = briefing
         st.session_state["last_briefing_context"] = context
-        pdf_path = REPORTS_DIR / f"briefing_{datetime.now().strftime('%Y%m%d')}.pdf"
+        pdf_path = REPORTS_DIR / f"briefing_{now_ist().strftime('%Y%m%d')}.pdf"
         generate_text_report("AXIOM Morning Briefing", briefing, pdf_path)
         st.success(f"Full pipeline complete. PDF saved: {pdf_path.name}")
 
@@ -1165,10 +1166,10 @@ def show_overview() -> None:
             st.warning("Generate a briefing first.")
         else:
             with st.spinner("Sending email..."):
-                pdf_path = REPORTS_DIR / f"briefing_{datetime.now().strftime('%Y%m%d')}.pdf"
+                pdf_path = REPORTS_DIR / f"briefing_{now_ist().strftime('%Y%m%d')}.pdf"
                 generate_text_report("AXIOM Morning Briefing", briefing, pdf_path)
                 send_email_with_attachment(
-                    subject=f"AXIOM Morning Briefing — {datetime.now().strftime('%d %b %Y')}",
+                    subject=f"AXIOM Morning Briefing — {now_ist().strftime('%d %b %Y')}",
                     body=briefing[:500] + "\n\n[Full briefing attached as PDF]",
                     pdf_path=pdf_path,
                 )
@@ -1233,7 +1234,7 @@ def show_screener() -> None:
             regime_obj = st.session_state.get("regime")
             regime_str = regime_obj.regime if regime_obj else "UNKNOWN"
             with st.spinner("Generating PDF..."):
-                pdf_path = REPORTS_DIR / f"screener_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf"
+                pdf_path = REPORTS_DIR / f"screener_{now_ist().strftime('%Y%m%d_%H%M')}.pdf"
                 generate_screener_pdf(results, commentary, pdf_path, regime=regime_str)
             st.success(f"Saved: {pdf_path.name}")
 
@@ -1376,8 +1377,8 @@ def show_tasks() -> None:
             checklist = generate_task_list({
                 "open_trades": len(trades),
                 "market": "NSE",
-                "time": datetime.now().strftime("%H:%M IST"),
-                "date": datetime.now().strftime("%d %b %Y"),
+                "time": now_ist().strftime("%H:%M IST"),
+                "date": now_ist().strftime("%d %b %Y"),
             })
         st.text_area("", checklist, height=300, label_visibility="collapsed")
 
@@ -1777,7 +1778,7 @@ def show_monitor() -> None:
                         send_alert(sym, sig, data.get("close", 0), details)
 
             st.session_state["monitor_results"] = results
-            st.session_state["monitor_scan_time"] = datetime.now().strftime("%H:%M:%S")
+            st.session_state["monitor_scan_time"] = now_ist().strftime("%H:%M:%S")
 
     results = st.session_state["monitor_results"]
     scan_time = st.session_state.get("monitor_scan_time")
@@ -1854,7 +1855,7 @@ def show_reports() -> None:
                 briefing = generate_market_briefing({
                     "symbol_count": len(universe),
                     "watchlist_count": min(10, len(universe)),
-                    "date": datetime.now().strftime("%d %b %Y"),
+                    "date": now_ist().strftime("%d %b %Y"),
                 })
                 path = generate_text_report("Market Briefing", briefing, REPORTS_DIR / "market_briefing.pdf")
             st.success(f"Saved to {path}")
@@ -2185,7 +2186,7 @@ _NAV_ITEMS = [
 
 def render_sidebar() -> str:
     with st.sidebar:
-        now = datetime.now()
+        now = now_ist()
         is_market = 9 <= now.hour < 16 and now.weekday() < 5
 
         # Pre-compute conditional values (avoids nested quotes inside f-string HTML attributes)

@@ -57,7 +57,7 @@ NSE_HOLIDAYS_2026 = NSE_HOLIDAYS[2026]
 
 
 def is_market_day() -> bool:
-    today = date.today()
+    today = datetime.now(IST).date()
     if today.weekday() >= 5:
         logger.info("Market closed — weekend")
         return False
@@ -116,9 +116,9 @@ def run_morning_briefing() -> None:
             return
 
         # PDF + email
-        pdf_path = REPORTS_DIR / f"briefing_{date.today()}.pdf"
+        pdf_path = REPORTS_DIR / f"briefing_{datetime.now(IST).date()}.pdf"
         generate_text_report("AXIOM Morning Briefing", briefing_text, pdf_path)
-        subject = f"AXIOM Morning Briefing — {date.today().strftime('%d %b %Y')} | Regime: {regime.regime}"
+        subject = f"AXIOM Morning Briefing — {datetime.now(IST).date().strftime('%d %b %Y')} | Regime: {regime.regime}"
         send_email_with_attachment(
             subject=subject,
             body=briefing_text[:500] + "\n\n[Full briefing attached]",
@@ -127,7 +127,7 @@ def run_morning_briefing() -> None:
         logger.success("Morning briefing emailed: {}", pdf_path.name)
 
         # Telegram — briefing + regime
-        send_briefing(briefing_text, date.today().strftime("%d %b %Y"))
+        send_briefing(briefing_text, datetime.now(IST).date().strftime("%d %b %Y"))
         send_regime_alert(regime.regime, regime.nifty_close, regime.adx_value)
 
         # Telegram — top picks summary
@@ -164,17 +164,17 @@ def run_premarket_tasks() -> None:
         })
 
         # PDF + email
-        pdf_path = REPORTS_DIR / f"premarket_tasks_{date.today()}.pdf"
+        pdf_path = REPORTS_DIR / f"premarket_tasks_{datetime.now(IST).date()}.pdf"
         generate_text_report("AXIOM Pre-Market Tasks", checklist, pdf_path)
         send_email_with_attachment(
-            subject=f"AXIOM Pre-Market Checklist — {date.today().strftime('%d %b %Y')}",
+            subject=f"AXIOM Pre-Market Checklist — {datetime.now(IST).date().strftime('%d %b %Y')}",
             body=checklist[:500] + "\n\n[Full checklist attached]",
             pdf_path=pdf_path,
         )
 
         # Telegram
         send_message(
-            f"<b>AXIOM Pre-Market Checklist — {date.today().strftime('%d %b %Y')}</b>\n"
+            f"<b>AXIOM Pre-Market Checklist — {datetime.now(IST).date().strftime('%d %b %Y')}</b>\n"
             f"Regime: <b>{regime.regime}</b> · Nifty: {regime.nifty_close:,.0f}\n\n"
             + checklist[:2000]
         )
@@ -201,17 +201,17 @@ def run_post_market_summary() -> None:
         })
 
         # PDF + email
-        pdf_path = REPORTS_DIR / f"post_market_{date.today()}.pdf"
+        pdf_path = REPORTS_DIR / f"post_market_{datetime.now(IST).date()}.pdf"
         generate_text_report("AXIOM Post-Market Checklist", checklist, pdf_path)
         send_email_with_attachment(
-            subject=f"AXIOM Post-Market Checklist — {date.today().strftime('%d %b %Y')}",
+            subject=f"AXIOM Post-Market Checklist — {datetime.now(IST).date().strftime('%d %b %Y')}",
             body=checklist[:500] + "\n\n[Full checklist attached]",
             pdf_path=pdf_path,
         )
 
         # Telegram
         send_message(
-            f"<b>AXIOM Post-Market Checklist — {date.today().strftime('%d %b %Y')}</b>\n\n"
+            f"<b>AXIOM Post-Market Checklist — {datetime.now(IST).date().strftime('%d %b %Y')}</b>\n\n"
             + checklist[:2000]
         )
         logger.success("Post-market checklist sent")

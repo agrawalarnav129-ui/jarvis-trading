@@ -26,6 +26,7 @@ from loguru import logger
 
 from data.fii_dii import fetch_fii_dii
 from utils.indicators import adx_full, rsi
+from utils.timez import now_ist
 
 # ── Ticker groups ─────────────────────────────────────────────────
 US_MARKETS = {
@@ -253,8 +254,8 @@ def build_briefing_context() -> dict:
                 "RISK-OFF" if (spx_change < 0 and vix_change > 0) else "MIXED"
 
     return {
-        "date": datetime.now().strftime("%A, %d %b %Y"),
-        "time": datetime.now().strftime("%H:%M IST"),
+        "date": now_ist().strftime("%A, %d %b %Y"),
+        "time": now_ist().strftime("%H:%M IST"),
         # ── Global / overnight ──
         "us_markets_close": us_close,
         "us_futures": us_futures,

@@ -13,6 +13,8 @@ import pandas as pd
 from fpdf import FPDF
 from loguru import logger
 
+from utils.timez import now_ist
+
 # ── Brand Colours (R, G, B) ──
 NAVY       = (8,   13,  26)    # #080D1A — primary bg
 NAVY_MID   = (13,  21,  40)    # #0D1528 — alt bg
@@ -101,7 +103,7 @@ class NeuraCapitalPDF(FPDF):
         # Right: date + time
         self._set("MontserratR", 7.5)
         self.set_text_color(*GREY)
-        ts = datetime.now().strftime("%d %b %Y  |  %H:%M IST")
+        ts = now_ist().strftime("%d %b %Y  |  %H:%M IST")
         self.set_xy(PAGE_W - MARGIN - 55, 8)
         self.cell(55, 5, ts, align="R", ln=False)
 
@@ -418,7 +420,7 @@ def generate_screener_pdf(
     pdf._set("MontserratL", 8)
     pdf.set_text_color(*GREY)
     pdf.set_x(MARGIN)
-    pdf.cell(CONTENT_W, 6, f"Run: {datetime.now().strftime('%d %b %Y  %H:%M IST')}  ·  Regime: {regime}  ·  Universe: NSE 200", ln=True, align="C")
+    pdf.cell(CONTENT_W, 6, f"Run: {now_ist().strftime('%d %b %Y  %H:%M IST')}  ·  Regime: {regime}  ·  Universe: NSE 200", ln=True, align="C")
     pdf.ln(3)
 
     if results.empty:
