@@ -1,0 +1,41 @@
+{
+  "LXCHEM.NS": [],
+  "ELGIEQUIP.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "KPRMILL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PTCIL.NS": [],
+  "NMDC.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "TITAGARH.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NATIONALUM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BFINVEST.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ABB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "JSWENERGY.NS": [],
+  "TIINDIA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SONACOMS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ACMESOLAR.NS": [],
+  "BOSCHLTD.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "MSTCLTD.NS": []
+}
