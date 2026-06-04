@@ -1,0 +1,24 @@
+{
+  "MMTC.NS": [],
+  "MIDHANI.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "GMRAIRPORT.NS": [],
+  "MSTCLTD.NS": [],
+  "BFINVEST.NS": [],
+  "CGPOWER.NS": [],
+  "ANANTRAJ.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "JBMA.NS": [],
+  "ZEEL.NS": [],
+  "ELGIEQUIP.NS": [],
+  "OPTIEMUS.NS": [],
+  "ZENTEC.NS": [],
+  "COALINDIA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ABB.NS": [],
+  "ASHAPURMIN.NS": []
+}
