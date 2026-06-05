@@ -1,10 +1,15 @@
 name: Morning Briefing
 
-# 08:30 IST = 03:00 UTC, Mon–Fri
+# Target 08:30 IST = 03:00 UTC, Mon–Fri.
+# NOTE: GitHub's scheduled cron is best-effort and often runs 1–5h late at busy
+# times. For on-time delivery, trigger via repository_dispatch from a reliable
+# external cron (e.g. cron-job.org) — see DEPLOY.md. The cron below is a fallback.
 on:
   schedule:
-    - cron: "0 3 * * 1-5"
-  workflow_dispatch:        # manual "Run workflow" button
+    - cron: "3 3 * * 1-5"     # off the top-of-hour to reduce queue delay
+  workflow_dispatch:          # manual "Run workflow" button
+  repository_dispatch:
+    types: [morning-briefing] # external on-time trigger
 
 permissions:
   contents: write           # allow committing the refreshed watchlist

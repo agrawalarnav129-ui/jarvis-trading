@@ -1,10 +1,12 @@
 name: Pre-Market Tasks
 
-# 09:15 IST = 03:45 UTC, Mon–Fri
+# Target 09:15 IST = 03:45 UTC, Mon–Fri (GitHub cron is a best-effort fallback).
 on:
   schedule:
-    - cron: "45 3 * * 1-5"
+    - cron: "47 3 * * 1-5"
   workflow_dispatch:
+  repository_dispatch:
+    types: [pre-market]
 
 jobs:
   premarket:

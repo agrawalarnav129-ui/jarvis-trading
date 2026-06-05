@@ -119,12 +119,16 @@ def run_morning_briefing() -> None:
         pdf_path = REPORTS_DIR / f"briefing_{datetime.now(IST).date()}.pdf"
         generate_text_report("AXIOM Morning Briefing", briefing_text, pdf_path)
         subject = f"AXIOM Morning Briefing — {datetime.now(IST).date().strftime('%d %b %Y')} | Regime: {regime.regime}"
-        send_email_with_attachment(
+        email_ok = send_email_with_attachment(
             subject=subject,
             body=briefing_text[:500] + "\n\n[Full briefing attached]",
             pdf_path=pdf_path,
         )
-        logger.success("Morning briefing emailed: {}", pdf_path.name)
+        if email_ok:
+            logger.success("Morning briefing emailed: {}", pdf_path.name)
+        else:
+            logger.error("Morning briefing EMAIL FAILED — Telegram still sent")
+            send_message("⚠️ <b>Email delivery failed</b> (briefing) — check SMTP App Password.")
 
         # Telegram — briefing + regime
         send_briefing(briefing_text, datetime.now(IST).date().strftime("%d %b %Y"))
@@ -166,11 +170,12 @@ def run_premarket_tasks() -> None:
         # PDF + email
         pdf_path = REPORTS_DIR / f"premarket_tasks_{datetime.now(IST).date()}.pdf"
         generate_text_report("AXIOM Pre-Market Tasks", checklist, pdf_path)
-        send_email_with_attachment(
+        if not send_email_with_attachment(
             subject=f"AXIOM Pre-Market Checklist — {datetime.now(IST).date().strftime('%d %b %Y')}",
             body=checklist[:500] + "\n\n[Full checklist attached]",
             pdf_path=pdf_path,
-        )
+        ):
+            logger.error("Pre-market EMAIL FAILED — Telegram still sent")
 
         # Telegram
         send_message(
@@ -203,11 +208,12 @@ def run_post_market_summary() -> None:
         # PDF + email
         pdf_path = REPORTS_DIR / f"post_market_{datetime.now(IST).date()}.pdf"
         generate_text_report("AXIOM Post-Market Checklist", checklist, pdf_path)
-        send_email_with_attachment(
+        if not send_email_with_attachment(
             subject=f"AXIOM Post-Market Checklist — {datetime.now(IST).date().strftime('%d %b %Y')}",
             body=checklist[:500] + "\n\n[Full checklist attached]",
             pdf_path=pdf_path,
-        )
+        ):
+            logger.error("Post-market EMAIL FAILED — Telegram still sent")
 
         # Telegram
         send_message(

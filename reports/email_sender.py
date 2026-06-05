@@ -28,19 +28,23 @@ def send_email_with_attachment(
     body: str,
     pdf_path: Path | None = None,
     recipients: list[str] | None = None,
-) -> None:
-    """Send email with optional PDF attachment via Gmail SMTP."""
+) -> bool:
+    """
+    Send email with optional PDF attachment via Gmail SMTP.
+    Returns True on success, False on failure (callers must not assume success).
+    """
     smtp_host = os.getenv("SMTP_HOST", "smtp.gmail.com")
     smtp_port = int(os.getenv("SMTP_PORT", "587"))
-    username = os.getenv("SMTP_USERNAME")
-    password = os.getenv("SMTP_PASSWORD")
-    default_recipient = os.getenv("SMTP_USERNAME")  # send to self by default
+    username = (os.getenv("SMTP_USERNAME") or "").strip()
+    # Gmail App Passwords are shown in 4 space-separated groups; spaces must be stripped.
+    password = (os.getenv("SMTP_PASSWORD") or "").replace(" ", "").strip()
+    recipient_env = (os.getenv("EMAIL_RECIPIENT") or username).strip()
 
     if not username or not password:
-        logger.error("SMTP credentials missing — check SMTP_USERNAME and SMTP_PASSWORD in .env")
-        return
+        logger.error("SMTP credentials missing — check SMTP_USERNAME and SMTP_PASSWORD")
+        return False
 
-    to_list = recipients or [default_recipient]
+    to_list = recipients or [recipient_env]
     msg = _build_message(subject, body, ", ".join(to_list), username)
 
     if pdf_path and pdf_path.exists():
@@ -56,14 +60,19 @@ def send_email_with_attachment(
             smtp.login(username, password)
             smtp.sendmail(username, to_list, msg.as_string())
         logger.success("Email sent to {} — subject: {}", to_list, subject)
+        return True
     except smtplib.SMTPAuthenticationError:
-        logger.error("Gmail auth failed — ensure App Password is set (not account password)")
+        logger.error("Gmail auth failed (535) — regenerate the App Password "
+                     "(needs 2-Step Verification ON) and update SMTP_PASSWORD")
+        return False
     except smtplib.SMTPException as exc:
         logger.error("SMTP error: {}", exc)
+        return False
     except Exception as exc:
         logger.exception("Email send failed: {}", exc)
+        return False
 
 
-def send_email(subject: str, body: str, recipients: list[str]) -> None:
+def send_email(subject: str, body: str, recipients: list[str]) -> bool:
     """Backwards-compatible wrapper — plain text email, no attachment."""
-    send_email_with_attachment(subject=subject, body=body, recipients=recipients)
+    return send_email_with_attachment(subject=subject, body=body, recipients=recipients)

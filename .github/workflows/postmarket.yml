@@ -1,10 +1,12 @@
 name: Post-Market Summary
 
-# 15:35 IST = 10:05 UTC, Mon–Fri
+# Target 15:35 IST = 10:05 UTC, Mon–Fri (GitHub cron is a best-effort fallback).
 on:
   schedule:
-    - cron: "5 10 * * 1-5"
+    - cron: "7 10 * * 1-5"
   workflow_dispatch:
+  repository_dispatch:
+    types: [post-market]
 
 jobs:
   postmarket:

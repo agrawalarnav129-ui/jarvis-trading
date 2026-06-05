@@ -79,6 +79,33 @@ python -m tools.fyers_auto_login   # should print "Fyers token refreshed (headle
 - **Watchlist** drives the intraday scan. Populate it from the dashboard (saves to DB)
   or maintain a committed `data/watchlist.csv`.
 
+## ⏰ Reliable on-time delivery (fixing GitHub's cron delay)
+
+GitHub's scheduled cron is **best-effort** and frequently runs **1–5 hours late**
+at busy times — so an 08:30 briefing can arrive at 12–1 PM. The workflows now also
+accept a **`repository_dispatch`** trigger, so a reliable free external cron can
+fire them exactly on time.
+
+### Free fix — cron-job.org (≈5 min, fires within seconds of schedule)
+1. Create a free account at **cron-job.org**.
+2. Create a **GitHub fine-grained PAT** with `repo` + `actions` (or classic `repo`)
+   scope (github.com/settings/tokens). Copy it.
+3. In cron-job.org, create 3 jobs. For each:
+   - **URL:** `https://api.github.com/repos/agrawalarnav129-ui/jarvis-trading/dispatches`
+   - **Method:** POST
+   - **Headers:**
+     `Authorization: Bearer <YOUR_PAT>` ·
+     `Accept: application/vnd.github+json`
+   - **Body** (one per job):
+     - Briefing: `{"event_type":"morning-briefing"}`  → schedule **08:30 IST**
+     - Pre-market: `{"event_type":"pre-market"}`     → schedule **09:15 IST**
+     - Post-market: `{"event_type":"post-market"}`   → schedule **15:35 IST**
+   - Set the job timezone to **Asia/Kolkata**.
+4. Done — jobs now fire on time; the GitHub cron stays as a backup.
+
+> The intraday scanner stays on GitHub's `*/15` cron (a few minutes' drift on
+> intraday alerts is fine).
+
 ## Alternative: true 24/7 (Oracle Cloud Always Free)
 For reliable every-5-min scanning with no cron looseness, run `scheduler.py` on an
 **Oracle Cloud Always Free** VM (free forever) under `systemd`:
