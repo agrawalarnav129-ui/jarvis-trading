@@ -34,7 +34,6 @@ from data.fetcher import fetch_symbol_history, load_universe
 from data.fyers_client import FyersClient
 from data.market_context import build_briefing_context
 from screener.regime_classifier import RegimeResult, classify_regime
-from reports.email_sender import send_email_with_attachment
 from reports.pdf_generator import generate_text_report, generate_trade_journal_pdf, generate_screener_pdf
 from reports.trade_log import append_trade_log, load_trade_journal
 from reports.weekly_review import generate_weekly_review
@@ -1160,20 +1159,20 @@ def show_overview() -> None:
     if briefing:
         st.text_area("", briefing, height=360, label_visibility="collapsed")
 
-    if col_email.button("◈ EMAIL BRIEFING"):
+    if col_email.button("◈ SEND PDF TO TELEGRAM"):
         briefing = st.session_state.get("last_briefing")
         if not briefing:
             st.warning("Generate a briefing first.")
         else:
-            with st.spinner("Sending email..."):
+            from monitors.telegram_bot import send_document
+            with st.spinner("Sending PDF to Telegram..."):
                 pdf_path = REPORTS_DIR / f"briefing_{now_ist().strftime('%Y%m%d')}.pdf"
                 generate_text_report("AXIOM Morning Briefing", briefing, pdf_path)
-                send_email_with_attachment(
-                    subject=f"AXIOM Morning Briefing — {now_ist().strftime('%d %b %Y')}",
-                    body=briefing[:500] + "\n\n[Full briefing attached as PDF]",
-                    pdf_path=pdf_path,
+                ok, err = send_document(
+                    pdf_path,
+                    caption=f"📊 <b>AXIOM Morning Briefing — {now_ist().strftime('%d %b %Y')}</b>",
                 )
-            st.success(f"Briefing emailed to {os.getenv('SMTP_USERNAME')}")
+            st.success("Briefing PDF sent to Telegram.") if ok else st.error(f"Telegram send failed: {err}")
 
 
 def show_screener() -> None:
