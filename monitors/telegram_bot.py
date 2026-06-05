@@ -60,6 +60,37 @@ def send_message(text: str, parse_mode: str = "HTML") -> tuple[bool, str]:
         return False, str(exc)
 
 
+def send_document(file_path, caption: str = "", parse_mode: str = "HTML") -> tuple[bool, str]:
+    """
+    Upload a file (e.g. the briefing PDF) to the configured chat via sendDocument.
+    Returns (success, error_message).
+    """
+    from pathlib import Path
+
+    if not is_configured():
+        return False, "TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set"
+    p = Path(file_path)
+    if not p.exists():
+        return False, f"file not found: {p}"
+
+    url = _API_BASE.format(token=_token(), method="sendDocument")
+    data = {"chat_id": _chat_id(), "caption": caption[:1024], "parse_mode": parse_mode}
+    try:
+        with open(p, "rb") as fh:
+            files = {"document": (p.name, fh, "application/pdf")}
+            r = requests.post(url, data=data, files=files, timeout=60)
+        if r.status_code == 200:
+            logger.success("Telegram document sent: {}", p.name)
+            return True, ""
+        body = r.json() if r.headers.get("content-type", "").startswith("application/json") else {}
+        desc = body.get("description", r.text[:300])
+        logger.error("Telegram sendDocument error {}: {}", r.status_code, desc)
+        return False, f"HTTP {r.status_code}: {desc}"
+    except Exception as exc:
+        logger.error("Telegram sendDocument failed: {}", exc)
+        return False, str(exc)
+
+
 def send_alert(symbol: str, signal: str, price: float, details: str) -> bool:
     """Send a formatted trading alert."""
     emoji = {"BREAKOUT": "🚀", "BB_SQUEEZE_SETUP": "⚡", "MOMENTUM_CONT": "📈"}.get(signal, "🔔")
