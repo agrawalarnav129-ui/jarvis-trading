@@ -209,6 +209,67 @@ def assistant(body: AssistantBody):
         raise HTTPException(status_code=503, detail="AI assistant unavailable")
 
 
+@app.get("/api/footprint")
+def footprint(symbol: str, days: int = 1, bins: int = 30):
+    """Approximated order-flow footprint from 1-min bars."""
+    try:
+        from analytics.footprint import APPROXIMATION_NOTE, build_footprint, fetch_intraday
+        sym = symbol.strip().upper()
+        if not sym.endswith(".NS"):
+            sym += ".NS"
+        df = fetch_intraday(sym, days=days, interval="1m")
+        if df.empty:
+            raise HTTPException(status_code=422, detail="No intraday data (market closed or bad symbol)")
+        fp = build_footprint(df, symbol=sym, bins=bins)
+        return {
+            "symbol": sym, "poc": fp.poc, "total_delta": fp.total_delta, "bars": fp.bars,
+            "last": round(float(df["close"].iloc[-1]), 2),
+            "profile": fp.profile.to_dict("records"),
+            "note": APPROXIMATION_NOTE,
+        }
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("Footprint failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Footprint unavailable")
+
+
+_scan_cache = TTLCache(maxsize=1, ttl=180)
+
+
+@app.get("/api/scan")
+def scan():
+    """Scan the watchlist on 15-min data for live signals (BREAKOUT / BB_SQUEEZE / MOMENTUM)."""
+    if "v" in _scan_cache:
+        return _scan_cache["v"]
+    try:
+        from monitors.intraday_monitor import _compute_signals, _fetch_15m
+        from storage.watchlist_csv import load_watchlist_symbols
+        symbols = load_watchlist_symbols()[:18]
+        results = []
+        for sym in symbols:
+            df = _fetch_15m(sym)
+            if df.empty:
+                continue
+            data = _compute_signals(df)
+            if not data:
+                continue
+            results.append({
+                "symbol": sym.replace(".NS", ""),
+                "signals": data.get("signals", []),
+                "close": data.get("close"), "rsi": data.get("rsi"), "adx": data.get("adx"),
+                "vol_ratio": data.get("vol_ratio"), "macd_hist": data.get("macd_hist"),
+            })
+        # signals first, then by ADX
+        results.sort(key=lambda r: (-len(r["signals"]), -(r.get("adx") or 0)))
+        out = {"count": len(symbols), "results": results, "ist": datetime.now(IST).strftime("%H:%M:%S")}
+        _scan_cache["v"] = out
+        return out
+    except Exception as exc:
+        logger.exception("Scan failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Scanner unavailable")
+
+
 @app.get("/")
 def root():
     return {"service": "AXIOM API", "docs": "/docs", "health": "/api/health"}

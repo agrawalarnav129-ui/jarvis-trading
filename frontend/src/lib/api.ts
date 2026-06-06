@@ -28,6 +28,10 @@ export const api = {
   backtest: (symbol: string, rr = 2.5) =>
     get<{ symbol: string; metrics: Record<string, number>; trades: any[]; equity: number[] }>(
       `/api/backtest?symbol=${encodeURIComponent(symbol)}&rr=${rr}`),
+  footprint: (symbol: string, days = 1) =>
+    get<{ symbol: string; poc: number; total_delta: number; bars: number; last: number; note: string; profile: { price: number; buy_vol: number; sell_vol: number; delta: number }[] }>(
+      `/api/footprint?symbol=${encodeURIComponent(symbol)}&days=${days}`),
+  scan: () => get<{ count: number; ist: string; results: { symbol: string; signals: string[]; close: number; rsi: number; adx: number; vol_ratio: number; macd_hist: number }[] }>("/api/scan"),
   assistant: async (message: string, history: { role: string; text: string }[]) => {
     const r = await fetch(`${BASE}/api/assistant`, {
       method: "POST", headers: { "Content-Type": "application/json" },
