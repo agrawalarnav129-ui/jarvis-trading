@@ -1,0 +1,11 @@
+# AXIOM API (FastAPI) — backend deps. Reuses the project's data/ + screener/ modules,
+# so install the root requirements.txt too (-r ../requirements.txt) or deploy from repo root.
+fastapi>=0.110
+uvicorn[standard]>=0.24
+cachetools>=5.3
+pandas>=2.0
+numpy>=1.25
+yfinance>=0.2.40
+requests>=2.31
+python-dotenv>=1.0
+loguru>=0.7

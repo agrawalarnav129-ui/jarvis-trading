@@ -17,7 +17,25 @@
       "Bash(git rev-list *)",
       "Bash(awk '{print \"ahead:\"$1\" behind:\"$2}')",
       "Bash(git -c rebase.autoStash=true rebase origin/main)",
-      "Bash(echo \"exit: $?\")"
+      "Bash(echo \"exit: $?\")",
+      "Bash(grep -viE \"futurewarning|^  out|chained|pandas 3|setting val|intermediate|see the|behaviour|use \\\\`|a typical\")",
+      "Bash(grep -viE \"futurewarning|^  out|chained|pandas 3|setting val|intermediate|see the|behaviour|use \\\\`|a typical|adj |df\\\\[\")",
+      "Bash(git -c rebase.autoStash=true rebase origin/main -q)",
+      "Bash(echo \"synced: $\\(git rev-list --left-right --count HEAD...origin/main \\)\")",
+      "Bash(ls .claude/skills/ui-ux-pro-max/scripts/)",
+      "Bash(node --version)",
+      "Bash(npm --version)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"fintech trading dashboard mobile dark realtime stock market professional\" --design-system -p \"AXIOM\")",
+      "Bash(pip install *)",
+      "Bash(grep -viE \"futurewarning|^  |chained|pandas 3|setting val|intermediate|see the|behaviour|use \\\\`|a typical|building inst|FII/DII fetch\")",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(python -c \"import uvicorn; print\\('uvicorn', uvicorn.__version__\\)\")",
+      "Bash(python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000)",
+      "Bash(curl -s http://127.0.0.1:8000/api/health)",
+      "Bash(curl -s -o /dev/null -w \"vite HTTP %{http_code}\\\\n\" http://localhost:5173/)",
+      "Read(//c/Arnav/.tmp/**)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }

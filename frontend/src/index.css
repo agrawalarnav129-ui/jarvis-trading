@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-base text-txt font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse 60% 40% at 50% -10%, rgba(34,211,238,0.08), transparent 70%),
+      repeating-linear-gradient(0deg, rgba(34,211,238,0.015) 0, rgba(34,211,238,0.015) 1px, transparent 1px, transparent 40px);
+  }
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface/80 border border-line rounded-xl shadow-card backdrop-blur-sm;
+  }
+  .label {
+    @apply text-[0.6rem] uppercase tracking-[0.18em] text-faint font-mono;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.65rem] font-mono;
+  }
+  .scroll-thin::-webkit-scrollbar { width: 5px; }
+  .scroll-thin::-webkit-scrollbar-thumb { @apply bg-line rounded-full; }
+}
