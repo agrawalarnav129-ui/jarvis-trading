@@ -3,8 +3,7 @@ AXIOM Footprint / Order-Flow Analytics — APPROXIMATED.
 
 IMPORTANT — DATA LIMITATION:
 A *true* footprint chart needs tick-by-tick trades classified by aggressor
-(buy = lifted ask, sell = hit bid). Neither yfinance nor the Fyers *historical*
-API expose that. So this module builds an **approximated** footprint from
+(buy = lifted ask, sell = hit bid). yfinance does not expose that. So this module builds an **approximated** footprint from
 1-minute OHLCV bars:
 
   1. Each 1-min bar's volume is spread across price bins between its low and high.
@@ -16,8 +15,8 @@ API expose that. So this module builds an **approximated** footprint from
 Outputs per price bin: buy_vol, sell_vol, total_vol, delta (buy-sell).
 POC = price bin with the greatest total volume.
 
-Upgrade path to TRUE footprint: capture Fyers WebSocket tick data live and
-classify each print by the prevailing bid/ask, then bucket by price.
+Upgrade path to TRUE footprint: capture a live tick feed and classify each
+print by the prevailing bid/ask, then bucket by price.
 """
 from __future__ import annotations
 

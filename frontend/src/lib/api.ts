@@ -25,6 +25,17 @@ export const api = {
   regime: () => get<Regime>("/api/regime"),
   watchlist: () => get<{ watchlist: any[] }>("/api/watchlist"),
   screener: () => get<{ results: any[] }>("/api/screener"),
+  backtest: (symbol: string, rr = 2.5) =>
+    get<{ symbol: string; metrics: Record<string, number>; trades: any[]; equity: number[] }>(
+      `/api/backtest?symbol=${encodeURIComponent(symbol)}&rr=${rr}`),
+  assistant: async (message: string, history: { role: string; text: string }[]) => {
+    const r = await fetch(`${BASE}/api/assistant`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, history }),
+    });
+    if (!r.ok) throw new Error(`assistant -> ${r.status}`);
+    return (await r.json()) as { reply: string };
+  },
 };
 
 export { BASE as API_BASE };

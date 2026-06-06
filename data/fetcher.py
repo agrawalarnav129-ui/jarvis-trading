@@ -12,7 +12,6 @@ import yfinance as yf
 from loguru import logger
 
 from config import CACHE_DIR, UNIVERSE_CSV
-from data.fyers_client import FyersClient
 
 
 def ensure_cache_dir() -> None:
@@ -46,13 +45,6 @@ def _fetch_history_from_yfinance(symbol: str, period: str, interval: str) -> pd.
     return df
 
 
-def _fetch_history_from_fyers(symbol: str, period: str, interval: str) -> pd.DataFrame:
-    client = FyersClient()
-    if not client.is_available():
-        raise ValueError("Fyers API is not available")
-    return client.fetch_historical_data(symbol, period=period, interval=interval)
-
-
 def _normalise(df: pd.DataFrame) -> pd.DataFrame:
     """Lowercase columns and strip timezone from index."""
     if df.empty:
@@ -75,15 +67,6 @@ def fetch_symbol_history(symbol: str, period: str = "1y", interval: str = "1d") 
             return _normalise(df)
 
     logger.info("Fetching history for %s", symbol)
-    client = FyersClient()
-    if client.is_available():
-        try:
-            df = _normalise(_fetch_history_from_fyers(symbol, period, interval))
-            df.to_parquet(symbol_path)
-            return df
-        except Exception as exc:
-            logger.warning("Fyers fetch failed for %s: %s", symbol, exc)
-
     try:
         df = _normalise(_fetch_history_from_yfinance(symbol, period, interval))
     except Exception as exc:

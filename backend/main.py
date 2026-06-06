@@ -24,6 +24,7 @@ from cachetools import TTLCache
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
+from pydantic import BaseModel
 
 from data.econ_calendar import fetch_calendar
 from data.fii_dii import fetch_fii_dii
@@ -152,6 +153,60 @@ def screener(limit: int = 30):
     except Exception as exc:
         logger.exception("Screener failed: {}", exc)
         raise HTTPException(status_code=503, detail="Screener unavailable")
+
+
+@app.get("/api/backtest")
+def backtest(symbol: str, period: str = "2y", rr: float = 2.5, capital: float = 1_000_000):
+    """Run the breakout backtest on one symbol. Returns metrics + recent trades."""
+    try:
+        from backtest.backtest import BacktestConfig, backtest_symbol
+        from data.fetcher import fetch_symbol_history
+        sym = symbol.strip().upper()
+        if not sym.endswith(".NS"):
+            sym += ".NS"
+        df = fetch_symbol_history(sym, period=period, interval="1d")
+        if df.empty or len(df) < 220:
+            raise HTTPException(status_code=422, detail="Insufficient history (need ~220+ daily bars)")
+        cfg = BacktestConfig(rr_target=rr, starting_capital=float(capital))
+        res = backtest_symbol(df, symbol=sym, cfg=cfg)
+        trades = res.trades.copy()
+        if not trades.empty:
+            for c in ("entry_date", "exit_date"):
+                if c in trades.columns:
+                    trades[c] = trades[c].astype(str)
+        equity = [round(float(v), 2) for v in res.equity.values.tolist()]
+        return {"symbol": sym, "metrics": res.metrics,
+                "trades": trades.tail(40).to_dict("records") if not trades.empty else [],
+                "equity": equity}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("Backtest failed: {}", exc)
+        raise HTTPException(status_code=503, detail=f"Backtest failed: {exc}")
+
+
+class AssistantBody(BaseModel):
+    message: str
+    history: list[dict] = []
+
+
+@app.post("/api/assistant")
+def assistant(body: AssistantBody):
+    """AXIOM AI chat — powered by the Groq brain."""
+    try:
+        from ai.brain import _AXIOM_SYSTEM, _call_groq
+        ctx = "\n".join(f"{m.get('role')}: {m.get('text')}" for m in body.history[-6:])
+        user = (f"Conversation so far:\n{ctx}\n\n" if ctx else "") + \
+               f"User: {body.message}\n\nRespond as AXIOM — institutional NSE trading assistant. Be direct, analytical, professional."
+        reply = _call_groq(_AXIOM_SYSTEM, user, max_tokens=900)
+        if not reply:
+            raise HTTPException(status_code=503, detail="AI unavailable — check GROQ_API_KEY")
+        return {"reply": reply}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("Assistant failed: {}", exc)
+        raise HTTPException(status_code=503, detail="AI assistant unavailable")
 
 
 @app.get("/")

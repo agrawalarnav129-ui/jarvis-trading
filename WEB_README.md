@@ -41,7 +41,7 @@ npm run dev                        # → http://localhost:5173
 1. New service from the repo (root).
 2. Start command: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
 3. Install: `pip install -r requirements.txt -r backend/requirements.txt`
-4. Env vars: copy from `.env` (GROQ_API_KEY, FYERS_*, etc.) + `ALLOWED_ORIGINS=https://your-app.vercel.app`
+4. Env vars: copy from `.env` (GROQ_API_KEY, TELEGRAM_*) + `ALLOWED_ORIGINS=https://your-app.vercel.app`
 5. (Vercel Python functions are unsuitable — the screener is too heavy/long-running.)
 
 ### Database → Supabase

@@ -15,20 +15,13 @@ This project uses:
    ```bash
    python -m pip install -r requirements.txt
    ```
-2. Create a `.env` file using the provided `.env` template.
-3. Generate the Fyers access token:
+2. Create a `.env` file using the provided `.env` template (GROQ_API_KEY, TELEGRAM_*).
+   Market data uses yfinance + free NSE endpoints — no broker login required.
+3. Start the API app:
    ```bash
-   python tools/fyers_oauth.py
+   uvicorn backend.main:app --host 0.0.0.0 --port 8000
    ```
-   - This script prints the authorization URL
-   - Login through Fyers
-   - paste the final redirect URL from the browser
-   - it will exchange the code and save `FYERS_ACCESS_TOKEN` to `.env`
-4. Start the API app:
-   ```bash
-   uvicorn app:app --host 0.0.0.0 --port 8000
-   ```
-5. Start the Streamlit dashboard:
+4. Start the Streamlit dashboard:
    ```bash
    streamlit run dashboard.py
    ```

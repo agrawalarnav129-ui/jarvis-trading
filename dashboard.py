@@ -35,7 +35,6 @@ from data.fii_dii import fetch_fii_dii
 from analytics.footprint import APPROXIMATION_NOTE, build_footprint, fetch_intraday
 from backtest.backtest import BacktestConfig, backtest_symbol
 from data.fetcher import fetch_symbol_history, load_universe
-from data.fyers_client import FyersClient
 from data.market_context import build_briefing_context
 from screener.regime_classifier import RegimeResult, classify_regime
 from reports.pdf_generator import generate_text_report, generate_trade_journal_pdf, generate_screener_pdf
@@ -1716,115 +1715,6 @@ def show_risk_calculator() -> None:
         st.dataframe(hist_df[display], use_container_width=True, hide_index=True)
 
 
-def show_portfolio() -> None:
-    section_header("Asset Armor — Live Fyers Portfolio")
-
-    client = FyersClient()
-    if not client.is_available():
-        st.warning(
-            "Fyers API not configured. Add FYERS_CLIENT_ID and FYERS_ACCESS_TOKEN to .env "
-            "to see live positions and funds."
-        )
-        return
-
-    import base64, json as _json
-    _tok = os.getenv("FYERS_ACCESS_TOKEN", "")
-    try:
-        _parts = _tok.split(".")
-        _payload = _parts[1] + "=" * (4 - len(_parts[1]) % 4)
-        _decoded = _json.loads(base64.b64decode(_payload))
-        _exp = _decoded.get("exp")
-        if _exp:
-            from datetime import datetime as _dt
-            _expiry = _dt.fromtimestamp(_exp)
-            if _expiry < _dt.now():
-                st.error(
-                    f"Fyers token expired on {_expiry.strftime('%d %b %Y %H:%M')}. "
-                    "Run `python tools/fyers_token_refresh.py` to get a fresh token, then restart."
-                )
-                return
-            elif (_expiry - _dt.now()).total_seconds() < 3600:
-                st.warning(f"Fyers token expires in < 1 hour ({_expiry.strftime('%H:%M')}). Refresh soon.")
-    except Exception:
-        pass
-
-    col_refresh, col_debug, _ = st.columns([1, 1, 3])
-    if col_refresh.button("◈ REFRESH PORTFOLIO") or "portfolio_data" not in st.session_state:
-        with st.spinner("Fetching live portfolio from Fyers..."):
-            st.session_state["portfolio_data"]    = client.get_portfolio_summary()
-            st.session_state["order_book"]         = client.get_order_history()
-            st.session_state["_raw_funds"]         = client.get_raw_funds()
-            st.session_state["_raw_positions"]     = client.get_raw_positions()
-
-    show_raw = col_debug.button("◈ DEBUG RAW API")
-
-    portfolio = st.session_state.get("portfolio_data", {})
-    orders    = st.session_state.get("order_book", [])
-
-    if show_raw or st.session_state.get("_show_raw_debug"):
-        st.session_state["_show_raw_debug"] = True
-        with st.expander("RAW FYERS API RESPONSE", expanded=True):
-            st.markdown("**`/funds` raw response:**")
-            st.json(st.session_state.get("_raw_funds", {}))
-            st.markdown("**`/positions` raw response:**")
-            st.json(st.session_state.get("_raw_positions", {}))
-
-    if not portfolio:
-        st.info("No portfolio data available.")
-        return
-
-    section_header("Account Funds")
-    funds = portfolio.get("funds", {})
-    f1, f2, f3, f4 = st.columns(4)
-    f1.metric("TOTAL BALANCE",    f"₹{funds.get('total_balance', 0):,.0f}")
-    f2.metric("AVAILABLE MARGIN", f"₹{funds.get('available_balance', 0):,.0f}")
-    f3.metric("UTILIZED",         f"₹{funds.get('utilized', 0):,.0f}")
-    f4.metric("INVESTED VALUE",   f"₹{portfolio.get('invested_value', 0):,.0f}")
-
-    st.markdown("<br>", unsafe_allow_html=True)
-    section_header("Open Positions")
-    positions = portfolio.get("positions", [])
-
-    total_pnl = portfolio.get("total_pnl", 0.0)
-    p1, p2, p3 = st.columns(3)
-    p1.metric("OPEN POSITIONS", portfolio.get("open_positions", 0))
-    p2.metric("SESSION P&L", f"₹{total_pnl:,.0f}",
-              delta=f"{'▲' if total_pnl >= 0 else '▼'} {abs(total_pnl):,.0f}")
-    p3.metric("CLEAR CASH",  f"₹{funds.get('clear_cash', 0):,.0f}")
-
-    if positions:
-        pos_df = pd.DataFrame(positions)
-        cols = [c for c in ["symbol", "side", "qty", "avg_price", "ltp", "pnl", "pnl_pct", "product_type"] if c in pos_df.columns]
-        st.dataframe(pos_df[cols], use_container_width=True, hide_index=True)
-
-        if len(pos_df) > 0 and "pnl" in pos_df.columns:
-            layout = PLOTLY_LAYOUT.copy()
-            layout["title"] = dict(text="P&L BY POSITION", font=dict(family="Orbitron", color=_ACCENT_COLOR, size=11), x=0.02)
-            layout["height"] = 280
-            fig = go.Figure(go.Bar(
-                x=pos_df["symbol"],
-                y=pos_df["pnl"],
-                marker_color=[_BULL_COLOR if v >= 0 else _BEAR_COLOR for v in pos_df["pnl"]],
-                marker_opacity=0.85,
-                text=[f"₹{v:+,.0f}" for v in pos_df["pnl"]],
-                textposition="outside",
-                textfont=dict(color=_CHART_TEXT, size=10),
-            ))
-            fig.update_layout(**layout)
-            st.plotly_chart(fig, use_container_width=True)
-    else:
-        st.info("No open positions — market may be closed or no trades today.")
-
-    if orders:
-        st.markdown("<br>", unsafe_allow_html=True)
-        section_header("Today's Order Book")
-        ord_df = pd.DataFrame(orders)
-        ord_cols = [c for c in ["time", "symbol", "side", "qty", "filled_qty", "price", "avg_price", "status", "product_type"] if c in ord_df.columns]
-        st.dataframe(ord_df[ord_cols], use_container_width=True, hide_index=True)
-    else:
-        st.info("No orders placed today.")
-
-
 def show_monitor() -> None:
     """Tactical Feed — Live 15-min signal scanner."""
     from monitors.intraday_monitor import _compute_signals, _fetch_15m
@@ -2324,7 +2214,6 @@ def show_backtest() -> None:
 _NAV_ITEMS = [
     ("Dashboard",        "▸", "Live market, news, calendar & briefing"),
     ("Stock Screener",   "▸", "NSE universe scanner & scoring"),
-    ("Portfolio",        "▸", "Live Fyers positions & P&L"),
     ("Watchlist",        "▸", "Grade A/B candidates"),
     ("Risk Calculator",  "▸", "Position sizing & R:R"),
     ("Trade Journal",    "▸", "Trade history & analytics"),
@@ -2445,7 +2334,6 @@ def main() -> None:
     p = page.strip().upper()
     if   "DASHBOARD" in p: show_overview()
     elif "SCREENER"  in p: show_screener()
-    elif "PORTFOLIO" in p: show_portfolio()
     elif "WATCHLIST" in p: show_watchlist()
     elif "RISK"      in p: show_risk_calculator()
     elif "JOURNAL"   in p: show_trade_journal()

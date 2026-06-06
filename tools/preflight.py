@@ -20,8 +20,6 @@ from loguru import logger
 
 REQUIRED = [
     "GROQ_API_KEY",
-    "FYERS_CLIENT_ID", "FYERS_SECRET_KEY", "FYERS_REDIRECT_URI",
-    "FYERS_FY_ID", "FYERS_PIN", "FYERS_TOTP_SECRET",
     "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID",
 ]
 
@@ -54,19 +52,6 @@ def check_groq() -> bool:
         return ok
     except Exception as exc:
         logger.error("Groq check failed: {}", exc)
-        return False
-
-
-def check_fyers_login() -> bool:
-    try:
-        from tools.fyers_auto_login import fetch_auth_code
-        from tools.fyers_token_refresh import exchange_auth_code
-        code = fetch_auth_code()
-        token = exchange_auth_code(os.getenv("FYERS_CLIENT_ID", ""), os.getenv("FYERS_SECRET_KEY", ""), code)
-        logger.info("Fyers headless login: OK (token ...{})", token[-6:])
-        return True
-    except Exception as exc:
-        logger.error("Fyers headless login FAILED: {}", exc)
         return False
 
 
@@ -111,12 +96,8 @@ def main() -> None:
     logger.info("-- 4. Groq AI --")
     groq_ok = check_groq() if "GROQ_API_KEY" not in missing else False
 
-    logger.info("-- 5. Fyers headless login --")
-    fyers_required = not any(k in missing for k in ["FYERS_FY_ID", "FYERS_PIN", "FYERS_TOTP_SECRET"])
-    fyers_ok = check_fyers_login() if fyers_required else False
-
     # Informational (non-fatal): NSE may block datacenter IPs; briefing degrades gracefully
-    logger.info("-- 6. FII/DII (NSE, informational) --")
+    logger.info("-- 5. FII/DII (NSE, informational) --")
     fii_ok = check_fii_dii()
     logger.info("  {} fii/dii (non-fatal)", "✅" if fii_ok else "⚠️")
 
@@ -126,7 +107,6 @@ def main() -> None:
         "data": data_ok,
         "telegram": tg_ok,
         "groq": groq_ok,
-        "fyers login": fyers_ok,
     }
     for name, ok in results.items():
         logger.info("  {} {}", "✅" if ok else "❌", name)

@@ -35,7 +35,10 @@
       "Bash(curl -s http://127.0.0.1:8000/api/health)",
       "Bash(curl -s -o /dev/null -w \"vite HTTP %{http_code}\\\\n\" http://localhost:5173/)",
       "Read(//c/Arnav/.tmp/**)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(python -c \"import dashboard, data.fetcher, tools.preflight, scheduler, backend.main; print\\('all core modules import OK'\\)\")",
+      "Bash(grep -viE \"futurewarning|^  |chained|pandas|setting|intermediate|see the|behaviour|use \\\\`|a typical|No runtime|MemoryCache\")",
+      "Bash(npx tsc *)"
     ]
   }
 }

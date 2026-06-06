@@ -16,15 +16,16 @@ Outputs go to **Telegram + Email (PDF)** — already configured.
 
 ## Schedule (all Mon–Fri, IST)
 
-| Job | IST | UTC cron | Fyers login? | Data |
-|---|---|---|---|---|
-| Heartbeat + Morning Briefing | 08:30 | `0 3 * * 1-5` | yes | Fyers→yfinance |
-| Pre-Market Tasks | 09:15 | `45 3 * * 1-5` | yes | Fyers→yfinance |
-| Intraday Scanner | every 15 min, 09:30–15:15 | `*/15 4-9 * * 1-5` | **no** | yfinance |
-| Post-Market Summary | 15:35 | `5 10 * * 1-5` | no | — |
+| Job | IST | UTC cron | Data |
+|---|---|---|---|
+| Heartbeat + Morning Briefing | 08:30 | `3 3 * * 1-5` | yfinance + free NSE |
+| Pre-Market Tasks | 09:15 | `47 3 * * 1-5` | yfinance |
+| Intraday Scanner | every 15 min, 09:30–15:15 | `*/15 4-9 * * 1-5` | yfinance |
+| Post-Market Summary | 15:35 | `7 10 * * 1-5` | — |
 
-> The intraday scanner uses yfinance, so it needs **no Fyers login** — TOTP runs
-> only 3×/day max, which is safe.
+> All data comes from free sources (yfinance + public NSE endpoints) — no broker
+> login required. For on-time delivery, trigger via repository_dispatch from
+> cron-job.org (see below) — GitHub's own cron runs late.
 
 ## One-Time Setup
 
@@ -41,25 +42,10 @@ Add each of these (values from your local `.env`):
 | Secret | Purpose |
 |---|---|
 | `GROQ_API_KEY` | AI briefing/commentary |
-| `FYERS_CLIENT_ID` | e.g. `ABCD1234-100` |
-| `FYERS_SECRET_KEY` | app secret |
-| `FYERS_REDIRECT_URI` | registered redirect URL |
-| `FYERS_FY_ID` | login id, e.g. `XA12345` |
-| `FYERS_PIN` | 4-digit trading PIN |
-| `FYERS_TOTP_SECRET` | **TOTP base32 secret** (see below) |
-| `SMTP_HOST` `SMTP_PORT` `SMTP_USERNAME` `SMTP_PASSWORD` | email |
-| `EMAIL_RECIPIENT` | where briefings are emailed |
-| `TELEGRAM_BOT_TOKEN` `TELEGRAM_CHAT_ID` | alerts |
+| `TELEGRAM_BOT_TOKEN` `TELEGRAM_CHAT_ID` | briefing + PDF delivery |
 
-> Never commit `.env`. It stays local; CI reads from Secrets.
-
-### 3. Capture your Fyers `FYERS_TOTP_SECRET`
-When you enable 2FA/TOTP on Fyers, it shows a QR code. The **base32 secret** behind
-that QR (the `secret=...` value, or the manual-entry key) is what goes into
-`FYERS_TOTP_SECRET`. Test locally:
-```bash
-python -m tools.fyers_auto_login   # should print "Fyers token refreshed (headless)"
-```
+> Never commit `.env`. It stays local; CI reads from Secrets. Briefings and PDFs
+> are delivered via Telegram (no email/broker credentials needed).
 
 ### 4. Verify
 - Actions tab → run **Morning Briefing** manually (`workflow_dispatch`).
