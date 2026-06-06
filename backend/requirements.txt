@@ -9,3 +9,4 @@ yfinance>=0.2.40
 requests>=2.31
 python-dotenv>=1.0
 loguru>=0.7
+fpdf2>=2.7.0        # briefing PDF for /api/briefing/telegram

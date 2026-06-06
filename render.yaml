@@ -1,0 +1,24 @@
+# Render Blueprint — one-click deploy of the AXIOM FastAPI backend.
+# In Render: New → Blueprint → connect this repo → it reads this file.
+services:
+  - type: web
+    name: axiom-api
+    runtime: python
+    plan: free
+    rootDir: .
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: TZ
+        value: Asia/Kolkata
+      - key: GROQ_API_KEY
+        sync: false          # set in Render dashboard
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false          # e.g. https://axiom-xxxx.vercel.app
