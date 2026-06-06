@@ -32,6 +32,15 @@ export const api = {
     get<{ symbol: string; poc: number; total_delta: number; bars: number; last: number; note: string; profile: { price: number; buy_vol: number; sell_vol: number; delta: number }[] }>(
       `/api/footprint?symbol=${encodeURIComponent(symbol)}&days=${days}`),
   scan: () => get<{ count: number; ist: string; results: { symbol: string; signals: string[]; close: number; rsi: number; adx: number; vol_ratio: number; macd_hist: number }[] }>("/api/scan"),
+  tasks: (session: string) => get<{ session: string; checklist: string }>(`/api/tasks?session=${encodeURIComponent(session)}`),
+  briefing: () => get<{ briefing: string; date: string }>("/api/briefing"),
+  sendBriefing: async (briefing: string) => {
+    const r = await fetch(`${BASE}/api/briefing/telegram`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ briefing }),
+    });
+    if (!r.ok) throw new Error(`send -> ${r.status}`);
+    return (await r.json()) as { sent: boolean; file: string };
+  },
   assistant: async (message: string, history: { role: string; text: string }[]) => {
     const r = await fetch(`${BASE}/api/assistant`, {
       method: "POST", headers: { "Content-Type": "application/json" },

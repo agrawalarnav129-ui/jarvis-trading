@@ -38,7 +38,9 @@
       "mcp__Claude_Preview__preview_start",
       "Bash(python -c \"import dashboard, data.fetcher, tools.preflight, scheduler, backend.main; print\\('all core modules import OK'\\)\")",
       "Bash(grep -viE \"futurewarning|^  |chained|pandas|setting|intermediate|see the|behaviour|use \\\\`|a typical|No runtime|MemoryCache\")",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(timeout 130 python -c ' *)",
+      "Bash(grep -viE \"futurewarning|^  out|chained|pandas 3|setting val|intermediate|see the|behaviour|use \\\\`|a typical|building inst|FII/DII fetch|possibly delisted|adj |df\\\\[\")"
     ]
   }
 }

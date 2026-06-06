@@ -270,6 +270,71 @@ def scan():
         raise HTTPException(status_code=503, detail="Scanner unavailable")
 
 
+@app.get("/api/tasks")
+def tasks(session: str = "pre-market"):
+    """AI-generated pre/post-market checklist."""
+    try:
+        from ai.brain import generate_task_list
+        from data.fetcher import load_universe
+        try:
+            n = len(load_universe())
+        except Exception:
+            n = 0
+        checklist = generate_task_list({
+            "session": session, "symbol_count": n, "market": "NSE",
+            "time": datetime.now(IST).strftime("%H:%M IST"),
+            "date": datetime.now(IST).strftime("%d %b %Y"),
+        })
+        return {"session": session, "checklist": checklist or ""}
+    except Exception as exc:
+        logger.exception("Tasks failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Checklist generation unavailable")
+
+
+@app.get("/api/briefing")
+def briefing():
+    """Generate the institutional morning briefing text (cross-asset context + AI)."""
+    try:
+        from ai.brain import generate_market_briefing
+        from data.market_context import build_briefing_context
+        context = build_briefing_context()
+        text = generate_market_briefing(context)
+        if not text:
+            raise HTTPException(status_code=503, detail="AI unavailable — check GROQ_API_KEY")
+        return {"briefing": text, "date": datetime.now(IST).strftime("%d %b %Y")}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("Briefing failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Briefing unavailable")
+
+
+class BriefingSend(BaseModel):
+    briefing: str
+
+
+@app.post("/api/briefing/telegram")
+def briefing_to_telegram(body: BriefingSend):
+    """Render the briefing to a branded PDF and send it to Telegram."""
+    try:
+        from pathlib import Path
+        from monitors.telegram_bot import send_document
+        from reports.pdf_generator import generate_text_report
+        out = ROOT / "data" / "reports"
+        out.mkdir(parents=True, exist_ok=True)
+        pdf = out / f"briefing_{datetime.now(IST).strftime('%Y%m%d_%H%M')}.pdf"
+        generate_text_report("AXIOM Morning Briefing", body.briefing, pdf)
+        ok, err = send_document(pdf, caption=f"📊 <b>AXIOM Morning Briefing — {datetime.now(IST).strftime('%d %b %Y')}</b>")
+        if not ok:
+            raise HTTPException(status_code=503, detail=f"Telegram send failed: {err}")
+        return {"sent": True, "file": pdf.name}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("Briefing->Telegram failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Send failed")
+
+
 @app.get("/")
 def root():
     return {"service": "AXIOM API", "docs": "/docs", "health": "/api/health"}

@@ -54,9 +54,15 @@ npm run dev                        # → http://localhost:5173
 `/api/news` · `/api/calendar` · `/api/fii-dii` · `/api/regime` · `/api/watchlist` ·
 `/api/screener`
 
-## Status
+## Status — all tabs live
 - ✅ Dashboard (live indices, regime, FII/DII, breadth, news, gainers/losers, calendar)
-- ✅ Screener, Watchlist (live from API)
-- ✅ Bottom nav (mobile-first) + live ticking IST clock
-- ⏳ Portfolio, Risk, Order Flow, Backtester, Live Scanner, Tasks, Reports, AI Assistant
-  — scaffolded as pages; being migrated from Streamlit next.
+- ✅ Screener · Watchlist · Risk Calculator · Backtester · Order Flow · Live Scanner
+- ✅ Trade Journal (Supabase + localStorage fallback)
+- ✅ Tasks & Checklist (AI) · Reports (briefing → Telegram PDF) · AI Assistant (Groq)
+- ✅ Bottom nav (mobile-first) + live ticking IST clock + error boundary
+- ✅ Fyers fully removed — data is yfinance + free NSE endpoints only
+
+### API endpoints
+clock · market/indices · market/movers · news · calendar · fii-dii · regime ·
+watchlist · screener · backtest · footprint · scan · tasks · briefing ·
+briefing/telegram (POST) · assistant (POST)
