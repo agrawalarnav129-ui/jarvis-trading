@@ -54,6 +54,46 @@ def fetch_indices() -> list[dict]:
     return out
 
 
+# Nifty 50 constituents (yfinance fallback when NSE blocks the datacenter IP)
+NIFTY50 = [
+    "RELIANCE", "HDFCBANK", "ICICIBANK", "INFY", "TCS", "ITC", "LT", "AXISBANK", "SBIN",
+    "BHARTIARTL", "KOTAKBANK", "HINDUNILVR", "BAJFINANCE", "ASIANPAINT", "MARUTI", "SUNPHARMA",
+    "TITAN", "ULTRACEMCO", "NESTLEIND", "WIPRO", "ONGC", "NTPC", "POWERGRID", "M&M", "TATAMOTORS",
+    "TATASTEEL", "JSWSTEEL", "ADANIENT", "ADANIPORTS", "COALINDIA", "HCLTECH", "TECHM", "BAJAJFINSV",
+    "GRASIM", "HDFCLIFE", "SBILIFE", "DRREDDY", "CIPLA", "BRITANNIA", "EICHERMOT", "HEROMOTOCO",
+    "BAJAJ-AUTO", "INDUSINDBK", "APOLLOHOSP", "TATACONSUM", "BPCL", "HINDALCO", "SHRIRAMFIN", "LTIM",
+]
+
+
+def _yf_gainers_losers(top_n: int) -> dict:
+    """Fallback: derive Nifty-50 gainers/losers via a single batched yfinance call."""
+    try:
+        import yfinance as yf
+        tickers = [s + ".NS" for s in NIFTY50]
+        data = yf.download(tickers, period="2d", interval="1d", group_by="ticker",
+                           auto_adjust=True, progress=False, threads=True)
+        rows = []
+        for s, t in zip(NIFTY50, tickers):
+            try:
+                df = data[t].dropna()
+                if len(df) < 2:
+                    continue
+                last, prev = float(df["Close"].iloc[-1]), float(df["Close"].iloc[-2])
+                rows.append({"symbol": s, "ltp": round(last, 2),
+                             "change": round(last - prev, 2),
+                             "pct": round((last - prev) / prev * 100, 2)})
+            except Exception:
+                continue
+        if not rows:
+            return {"available": False, "note": "yfinance fallback returned no data"}
+        rows.sort(key=lambda x: x["pct"], reverse=True)
+        return {"available": True, "category": "NIFTY50", "source": "yfinance",
+                "gainers": rows[:top_n], "losers": list(reversed(rows[-top_n:]))}
+    except Exception as exc:
+        logger.warning("yfinance gainers/losers fallback failed: {}", exc)
+        return {"available": False, "note": f"unavailable ({type(exc).__name__})"}
+
+
 def _nse_session() -> requests.Session:
     s = requests.Session()
     s.headers.update(_HEADERS)
@@ -100,8 +140,9 @@ def fetch_gainers_losers(category: str = "NIFTY", top_n: int = 5) -> dict:
         gainers = _parse_variation(_cat(gj), top_n)
         losers = _parse_variation(_cat(lj), top_n)
         if not gainers and not losers:
-            return {"available": False, "note": "NSE returned no variation data"}
+            logger.info("NSE variations empty — using yfinance fallback")
+            return _yf_gainers_losers(top_n)
         return {"available": True, "category": category, "gainers": gainers, "losers": losers}
     except Exception as exc:
-        logger.warning("NSE gainers/losers fetch failed: {}", exc)
-        return {"available": False, "note": f"NSE unavailable ({type(exc).__name__})"}
+        logger.warning("NSE gainers/losers blocked ({}); using yfinance fallback", type(exc).__name__)
+        return _yf_gainers_losers(top_n)

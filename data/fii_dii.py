@@ -88,5 +88,13 @@ def fetch_fii_dii(timeout: int = 12) -> dict:
         return out
 
     except Exception as exc:
-        logger.warning("FII/DII fetch failed: {}", exc)
+        logger.warning("FII/DII direct fetch failed ({}); trying cache", type(exc).__name__)
+        try:
+            from data.nse_cache import read_cache
+            cached = read_cache().get("fii_dii")
+            if cached and cached.get("available"):
+                cached = {**cached, "source": "NSE provisional (cached)"}
+                return cached
+        except Exception:
+            pass
         return {"available": False, "note": f"NSE FII/DII unavailable ({type(exc).__name__}) — confirm manually"}

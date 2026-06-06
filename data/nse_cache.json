@@ -1,0 +1,98 @@
+{
+  "updated": "2026-06-06T13:40:47.733725Z",
+  "fii_dii": {
+    "available": true,
+    "source": "NSE provisional",
+    "date": "05-Jun-2026",
+    "fii": {
+      "buy": 11044.57,
+      "sell": 19820.82,
+      "net": -8776.25
+    },
+    "dii": {
+      "buy": 22779.32,
+      "sell": 13645.75,
+      "net": 9133.57
+    },
+    "net_combined": 357.32
+  },
+  "corporate": [
+    {
+      "date": "2026-06-07",
+      "date_str": "07 Jun",
+      "symbol": "BCG",
+      "company": "Brightcom Group Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-08",
+      "date_str": "08 Jun",
+      "symbol": "AYE",
+      "company": "Aye Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-08",
+      "date_str": "08 Jun",
+      "symbol": "SUMEETINDS",
+      "company": "Sumeet Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-09",
+      "date_str": "09 Jun",
+      "symbol": "HITECHCORP",
+      "company": "Hitech Corporation Limited",
+      "purpose": "Voluntary Delisting"
+    },
+    {
+      "date": "2026-06-09",
+      "date_str": "09 Jun",
+      "symbol": "SKYGOLD",
+      "company": "SKY GOLD AND DIAMONDS LIMITED",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-09",
+      "date_str": "09 Jun",
+      "symbol": "STANLEY",
+      "company": "Stanley Lifestyles Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-10",
+      "date_str": "10 Jun",
+      "symbol": "ASTRAMICRO",
+      "company": "Astra Microwave Products Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-10",
+      "date_str": "10 Jun",
+      "symbol": "POWERGRID",
+      "company": "Power Grid Corporation of India Limite",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-10",
+      "date_str": "10 Jun",
+      "symbol": "ZEEL",
+      "company": "Zee Entertainment Enterprises Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-15",
+      "date_str": "15 Jun",
+      "symbol": "SRPL",
+      "company": "Shree Ram Proteins Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-25",
+      "date_str": "25 Jun",
+      "symbol": "SURYODAY",
+      "company": "Suryoday Small Finance Bank Limited",
+      "purpose": "Fund Raising"
+    }
+  ]
+}

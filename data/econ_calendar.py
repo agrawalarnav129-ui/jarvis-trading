@@ -60,9 +60,17 @@ def fetch_corporate_events(days_ahead: int = 14, limit: int = 12) -> list[dict]:
                 "purpose": (row.get("purpose", "") or "")[:30],
             })
         out.sort(key=lambda x: x["date"])
-        return out[:limit]
+        if out:
+            return out[:limit]
     except Exception as exc:
-        logger.warning("Corporate events fetch failed: {}", exc)
+        logger.warning("Corporate events direct fetch failed ({}); trying cache", type(exc).__name__)
+
+    # Fallback to the GitHub-Actions-populated cache (NSE blocks datacenter IPs)
+    try:
+        from data.nse_cache import read_cache
+        cached = read_cache().get("corporate") or []
+        return [{k: v for k, v in e.items() if k != "date"} for e in cached][:limit]
+    except Exception:
         return []
 
 
