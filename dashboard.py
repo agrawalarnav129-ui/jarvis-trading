@@ -28,6 +28,10 @@ from ai.brain import (
     generate_trade_journal_summary,
 )
 from utils.timez import now_ist
+from data.news_feed import fetch_market_news
+from data.live_market import fetch_indices, fetch_gainers_losers
+from data.econ_calendar import fetch_calendar
+from data.fii_dii import fetch_fii_dii
 from analytics.footprint import APPROXIMATION_NOTE, build_footprint, fetch_intraday
 from backtest.backtest import BacktestConfig, backtest_symbol
 from data.fetcher import fetch_symbol_history, load_universe
@@ -775,12 +779,12 @@ def render_hud_header() -> None:
             f'<div>{_NC_LOGO_SVG}</div>'
             f'<div>'
             f'<div style="font-family:Share Tech Mono,monospace;font-size:0.45rem;'
-            f'color:rgba(255,179,0,0.55);letter-spacing:0.3em;text-transform:uppercase;">STARK INDUSTRIES · NEURA CAPITAL</div>'
+            f'color:rgba(255,179,0,0.55);letter-spacing:0.3em;text-transform:uppercase;">NEURA CAPITAL</div>'
             f'<div style="font-family:Orbitron,sans-serif;font-size:1.2rem;font-weight:900;'
             f'color:#00c8ff;letter-spacing:0.28em;'
             f'text-shadow:0 0 28px rgba(0,200,255,0.65),0 0 60px rgba(0,200,255,0.2);">A·X·I·O·M</div>'
             f'<div style="font-family:Share Tech Mono,monospace;font-size:0.47rem;'
-            f'color:rgba(0,200,255,0.32);letter-spacing:0.18em;margin-top:1px;">OS v5.0 · NSE INTELLIGENCE SYSTEM</div>'
+            f'color:rgba(0,200,255,0.32);letter-spacing:0.14em;margin-top:1px;">ADVANCED EXPERT INTELLIGENCE FOR OPERATIONS IN MARKET</div>'
             f'</div></div></div>',
             unsafe_allow_html=True,
         )
@@ -1037,60 +1041,209 @@ def _regime_badge(regime: str) -> str:
     )
 
 
-def show_overview() -> None:
-    # ── MARKET REGIME ──
-    section_header("Market Regime — Threat Assessment")
-    if st.button("◈ SCAN REGIME"):
-        with st.spinner("Classifying Nifty regime..."):
-            regime: RegimeResult = classify_regime()
-            st.session_state["regime"] = regime
+# ── Cached data fetchers (TTL avoids re-fetching on every interaction) ──
+@st.cache_data(ttl=120, show_spinner=False)
+def _cx_indices():
+    return fetch_indices()
 
-    regime: RegimeResult | None = st.session_state.get("regime")
-    if regime:
-        badge = _regime_badge(regime.regime)
-        nc_card(
-            f'<div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">'
-            f'<div><div class="nc-label">Regime</div><div style="margin-top:6px;">{badge}</div></div>'
-            f'<div><div class="nc-label">Nifty 50</div>'
-            f'<div style="font-family:Share Tech Mono,monospace;color:var(--text-primary);'
-            f'font-size:1.1rem;margin-top:4px;">{regime.nifty_close:,.2f}</div></div>'
-            f'<div><div class="nc-label">EMA 50</div>'
-            f'<div style="font-family:Share Tech Mono,monospace;color:var(--text-secondary);'
-            f'font-size:0.9rem;margin-top:4px;">{regime.ema50:,.2f}</div></div>'
-            f'<div><div class="nc-label">EMA 200</div>'
-            f'<div style="font-family:Share Tech Mono,monospace;color:var(--text-secondary);'
-            f'font-size:0.9rem;margin-top:4px;">{regime.ema200:,.2f}</div></div>'
-            f'<div><div class="nc-label">ADX</div>'
-            f'<div style="font-family:Share Tech Mono,monospace;color:var(--text-secondary);'
-            f'font-size:0.9rem;margin-top:4px;">{regime.adx_value:.1f}</div></div>'
-            f'<div><div class="nc-label">Max Positions</div>'
-            f'<div style="font-family:Share Tech Mono,monospace;color:var(--text-gold);'
-            f'font-size:0.9rem;margin-top:4px;">{regime.max_positions}</div></div>'
-            f'<div><div class="nc-label">Min R:R</div>'
-            f'<div style="font-family:Share Tech Mono,monospace;color:var(--text-gold);'
-            f'font-size:0.9rem;margin-top:4px;">{regime.min_rr}:1</div></div>'
+@st.cache_data(ttl=120, show_spinner=False)
+def _cx_gainers():
+    return fetch_gainers_losers("NIFTY", 6)
+
+@st.cache_data(ttl=300, show_spinner=False)
+def _cx_news():
+    return fetch_market_news(20)
+
+@st.cache_data(ttl=900, show_spinner=False)
+def _cx_calendar():
+    return fetch_calendar(14)
+
+@st.cache_data(ttl=600, show_spinner=False)
+def _cx_fii():
+    return fetch_fii_dii()
+
+
+def _index_strip(indices: list[dict]) -> str:
+    if not indices:
+        return ('<div style="color:var(--text-muted);font-family:Share Tech Mono,monospace;'
+                'font-size:0.7rem;padding:8px;">Index feed unavailable.</div>')
+    chips = []
+    for i in indices:
+        up = i["pct"] >= 0
+        col = "#00d68f" if up else "#e63946"
+        arrow = "▲" if up else "▼"
+        chips.append(
+            f'<div style="flex:1;min-width:150px;background:rgba(8,21,38,0.7);'
+            f'border:1px solid rgba(0,200,255,0.10);border-left:2px solid {col};'
+            f'border-radius:5px;padding:9px 13px;">'
+            f'<div style="font-family:Share Tech Mono,monospace;font-size:0.58rem;'
+            f'color:var(--text-secondary);letter-spacing:0.12em;">{i["name"]}</div>'
+            f'<div style="font-family:Orbitron,sans-serif;font-size:1.02rem;font-weight:700;'
+            f'color:var(--text-primary);margin-top:3px;">{i["last"]:,.2f}</div>'
+            f'<div style="font-family:Share Tech Mono,monospace;font-size:0.68rem;color:{col};'
+            f'margin-top:2px;">{arrow} {i["change"]:+,.2f} ({i["pct"]:+.2f}%)</div>'
             f'</div>'
-            f'<div style="margin-top:10px;font-family:Inter,sans-serif;font-size:0.76rem;'
-            f'color:var(--text-secondary);border-top:1px solid var(--border-subtle);'
-            f'padding-top:9px;">{regime.reason}</div>'
         )
+    return f'<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px;">{"".join(chips)}</div>'
 
-    # ── SYSTEM METRICS ──
-    section_header("System Status — AXIOM OS Diagnostics")
-    universe = load_universe()
-    trades = load_trade_journal(100)
-    metrics = generate_weekly_review(trades) if not trades.empty else {}
 
-    col1, col2, col3, col4, col5 = st.columns(5)
-    col1.metric("UNIVERSE", len(universe))
-    col2.metric("TOTAL TRADES", metrics.get("total_trades", 0))
-    col3.metric("WIN RATE", f"{metrics.get('win_rate', 0):.1f}%")
-    col4.metric("TOTAL P&L", f"₹{metrics.get('total_pnl', 0):,.0f}")
-    col5.metric("AVG P&L", f"₹{metrics.get('avg_pnl', 0):,.0f}")
+def _movers_table(rows: list[dict], up: bool) -> str:
+    col = "#00d68f" if up else "#e63946"
+    if not rows:
+        return ('<div style="color:var(--text-muted);font-family:Share Tech Mono,monospace;'
+                'font-size:0.66rem;padding:10px;">No data (market closed?).</div>')
+    out = []
+    for r in rows:
+        out.append(
+            f'<div style="display:flex;justify-content:space-between;align-items:center;'
+            f'padding:5px 8px;border-bottom:1px solid rgba(0,200,255,0.05);">'
+            f'<span style="font-family:Share Tech Mono,monospace;font-size:0.72rem;'
+            f'color:var(--text-primary);">{r["symbol"]}</span>'
+            f'<span style="font-family:Share Tech Mono,monospace;font-size:0.68rem;'
+            f'color:var(--text-secondary);">₹{r["ltp"]:,.1f}</span>'
+            f'<span style="font-family:Share Tech Mono,monospace;font-size:0.7rem;'
+            f'color:{col};min-width:58px;text-align:right;">{r["pct"]:+.2f}%</span>'
+            f'</div>'
+        )
+    return "".join(out)
+
+
+def _news_panel(news: list[dict]) -> str:
+    if not news:
+        return ('<div style="color:var(--text-muted);font-family:Share Tech Mono,monospace;'
+                'font-size:0.7rem;padding:10px;">News feed unavailable.</div>')
+    items = []
+    for n in news:
+        link = n.get("link") or "#"
+        items.append(
+            f'<a href="{link}" target="_blank" style="text-decoration:none;display:block;'
+            f'padding:7px 4px;border-bottom:1px solid rgba(0,200,255,0.05);">'
+            f'<div style="font-family:Inter,sans-serif;font-size:0.76rem;color:var(--text-primary);'
+            f'line-height:1.35;">{n["title"]}</div>'
+            f'<div style="font-family:Share Tech Mono,monospace;font-size:0.56rem;'
+            f'color:var(--text-muted);margin-top:3px;letter-spacing:0.05em;">'
+            f'{n["source"]} · {n["published_str"]}</div></a>'
+        )
+    return (f'<div style="max-height:430px;overflow-y:auto;padding-right:4px;">{"".join(items)}</div>')
+
+
+def _calendar_panel(cal: dict) -> str:
+    out = ['<div style="max-height:430px;overflow-y:auto;padding-right:4px;">']
+    macro = cal.get("macro", [])
+    if macro:
+        out.append('<div class="nc-label" style="margin:2px 0 6px;">MACRO &amp; MARKET</div>')
+        for e in macro:
+            ic = {"HIGH": "#e63946", "MED": "#FFB300"}.get(e.get("impact"), "#5a94bc")
+            out.append(
+                f'<div style="padding:5px 4px;border-bottom:1px solid rgba(0,200,255,0.05);">'
+                f'<div style="display:flex;justify-content:space-between;">'
+                f'<span style="font-family:Inter,sans-serif;font-size:0.74rem;color:var(--text-primary);">{e["event"]}</span>'
+                f'<span style="font-family:Share Tech Mono,monospace;font-size:0.62rem;color:{ic};">{e["date_str"]}</span></div>'
+                f'<div style="font-family:Share Tech Mono,monospace;font-size:0.55rem;color:var(--text-muted);margin-top:2px;">{e["note"]}</div>'
+                f'</div>'
+            )
+    corp = cal.get("corporate", [])
+    out.append('<div class="nc-label" style="margin:12px 0 6px;">RESULTS &amp; BOARD MEETINGS</div>')
+    if corp:
+        for e in corp:
+            out.append(
+                f'<div style="display:flex;justify-content:space-between;align-items:center;'
+                f'padding:5px 4px;border-bottom:1px solid rgba(0,200,255,0.05);">'
+                f'<div><span style="font-family:Share Tech Mono,monospace;font-size:0.72rem;color:var(--text-primary);">{e["symbol"]}</span>'
+                f'<span style="font-family:Inter,sans-serif;font-size:0.6rem;color:var(--text-muted);margin-left:6px;">{e["purpose"]}</span></div>'
+                f'<span style="font-family:Share Tech Mono,monospace;font-size:0.62rem;color:var(--text-gold);">{e["date_str"]}</span></div>'
+            )
+    else:
+        out.append('<div style="color:var(--text-muted);font-family:Share Tech Mono,monospace;font-size:0.64rem;padding:6px;">No upcoming events.</div>')
+    out.append("</div>")
+    return "".join(out)
+
+
+def show_overview() -> None:
+    # ── LIVE INDEX STRIP ──
+    section_header("Market Pulse — Live Indices")
+    indices = _cx_indices()
+    st.markdown(_index_strip(indices), unsafe_allow_html=True)
+
+    # ── REGIME + FII/DII + BREADTH ──
+    rc1, rc2, rc3 = st.columns([1.4, 1, 1])
+    with rc1:
+        regime: RegimeResult | None = st.session_state.get("regime")
+        if st.button("◈ SCAN REGIME"):
+            with st.spinner("Classifying Nifty regime..."):
+                regime = classify_regime()
+                st.session_state["regime"] = regime
+        if regime:
+            badge = _regime_badge(regime.regime)
+            nc_card(
+                f'<div class="nc-label">MARKET REGIME</div><div style="margin:8px 0;">{badge}</div>'
+                f'<div style="font-family:Share Tech Mono,monospace;font-size:0.68rem;color:var(--text-secondary);">'
+                f'ADX {regime.adx_value:.1f} · Max Pos {regime.max_positions} · Min R:R {regime.min_rr}:1</div>'
+            )
+        else:
+            nc_card('<div class="nc-label">MARKET REGIME</div>'
+                    '<div style="font-family:Share Tech Mono,monospace;font-size:0.7rem;color:var(--text-muted);margin-top:8px;">Click SCAN REGIME.</div>')
+    with rc2:
+        fii = _cx_fii()
+        if fii.get("available"):
+            fnet = fii.get("fii", {}).get("net", 0)
+            dnet = fii.get("dii", {}).get("net", 0)
+            fc = "#00d68f" if fnet >= 0 else "#e63946"
+            dc = "#00d68f" if dnet >= 0 else "#e63946"
+            nc_card(
+                f'<div class="nc-label">FII / DII FLOWS (₹ Cr) · {fii.get("date","")}</div>'
+                f'<div style="display:flex;gap:18px;margin-top:8px;">'
+                f'<div><div style="font-family:Share Tech Mono,monospace;font-size:0.6rem;color:var(--text-secondary);">FII</div>'
+                f'<div style="font-family:Orbitron;font-size:0.92rem;color:{fc};">{fnet:+,.0f}</div></div>'
+                f'<div><div style="font-family:Share Tech Mono,monospace;font-size:0.6rem;color:var(--text-secondary);">DII</div>'
+                f'<div style="font-family:Orbitron;font-size:0.92rem;color:{dc};">{dnet:+,.0f}</div></div></div>'
+            )
+        else:
+            nc_card('<div class="nc-label">FII / DII FLOWS</div><div style="font-family:Share Tech Mono,monospace;font-size:0.66rem;color:var(--text-muted);margin-top:8px;">Confirm manually.</div>')
+    with rc3:
+        gl = _cx_gainers()
+        if gl.get("available"):
+            nc_card(
+                f'<div class="nc-label">NIFTY BREADTH</div>'
+                f'<div style="display:flex;gap:14px;margin-top:8px;">'
+                f'<div><div style="font-family:Share Tech Mono,monospace;font-size:0.6rem;color:var(--text-secondary);">Gainers</div>'
+                f'<div style="font-family:Orbitron;font-size:0.92rem;color:#00d68f;">{len(gl.get("gainers",[]))}+</div></div>'
+                f'<div><div style="font-family:Share Tech Mono,monospace;font-size:0.6rem;color:var(--text-secondary);">Losers</div>'
+                f'<div style="font-family:Orbitron;font-size:0.92rem;color:#e63946;">{len(gl.get("losers",[]))}+</div></div></div>'
+            )
+        else:
+            nc_card('<div class="nc-label">NIFTY BREADTH</div><div style="font-family:Share Tech Mono,monospace;font-size:0.66rem;color:var(--text-muted);margin-top:8px;">Market closed.</div>')
+
+    # ── MAIN GRID: NEWS | GAINERS/LOSERS | CALENDAR ──
+    st.markdown("<br>", unsafe_allow_html=True)
+    g_news, g_mid, g_cal = st.columns([1.25, 1.5, 1.25])
+
+    with g_news:
+        section_header("Market News")
+        nc_card(_news_panel(_cx_news()))
+
+    with g_mid:
+        section_header("Top Gainers & Losers · NIFTY")
+        gl = _cx_gainers()
+        mc1, mc2 = st.columns(2)
+        with mc1:
+            st.markdown('<div class="nc-label" style="color:#00d68f;margin-bottom:4px;">▲ GAINERS</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="nc-card" style="padding:6px;">{_movers_table(gl.get("gainers", []), True)}</div>', unsafe_allow_html=True)
+        with mc2:
+            st.markdown('<div class="nc-label" style="color:#e63946;margin-bottom:4px;">▼ LOSERS</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="nc-card" style="padding:6px;">{_movers_table(gl.get("losers", []), False)}</div>', unsafe_allow_html=True)
+        if st.button("↻ Refresh market data"):
+            _cx_indices.clear(); _cx_gainers.clear(); _cx_fii.clear()
+            st.rerun()
+
+    with g_cal:
+        section_header("Economic & Events Calendar")
+        nc_card(_calendar_panel(_cx_calendar()))
 
     # ── PRICE CHART ──
     st.markdown("<br>", unsafe_allow_html=True)
     section_header("Price Action Terminal — OHLCV Analysis")
+    universe = load_universe()
     c1, c2, c3 = st.columns([2, 1, 1])
     with c1:
         symbol = st.selectbox("SYMBOL", universe["symbol"].tolist(), index=0)
@@ -1891,8 +2044,8 @@ def show_reports() -> None:
 
 
 def show_axiom_command() -> None:
-    """F.R.I.D.A.Y. — AI command interface."""
-    section_header("F.R.I.D.A.Y. — Artificial Intelligence Interface")
+    """AXIOM AI command interface."""
+    section_header("AXIOM AI Assistant — Intelligence Interface")
 
     st.markdown(
         '<div style="font-family:Share Tech Mono,monospace;font-size:0.6rem;color:#234460;'
@@ -1927,17 +2080,18 @@ def show_axiom_command() -> None:
 
     if run and command:
         st.session_state["axiom_cmd_log"].append(command)
-        with st.spinner("F.R.I.D.A.Y. processing command..."):
+        with st.spinner("AXIOM processing command..."):
             history_ctx = "\n".join(
                 [f"User: {h['user']}\nAXIOM: {h['response']}" for h in st.session_state["axiom_history"][-6:]]
             )
             prompt = (
                 f"Session context (last exchanges):\n{history_ctx}\n\n"
                 f"User command: {command}\n\n"
-                "Respond as AXIOM (Stark Industries AI). Begin responses with 'Sir,' where appropriate. "
+                "Respond as AXIOM — Advanced eXpert Intelligence for Operations in Market, "
+                "an institutional NSE trading assistant. "
                 "Use institutional precision. If asked to analyse a stock, use the 9-section format. "
                 "If asked to brief, give MARKET PULSE → NIFTY OUTLOOK → SECTOR WATCH → STOCKS ON RADAR → AXIOM VERDICT. "
-                "Be direct, confident, slightly sardonic — like Tony Stark's AI. No fluff."
+                "Be direct, analytical and professional. No fluff."
             )
             from ai.brain import generate_commentary
             response = generate_commentary(prompt)
@@ -2168,18 +2322,18 @@ def show_backtest() -> None:
 # ─────────────────────────────────────────────────────────────────
 
 _NAV_ITEMS = [
-    ("COMMAND CENTER",     "▸", "Market overview, regime, AI briefing"),
-    ("TARGET ACQUISITION", "▸", "NSE universe stock scanner"),
-    ("ASSET ARMOR",        "▸", "Live Fyers positions & P&L"),
-    ("STRIKE LIST",        "▸", "Grade A/B watchlist candidates"),
-    ("DAMAGE ASSESSMENT",  "▸", "Position sizing & R:R calculator"),
-    ("MISSION LOG",        "▸", "Trade history & analytics"),
-    ("ORDER FLOW",         "▸", "Footprint / order-flow profile"),
-    ("WAR GAMES",          "▸", "Strategy backtester & simulation"),
-    ("BRIEFING DOSSIER",   "▸", "Pre/post market checklists"),
-    ("TACTICAL FEED",      "▸", "Live 15-min intraday scanner"),
-    ("INTEL ARCHIVE",      "▸", "PDF reports & email"),
-    ("F.R.I.D.A.Y.",       "▸", "AI command interface"),
+    ("Dashboard",        "▸", "Live market, news, calendar & briefing"),
+    ("Stock Screener",   "▸", "NSE universe scanner & scoring"),
+    ("Portfolio",        "▸", "Live Fyers positions & P&L"),
+    ("Watchlist",        "▸", "Grade A/B candidates"),
+    ("Risk Calculator",  "▸", "Position sizing & R:R"),
+    ("Trade Journal",    "▸", "Trade history & analytics"),
+    ("Order Flow",       "▸", "Footprint / order-flow profile"),
+    ("Backtester",       "▸", "Strategy backtesting & simulation"),
+    ("Live Scanner",     "▸", "Intraday 15-min signal scanner"),
+    ("Tasks & Checklist","▸", "Pre/post-market checklists"),
+    ("Reports",          "▸", "PDF reports & exports"),
+    ("AI Assistant",     "▸", "AXIOM AI command interface"),
 ]
 
 
@@ -2205,11 +2359,11 @@ def render_sidebar() -> str:
             f'{_NC_LOGO_SVG}</div>'
             f'<div>'
             f'<div style="font-family:Share Tech Mono,monospace;font-size:0.44rem;'
-            f'color:rgba(255,179,0,0.5);letter-spacing:0.28em;text-transform:uppercase;">Stark Industries</div>'
+            f'color:rgba(255,179,0,0.5);letter-spacing:0.28em;text-transform:uppercase;">Neura Capital</div>'
             f'<div style="font-family:Orbitron,sans-serif;font-size:0.95rem;font-weight:900;color:#00c8ff;'
             f'letter-spacing:0.22em;text-shadow:0 0 18px rgba(0,200,255,0.5);">AXIOM</div>'
             f'<div style="font-family:Share Tech Mono,monospace;font-size:0.42rem;'
-            f'color:rgba(0,200,255,0.28);letter-spacing:0.15em;margin-top:1px;">NEURA CAPITAL</div>'
+            f'color:rgba(0,200,255,0.28);letter-spacing:0.12em;margin-top:1px;">eXpert Intelligence · Markets</div>'
             f'</div></div>'
             f'<div style="background:rgba(0,0,0,0.4);border:1px solid rgba(0,200,255,0.07);'
             f'border-radius:4px;padding:8px 12px;margin-bottom:4px;">'
@@ -2229,7 +2383,7 @@ def render_sidebar() -> str:
             f'<div style="height:1px;background:linear-gradient(90deg,transparent,rgba(0,200,255,0.12) 50%,transparent);margin:0 16px 8px;"></div>'
             f'<div style="padding:0 18px 4px;">'
             f'<span style="font-family:Share Tech Mono,monospace;font-size:0.55rem;'
-            f'color:#234460;letter-spacing:0.2em;text-transform:uppercase;">[ SUIT MODULES ]</span>'
+            f'color:#234460;letter-spacing:0.2em;text-transform:uppercase;">[ NAVIGATION ]</span>'
             f'</div>',
             unsafe_allow_html=True,
         )
@@ -2247,8 +2401,8 @@ def render_sidebar() -> str:
             '<div style="font-family:Share Tech Mono,monospace;font-size:0.52rem;'
             'color:#1a3850;text-align:center;line-height:2;letter-spacing:0.06em;">'
             'AXIOM OS v5.0 · GROQ / LLAMA-3.3<br>'
-            '"SOMETIMES YOU GOTTA RUN BEFORE<br>YOU CAN WALK." — T. STARK<br>'
-            '© 2026 NEURA CAPITAL · CLASSIFIED'
+            'ADVANCED EXPERT INTELLIGENCE<br>FOR OPERATIONS IN MARKET<br>'
+            '© 2026 NEURA CAPITAL · CONFIDENTIAL'
             '</div></div>',
             unsafe_allow_html=True,
         )
@@ -2277,7 +2431,7 @@ def _bridge_streamlit_secrets() -> None:
 def main() -> None:
     _bridge_streamlit_secrets()
     st.set_page_config(
-        page_title="AXIOM OS · Stark Industries",
+        page_title="AXIOM · Neura Capital",
         page_icon="⚡",
         layout="wide",
         initial_sidebar_state="expanded",
@@ -2289,18 +2443,18 @@ def main() -> None:
     page = render_sidebar()
 
     p = page.strip().upper()
-    if   "COMMAND"  in p: show_overview()
-    elif "TARGET"   in p: show_screener()
-    elif "ASSET"    in p: show_portfolio()
-    elif "STRIKE"   in p: show_watchlist()
-    elif "DAMAGE"   in p: show_risk_calculator()
-    elif "MISSION"  in p: show_trade_journal()
-    elif "ORDER"    in p: show_footprint()
-    elif "WAR"      in p: show_backtest()
-    elif "BRIEFING" in p: show_tasks()
-    elif "TACTICAL" in p: show_monitor()
-    elif "INTEL"    in p: show_reports()
-    elif "F.R.I"    in p: show_axiom_command()
+    if   "DASHBOARD" in p: show_overview()
+    elif "SCREENER"  in p: show_screener()
+    elif "PORTFOLIO" in p: show_portfolio()
+    elif "WATCHLIST" in p: show_watchlist()
+    elif "RISK"      in p: show_risk_calculator()
+    elif "JOURNAL"   in p: show_trade_journal()
+    elif "ORDER"     in p: show_footprint()
+    elif "BACKTEST"  in p: show_backtest()
+    elif "SCANNER"   in p: show_monitor()
+    elif "TASK"      in p: show_tasks()
+    elif "REPORT"    in p: show_reports()
+    elif "ASSISTANT" in p: show_axiom_command()
 
 
 if __name__ == "__main__":
