@@ -397,6 +397,52 @@ def analysis(symbol: str):
         raise HTTPException(status_code=503, detail="Analysis unavailable")
 
 
+_sec_cache = TTLCache(maxsize=1, ttl=180)
+
+
+@app.get("/api/sectors")
+def sectors():
+    """Sector performance (1-day %) for the heatmap — yfinance-based."""
+    if "v" in _sec_cache:
+        return _sec_cache["v"]
+    from data.market_context import fetch_sector_performance
+    perf = fetch_sector_performance()
+    items = sorted([{"sector": k, "pct": v} for k, v in perf.items()], key=lambda x: x["pct"], reverse=True)
+    out = {"sectors": items}
+    _sec_cache["v"] = out
+    return out
+
+
+@app.get("/api/quote")
+def quote(symbols: str):
+    """Batch last price + day % for a comma-separated symbol list (yfinance)."""
+    try:
+        import yfinance as yf
+        syms = [s.strip().upper() for s in symbols.split(",") if s.strip()][:40]
+        tickers = [s if s.endswith(".NS") else s + ".NS" for s in syms]
+        if not tickers:
+            return {"quotes": []}
+        data = yf.download(tickers, period="2d", interval="1d", group_by="ticker",
+                           auto_adjust=True, progress=False, threads=True)
+        out = []
+        for s, t in zip(syms, tickers):
+            try:
+                df = data[t].dropna() if len(tickers) > 1 else data.dropna()
+                if len(df) < 1:
+                    continue
+                last = float(df["Close"].iloc[-1])
+                prev = float(df["Close"].iloc[-2]) if len(df) > 1 else last
+                out.append({"symbol": s.replace(".NS", ""), "ltp": round(last, 2),
+                            "change": round(last - prev, 2),
+                            "pct": round((last - prev) / prev * 100, 2) if prev else 0.0})
+            except Exception:
+                continue
+        return {"quotes": out}
+    except Exception as exc:
+        logger.warning("Quote failed: {}", exc)
+        return {"quotes": []}
+
+
 @app.get("/")
 def root():
     return {"service": "AXIOM API", "docs": "/docs", "health": "/api/health"}

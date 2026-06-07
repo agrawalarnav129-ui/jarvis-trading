@@ -54,7 +54,11 @@
       "Bash(python -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
       "Bash(python .tmp/gen_icons.py)",
       "Bash(awk '{print $NF, $5\"B\"}')",
-      "Bash(grep -vE \"^\\\\[2m|Consider|Using dynamic|Use build|Adjust|rollup|^\\\\s*$\")"
+      "Bash(grep -vE \"^\\\\[2m|Consider|Using dynamic|Use build|Adjust|rollup|^\\\\s*$\")",
+      "Bash(git -c commit.gpgsign=false commit -q -m 'Make parquet caching best-effort \\(cloud backend has no pyarrow\\) *)",
+      "Bash(curl -s --max-time 90 '__TRACKED_VAR__/api/backtest?symbol=RELIANCE&rr=2.5')",
+      "Bash(python -c 'import sys,json *)",
+      "Bash(grep -vE \"^\\\\[2m|Consider|Using dynamic|Use build|Adjust|rollup|gzip|precache|files gen|dist/|workbox|^\\\\s*$\")"
     ]
   }
 }

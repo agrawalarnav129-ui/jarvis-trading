@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Sparkles, Loader2 } from "lucide-react";
+import { ArrowLeft, Sparkles, Loader2, Star } from "lucide-react";
+import { listWatch, addWatch, removeWatch } from "../lib/watchlist";
 import { ComposedChart, Area, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid } from "recharts";
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
@@ -16,6 +17,13 @@ export default function StockDetail() {
   const { data, loading, error } = useFetch(() => api.history(symbol, period), [symbol, period]);
   const [ai, setAi] = useState<string | null>(null);
   const [aiLoading, setAiLoading] = useState(false);
+  const clean0 = symbol.replace(".NS", "").toUpperCase();
+  const [watched, setWatched] = useState(false);
+  useEffect(() => { listWatch().then((l) => setWatched(l.includes(clean0))); }, [clean0]);
+  const toggleWatch = async () => {
+    if (watched) { await removeWatch(clean0); setWatched(false); }
+    else { await addWatch(clean0); setWatched(true); }
+  };
 
   const analyze = async () => {
     setAiLoading(true);
@@ -47,7 +55,11 @@ export default function StockDetail() {
                 ₹{fmt(data.last)} <span className="ml-1">{arrow(data.pct)} {fmt(data.change)} ({data.pct >= 0 ? "+" : ""}{fmt(data.pct)}%)</span>
               </div>
             </div>
-            <div className="flex gap-1">
+            <div className="flex items-center gap-1.5">
+              <button onClick={toggleWatch} aria-label="Toggle watchlist"
+                className={`p-1.5 rounded-md cursor-pointer transition-colors ${watched ? "text-gold" : "text-faint hover:text-gold"}`}>
+                <Star size={16} fill={watched ? "#fbbf24" : "none"} />
+              </button>
               {PERIODS.map((p) => (
                 <button key={p} onClick={() => setPeriod(p)}
                   className={`px-2.5 py-1 rounded-md text-[0.65rem] font-mono cursor-pointer transition-colors ${period === p ? "bg-brand/20 text-brand" : "text-faint hover:text-txt"}`}>{p}</button>

@@ -1,4 +1,5 @@
 import Clock from "./Clock";
+import AuthMenu from "./AuthMenu";
 
 export default function TopBar() {
   return (
@@ -21,7 +22,10 @@ export default function TopBar() {
             </div>
           </div>
         </div>
-        <Clock />
+        <div className="flex items-center gap-3">
+          <Clock />
+          <AuthMenu />
+        </div>
       </div>
     </header>
   );

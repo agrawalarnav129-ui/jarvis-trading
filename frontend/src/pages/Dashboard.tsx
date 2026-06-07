@@ -128,6 +128,27 @@ function CalendarPanel() {
   );
 }
 
+function SectorHeatmap() {
+  const { data, loading } = useFetch(() => api.sectors(), [], 180_000);
+  if (loading) return <Skeleton h={90} />;
+  const items = data?.sectors ?? [];
+  if (!items.length) return <Empty msg="Sector data unavailable." />;
+  const tile = (pct: number) => {
+    const a = Math.min(Math.abs(pct) / 3, 1) * 0.55 + 0.08;
+    return pct >= 0 ? `rgba(34,197,94,${a})` : `rgba(239,68,68,${a})`;
+  };
+  return (
+    <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+      {items.map((s) => (
+        <div key={s.sector} className="rounded-lg p-2.5 border border-line/60" style={{ background: tile(s.pct) }}>
+          <div className="font-mono text-[0.62rem] text-txt/90 truncate">{s.sector}</div>
+          <div className={`font-display text-sm mt-1 ${s.pct >= 0 ? "text-up" : "text-down"}`}>{s.pct >= 0 ? "+" : ""}{fmt(s.pct)}%</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Dashboard() {
   const movers = useFetch(() => api.movers(), [], 90_000);
   const go = useSymbolNav();
@@ -135,6 +156,7 @@ export default function Dashboard() {
     <div>
       <Section title="Market Pulse · Live Indices"><IndexStrip /></Section>
       <Section title="Status"><StatusRow /></Section>
+      <Section title="Sector Heatmap"><SectorHeatmap /></Section>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
         <div className="lg:col-span-4">
