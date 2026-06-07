@@ -16,10 +16,46 @@ GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama-3.3-70b-versatile"
 
 _AXIOM_SYSTEM = (
-    "You are AXIOM — the AI trading assistant for Neura Capital. "
+    "You are AXIOM — Advanced eXpert Intelligence for Operations in Market. "
     "You analyse NSE markets with institutional precision. "
     "Tone: direct, analytical, no fluff. Think like a hedge fund PM."
 )
+
+
+def call_groq_stream(system: str, user: str, max_tokens: int = 900):
+    """Yield Groq response tokens as they arrive (Server-Sent Events)."""
+    import json as _json
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        yield ""
+        return
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+    payload = {
+        "model": GROQ_MODEL,
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+        "max_tokens": max_tokens, "temperature": 0.4, "stream": True,
+    }
+    try:
+        with requests.post(GROQ_API_URL, headers=headers, json=payload, stream=True, timeout=60) as r:
+            if r.status_code != 200:
+                logger.error("Groq stream error {}: {}", r.status_code, r.text[:160])
+                yield ""
+                return
+            for raw in r.iter_lines():
+                if not raw or not raw.startswith(b"data: "):
+                    continue
+                data = raw[6:]
+                if data == b"[DONE]":
+                    break
+                try:
+                    delta = _json.loads(data)["choices"][0]["delta"].get("content", "")
+                    if delta:
+                        yield delta
+                except Exception:
+                    continue
+    except Exception as exc:
+        logger.exception("Groq stream failed: {}", exc)
+        yield ""
 
 
 def _call_groq(system: str, user: str, max_tokens: int = 1024) -> str:

@@ -1,7 +1,8 @@
+import { Bell, BellOff } from "lucide-react";
 import Clock from "./Clock";
 import AuthMenu from "./AuthMenu";
 
-export default function TopBar() {
+export default function TopBar({ alertsOn, onToggleAlerts }: { alertsOn?: boolean; onToggleAlerts?: () => void }) {
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-base/85 backdrop-blur-lg">
       <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
@@ -22,8 +23,14 @@ export default function TopBar() {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           <Clock />
+          {onToggleAlerts && (
+            <button onClick={onToggleAlerts} title={alertsOn ? "Signal alerts on" : "Enable signal alerts"}
+              className={`p-1.5 rounded-lg border cursor-pointer transition-colors ${alertsOn ? "border-brand/40 bg-brand/15 text-brand" : "border-line bg-elevated text-faint hover:text-txt"}`}>
+              {alertsOn ? <Bell size={14} /> : <BellOff size={14} />}
+            </button>
+          )}
           <AuthMenu />
         </div>
       </div>

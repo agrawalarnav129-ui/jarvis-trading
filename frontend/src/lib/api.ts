@@ -55,6 +55,21 @@ export const api = {
     if (!r.ok) throw new Error(`assistant -> ${r.status}`);
     return (await r.json()) as { reply: string };
   },
+  // Streaming chat — calls onToken for each chunk as it arrives.
+  assistantStream: async (message: string, history: { role: string; text: string }[], onToken: (t: string) => void) => {
+    const r = await fetch(`${BASE}/api/assistant/stream`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, history }),
+    });
+    if (!r.ok || !r.body) throw new Error(`stream -> ${r.status}`);
+    const reader = r.body.getReader();
+    const dec = new TextDecoder();
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      onToken(dec.decode(value, { stream: true }));
+    }
+  },
 };
 
 export { BASE as API_BASE };

@@ -443,6 +443,23 @@ def quote(symbols: str):
         return {"quotes": []}
 
 
+@app.post("/api/assistant/stream")
+def assistant_stream(body: AssistantBody):
+    """Streaming AXIOM chat — yields tokens as plain text as they arrive."""
+    from fastapi.responses import StreamingResponse
+    from ai.brain import _AXIOM_SYSTEM, call_groq_stream
+    ctx = "\n".join(f"{m.get('role')}: {m.get('text')}" for m in body.history[-6:])
+    user = (f"Conversation so far:\n{ctx}\n\n" if ctx else "") + \
+           f"User: {body.message}\n\nRespond as AXIOM — institutional NSE trading assistant. Be direct, analytical, professional."
+
+    def gen():
+        for tok in call_groq_stream(_AXIOM_SYSTEM, user):
+            yield tok
+
+    return StreamingResponse(gen(), media_type="text/plain; charset=utf-8",
+                             headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"})
+
+
 @app.get("/")
 def root():
     return {"service": "AXIOM API", "docs": "/docs", "health": "/api/health"}

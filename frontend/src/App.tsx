@@ -1,9 +1,11 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import TopBar from "./components/TopBar";
 import BottomNav from "./components/BottomNav";
 import ErrorBoundary from "./components/ErrorBoundary";
+import PullToRefresh from "./components/PullToRefresh";
+import { useAlertsToggle, useSignalAlerts } from "./lib/alerts";
 import Dashboard from "./pages/Dashboard"; // eager — it's the landing page
 
 const Screener = lazy(() => import("./pages/Screener"));
@@ -26,11 +28,16 @@ const Fallback = () => (
 
 export default function App() {
   const { pathname } = useLocation();
+  const [refreshKey, setRefreshKey] = useState(0);
+  const [alertsOn, toggleAlerts] = useAlertsToggle();
+  useSignalAlerts(alertsOn);
+
   return (
     <div className="min-h-screen flex flex-col">
-      <TopBar />
+      <TopBar alertsOn={alertsOn} onToggleAlerts={toggleAlerts} />
       <main className="flex-1 mx-auto w-full max-w-6xl px-3 sm:px-4 pt-4 pb-24">
-        <ErrorBoundary key={pathname}>
+        <PullToRefresh onRefresh={() => setRefreshKey((k) => k + 1)}>
+        <ErrorBoundary key={`${pathname}-${refreshKey}`}>
           <Suspense fallback={<Fallback />}>
             <Routes>
               <Route path="/" element={<Dashboard />} />
@@ -50,6 +57,7 @@ export default function App() {
             </Routes>
           </Suspense>
         </ErrorBoundary>
+        </PullToRefresh>
       </main>
       <BottomNav />
     </div>

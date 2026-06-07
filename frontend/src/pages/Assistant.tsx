@@ -14,14 +14,18 @@ export default function Assistant() {
     const text = input.trim();
     if (!text || busy) return;
     const history = msgs.slice(-6);
-    setMsgs((m) => [...m, { role: "user", text }]);
+    setMsgs((m) => [...m, { role: "user", text }, { role: "axiom", text: "" }]);
     setInput("");
     setBusy(true);
     try {
-      const { reply } = await api.assistant(text, history);
-      setMsgs((m) => [...m, { role: "axiom", text: reply }]);
+      let acc = "";
+      await api.assistantStream(text, history, (tok) => {
+        acc += tok;
+        setMsgs((m) => { const c = [...m]; c[c.length - 1] = { role: "axiom", text: acc }; return c; });
+      });
+      if (!acc) throw new Error("empty");
     } catch {
-      setMsgs((m) => [...m, { role: "axiom", text: "I couldn't reach the AI backend. Ensure the API is running and GROQ_API_KEY is set." }]);
+      setMsgs((m) => { const c = [...m]; c[c.length - 1] = { role: "axiom", text: "I couldn't reach the AI backend. Ensure the API is running and GROQ_API_KEY is set." }; return c; });
     } finally {
       setBusy(false);
     }
