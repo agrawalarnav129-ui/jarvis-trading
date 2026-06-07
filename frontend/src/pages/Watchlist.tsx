@@ -1,11 +1,13 @@
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { Section, Card, Empty, Skeleton } from "../components/ui";
+import { useSymbolNav } from "../components/SymbolLink";
 
 const gradeColor: Record<string, string> = { A: "text-up", B: "text-gold" };
 
 export default function Watchlist() {
   const { data, loading } = useFetch(() => api.watchlist(), []);
+  const go = useSymbolNav();
   if (loading) return <Section title="Watchlist"><Skeleton h={300} /></Section>;
   const rows = data?.watchlist ?? [];
   return (
@@ -13,7 +15,7 @@ export default function Watchlist() {
       {!rows.length ? <Empty msg="Watchlist empty — run the screener to populate." /> : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
           {rows.map((r: any, i: number) => (
-            <Card key={i} className="flex items-center justify-between hover:border-brand/40 transition-colors cursor-pointer">
+            <Card key={i} onClick={() => go(String(r.symbol))} className="flex items-center justify-between hover:border-brand/40 transition-colors cursor-pointer">
               <div>
                 <div className="font-mono text-sm text-txt">{String(r.symbol).replace(".NS", "")}</div>
                 <div className="label mt-1">Score {r.score} · RS20 {r.rs_20d}</div>

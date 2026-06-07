@@ -2,6 +2,7 @@ import { Radar, RefreshCw, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { api } from "../lib/api";
 import { Section, Card, Empty } from "../components/ui";
+import { useSymbolNav } from "../components/SymbolLink";
 import { fmt } from "../lib/format";
 
 const SIGNAL_STYLE: Record<string, string> = {
@@ -18,6 +19,7 @@ export default function LiveScanner() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
 
+  const go = useSymbolNav();
   const run = async () => {
     setLoading(true); setErr(null);
     try { setData(await api.scan()); }
@@ -45,7 +47,7 @@ export default function LiveScanner() {
           {withSignals.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-4">
               {withSignals.map((r: any) => (
-                <Card key={r.symbol} className="border-l-2 border-l-brand">
+                <Card key={r.symbol} onClick={() => go(r.symbol)} className="border-l-2 border-l-brand cursor-pointer hover:border-brand/70 transition-colors">
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-mono text-sm text-txt">{r.symbol}</span>
                     <span className="font-mono text-xs text-muted">₹{fmt(r.close, 1)}</span>

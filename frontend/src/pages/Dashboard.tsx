@@ -3,6 +3,7 @@ import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { fmt, fmtInt, signColor, arrow } from "../lib/format";
 import { Card, Section, Skeleton, Empty } from "../components/ui";
+import { useSymbolNav } from "../components/SymbolLink";
 
 function IndexStrip() {
   const { data, loading } = useFetch(() => api.indices(), [], 90_000);
@@ -67,12 +68,12 @@ function StatusRow() {
   );
 }
 
-function MoversTable({ rows, up }: { rows: { symbol: string; ltp: number; pct: number }[]; up: boolean }) {
+function MoversTable({ rows, up, onSym }: { rows: { symbol: string; ltp: number; pct: number }[]; up: boolean; onSym: (s: string) => void }) {
   if (!rows.length) return <Empty msg="No data (market closed?)." />;
   return (
     <div>
       {rows.map((r) => (
-        <div key={r.symbol} className="flex items-center justify-between py-1.5 border-b border-line/60 last:border-0">
+        <div key={r.symbol} onClick={() => onSym(r.symbol)} className="flex items-center justify-between py-1.5 border-b border-line/60 last:border-0 cursor-pointer hover:bg-elevated/40 -mx-1 px-1 rounded transition-colors">
           <span className="font-mono text-xs text-txt">{r.symbol}</span>
           <span className="font-mono text-[0.7rem] text-muted">₹{fmt(r.ltp, 1)}</span>
           <span className={`font-mono text-xs w-16 text-right ${up ? "text-up" : "text-down"}`}>{r.pct >= 0 ? "+" : ""}{fmt(r.pct)}%</span>
@@ -129,6 +130,7 @@ function CalendarPanel() {
 
 export default function Dashboard() {
   const movers = useFetch(() => api.movers(), [], 90_000);
+  const go = useSymbolNav();
   return (
     <div>
       <Section title="Market Pulse · Live Indices"><IndexStrip /></Section>
@@ -144,8 +146,8 @@ export default function Dashboard() {
               <RefreshCw size={13} /></button>
           }>
             <div className="grid grid-cols-2 gap-2.5">
-              <div><div className="label text-up mb-1">▲ Gainers</div><Card>{<MoversTable rows={movers.data?.gainers ?? []} up />}</Card></div>
-              <div><div className="label text-down mb-1">▼ Losers</div><Card>{<MoversTable rows={movers.data?.losers ?? []} up={false} />}</Card></div>
+              <div><div className="label text-up mb-1">▲ Gainers</div><Card>{<MoversTable rows={movers.data?.gainers ?? []} up onSym={go} />}</Card></div>
+              <div><div className="label text-down mb-1">▼ Losers</div><Card>{<MoversTable rows={movers.data?.losers ?? []} up={false} onSym={go} />}</Card></div>
             </div>
           </Section>
         </div>

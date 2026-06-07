@@ -32,6 +32,10 @@ export const api = {
     get<{ symbol: string; poc: number; total_delta: number; bars: number; last: number; note: string; profile: { price: number; buy_vol: number; sell_vol: number; delta: number }[] }>(
       `/api/footprint?symbol=${encodeURIComponent(symbol)}&days=${days}`),
   scan: () => get<{ count: number; ist: string; results: { symbol: string; signals: string[]; close: number; rsi: number; adx: number; vol_ratio: number; macd_hist: number }[] }>("/api/scan"),
+  history: (symbol: string, period = "6mo") =>
+    get<{ symbol: string; last: number; change: number; pct: number; rsi: number; adx: number; ema20: number; ema50: number; ema200: number; atr: number; high_52w: number; low_52w: number; candles: { t: string; o: number; h: number; l: number; c: number; v: number; e20: number | null; e50: number | null }[] }>(
+      `/api/history?symbol=${encodeURIComponent(symbol)}&period=${period}`),
+  analysis: (symbol: string) => get<{ symbol: string; analysis: string }>(`/api/analysis?symbol=${encodeURIComponent(symbol)}`),
   tasks: (session: string) => get<{ session: string; checklist: string }>(`/api/tasks?session=${encodeURIComponent(session)}`),
   briefing: () => get<{ briefing: string; date: string }>("/api/briefing"),
   sendBriefing: async (briefing: string) => {

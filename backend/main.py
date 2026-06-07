@@ -335,6 +335,68 @@ def briefing_to_telegram(body: BriefingSend):
         raise HTTPException(status_code=503, detail="Send failed")
 
 
+@app.get("/api/history")
+def history(symbol: str, period: str = "6mo"):
+    """OHLCV + indicators for one symbol (powers the Stock Detail chart)."""
+    try:
+        import pandas as pd
+        from data.fetcher import fetch_symbol_history
+        from utils.indicators import adx_full, atr, ema, macd, rsi
+        sym = symbol.strip().upper()
+        if not sym.endswith(".NS"):
+            sym += ".NS"
+        df = fetch_symbol_history(sym, period=period, interval="1d")
+        if df.empty:
+            raise HTTPException(status_code=422, detail="No data for symbol")
+        close = df["close"]
+        ema20, ema50, ema200 = ema(close, 20), ema(close, 50), ema(close, 200)
+        rsi_s = rsi(close, 14)
+        adx_s = adx_full(df, 14)["adx"]
+        last = df.iloc[-1]
+        candles = [
+            {"t": str(idx.date()), "o": round(float(r.open), 2), "h": round(float(r.high), 2),
+             "l": round(float(r.low), 2), "c": round(float(r.close), 2), "v": int(r.volume),
+             "e20": round(float(ema20.loc[idx]), 2) if pd.notna(ema20.loc[idx]) else None,
+             "e50": round(float(ema50.loc[idx]), 2) if pd.notna(ema50.loc[idx]) else None}
+            for idx, r in df.tail(180).iterrows()
+        ]
+        prev = float(close.iloc[-2]) if len(close) > 1 else float(last.close)
+        return {
+            "symbol": sym, "last": round(float(last.close), 2),
+            "change": round(float(last.close) - prev, 2),
+            "pct": round((float(last.close) - prev) / prev * 100, 2) if prev else 0.0,
+            "rsi": round(float(rsi_s.iloc[-1]), 1) if pd.notna(rsi_s.iloc[-1]) else None,
+            "adx": round(float(adx_s.iloc[-1]), 1) if pd.notna(adx_s.iloc[-1]) else None,
+            "ema20": round(float(ema20.iloc[-1]), 2), "ema50": round(float(ema50.iloc[-1]), 2),
+            "ema200": round(float(ema200.iloc[-1]), 2) if pd.notna(ema200.iloc[-1]) else None,
+            "atr": round(float(atr(df, 14).iloc[-1]), 2),
+            "high_52w": round(float(close.tail(252).max()), 2),
+            "low_52w": round(float(close.tail(252).min()), 2),
+            "candles": candles,
+        }
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("History failed: {}", exc)
+        raise HTTPException(status_code=503, detail="History unavailable")
+
+
+@app.get("/api/analysis")
+def analysis(symbol: str):
+    """AI 9-section technical analysis for one symbol."""
+    try:
+        from ai.brain import generate_stock_analysis
+        h = history(symbol)  # reuse computed indicators
+        data = {k: h[k] for k in ("last", "pct", "rsi", "adx", "ema20", "ema50", "ema200", "atr", "high_52w", "low_52w")}
+        text = generate_stock_analysis(h["symbol"], data)
+        return {"symbol": h["symbol"], "analysis": text}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("Analysis failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Analysis unavailable")
+
+
 @app.get("/")
 def root():
     return {"service": "AXIOM API", "docs": "/docs", "health": "/api/health"}

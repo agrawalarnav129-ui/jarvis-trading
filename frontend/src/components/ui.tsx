@@ -12,8 +12,8 @@ export function Section({ title, right, children }: { title: string; right?: Rea
   );
 }
 
-export function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`card p-3.5 ${className}`}>{children}</div>;
+export function Card({ children, className = "", onClick }: { children: ReactNode; className?: string; onClick?: () => void }) {
+  return <div onClick={onClick} className={`card p-3.5 ${className}`}>{children}</div>;
 }
 
 export function Skeleton({ h = 80 }: { h?: number }) {
