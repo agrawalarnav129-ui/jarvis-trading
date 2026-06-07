@@ -61,10 +61,15 @@ def fetch_symbol_history(symbol: str, period: str = "1y", interval: str = "1d") 
     ensure_cache_dir()
     safe = symbol.replace(":", "_").replace(".", "_")
     symbol_path = CACHE_DIR / f"{safe}_{interval}_{period}.parquet"
+    # Parquet cache is best-effort — needs a parquet engine (pyarrow). On hosts
+    # without it (lean cloud backend), we silently skip caching and re-fetch.
     if symbol_path.exists():
-        df = pd.read_parquet(symbol_path)
-        if not df.empty:
-            return _normalise(df)
+        try:
+            df = pd.read_parquet(symbol_path)
+            if not df.empty:
+                return _normalise(df)
+        except Exception as exc:
+            logger.debug("Parquet cache read skipped for %s: %s", symbol, exc)
 
     logger.info("Fetching history for %s", symbol)
     try:
@@ -75,7 +80,10 @@ def fetch_symbol_history(symbol: str, period: str = "1y", interval: str = "1d") 
 
     if df.empty:
         raise ValueError(f"No data returned for symbol: {symbol}")
-    df.to_parquet(symbol_path)
+    try:
+        df.to_parquet(symbol_path)
+    except Exception as exc:
+        logger.debug("Parquet cache write skipped for %s: %s", symbol, exc)
     return df
 
 
