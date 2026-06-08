@@ -1,17 +1,32 @@
 // AXIOM API client — talks to the FastAPI backend.
 const BASE = (import.meta.env.VITE_API_URL as string) || "http://localhost:8000";
 
+// In-memory GET cache so navigation/back and grid panels sharing a symbol
+// don't issue duplicate fetches. Short TTL; cleared by bustCache().
+const _cache = new Map<string, { ts: number; promise: Promise<any> }>();
+const TTL = 25_000;
+
 async function get<T>(path: string): Promise<T> {
-  const r = await fetch(`${BASE}${path}`, { headers: { Accept: "application/json" } });
-  if (!r.ok) throw new Error(`${path} -> ${r.status}`);
-  return r.json() as Promise<T>;
+  const hit = _cache.get(path);
+  if (hit && Date.now() - hit.ts < TTL) return hit.promise as Promise<T>;
+  const promise = fetch(`${BASE}${path}`, { headers: { Accept: "application/json" } }).then((r) => {
+    if (!r.ok) throw new Error(`${path} -> ${r.status}`);
+    return r.json();
+  }).catch((e) => { _cache.delete(path); throw e; });
+  _cache.set(path, { ts: Date.now(), promise });
+  return promise as Promise<T>;
 }
+
+/** Clear the client GET cache (used by useFetch's reload / pull-to-refresh). */
+export function bustCache() { _cache.clear(); }
 
 export interface IndexItem { name: string; last: number; change: number; pct: number; }
 export interface Mover { symbol: string; ltp: number; change: number; pct: number; }
 export interface NewsItem { title: string; link: string; source: string; published_str: string; }
 export interface CalEvent { date: string | null; date_str: string; event?: string; symbol?: string; purpose?: string; company?: string; impact?: string; note?: string; }
 export interface Regime { regime: string; nifty_close: number; ema50: number; ema200: number; adx: number; max_positions: number; min_rr: number; reason: string; }
+export interface Candle { t: number; o: number; h: number; l: number; c: number; v: number; }
+export interface HistoryResp { symbol: string; interval: string; last: number; change: number; pct: number; rsi: number; adx: number; ema20: number; ema50: number; ema200: number; atr: number; high_52w: number; low_52w: number; candles: Candle[]; }
 export interface FiiDii { available: boolean; date?: string; fii?: { net: number }; dii?: { net: number }; note?: string; }
 export interface ClockData { iso: string; ist: string; date: string; market_open: boolean; }
 
@@ -32,9 +47,8 @@ export const api = {
     get<{ symbol: string; poc: number; total_delta: number; bars: number; last: number; note: string; profile: { price: number; buy_vol: number; sell_vol: number; delta: number }[] }>(
       `/api/footprint?symbol=${encodeURIComponent(symbol)}&days=${days}`),
   scan: () => get<{ count: number; ist: string; results: { symbol: string; signals: string[]; close: number; rsi: number; adx: number; vol_ratio: number; macd_hist: number }[] }>("/api/scan"),
-  history: (symbol: string, period = "6mo") =>
-    get<{ symbol: string; last: number; change: number; pct: number; rsi: number; adx: number; ema20: number; ema50: number; ema200: number; atr: number; high_52w: number; low_52w: number; candles: { t: string; o: number; h: number; l: number; c: number; v: number; e20: number | null; e50: number | null }[] }>(
-      `/api/history?symbol=${encodeURIComponent(symbol)}&period=${period}`),
+  history: (symbol: string, period = "6mo", interval = "1d") =>
+    get<HistoryResp>(`/api/history?symbol=${encodeURIComponent(symbol)}&period=${period}&interval=${interval}`),
   analysis: (symbol: string) => get<{ symbol: string; analysis: string }>(`/api/analysis?symbol=${encodeURIComponent(symbol)}`),
   sectors: () => get<{ sectors: { sector: string; pct: number }[] }>("/api/sectors"),
   quote: (symbols: string[]) => get<{ quotes: { symbol: string; ltp: number; change: number; pct: number }[] }>(`/api/quote?symbols=${encodeURIComponent(symbols.join(","))}`),

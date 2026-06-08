@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Plus, Trash2, Cloud, HardDrive } from "lucide-react";
-import { LineChart, Line, ResponsiveContainer, YAxis, Tooltip } from "recharts";
+import EquityChart from "../components/EquityChart";
 import { Section, Card, Empty } from "../components/ui";
 import { fmt, fmtInt } from "../lib/format";
 import { Trade, addTrade, deleteTrade, listTrades, storageMode } from "../lib/trades";
@@ -61,14 +61,7 @@ export default function TradeJournal() {
       {equity.length > 1 && (
         <Card className="mb-3">
           <div className="label mb-2">Equity Curve</div>
-          <ResponsiveContainer width="100%" height={120}>
-            <LineChart data={equity}>
-              <YAxis hide domain={["auto", "auto"]} />
-              <Tooltip contentStyle={{ background: "#0B1220", border: "1px solid #1e2d44", borderRadius: 8, fontSize: 11 }}
-                labelFormatter={() => ""} formatter={(v: any) => [`₹${fmtInt(v)}`, "Cum P&L"]} />
-              <Line type="monotone" dataKey="v" stroke="#22d3ee" strokeWidth={2} dot={false} />
-            </LineChart>
-          </ResponsiveContainer>
+          <EquityChart data={equity.map((e: any) => e.v)} height={120} />
         </Card>
       )}
 

@@ -66,6 +66,20 @@ def _cached(bucket: str, fn):
     return val
 
 
+# Per-key caches (symbol-scoped) — Render has no parquet engine, so without
+# these every chart/quote call re-hits yfinance. These make repeats instant.
+_hist_cache: TTLCache = TTLCache(maxsize=128, ttl=120)
+_quote_cache: TTLCache = TTLCache(maxsize=64, ttl=60)
+
+
+def _keyed(cache: TTLCache, key: str, fn):
+    if key in cache:
+        return cache[key]
+    val = fn()
+    cache[key] = val
+    return val
+
+
 @app.get("/api/health")
 def health():
     return {"status": "ok", "service": "AXIOM API", "time_ist": datetime.now(IST).isoformat()}
@@ -335,45 +349,68 @@ def briefing_to_telegram(body: BriefingSend):
         raise HTTPException(status_code=503, detail="Send failed")
 
 
+# yfinance intraday history limits → cap the requested period per interval.
+_PERIOD_DAYS = {"1d": 1, "5d": 5, "1mo": 30, "3mo": 90, "6mo": 180, "1y": 365, "2y": 730, "5y": 1825}
+_INTERVAL_MAXDAYS = {"5m": 60, "15m": 60, "30m": 60, "60m": 730, "1h": 730}
+
+
+def _clamp_period(interval: str, period: str) -> str:
+    cap = _INTERVAL_MAXDAYS.get(interval)
+    if cap is None:
+        return period  # daily/weekly — no clamp
+    want = _PERIOD_DAYS.get(period, 180)
+    return f"{min(want, cap)}d"
+
+
+def _history(symbol: str, period: str, interval: str) -> dict:
+    import pandas as pd
+    from data.fetcher import fetch_symbol_history
+    from utils.indicators import adx_full, atr, ema, rsi
+    sym = symbol.strip().upper()
+    if not sym.endswith(".NS"):
+        sym += ".NS"
+    yf_interval = "1h" if interval == "60m" else interval
+    eff_period = _clamp_period(yf_interval, period)
+    df = fetch_symbol_history(sym, period=eff_period, interval=yf_interval)
+    if df.empty:
+        raise HTTPException(status_code=422, detail="No data for symbol")
+
+    # lightweight-charts requires ascending, de-duplicated timestamps
+    df = df[~df.index.duplicated(keep="last")].sort_index()
+    close = df["close"]
+    ema20, ema50, ema200 = ema(close, 20), ema(close, 50), ema(close, 200)
+    rsi_s = rsi(close, 14)
+    adx_s = adx_full(df, 14)["adx"]
+    last = df.iloc[-1]
+
+    tail = df.tail(500)
+    candles = [
+        {"t": int(idx.timestamp()), "o": round(float(r.open), 2), "h": round(float(r.high), 2),
+         "l": round(float(r.low), 2), "c": round(float(r.close), 2), "v": int(r.volume)}
+        for idx, r in tail.iterrows()
+    ]
+    prev = float(close.iloc[-2]) if len(close) > 1 else float(last.close)
+    return {
+        "symbol": sym, "interval": interval, "last": round(float(last.close), 2),
+        "change": round(float(last.close) - prev, 2),
+        "pct": round((float(last.close) - prev) / prev * 100, 2) if prev else 0.0,
+        "rsi": round(float(rsi_s.iloc[-1]), 1) if pd.notna(rsi_s.iloc[-1]) else None,
+        "adx": round(float(adx_s.iloc[-1]), 1) if pd.notna(adx_s.iloc[-1]) else None,
+        "ema20": round(float(ema20.iloc[-1]), 2), "ema50": round(float(ema50.iloc[-1]), 2),
+        "ema200": round(float(ema200.iloc[-1]), 2) if pd.notna(ema200.iloc[-1]) else None,
+        "atr": round(float(atr(df, 14).iloc[-1]), 2),
+        "high_52w": round(float(close.tail(252).max()), 2),
+        "low_52w": round(float(close.tail(252).min()), 2),
+        "candles": candles,
+    }
+
+
 @app.get("/api/history")
-def history(symbol: str, period: str = "6mo"):
-    """OHLCV + indicators for one symbol (powers the Stock Detail chart)."""
+def history(symbol: str, period: str = "6mo", interval: str = "1d"):
+    """OHLCV + scalar indicators for one symbol/timeframe. Cached per symbol|interval|period."""
     try:
-        import pandas as pd
-        from data.fetcher import fetch_symbol_history
-        from utils.indicators import adx_full, atr, ema, macd, rsi
-        sym = symbol.strip().upper()
-        if not sym.endswith(".NS"):
-            sym += ".NS"
-        df = fetch_symbol_history(sym, period=period, interval="1d")
-        if df.empty:
-            raise HTTPException(status_code=422, detail="No data for symbol")
-        close = df["close"]
-        ema20, ema50, ema200 = ema(close, 20), ema(close, 50), ema(close, 200)
-        rsi_s = rsi(close, 14)
-        adx_s = adx_full(df, 14)["adx"]
-        last = df.iloc[-1]
-        candles = [
-            {"t": str(idx.date()), "o": round(float(r.open), 2), "h": round(float(r.high), 2),
-             "l": round(float(r.low), 2), "c": round(float(r.close), 2), "v": int(r.volume),
-             "e20": round(float(ema20.loc[idx]), 2) if pd.notna(ema20.loc[idx]) else None,
-             "e50": round(float(ema50.loc[idx]), 2) if pd.notna(ema50.loc[idx]) else None}
-            for idx, r in df.tail(180).iterrows()
-        ]
-        prev = float(close.iloc[-2]) if len(close) > 1 else float(last.close)
-        return {
-            "symbol": sym, "last": round(float(last.close), 2),
-            "change": round(float(last.close) - prev, 2),
-            "pct": round((float(last.close) - prev) / prev * 100, 2) if prev else 0.0,
-            "rsi": round(float(rsi_s.iloc[-1]), 1) if pd.notna(rsi_s.iloc[-1]) else None,
-            "adx": round(float(adx_s.iloc[-1]), 1) if pd.notna(adx_s.iloc[-1]) else None,
-            "ema20": round(float(ema20.iloc[-1]), 2), "ema50": round(float(ema50.iloc[-1]), 2),
-            "ema200": round(float(ema200.iloc[-1]), 2) if pd.notna(ema200.iloc[-1]) else None,
-            "atr": round(float(atr(df, 14).iloc[-1]), 2),
-            "high_52w": round(float(close.tail(252).max()), 2),
-            "low_52w": round(float(close.tail(252).min()), 2),
-            "candles": candles,
-        }
+        key = f"{symbol.strip().upper()}|{interval}|{period}"
+        return _keyed(_hist_cache, key, lambda: _history(symbol, period, interval))
     except HTTPException:
         raise
     except Exception as exc:
@@ -413,31 +450,36 @@ def sectors():
     return out
 
 
+def _quote(symbols: str) -> dict:
+    import yfinance as yf
+    syms = [s.strip().upper() for s in symbols.split(",") if s.strip()][:40]
+    tickers = [s if s.endswith(".NS") else s + ".NS" for s in syms]
+    if not tickers:
+        return {"quotes": []}
+    data = yf.download(tickers, period="2d", interval="1d", group_by="ticker",
+                       auto_adjust=True, progress=False, threads=True)
+    out = []
+    for s, t in zip(syms, tickers):
+        try:
+            df = data[t].dropna() if len(tickers) > 1 else data.dropna()
+            if len(df) < 1:
+                continue
+            last = float(df["Close"].iloc[-1])
+            prev = float(df["Close"].iloc[-2]) if len(df) > 1 else last
+            out.append({"symbol": s.replace(".NS", ""), "ltp": round(last, 2),
+                        "change": round(last - prev, 2),
+                        "pct": round((last - prev) / prev * 100, 2) if prev else 0.0})
+        except Exception:
+            continue
+    return {"quotes": out}
+
+
 @app.get("/api/quote")
 def quote(symbols: str):
-    """Batch last price + day % for a comma-separated symbol list (yfinance)."""
+    """Batch last price + day % for a comma-separated symbol list (yfinance), cached 60s."""
     try:
-        import yfinance as yf
-        syms = [s.strip().upper() for s in symbols.split(",") if s.strip()][:40]
-        tickers = [s if s.endswith(".NS") else s + ".NS" for s in syms]
-        if not tickers:
-            return {"quotes": []}
-        data = yf.download(tickers, period="2d", interval="1d", group_by="ticker",
-                           auto_adjust=True, progress=False, threads=True)
-        out = []
-        for s, t in zip(syms, tickers):
-            try:
-                df = data[t].dropna() if len(tickers) > 1 else data.dropna()
-                if len(df) < 1:
-                    continue
-                last = float(df["Close"].iloc[-1])
-                prev = float(df["Close"].iloc[-2]) if len(df) > 1 else last
-                out.append({"symbol": s.replace(".NS", ""), "ltp": round(last, 2),
-                            "change": round(last - prev, 2),
-                            "pct": round((last - prev) / prev * 100, 2) if prev else 0.0})
-            except Exception:
-                continue
-        return {"quotes": out}
+        key = ",".join(sorted(s.strip().upper() for s in symbols.split(",") if s.strip()))
+        return _keyed(_quote_cache, key, lambda: _quote(symbols))
     except Exception as exc:
         logger.warning("Quote failed: {}", exc)
         return {"quotes": []}

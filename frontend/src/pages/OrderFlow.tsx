@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Activity, Loader2, AlertTriangle } from "lucide-react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceLine, Cell } from "recharts";
 import { api } from "../lib/api";
 import { Section, Card, Empty } from "../components/ui";
 import { fmt, fmtInt } from "../lib/format";
@@ -58,21 +57,28 @@ export default function OrderFlow() {
 
           <Card>
             <div className="label mb-2">Buy (right) vs Sell (left) volume per price</div>
-            <ResponsiveContainer width="100%" height={Math.max(300, chartData.length * 16)}>
-              <BarChart data={chartData} layout="vertical" stackOffset="sign" margin={{ left: 8, right: 8 }}>
-                <XAxis type="number" hide />
-                <YAxis type="category" dataKey="price" width={52} tick={{ fontSize: 9, fill: "#94a3b8", fontFamily: "monospace" }} reversed />
-                <Tooltip contentStyle={{ background: "#0B1220", border: "1px solid #1e2d44", borderRadius: 8, fontSize: 11 }}
-                  formatter={(v: any, n: any) => [fmtInt(Math.abs(v)), n === "sell" ? "Sell" : "Buy"]} />
-                <ReferenceLine x={0} stroke="#1e2d44" />
-                <Bar dataKey="sell" stackId="s" fill="#ef4444" fillOpacity={0.7} />
-                <Bar dataKey="buy" stackId="s" fill="#22c55e" fillOpacity={0.7}>
-                  {chartData.map((d: any, i: number) => (
-                    <Cell key={i} fill={Math.abs(d.price - data.poc) < 0.01 ? "#fbbf24" : "#22c55e"} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+            {(() => {
+              const maxV = Math.max(...chartData.map((d: any) => Math.max(d.buy, -d.sell)), 1);
+              return (
+                <div className="flex flex-col gap-px">
+                  {[...chartData].reverse().map((d: any, i: number) => {
+                    const isPoc = Math.abs(d.price - data.poc) < 0.01;
+                    return (
+                      <div key={i} className="flex items-center gap-1 h-3 text-[0.55rem] font-mono">
+                        <div className="flex-1 flex justify-end">
+                          <div style={{ width: `${(-d.sell / maxV) * 100}%` }} className="h-2 bg-down/60 rounded-l-sm" title={`Sell ${fmtInt(-d.sell)}`} />
+                        </div>
+                        <div className={`w-12 text-center ${isPoc ? "text-gold" : "text-faint"}`}>{d.price}</div>
+                        <div className="flex-1">
+                          <div style={{ width: `${(d.buy / maxV) * 100}%`, background: isPoc ? "#fbbf24" : undefined }}
+                            className={`h-2 rounded-r-sm ${isPoc ? "" : "bg-up/60"}`} title={`Buy ${fmtInt(d.buy)}`} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })()}
           </Card>
         </>
       )}

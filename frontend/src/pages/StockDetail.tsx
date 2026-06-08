@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, Sparkles, Loader2, Star } from "lucide-react";
 import { listWatch, addWatch, removeWatch } from "../lib/watchlist";
-import { ComposedChart, Area, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid } from "recharts";
+import PriceChart from "../components/PriceChart";
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { Card, Skeleton, Empty } from "../components/ui";
@@ -68,24 +68,7 @@ export default function StockDetail() {
           </div>
 
           <Card className="mb-3">
-            <ResponsiveContainer width="100%" height={240}>
-              <ComposedChart data={data.candles}>
-                <defs>
-                  <linearGradient id="px" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#22d3ee" stopOpacity={0.25} />
-                    <stop offset="100%" stopColor="#22d3ee" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid stroke="#1e2d44" strokeDasharray="2 4" vertical={false} />
-                <XAxis dataKey="t" tick={{ fontSize: 9, fill: "#64748b" }} minTickGap={40} />
-                <YAxis domain={["auto", "auto"]} tick={{ fontSize: 9, fill: "#64748b" }} width={44} orientation="right" />
-                <Tooltip contentStyle={{ background: "#0B1220", border: "1px solid #1e2d44", borderRadius: 8, fontSize: 11 }}
-                  formatter={(v: any, n: any) => [`₹${fmt(v)}`, n === "c" ? "Close" : n === "e20" ? "EMA20" : "EMA50"]} />
-                <Area type="monotone" dataKey="c" stroke="#22d3ee" strokeWidth={2} fill="url(#px)" />
-                <Line type="monotone" dataKey="e20" stroke="#fbbf24" strokeWidth={1} dot={false} />
-                <Line type="monotone" dataKey="e50" stroke="#94a3b8" strokeWidth={1} dot={false} />
-              </ComposedChart>
-            </ResponsiveContainer>
+            <PriceChart candles={data.candles} interval="1d" indicators={{ ema: true, volume: true }} height={280} />
           </Card>
 
           <Card className="mb-3">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { History, Loader2 } from "lucide-react";
-import { LineChart, Line, ResponsiveContainer, YAxis, Tooltip } from "recharts";
+import EquityChart from "../components/EquityChart";
 import { api } from "../lib/api";
 import { Section, Card, Empty } from "../components/ui";
 import { fmt, fmtInt } from "../lib/format";
@@ -66,14 +66,7 @@ export default function Backtester() {
           {data.equity?.length > 1 && (
             <Card className="mb-3">
               <div className="label mb-2">Equity Curve</div>
-              <ResponsiveContainer width="100%" height={140}>
-                <LineChart data={data.equity.map((v: number, i: number) => ({ i, v }))}>
-                  <YAxis hide domain={["auto", "auto"]} />
-                  <Tooltip contentStyle={{ background: "#0B1220", border: "1px solid #1e2d44", borderRadius: 8, fontSize: 11 }}
-                    labelFormatter={() => ""} formatter={(v: any) => [`₹${fmtInt(v)}`, "Equity"]} />
-                  <Line type="monotone" dataKey="v" stroke="#22d3ee" strokeWidth={2} dot={false} />
-                </LineChart>
-              </ResponsiveContainer>
+              <EquityChart data={data.equity} height={140} />
             </Card>
           )}
 
