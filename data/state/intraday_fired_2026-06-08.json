@@ -1,0 +1,25 @@
+{
+  "FORTIS.NS": [],
+  "ASTERDM.NS": [],
+  "IPCALAB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "CCL.NS": [],
+  "EQUITASBNK.NS": [],
+  "AGRITECH.NS": [],
+  "ZEEL.NS": [],
+  "BAJAJCON.NS": [],
+  "FEDERALBNK.NS": [],
+  "HSCL.NS": [],
+  "ELGIEQUIP.NS": [],
+  "BALRAMCHIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "QUESS.NS": [],
+  "GAIL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "WABAG.NS": []
+}
