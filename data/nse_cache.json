@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-07T03:00:53.902834Z",
+  "updated": "2026-06-08T03:02:57.741408Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,20 +17,6 @@
     "net_combined": 357.32
   },
   "corporate": [
-    {
-      "date": "2026-06-08",
-      "date_str": "08 Jun",
-      "symbol": "AYE",
-      "company": "Aye Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-08",
-      "date_str": "08 Jun",
-      "symbol": "SUMEETINDS",
-      "company": "Sumeet Industries Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-06-09",
       "date_str": "09 Jun",
