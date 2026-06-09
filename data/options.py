@@ -22,9 +22,18 @@ GITHUB_RAW = "https://raw.githubusercontent.com/agrawalarnav129-ui/jarvis-tradin
 
 _HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/123.0 Safari/537.36",
+                  "(KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
     "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
     "Referer": "https://www.nseindia.com/option-chain",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Ch-Ua": '"Chromium";v="123", "Not:A-Brand";v="8"',
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": '"Windows"',
+    "Connection": "keep-alive",
 }
 SYMBOLS = ["NIFTY", "BANKNIFTY"]
 
@@ -75,22 +84,29 @@ def _analyse(payload: dict, symbol: str) -> dict:
 
 
 def fetch_option_chain(symbol: str = "NIFTY") -> dict:
+    import time
     symbol = symbol.upper()
-    try:
-        s = requests.Session(); s.headers.update(_HEADERS)
-        s.get(NSE_BASE, timeout=10)
-        s.get(f"{NSE_BASE}/option-chain", timeout=10)
-        r = s.get(OC_API.format(sym=symbol), timeout=12)
-        r.raise_for_status()
-        out = _analyse(r.json(), symbol)
-        out["source"] = "NSE live"
-        return out
-    except Exception as exc:
-        logger.warning("Option-chain direct fetch failed ({}); trying cache", type(exc).__name__)
-        cached = _read_cache().get(symbol)
-        if cached:
-            return {**cached, "source": "NSE snapshot (cached)"}
-        return {"symbol": symbol, "available": False, "note": f"Option chain unavailable ({type(exc).__name__})"}
+    last_exc: Exception | None = None
+    for attempt in range(3):
+        try:
+            s = requests.Session(); s.headers.update(_HEADERS)
+            s.get(NSE_BASE, timeout=12)
+            s.get(f"{NSE_BASE}/option-chain", timeout=12)
+            s.get("https://www.nseindia.com/api/marketStatus", timeout=12)  # extra cookie warm-up
+            r = s.get(OC_API.format(sym=symbol), timeout=15)
+            r.raise_for_status()
+            out = _analyse(r.json(), symbol)
+            out["source"] = "NSE live"
+            return out
+        except Exception as exc:
+            last_exc = exc
+            time.sleep(1.5)
+    exc = last_exc
+    logger.warning("Option-chain direct fetch failed ({}); trying cache", type(exc).__name__ if exc else "?")
+    cached = _read_cache().get(symbol)
+    if cached:
+        return {**cached, "source": "NSE snapshot (cached)"}
+    return {"symbol": symbol, "available": False, "note": "Option chain unavailable (NSE blocks datacenter IPs)"}
 
 
 def write_cache() -> None:
