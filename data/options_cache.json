@@ -1,0 +1,13 @@
+{
+  "NIFTY": {
+    "symbol": "NIFTY",
+    "available": false,
+    "note": "Option chain unavailable (HTTPError)"
+  },
+  "BANKNIFTY": {
+    "symbol": "BANKNIFTY",
+    "available": false,
+    "note": "Option chain unavailable (HTTPError)"
+  },
+  "updated": "2026-06-09T08:42:25.485021Z"
+}
