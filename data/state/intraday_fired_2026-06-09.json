@@ -1,0 +1,40 @@
+{
+  "MSTCLTD.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "ASTERDM.NS": [],
+  "BOSCHLTD.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "GMRAIRPORT.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "APOLLOHOSP.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MBAPL.NS": [],
+  "ELGIEQUIP.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "FORTIS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PRINCEPIPE.NS": [
+    "BREAKOUT"
+  ],
+  "HSCL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "GAIL.NS": [],
+  "APARINDS.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "ICIL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "EQUITASBNK.NS": [],
+  "IDFCFIRSTB.NS": []
+}
