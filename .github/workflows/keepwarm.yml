@@ -1,0 +1,18 @@
+name: Keep Backend Warm
+
+# Render free tier sleeps after 15 min idle (~50s cold start). Ping the backend
+# every 10 min during NSE hours (≈08:20–16:00 IST = 02:50–10:30 UTC, Mon–Fri)
+# so the app stays instant. GitHub cron is best-effort; 10-min spacing tolerates drift.
+on:
+  schedule:
+    - cron: "*/10 2-10 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping /api/clock
+        run: |
+          curl -s -o /dev/null -w "clock -> HTTP %{http_code} in %{time_total}s\n" \
+            --max-time 60 https://axiom-api-bi9x.onrender.com/api/clock || true

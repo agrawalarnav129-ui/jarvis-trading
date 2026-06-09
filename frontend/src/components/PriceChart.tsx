@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Minus, Slash, Eraser } from "lucide-react";
 import {
   createChart, ColorType, CandlestickSeries, HistogramSeries, LineSeries,
   type IChartApi, type ISeriesApi, type UTCTimestamp,
@@ -29,6 +30,21 @@ export default function PriceChart({ candles, interval, indicators, compareCandl
   const candleRef = useRef<ISeriesApi<"Candlestick"> | null>(null);
   const vpRef = useRef<HTMLDivElement>(null);
 
+  // ── drawing tools state ──
+  type Drawing = { type: "hl"; price: number } | { type: "tl"; a: { time: number; price: number }; b: { time: number; price: number } };
+  const [drawMode, setDrawMode] = useState<"none" | "hl" | "tl">("none");
+  const drawModeRef = useRef<"none" | "hl" | "tl">("none");
+  drawModeRef.current = drawMode;
+  const drawingsRef = useRef<Drawing[]>([]);
+  const removersRef = useRef<Array<() => void>>([]);
+  const tlFirstRef = useRef<{ time: number; price: number } | null>(null);
+  const clearDrawings = () => {
+    removersRef.current.forEach((fn) => fn());
+    removersRef.current = [];
+    drawingsRef.current = [];
+    tlFirstRef.current = null;
+  };
+
   useEffect(() => {
     if (!wrap.current) return;
     const intraday = !["1d", "1wk"].includes(interval);
@@ -49,6 +65,38 @@ export default function PriceChart({ candles, interval, indicators, compareCandl
     });
     candleRef.current = candleSeries;
     candleSeries.setData(candles.map((c) => ({ time: T(c.t), open: c.o, high: c.h, low: c.l, close: c.c })));
+
+    // ── drawings: re-apply stored + handle click-to-draw ──
+    removersRef.current = [];
+    const applyDrawing = (d: Drawing) => {
+      if (d.type === "hl") {
+        const pl = candleSeries.createPriceLine({ price: d.price, color: "#22d3ee", lineWidth: 1, lineStyle: 0, axisLabelVisible: true, title: "" });
+        removersRef.current.push(() => { try { candleSeries.removePriceLine(pl); } catch { /* */ } });
+      } else {
+        const ln = chart.addSeries(LineSeries, { color: "#fbbf24", lineWidth: 2, priceLineVisible: false, lastValueVisible: false });
+        const pts = [d.a, d.b].sort((x, y) => x.time - y.time).map((p) => ({ time: T(p.time), value: p.price }));
+        ln.setData(pts);
+        removersRef.current.push(() => { try { chart.removeSeries(ln); } catch { /* */ } });
+      }
+    };
+    drawingsRef.current.forEach(applyDrawing);
+    chart.subscribeClick((param) => {
+      const mode = drawModeRef.current;
+      if (mode === "none" || !param.point || param.time == null) return;
+      const price = candleSeries.coordinateToPrice(param.point.y);
+      if (price == null) return;
+      const p = Math.round(price * 100) / 100;
+      const time = param.time as number;
+      if (mode === "hl") {
+        const d: Drawing = { type: "hl", price: p };
+        drawingsRef.current.push(d); applyDrawing(d);
+      } else if (!tlFirstRef.current) {
+        tlFirstRef.current = { time, price: p };
+      } else {
+        const d: Drawing = { type: "tl", a: tlFirstRef.current, b: { time, price: p } };
+        tlFirstRef.current = null; drawingsRef.current.push(d); applyDrawing(d);
+      }
+    });
 
     if (indicators.volume) {
       const vol = chart.addSeries(HistogramSeries, { priceFormat: { type: "volume" }, priceScaleId: "" });
@@ -122,6 +170,7 @@ export default function PriceChart({ candles, interval, indicators, compareCandl
       chart.remove();
       chartRef.current = null;
       candleRef.current = null;
+      removersRef.current = [];
     };
   }, [candles, JSON.stringify(indicators), interval, height, compareCandles?.length]);
 
@@ -151,9 +200,17 @@ export default function PriceChart({ candles, interval, indicators, compareCandl
     return () => { chart?.timeScale().unsubscribeVisibleLogicalRangeChange(sub); clearInterval(id); };
   }, [candles, footprint, indicators.volumeProfile, poc]);
 
+  const tbBtn = (active: boolean) =>
+    `p-1 rounded border cursor-pointer transition-colors ${active ? "bg-brand/20 border-brand/50 text-brand" : "bg-elevated/80 border-line text-faint hover:text-txt"}`;
+
   return (
     <div className="relative">
-      <div ref={wrap} />
+      <div className="absolute left-1 top-1 z-10 flex gap-1">
+        <button onClick={() => setDrawMode(drawMode === "hl" ? "none" : "hl")} title="Horizontal level (click a price)" className={tbBtn(drawMode === "hl")}><Minus size={12} /></button>
+        <button onClick={() => setDrawMode(drawMode === "tl" ? "none" : "tl")} title="Trendline (click 2 points)" className={tbBtn(drawMode === "tl")}><Slash size={12} /></button>
+        <button onClick={clearDrawings} title="Clear drawings" className="p-1 rounded border bg-elevated/80 border-line text-faint hover:text-down cursor-pointer transition-colors"><Eraser size={12} /></button>
+      </div>
+      <div ref={wrap} style={{ cursor: drawMode === "none" ? "default" : "crosshair" }} />
       <div ref={vpRef} className="absolute inset-0 pointer-events-none" />
     </div>
   );
