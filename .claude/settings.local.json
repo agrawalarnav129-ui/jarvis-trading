@@ -60,7 +60,11 @@
       "Bash(python -c 'import sys,json *)",
       "Bash(grep -vE \"^\\\\[2m|Consider|Using dynamic|Use build|Adjust|rollup|gzip|precache|files gen|dist/|workbox|^\\\\s*$\")",
       "Bash(grep -vE \"^\\\\[2m|Consider|Using dynamic|Use build|Adjust|rollup|gzip|precache|files gen|dist/|workbox|mode|^\\\\s*$\")",
-      "Bash(curl -s -o /dev/null -w \"backend HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/api/health)"
+      "Bash(curl -s -o /dev/null -w \"backend HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/api/health)",
+      "Bash(rm -f .tmp/backend.log)",
+      "Bash(pkill -f \"uvicorn\")",
+      "Bash(grep -vE \"^\\\\[2m|Consider|Using dynamic|Use build|Adjust|rollup|gzip|precache|files gen|dist/|workbox|mode|^\\\\s*$|PWA v\")",
+      "Bash(timeout 40 python -c ' *)"
     ]
   }
 }

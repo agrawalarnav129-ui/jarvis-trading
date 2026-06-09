@@ -154,19 +154,78 @@ def watchlist():
     return {"watchlist": []}
 
 
+# The full screener is heavy (fetches the universe). Run once, cache 10 min, and
+# let the screener / RS-ranking / custom-scan endpoints all read these records.
+_screener_cache: TTLCache = TTLCache(maxsize=1, ttl=600)
+_SCAN_COLS = ["symbol", "grade", "score", "close", "rsi", "adx", "rs_20d", "rs_60d",
+              "volume_ratio", "ema9", "ema21", "ema50", "ema200", "notes"]
+
+
+def _full_screener() -> list[dict]:
+    if "v" in _screener_cache:
+        return _screener_cache["v"]
+    from screener.screener import run_screener
+    df = run_screener(None)
+    rows = [] if df.empty else df[[c for c in _SCAN_COLS if c in df.columns]].to_dict("records")
+    _screener_cache["v"] = rows
+    return rows
+
+
 @app.get("/api/screener")
 def screener(limit: int = 30):
-    """Heavy — runs the full screener. Cached client-side; call sparingly."""
+    """Top candidates by composite score (cached 10 min)."""
     try:
-        from screener.screener import run_screener
-        df = run_screener(None)
-        if df.empty:
-            return {"results": []}
-        cols = [c for c in ["symbol", "grade", "score", "close", "rsi", "adx", "rs_20d", "rs_60d", "notes"] if c in df.columns]
-        return {"results": df[cols].head(limit).to_dict("records")}
+        return {"results": _full_screener()[:limit]}
     except Exception as exc:
         logger.exception("Screener failed: {}", exc)
         raise HTTPException(status_code=503, detail="Screener unavailable")
+
+
+@app.get("/api/rs-ranking")
+def rs_ranking(by: str = "rs_20d", limit: int = 40):
+    """Relative-strength leaderboard vs Nifty (sorted by 20D or 60D RS)."""
+    try:
+        key = "rs_60d" if by == "rs_60d" else "rs_20d"
+        rows = sorted(_full_screener(), key=lambda r: r.get(key) or -999, reverse=True)
+        return {"by": key, "results": rows[:limit]}
+    except Exception as exc:
+        logger.exception("RS ranking failed: {}", exc)
+        raise HTTPException(status_code=503, detail="RS ranking unavailable")
+
+
+@app.get("/api/scan/custom")
+def scan_custom(rsi_min: float = 0, rsi_max: float = 100, adx_min: float = 0,
+                vol_min: float = 0, score_min: float = 0, rs20_min: float = -999,
+                grade: str = "", above_ema200: bool = False, ema_aligned: bool = False,
+                sort_by: str = "score", limit: int = 60):
+    """User-defined scanner over the universe (filters the cached screener results)."""
+    try:
+        def ok(r: dict) -> bool:
+            rsi = r.get("rsi"); adx = r.get("adx")
+            if rsi is not None and not (rsi_min <= rsi <= rsi_max):
+                return False
+            if adx is not None and adx < adx_min:
+                return False
+            if (r.get("volume_ratio") or 0) < vol_min:
+                return False
+            if (r.get("score") or 0) < score_min:
+                return False
+            if (r.get("rs_20d") if r.get("rs_20d") is not None else -999) < rs20_min:
+                return False
+            if grade and r.get("grade") != grade.upper():
+                return False
+            if above_ema200 and not (r.get("close") and r.get("ema200") and r["close"] > r["ema200"]):
+                return False
+            if ema_aligned and not (r.get("ema9") and r.get("ema21") and r.get("ema50")
+                                    and r["ema9"] > r["ema21"] > r["ema50"]):
+                return False
+            return True
+        skey = sort_by if sort_by in ("score", "rs_20d", "rs_60d", "rsi", "adx", "volume_ratio") else "score"
+        rows = sorted([r for r in _full_screener() if ok(r)], key=lambda r: r.get(skey) or -999, reverse=True)
+        return {"count": len(rows), "results": rows[:limit]}
+    except Exception as exc:
+        logger.exception("Custom scan failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Custom scan unavailable")
 
 
 @app.get("/api/backtest")
@@ -500,6 +559,21 @@ def assistant_stream(body: AssistantBody):
 
     return StreamingResponse(gen(), media_type="text/plain; charset=utf-8",
                              headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"})
+
+
+_options_cache: TTLCache = TTLCache(maxsize=4, ttl=120)
+
+
+@app.get("/api/options")
+def options(symbol: str = "NIFTY"):
+    """Index option-chain analytics: PCR, max-pain, support/resistance, ATM IV, OI chain."""
+    try:
+        sym = symbol.upper()
+        from data.options import fetch_option_chain
+        return _keyed(_options_cache, sym, lambda: fetch_option_chain(sym))
+    except Exception as exc:
+        logger.exception("Options failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Options unavailable")
 
 
 @app.get("/")

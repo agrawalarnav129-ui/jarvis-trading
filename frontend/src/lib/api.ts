@@ -40,6 +40,11 @@ export const api = {
   regime: () => get<Regime>("/api/regime"),
   watchlist: () => get<{ watchlist: any[] }>("/api/watchlist"),
   screener: () => get<{ results: any[] }>("/api/screener"),
+  rsRanking: (by = "rs_20d") => get<{ by: string; results: any[] }>(`/api/rs-ranking?by=${by}`),
+  scanCustom: (params: Record<string, string | number | boolean>) => {
+    const qs = Object.entries(params).map(([k, v]) => `${k}=${encodeURIComponent(String(v))}`).join("&");
+    return get<{ count: number; results: any[] }>(`/api/scan/custom?${qs}`);
+  },
   backtest: (symbol: string, rr = 2.5) =>
     get<{ symbol: string; metrics: Record<string, number>; trades: any[]; equity: number[] }>(
       `/api/backtest?symbol=${encodeURIComponent(symbol)}&rr=${rr}`),
@@ -51,6 +56,7 @@ export const api = {
     get<HistoryResp>(`/api/history?symbol=${encodeURIComponent(symbol)}&period=${period}&interval=${interval}`),
   analysis: (symbol: string) => get<{ symbol: string; analysis: string }>(`/api/analysis?symbol=${encodeURIComponent(symbol)}`),
   sectors: () => get<{ sectors: { sector: string; pct: number }[] }>("/api/sectors"),
+  options: (symbol = "NIFTY") => get<{ symbol: string; available?: boolean; note?: string; source?: string; spot: number; expiry: string; pcr: number; total_ce_oi: number; total_pe_oi: number; max_pain: number; support: number; resistance: number; atm_iv: number; chain: { strike: number; ceOI: number; peOI: number }[] }>(`/api/options?symbol=${symbol}`),
   quote: (symbols: string[]) => get<{ quotes: { symbol: string; ltp: number; change: number; pct: number }[] }>(`/api/quote?symbols=${encodeURIComponent(symbols.join(","))}`),
   tasks: (session: string) => get<{ session: string; checklist: string }>(`/api/tasks?session=${encodeURIComponent(session)}`),
   briefing: () => get<{ briefing: string; date: string }>("/api/briefing"),

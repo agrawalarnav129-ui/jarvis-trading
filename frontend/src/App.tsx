@@ -20,6 +20,7 @@ const LiveScanner = lazy(() => import("./pages/LiveScanner"));
 const Tasks = lazy(() => import("./pages/Tasks"));
 const Reports = lazy(() => import("./pages/Reports"));
 const Charts = lazy(() => import("./pages/Charts"));
+const Options = lazy(() => import("./pages/Options"));
 const StockDetail = lazy(() => import("./pages/StockDetail"));
 const Placeholder = lazy(() => import("./pages/Placeholder"));
 
@@ -53,6 +54,7 @@ export default function App() {
               <Route path="/tasks" element={<Tasks />} />
               <Route path="/reports" element={<Reports />} />
               <Route path="/charts" element={<Charts />} />
+              <Route path="/options" element={<Options />} />
               <Route path="/assistant" element={<Assistant />} />
               <Route path="/stock/:symbol" element={<StockDetail />} />
               <Route path="*" element={<Placeholder title="Not Found" hint="That page doesn't exist." />} />

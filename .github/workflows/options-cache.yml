@@ -1,0 +1,38 @@
+name: Options Chain Cache
+
+# NSE blocks datacenter IPs (Render) but allows GitHub runners. Fetch the index
+# option chains every ~20 min during NSE hours and commit so the backend can serve
+# PCR / max-pain / OI to the web app.
+on:
+  schedule:
+    - cron: "*/20 4-9 * * 1-5"   # ~09:30–15:30 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  options:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Kolkata
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install requests python-dotenv loguru
+      - name: Fetch option chains
+        run: python -m jobs.run_options_cache
+      - name: Commit options cache
+        run: |
+          git config user.name  "jarvis-bot"
+          git config user.email "jarvis-bot@users.noreply.github.com"
+          git add data/options_cache.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: options cache [skip ci]"
+            git push
+          else
+            echo "Options cache unchanged."
+          fi

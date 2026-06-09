@@ -4,8 +4,30 @@ import EquityChart from "../components/EquityChart";
 import { Section, Card, Empty } from "../components/ui";
 import { fmt, fmtInt } from "../lib/format";
 import { Trade, addTrade, deleteTrade, listTrades, storageMode } from "../lib/trades";
+import { computeStats, type Bucket } from "../lib/journalStats";
 
 const SETUPS = ["Breakout", "Momentum Continuation", "BB Squeeze", "Reversal", "Other"];
+
+function Breakdown({ title, rows }: { title: string; rows: Bucket[] }) {
+  if (!rows.length) return null;
+  const maxAbs = Math.max(...rows.map((r) => Math.abs(r.total)), 1);
+  return (
+    <Card>
+      <div className="label mb-2">{title}</div>
+      {rows.map((r) => (
+        <div key={r.key} className="flex items-center gap-2 py-1.5 border-b border-line/40 last:border-0">
+          <div className="w-24 truncate text-xs text-txt">{r.key}</div>
+          <div className="flex-1 h-2 bg-base rounded-full overflow-hidden">
+            <div className={`h-full ${r.total >= 0 ? "bg-up/60" : "bg-down/60"}`} style={{ width: `${(Math.abs(r.total) / maxAbs) * 100}%` }} />
+          </div>
+          <div className="w-10 text-right font-mono text-[0.62rem] text-faint">{r.count}t</div>
+          <div className="w-10 text-right font-mono text-[0.62rem] text-muted">{r.winRate.toFixed(0)}%</div>
+          <div className={`w-16 text-right font-mono text-[0.66rem] ${r.total >= 0 ? "text-up" : "text-down"}`}>₹{Math.round(r.total).toLocaleString("en-IN")}</div>
+        </div>
+      ))}
+    </Card>
+  );
+}
 
 export default function TradeJournal() {
   const [trades, setTrades] = useState<Trade[]>([]);
@@ -33,6 +55,9 @@ export default function TradeJournal() {
     let cum = 0;
     return [...trades].reverse().map((t, i) => ({ i, v: (cum += t.pnl || 0) }));
   }, [trades]);
+
+  const stats = useMemo(() => computeStats(trades), [trades]);
+  const pf = stats.profitFactor === Infinity ? "∞" : stats.profitFactor.toFixed(2);
 
   const F = ({ label, k, type = "number", step = 0.05 }: any) => (
     <div>
@@ -63,6 +88,29 @@ export default function TradeJournal() {
           <div className="label mb-2">Equity Curve</div>
           <EquityChart data={equity.map((e: any) => e.v)} height={120} />
         </Card>
+      )}
+
+      {/* Performance analytics */}
+      {trades.length >= 3 && (
+        <>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-3">
+            <Card><div className="label">Profit Factor</div><div className={`font-display text-lg mt-1 ${stats.profitFactor >= 1.5 ? "text-up" : stats.profitFactor >= 1 ? "text-gold" : "text-down"}`}>{pf}</div></Card>
+            <Card><div className="label">Expectancy / trade</div><div className={`font-display text-lg mt-1 ${stats.expectancy >= 0 ? "text-up" : "text-down"}`}>₹{fmtInt(stats.expectancy)}</div></Card>
+            <Card><div className="label">Avg Win / Loss</div><div className="font-display text-lg mt-1 text-txt">{stats.avgLoss ? (stats.avgWin / stats.avgLoss).toFixed(2) : "—"}<span className="text-faint text-xs"> R</span></div></Card>
+            <Card><div className="label">Max Drawdown</div><div className="font-display text-lg mt-1 text-down">₹{fmtInt(stats.maxDD)}</div></Card>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-3">
+            <Card><div className="label">Avg Win</div><div className="font-mono text-sm mt-1 text-up">₹{fmtInt(stats.avgWin)}</div></Card>
+            <Card><div className="label">Avg Loss</div><div className="font-mono text-sm mt-1 text-down">₹{fmtInt(-stats.avgLoss)}</div></Card>
+            <Card><div className="label">Win / Loss Streak</div><div className="font-mono text-sm mt-1 text-txt"><span className="text-up">{stats.maxWinStreak}</span> / <span className="text-down">{stats.maxLossStreak}</span></div></Card>
+            <Card><div className="label">Best / Worst</div><div className="font-mono text-[0.72rem] mt-1"><span className="text-up">+₹{fmtInt(stats.best?.pnl ?? 0)}</span> / <span className="text-down">₹{fmtInt(stats.worst?.pnl ?? 0)}</span></div></Card>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2.5 mb-3">
+            <Breakdown title="By Setup" rows={stats.bySetup} />
+            <Breakdown title="By Side" rows={stats.bySide} />
+            <Breakdown title="By Day of Week" rows={stats.byDay} />
+          </div>
+        </>
       )}
 
       {/* Add trade */}
