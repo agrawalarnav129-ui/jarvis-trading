@@ -1,43 +1,22 @@
 {
-  "updated": "2026-06-08T08:21:32.357627Z",
+  "updated": "2026-06-09T03:02:23.108081Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "05-Jun-2026",
+    "date": "08-Jun-2026",
     "fii": {
-      "buy": 11044.57,
-      "sell": 19820.82,
-      "net": -8776.25
+      "buy": 8842.08,
+      "sell": 14397.75,
+      "net": -5555.67
     },
     "dii": {
-      "buy": 22779.32,
-      "sell": 13645.75,
-      "net": 9133.57
+      "buy": 16683.18,
+      "sell": 11517.94,
+      "net": 5165.24
     },
-    "net_combined": 357.32
+    "net_combined": -390.43
   },
   "corporate": [
-    {
-      "date": "2026-06-09",
-      "date_str": "09 Jun",
-      "symbol": "HITECHCORP",
-      "company": "Hitech Corporation Limited",
-      "purpose": "Voluntary Delisting"
-    },
-    {
-      "date": "2026-06-09",
-      "date_str": "09 Jun",
-      "symbol": "SKYGOLD",
-      "company": "SKY GOLD AND DIAMONDS LIMITED",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-09",
-      "date_str": "09 Jun",
-      "symbol": "STANLEY",
-      "company": "Stanley Lifestyles Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-06-10",
       "date_str": "10 Jun",
@@ -60,6 +39,41 @@
       "purpose": "Fund Raising"
     },
     {
+      "date": "2026-06-11",
+      "date_str": "11 Jun",
+      "symbol": "GANGAFORGE",
+      "company": "Ganga Forging Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-11",
+      "date_str": "11 Jun",
+      "symbol": "HINDOILEXP",
+      "company": "Hindustan Oil Exploration Company Limi",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-11",
+      "date_str": "11 Jun",
+      "symbol": "LAXMICOT",
+      "company": "Laxmi Cotspin Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-06-11",
+      "date_str": "11 Jun",
+      "symbol": "RATNAVEER",
+      "company": "Ratnaveer Precision Engineering Limite",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-12",
+      "date_str": "12 Jun",
+      "symbol": "ATHERENERG",
+      "company": "Ather Energy Limited",
+      "purpose": "Fund Raising"
+    },
+    {
       "date": "2026-06-15",
       "date_str": "15 Jun",
       "symbol": "SRPL",
@@ -72,6 +86,13 @@
       "symbol": "SURYODAY",
       "company": "Suryoday Small Finance Bank Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "SUPERHOUSE",
+      "company": "Superhouse Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
