@@ -1,0 +1,29 @@
+{
+  "CCL.NS": [],
+  "JSWINFRA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CAPLIPOINT.NS": [],
+  "CHAMBLFERT.NS": [],
+  "ASTERDM.NS": [],
+  "MSTCLTD.NS": [],
+  "HSCL.NS": [],
+  "APARINDS.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "JBCHEPHARM.NS": [],
+  "PIDILITIND.NS": [],
+  "FORTIS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MIDHANI.NS": [],
+  "INDHOTEL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "EQUITASBNK.NS": [],
+  "GAIL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
