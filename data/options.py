@@ -138,15 +138,17 @@ def write_cache() -> None:
 
 
 def _read_cache() -> dict:
-    if CACHE_FILE.exists():
-        try:
-            return json.loads(CACHE_FILE.read_text(encoding="utf-8"))
-        except Exception:
-            pass
+    # Prefer GitHub raw (reflects fresh commits without a redeploy), then the
+    # build-time local copy.
     try:
         r = requests.get(GITHUB_RAW, timeout=10)
         if r.status_code == 200:
             return r.json()
     except Exception:
         pass
+    if CACHE_FILE.exists():
+        try:
+            return json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            pass
     return {}
