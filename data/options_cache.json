@@ -2,14 +2,12 @@
   "NIFTY": {
     "symbol": "NIFTY",
     "available": false,
-    "note": "Option chain unavailable (HTTPError)",
-    "source": "NSE snapshot (cached)"
+    "note": "Option chain temporarily unavailable"
   },
   "BANKNIFTY": {
     "symbol": "BANKNIFTY",
     "available": false,
-    "note": "Option chain unavailable (HTTPError)",
-    "source": "NSE snapshot (cached)"
+    "note": "Option chain temporarily unavailable"
   },
-  "updated": "2026-06-10T08:13:07.387278Z"
+  "updated": "2026-06-10T11:31:51.988764Z"
 }
