@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-      - run: pip install requests python-dotenv loguru
+      - run: pip install requests python-dotenv loguru pandas lxml yfinance
       - name: Fetch option chains
         run: python -m jobs.run_options_cache
       - name: Commit options cache

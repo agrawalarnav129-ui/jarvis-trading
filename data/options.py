@@ -1,117 +1,132 @@
 """
-NSE index option-chain analytics — PCR, max-pain, support/resistance, ATM IV.
+Index option-chain analytics — sourced from Moneycontrol (NSE blocks datacenter IPs).
 
-NSE blocks datacenter IPs (Render), so the deployed backend reads a JSON snapshot
-committed by the GitHub Action (jobs/run_options_cache) via GitHub raw; locally /
-in Actions it fetches NSE directly.
+Moneycontrol serves the chain as an HTML table at
+  https://www.moneycontrol.com/indices/fno/view-option-chain/<SYMBOL>/<YYYY-MM-DD>
+We parse it for per-strike Call/Put OI, then compute PCR, max-pain,
+support/resistance. Underlying spot comes from yfinance. A GitHub-Actions
+snapshot (data/options_cache.json) is the fallback if Moneycontrol throttles.
 """
 from __future__ import annotations
 
 import json
-from datetime import datetime
+from datetime import date, datetime, timedelta
 
+import pandas as pd
 import requests
 from loguru import logger
 
 from config import DATA_DIR
 
-NSE_BASE = "https://www.nseindia.com"
-OC_API = "https://www.nseindia.com/api/option-chain-indices?symbol={sym}"
 CACHE_FILE = DATA_DIR / "options_cache.json"
 GITHUB_RAW = "https://raw.githubusercontent.com/agrawalarnav129-ui/jarvis-trading/main/data/options_cache.json"
+MC_URL = "https://www.moneycontrol.com/indices/fno/view-option-chain/{sym}/{exp}"
 
 _HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-    "Accept": "application/json, text/plain, */*",
+                  "(KHTML, like Gecko) Chrome/123.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml",
     "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Referer": "https://www.nseindia.com/option-chain",
-    "Sec-Fetch-Dest": "empty",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "same-origin",
-    "Sec-Ch-Ua": '"Chromium";v="123", "Not:A-Brand";v="8"',
-    "Sec-Ch-Ua-Mobile": "?0",
-    "Sec-Ch-Ua-Platform": '"Windows"',
-    "Connection": "keep-alive",
 }
 SYMBOLS = ["NIFTY", "BANKNIFTY"]
+_SPOT_TICKER = {"NIFTY": "^NSEI", "BANKNIFTY": "^NSEBANK"}
 
 
-def _analyse(payload: dict, symbol: str) -> dict:
-    rec = payload.get("records", {})
-    rows = rec.get("data", [])
-    spot = rec.get("underlyingValue", 0)
-    expiries = rec.get("expiryDates", [])
-    expiry = expiries[0] if expiries else None
+def _num(x) -> float:
+    s = str(x).replace(",", "").strip()
+    if s in ("-", "", "nan", "None"):
+        return 0.0
+    try:
+        return float(s)
+    except ValueError:
+        return 0.0
 
-    ce_oi = pe_oi = 0
-    strikes: dict[float, dict] = {}
-    for r in rows:
-        if expiry and r.get("expiryDate") != expiry:
+
+def _expiry_candidates() -> list[str]:
+    """Upcoming Tue/Thu (NSE weekly/monthly expiry days), nearest first."""
+    today = date.today()
+    out = [today + timedelta(days=i) for i in range(0, 45)]
+    return [d.strftime("%Y-%m-%d") for d in out if d.weekday() in (1, 3)][:10]
+
+
+def _spot(symbol: str) -> float:
+    try:
+        import yfinance as yf
+        df = yf.Ticker(_SPOT_TICKER.get(symbol, "^NSEI")).history(period="2d")
+        return round(float(df["Close"].dropna().iloc[-1]), 2) if not df.empty else 0.0
+    except Exception:
+        return 0.0
+
+
+def _parse_table(html: str) -> list[dict]:
+    """Parse the Moneycontrol option-chain table → [{strike, ceOI, peOI, ceLTP, peLTP}]."""
+    tables = pd.read_html(html)
+    tbl = next((t for t in tables if t.shape[1] >= 11 and t.shape[0] >= 5), None)
+    if tbl is None:
+        return []
+    rows = []
+    for _, r in tbl.iterrows():
+        v = r.tolist()
+        strike = _num(v[5])
+        if strike <= 0:
             continue
-        k = r.get("strikePrice")
-        ce = r.get("CE") or {}
-        pe = r.get("PE") or {}
-        coi = ce.get("openInterest", 0) or 0
-        poi = pe.get("openInterest", 0) or 0
-        ce_oi += coi; pe_oi += poi
-        strikes[k] = {"strike": k, "ceOI": coi, "peOI": poi,
-                      "ceIV": ce.get("impliedVolatility", 0) or 0, "peIV": pe.get("impliedVolatility", 0) or 0}
+        ce_oi, pe_oi = _num(v[0]), _num(v[10])
+        rows.append({"strike": strike, "ceOI": int(ce_oi), "peOI": int(pe_oi),
+                     "ceLTP": _num(v[4]), "peLTP": _num(v[6])})
+    return [r for r in rows if r["ceOI"] or r["peOI"]]
 
-    sl = sorted(strikes.values(), key=lambda x: x["strike"])
-    # Max pain: strike minimizing total intrinsic payout to option holders
+
+def _analyse(rows: list[dict], symbol: str, spot: float, expiry: str) -> dict:
+    sl = sorted(rows, key=lambda x: x["strike"])
+    ce_oi = sum(r["ceOI"] for r in sl)
+    pe_oi = sum(r["peOI"] for r in sl)
+
     def pain(at: float) -> float:
-        tot = 0.0
-        for s in sl:
-            tot += s["ceOI"] * max(0, at - s["strike"]) + s["peOI"] * max(0, s["strike"] - at)
-        return tot
-    max_pain = min((s["strike"] for s in sl), key=pain) if sl else None
+        return sum(r["ceOI"] * max(0, at - r["strike"]) + r["peOI"] * max(0, r["strike"] - at) for r in sl)
+    max_pain = min((r["strike"] for r in sl), key=pain) if sl else None
 
-    resistance = max(sl, key=lambda x: x["ceOI"])["strike"] if sl else None  # highest CE OI
-    support = max(sl, key=lambda x: x["peOI"])["strike"] if sl else None      # highest PE OI
-    atm = min((s for s in sl), key=lambda x: abs(x["strike"] - spot)) if sl else None
-    atm_iv = round((atm["ceIV"] + atm["peIV"]) / 2, 1) if atm else None
+    resistance = max(sl, key=lambda x: x["ceOI"])["strike"] if sl else None
+    support = max(sl, key=lambda x: x["peOI"])["strike"] if sl else None
+    if spot <= 0 and sl:
+        spot = max_pain or sl[len(sl) // 2]["strike"]
+    atm = min(sl, key=lambda x: abs(x["strike"] - spot)) if sl else None
+    step = (sl[1]["strike"] - sl[0]["strike"]) if len(sl) > 1 else 50
+    chain = [r for r in sl if atm and abs(r["strike"] - atm["strike"]) <= 15 * step]
 
     return {
-        "symbol": symbol, "spot": round(float(spot), 2), "expiry": expiry,
+        "symbol": symbol, "available": True, "spot": round(spot, 2), "expiry": expiry,
         "pcr": round(pe_oi / ce_oi, 2) if ce_oi else 0,
         "total_ce_oi": int(ce_oi), "total_pe_oi": int(pe_oi),
-        "max_pain": max_pain, "support": support, "resistance": resistance, "atm_iv": atm_iv,
-        # OI-by-strike near spot for the chart (±15 strikes)
-        "chain": [s for s in sl if atm and abs(s["strike"] - atm["strike"]) <= 15 * (sl[1]["strike"] - sl[0]["strike"] if len(sl) > 1 else 50)][:31],
+        "max_pain": max_pain, "support": support, "resistance": resistance, "atm_iv": None,
+        "chain": [{"strike": r["strike"], "ceOI": r["ceOI"], "peOI": r["peOI"]} for r in chain],
     }
 
 
 def fetch_option_chain(symbol: str = "NIFTY") -> dict:
-    import time
     symbol = symbol.upper()
-    last_exc: Exception | None = None
-    for attempt in range(3):
+    spot = _spot(symbol)
+    s = requests.Session(); s.headers.update(_HEADERS)
+    for exp in _expiry_candidates():
         try:
-            s = requests.Session(); s.headers.update(_HEADERS)
-            s.get(NSE_BASE, timeout=12)
-            s.get(f"{NSE_BASE}/option-chain", timeout=12)
-            s.get("https://www.nseindia.com/api/marketStatus", timeout=12)  # extra cookie warm-up
-            r = s.get(OC_API.format(sym=symbol), timeout=15)
-            r.raise_for_status()
-            out = _analyse(r.json(), symbol)
-            out["source"] = "NSE live"
-            return out
+            r = s.get(MC_URL.format(sym=symbol, exp=exp), timeout=15)
+            if r.status_code != 200:
+                continue
+            rows = _parse_table(r.text)
+            if len(rows) >= 5:
+                out = _analyse(rows, symbol, spot, exp)
+                out["source"] = "Moneycontrol"
+                return out
         except Exception as exc:
-            last_exc = exc
-            time.sleep(1.5)
-    exc = last_exc
-    logger.warning("Option-chain direct fetch failed ({}); trying cache", type(exc).__name__ if exc else "?")
+            logger.debug("MC option-chain {} {} failed: {}", symbol, exp, exc)
+    logger.warning("Moneycontrol option-chain failed for {}; trying cache", symbol)
     cached = _read_cache().get(symbol)
-    if cached:
-        return {**cached, "source": "NSE snapshot (cached)"}
-    return {"symbol": symbol, "available": False, "note": "Option chain unavailable (NSE blocks datacenter IPs)"}
+    if cached and cached.get("available"):
+        return {**cached, "source": "Moneycontrol (cached)"}
+    return {"symbol": symbol, "available": False, "note": "Option chain temporarily unavailable"}
 
 
 def write_cache() -> None:
-    """Fetch all index chains and persist (run in GitHub Actions where NSE works)."""
-    out = {}
+    out: dict = {}
     for sym in SYMBOLS:
         try:
             out[sym] = fetch_option_chain(sym)
