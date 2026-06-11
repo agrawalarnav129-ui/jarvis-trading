@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-11T03:02:52.182946Z",
+  "updated": "2026-06-11T08:12:45.701021Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -65,6 +65,13 @@
       "symbol": "SRPL",
       "company": "Shree Ram Proteins Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-16",
+      "date_str": "16 Jun",
+      "symbol": "TEMBO",
+      "company": "Tembo Global Industries Limited",
+      "purpose": "Stock Split"
     },
     {
       "date": "2026-06-16",
