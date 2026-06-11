@@ -1,0 +1,34 @@
+{
+  "APARINDS.NS": [],
+  "GLAND.NS": [],
+  "TORNTPHARM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "JBCHEPHARM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "AJANTPHARM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SOLARA.NS": [],
+  "CAPLIPOINT.NS": [],
+  "MBAPL.NS": [],
+  "HONASA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ICICIBANK.NS": [],
+  "ASTERDM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "KOTAKBANK.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ASTRAMICRO.NS": [],
+  "PIDILITIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "APOLLOHOSP.NS": []
+}
