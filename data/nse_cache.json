@@ -1,50 +1,22 @@
 {
-  "updated": "2026-06-10T07:17:26.896691Z",
+  "updated": "2026-06-11T03:02:52.182946Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "09-Jun-2026",
+    "date": "10-Jun-2026",
     "fii": {
-      "buy": 14735.47,
-      "sell": 19301.5,
-      "net": -4566.03
+      "buy": 14047.79,
+      "sell": 16172.77,
+      "net": -2124.98
     },
     "dii": {
-      "buy": 17664.98,
-      "sell": 11505.5,
-      "net": 6159.48
+      "buy": 17396.4,
+      "sell": 14272.45,
+      "net": 3123.95
     },
-    "net_combined": 1593.45
+    "net_combined": 998.97
   },
   "corporate": [
-    {
-      "date": "2026-06-11",
-      "date_str": "11 Jun",
-      "symbol": "GANGAFORGE",
-      "company": "Ganga Forging Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-11",
-      "date_str": "11 Jun",
-      "symbol": "HINDOILEXP",
-      "company": "Hindustan Oil Exploration Company Limi",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-11",
-      "date_str": "11 Jun",
-      "symbol": "LAXMICOT",
-      "company": "Laxmi Cotspin Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-06-11",
-      "date_str": "11 Jun",
-      "symbol": "RATNAVEER",
-      "company": "Ratnaveer Precision Engineering Limite",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-06-12",
       "date_str": "12 Jun",
@@ -79,6 +51,13 @@
       "symbol": "SOMATEX",
       "company": "Soma Textiles & Industries Limited",
       "purpose": "Dividend"
+    },
+    {
+      "date": "2026-06-13",
+      "date_str": "13 Jun",
+      "symbol": "KIMS",
+      "company": "Krishna Institute of Medical Sciences ",
+      "purpose": "Fund Raising/Other business ma"
     },
     {
       "date": "2026-06-15",
