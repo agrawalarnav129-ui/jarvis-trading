@@ -1,57 +1,22 @@
 {
-  "updated": "2026-06-11T08:12:45.701021Z",
+  "updated": "2026-06-12T03:02:23.531311Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "10-Jun-2026",
+    "date": "11-Jun-2026",
     "fii": {
-      "buy": 14047.79,
-      "sell": 16172.77,
-      "net": -2124.98
+      "buy": 14000.58,
+      "sell": 15987.67,
+      "net": -1987.09
     },
     "dii": {
-      "buy": 17396.4,
-      "sell": 14272.45,
-      "net": 3123.95
+      "buy": 16822.57,
+      "sell": 12598.06,
+      "net": 4224.51
     },
-    "net_combined": 998.97
+    "net_combined": 2237.42
   },
   "corporate": [
-    {
-      "date": "2026-06-12",
-      "date_str": "12 Jun",
-      "symbol": "ATHERENERG",
-      "company": "Ather Energy Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-12",
-      "date_str": "12 Jun",
-      "symbol": "DUCON",
-      "company": "Ducon Infratechnologies Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-12",
-      "date_str": "12 Jun",
-      "symbol": "MUKKA",
-      "company": "Mukka Proteins Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-06-12",
-      "date_str": "12 Jun",
-      "symbol": "OMKARCHEM",
-      "company": "Omkar Speciality Chemicals Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-12",
-      "date_str": "12 Jun",
-      "symbol": "SOMATEX",
-      "company": "Soma Textiles & Industries Limited",
-      "purpose": "Dividend"
-    },
     {
       "date": "2026-06-13",
       "date_str": "13 Jun",
@@ -69,6 +34,20 @@
     {
       "date": "2026-06-16",
       "date_str": "16 Jun",
+      "symbol": "GANGAFORGE",
+      "company": "Ganga Forging Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-16",
+      "date_str": "16 Jun",
+      "symbol": "NARMADA",
+      "company": "Narmada Agrobase Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-16",
+      "date_str": "16 Jun",
       "symbol": "TEMBO",
       "company": "Tembo Global Industries Limited",
       "purpose": "Stock Split"
@@ -78,6 +57,34 @@
       "date_str": "16 Jun",
       "symbol": "VERTOZ",
       "company": "Vertoz Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-17",
+      "date_str": "17 Jun",
+      "symbol": "ANSALAPI",
+      "company": "Ansal Properties & Infrastructure Limi",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-06-17",
+      "date_str": "17 Jun",
+      "symbol": "BHARATIDIL",
+      "company": "Bharati Defence and Infrastructure Lim",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-18",
+      "date_str": "18 Jun",
+      "symbol": "SOLEX",
+      "company": "Solex Energy Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-06-19",
+      "date_str": "19 Jun",
+      "symbol": "UNIVASTU",
+      "company": "Univastu India Limited",
       "purpose": "Fund Raising"
     },
     {
