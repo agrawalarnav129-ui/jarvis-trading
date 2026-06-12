@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-12T03:02:23.531311Z",
+  "updated": "2026-06-12T08:02:01.675417Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -23,6 +23,13 @@
       "symbol": "KIMS",
       "company": "Krishna Institute of Medical Sciences ",
       "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-06-15",
+      "date_str": "15 Jun",
+      "symbol": "FINKURVE",
+      "company": "Finkurve Financial Services Limited",
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-06-15",
@@ -72,6 +79,13 @@
       "symbol": "BHARATIDIL",
       "company": "Bharati Defence and Infrastructure Lim",
       "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-17",
+      "date_str": "17 Jun",
+      "symbol": "TATACAP",
+      "company": "Tata Capital Limited",
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-06-18",
