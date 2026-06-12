@@ -1,0 +1,35 @@
+{
+  "MMTC.NS": [],
+  "BOSCHLTD.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PRIVISCL.NS": [],
+  "JSWINFRA.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "JBMA.NS": [],
+  "PIDILITIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "AGI.NS": [],
+  "CERA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "AIIL.NS": [],
+  "SOLARA.NS": [],
+  "EQUITASBNK.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "SWSOLAR.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "HSCL.NS": [],
+  "APARINDS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "FORTIS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
