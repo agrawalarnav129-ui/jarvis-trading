@@ -9,6 +9,7 @@ snapshot (data/options_cache.json) is the fallback if Moneycontrol throttles.
 """
 from __future__ import annotations
 
+import io
 import json
 from datetime import date, datetime, timedelta
 
@@ -60,7 +61,7 @@ def _spot(symbol: str) -> float:
 
 def _parse_table(html: str) -> list[dict]:
     """Parse the Moneycontrol option-chain table → [{strike, ceOI, peOI, ceLTP, peLTP}]."""
-    tables = pd.read_html(html)
+    tables = pd.read_html(io.StringIO(html))
     tbl = next((t for t in tables if t.shape[1] >= 11 and t.shape[0] >= 5), None)
     if tbl is None:
         return []

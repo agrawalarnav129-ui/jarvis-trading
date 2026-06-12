@@ -1,35 +1,84 @@
 {
-  "updated": "2026-06-12T08:02:01.675417Z",
+  "updated": "2026-06-10T07:17:26.896691Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "11-Jun-2026",
+    "date": "09-Jun-2026",
     "fii": {
-      "buy": 14000.58,
-      "sell": 15987.67,
-      "net": -1987.09
+      "buy": 14735.47,
+      "sell": 19301.5,
+      "net": -4566.03
     },
     "dii": {
-      "buy": 16822.57,
-      "sell": 12598.06,
-      "net": 4224.51
+      "buy": 17664.98,
+      "sell": 11505.5,
+      "net": 6159.48
     },
-    "net_combined": 2237.42
+    "net_combined": 1593.45
   },
   "corporate": [
     {
-      "date": "2026-06-13",
-      "date_str": "13 Jun",
-      "symbol": "KIMS",
-      "company": "Krishna Institute of Medical Sciences ",
+      "date": "2026-06-11",
+      "date_str": "11 Jun",
+      "symbol": "GANGAFORGE",
+      "company": "Ganga Forging Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-11",
+      "date_str": "11 Jun",
+      "symbol": "HINDOILEXP",
+      "company": "Hindustan Oil Exploration Company Limi",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-11",
+      "date_str": "11 Jun",
+      "symbol": "LAXMICOT",
+      "company": "Laxmi Cotspin Limited",
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-06-15",
-      "date_str": "15 Jun",
-      "symbol": "FINKURVE",
-      "company": "Finkurve Financial Services Limited",
+      "date": "2026-06-11",
+      "date_str": "11 Jun",
+      "symbol": "RATNAVEER",
+      "company": "Ratnaveer Precision Engineering Limite",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-12",
+      "date_str": "12 Jun",
+      "symbol": "ATHERENERG",
+      "company": "Ather Energy Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-12",
+      "date_str": "12 Jun",
+      "symbol": "DUCON",
+      "company": "Ducon Infratechnologies Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-12",
+      "date_str": "12 Jun",
+      "symbol": "MUKKA",
+      "company": "Mukka Proteins Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-06-12",
+      "date_str": "12 Jun",
+      "symbol": "OMKARCHEM",
+      "company": "Omkar Speciality Chemicals Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-12",
+      "date_str": "12 Jun",
+      "symbol": "SOMATEX",
+      "company": "Soma Textiles & Industries Limited",
+      "purpose": "Dividend"
     },
     {
       "date": "2026-06-15",
@@ -41,64 +90,8 @@
     {
       "date": "2026-06-16",
       "date_str": "16 Jun",
-      "symbol": "GANGAFORGE",
-      "company": "Ganga Forging Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-16",
-      "date_str": "16 Jun",
-      "symbol": "NARMADA",
-      "company": "Narmada Agrobase Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-16",
-      "date_str": "16 Jun",
-      "symbol": "TEMBO",
-      "company": "Tembo Global Industries Limited",
-      "purpose": "Stock Split"
-    },
-    {
-      "date": "2026-06-16",
-      "date_str": "16 Jun",
       "symbol": "VERTOZ",
       "company": "Vertoz Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-17",
-      "date_str": "17 Jun",
-      "symbol": "ANSALAPI",
-      "company": "Ansal Properties & Infrastructure Limi",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-06-17",
-      "date_str": "17 Jun",
-      "symbol": "BHARATIDIL",
-      "company": "Bharati Defence and Infrastructure Lim",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-17",
-      "date_str": "17 Jun",
-      "symbol": "TATACAP",
-      "company": "Tata Capital Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-18",
-      "date_str": "18 Jun",
-      "symbol": "SOLEX",
-      "company": "Solex Energy Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-06-19",
-      "date_str": "19 Jun",
-      "symbol": "UNIVASTU",
-      "company": "Univastu India Limited",
       "purpose": "Fund Raising"
     },
     {
