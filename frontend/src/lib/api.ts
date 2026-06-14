@@ -56,6 +56,7 @@ export const api = {
   history: (symbol: string, period = "6mo", interval = "1d") =>
     get<HistoryResp>(`/api/history?symbol=${encodeURIComponent(symbol)}&period=${period}&interval=${interval}`),
   analysis: (symbol: string) => get<{ symbol: string; analysis: string }>(`/api/analysis?symbol=${encodeURIComponent(symbol)}`),
+  symbols: () => get<{ count: number; symbols: { symbol: string; name: string; sector: string }[] }>("/api/symbols"),
   patternMatch: async (shape: number[], window = 60, top = 24, min_price = 0) => {
     const r = await fetch(`${BASE}/api/pattern-match`, {
       method: "POST", headers: { "Content-Type": "application/json" },

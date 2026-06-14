@@ -6,6 +6,7 @@ import BottomNav from "./components/BottomNav";
 import ErrorBoundary from "./components/ErrorBoundary";
 import PullToRefresh from "./components/PullToRefresh";
 import { useAlertsToggle, useSignalAlerts } from "./lib/alerts";
+import { usePriceAlerts } from "./lib/priceAlerts";
 import Dashboard from "./pages/Dashboard"; // eager — it's the landing page
 
 const Screener = lazy(() => import("./pages/Screener"));
@@ -34,6 +35,7 @@ export default function App() {
   const [refreshKey, setRefreshKey] = useState(0);
   const [alertsOn, toggleAlerts] = useAlertsToggle();
   useSignalAlerts(alertsOn);
+  usePriceAlerts(alertsOn);
 
   return (
     <div className="min-h-screen flex flex-col">

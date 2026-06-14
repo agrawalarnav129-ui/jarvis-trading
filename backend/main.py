@@ -228,6 +228,32 @@ def scan_custom(rsi_min: float = 0, rsi_max: float = 100, adx_min: float = 0,
         raise HTTPException(status_code=503, detail="Custom scan unavailable")
 
 
+_symbols_cache: TTLCache = TTLCache(maxsize=1, ttl=3600)
+
+
+@app.get("/api/symbols")
+def symbols():
+    """Universe symbols + company names for fast client-side search."""
+    if "v" in _symbols_cache:
+        return _symbols_cache["v"]
+    try:
+        from data.fetcher import load_universe
+        df = load_universe()
+        out = [
+            {"symbol": str(r.get("symbol") or r.get("yfinance_ticker")),
+             "name": str(r.get("company_name") or ""),
+             "sector": str(r.get("industry") or "")}
+            for r in df.to_dict("records")
+            if r.get("symbol") or r.get("yfinance_ticker")
+        ]
+        payload = {"count": len(out), "symbols": out}
+        _symbols_cache["v"] = payload
+        return payload
+    except Exception as exc:
+        logger.exception("Symbols list failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Symbols unavailable")
+
+
 # ── Sketch Pattern Finder ─────────────────────────────────────────────
 # Match a user-drawn price shape against the whole universe's recent closes.
 _closes_cache: TTLCache = TTLCache(maxsize=1, ttl=900)

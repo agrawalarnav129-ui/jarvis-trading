@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Minus, Slash, Eraser } from "lucide-react";
+import { Minus, Slash, Eraser, Bell } from "lucide-react";
+import { addAlert, alertsFor, removeAlert } from "../lib/priceAlerts";
 import {
   createChart, ColorType, CandlestickSeries, HistogramSeries, LineSeries, AreaSeries, BarSeries,
   type IChartApi, type ISeriesApi, type UTCTimestamp,
@@ -21,6 +22,7 @@ interface Props {
   interval: string;
   indicators: ChartIndicators;
   chartType?: ChartType;
+  symbol?: string;   // enables persisted drawings + price alerts
   compareCandles?: Candle[] | null;
   compareLabel?: string;
   footprint?: { price: number; total_vol: number }[] | null;
@@ -31,27 +33,35 @@ interface Props {
 }
 
 const T = (n: number) => n as UTCTimestamp;
+function loadDrawings(key: string): any[] {
+  if (!key) return [];
+  try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch { return []; }
+}
 
-export default function PriceChart({ candles, interval, indicators, chartType = "candle", compareCandles, footprint, poc, height = 300, syncRef }: Props) {
+export default function PriceChart({ candles, interval, indicators, chartType = "candle", symbol, compareCandles, footprint, poc, height = 300, syncRef }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const chartRef = useRef<IChartApi | null>(null);
   const candleRef = useRef<ISeriesApi<any> | null>(null);
   const vpRef = useRef<HTMLDivElement>(null);
   const legendRef = useRef<HTMLDivElement>(null);
 
-  // ── drawing tools state ──
+  // ── drawing tools state (persisted per symbol) ──
   type Drawing = { type: "hl"; price: number } | { type: "tl"; a: { time: number; price: number }; b: { time: number; price: number } };
-  const [drawMode, setDrawMode] = useState<"none" | "hl" | "tl">("none");
-  const drawModeRef = useRef<"none" | "hl" | "tl">("none");
+  type Mode = "none" | "hl" | "tl" | "alert";
+  const drawKey = symbol ? `axiom_draw_${symbol}` : "";
+  const [drawMode, setDrawMode] = useState<Mode>("none");
+  const drawModeRef = useRef<Mode>("none");
   drawModeRef.current = drawMode;
-  const drawingsRef = useRef<Drawing[]>([]);
+  const drawingsRef = useRef<Drawing[]>(loadDrawings(drawKey));
   const removersRef = useRef<Array<() => void>>([]);
   const tlFirstRef = useRef<{ time: number; price: number } | null>(null);
+  const persist = () => { if (drawKey) try { localStorage.setItem(drawKey, JSON.stringify(drawingsRef.current)); } catch { /* */ } };
   const clearDrawings = () => {
     removersRef.current.forEach((fn) => fn());
     removersRef.current = [];
     drawingsRef.current = [];
     tlFirstRef.current = null;
+    persist();
   };
 
   useEffect(() => {
@@ -104,6 +114,16 @@ export default function PriceChart({ candles, interval, indicators, chartType = 
       }
     };
     drawingsRef.current.forEach(applyDrawing);
+
+    // existing price alerts for this symbol → gold dashed lines with a 🔔 label
+    const drawAlertLines = () => {
+      if (!symbol) return;
+      for (const a of alertsFor(symbol)) {
+        candleSeries.createPriceLine({ price: a.price, color: "#fbbf24", lineWidth: 1, lineStyle: 1, axisLabelVisible: true, title: "🔔" });
+      }
+    };
+    drawAlertLines();
+
     chart.subscribeClick((param) => {
       const mode = drawModeRef.current;
       if (mode === "none" || !param.point || param.time == null) return;
@@ -111,14 +131,19 @@ export default function PriceChart({ candles, interval, indicators, chartType = 
       if (price == null) return;
       const p = Math.round(price * 100) / 100;
       const time = param.time as number;
-      if (mode === "hl") {
+      if (mode === "alert") {
+        if (!symbol) return;
+        const last = candles[candles.length - 1]?.c ?? p;
+        addAlert(symbol, p, p >= last ? "above" : "below");
+        candleSeries.createPriceLine({ price: p, color: "#fbbf24", lineWidth: 1, lineStyle: 1, axisLabelVisible: true, title: "🔔" });
+      } else if (mode === "hl") {
         const d: Drawing = { type: "hl", price: p };
-        drawingsRef.current.push(d); applyDrawing(d);
+        drawingsRef.current.push(d); applyDrawing(d); persist();
       } else if (!tlFirstRef.current) {
         tlFirstRef.current = { time, price: p };
       } else {
         const d: Drawing = { type: "tl", a: tlFirstRef.current, b: { time, price: p } };
-        tlFirstRef.current = null; drawingsRef.current.push(d); applyDrawing(d);
+        tlFirstRef.current = null; drawingsRef.current.push(d); applyDrawing(d); persist();
       }
     });
 
@@ -292,6 +317,7 @@ export default function PriceChart({ candles, interval, indicators, chartType = 
       <div className="absolute left-1 top-1 z-10 flex gap-1">
         <button onClick={() => setDrawMode(drawMode === "hl" ? "none" : "hl")} title="Horizontal level (click a price)" className={tbBtn(drawMode === "hl")}><Minus size={12} /></button>
         <button onClick={() => setDrawMode(drawMode === "tl" ? "none" : "tl")} title="Trendline (click 2 points)" className={tbBtn(drawMode === "tl")}><Slash size={12} /></button>
+        {symbol && <button onClick={() => setDrawMode(drawMode === "alert" ? "none" : "alert")} title="Set price alert (click a price)" className={tbBtn(drawMode === "alert")}><Bell size={12} /></button>}
         <button onClick={clearDrawings} title="Clear drawings" className="p-1 rounded border bg-elevated/80 border-line text-faint hover:text-down cursor-pointer transition-colors"><Eraser size={12} /></button>
       </div>
       <div ref={legendRef} className="absolute left-1 top-9 z-10 font-mono text-[0.6rem] text-faint pointer-events-none whitespace-nowrap" />

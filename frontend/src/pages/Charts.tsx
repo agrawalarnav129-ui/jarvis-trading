@@ -4,6 +4,7 @@ import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { Section } from "../components/ui";
 import PriceChart, { type ChartIndicators, type ChartType } from "../components/PriceChart";
+import SymbolSearch from "../components/SymbolSearch";
 import { saveLayout, loadLayout } from "../lib/layouts";
 
 const TIMEFRAMES = ["5m", "15m", "30m", "1h", "1d", "1wk"];
@@ -19,7 +20,6 @@ interface PanelCfg { symbol: string; interval: string; indicators: ChartIndicato
 const defCfg = (symbol: string): PanelCfg => ({ symbol, interval: "1d", indicators: { ema: true, volume: true }, compare: "", chartType: "candle" });
 
 function ChartPanel({ cfg, onChange, height, syncRef }: { cfg: PanelCfg; onChange: (c: PanelCfg) => void; height: number; syncRef: any }) {
-  const [symInput, setSymInput] = useState(cfg.symbol);
   const [cmpInput, setCmpInput] = useState(cfg.compare);
   const { data, loading } = useFetch(() => api.history(cfg.symbol, PERIOD_FOR[cfg.interval], cfg.interval), [cfg.symbol, cfg.interval]);
   const cmp = useFetch(() => (cfg.compare ? api.history(cfg.compare, PERIOD_FOR[cfg.interval], cfg.interval) : Promise.resolve(null as any)), [cfg.compare, cfg.interval]);
@@ -30,10 +30,7 @@ function ChartPanel({ cfg, onChange, height, syncRef }: { cfg: PanelCfg; onChang
   return (
     <div className="card p-2.5 flex flex-col">
       <div className="flex items-center gap-1.5 mb-2 flex-wrap">
-        <input value={symInput} onChange={(e) => setSymInput(e.target.value.toUpperCase())}
-          onKeyDown={(e) => e.key === "Enter" && onChange({ ...cfg, symbol: symInput.trim() || cfg.symbol })}
-          onBlur={() => symInput.trim() && symInput !== cfg.symbol && onChange({ ...cfg, symbol: symInput.trim() })}
-          className="w-24 bg-base border border-line rounded px-2 py-1 text-xs font-mono text-txt outline-none focus:border-brand/60" />
+        <SymbolSearch value={cfg.symbol} onPick={(s) => onChange({ ...cfg, symbol: s })} />
         {data && <span className={`font-mono text-xs ${data.pct >= 0 ? "text-up" : "text-down"}`}>₹{data.last} ({data.pct >= 0 ? "+" : ""}{data.pct}%)</span>}
         <div className="ml-auto flex gap-0.5">
           {TIMEFRAMES.map((t) => (
@@ -60,7 +57,7 @@ function ChartPanel({ cfg, onChange, height, syncRef }: { cfg: PanelCfg; onChang
       </div>
       {loading ? <div className="bg-base/40 rounded animate-pulse" style={{ height }} /> :
         data && data.candles.length ? (
-          <PriceChart candles={data.candles} interval={cfg.interval} indicators={cfg.indicators} chartType={cfg.chartType}
+          <PriceChart candles={data.candles} interval={cfg.interval} indicators={cfg.indicators} chartType={cfg.chartType} symbol={cfg.symbol}
             compareCandles={cmp.data?.candles ?? null} footprint={fp.data?.profile ?? null} poc={fp.data?.poc}
             height={height} syncRef={syncRef} />
         ) : <div className="flex items-center justify-center text-faint text-xs font-mono" style={{ height }}>No data</div>}
@@ -75,6 +72,18 @@ export default function Charts() {
   const [msg, setMsg] = useState("");
 
   useEffect(() => { loadLayout().then((l) => { if (l?.panels) { setLayout(l.layout || 4); setPanels(l.panels); } }); }, []);
+
+  // Hotkeys: 1-6 set timeframe for all panels; q/w/e/r/t/y… nah keep simple.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement;
+      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA")) return;
+      const idx = ["1", "2", "3", "4", "5", "6"].indexOf(e.key);
+      if (idx >= 0) { e.preventDefault(); setPanels((p) => p.map((c) => ({ ...c, interval: TIMEFRAMES[idx] }))); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   const setCount = (n: number) => {
     setLayout(n);
