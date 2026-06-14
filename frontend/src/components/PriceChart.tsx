@@ -1,18 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import { Minus, Slash, Eraser } from "lucide-react";
 import {
-  createChart, ColorType, CandlestickSeries, HistogramSeries, LineSeries,
+  createChart, ColorType, CandlestickSeries, HistogramSeries, LineSeries, AreaSeries, BarSeries,
   type IChartApi, type ISeriesApi, type UTCTimestamp,
 } from "lightweight-charts";
 import type { Candle } from "../lib/api";
-import { ema, bollinger, rsi as rsiTA, volume as volTA, normalized } from "../lib/ta";
+import {
+  ema, bollinger, rsi as rsiTA, volume as volTA, normalized,
+  macd as macdTA, stochastic, vwap as vwapTA, supertrend, heikinAshi,
+} from "../lib/ta";
 
-export interface ChartIndicators { ema?: boolean; bb?: boolean; rsi?: boolean; volume?: boolean; volumeProfile?: boolean; }
+export type ChartType = "candle" | "heikin" | "line" | "area" | "bars";
+export interface ChartIndicators {
+  ema?: boolean; bb?: boolean; rsi?: boolean; volume?: boolean; volumeProfile?: boolean;
+  vwap?: boolean; macd?: boolean; stoch?: boolean; supertrend?: boolean;
+}
 
 interface Props {
   candles: Candle[];
   interval: string;
   indicators: ChartIndicators;
+  chartType?: ChartType;
   compareCandles?: Candle[] | null;
   compareLabel?: string;
   footprint?: { price: number; total_vol: number }[] | null;
@@ -24,11 +32,12 @@ interface Props {
 
 const T = (n: number) => n as UTCTimestamp;
 
-export default function PriceChart({ candles, interval, indicators, compareCandles, footprint, poc, height = 300, syncRef }: Props) {
+export default function PriceChart({ candles, interval, indicators, chartType = "candle", compareCandles, footprint, poc, height = 300, syncRef }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const chartRef = useRef<IChartApi | null>(null);
-  const candleRef = useRef<ISeriesApi<"Candlestick"> | null>(null);
+  const candleRef = useRef<ISeriesApi<any> | null>(null);
   const vpRef = useRef<HTMLDivElement>(null);
+  const legendRef = useRef<HTMLDivElement>(null);
 
   // ── drawing tools state ──
   type Drawing = { type: "hl"; price: number } | { type: "tl"; a: { time: number; price: number }; b: { time: number; price: number } };
@@ -59,12 +68,27 @@ export default function PriceChart({ candles, interval, indicators, compareCandl
     });
     chartRef.current = chart;
 
-    const candleSeries = chart.addSeries(CandlestickSeries, {
-      upColor: "#22c55e", downColor: "#ef4444", borderVisible: false,
-      wickUpColor: "#22c55e", wickDownColor: "#ef4444",
-    });
+    // ── main price series (chart-type switch) ──
+    const ohlc = (chartType === "heikin" ? heikinAshi(candles) : candles)
+      .map((c) => ({ time: T(c.t), open: c.o, high: c.h, low: c.l, close: c.c }));
+    let candleSeries: ISeriesApi<any>;
+    if (chartType === "line") {
+      candleSeries = chart.addSeries(LineSeries, { color: "#22d3ee", lineWidth: 2 });
+      candleSeries.setData(candles.map((c) => ({ time: T(c.t), value: c.c })));
+    } else if (chartType === "area") {
+      candleSeries = chart.addSeries(AreaSeries, { lineColor: "#22d3ee", topColor: "rgba(34,211,238,0.25)", bottomColor: "rgba(34,211,238,0.02)", lineWidth: 2 });
+      candleSeries.setData(candles.map((c) => ({ time: T(c.t), value: c.c })));
+    } else if (chartType === "bars") {
+      candleSeries = chart.addSeries(BarSeries, { upColor: "#22c55e", downColor: "#ef4444" });
+      candleSeries.setData(ohlc);
+    } else {
+      candleSeries = chart.addSeries(CandlestickSeries, {
+        upColor: "#22c55e", downColor: "#ef4444", borderVisible: false,
+        wickUpColor: "#22c55e", wickDownColor: "#ef4444",
+      });
+      candleSeries.setData(ohlc);
+    }
     candleRef.current = candleSeries;
-    candleSeries.setData(candles.map((c) => ({ time: T(c.t), open: c.o, high: c.h, low: c.l, close: c.c })));
 
     // ── drawings: re-apply stored + handle click-to-draw ──
     removersRef.current = [];
@@ -122,19 +146,63 @@ export default function PriceChart({ candles, interval, indicators, compareCandl
       mid.setData(bb.mid.map((x) => ({ time: T(x.time), value: x.value })));
     }
 
+    if (indicators.vwap) {
+      const s = chart.addSeries(LineSeries, { color: "#a855f7", lineWidth: 2, priceLineVisible: false, lastValueVisible: false });
+      s.setData(vwapTA(candles).map((x) => ({ time: T(x.time), value: x.value })));
+    }
+
+    if (indicators.supertrend) {
+      const st = supertrend(candles, 10, 3);
+      for (const [seg, color] of [[st.up, "#22c55e"], [st.down, "#ef4444"]] as const) {
+        if (!seg.length) continue;
+        const s = chart.addSeries(LineSeries, { color, lineWidth: 2, priceLineVisible: false, lastValueVisible: false });
+        s.setData(seg.map((x) => ({ time: T(x.time), value: x.value })));
+      }
+    }
+
     if (compareCandles && compareCandles.length) {
       const cmp = chart.addSeries(LineSeries, { color: "#a855f7", lineWidth: 2, priceScaleId: "cmp", priceLineVisible: false, lastValueVisible: false });
       cmp.setData(normalized(compareCandles).map((x) => ({ time: T(x.time), value: x.value })));
     }
 
+    // ── oscillator sub-panes (each gets its own pane below price) ──
+    let paneIdx = 1;
+    const paneH = Math.round(height * 0.22);
     if (indicators.rsi) {
       try {
-        const r = chart.addSeries(LineSeries, { color: "#22d3ee", lineWidth: 1, priceScaleId: "rsi", lastValueVisible: false }, 1);
+        const p = paneIdx++;
+        const r = chart.addSeries(LineSeries, { color: "#22d3ee", lineWidth: 1, priceScaleId: "rsi", lastValueVisible: false }, p);
         r.setData(rsiTA(candles, 14).map((x) => ({ time: T(x.time), value: x.value })));
         r.createPriceLine({ price: 70, color: "rgba(239,68,68,0.4)", lineWidth: 1, lineStyle: 2, axisLabelVisible: false, title: "" });
         r.createPriceLine({ price: 30, color: "rgba(34,197,94,0.4)", lineWidth: 1, lineStyle: 2, axisLabelVisible: false, title: "" });
-        chart.panes()[1]?.setHeight(Math.round(height * 0.25));
-      } catch { /* pane API unavailable — skip RSI */ }
+        chart.panes()[p]?.setHeight(paneH);
+      } catch { /* pane API unavailable */ }
+    }
+    if (indicators.macd) {
+      try {
+        const p = paneIdx++;
+        const m = macdTA(candles);
+        const h = chart.addSeries(HistogramSeries, { priceScaleId: "macd", lastValueVisible: false }, p);
+        h.setData(m.hist.map((x) => ({ time: T(x.time), value: x.value, color: x.color })));
+        const ml = chart.addSeries(LineSeries, { color: "#22d3ee", lineWidth: 1, priceScaleId: "macd", lastValueVisible: false }, p);
+        ml.setData(m.line.map((x) => ({ time: T(x.time), value: x.value })));
+        const sl = chart.addSeries(LineSeries, { color: "#fbbf24", lineWidth: 1, priceScaleId: "macd", lastValueVisible: false }, p);
+        sl.setData(m.signal.map((x) => ({ time: T(x.time), value: x.value })));
+        chart.panes()[p]?.setHeight(paneH);
+      } catch { /* */ }
+    }
+    if (indicators.stoch) {
+      try {
+        const p = paneIdx++;
+        const s = stochastic(candles);
+        const k = chart.addSeries(LineSeries, { color: "#22d3ee", lineWidth: 1, priceScaleId: "stoch", lastValueVisible: false }, p);
+        k.setData(s.k.map((x) => ({ time: T(x.time), value: x.value })));
+        const d = chart.addSeries(LineSeries, { color: "#fbbf24", lineWidth: 1, priceScaleId: "stoch", lastValueVisible: false }, p);
+        d.setData(s.d.map((x) => ({ time: T(x.time), value: x.value })));
+        k.createPriceLine({ price: 80, color: "rgba(239,68,68,0.4)", lineWidth: 1, lineStyle: 2, axisLabelVisible: false, title: "" });
+        k.createPriceLine({ price: 20, color: "rgba(34,197,94,0.4)", lineWidth: 1, lineStyle: 2, axisLabelVisible: false, title: "" });
+        chart.panes()[p]?.setHeight(paneH);
+      } catch { /* */ }
     }
 
     chart.timeScale().fitContent();
@@ -151,9 +219,25 @@ export default function PriceChart({ candles, interval, indicators, compareCandl
       suppress = false;
     };
     syncRef?.current.add(apply);
+    // ── OHLC legend ──
+    const setLegend = (c: Candle | undefined) => {
+      const el = legendRef.current;
+      if (!el || !c) return;
+      const prev = candles[candles.indexOf(c) - 1];
+      const chg = prev ? ((c.c - prev.c) / prev.c) * 100 : 0;
+      const col = c.c >= c.o ? "#22c55e" : "#ef4444";
+      el.innerHTML =
+        `<span style="color:${col}">O</span> ${c.o} ` +
+        `<span style="color:${col}">H</span> ${c.h} ` +
+        `<span style="color:${col}">L</span> ${c.l} ` +
+        `<span style="color:${col}">C</span> ${c.c} ` +
+        `<span style="color:${chg >= 0 ? "#22c55e" : "#ef4444"}">${chg >= 0 ? "+" : ""}${chg.toFixed(2)}%</span>`;
+    };
+    setLegend(candles[candles.length - 1]);
     chart.subscribeCrosshairMove((param) => {
-      if (suppress) return;
       const time = (param.time as number | undefined) ?? null;
+      setLegend(time == null ? candles[candles.length - 1] : candles.find((x) => x.t === time));
+      if (suppress) return;
       syncRef?.current.forEach((fn) => { if (fn !== apply) fn(time); });
     });
 
@@ -172,7 +256,7 @@ export default function PriceChart({ candles, interval, indicators, compareCandl
       candleRef.current = null;
       removersRef.current = [];
     };
-  }, [candles, JSON.stringify(indicators), interval, height, compareCandles?.length]);
+  }, [candles, JSON.stringify(indicators), chartType, interval, height, compareCandles?.length]);
 
   // ── Volume Profile overlay (right rail, aligned to price axis) ──
   useEffect(() => {
@@ -210,6 +294,7 @@ export default function PriceChart({ candles, interval, indicators, compareCandl
         <button onClick={() => setDrawMode(drawMode === "tl" ? "none" : "tl")} title="Trendline (click 2 points)" className={tbBtn(drawMode === "tl")}><Slash size={12} /></button>
         <button onClick={clearDrawings} title="Clear drawings" className="p-1 rounded border bg-elevated/80 border-line text-faint hover:text-down cursor-pointer transition-colors"><Eraser size={12} /></button>
       </div>
+      <div ref={legendRef} className="absolute left-1 top-9 z-10 font-mono text-[0.6rem] text-faint pointer-events-none whitespace-nowrap" />
       <div ref={wrap} style={{ cursor: drawMode === "none" ? "default" : "crosshair" }} />
       <div ref={vpRef} className="absolute inset-0 pointer-events-none" />
     </div>

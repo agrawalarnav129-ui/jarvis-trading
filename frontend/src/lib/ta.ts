@@ -61,6 +61,123 @@ export function volume(candles: Candle[]) {
   return candles.map((c) => ({ time: c.t, value: c.v, color: c.c >= c.o ? "rgba(34,197,94,0.5)" : "rgba(239,68,68,0.5)" }));
 }
 
+// ── EMA over a plain number[] (helper for MACD) ──
+function emaArr(vals: number[], period: number): number[] {
+  if (vals.length < period) return [];
+  const k = 2 / (period + 1);
+  let prev = vals.slice(0, period).reduce((a, b) => a + b, 0) / period;
+  const out = new Array(period - 1).fill(NaN);
+  out.push(prev);
+  for (let i = period; i < vals.length; i++) { prev = vals[i] * k + prev * (1 - k); out.push(prev); }
+  return out;
+}
+
+/** MACD(12,26,9): line, signal, and histogram (colored). */
+export function macd(candles: Candle[], fast = 12, slow = 26, signal = 9) {
+  const closes = candles.map((c) => c.c);
+  const ef = emaArr(closes, fast), es = emaArr(closes, slow);
+  const line: LinePoint[] = [], macdRaw: number[] = [];
+  for (let i = 0; i < candles.length; i++) {
+    if (isNaN(ef[i]) || isNaN(es[i])) { macdRaw.push(NaN); continue; }
+    const m = ef[i] - es[i]; macdRaw.push(m); line.push({ time: candles[i].t, value: r(m) });
+  }
+  const valid = macdRaw.filter((x) => !isNaN(x));
+  const sig = emaArr(valid, signal);
+  const signalLine: LinePoint[] = [], hist: { time: number; value: number; color: string }[] = [];
+  let vi = 0;
+  for (let i = 0; i < candles.length; i++) {
+    if (isNaN(macdRaw[i])) continue;
+    const s = sig[vi];
+    if (!isNaN(s)) {
+      signalLine.push({ time: candles[i].t, value: r(s) });
+      const h = macdRaw[i] - s;
+      hist.push({ time: candles[i].t, value: r(h), color: h >= 0 ? "rgba(34,197,94,0.6)" : "rgba(239,68,68,0.6)" });
+    }
+    vi++;
+  }
+  return { line, signal: signalLine, hist };
+}
+
+/** Stochastic oscillator %K (smoothed) and %D. */
+export function stochastic(candles: Candle[], kP = 14, kSmooth = 3, dP = 3) {
+  if (candles.length < kP) return { k: [] as LinePoint[], d: [] as LinePoint[] };
+  const rawK: number[] = [];
+  for (let i = kP - 1; i < candles.length; i++) {
+    let hi = -Infinity, lo = Infinity;
+    for (let j = i - kP + 1; j <= i; j++) { hi = Math.max(hi, candles[j].h); lo = Math.min(lo, candles[j].l); }
+    rawK.push(hi === lo ? 50 : ((candles[i].c - lo) / (hi - lo)) * 100);
+  }
+  const sma = (a: number[], p: number) => a.map((_, i) => i < p - 1 ? NaN : a.slice(i - p + 1, i + 1).reduce((x, y) => x + y, 0) / p);
+  const kS = sma(rawK, kSmooth), dS = sma(kS, dP);
+  const base = kP - 1;
+  const k: LinePoint[] = [], d: LinePoint[] = [];
+  for (let i = 0; i < rawK.length; i++) {
+    const t = candles[base + i].t;
+    if (!isNaN(kS[i])) k.push({ time: t, value: r(kS[i]) });
+    if (!isNaN(dS[i])) d.push({ time: t, value: r(dS[i]) });
+  }
+  return { k, d };
+}
+
+/** Anchored VWAP from the first bar (typical price × volume, cumulative). */
+export function vwap(candles: Candle[]): LinePoint[] {
+  let cumPV = 0, cumV = 0;
+  return candles.map((c) => {
+    const tp = (c.h + c.l + c.c) / 3;
+    cumPV += tp * (c.v || 0); cumV += c.v || 0;
+    return { time: c.t, value: r(cumV ? cumPV / cumV : c.c) };
+  });
+}
+
+/** ATR (Wilder) as a plain series. */
+function atrArr(candles: Candle[], period = 14): number[] {
+  const tr: number[] = [];
+  for (let i = 0; i < candles.length; i++) {
+    if (i === 0) { tr.push(candles[i].h - candles[i].l); continue; }
+    const p = candles[i - 1].c;
+    tr.push(Math.max(candles[i].h - candles[i].l, Math.abs(candles[i].h - p), Math.abs(candles[i].l - p)));
+  }
+  const out = new Array(candles.length).fill(NaN);
+  if (candles.length <= period) return out;
+  let a = tr.slice(1, period + 1).reduce((x, y) => x + y, 0) / period;
+  out[period] = a;
+  for (let i = period + 1; i < candles.length; i++) { a = (a * (period - 1) + tr[i]) / period; out[i] = a; }
+  return out;
+}
+
+/** Supertrend(10,3): trend-following line, segmented with direction for coloring. */
+export function supertrend(candles: Candle[], period = 10, mult = 3) {
+  const atr = atrArr(candles, period);
+  const up: LinePoint[] = [], down: LinePoint[] = [];
+  let prevST = NaN, prevDir = 1, prevUpper = NaN, prevLower = NaN;
+  for (let i = 0; i < candles.length; i++) {
+    if (isNaN(atr[i])) continue;
+    const c = candles[i], mid = (c.h + c.l) / 2;
+    let upper = mid + mult * atr[i], lower = mid - mult * atr[i];
+    if (!isNaN(prevUpper)) { upper = upper < prevUpper || candles[i - 1].c > prevUpper ? upper : prevUpper; lower = lower > prevLower || candles[i - 1].c < prevLower ? lower : prevLower; }
+    let dir = prevDir;
+    if (!isNaN(prevST)) dir = c.c > prevUpper ? 1 : c.c < prevLower ? -1 : prevDir;
+    const st = dir === 1 ? lower : upper;
+    (dir === 1 ? up : down).push({ time: c.t, value: r(st) });
+    prevST = st; prevDir = dir; prevUpper = upper; prevLower = lower;
+  }
+  return { up, down };
+}
+
+/** Heikin-Ashi candles derived from raw OHLC. */
+export function heikinAshi(candles: Candle[]): Candle[] {
+  const out: Candle[] = [];
+  let pO = candles.length ? candles[0].o : 0, pC = candles.length ? candles[0].c : 0;
+  for (const c of candles) {
+    const ha_c = (c.o + c.h + c.l + c.c) / 4;
+    const ha_o = out.length === 0 ? (c.o + c.c) / 2 : (pO + pC) / 2;
+    const ha_h = Math.max(c.h, ha_o, ha_c), ha_l = Math.min(c.l, ha_o, ha_c);
+    out.push({ t: c.t, o: r(ha_o), h: r(ha_h), l: r(ha_l), c: r(ha_c), v: c.v });
+    pO = ha_o; pC = ha_c;
+  }
+  return out;
+}
+
 /** Normalized % change from first close — for compare-overlay lines. */
 export function normalized(candles: Candle[]): LinePoint[] {
   if (!candles.length) return [];

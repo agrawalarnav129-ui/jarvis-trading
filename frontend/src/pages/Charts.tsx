@@ -3,16 +3,20 @@ import { Grid2x2, Square, LayoutGrid, Save, FolderOpen, Maximize2 } from "lucide
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { Section } from "../components/ui";
-import PriceChart, { type ChartIndicators } from "../components/PriceChart";
+import PriceChart, { type ChartIndicators, type ChartType } from "../components/PriceChart";
 import { saveLayout, loadLayout } from "../lib/layouts";
 
 const TIMEFRAMES = ["5m", "15m", "30m", "1h", "1d", "1wk"];
 const PERIOD_FOR: Record<string, string> = { "5m": "5d", "15m": "1mo", "30m": "1mo", "1h": "3mo", "1d": "1y", "1wk": "5y" };
-const IND_LIST: [keyof ChartIndicators, string][] = [["ema", "EMA"], ["bb", "BB"], ["rsi", "RSI"], ["volume", "Vol"], ["volumeProfile", "VP"]];
+const IND_LIST: [keyof ChartIndicators, string][] = [
+  ["ema", "EMA"], ["bb", "BB"], ["vwap", "VWAP"], ["supertrend", "ST"],
+  ["rsi", "RSI"], ["macd", "MACD"], ["stoch", "Stoch"], ["volume", "Vol"], ["volumeProfile", "VP"],
+];
+const CHART_TYPES: [ChartType, string][] = [["candle", "Candle"], ["heikin", "HA"], ["line", "Line"], ["area", "Area"], ["bars", "Bars"]];
 const SEED = ["RELIANCE", "HDFCBANK", "INFY", "TCS", "ICICIBANK", "SBIN"];
 
-interface PanelCfg { symbol: string; interval: string; indicators: ChartIndicators; compare: string; }
-const defCfg = (symbol: string): PanelCfg => ({ symbol, interval: "1d", indicators: { ema: true, volume: true }, compare: "" });
+interface PanelCfg { symbol: string; interval: string; indicators: ChartIndicators; compare: string; chartType?: ChartType; }
+const defCfg = (symbol: string): PanelCfg => ({ symbol, interval: "1d", indicators: { ema: true, volume: true }, compare: "", chartType: "candle" });
 
 function ChartPanel({ cfg, onChange, height, syncRef }: { cfg: PanelCfg; onChange: (c: PanelCfg) => void; height: number; syncRef: any }) {
   const [symInput, setSymInput] = useState(cfg.symbol);
@@ -39,6 +43,12 @@ function ChartPanel({ cfg, onChange, height, syncRef }: { cfg: PanelCfg; onChang
         </div>
       </div>
       <div className="flex items-center gap-1 mb-2 flex-wrap">
+        <div className="flex gap-0.5 mr-1 pr-1.5 border-r border-line">
+          {CHART_TYPES.map(([t, label]) => (
+            <button key={t} onClick={() => onChange({ ...cfg, chartType: t })} title={label}
+              className={`px-1.5 py-0.5 rounded text-[0.6rem] font-mono cursor-pointer transition-colors ${(cfg.chartType || "candle") === t ? "bg-brand/20 text-brand" : "text-faint hover:text-txt"}`}>{label}</button>
+          ))}
+        </div>
         {IND_LIST.map(([k, label]) => (
           <button key={k} onClick={() => setInd(k)}
             className={`px-1.5 py-0.5 rounded text-[0.6rem] font-mono border cursor-pointer transition-colors ${cfg.indicators[k] ? "bg-brand/15 border-brand/40 text-brand" : "border-line text-faint hover:text-txt"}`}>{label}</button>
@@ -50,7 +60,7 @@ function ChartPanel({ cfg, onChange, height, syncRef }: { cfg: PanelCfg; onChang
       </div>
       {loading ? <div className="bg-base/40 rounded animate-pulse" style={{ height }} /> :
         data && data.candles.length ? (
-          <PriceChart candles={data.candles} interval={cfg.interval} indicators={cfg.indicators}
+          <PriceChart candles={data.candles} interval={cfg.interval} indicators={cfg.indicators} chartType={cfg.chartType}
             compareCandles={cmp.data?.candles ?? null} footprint={fp.data?.profile ?? null} poc={fp.data?.poc}
             height={height} syncRef={syncRef} />
         ) : <div className="flex items-center justify-center text-faint text-xs font-mono" style={{ height }}>No data</div>}
