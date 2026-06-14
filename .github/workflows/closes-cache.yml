@@ -1,0 +1,38 @@
+name: Closes Cache (Pattern Finder)
+
+# Dump the universe's recent daily closes once per evening (after EOD data is
+# settled) so the backend can run sketch pattern-matching instantly. yfinance
+# works from GitHub runners; the backend reads the committed JSON via raw.
+on:
+  schedule:
+    - cron: "30 11 * * 1-5"   # ~17:00 IST, after market close
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  closes:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Kolkata
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install requests python-dotenv loguru pandas yfinance
+      - name: Build closes cache
+        run: python -m jobs.run_closes_cache
+      - name: Commit closes cache
+        run: |
+          git config user.name  "jarvis-bot"
+          git config user.email "jarvis-bot@users.noreply.github.com"
+          git add data/closes_cache.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: closes cache [skip ci]"
+            git push
+          else
+            echo "Closes cache unchanged."
+          fi

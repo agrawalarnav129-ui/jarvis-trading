@@ -228,6 +228,72 @@ def scan_custom(rsi_min: float = 0, rsi_max: float = 100, adx_min: float = 0,
         raise HTTPException(status_code=503, detail="Custom scan unavailable")
 
 
+# ── Sketch Pattern Finder ─────────────────────────────────────────────
+# Match a user-drawn price shape against the whole universe's recent closes.
+_closes_cache: TTLCache = TTLCache(maxsize=1, ttl=900)
+
+
+def _closes_data() -> dict:
+    if "v" not in _closes_cache:
+        from data.closes import read_closes
+        _closes_cache["v"] = read_closes()
+    return _closes_cache["v"]
+
+
+def _norm(arr):
+    import numpy as np
+    a = np.asarray(arr, dtype=float)
+    lo, hi = a.min(), a.max()
+    return (a - lo) / (hi - lo) if hi > lo else np.zeros_like(a)
+
+
+class PatternReq(BaseModel):
+    shape: list[float]               # drawn curve, sampled top→bottom-agnostic
+    window: int = 60                 # trailing bars to match against
+    top: int = 24
+    min_price: float = 0.0
+
+
+@app.post("/api/pattern-match")
+def pattern_match(req: PatternReq):
+    """Rank universe symbols whose recent price action best matches a drawn shape."""
+    import numpy as np
+    shape = [float(x) for x in (req.shape or []) if x == x]
+    if len(shape) < 4:
+        raise HTTPException(status_code=400, detail="Shape too short")
+    target = _norm(shape)
+    n = len(target)
+    xi = np.linspace(0, 1, n)
+    win = max(20, min(int(req.window), 250))
+
+    payload = _closes_data()
+    data = payload.get("data", {}) if isinstance(payload, dict) else {}
+    results = []
+    for sym, closes in data.items():
+        if not closes or len(closes) < max(30, win // 2):
+            continue
+        seg = np.asarray(closes[-win:], dtype=float)
+        if req.min_price and seg[-1] < req.min_price:
+            continue
+        # resample segment to the sketch's resolution, then min-max normalize
+        rs = np.interp(xi, np.linspace(0, 1, len(seg)), seg)
+        cand = _norm(rs)
+        dist = float(np.mean(np.abs(cand - target)))        # shape distance 0..1
+        corr = float(np.corrcoef(cand, target)[0, 1]) if np.std(cand) > 0 else 0.0
+        if np.isnan(corr):
+            corr = 0.0
+        score = max(0.0, (1 - dist) * 0.6 + (corr + 1) / 2 * 0.4) * 100
+        results.append({
+            "symbol": sym, "score": round(score, 1),
+            "last": round(float(seg[-1]), 2),
+            "pct": round(float((seg[-1] - seg[0]) / seg[0] * 100), 1) if seg[0] else 0.0,
+            "spark": [round(float(v), 2) for v in seg[-min(len(seg), 80):]],
+        })
+    results.sort(key=lambda r: r["score"], reverse=True)
+    return {"count": len(results), "window": win, "updated": payload.get("updated"),
+            "results": results[: max(1, min(int(req.top), 60))]}
+
+
 @app.get("/api/backtest")
 def backtest(symbol: str, period: str = "2y", rr: float = 2.5, capital: float = 1_000_000):
     """Run the breakout backtest on one symbol. Returns metrics + recent trades."""

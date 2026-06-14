@@ -27,6 +27,7 @@ export interface CalEvent { date: string | null; date_str: string; event?: strin
 export interface Regime { regime: string; nifty_close: number; ema50: number; ema200: number; adx: number; max_positions: number; min_rr: number; reason: string; }
 export interface Candle { t: number; o: number; h: number; l: number; c: number; v: number; }
 export interface HistoryResp { symbol: string; interval: string; last: number; change: number; pct: number; rsi: number; adx: number; ema20: number; ema50: number; ema200: number; atr: number; high_52w: number; low_52w: number; candles: Candle[]; }
+export interface PatternMatch { symbol: string; score: number; last: number; pct: number; spark: number[]; }
 export interface FiiDii { available: boolean; date?: string; fii?: { net: number }; dii?: { net: number }; note?: string; }
 export interface ClockData { iso: string; ist: string; date: string; market_open: boolean; }
 
@@ -55,6 +56,14 @@ export const api = {
   history: (symbol: string, period = "6mo", interval = "1d") =>
     get<HistoryResp>(`/api/history?symbol=${encodeURIComponent(symbol)}&period=${period}&interval=${interval}`),
   analysis: (symbol: string) => get<{ symbol: string; analysis: string }>(`/api/analysis?symbol=${encodeURIComponent(symbol)}`),
+  patternMatch: async (shape: number[], window = 60, top = 24, min_price = 0) => {
+    const r = await fetch(`${BASE}/api/pattern-match`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ shape, window, top, min_price }),
+    });
+    if (!r.ok) throw new Error(`pattern-match -> ${r.status}`);
+    return (await r.json()) as { count: number; window: number; updated: string | null; results: PatternMatch[] };
+  },
   sectors: () => get<{ sectors: { sector: string; pct: number }[] }>("/api/sectors"),
   options: (symbol = "NIFTY") => get<{ symbol: string; available?: boolean; note?: string; source?: string; spot: number; expiry: string; pcr: number; total_ce_oi: number; total_pe_oi: number; max_pain: number; support: number; resistance: number; atm_iv: number; chain: { strike: number; ceOI: number; peOI: number }[] }>(`/api/options?symbol=${symbol}`),
   quote: (symbols: string[]) => get<{ quotes: { symbol: string; ltp: number; change: number; pct: number }[] }>(`/api/quote?symbols=${encodeURIComponent(symbols.join(","))}`),
