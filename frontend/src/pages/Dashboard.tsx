@@ -1,10 +1,12 @@
-import { RefreshCw, ExternalLink, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { RefreshCw, ExternalLink, ChevronRight, CalendarClock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { fmt, fmtInt, signColor, arrow } from "../lib/format";
 import { Card, Section, Skeleton, Empty } from "../components/ui";
 import { useSymbolNav } from "../components/SymbolLink";
+import { listWatch } from "../lib/watchlist";
 
 function IndexStrip() {
   const { data, loading } = useFetch(() => api.indices(), [], 90_000);
@@ -65,6 +67,28 @@ function StatusRow() {
           </div>
         ) : <div className="font-mono text-[0.66rem] text-faint mt-2">Market closed.</div>}
       </Card>
+    </div>
+  );
+}
+
+function EventGuard() {
+  const nav = useNavigate();
+  const [syms, setSyms] = useState<string[]>([]);
+  useEffect(() => { listWatch().then(setSyms); }, []);
+  const events = useFetch(() => (syms.length ? api.eventsWatch(syms, 10) : Promise.resolve(null)), [syms.join(",")]);
+  const ev = events.data;
+  if (!ev?.any) return null;
+  return (
+    <div onClick={() => nav("/watchlist")} className="card mb-3 border-l-2 border-l-gold cursor-pointer hover:bg-elevated/40 transition-colors px-3 py-2.5">
+      <div className="flex items-center gap-1.5 mb-1.5"><CalendarClock size={13} className="text-gold" /><span className="label text-gold">Event Guard · next 10 days</span><ChevronRight size={12} className="text-faint ml-auto" /></div>
+      <div className="flex flex-wrap gap-1.5">
+        {ev.flagged.slice(0, 8).map((e, i) => (
+          <span key={`f${i}`} className="text-[0.62rem] font-mono text-gold bg-gold/10 border border-gold/30 rounded px-1.5 py-0.5">⚠ {e.symbol} · {e.purpose || "event"} · {e.date_str}</span>
+        ))}
+        {ev.macro.slice(0, 4).map((e, i) => (
+          <span key={`m${i}`} className="text-[0.62rem] font-mono text-down bg-down/10 border border-down/30 rounded px-1.5 py-0.5">{e.event} · {e.date_str}</span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -189,6 +213,7 @@ export default function Dashboard() {
   const go = useSymbolNav();
   return (
     <div>
+      <EventGuard />
       <Section title="Market Pulse · Live Indices"><IndexStrip /></Section>
       <Section title="Status"><StatusRow /></Section>
       <Section title="Quant Signals · NIFTY Gamma"><QuantSignals /></Section>
