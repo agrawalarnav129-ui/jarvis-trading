@@ -127,6 +127,34 @@ function QuantSignals() {
   );
 }
 
+function RotationSignals() {
+  const nav = useNavigate();
+  const rrg = useFetch(() => api.rrg([], 8), []);
+  const d = rrg.data;
+  const QUAD: [string, string][] = [["Leading", "#22c55e"], ["Improving", "#22d3ee"], ["Weakening", "#fbbf24"], ["Lagging", "#ef4444"]];
+  if (rrg.loading) return <Skeleton h={84} />;
+  if (!d || !d.available) return <Empty msg={d?.note || "Rotation needs cached closes + NIFTY benchmark."} />;
+  return (
+    <div onClick={() => nav("/quant")} className="cursor-pointer group">
+      <div className="flex gap-2.5 overflow-x-auto scroll-thin pb-1 -mx-1 px-1">
+        {QUAD.map(([q, c]) => {
+          const members = d.points.filter((p) => p.quadrant === q).map((p) => p.symbol);
+          return (
+            <div key={q} className="card px-3 py-2.5 min-w-[150px] flex-shrink-0" style={{ borderLeft: `2px solid ${c}` }}>
+              <div className="label" style={{ color: c }}>{q}</div>
+              <div className="font-mono text-[0.72rem] text-txt mt-1 truncate">{members.slice(0, 3).join(", ") || "—"}</div>
+              <div className="font-mono text-[0.56rem] text-faint mt-0.5">{members.length} name{members.length === 1 ? "" : "s"}</div>
+            </div>
+          );
+        })}
+        <div className="card px-3 py-2.5 min-w-[110px] flex-shrink-0 flex items-center justify-center text-faint group-hover:text-brand transition-colors">
+          <span className="font-mono text-[0.62rem]">Rotation</span><ChevronRight size={13} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function MoversTable({ rows, up, onSym }: { rows: { symbol: string; ltp: number; pct: number }[]; up: boolean; onSym: (s: string) => void }) {
   if (!rows.length) return <Empty msg="No data (market closed?)." />;
   return (
@@ -217,6 +245,7 @@ export default function Dashboard() {
       <Section title="Market Pulse · Live Indices"><IndexStrip /></Section>
       <Section title="Status"><StatusRow /></Section>
       <Section title="Quant Signals · NIFTY Gamma"><QuantSignals /></Section>
+      <Section title="Sector Rotation · vs NIFTY"><RotationSignals /></Section>
       <Section title="Sector Heatmap"><SectorHeatmap /></Section>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
