@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T03:00:53.193302Z",
+  "updated": "2026-06-15T03:02:32.118138Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,20 +17,6 @@
     "net_combined": 4259.11
   },
   "corporate": [
-    {
-      "date": "2026-06-15",
-      "date_str": "15 Jun",
-      "symbol": "FINKURVE",
-      "company": "Finkurve Financial Services Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-15",
-      "date_str": "15 Jun",
-      "symbol": "SRPL",
-      "company": "Shree Ram Proteins Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-06-16",
       "date_str": "16 Jun",
