@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { ScanSearch, Loader2, TrendingUp, SlidersHorizontal } from "lucide-react";
+import { ScanSearch, Loader2, TrendingUp, SlidersHorizontal, Sparkles } from "lucide-react";
 import { api } from "../lib/api";
 import { Section, Card, Empty } from "../components/ui";
 import { useSymbolNav } from "../components/SymbolLink";
 
 const gradeColor: Record<string, string> = { A: "text-up", B: "text-gold", C: "text-faint" };
-type Mode = "top" | "rs" | "custom";
+type Mode = "top" | "rs" | "custom" | "nl";
+const NL_EXAMPLES = ["high RS pharma breaking out on 1.5x volume", "A-grade stocks ADX over 30 above EMA200", "oversold RSI under 35 with rising trend"];
 
 const defFilters = { rsi_min: 0, rsi_max: 100, adx_min: 0, vol_min: 0, score_min: 0, rs20_min: -999, grade: "", above_ema200: false, ema_aligned: false, sort_by: "score" };
 
@@ -17,12 +18,18 @@ export default function Screener() {
   const [err, setErr] = useState<string | null>(null);
   const [rsBy, setRsBy] = useState("rs_20d");
   const [f, setF] = useState<any>({ ...defFilters });
+  const [nlQuery, setNlQuery] = useState("");
+  const [nlFilters, setNlFilters] = useState<Record<string, any> | null>(null);
 
   const run = async (m: Mode) => {
-    setMode(m); setLoading(true); setErr(null); setRows(null);
+    setMode(m); setLoading(true); setErr(null); setRows(null); if (m !== "nl") setNlFilters(null);
     try {
       if (m === "top") setRows((await api.screener()).results);
       else if (m === "rs") setRows((await api.rsRanking(rsBy)).results);
+      else if (m === "nl") {
+        const res = await api.scanNL(nlQuery);
+        setNlFilters(res.filters); setRows(res.results);
+      }
       else setRows((await api.scanCustom(f)).results);
     } catch { setErr("Screener engine takes ~30–60s on the first run (free tier). Try again."); }
     finally { setLoading(false); }
@@ -50,8 +57,35 @@ export default function Screener() {
         <Tab m="top" label="Top Picks" Icon={ScanSearch} />
         <Tab m="rs" label="RS Leaders" Icon={TrendingUp} />
         <Tab m="custom" label="Custom" Icon={SlidersHorizontal} />
+        <Tab m="nl" label="Ask AI" Icon={Sparkles} />
       </div>
     }>
+      {mode === "nl" && (
+        <Card className="mb-3">
+          <div className="flex items-center gap-2">
+            <Sparkles size={14} className="text-brand shrink-0" />
+            <input value={nlQuery} onChange={(e) => setNlQuery(e.target.value)} onKeyDown={(e) => e.key === "Enter" && nlQuery.trim() && run("nl")}
+              placeholder="Describe what you want… e.g. high RS pharma breaking out on volume"
+              className="flex-1 bg-base border border-line rounded px-2.5 py-1.5 text-sm text-txt outline-none focus:border-brand/60" />
+            <button onClick={() => run("nl")} disabled={loading || !nlQuery.trim()} className="rounded-lg bg-brand/15 border border-brand/40 px-3 py-1.5 text-xs text-brand font-medium cursor-pointer hover:bg-brand/25 disabled:opacity-50">
+              {loading ? <Loader2 size={14} className="animate-spin" /> : "Scan"}
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-1.5 mt-2">
+            {NL_EXAMPLES.map((ex) => (
+              <button key={ex} onClick={() => { setNlQuery(ex); }} className="text-[0.6rem] font-mono text-faint hover:text-brand border border-line rounded px-2 py-0.5 cursor-pointer">{ex}</button>
+            ))}
+          </div>
+          {nlFilters && (
+            <div className="flex flex-wrap gap-1.5 mt-2.5 items-center">
+              <span className="label">AI parsed →</span>
+              {Object.keys(nlFilters).length ? Object.entries(nlFilters).map(([k, v]) => (
+                <span key={k} className="text-[0.6rem] font-mono text-brand bg-brand/10 border border-brand/30 rounded px-1.5 py-0.5">{k}: {String(v)}</span>
+              )) : <span className="text-[0.6rem] font-mono text-faint">no specific filters — showing top by score</span>}
+            </div>
+          )}
+        </Card>
+      )}
       {mode === "rs" && (
         <div className="flex gap-1.5 mb-3">
           {["rs_20d", "rs_60d"].map((b) => (

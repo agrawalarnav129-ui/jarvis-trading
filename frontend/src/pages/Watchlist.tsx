@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Plus, Trash2, Star, Loader2 } from "lucide-react";
+import { Plus, Trash2, Star, Loader2, CalendarClock } from "lucide-react";
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { Section, Card, Empty } from "../components/ui";
@@ -49,8 +49,25 @@ export default function Watchlist() {
     .map((r: any) => String(r.symbol).replace(".NS", ""))
     .filter((s: string) => !syms.includes(s));
 
+  const events = useFetch(() => (syms.length ? api.eventsWatch(syms, 10) : Promise.resolve(null)), [syms.join(",")]);
+  const ev = events.data;
+
   return (
     <Section title="My Watchlist">
+      {ev?.any && (
+        <Card className="mb-3 border-l-2 border-l-gold">
+          <div className="flex items-center gap-1.5 mb-1.5"><CalendarClock size={13} className="text-gold" /><span className="label text-gold">Event guard — next 10 days</span></div>
+          <div className="flex flex-wrap gap-1.5">
+            {ev.flagged.map((e, i) => (
+              <span key={`f${i}`} className="text-[0.62rem] font-mono text-gold bg-gold/10 border border-gold/30 rounded px-1.5 py-0.5">⚠ {e.symbol} · {e.purpose || "event"} · {e.date_str}</span>
+            ))}
+            {ev.macro.map((e, i) => (
+              <span key={`m${i}`} className="text-[0.62rem] font-mono text-down bg-down/10 border border-down/30 rounded px-1.5 py-0.5">{e.event} · {e.date_str}</span>
+            ))}
+          </div>
+          <div className="text-[0.55rem] text-faint mt-1.5 font-mono">House rule: don't hold through earnings/RBI/Budget without defined risk.</div>
+        </Card>
+      )}
       {/* Add bar */}
       <div className="flex gap-2 mb-3">
         <input value={input} onChange={(e) => setInput(e.target.value.toUpperCase())} onKeyDown={(e) => e.key === "Enter" && add(input)}

@@ -381,6 +381,202 @@ def quant_correlation(req: CorrReq):
         raise HTTPException(status_code=503, detail="Correlation unavailable")
 
 
+@app.get("/api/quant/rrg")
+def quant_rrg(symbols: str = "", tail: int = 8):
+    """Relative Rotation Graph (RS-Ratio vs RS-Momentum vs NIFTY)."""
+    try:
+        from analytics.rrg import compute_rrg
+        syms = [s.strip() for s in symbols.split(",") if s.strip()]
+        if not syms:
+            import csv
+            from config import DATA_DIR
+            wl = DATA_DIR / "watchlist.csv"
+            if wl.exists():
+                with wl.open() as f:
+                    syms = [r["symbol"] for r in csv.DictReader(f) if r.get("symbol")][:15]
+        key = f"rrg:{','.join(sorted(syms))}:{tail}"
+        return _keyed(_quant_cache, key, lambda: compute_rrg(syms, tail=max(2, min(int(tail), 16))))
+    except Exception as exc:
+        logger.exception("RRG failed: {}", exc)
+        raise HTTPException(status_code=503, detail="RRG unavailable")
+
+
+class Position(BaseModel):
+    symbol: str
+    risk_pct: float = 2.0
+
+
+class HeatReq(BaseModel):
+    positions: list[Position] = []
+    candidate: Position | None = None
+
+
+@app.post("/api/portfolio-heat")
+def portfolio_heat(req: HeatReq):
+    """Pre-trade portfolio heat: correlation to the open book + aggregate risk vs caps."""
+    try:
+        from analytics.quant import correlation
+        from config import MAX_DAILY_RISK_PCT, MAX_POSITION_RISK_PCT
+        book = list(req.positions)
+        allpos = book + ([req.candidate] if req.candidate else [])
+        syms = [(p.symbol if p.symbol.endswith(".NS") else f"{p.symbol}.NS") for p in allpos]
+        total_risk = sum(p.risk_pct for p in allpos)
+        cap = MAX_DAILY_RISK_PCT * 100
+        warnings = []
+        if total_risk > cap:
+            warnings.append(f"Total open risk {total_risk:.1f}% exceeds the {cap:.0f}% daily cap.")
+        if req.candidate and req.candidate.risk_pct > MAX_POSITION_RISK_PCT * 100:
+            warnings.append(f"Candidate risk {req.candidate.risk_pct:.1f}% exceeds the {MAX_POSITION_RISK_PCT*100:.0f}% per-trade cap.")
+        if len(allpos) > 2:
+            warnings.append(f"{len(allpos)} positions — house rule is max 2 concurrent.")
+
+        corr = correlation(syms) if len(syms) >= 2 else {"available": False}
+        # highest correlation of candidate vs each existing position
+        cand_pairs = []
+        if req.candidate and corr.get("available"):
+            labels = corr["symbols"]
+            ci = len(labels) - 1  # candidate appended last (if all resolved)
+            cand_label = req.candidate.symbol.replace(".NS", "")
+            if cand_label in labels:
+                ci = labels.index(cand_label)
+                for j, lab in enumerate(labels):
+                    if j != ci:
+                        cand_pairs.append({"symbol": lab, "corr": corr["matrix"][ci][j]})
+                cand_pairs.sort(key=lambda x: abs(x["corr"]), reverse=True)
+                for p in cand_pairs:
+                    if p["corr"] >= 0.7:
+                        warnings.append(f"Candidate is {p['corr']:.2f} correlated with {p['symbol']} — effectively one bet.")
+                        break
+        return {"total_risk": round(total_risk, 1), "cap": cap, "positions": len(allpos),
+                "correlation": corr, "candidate_pairs": cand_pairs[:5],
+                "warnings": warnings, "ok": not warnings}
+    except Exception as exc:
+        logger.exception("Portfolio heat failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Portfolio heat unavailable")
+
+
+@app.get("/api/events/watch")
+def events_watch(symbols: str = "", days: int = 10):
+    """Flag upcoming corporate (results/board) + high-impact macro events for given symbols."""
+    try:
+        from data.econ_calendar import fetch_corporate_events, macro_events
+        want = {s.strip().replace(".NS", "").upper() for s in symbols.split(",") if s.strip()}
+        corp = fetch_corporate_events(days_ahead=days, limit=60)
+        hits = [e for e in corp if e.get("symbol", "").replace(".NS", "").upper() in want] if want else []
+        macro = [e for e in macro_events(days_ahead=days) if (e.get("impact") or "").upper() == "HIGH"]
+        return {"days": days, "flagged": hits, "macro": macro,
+                "count": len(hits), "any": bool(hits or macro)}
+    except Exception as exc:
+        logger.exception("Events watch failed: {}", exc)
+        return {"days": days, "flagged": [], "macro": [], "count": 0, "any": False}
+
+
+class NLScanReq(BaseModel):
+    query: str
+
+
+@app.post("/api/scan/nl")
+def scan_nl(req: NLScanReq):
+    """Natural-language screener — Groq parses the query into scan filters, then runs them."""
+    try:
+        import json as _json
+
+        from ai.brain import _call_groq
+        sys_p = (
+            "You convert a trader's request into JSON scan filters for an NSE screener. "
+            "Output ONLY a JSON object (no prose) with any of these keys: "
+            "rsi_min,rsi_max,adx_min,vol_min (volume x avg),score_min,rs20_min (relative strength %),"
+            "grade (A|B|C),above_ema200 (bool),ema_aligned (bool),sort_by (score|rs_20d|rs_60d|rsi|adx|volume_ratio). "
+            "Only include keys the user implies. Example: {\"adx_min\":25,\"vol_min\":1.5,\"ema_aligned\":true,\"sort_by\":\"rs_20d\"}"
+        )
+        raw = _call_groq(sys_p, req.query, max_tokens=200).strip()
+        if raw.startswith("```"):
+            raw = raw.strip("`").split("\n", 1)[-1].rsplit("```", 1)[0]
+        start, end = raw.find("{"), raw.rfind("}")
+        params = _json.loads(raw[start:end + 1]) if start >= 0 else {}
+
+        # sanitize → only known keys
+        allowed = {"rsi_min", "rsi_max", "adx_min", "vol_min", "score_min", "rs20_min",
+                   "grade", "above_ema200", "ema_aligned", "sort_by"}
+        clean = {k: v for k, v in params.items() if k in allowed}
+
+        def ok(r: dict) -> bool:
+            rsi, adx = r.get("rsi"), r.get("adx")
+            if "rsi_min" in clean and rsi is not None and rsi < clean["rsi_min"]: return False
+            if "rsi_max" in clean and rsi is not None and rsi > clean["rsi_max"]: return False
+            if "adx_min" in clean and adx is not None and adx < clean["adx_min"]: return False
+            if "vol_min" in clean and (r.get("volume_ratio") or 0) < clean["vol_min"]: return False
+            if "score_min" in clean and (r.get("score") or 0) < clean["score_min"]: return False
+            if "rs20_min" in clean and (r.get("rs_20d") if r.get("rs_20d") is not None else -999) < clean["rs20_min"]: return False
+            if clean.get("grade") and r.get("grade") != str(clean["grade"]).upper(): return False
+            if clean.get("above_ema200") and not (r.get("close") and r.get("ema200") and r["close"] > r["ema200"]): return False
+            if clean.get("ema_aligned") and not (r.get("ema9") and r.get("ema21") and r.get("ema50") and r["ema9"] > r["ema21"] > r["ema50"]): return False
+            return True
+        skey = clean.get("sort_by") if clean.get("sort_by") in ("score", "rs_20d", "rs_60d", "rsi", "adx", "volume_ratio") else "score"
+        rows = sorted([r for r in _full_screener() if ok(r)], key=lambda r: r.get(skey) or -999, reverse=True)
+        return {"query": req.query, "filters": clean, "count": len(rows), "results": rows[:50]}
+    except Exception as exc:
+        logger.exception("NL scan failed: {}", exc)
+        raise HTTPException(status_code=503, detail="NL scan unavailable")
+
+
+class TradeReview(BaseModel):
+    symbol: str
+    entry: float
+    stop: float
+    target: float
+    capital: float = 1_000_000
+    risk_pct: float = 2.0
+    side: str = "long"
+    note: str = ""
+
+
+@app.post("/api/trade-review")
+def trade_review(t: TradeReview):
+    """Rules-grounded 'second opinion': deterministic checks vs the rulebook + AI verdict."""
+    try:
+        risk_per_share = abs(t.entry - t.stop)
+        reward = abs(t.target - t.entry)
+        rr = round(reward / risk_per_share, 2) if risk_per_share else 0.0
+        stop_pct = round(risk_per_share / t.entry * 100, 2) if t.entry else 0.0
+        # regime
+        regime_name = "UNKNOWN"
+        try:
+            from screener.regime_classifier import classify_regime
+            regime_name = classify_regime().regime
+        except Exception:
+            pass
+        checks = []
+        def chk(name, passed, detail): checks.append({"rule": name, "pass": bool(passed), "detail": detail})
+        chk("R:R ≥ 2:1", rr >= 2, f"R:R is {rr}:1")
+        chk("Stop ≤ 2% of entry", stop_pct <= 2.0, f"Stop is {stop_pct}% from entry")
+        chk("Risk ≤ 2% of capital", t.risk_pct <= 2.0, f"Risking {t.risk_pct}%")
+        chk("Regime allows longs", not (t.side == "long" and regime_name == "BEARISH"), f"Regime: {regime_name}")
+        passed = sum(c["pass"] for c in checks)
+        verdict = "TAKE" if passed == len(checks) else "CAUTION" if passed >= len(checks) - 1 else "SKIP"
+
+        ai_text = ""
+        try:
+            from ai.brain import _call_groq
+            facts = (f"Symbol {t.symbol} ({t.side}). Entry {t.entry}, Stop {t.stop}, Target {t.target}. "
+                     f"R:R {rr}:1, stop {stop_pct}% of entry, risking {t.risk_pct}% of capital. Regime {regime_name}. "
+                     f"Rule checks: " + "; ".join(f"{c['rule']}={'OK' if c['pass'] else 'FAIL'}" for c in checks) +
+                     f". Trader note: {t.note or 'none'}.")
+            sys_p = ("You are AXIOM, a hedge-fund risk manager reviewing a trader's PLANNED trade against "
+                     "their rulebook (R:R≥2, stop≤2% of capital, max 2 positions, no longs in BEARISH regime, "
+                     "no FOMO/chasing). Give a crisp verdict in 3-4 sentences: confirm the deterministic verdict "
+                     "or push back, name the single biggest risk, and one concrete adjustment. No fluff.")
+            ai_text = _call_groq(sys_p, facts, max_tokens=260)
+        except Exception:
+            pass
+        return {"symbol": t.symbol, "rr": rr, "stop_pct": stop_pct, "regime": regime_name,
+                "checks": checks, "verdict": verdict, "passed": passed, "total": len(checks),
+                "ai": ai_text or "AI review unavailable — deterministic checks above stand."}
+    except Exception as exc:
+        logger.exception("Trade review failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Trade review unavailable")
+
+
 @app.get("/api/backtest")
 def backtest(symbol: str, period: str = "2y", rr: float = 2.5, capital: float = 1_000_000):
     """Run the breakout backtest on one symbol. Returns metrics + recent trades."""

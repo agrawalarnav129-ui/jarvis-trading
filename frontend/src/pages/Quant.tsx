@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Activity, Waves, Grid3x3, Dices, Network } from "lucide-react";
+import { Activity, Waves, Grid3x3, Dices, Network, Compass } from "lucide-react";
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { Section, Card, Empty, Skeleton } from "../components/ui";
@@ -7,9 +7,9 @@ import SymbolSearch from "../components/SymbolSearch";
 import { fmt, fmtInt } from "../lib/format";
 import { simulate, type MCInput } from "../lib/montecarlo";
 
-type Tab = "gex" | "vol" | "exp" | "mc" | "corr";
+type Tab = "gex" | "vol" | "exp" | "mc" | "corr" | "rrg";
 const TABS: [Tab, string, any][] = [
-  ["gex", "Gamma (GEX)", Activity], ["vol", "Volatility", Waves],
+  ["rrg", "Rotation", Compass], ["gex", "Gamma (GEX)", Activity], ["vol", "Volatility", Waves],
   ["exp", "Expectancy", Grid3x3], ["mc", "Monte Carlo", Dices], ["corr", "Correlation", Network],
 ];
 
@@ -240,8 +240,57 @@ function Correlation() {
   );
 }
 
+// ── Relative Rotation Graph ─────────────────────────────────────────────────
+function RRG() {
+  const { data, loading } = useFetch(() => api.rrg([], 8), []);
+  const QUAD = [
+    { name: "Leading", color: "#22c55e", at: [78, 20] }, { name: "Weakening", color: "#fbbf24", at: [78, 88] },
+    { name: "Lagging", color: "#ef4444", at: [10, 88] }, { name: "Improving", color: "#22d3ee", at: [10, 20] },
+  ];
+  if (loading) return <Skeleton h={360} />;
+  if (!data || !data.available) return <Empty msg={data?.note || "Rotation graph needs cached closes + NIFTY benchmark."} />;
+  const xs = data.points.flatMap((p) => p.tail.map((t) => t[0]));
+  const ys = data.points.flatMap((p) => p.tail.map((t) => t[1]));
+  const lo = Math.min(95, ...xs, ...ys), hi = Math.max(105, ...xs, ...ys);
+  const sc = (v: number) => ((v - lo) / (hi - lo)) * 100;
+  const qcolor = (q: string) => QUAD.find((x) => x.name === q)?.color || "#94a3b8";
+  return (
+    <Card>
+      <div className="label mb-1">Relative Rotation vs NIFTY — tails show 8-day trajectory (rotate clockwise)</div>
+      <div className="relative w-full" style={{ aspectRatio: "1/1", maxWidth: 460, margin: "0 auto" }}>
+        <svg viewBox="0 0 100 100" className="w-full h-full">
+          <rect x="50" y="0" width="50" height="50" fill="rgba(34,197,94,0.05)" />
+          <rect x="50" y="50" width="50" height="50" fill="rgba(251,191,36,0.05)" />
+          <rect x="0" y="50" width="50" height="50" fill="rgba(239,68,68,0.05)" />
+          <rect x="0" y="0" width="50" height="50" fill="rgba(34,211,238,0.05)" />
+          <line x1="50" y1="0" x2="50" y2="100" stroke="#1e2d44" strokeWidth="0.4" />
+          <line x1="0" y1="50" x2="100" y2="50" stroke="#1e2d44" strokeWidth="0.4" />
+          {QUAD.map((q) => <text key={q.name} x={q.at[0]} y={q.at[1]} fill={q.color} fontSize="3" opacity="0.7" fontFamily="monospace">{q.name}</text>)}
+          {data.points.map((p) => {
+            const pts = p.tail.map((t) => `${sc(t[0])},${100 - sc(t[1])}`).join(" ");
+            const c = qcolor(p.quadrant);
+            return (
+              <g key={p.symbol}>
+                <polyline points={pts} fill="none" stroke={c} strokeWidth="0.5" opacity="0.5" />
+                <circle cx={sc(p.x)} cy={100 - sc(p.y)} r="1.6" fill={c} />
+                <text x={sc(p.x) + 2} y={100 - sc(p.y) + 1} fill="#cbd5e1" fontSize="2.6" fontFamily="monospace">{p.symbol}</text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 mt-3">
+        {QUAD.map((q) => {
+          const members = data.points.filter((p) => p.quadrant === q.name).map((p) => p.symbol);
+          return <div key={q.name} className="text-[0.6rem] font-mono"><span style={{ color: q.color }}>● {q.name}</span><div className="text-faint mt-0.5 truncate">{members.join(", ") || "—"}</div></div>;
+        })}
+      </div>
+    </Card>
+  );
+}
+
 export default function Quant() {
-  const [tab, setTab] = useState<Tab>("gex");
+  const [tab, setTab] = useState<Tab>("rrg");
   return (
     <Section title="Quant Lab" right={
       <div className="flex gap-0.5 flex-wrap justify-end">
@@ -253,6 +302,7 @@ export default function Quant() {
         ))}
       </div>
     }>
+      {tab === "rrg" && <RRG />}
       {tab === "gex" && <GEX />}
       {tab === "vol" && <VolCone />}
       {tab === "exp" && <Expectancy />}

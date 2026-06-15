@@ -67,6 +67,29 @@ export const api = {
     if (!r.ok) throw new Error(`correlation -> ${r.status}`);
     return (await r.json()) as { available: boolean; note?: string; symbols: string[]; matrix: number[][]; avg_corr: number; bars: number };
   },
+  rrg: (symbols: string[] = [], tail = 8) => get<{ available: boolean; note?: string; count: number; points: { symbol: string; x: number; y: number; quadrant: string; tail: [number, number][] }[] }>(`/api/quant/rrg?symbols=${encodeURIComponent(symbols.join(","))}&tail=${tail}`),
+  portfolioHeat: async (positions: { symbol: string; risk_pct: number }[], candidate: { symbol: string; risk_pct: number } | null) => {
+    const r = await fetch(`${BASE}/api/portfolio-heat`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ positions, candidate }),
+    });
+    if (!r.ok) throw new Error(`heat -> ${r.status}`);
+    return (await r.json()) as { total_risk: number; cap: number; positions: number; correlation: { available: boolean; symbols: string[]; matrix: number[][]; avg_corr: number }; candidate_pairs: { symbol: string; corr: number }[]; warnings: string[]; ok: boolean };
+  },
+  eventsWatch: (symbols: string[], days = 10) => get<{ days: number; flagged: { symbol: string; purpose?: string; date_str: string }[]; macro: { event: string; date_str: string; impact?: string; note?: string }[]; count: number; any: boolean }>(`/api/events/watch?symbols=${encodeURIComponent(symbols.join(","))}&days=${days}`),
+  scanNL: async (query: string) => {
+    const r = await fetch(`${BASE}/api/scan/nl`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ query }),
+    });
+    if (!r.ok) throw new Error(`nl-scan -> ${r.status}`);
+    return (await r.json()) as { query: string; filters: Record<string, any>; count: number; results: any[] };
+  },
+  tradeReview: async (t: { symbol: string; entry: number; stop: number; target: number; risk_pct: number; side?: string; note?: string }) => {
+    const r = await fetch(`${BASE}/api/trade-review`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(t),
+    });
+    if (!r.ok) throw new Error(`trade-review -> ${r.status}`);
+    return (await r.json()) as { symbol: string; rr: number; stop_pct: number; regime: string; checks: { rule: string; pass: boolean; detail: string }[]; verdict: string; passed: number; total: number; ai: string };
+  },
   symbols: () => get<{ count: number; symbols: { symbol: string; name: string; sector: string }[] }>("/api/symbols"),
   patternMatch: async (shape: number[], window = 60, top = 24, min_price = 0) => {
     const r = await fetch(`${BASE}/api/pattern-match`, {
