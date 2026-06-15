@@ -56,6 +56,17 @@ export const api = {
   history: (symbol: string, period = "6mo", interval = "1d") =>
     get<HistoryResp>(`/api/history?symbol=${encodeURIComponent(symbol)}&period=${period}&interval=${interval}`),
   analysis: (symbol: string) => get<{ symbol: string; analysis: string }>(`/api/analysis?symbol=${encodeURIComponent(symbol)}`),
+  // ── Quant Lab ──
+  gex: (symbol = "NIFTY") => get<{ symbol: string; available: boolean; note?: string; spot: number; expiry: string; dte: number; sigma: number; source: string; total_gex: number; regime: string; zero_gamma: number | null; call_wall: number | null; put_wall: number | null; profile: { strike: number; gex: number; ceGamma: number; peGamma: number }[] }>(`/api/quant/gex?symbol=${symbol}`),
+  volCone: (symbol: string) => get<{ symbol: string; available: boolean; note?: string; regime: string; cone: { window: number; current: number; min: number; p25: number; median: number; p75: number; max: number }[] }>(`/api/quant/vol-cone?symbol=${encodeURIComponent(symbol)}`),
+  expectancySurface: (symbol: string) => get<{ symbol: string; available: boolean; note?: string; stops: number[]; targets: number[]; cells: { stop: number; target: number; expectancy: number; trades: number; win_rate: number }[]; best: { stop: number; target: number; expectancy: number; trades: number; win_rate: number } | null }>(`/api/quant/expectancy?symbol=${encodeURIComponent(symbol)}`),
+  correlation: async (symbols: string[]) => {
+    const r = await fetch(`${BASE}/api/quant/correlation`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ symbols }),
+    });
+    if (!r.ok) throw new Error(`correlation -> ${r.status}`);
+    return (await r.json()) as { available: boolean; note?: string; symbols: string[]; matrix: number[][]; avg_corr: number; bars: number };
+  },
   symbols: () => get<{ count: number; symbols: { symbol: string; name: string; sector: string }[] }>("/api/symbols"),
   patternMatch: async (shape: number[], window = 60, top = 24, min_price = 0) => {
     const r = await fetch(`${BASE}/api/pattern-match`, {

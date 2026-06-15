@@ -320,6 +320,67 @@ def pattern_match(req: PatternReq):
             "results": results[: max(1, min(int(req.top), 60))]}
 
 
+# ── Quant Lab ──────────────────────────────────────────────────────────────
+_quant_cache: TTLCache = TTLCache(maxsize=64, ttl=300)
+
+
+@app.get("/api/quant/gex")
+def quant_gex(symbol: str = "NIFTY"):
+    """Dealer gamma-exposure (GEX) profile from the option chain."""
+    try:
+        from analytics.quant import gamma_exposure
+        return _keyed(_quant_cache, f"gex:{symbol.upper()}", lambda: gamma_exposure(symbol))
+    except Exception as exc:
+        logger.exception("GEX failed: {}", exc)
+        raise HTTPException(status_code=503, detail="GEX unavailable")
+
+
+@app.get("/api/quant/vol-cone")
+def quant_vol_cone(symbol: str):
+    """Realized-volatility cone / term structure with historical percentile bands."""
+    try:
+        from analytics.quant import vol_cone
+        return _keyed(_quant_cache, f"cone:{symbol.upper()}", lambda: vol_cone(symbol))
+    except Exception as exc:
+        logger.exception("Vol cone failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Vol cone unavailable")
+
+
+@app.get("/api/quant/expectancy")
+def quant_expectancy(symbol: str):
+    """Expectancy (R) surface over a stop(ATR) × target(R:R) grid."""
+    try:
+        from analytics.quant import expectancy_surface
+        return _keyed(_quant_cache, f"exp:{symbol.upper()}", lambda: expectancy_surface(symbol))
+    except Exception as exc:
+        logger.exception("Expectancy surface failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Expectancy surface unavailable")
+
+
+class CorrReq(BaseModel):
+    symbols: list[str] = []
+
+
+@app.post("/api/quant/correlation")
+def quant_correlation(req: CorrReq):
+    """Return-correlation matrix across symbols (defaults to the watchlist)."""
+    try:
+        from analytics.quant import correlation
+        syms = [s.strip() for s in req.symbols if s.strip()]
+        if not syms:
+            import csv
+            from config import DATA_DIR
+            wl = DATA_DIR / "watchlist.csv"
+            if wl.exists():
+                with wl.open() as f:
+                    syms = [r["symbol"] for r in csv.DictReader(f) if r.get("symbol")][:12]
+        syms = [s if s.endswith(".NS") else f"{s}.NS" for s in syms][:15]
+        return correlation(syms)
+    except Exception as exc:
+        logger.exception("Correlation failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Correlation unavailable")
+
+
 @app.get("/api/backtest")
 def backtest(symbol: str, period: str = "2y", rr: float = 2.5, capital: float = 1_000_000):
     """Run the breakout backtest on one symbol. Returns metrics + recent trades."""
