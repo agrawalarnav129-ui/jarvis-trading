@@ -18,10 +18,10 @@ from config import DATA_DIR
 
 CACHE_FILE = DATA_DIR / "closes_cache.json"
 GITHUB_RAW = "https://raw.githubusercontent.com/agrawalarnav129-ui/jarvis-trading/main/data/closes_cache.json"
-BARS = 120  # daily closes kept per symbol
+BARS = 260  # daily closes kept per symbol (≈1y → enough for EMA200 / 52-week breadth)
 
 
-def build_closes_cache(period: str = "8mo") -> dict:
+def build_closes_cache(period: str = "18mo") -> dict:
     """Fetch the universe's recent daily closes and write the compact cache."""
     from data.fetcher import fetch_symbols_history, load_universe
 

@@ -93,6 +93,29 @@ function EventGuard() {
   );
 }
 
+function MarketBreadth() {
+  const { data, loading } = useFetch(() => api.breadth(), [], 600_000);
+  if (loading) return <Skeleton h={84} />;
+  if (!data || !data.available) return <Empty msg={data?.note || "Breadth needs the closes cache."} />;
+  const healthColor = data.health === "Risk-On" ? "text-up" : data.health === "Risk-Off" ? "text-down" : "text-gold";
+  const Tile = ({ label, value, color = "text-txt", sub }: any) => (
+    <div className="card px-3 py-2.5 min-w-[130px] flex-shrink-0"><div className="label">{label}</div>
+      <div className={`font-display text-base mt-1 tabular-nums ${color}`}>{value}</div>{sub && <div className="font-mono text-[0.56rem] text-faint mt-0.5">{sub}</div>}</div>
+  );
+  return (
+    <div className="flex gap-2.5 overflow-x-auto scroll-thin pb-1 -mx-1 px-1">
+      <div className="card px-3 py-2.5 min-w-[150px] flex-shrink-0" style={{ borderLeft: `2px solid ${data.health === "Risk-On" ? "#22c55e" : data.health === "Risk-Off" ? "#ef4444" : "#fbbf24"}` }}>
+        <div className="label">Market Health</div><div className={`font-display text-base mt-1 ${healthColor}`}>{data.health}</div>
+        <div className="font-mono text-[0.56rem] text-faint mt-0.5">score {data.score}/100 · {data.universe} stk</div>
+      </div>
+      <Tile label="Above 50-DMA" value={`${data.pct_above_ema50}%`} color={data.pct_above_ema50 >= 50 ? "text-up" : "text-down"} />
+      <Tile label="Above 200-DMA" value={`${data.pct_above_ema200}%`} color={data.pct_above_ema200 >= 50 ? "text-up" : "text-down"} />
+      <Tile label="Advancers / Decliners" value={`${data.advancers} / ${data.decliners}`} color={data.advancers >= data.decliners ? "text-up" : "text-down"} />
+      <Tile label="New Highs / Lows" value={`${data.new_highs} / ${data.new_lows}`} color={data.new_highs >= data.new_lows ? "text-up" : "text-down"} sub="52-week" />
+    </div>
+  );
+}
+
 function QuantSignals() {
   const nav = useNavigate();
   const gex = useFetch(() => api.gex("NIFTY"), [], 300_000);
@@ -244,6 +267,7 @@ export default function Dashboard() {
       <EventGuard />
       <Section title="Market Pulse · Live Indices"><IndexStrip /></Section>
       <Section title="Status"><StatusRow /></Section>
+      <Section title="Market Breadth · Internals"><MarketBreadth /></Section>
       <Section title="Quant Signals · NIFTY Gamma"><QuantSignals /></Section>
       <Section title="Sector Rotation · vs NIFTY"><RotationSignals /></Section>
       <Section title="Sector Heatmap"><SectorHeatmap /></Section>

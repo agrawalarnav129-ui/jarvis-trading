@@ -179,6 +179,65 @@ def expectancy_surface(symbol: str) -> dict:
             "cells": cells, "best": best}
 
 
+# ── Market breadth (from closes cache) ─────────────────────────────────────
+def _ema_last(arr: np.ndarray, period: int) -> float:
+    if len(arr) < period:
+        return float("nan")
+    k = 2 / (period + 1)
+    e = arr[:period].mean()
+    for v in arr[period:]:
+        e = v * k + e * (1 - k)
+    return float(e)
+
+
+def market_breadth() -> dict:
+    """Universe internals from cached closes: % above 50/200-DMA, A/D, 52w highs/lows."""
+    from data.closes import read_closes
+
+    data = read_closes().get("data", {})
+    n = above50 = above200 = adv = dec = nh = nl = up20 = 0
+    dist_sum = 0.0
+    for closes in data.values():
+        if not closes or len(closes) < 60:
+            continue
+        a = np.asarray(closes, dtype=float)
+        last = a[-1]
+        n += 1
+        e50 = _ema_last(a, 50)
+        if e50 == e50:
+            if last > e50:
+                above50 += 1
+            dist_sum += (last - e50) / e50 * 100
+        if len(a) >= 200:
+            e200 = _ema_last(a, 200)
+            if e200 == e200 and last > e200:
+                above200 += 1
+        if last > a[-2]:
+            adv += 1
+        elif last < a[-2]:
+            dec += 1
+        if len(a) >= 21 and last > a[-21]:
+            up20 += 1
+        win = a[-min(len(a), 252):]
+        if last >= win.max() - 1e-9:
+            nh += 1
+        elif last <= win.min() + 1e-9:
+            nl += 1
+    if not n:
+        return {"available": False, "note": "Closes cache empty."}
+    pct = lambda x: round(x / n * 100, 1)
+    breadth = pct(above200 if above200 or n else above50)
+    score = round((above50 / n * 0.4 + (above200 / n if n else 0) * 0.4 + adv / max(adv + dec, 1) * 0.2) * 100, 0)
+    health = "Risk-On" if score >= 60 else "Risk-Off" if score <= 35 else "Mixed"
+    return {
+        "available": True, "universe": n,
+        "pct_above_ema50": pct(above50), "pct_above_ema200": pct(above200),
+        "pct_up_20d": pct(up20), "advancers": adv, "decliners": dec,
+        "new_highs": nh, "new_lows": nl, "avg_dist_ema50": round(dist_sum / n, 2),
+        "score": score, "health": health,
+    }
+
+
 # ── Correlation matrix (from closes cache) ─────────────────────────────────
 def correlation(symbols: list[str]) -> dict:
     """Return-correlation matrix across symbols using the cached universe closes."""

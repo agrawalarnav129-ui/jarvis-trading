@@ -67,6 +67,7 @@ export const api = {
     if (!r.ok) throw new Error(`correlation -> ${r.status}`);
     return (await r.json()) as { available: boolean; note?: string; symbols: string[]; matrix: number[][]; avg_corr: number; bars: number };
   },
+  breadth: () => get<{ available: boolean; note?: string; universe: number; pct_above_ema50: number; pct_above_ema200: number; pct_up_20d: number; advancers: number; decliners: number; new_highs: number; new_lows: number; avg_dist_ema50: number; score: number; health: string }>("/api/breadth"),
   rrg: (symbols: string[] = [], tail = 8) => get<{ available: boolean; note?: string; count: number; points: { symbol: string; x: number; y: number; quadrant: string; tail: [number, number][] }[] }>(`/api/quant/rrg?symbols=${encodeURIComponent(symbols.join(","))}&tail=${tail}`),
   portfolioHeat: async (positions: { symbol: string; risk_pct: number }[], candidate: { symbol: string; risk_pct: number } | null) => {
     const r = await fetch(`${BASE}/api/portfolio-heat`, {

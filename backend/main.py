@@ -381,6 +381,17 @@ def quant_correlation(req: CorrReq):
         raise HTTPException(status_code=503, detail="Correlation unavailable")
 
 
+@app.get("/api/breadth")
+def breadth():
+    """Market internals from the universe closes cache (% above DMAs, A/D, 52w highs)."""
+    try:
+        from analytics.quant import market_breadth
+        return _keyed(_quant_cache, "breadth", market_breadth)
+    except Exception as exc:
+        logger.exception("Breadth failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Breadth unavailable")
+
+
 @app.get("/api/quant/rrg")
 def quant_rrg(symbols: str = "", tail: int = 8):
     """Relative Rotation Graph (RS-Ratio vs RS-Momentum vs NIFTY)."""
