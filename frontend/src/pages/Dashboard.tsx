@@ -1,4 +1,5 @@
-import { RefreshCw, ExternalLink } from "lucide-react";
+import { RefreshCw, ExternalLink, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { fmt, fmtInt, signColor, arrow } from "../lib/format";
@@ -64,6 +65,40 @@ function StatusRow() {
           </div>
         ) : <div className="font-mono text-[0.66rem] text-faint mt-2">Market closed.</div>}
       </Card>
+    </div>
+  );
+}
+
+function QuantSignals() {
+  const nav = useNavigate();
+  const gex = useFetch(() => api.gex("NIFTY"), [], 300_000);
+  const g = gex.data;
+  const Tile = ({ label, value, color = "text-txt", sub }: { label: string; value: string; color?: string; sub?: string }) => (
+    <div className="card px-3 py-2.5 min-w-[140px] flex-shrink-0">
+      <div className="label">{label}</div>
+      <div className={`font-display text-base mt-1 tabular-nums ${color}`}>{value}</div>
+      {sub && <div className="font-mono text-[0.58rem] text-faint mt-0.5">{sub}</div>}
+    </div>
+  );
+  if (gex.loading) return <Skeleton h={84} />;
+  if (!g || !g.available)
+    return <Empty msg={g?.note || "Quant signals need an option snapshot — refresh it from the Options page."} />;
+  const pos = g.total_gex >= 0;
+  return (
+    <div onClick={() => nav("/quant")} className="cursor-pointer group">
+      <div className="flex gap-2.5 overflow-x-auto scroll-thin pb-1 -mx-1 px-1">
+        <div className="card px-3 py-2.5 min-w-[150px] flex-shrink-0" style={{ borderLeft: `2px solid ${pos ? "#22c55e" : "#ef4444"}` }}>
+          <div className="label">NIFTY Gamma</div>
+          <div className={`font-display text-base mt-1 ${pos ? "text-up" : "text-down"}`}>{pos ? "Positive" : "Negative"}</div>
+          <div className="font-mono text-[0.58rem] text-faint mt-0.5">{pos ? "Mean-reverting" : "Trend-amplifying"}</div>
+        </div>
+        <Tile label="Zero-Gamma Flip" value={g.zero_gamma ? fmtInt(g.zero_gamma) : "—"} color="text-gold" sub={`spot ${fmtInt(g.spot)}`} />
+        <Tile label="Call Wall ↑res" value={g.call_wall ? fmtInt(g.call_wall) : "—"} color="text-down" />
+        <Tile label="Put Wall ↓sup" value={g.put_wall ? fmtInt(g.put_wall) : "—"} color="text-up" />
+        <div className="card px-3 py-2.5 min-w-[120px] flex-shrink-0 flex items-center justify-center text-faint group-hover:text-brand transition-colors">
+          <span className="font-mono text-[0.62rem]">Quant Lab</span><ChevronRight size={13} />
+        </div>
+      </div>
     </div>
   );
 }
@@ -156,6 +191,7 @@ export default function Dashboard() {
     <div>
       <Section title="Market Pulse · Live Indices"><IndexStrip /></Section>
       <Section title="Status"><StatusRow /></Section>
+      <Section title="Quant Signals · NIFTY Gamma"><QuantSignals /></Section>
       <Section title="Sector Heatmap"><SectorHeatmap /></Section>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
