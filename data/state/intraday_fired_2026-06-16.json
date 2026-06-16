@@ -1,0 +1,44 @@
+{
+  "MGL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "CHAMBLFERT.NS": [],
+  "GNFC.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MMTC.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LALPATHLAB.NS": [],
+  "PHOENIXLTD.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "WABAG.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PRESTIGE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BALRAMCHIN.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ZENTEC.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "TITAGARH.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT"
+  ],
+  "ABCAPITAL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT",
+    "MOMENTUM_CONT"
+  ],
+  "MOTILALOFS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "INDUSINDBK.NS": [],
+  "LT.NS": []
+}
