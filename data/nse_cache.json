@@ -1,50 +1,22 @@
 {
-  "updated": "2026-06-15T09:33:36.880275Z",
+  "updated": "2026-06-16T03:02:56.030424Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "12-Jun-2026",
+    "date": "15-Jun-2026",
     "fii": {
-      "buy": 12064.61,
-      "sell": 13146.79,
-      "net": -1082.18
+      "buy": 15650.2,
+      "sell": 15450.15,
+      "net": 200.05
     },
     "dii": {
-      "buy": 18877.03,
-      "sell": 13535.74,
-      "net": 5341.29
+      "buy": 21080.9,
+      "sell": 17891.64,
+      "net": 3189.26
     },
-    "net_combined": 4259.11
+    "net_combined": 3389.31
   },
   "corporate": [
-    {
-      "date": "2026-06-16",
-      "date_str": "16 Jun",
-      "symbol": "GANGAFORGE",
-      "company": "Ganga Forging Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-16",
-      "date_str": "16 Jun",
-      "symbol": "NARMADA",
-      "company": "Narmada Agrobase Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-16",
-      "date_str": "16 Jun",
-      "symbol": "TEMBO",
-      "company": "Tembo Global Industries Limited",
-      "purpose": "Stock Split"
-    },
-    {
-      "date": "2026-06-16",
-      "date_str": "16 Jun",
-      "symbol": "VERTOZ",
-      "company": "Vertoz Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-06-17",
       "date_str": "17 Jun",
@@ -76,6 +48,20 @@
     {
       "date": "2026-06-18",
       "date_str": "18 Jun",
+      "symbol": "5PAISA",
+      "company": "5Paisa Capital Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-18",
+      "date_str": "18 Jun",
+      "symbol": "5PAISA",
+      "company": "5Paisa Capital Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-18",
+      "date_str": "18 Jun",
       "symbol": "ANIKINDS",
       "company": "Anik Industries Limited",
       "purpose": "Financial Results/Other busine"
@@ -85,6 +71,27 @@
       "date_str": "18 Jun",
       "symbol": "DIACABS",
       "company": "Diamond Power Infrastructure Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-18",
+      "date_str": "18 Jun",
+      "symbol": "HILTON",
+      "company": "Hilton Metal Forging Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-06-18",
+      "date_str": "18 Jun",
+      "symbol": "LLOYDSENGG",
+      "company": "LLOYDS ENGINEERING WORKS LIMITED",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-06-18",
+      "date_str": "18 Jun",
+      "symbol": "SBIN",
+      "company": "State Bank of India",
       "purpose": "Fund Raising"
     },
     {
@@ -114,6 +121,13 @@
       "symbol": "SURYODAY",
       "company": "Suryoday Small Finance Bank Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "SRPL",
+      "company": "Shree Ram Proteins Limited",
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-06-30",
