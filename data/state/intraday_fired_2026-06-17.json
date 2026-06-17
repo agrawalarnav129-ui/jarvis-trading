@@ -1,0 +1,40 @@
+{
+  "GATEWAY.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "TRENT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "DIXON.NS": [],
+  "FIVESTAR.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MGL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PHOENIXLTD.NS": [],
+  "BORORENEW.NS": [],
+  "EPL.NS": [],
+  "GNFC.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "OBEROIRLTY.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "KRISHNADEF.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "CARBORUNIV.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ASTRAMICRO.NS": [],
+  "KIRLOSENG.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NYKAA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
