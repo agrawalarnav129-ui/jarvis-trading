@@ -1,84 +1,35 @@
 {
-  "updated": "2026-06-17T08:37:59.494153Z",
+  "updated": "2026-06-18T03:02:34.981395Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "16-Jun-2026",
+    "date": "17-Jun-2026",
     "fii": {
-      "buy": 13887.15,
-      "sell": 14636.33,
-      "net": -749.18
+      "buy": 14806.3,
+      "sell": 14704.71,
+      "net": 101.59
     },
     "dii": {
-      "buy": 13553.36,
-      "sell": 13553.3,
-      "net": 0.06
+      "buy": 16611.87,
+      "sell": 15050.47,
+      "net": 1561.4
     },
-    "net_combined": -749.12
+    "net_combined": 1662.99
   },
   "corporate": [
-    {
-      "date": "2026-06-18",
-      "date_str": "18 Jun",
-      "symbol": "5PAISA",
-      "company": "5Paisa Capital Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-18",
-      "date_str": "18 Jun",
-      "symbol": "5PAISA",
-      "company": "5Paisa Capital Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-18",
-      "date_str": "18 Jun",
-      "symbol": "ANIKINDS",
-      "company": "Anik Industries Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-06-18",
-      "date_str": "18 Jun",
-      "symbol": "DIACABS",
-      "company": "Diamond Power Infrastructure Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-18",
-      "date_str": "18 Jun",
-      "symbol": "HILTON",
-      "company": "Hilton Metal Forging Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-06-18",
-      "date_str": "18 Jun",
-      "symbol": "LLOYDSENGG",
-      "company": "LLOYDS ENGINEERING WORKS LIMITED",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-06-18",
-      "date_str": "18 Jun",
-      "symbol": "SBIN",
-      "company": "State Bank of India",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-18",
-      "date_str": "18 Jun",
-      "symbol": "SOLEX",
-      "company": "Solex Energy Limited",
-      "purpose": "Dividend"
-    },
     {
       "date": "2026-06-19",
       "date_str": "19 Jun",
       "symbol": "EIFFL",
       "company": "Euro India Fresh Foods Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-19",
+      "date_str": "19 Jun",
+      "symbol": "GUJTHEM",
+      "company": "Gujarat Themis Biosyn Limited",
+      "purpose": "Board meeting Rescheduled"
     },
     {
       "date": "2026-06-19",
@@ -123,6 +74,20 @@
       "purpose": "Dividend/Other business matter"
     },
     {
+      "date": "2026-06-20",
+      "date_str": "20 Jun",
+      "symbol": "UTKARSHBNK",
+      "company": "Utkarsh Small Finance Bank Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-22",
+      "date_str": "22 Jun",
+      "symbol": "LIKHITHA",
+      "company": "Likhitha Infrastructure Limited",
+      "purpose": "Fund Raising"
+    },
+    {
       "date": "2026-06-22",
       "date_str": "22 Jun",
       "symbol": "UEL",
@@ -135,6 +100,13 @@
       "symbol": "CUB",
       "company": "City Union Bank Limited",
       "purpose": "Dividend/Fund Raising"
+    },
+    {
+      "date": "2026-06-23",
+      "date_str": "23 Jun",
+      "symbol": "SATIN",
+      "company": "Satin Creditcare Network Limited",
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-06-25",
@@ -153,9 +125,37 @@
     {
       "date": "2026-06-25",
       "date_str": "25 Jun",
+      "symbol": "MITTAL",
+      "company": "Mittal Life Style Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-25",
+      "date_str": "25 Jun",
       "symbol": "SURYODAY",
       "company": "Suryoday Small Finance Bank Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "HAL",
+      "company": "Hindustan Aeronautics Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "SRPL",
+      "company": "Shree Ram Proteins Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "SUPERHOUSE",
+      "company": "Superhouse Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
