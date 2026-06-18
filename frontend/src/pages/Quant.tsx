@@ -13,6 +13,16 @@ const TABS: [Tab, string, any][] = [
   ["exp", "Expectancy", Grid3x3], ["mc", "Monte Carlo", Dices], ["corr", "Correlation", Network],
 ];
 
+// Module-scope so the input isn't recreated each render (would drop focus).
+function Slider({ label, val, set, min, max, step, suffix }: { label: string; val: number; set: (v: number) => void; min: number; max: number; step: number; suffix: string }) {
+  return (
+    <div>
+      <div className="flex justify-between label mb-1"><span>{label}</span><span className="text-txt font-mono">{val}{suffix}</span></div>
+      <input type="range" min={min} max={max} step={step} value={val} onChange={(e) => set(parseFloat(e.target.value))} className="w-full accent-brand cursor-pointer" />
+    </div>
+  );
+}
+
 const heat = (v: number, lo: number, hi: number) => {
   const t = Math.max(-1, Math.min(1, v >= 0 ? v / (hi || 1) : v / Math.abs(lo || 1)));
   return v >= 0 ? `rgba(34,197,94,${0.12 + 0.6 * t})` : `rgba(239,68,68,${0.12 + 0.6 * -t})`;
@@ -162,12 +172,6 @@ function MonteCarlo() {
     return simulate(inp);
   }, [winRate, payoff, riskPct, trades]);
 
-  const Slider = ({ label, val, set, min, max, step, suffix }: any) => (
-    <div>
-      <div className="flex justify-between label mb-1"><span>{label}</span><span className="text-txt font-mono">{val}{suffix}</span></div>
-      <input type="range" min={min} max={max} step={step} value={val} onChange={(e) => set(parseFloat(e.target.value))} className="w-full accent-brand cursor-pointer" />
-    </div>
-  );
   const W = 320, H = 120;
   const allMax = Math.max(...res.paths.flat(), 1);
   const path = (p: number[]) => p.map((v, i) => `${(i / (p.length - 1)) * W},${H - (v / allMax) * H}`).join(" ");

@@ -37,8 +37,8 @@ function TradeReview() {
         <span className="font-display text-sm text-txt">Rules Check — AI second opinion</span></div>
       <div className="flex items-center gap-2 mb-3"><SymbolSearch value={sym} onPick={setSym} /><span className="font-mono text-xs text-txt">{sym.replace(".NS", "")}</span></div>
       <div className="grid grid-cols-4 gap-2 mb-3">
-        <Field k="entry" label="Entry" ph="1400" /><Field k="stop" label="Stop" ph="1380" />
-        <Field k="target" label="Target" ph="1460" /><Field k="risk_pct" label="Risk %" ph="2" />
+        {Field({ k: "entry", label: "Entry", ph: "1400" })}{Field({ k: "stop", label: "Stop", ph: "1380" })}
+        {Field({ k: "target", label: "Target", ph: "1460" })}{Field({ k: "risk_pct", label: "Risk %", ph: "2" })}
       </div>
       <button onClick={run} disabled={loading || !f.entry || !f.stop || !f.target}
         className="w-full py-2 rounded-lg bg-brand/20 border border-brand/40 text-brand font-mono text-xs cursor-pointer hover:bg-brand/30 disabled:opacity-40 flex items-center justify-center gap-2">

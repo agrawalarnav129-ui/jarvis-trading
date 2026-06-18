@@ -82,9 +82,9 @@ export default function Positions() {
       {/* add form */}
       <Card className="mb-3">
         <div className="flex flex-wrap items-center gap-2">
-          <Inp k="symbol" ph="SYMBOL" w="w-24" />
+          {Inp({ k: "symbol", ph: "SYMBOL", w: "w-24" })}
           <select value={form.side} onChange={(e) => setForm({ ...form, side: e.target.value })} className="bg-base border border-line rounded px-2 py-1.5 text-xs text-txt outline-none focus:border-brand/60"><option>LONG</option><option>SHORT</option></select>
-          <Inp k="entry" ph="entry" w="w-20" /><Inp k="stop" ph="stop" w="w-20" /><Inp k="target" ph="target" w="w-20" /><Inp k="qty" ph="qty" w="w-16" />
+          {Inp({ k: "entry", ph: "entry", w: "w-20" })}{Inp({ k: "stop", ph: "stop", w: "w-20" })}{Inp({ k: "target", ph: "target", w: "w-20" })}{Inp({ k: "qty", ph: "qty", w: "w-16" })}
           <button onClick={add} className="rounded-lg bg-brand/15 border border-brand/40 px-3 py-1.5 text-brand cursor-pointer hover:bg-brand/25 flex items-center gap-1 text-xs"><Plus size={14} /> Add</button>
         </div>
       </Card>

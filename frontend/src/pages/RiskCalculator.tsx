@@ -5,6 +5,17 @@ import { fmt, fmtInt } from "../lib/format";
 
 const CAPITAL_RISK = 0.02; // 2% per trade
 
+// Module-scope so it isn't recreated each render (which would drop input focus).
+function Field({ label, value, onChange, step = 0.05 }: { label: string; value: number; onChange: (v: number) => void; step?: number }) {
+  return (
+    <div>
+      <label className="label block mb-1">{label}</label>
+      <input type="number" value={value || ""} step={step} onChange={(e) => onChange(parseFloat(e.target.value) || 0)}
+        className="w-full bg-base border border-line rounded-lg px-3 py-2 text-sm text-txt font-mono outline-none focus:border-brand/60 transition-colors" />
+    </div>
+  );
+}
+
 export default function RiskCalculator() {
   const [capital, setCapital] = useState(1_000_000);
   const [entry, setEntry] = useState(0);
@@ -38,14 +49,6 @@ export default function RiskCalculator() {
 
     return { shares, riskAmt, riskPct, reward, rr, minRR, passed: rejects.length === 0 && shares > 0, rejects, warns };
   }, [capital, entry, stop, target, regime]);
-
-  const Field = ({ label, value, onChange, step = 0.05 }: any) => (
-    <div>
-      <label className="label block mb-1">{label}</label>
-      <input type="number" value={value || ""} step={step} onChange={(e) => onChange(parseFloat(e.target.value) || 0)}
-        className="w-full bg-base border border-line rounded-lg px-3 py-2 text-sm text-txt font-mono outline-none focus:border-brand/60 transition-colors" />
-    </div>
-  );
 
   return (
     <Section title="Risk Calculator · Position Sizing">

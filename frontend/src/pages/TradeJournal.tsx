@@ -117,7 +117,7 @@ export default function TradeJournal() {
       <Card className="mb-3">
         <div className="label mb-2">Log a Trade</div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-          <F label="Symbol" k="symbol" type="text" />
+          {F({ label: "Symbol", k: "symbol", type: "text" })}
           <div>
             <label className="label block mb-1">Side</label>
             <select value={form.side} onChange={(e) => setForm({ ...form, side: e.target.value as any })}
@@ -125,10 +125,10 @@ export default function TradeJournal() {
               <option>LONG</option><option>SHORT</option>
             </select>
           </div>
-          <F label="Entry" k="entry_price" />
-          <F label="Exit" k="exit_price" />
-          <F label="Quantity" k="quantity" step={1} />
-          <F label="P&L (₹)" k="pnl" step={1} />
+          {F({ label: "Entry", k: "entry_price" })}
+          {F({ label: "Exit", k: "exit_price" })}
+          {F({ label: "Quantity", k: "quantity", step: 1 })}
+          {F({ label: "P&L (₹)", k: "pnl", step: 1 })}
           <div>
             <label className="label block mb-1">Setup</label>
             <select value={form.setup_type} onChange={(e) => setForm({ ...form, setup_type: e.target.value })}
