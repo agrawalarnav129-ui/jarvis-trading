@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T03:02:34.981395Z",
+  "updated": "2026-06-18T08:18:25.559544Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -58,6 +58,13 @@
       "symbol": "UNIVASTU",
       "company": "Univastu India Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-20",
+      "date_str": "20 Jun",
+      "symbol": "CREATIVEYE",
+      "company": "Creative Eye Limited",
+      "purpose": "Other business matters"
     },
     {
       "date": "2026-06-20",
@@ -149,13 +156,6 @@
       "symbol": "SRPL",
       "company": "Shree Ram Proteins Limited",
       "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "SUPERHOUSE",
-      "company": "Superhouse Limited",
-      "purpose": "Other business matters"
     }
   ]
 }
