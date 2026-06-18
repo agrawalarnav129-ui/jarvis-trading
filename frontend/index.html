@@ -14,6 +14,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <script>
+      // No-flash theme: apply persisted theme class before first paint.
+      (function () {
+        try {
+          var t = localStorage.getItem("axiom_theme") || "dark";
+          document.documentElement.classList.add(t);
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute("content", t === "dark" ? "#020617" : "#f4f7fb");
+        } catch (e) { document.documentElement.classList.add("dark"); }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

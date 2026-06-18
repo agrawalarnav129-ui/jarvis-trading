@@ -10,6 +10,7 @@ import {
   ema, bollinger, rsi as rsiTA, volume as volTA, normalized,
   macd as macdTA, stochastic, vwap as vwapTA, supertrend, heikinAshi,
 } from "../lib/ta";
+import { useTheme, cssRGB } from "../lib/theme";
 
 export type ChartType = "candle" | "heikin" | "line" | "area" | "bars";
 export interface ChartIndicators {
@@ -44,6 +45,7 @@ export default function PriceChart({ candles, interval, indicators, chartType = 
   const candleRef = useRef<ISeriesApi<any> | null>(null);
   const vpRef = useRef<HTMLDivElement>(null);
   const legendRef = useRef<HTMLDivElement>(null);
+  const theme = useTheme();
 
   // ── drawing tools state (persisted per symbol) ──
   type Drawing = { type: "hl"; price: number } | { type: "tl"; a: { time: number; price: number }; b: { time: number; price: number } };
@@ -69,10 +71,10 @@ export default function PriceChart({ candles, interval, indicators, chartType = 
     const intraday = !["1d", "1wk"].includes(interval);
     const chart = createChart(wrap.current, {
       height,
-      layout: { background: { type: ColorType.Solid, color: "#0B1220" }, textColor: "#94a3b8", fontSize: 10 },
-      grid: { vertLines: { color: "rgba(30,45,68,0.5)" }, horzLines: { color: "rgba(30,45,68,0.5)" } },
-      rightPriceScale: { borderColor: "#1e2d44" },
-      timeScale: { borderColor: "#1e2d44", timeVisible: intraday, secondsVisible: false },
+      layout: { background: { type: ColorType.Solid, color: cssRGB("--c-surface") }, textColor: cssRGB("--c-muted"), fontSize: 10 },
+      grid: { vertLines: { color: cssRGB("--c-line", 0.5) }, horzLines: { color: cssRGB("--c-line", 0.5) } },
+      rightPriceScale: { borderColor: cssRGB("--c-line") },
+      timeScale: { borderColor: cssRGB("--c-line"), timeVisible: intraday, secondsVisible: false },
       crosshair: { mode: 0 },
       autoSize: false,
     });
@@ -281,7 +283,7 @@ export default function PriceChart({ candles, interval, indicators, chartType = 
       candleRef.current = null;
       removersRef.current = [];
     };
-  }, [candles, JSON.stringify(indicators), chartType, interval, height, compareCandles?.length]);
+  }, [candles, JSON.stringify(indicators), chartType, interval, height, compareCandles?.length, theme]);
 
   // ── Volume Profile overlay (right rail, aligned to price axis) ──
   useEffect(() => {

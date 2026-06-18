@@ -4,18 +4,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        base: "#020617",       // OLED deep space
-        surface: "#0B1220",
-        elevated: "#111c30",
-        line: "#1e2d44",
-        brand: "#22d3ee",      // cyan accent
-        brandbright: "#67e8f9",
-        gold: "#fbbf24",
-        up: "#22c55e",
-        down: "#ef4444",
-        txt: "#f1f5f9",
-        muted: "#94a3b8",
-        faint: "#64748b",
+        // Driven by CSS variables (see index.css) so the whole app supports
+        // dark (OLED) + light themes. Triplets keep Tailwind's /opacity working.
+        base: "rgb(var(--c-base) / <alpha-value>)",
+        surface: "rgb(var(--c-surface) / <alpha-value>)",
+        elevated: "rgb(var(--c-elevated) / <alpha-value>)",
+        line: "rgb(var(--c-line) / <alpha-value>)",
+        brand: "rgb(var(--c-brand) / <alpha-value>)",
+        brandbright: "rgb(var(--c-brandbright) / <alpha-value>)",
+        gold: "rgb(var(--c-gold) / <alpha-value>)",
+        up: "rgb(var(--c-up) / <alpha-value>)",
+        down: "rgb(var(--c-down) / <alpha-value>)",
+        txt: "rgb(var(--c-txt) / <alpha-value>)",
+        muted: "rgb(var(--c-muted) / <alpha-value>)",
+        faint: "rgb(var(--c-faint) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
