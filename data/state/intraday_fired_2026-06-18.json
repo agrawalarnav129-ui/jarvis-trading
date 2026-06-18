@@ -1,0 +1,27 @@
+{
+  "RADICO.NS": [],
+  "FLUOROCHEM.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "LICI.NS": [],
+  "KNRCON.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ZFCVINDIA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "OLECTRA.NS": [],
+  "WELSPUNLIV.NS": [],
+  "NYKAA.NS": [],
+  "VAIBHAVGBL.NS": [],
+  "STARHEALTH.NS": [],
+  "FIVESTAR.NS": [],
+  "KRISHNADEF.NS": [],
+  "ENGINERSIN.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "IGPL.NS": [],
+  "ASTRAMICRO.NS": [
+    "MOMENTUM_CONT"
+  ]
+}
