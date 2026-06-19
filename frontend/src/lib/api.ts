@@ -26,6 +26,7 @@ export interface NewsItem { title: string; link: string; source: string; publish
 export interface CalEvent { date: string | null; date_str: string; event?: string; symbol?: string; purpose?: string; company?: string; impact?: string; note?: string; }
 export interface Regime { regime: string; nifty_close: number; ema50: number; ema200: number; adx: number; max_positions: number; min_rr: number; reason: string; }
 export interface Candle { t: number; o: number; h: number; l: number; c: number; v: number; }
+export interface MacroQuote { label: string; symbol: string; last: number; pct: number; }
 export interface HistoryResp { symbol: string; interval: string; last: number; change: number; pct: number; rsi: number; adx: number; ema20: number; ema50: number; ema200: number; atr: number; high_52w: number; low_52w: number; candles: Candle[]; }
 export interface PatternMatch { symbol: string; score: number; last: number; pct: number; spark: number[]; }
 export interface FiiDii { available: boolean; date?: string; fii?: { net: number }; dii?: { net: number }; note?: string; }
@@ -68,6 +69,7 @@ export const api = {
     return (await r.json()) as { available: boolean; note?: string; symbols: string[]; matrix: number[][]; avg_corr: number; bars: number };
   },
   breadth: () => get<{ available: boolean; note?: string; universe: number; pct_above_ema50: number; pct_above_ema200: number; pct_up_20d: number; advancers: number; decliners: number; new_highs: number; new_lows: number; avg_dist_ema50: number; score: number; health: string }>("/api/breadth"),
+  globalMacro: () => get<{ available: boolean; note?: string; risk_score: number; risk_tone: string; indices: MacroQuote[]; commodities: MacroQuote[]; crypto: MacroQuote[]; fx: MacroQuote[] }>("/api/global-macro"),
   rrg: (symbols: string[] = [], tail = 8) => get<{ available: boolean; note?: string; count: number; points: { symbol: string; x: number; y: number; quadrant: string; tail: [number, number][] }[] }>(`/api/quant/rrg?symbols=${encodeURIComponent(symbols.join(","))}&tail=${tail}`),
   portfolioHeat: async (positions: { symbol: string; risk_pct: number }[], candidate: { symbol: string; risk_pct: number } | null) => {
     const r = await fetch(`${BASE}/api/portfolio-heat`, {

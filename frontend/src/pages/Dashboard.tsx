@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { fmt, fmtInt, signColor, arrow } from "../lib/format";
-import { Card, Section, Skeleton, Empty } from "../components/ui";
+import { Card, Panel, Skeleton, Empty } from "../components/ui";
 import { useSymbolNav } from "../components/SymbolLink";
 import { listWatch } from "../lib/watchlist";
+import GlobalMacro from "../components/GlobalMacro";
 
 function IndexStrip() {
   const { data, loading } = useFetch(() => api.indices(), [], 90_000);
@@ -26,47 +27,6 @@ function IndexStrip() {
           </div>
         );
       })}
-    </div>
-  );
-}
-
-function StatusRow() {
-  const regime = useFetch(() => api.regime(), []);
-  const fii = useFetch(() => api.fiiDii(), []);
-  const movers = useFetch(() => api.movers(), [], 90_000);
-  const r = regime.data;
-  const f = fii.data;
-  const m = movers.data;
-  const regimeColor: Record<string, string> = { BULLISH: "text-up", BEARISH: "text-down", NEUTRAL: "text-gold" };
-  return (
-    <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5">
-      <Card>
-        <div className="label">Market Regime</div>
-        {r ? (
-          <>
-            <div className={`font-display text-lg mt-1 ${regimeColor[r.regime] ?? "text-txt"}`}>{r.regime}</div>
-            <div className="font-mono text-[0.62rem] text-muted mt-1">ADX {fmt(r.adx, 1)} · Max {r.max_positions} · R:R {r.min_rr}:1</div>
-          </>
-        ) : <div className="font-mono text-[0.66rem] text-faint mt-2">{regime.error ? "Unavailable" : "Loading…"}</div>}
-      </Card>
-      <Card>
-        <div className="label">FII / DII Flows (₹ Cr){f?.date ? ` · ${f.date}` : ""}</div>
-        {f?.available ? (
-          <div className="flex gap-5 mt-1.5">
-            <div><div className="text-[0.55rem] font-mono text-faint">FII</div><div className={`font-display text-base ${signColor(f.fii?.net ?? 0)}`}>{(f.fii?.net ?? 0) >= 0 ? "+" : ""}{fmtInt(f.fii?.net ?? 0)}</div></div>
-            <div><div className="text-[0.55rem] font-mono text-faint">DII</div><div className={`font-display text-base ${signColor(f.dii?.net ?? 0)}`}>{(f.dii?.net ?? 0) >= 0 ? "+" : ""}{fmtInt(f.dii?.net ?? 0)}</div></div>
-          </div>
-        ) : <div className="font-mono text-[0.66rem] text-faint mt-2">Confirm manually.</div>}
-      </Card>
-      <Card className="col-span-2 lg:col-span-1">
-        <div className="label">Nifty Breadth</div>
-        {m?.available ? (
-          <div className="flex gap-5 mt-1.5">
-            <div><div className="text-[0.55rem] font-mono text-faint">Gainers</div><div className="font-display text-base text-up">{m.gainers.length}+</div></div>
-            <div><div className="text-[0.55rem] font-mono text-faint">Losers</div><div className="font-display text-base text-down">{m.losers.length}+</div></div>
-          </div>
-        ) : <div className="font-mono text-[0.66rem] text-faint mt-2">Market closed.</div>}
-      </Card>
     </div>
   );
 }
@@ -199,7 +159,7 @@ function NewsPanel() {
   const items = data?.news ?? [];
   if (!items.length) return <Empty msg="News feed unavailable." />;
   return (
-    <Card className="max-h-[460px] overflow-y-auto scroll-thin">
+    <div className="max-h-[420px] overflow-y-auto scroll-thin px-3">
       {items.map((n, idx) => (
         <a key={idx} href={n.link} target="_blank" rel="noreferrer"
            className="block py-2 border-b border-line/50 last:border-0 group cursor-pointer">
@@ -208,7 +168,7 @@ function NewsPanel() {
             <ExternalLink size={9} className="opacity-50" /></div>
         </a>
       ))}
-    </Card>
+    </div>
   );
 }
 
@@ -219,7 +179,7 @@ function CalendarPanel() {
   const corp = data?.corporate ?? [];
   const impactColor: Record<string, string> = { HIGH: "text-down", MED: "text-gold" };
   return (
-    <Card className="max-h-[460px] overflow-y-auto scroll-thin">
+    <div className="max-h-[420px] overflow-y-auto scroll-thin px-3">
       <div className="label mb-1.5">Macro & Market</div>
       {macro.map((e, i) => (
         <div key={i} className="flex justify-between items-start py-1.5 border-b border-line/50">
@@ -234,7 +194,7 @@ function CalendarPanel() {
           <span className="font-mono text-[0.62rem] text-gold">{e.date_str}</span>
         </div>
       )) : <Empty msg="No upcoming events." />}
-    </Card>
+    </div>
   );
 }
 
@@ -259,36 +219,74 @@ function SectorHeatmap() {
   );
 }
 
+// WorldMonitor-style status ribbon: one dense strip of the key reads.
+function CommandRibbon() {
+  const regime = useFetch(() => api.regime(), []);
+  const breadth = useFetch(() => api.breadth(), [], 600_000);
+  const macro = useFetch(() => api.globalMacro(), [], 300_000);
+  const fii = useFetch(() => api.fiiDii(), []);
+  const seg = (label: string, value: string, color: string) => (
+    <div className="flex items-center gap-1.5 px-3 shrink-0">
+      <span className="label text-faint">{label}</span>
+      <span className={`font-mono text-[0.72rem] font-semibold ${color}`}>{value}</span>
+    </div>
+  );
+  const rc: Record<string, string> = { BULLISH: "text-up", BEARISH: "text-down", NEUTRAL: "text-gold" };
+  const tc = (t?: string) => (t === "Risk-On" ? "text-up" : t === "Risk-Off" ? "text-down" : "text-gold");
+  const f = fii.data;
+  return (
+    <div className="card mb-3 flex items-stretch overflow-x-auto scroll-thin divide-x divide-line/70 h-11">
+      <div className="flex items-center gap-1.5 px-3 shrink-0">
+        <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" style={{ boxShadow: "0 0 6px currentColor" }} />
+        <span className="font-display text-[0.7rem] tracking-[0.2em] text-brand">SITREP</span>
+      </div>
+      {seg("REGIME", regime.data?.regime ?? "—", rc[regime.data?.regime ?? ""] ?? "text-faint")}
+      {seg("GLOBAL", macro.data?.available ? `${macro.data.risk_tone} ${macro.data.risk_score}` : "—", tc(macro.data?.risk_tone))}
+      {seg("BREADTH", breadth.data?.available ? `${breadth.data.health} ${breadth.data.score}` : "—", tc(breadth.data?.health))}
+      {seg("ADV/DEC", breadth.data?.available ? `${breadth.data.advancers}/${breadth.data.decliners}` : "—", (breadth.data?.advancers ?? 0) >= (breadth.data?.decliners ?? 0) ? "text-up" : "text-down")}
+      {f?.available && seg("FII", `${(f.fii?.net ?? 0) >= 0 ? "+" : ""}${fmtInt(f.fii?.net ?? 0)}`, signColor(f.fii?.net ?? 0))}
+      {f?.available && seg("DII", `${(f.dii?.net ?? 0) >= 0 ? "+" : ""}${fmtInt(f.dii?.net ?? 0)}`, signColor(f.dii?.net ?? 0))}
+    </div>
+  );
+}
+
 export default function Dashboard() {
   const movers = useFetch(() => api.movers(), [], 90_000);
   const go = useSymbolNav();
   return (
     <div>
+      <CommandRibbon />
       <EventGuard />
-      <Section title="Market Pulse · Live Indices"><IndexStrip /></Section>
-      <Section title="Status"><StatusRow /></Section>
-      <Section title="Market Breadth · Internals"><MarketBreadth /></Section>
-      <Section title="Quant Signals · NIFTY Gamma"><QuantSignals /></Section>
-      <Section title="Sector Rotation · vs NIFTY"><RotationSignals /></Section>
-      <Section title="Sector Heatmap"><SectorHeatmap /></Section>
 
+      {/* Signal strips */}
+      <div className="grid grid-cols-1 gap-3 mb-3">
+        <Panel title="Indian Indices · Live" status="info" bodyClass="p-2"><IndexStrip /></Panel>
+        <Panel title="Market Breadth · Internals" status="info" bodyClass="p-2"><MarketBreadth /></Panel>
+        <Panel title="NIFTY Gamma · Options Structure" status="info" bodyClass="p-2"><QuantSignals /></Panel>
+        <Panel title="Sector Rotation · vs NIFTY" status="info" bodyClass="p-2"><RotationSignals /></Panel>
+      </div>
+
+      {/* Intel grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
+        <div className="lg:col-span-4"><GlobalMacro /></div>
         <div className="lg:col-span-4">
-          <Section title="Market News"><NewsPanel /></Section>
+          <Panel title="Market News · Global Feed" status="muted" bodyClass="p-0"><NewsPanel /></Panel>
+        </div>
+        <div className="lg:col-span-4">
+          <Panel title="Economic & Events Calendar" status="warn" bodyClass="p-0"><CalendarPanel /></Panel>
+        </div>
+
+        <div className="lg:col-span-7">
+          <Panel title="Top Gainers & Losers · NIFTY" status="normal"
+            right={<button onClick={() => movers.reload()} className="text-faint hover:text-brand transition-colors cursor-pointer" aria-label="Refresh"><RefreshCw size={12} /></button>}>
+            <div className="grid grid-cols-2 gap-3">
+              <div><div className="label text-up mb-1">▲ Gainers</div><MoversTable rows={movers.data?.gainers ?? []} up onSym={go} /></div>
+              <div><div className="label text-down mb-1">▼ Losers</div><MoversTable rows={movers.data?.losers ?? []} up={false} onSym={go} /></div>
+            </div>
+          </Panel>
         </div>
         <div className="lg:col-span-5">
-          <Section title="Top Gainers & Losers · NIFTY" right={
-            <button onClick={() => movers.reload()} className="text-faint hover:text-brand transition-colors cursor-pointer" aria-label="Refresh">
-              <RefreshCw size={13} /></button>
-          }>
-            <div className="grid grid-cols-2 gap-2.5">
-              <div><div className="label text-up mb-1">▲ Gainers</div><Card>{<MoversTable rows={movers.data?.gainers ?? []} up onSym={go} />}</Card></div>
-              <div><div className="label text-down mb-1">▼ Losers</div><Card>{<MoversTable rows={movers.data?.losers ?? []} up={false} onSym={go} />}</Card></div>
-            </div>
-          </Section>
-        </div>
-        <div className="lg:col-span-3">
-          <Section title="Economic & Events Calendar"><CalendarPanel /></Section>
+          <Panel title="Sector Heatmap · NSE" status="info"><SectorHeatmap /></Panel>
         </div>
       </div>
     </div>

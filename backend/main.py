@@ -381,6 +381,20 @@ def quant_correlation(req: CorrReq):
         raise HTTPException(status_code=503, detail="Correlation unavailable")
 
 
+_macro_cache: TTLCache = TTLCache(maxsize=1, ttl=300)
+
+
+@app.get("/api/global-macro")
+def global_macro():
+    """World indices, commodities, crypto, FX + risk-on/off composite."""
+    try:
+        from data.global_macro import fetch_global_macro
+        return _keyed(_macro_cache, "v", fetch_global_macro)
+    except Exception as exc:
+        logger.exception("Global macro failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Global macro unavailable")
+
+
 @app.get("/api/breadth")
 def breadth():
     """Market internals from the universe closes cache (% above DMAs, A/D, 52w highs)."""
