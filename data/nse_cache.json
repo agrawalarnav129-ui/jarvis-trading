@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T03:02:23.305588Z",
+  "updated": "2026-06-19T08:41:05.632588Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -92,6 +92,13 @@
       "date_str": "24 Jun",
       "symbol": "FINKURVE",
       "company": "Finkurve Financial Services Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-24",
+      "date_str": "24 Jun",
+      "symbol": "ONMOBILE",
+      "company": "OnMobile Global Limited",
       "purpose": "Fund Raising"
     },
     {
