@@ -1,64 +1,22 @@
 {
-  "updated": "2026-06-18T08:18:25.559544Z",
+  "updated": "2026-06-19T03:02:23.305588Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "17-Jun-2026",
+    "date": "18-Jun-2026",
     "fii": {
-      "buy": 14806.3,
-      "sell": 14704.71,
-      "net": 101.59
+      "buy": 14611.83,
+      "sell": 15637.03,
+      "net": -1025.2
     },
     "dii": {
-      "buy": 16611.87,
-      "sell": 15050.47,
-      "net": 1561.4
+      "buy": 16163.18,
+      "sell": 12646.37,
+      "net": 3516.81
     },
-    "net_combined": 1662.99
+    "net_combined": 2491.61
   },
   "corporate": [
-    {
-      "date": "2026-06-19",
-      "date_str": "19 Jun",
-      "symbol": "EIFFL",
-      "company": "Euro India Fresh Foods Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-19",
-      "date_str": "19 Jun",
-      "symbol": "GUJTHEM",
-      "company": "Gujarat Themis Biosyn Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
-    {
-      "date": "2026-06-19",
-      "date_str": "19 Jun",
-      "symbol": "GUJTHEM",
-      "company": "Gujarat Themis Biosyn Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-19",
-      "date_str": "19 Jun",
-      "symbol": "GVPTECH",
-      "company": "GVP Infotech Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-06-19",
-      "date_str": "19 Jun",
-      "symbol": "MSPL",
-      "company": "MSP Steel & Power Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-19",
-      "date_str": "19 Jun",
-      "symbol": "UNIVASTU",
-      "company": "Univastu India Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-06-20",
       "date_str": "20 Jun",
@@ -111,8 +69,29 @@
     {
       "date": "2026-06-23",
       "date_str": "23 Jun",
+      "symbol": "MANAPPURAM",
+      "company": "Manappuram Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-23",
+      "date_str": "23 Jun",
+      "symbol": "PATINTLOG",
+      "company": "Patel Integrated Logistics Limited",
+      "purpose": "Buyback/Other business matters"
+    },
+    {
+      "date": "2026-06-23",
+      "date_str": "23 Jun",
       "symbol": "SATIN",
       "company": "Satin Creditcare Network Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-24",
+      "date_str": "24 Jun",
+      "symbol": "FINKURVE",
+      "company": "Finkurve Financial Services Limited",
       "purpose": "Fund Raising"
     },
     {
@@ -128,6 +107,13 @@
       "symbol": "GATECHDVR",
       "company": "GACM Technologies Limited",
       "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-25",
+      "date_str": "25 Jun",
+      "symbol": "MCLOUD",
+      "company": "Magellanic Cloud Limited",
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-06-25",
@@ -156,6 +142,13 @@
       "symbol": "SRPL",
       "company": "Shree Ram Proteins Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "SUPERHOUSE",
+      "company": "Superhouse Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
