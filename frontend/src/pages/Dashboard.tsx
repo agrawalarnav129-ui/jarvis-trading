@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { RefreshCw, ExternalLink, ChevronRight, CalendarClock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../lib/api";
@@ -8,6 +8,7 @@ import { Card, Panel, Skeleton, Empty } from "../components/ui";
 import { useSymbolNav } from "../components/SymbolLink";
 import { listWatch } from "../lib/watchlist";
 import GlobalMacro from "../components/GlobalMacro";
+const WorldMap = lazy(() => import("../components/WorldMap"));
 
 function IndexStrip() {
   const { data, loading } = useFetch(() => api.indices(), [], 90_000);
@@ -257,6 +258,13 @@ export default function Dashboard() {
     <div>
       <CommandRibbon />
       <EventGuard />
+
+      {/* Hero: live global markets globe */}
+      <div className="mb-3">
+        <Suspense fallback={<div className="card h-[460px] animate-pulse" />}>
+          <WorldMap />
+        </Suspense>
+      </div>
 
       {/* Signal strips */}
       <div className="grid grid-cols-1 gap-3 mb-3">
