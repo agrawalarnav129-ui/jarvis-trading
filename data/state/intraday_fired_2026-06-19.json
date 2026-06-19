@@ -1,0 +1,32 @@
+{
+  "BERGEPAINT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "JBMA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SWSOLAR.NS": [],
+  "WABAG.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SCHAEFFLER.NS": [],
+  "ROSSARI.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LICI.NS": [],
+  "ABCAPITAL.NS": [],
+  "ZFCVINDIA.NS": [],
+  "FINEORG.NS": [],
+  "OLECTRA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NYKAA.NS": [],
+  "CAPLIPOINT.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "INDUSINDBK.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "TITAN.NS": []
+}
