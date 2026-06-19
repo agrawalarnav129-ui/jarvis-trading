@@ -7,7 +7,7 @@ const KEY = "axiom_theme";
 const listeners = new Set<() => void>();
 
 let current: Theme = ((): Theme => {
-  try { return (localStorage.getItem(KEY) as Theme) || "dark"; } catch { return "dark"; }
+  try { return (localStorage.getItem(KEY) as Theme) || "light"; } catch { return "light"; }
 })();
 
 export function getTheme(): Theme { return current; }

@@ -395,6 +395,20 @@ def global_macro():
         raise HTTPException(status_code=503, detail="Global macro unavailable")
 
 
+_wnews_cache: TTLCache = TTLCache(maxsize=1, ttl=600)
+
+
+@app.get("/api/world-news")
+def world_news():
+    """Geocoded news markers (RSS headlines matched to a gazetteer) for the map."""
+    try:
+        from data.world_news import geocode_news
+        return _keyed(_wnews_cache, "v", geocode_news)
+    except Exception as exc:
+        logger.exception("World news failed: {}", exc)
+        return {"available": False, "points": []}
+
+
 @app.get("/api/breadth")
 def breadth():
     """Market internals from the universe closes cache (% above DMAs, A/D, 52w highs)."""

@@ -22,7 +22,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
         mono: ["'JetBrains Mono'", "'Fira Code'", "monospace"],
-        display: ["'Orbitron'", "Inter", "sans-serif"],
+        display: ["'Nunito'", "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
         glow: "0 0 24px rgba(34,211,238,0.18)",
