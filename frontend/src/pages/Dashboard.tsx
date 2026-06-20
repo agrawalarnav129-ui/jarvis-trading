@@ -9,6 +9,7 @@ import { useSymbolNav } from "../components/SymbolLink";
 import { listWatch } from "../lib/watchlist";
 import GlobalMacro from "../components/GlobalMacro";
 import LiveNews from "../components/LiveNews";
+import LiveVideo from "../components/LiveVideo";
 const WorldMap = lazy(() => import("../components/WorldMap"));
 
 function IndexStrip() {
@@ -217,6 +218,8 @@ function CommandRibbon() {
   const rc: Record<string, string> = { BULLISH: "text-up", BEARISH: "text-down", NEUTRAL: "text-gold" };
   const tc = (t?: string) => (t === "Risk-On" ? "text-up" : t === "Risk-Off" ? "text-down" : "text-gold");
   const f = fii.data;
+  const mi = (l: string) => macro.data?.indices?.find((x) => x.label === l)?.pct;
+  const spx = mi("S&P 500"); const vix = mi("VIX");
   return (
     <div className="card mb-3 flex items-stretch overflow-x-auto scroll-thin divide-x divide-line/70 h-11">
       <div className="flex items-center gap-1.5 px-3 shrink-0">
@@ -225,6 +228,8 @@ function CommandRibbon() {
       </div>
       {seg("REGIME", regime.data?.regime ?? "—", rc[regime.data?.regime ?? ""] ?? "text-faint")}
       {seg("GLOBAL", macro.data?.available ? `${macro.data.risk_tone} ${macro.data.risk_score}` : "—", tc(macro.data?.risk_tone))}
+      {seg("S&P", spx == null ? "—" : `${spx >= 0 ? "+" : ""}${spx}%`, spx == null ? "text-faint" : spx >= 0 ? "text-up" : "text-down")}
+      {seg("VIX", vix == null ? "—" : `${vix}`, vix == null ? "text-faint" : vix >= 0 ? "text-down" : "text-up")}
       {seg("BREADTH", breadth.data?.available ? `${breadth.data.health} ${breadth.data.score}` : "—", tc(breadth.data?.health))}
       {seg("ADV/DEC", breadth.data?.available ? `${breadth.data.advancers}/${breadth.data.decliners}` : "—", (breadth.data?.advancers ?? 0) >= (breadth.data?.decliners ?? 0) ? "text-up" : "text-down")}
       {f?.available && seg("FII", `${(f.fii?.net ?? 0) >= 0 ? "+" : ""}${fmtInt(f.fii?.net ?? 0)}`, signColor(f.fii?.net ?? 0))}
@@ -256,11 +261,16 @@ export default function Dashboard() {
         <Panel title="Sector Rotation · vs NIFTY" status="info" bodyClass="p-2"><RotationSignals /></Panel>
       </div>
 
+      {/* Live TV + News */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 mb-3">
+        <div className="lg:col-span-7"><LiveVideo /></div>
+        <div className="lg:col-span-5"><LiveNews /></div>
+      </div>
+
       {/* Intel grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
-        <div className="lg:col-span-4"><GlobalMacro /></div>
-        <div className="lg:col-span-4"><LiveNews /></div>
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-6"><GlobalMacro /></div>
+        <div className="lg:col-span-6">
           <Panel title="Economic & Events Calendar" status="warn" bodyClass="p-0"><CalendarPanel /></Panel>
         </div>
 

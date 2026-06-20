@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Globe from "globe.gl";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
-import { Globe2, Map as MapIcon } from "lucide-react";
 import { api } from "../lib/api";
 import { useFetch } from "../lib/useFetch";
 import { Panel, Skeleton } from "./ui";
@@ -39,6 +38,12 @@ export default function WorldMap() {
   const dark = theme === "dark";
   const [mode, setMode] = useState<"globe" | "flat">("flat");
   const [countries, setCountries] = useState<any[]>([]);
+  const mapWrap = useRef<HTMLDivElement>(null);
+  const [hover, setHover] = useState<{ x: number; y: number; name: string } | null>(null);
+  const onMove = (e: React.MouseEvent, name: string) => {
+    const r = mapWrap.current?.getBoundingClientRect(); if (!r) return;
+    setHover({ x: e.clientX - r.left, y: e.clientY - r.top, name });
+  };
   const macro = useFetch(() => api.globalMacro(), [], 300_000);
   const indices = useFetch(() => api.indices(), [], 90_000);
   const news = useFetch(() => api.worldNews(), [], 600_000);
@@ -49,7 +54,8 @@ export default function WorldMap() {
   (macro.data?.indices ?? []).forEach((q) => (idxMap[q.label] = q.pct));
   (indices.data?.indices ?? []).forEach((q) => (idxMap[q.name] = q.pct));
   const countryPct: Record<string, number> = {};
-  (macro.data?.indices ?? []).forEach((q: any) => { if (q.country) countryPct[q.country] = q.pct; });
+  const countryInfo: Record<string, { label: string; pct: number }> = {};
+  (macro.data?.indices ?? []).forEach((q: any) => { if (q.country) { countryPct[q.country] = q.pct; countryInfo[q.country] = { label: q.label, pct: q.pct }; } });
 
   const points = NODES.map((n) => {
     const lbl = n.match.find((m) => idxMap[m] !== undefined);
@@ -111,10 +117,10 @@ export default function WorldMap() {
   const tone = macro.data?.risk_tone;
   const toneColor = tone === "Risk-On" ? "text-up" : tone === "Risk-Off" ? "text-down" : "text-gold";
   const toggle = (
-    <div className="flex gap-0.5">
-      {([["flat", MapIcon], ["globe", Globe2]] as const).map(([m, Icon]) => (
-        <button key={m} onClick={() => setMode(m)} title={m === "globe" ? "3D globe" : "Flat map"}
-          className={`p-1 rounded cursor-pointer transition-colors ${mode === m ? "bg-brand/20 text-brand" : "text-faint hover:text-txt"}`}><Icon size={13} /></button>
+    <div className="flex rounded-md overflow-hidden border border-line">
+      {([["flat", "2D"], ["globe", "3D"]] as const).map(([m, lbl]) => (
+        <button key={m} onClick={() => setMode(m)} title={m === "globe" ? "3D globe" : "2D flat map"}
+          className={`px-1.5 py-0.5 text-[0.6rem] font-mono font-semibold cursor-pointer transition-colors ${mode === m ? "bg-brand/20 text-brand" : "text-faint hover:text-txt"}`}>{lbl}</button>
       ))}
     </div>
   );
@@ -123,15 +129,15 @@ export default function WorldMap() {
     <Panel title="Global Markets Situation · Live" status={tone === "Risk-On" ? "up" : tone === "Risk-Off" ? "down" : "warn"}
       meta={macro.data?.available ? <span className={toneColor}>{tone} · {macro.data.risk_score}/100</span> : undefined}
       right={toggle} bodyClass="p-0">
-      <div className="relative">
+      <div className="relative" ref={mapWrap}>
         {mode === "globe" ? (
           <div ref={wrap} style={{ height: 460, width: "100%" }} />
         ) : (
           <svg viewBox="0 0 1000 500" className="w-full block" style={{ background: dark ? "#11150f" : "#eef0e8" }} preserveAspectRatio="xMidYMid meet">
             {countries.map((f, i) => (
-              <path key={f.id ?? i} d={pathGen(f) || ""} fill={fill(countryPct[f.properties?.name])} stroke={border} strokeWidth={0.3}>
-                <title>{f.properties?.name}{countryPct[f.properties?.name] !== undefined ? ` · ${countryPct[f.properties.name] >= 0 ? "+" : ""}${countryPct[f.properties.name]}%` : ""}</title>
-              </path>
+              <path key={f.id ?? i} d={pathGen(f) || ""} fill={fill(countryPct[f.properties?.name])} stroke={border} strokeWidth={0.3}
+                style={{ cursor: "crosshair" }}
+                onMouseMove={(e) => onMove(e, f.properties?.name)} onMouseLeave={() => setHover(null)} />
             ))}
             {/* capital-flow arcs → Mumbai */}
             {points.filter((p) => !p.indian).map((p) => {
@@ -153,6 +159,15 @@ export default function WorldMap() {
           <div className="flex items-center gap-1.5 text-[0.58rem] font-mono text-muted"><span className="w-2 h-2 rounded-sm bg-down" /> mkt down</div>
           <div className="flex items-center gap-1.5 text-[0.58rem] font-mono text-muted"><span className="w-2 h-2 rounded-full" style={{ background: NEWS }} /> news</div>
         </div>
+        {mode === "flat" && hover && (
+          <div className="absolute z-20 pointer-events-none px-2 py-1 rounded-md bg-base/95 border border-line shadow-card font-mono text-[0.62rem]"
+            style={{ left: Math.min(hover.x + 12, (mapWrap.current?.clientWidth ?? 800) - 130), top: hover.y + 12 }}>
+            <div className="text-txt">{hover.name}</div>
+            {countryInfo[hover.name]
+              ? <div className={countryInfo[hover.name].pct >= 0 ? "text-up" : "text-down"}>{countryInfo[hover.name].label} · {countryInfo[hover.name].pct >= 0 ? "+" : ""}{countryInfo[hover.name].pct}%</div>
+              : <div className="text-faint">no index tracked</div>}
+          </div>
+        )}
       </div>
     </Panel>
   );
