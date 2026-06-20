@@ -6,13 +6,18 @@ import { Panel } from "./ui";
 const CHANNELS: { name: string; id: string }[] = [
   { name: "Zee Business", id: "UCkXopQ3ubd-rnXnStZqCl2w" },
   { name: "CNBC-TV18", id: "UCmRbHAgG2k2vDUvb3xsEunQ" },
+  { name: "ET Now", id: "UCI_mwTKUhicNzFrhm33MzBQ" },
   { name: "Bloomberg TV", id: "UCIALMKvObZNtJ6AmdCLP7Lg" },
+  { name: "CNBC Intl", id: "UCF8HUTbUwPKh2Q-KpGOCVGw" },
   { name: "CNBC", id: "UCvJJ_dzjViJCoLf5uKUTwoA" },
+  { name: "Yahoo Finance", id: "UCEAZeUIeJs0IjQiqTCdVSIg" },
 ];
 
 export default function LiveVideo() {
   const [ch, setCh] = useState(CHANNELS[0]);
-  const src = `https://www.youtube.com/embed/live_stream?channel=${ch.id}&autoplay=0&mute=1&modestbranding=1&rel=0`;
+  // autoplay=1 + mute=1 (browsers only allow autoplay when muted); remount on
+  // switch (key={ch.id}) so each channel starts playing automatically.
+  const src = `https://www.youtube.com/embed/live_stream?channel=${ch.id}&autoplay=1&mute=1&playsinline=1&modestbranding=1&rel=0`;
   return (
     <Panel title="Live TV · Business News" status="down" meta={<span className="text-down">● LIVE</span>}
       right={
