@@ -409,7 +409,7 @@ def world_news():
         return {"available": False, "points": []}
 
 
-_livech_cache: TTLCache = TTLCache(maxsize=1, ttl=300)
+_livech_cache: TTLCache = TTLCache(maxsize=1, ttl=1800)  # 30 min — conserves YouTube API quota
 
 
 @app.get("/api/live-channels")

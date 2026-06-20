@@ -7,6 +7,7 @@ actually broadcasting. We check each channel's YouTube /live page server-side
 """
 from __future__ import annotations
 
+import os
 import re
 from concurrent.futures import ThreadPoolExecutor
 
@@ -69,10 +70,36 @@ def _check(cid: str) -> tuple[bool, str | None]:
         return (False, None)
 
 
+def _check_api(cid: str, key: str) -> tuple[bool, str | None]:
+    """Reliable live detection via YouTube Data API v3 (works from any IP).
+    search.list eventType=live → the channel's current live video, if any.
+    Falls back to the scrape check if the API errors (e.g. quota exhausted)."""
+    try:
+        r = requests.get(
+            "https://www.googleapis.com/youtube/v3/search",
+            params={"part": "id", "channelId": cid, "eventType": "live",
+                    "type": "video", "maxResults": 1, "key": key},
+            timeout=10,
+        )
+        if r.status_code != 200:
+            logger.debug("YT API {} for {}: {}", r.status_code, cid, r.text[:120])
+            return _check(cid)
+        items = r.json().get("items", [])
+        if not items:
+            return (False, None)
+        vid = items[0].get("id", {}).get("videoId")
+        return (bool(vid), vid)
+    except Exception as exc:
+        logger.debug("YT API check failed for {}: {}", cid, exc)
+        return _check(cid)
+
+
 def live_channels() -> dict:
+    key = os.getenv("YOUTUBE_API_KEY")
+    check = (lambda cid: _check_api(cid, key)) if key else _check
     try:
         with ThreadPoolExecutor(max_workers=7) as ex:
-            results = list(ex.map(lambda c: (c[0], c[1], *_check(c[1])), CHANNELS))
+            results = list(ex.map(lambda c: (c[0], c[1], *check(c[1])), CHANNELS))
     except Exception:
         results = [(n, i, False, None) for n, i in CHANNELS]
     out = [{"name": n, "id": i, "live": live, "videoId": vid} for n, i, live, vid in results]
