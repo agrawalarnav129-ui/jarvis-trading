@@ -19,7 +19,7 @@ const FALLBACK = [
 export default function LiveVideo() {
   const live = useFetch(() => api.liveChannels(), [], 180_000);
   const channels = live.data?.channels?.length ? live.data.channels : FALLBACK;
-  const playable = channels.filter((c) => c.live && c.videoId);
+  const playable = channels.filter((c) => c.live);
 
   const [chId, setChId] = useState<string | null>(null);
 
@@ -28,13 +28,16 @@ export default function LiveVideo() {
   useEffect(() => {
     if (!live.data) return;
     const cur = channels.find((c) => c.id === chId);
-    if (cur?.live && cur.videoId) return;
+    if (cur?.live) return;
     setChId(live.data.first_live ?? playable[0]?.id ?? null);
   }, [live.data]); // eslint-disable-line
 
   const ch = channels.find((c) => c.id === chId) ?? null;
-  const src = ch?.videoId
-    ? `https://www.youtube.com/embed/${ch.videoId}?autoplay=1&mute=1&playsinline=1&modestbranding=1&rel=0`
+  // embed by resolved video id (reliable); fall back to the channel live form
+  const src = ch
+    ? (ch.videoId
+        ? `https://www.youtube.com/embed/${ch.videoId}?autoplay=1&mute=1&playsinline=1&modestbranding=1&rel=0`
+        : `https://www.youtube.com/embed/live_stream?channel=${ch.id}&autoplay=1&mute=1&playsinline=1&modestbranding=1&rel=0`)
     : null;
 
   return (
@@ -49,7 +52,7 @@ export default function LiveVideo() {
       <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
         {live.loading && !ch ? <div className="absolute inset-0 grid place-items-center"><Skeleton h={60} /></div>
           : src ? (
-            <iframe key={ch!.videoId} src={src} title={`${ch!.name} live`} className="absolute inset-0 w-full h-full"
+            <iframe key={ch!.videoId ?? ch!.id} src={src} title={`${ch!.name} live`} className="absolute inset-0 w-full h-full"
               allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
           ) : <div className="absolute inset-0 grid place-items-center"><Empty msg="No business channels are broadcasting live right now." /></div>}
       </div>

@@ -14,6 +14,9 @@ import requests
 from loguru import logger
 
 _CANON = re.compile(r'<link rel="canonical" href="https://www\.youtube\.com/watch\?v=([\w-]{11})"')
+_OGURL = re.compile(r'<meta property="og:url" content="https://www\.youtube\.com/watch\?v=([\w-]{11})"')
+_VIDID = re.compile(r'"videoId":"([\w-]{11})"')
+_VIDPATS = (_CANON, _OGURL, _VIDID)
 _EMBED = re.compile(r'"playableInEmbed":(true|false)')
 _STATUS = re.compile(r'"playabilityStatus":\{"status":"([A-Z_]+)"')
 
@@ -46,11 +49,19 @@ def _check(cid: str) -> tuple[bool, str | None]:
         is_live = ("hlsManifestUrl" in t) or ('"isLive":true' in t)
         if not is_live:
             return (False, None)
-        vid = _CANON.search(t)
         emb = _EMBED.search(t)
         st = _STATUS.search(t)
-        playable = bool(vid) and (emb is None or emb.group(1) == "true") and (st is None or st.group(1) == "OK")
-        return (playable, vid.group(1) if vid else None)
+        if (emb and emb.group(1) == "false") or (st and st.group(1) != "OK"):
+            return (False, None)
+        vid = None
+        for pat in _VIDPATS:
+            m = pat.search(t)
+            if m:
+                vid = m.group(1)
+                break
+        # live & playable; embed by video id when we could resolve it, else the
+        # channel live_stream form (handled in the frontend) is the fallback.
+        return (True, vid)
     except Exception as exc:
         logger.debug("live check failed for {}: {}", cid, exc)
         return (False, None)
@@ -63,5 +74,7 @@ def live_channels() -> dict:
     except Exception:
         results = [(n, i, False, None) for n, i in CHANNELS]
     out = [{"name": n, "id": i, "live": live, "videoId": vid} for n, i, live, vid in results]
-    first_live = next((c["id"] for c in out if c["live"] and c["videoId"]), None)
+    # prefer a channel where we resolved a video id (reliable embed), else any live one
+    first_live = next((c["id"] for c in out if c["live"] and c["videoId"]), None) \
+        or next((c["id"] for c in out if c["live"]), None)
     return {"channels": out, "first_live": first_live}
