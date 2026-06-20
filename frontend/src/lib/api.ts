@@ -71,7 +71,7 @@ export const api = {
   breadth: () => get<{ available: boolean; note?: string; universe: number; pct_above_ema50: number; pct_above_ema200: number; pct_up_20d: number; advancers: number; decliners: number; new_highs: number; new_lows: number; avg_dist_ema50: number; score: number; health: string }>("/api/breadth"),
   globalMacro: () => get<{ available: boolean; note?: string; risk_score: number; risk_tone: string; indices: MacroQuote[]; commodities: MacroQuote[]; crypto: MacroQuote[]; fx: MacroQuote[] }>("/api/global-macro"),
   worldNews: () => get<{ available: boolean; count?: number; points: { lat: number; lng: number; place: string; count: number; headlines: string[] }[] }>("/api/world-news"),
-  liveChannels: () => get<{ channels: { name: string; id: string; live: boolean }[]; first_live: string | null }>("/api/live-channels"),
+  liveChannels: () => get<{ channels: { name: string; id: string; live: boolean; videoId: string | null }[]; first_live: string | null }>("/api/live-channels"),
   rrg: (symbols: string[] = [], tail = 8) => get<{ available: boolean; note?: string; count: number; points: { symbol: string; x: number; y: number; quadrant: string; tail: [number, number][] }[] }>(`/api/quant/rrg?symbols=${encodeURIComponent(symbols.join(","))}&tail=${tail}`),
   portfolioHeat: async (positions: { symbol: string; risk_pct: number }[], candidate: { symbol: string; risk_pct: number } | null) => {
     const r = await fetch(`${BASE}/api/portfolio-heat`, {
