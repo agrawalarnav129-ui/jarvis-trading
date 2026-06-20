@@ -34,15 +34,17 @@ _H = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                   "(KHTML, like Gecko) Chrome/123.0 Safari/537.36",
     "Accept-Language": "en-US,en;q=0.9",
-    "Cookie": "CONSENT=YES+1",
+    # consent-accepted cookies to skip YouTube's EU/datacenter consent interstitial
+    "Cookie": "SOCS=CAESEwgDEgk0ODE3Nzk3MjQaAmVuIAEaBgiA_LyaBg; CONSENT=YES+cb",
 }
+_LIVE_URL = "https://www.youtube.com/channel/{cid}/live?gl=US&hl=en&persist_gl=1&persist_hl=1"
 
 
 def _check(cid: str) -> tuple[bool, str | None]:
     """Return (playable_live, live_video_id). Playable = currently live, embeddable
     and status OK — so the UI only offers channels that actually play in an iframe."""
     try:
-        r = requests.get(f"https://www.youtube.com/channel/{cid}/live", headers=_H, timeout=10)
+        r = requests.get(_LIVE_URL.format(cid=cid), headers=_H, timeout=10)
         if r.status_code != 200:
             return (False, None)
         t = r.text
