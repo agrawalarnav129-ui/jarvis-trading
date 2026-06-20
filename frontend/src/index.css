@@ -32,28 +32,28 @@
     --card-bg: rgb(255 255 255 / 0.94);
   }
 
-  /* WorldMonitor-spirit dark — warm charcoal-green, same sage/mauve family */
+  /* WorldMonitor dark — near-black intelligence terminal (matches the app UI) */
   .dark {
-    --c-base: 22 26 23;          /* warm near-black green */
-    --c-surface: 31 37 32;
-    --c-elevated: 41 48 42;
-    --c-line: 58 66 58;
-    --c-brand: 138 176 124;      /* lighter sage */
-    --c-brandbright: 150 185 210;
-    --c-gold: 212 180 110;
-    --c-up: 138 176 124;
-    --c-down: 210 138 162;       /* lighter mauve-rose */
-    --c-txt: 232 236 226;
-    --c-muted: 168 180 166;
-    --c-faint: 120 134 120;
-    --shadow-card: 0 4px 22px rgba(0, 0, 0, 0.5);
-    --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.6);
-    --glow: 0 0 22px rgba(138, 176, 124, 0.18);
-    --ring: 138 176 124;
-    --logo: #8AB07C;
+    --c-base: 11 13 11;          /* near-black */
+    --c-surface: 21 24 21;
+    --c-elevated: 30 34 30;
+    --c-line: 45 51 45;
+    --c-brand: 74 222 128;       /* WM green accent */
+    --c-brandbright: 125 211 252;/* sky blue */
+    --c-gold: 251 191 36;        /* amber */
+    --c-up: 74 222 128;          /* green */
+    --c-down: 248 113 113;       /* red */
+    --c-txt: 232 236 228;
+    --c-muted: 156 168 156;
+    --c-faint: 108 120 108;
+    --shadow-card: 0 4px 22px rgba(0, 0, 0, 0.55);
+    --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.65);
+    --glow: 0 0 22px rgba(74, 222, 128, 0.16);
+    --ring: 74 222 128;
+    --logo: #4ade80;
     --body-grad:
-      radial-gradient(ellipse 60% 40% at 50% -10%, rgba(138, 176, 124, 0.07), transparent 70%);
-    --card-bg: rgb(31 37 32 / 0.82);
+      radial-gradient(ellipse 60% 40% at 50% -10%, rgba(74, 222, 128, 0.05), transparent 70%);
+    --card-bg: rgb(21 24 21 / 0.85);
   }
 
   html { -webkit-text-size-adjust: 100%; }

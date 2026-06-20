@@ -8,6 +8,7 @@ import { Card, Panel, Skeleton, Empty } from "../components/ui";
 import { useSymbolNav } from "../components/SymbolLink";
 import { listWatch } from "../lib/watchlist";
 import GlobalMacro from "../components/GlobalMacro";
+import LiveNews from "../components/LiveNews";
 const WorldMap = lazy(() => import("../components/WorldMap"));
 
 function IndexStrip() {
@@ -154,25 +155,6 @@ function MoversTable({ rows, up, onSym }: { rows: { symbol: string; ltp: number;
   );
 }
 
-function NewsPanel() {
-  const { data, loading } = useFetch(() => api.news(), [], 300_000);
-  if (loading) return <Skeleton h={260} />;
-  const items = data?.news ?? [];
-  if (!items.length) return <Empty msg="News feed unavailable." />;
-  return (
-    <div className="max-h-[420px] overflow-y-auto scroll-thin px-3">
-      {items.map((n, idx) => (
-        <a key={idx} href={n.link} target="_blank" rel="noreferrer"
-           className="block py-2 border-b border-line/50 last:border-0 group cursor-pointer">
-          <div className="text-[0.78rem] text-txt leading-snug group-hover:text-brandbright transition-colors">{n.title}</div>
-          <div className="label mt-1 flex items-center gap-1">{n.source} · {n.published_str}
-            <ExternalLink size={9} className="opacity-50" /></div>
-        </a>
-      ))}
-    </div>
-  );
-}
-
 function CalendarPanel() {
   const { data, loading } = useFetch(() => api.calendar(), []);
   if (loading) return <Skeleton h={260} />;
@@ -277,9 +259,7 @@ export default function Dashboard() {
       {/* Intel grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
         <div className="lg:col-span-4"><GlobalMacro /></div>
-        <div className="lg:col-span-4">
-          <Panel title="Market News · Global Feed" status="muted" bodyClass="p-0"><NewsPanel /></Panel>
-        </div>
+        <div className="lg:col-span-4"><LiveNews /></div>
         <div className="lg:col-span-4">
           <Panel title="Economic & Events Calendar" status="warn" bodyClass="p-0"><CalendarPanel /></Panel>
         </div>

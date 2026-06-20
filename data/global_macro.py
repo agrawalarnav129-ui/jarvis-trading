@@ -10,12 +10,19 @@ warnings.filterwarnings("ignore")
 
 from loguru import logger
 
-# group -> [(label, ticker, kind)] ; kind drives sign interpretation for risk
-INDICES = [
-    ("S&P 500", "^GSPC"), ("Nasdaq", "^IXIC"), ("Dow", "^DJI"),
-    ("FTSE 100", "^FTSE"), ("DAX", "^GDAXI"), ("Nikkei", "^N225"),
-    ("Hang Seng", "^HSI"), ("VIX", "^VIX"),
+# (label, ticker, country) — country matches the world-atlas GeoJSON name so the
+# choropleth can shade it. None = no country fill (e.g. VIX, duplicate US indices).
+INDICES_C = [
+    ("S&P 500", "^GSPC", "United States of America"), ("Nasdaq", "^IXIC", None), ("Dow", "^DJI", None),
+    ("FTSE 100", "^FTSE", "United Kingdom"), ("DAX", "^GDAXI", "Germany"), ("CAC 40", "^FCHI", "France"),
+    ("IBEX 35", "^IBEX", "Spain"), ("FTSE MIB", "FTSEMIB.MI", "Italy"), ("Nikkei", "^N225", "Japan"),
+    ("Hang Seng", "^HSI", None), ("Shanghai", "000001.SS", "China"), ("Nifty 50", "^NSEI", "India"),
+    ("KOSPI", "^KS11", "South Korea"), ("ASX 200", "^AXJO", "Australia"), ("TSX", "^GSPTSE", "Canada"),
+    ("Bovespa", "^BVSP", "Brazil"), ("IPC Mexico", "^MXX", "Mexico"), ("Jakarta", "^JKSE", "Indonesia"),
+    ("Straits Times", "^STI", "Singapore"), ("VIX", "^VIX", None),
 ]
+INDICES = [(l, t) for l, t, _ in INDICES_C]
+_COUNTRY = {t: c for l, t, c in INDICES_C}
 COMMODITIES = [("Gold", "GC=F"), ("Silver", "SI=F"), ("Crude WTI", "CL=F"),
                ("Brent", "BZ=F"), ("Nat Gas", "NG=F"), ("Copper", "HG=F")]
 CRYPTO = [("Bitcoin", "BTC-USD"), ("Ethereum", "ETH-USD"), ("Solana", "SOL-USD")]
@@ -46,15 +53,18 @@ def fetch_global_macro() -> dict:
         except Exception:
             return None
 
-    def pack(rows):
+    def pack(rows, with_country=False):
         out = []
         for label, t in rows:
             q = quote(t)
             if q:
-                out.append({"label": label, "symbol": t, **q})
+                row = {"label": label, "symbol": t, **q}
+                if with_country and _COUNTRY.get(t):
+                    row["country"] = _COUNTRY[t]
+                out.append(row)
         return out
 
-    idx, com, cry, fx = pack(INDICES), pack(COMMODITIES), pack(CRYPTO), pack(FX)
+    idx, com, cry, fx = pack(INDICES, with_country=True), pack(COMMODITIES), pack(CRYPTO), pack(FX)
 
     # Risk-on/off composite: equities up, VIX down, gold down, crypto up, DXY down → risk-on
     signals = []
