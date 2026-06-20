@@ -409,6 +409,20 @@ def world_news():
         return {"available": False, "points": []}
 
 
+_livech_cache: TTLCache = TTLCache(maxsize=1, ttl=300)
+
+
+@app.get("/api/live-channels")
+def live_channels_ep():
+    """Which business-TV channels are currently live (for the Live-TV card)."""
+    try:
+        from data.live_channels import live_channels
+        return _keyed(_livech_cache, "v", live_channels)
+    except Exception as exc:
+        logger.exception("Live channels failed: {}", exc)
+        return {"channels": [], "first_live": None}
+
+
 @app.get("/api/breadth")
 def breadth():
     """Market internals from the universe closes cache (% above DMAs, A/D, 52w highs)."""
