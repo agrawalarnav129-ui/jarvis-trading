@@ -1,50 +1,22 @@
 {
-  "updated": "2026-06-19T08:41:05.632588Z",
+  "updated": "2026-06-20T03:00:52.198908Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "18-Jun-2026",
+    "date": "19-Jun-2026",
     "fii": {
-      "buy": 14611.83,
-      "sell": 15637.03,
-      "net": -1025.2
+      "buy": 31442.87,
+      "sell": 26583.8,
+      "net": 4859.07
     },
     "dii": {
-      "buy": 16163.18,
-      "sell": 12646.37,
-      "net": 3516.81
+      "buy": 18020.49,
+      "sell": 19180.13,
+      "net": -1159.64
     },
-    "net_combined": 2491.61
+    "net_combined": 3699.43
   },
   "corporate": [
-    {
-      "date": "2026-06-20",
-      "date_str": "20 Jun",
-      "symbol": "CREATIVEYE",
-      "company": "Creative Eye Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-20",
-      "date_str": "20 Jun",
-      "symbol": "CREATIVEYE",
-      "company": "Creative Eye Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-20",
-      "date_str": "20 Jun",
-      "symbol": "DJML",
-      "company": "DJ Mediaprint & Logistics Limited",
-      "purpose": "Dividend/Other business matter"
-    },
-    {
-      "date": "2026-06-20",
-      "date_str": "20 Jun",
-      "symbol": "UTKARSHBNK",
-      "company": "Utkarsh Small Finance Bank Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-06-22",
       "date_str": "22 Jun",
@@ -90,6 +62,13 @@
     {
       "date": "2026-06-24",
       "date_str": "24 Jun",
+      "symbol": "EQUITASBNK",
+      "company": "Equitas Small Finance Bank Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-24",
+      "date_str": "24 Jun",
       "symbol": "FINKURVE",
       "company": "Finkurve Financial Services Limited",
       "purpose": "Fund Raising"
@@ -100,6 +79,13 @@
       "symbol": "ONMOBILE",
       "company": "OnMobile Global Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-24",
+      "date_str": "24 Jun",
+      "symbol": "VIKASLIFE",
+      "company": "Vikas Lifecare Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
       "date": "2026-06-25",
@@ -113,6 +99,13 @@
       "date_str": "25 Jun",
       "symbol": "GATECHDVR",
       "company": "GACM Technologies Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-25",
+      "date_str": "25 Jun",
+      "symbol": "MANYAVAR",
+      "company": "Vedant Fashions Limited",
       "purpose": "Other business matters"
     },
     {
@@ -156,6 +149,13 @@
       "symbol": "SUPERHOUSE",
       "company": "Superhouse Limited",
       "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
+      "symbol": "NESTLEIND",
+      "company": "Nestle India Limited",
+      "purpose": "Dividend"
     }
   ]
 }
