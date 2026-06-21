@@ -10,6 +10,7 @@ import { listWatch } from "../lib/watchlist";
 import GlobalMacro from "../components/GlobalMacro";
 import LiveNews from "../components/LiveNews";
 import LiveVideo from "../components/LiveVideo";
+import NewsSentiment from "../components/NewsSentiment";
 const WorldMap = lazy(() => import("../components/WorldMap"));
 
 function IndexStrip() {
@@ -269,8 +270,9 @@ export default function Dashboard() {
 
       {/* Intel grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
-        <div className="lg:col-span-6"><GlobalMacro /></div>
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-4"><GlobalMacro /></div>
+        <div className="lg:col-span-4"><NewsSentiment /></div>
+        <div className="lg:col-span-4">
           <Panel title="Economic & Events Calendar" status="warn" bodyClass="p-0"><CalendarPanel /></Panel>
         </div>
 

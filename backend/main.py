@@ -423,6 +423,21 @@ def live_channels_ep():
         return {"channels": [], "first_live": None}
 
 
+_sentiment_cache: TTLCache = TTLCache(maxsize=1, ttl=600)
+
+
+@app.get("/api/news-sentiment")
+def news_sentiment():
+    """AI sentiment over the live headline feed → market meter + per-stock tags."""
+    try:
+        from ai.sentiment import analyze_news_sentiment
+        return _keyed(_sentiment_cache, "v", analyze_news_sentiment)
+    except Exception as exc:
+        logger.exception("News sentiment failed: {}", exc)
+        return {"available": False, "headlines": [], "by_symbol": {},
+                "market": {"score": 0, "label": "Unavailable", "bull": 0, "bear": 0, "neutral": 0}}
+
+
 @app.get("/api/breadth")
 def breadth():
     """Market internals from the universe closes cache (% above DMAs, A/D, 52w highs)."""

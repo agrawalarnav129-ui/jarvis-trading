@@ -16,6 +16,8 @@ export default function Watchlist() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(true);
   const screener = useFetch(() => api.watchlist(), []);
+  const sentiment = useFetch(() => api.newsSentiment(), [], 600_000);
+  const sentOf = (s: string) => sentiment.data?.by_symbol?.[s.replace(".NS", "").toUpperCase()];
 
   const refreshQuotes = async (list: string[]) => {
     if (!list.length) { setQuotes({}); return; }
@@ -86,7 +88,12 @@ export default function Watchlist() {
             return (
               <Card key={s} className="flex items-center justify-between group">
                 <button onClick={() => go(s)} className="flex-1 text-left cursor-pointer">
-                  <div className="font-mono text-sm text-txt group-hover:text-brand transition-colors">{s}</div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-mono text-sm text-txt group-hover:text-brand transition-colors">{s}</span>
+                    {(() => { const se = sentOf(s); return se && se.label !== "neutral"
+                      ? <span title={`${se.n} headline(s)`} className={`text-[0.55rem] font-mono px-1 rounded ${se.label === "bull" ? "text-up bg-up/10" : "text-down bg-down/10"}`}>{se.label === "bull" ? "▲ news" : "▼ news"}</span>
+                      : null; })()}
+                  </div>
                   {q ? <div className={`font-mono text-[0.7rem] mt-0.5 ${signColor(q.pct)}`}>₹{fmt(q.ltp)} · {arrow(q.pct)} {q.pct >= 0 ? "+" : ""}{fmt(q.pct)}%</div>
                      : <div className="label mt-0.5">—</div>}
                 </button>

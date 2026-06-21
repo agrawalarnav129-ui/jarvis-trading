@@ -251,9 +251,10 @@ def _bt_one(sym, conditions, ind_df, from_date, to_date, stop_pct, exit_days, ex
         return []
     mask = apply_conditions(df_bt, conditions)
     trades = []
+    busy_until = -1   # one position per symbol — skip signals while already in a trade
     for sig_dt in df_bt.index[mask]:
         i = df_bt.index.get_loc(sig_dt)
-        if i + 1 >= len(df_bt):
+        if i <= busy_until or i + 1 >= len(df_bt):
             continue
         entry_dt = df_bt.index[i + 1]
         entry = float(df_bt["open"].iloc[i + 1])
@@ -288,6 +289,7 @@ def _bt_one(sym, conditions, ind_df, from_date, to_date, stop_pct, exit_days, ex
             "days": (exit_dt - entry_dt).days if exit_dt is not None else exit_days,
             "result": "WIN" if pnl_pct > 0 else "LOSS", "exit_reason": reason,
         })
+        busy_until = df_bt.index.get_loc(exit_dt) if exit_dt is not None else i + 1 + exit_days
     return trades
 
 
