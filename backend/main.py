@@ -677,15 +677,17 @@ def scan_builder(req: BuilderReq):
             from data.fetcher import fetch_symbol_history
             from screener.ta_engine import run_builder
 
+            from data.ohlcv_cache import get_cached_ohlcv
+
             def _fetch(sym, period="1y", interval="1d"):
+                cached = get_cached_ohlcv(sym)
+                if cached is not None and not cached.empty:
+                    return cached
                 try:
                     return fetch_symbol_history(sym, period=period, interval=interval)
                 except Exception:
                     return pd.DataFrame()
-            try:
-                nifty = fetch_symbol_history("^NSEI", period="1y", interval="1d")
-            except Exception:
-                nifty = pd.DataFrame()
+            nifty = _fetch("^NSEI", "2y")
             syms = _builder_symbols(req.universe)
             rows = run_builder(syms, req.conditions, _fetch, nifty)
             rows.sort(key=lambda r: (r.get("rs_nifty") or 0), reverse=True)
@@ -720,15 +722,17 @@ def scan_builder_backtest(req: BuilderBTReq):
         from data.fetcher import fetch_symbol_history
         from screener.ta_engine import run_backtest
 
+        from data.ohlcv_cache import get_cached_ohlcv
+
         def _fetch(sym, period="2y", interval="1d"):
+            cached = get_cached_ohlcv(sym)
+            if cached is not None and not cached.empty:
+                return cached
             try:
                 return fetch_symbol_history(sym, period=period, interval=interval)
             except Exception:
                 return pd.DataFrame()
-        try:
-            nifty = fetch_symbol_history("^NSEI", period="2y", interval="1d")
-        except Exception:
-            nifty = pd.DataFrame()
+        nifty = _fetch("^NSEI", "2y")
         syms = _builder_symbols(req.universe)
         trades, equity, stats = run_backtest(
             syms, req.conditions, _fetch, nifty,
