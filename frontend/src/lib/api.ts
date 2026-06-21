@@ -50,6 +50,13 @@ export const api = {
     if (!r.ok) throw new Error(`builder -> ${r.status}`);
     return (await r.json()) as { count: number; scanned: number; universe: string; results: any[] };
   },
+  scanBuilderBacktest: async (universe: string, conditions: any[], params: { from_date?: string; stop_loss?: number; exit_days?: number; min_rr?: number; exit_rule?: string }) => {
+    const r = await fetch(`${BASE}/api/scan/builder/backtest`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ universe, conditions, ...params }),
+    });
+    if (!r.ok) throw new Error(`builder-bt -> ${r.status}`);
+    return (await r.json()) as { trades: any[]; equity: { date: string; value: number }[]; stats: Record<string, number> };
+  },
   scanCustom: (params: Record<string, string | number | boolean>) => {
     const qs = Object.entries(params).map(([k, v]) => `${k}=${encodeURIComponent(String(v))}`).join("&");
     return get<{ count: number; results: any[] }>(`/api/scan/custom?${qs}`);

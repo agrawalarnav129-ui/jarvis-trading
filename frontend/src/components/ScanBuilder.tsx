@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { Plus, Trash2, Loader2, Play, Save, FolderOpen } from "lucide-react";
+import { useState } from "react";
+import { Plus, Trash2, Loader2, Play, Save, FolderOpen, History } from "lucide-react";
 import { api } from "../lib/api";
 import { Card, Empty } from "./ui";
 import { useSymbolNav } from "./SymbolLink";
+import EquityChart from "./EquityChart";
 
 // ── indicator catalog (column names match the backend engine) ──
 const CATALOG: [string, [string, string][]][] = [
@@ -52,6 +53,17 @@ export default function ScanBuilder() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [saved, setSaved] = useState(loadSaved());
+  // backtest
+  const [bt, setBt] = useState<{ trades: any[]; equity: { date: string; value: number }[]; stats: Record<string, number> } | null>(null);
+  const [btLoading, setBtLoading] = useState(false);
+  const [btP, setBtP] = useState({ from_date: "2024-01-01", stop_loss: 3, exit_days: 8, min_rr: 2 });
+
+  const backtest = async () => {
+    setBtLoading(true); setBt(null); setErr(null);
+    try { setBt(await api.scanBuilderBacktest(universe, conds, btP)); }
+    catch { setErr("Backtest takes ~60–120s on the first run (fetches 2y history). Try again or a smaller universe."); }
+    finally { setBtLoading(false); }
+  };
 
   const set = (i: number, patch: Partial<Cond>) => setConds(conds.map((c, j) => (j === i ? { ...c, ...patch } : c)));
   const onInd = (i: number, ind: string) => set(i, BOOL_INDS.has(ind) ? { ind, vt: "bool" } : { ind, vt: conds[i].vt === "bool" ? "ind" : conds[i].vt });
@@ -127,8 +139,67 @@ export default function ScanBuilder() {
           <button onClick={run} disabled={loading || !conds.length} className="flex items-center gap-1.5 rounded-lg bg-brand/15 border border-brand/40 px-3 py-1.5 text-xs text-brand font-medium cursor-pointer hover:bg-brand/25 disabled:opacity-50">
             {loading ? <Loader2 size={14} className="animate-spin" /> : <Play size={14} />} Run scan
           </button>
+          <button onClick={backtest} disabled={btLoading || !conds.length} className="flex items-center gap-1.5 rounded-lg bg-gold/15 border border-gold/40 px-3 py-1.5 text-xs text-gold font-medium cursor-pointer hover:bg-gold/25 disabled:opacity-50">
+            {btLoading ? <Loader2 size={14} className="animate-spin" /> : <History size={14} />} Backtest
+          </button>
+        </div>
+        {/* backtest params */}
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mt-2.5 pt-2.5 border-t border-line/50">
+          <span className="label">Backtest:</span>
+          {([["from_date", "From", "date"], ["stop_loss", "Stop %", "number"], ["exit_days", "Exit days", "number"], ["min_rr", "R:R", "number"]] as const).map(([k, lbl, ty]) => (
+            <label key={k} className="flex items-center gap-1.5 text-[0.6rem] font-mono text-faint">{lbl}
+              <input type={ty} step={k === "min_rr" ? 0.5 : 1} value={(btP as any)[k]} onChange={(e) => setBtP({ ...btP, [k]: ty === "number" ? parseFloat(e.target.value) || 0 : e.target.value })}
+                className={`${ty === "date" ? "w-28" : "w-14"} bg-base border border-line rounded px-1.5 py-1 text-[0.62rem] font-mono text-txt outline-none focus:border-brand/60`} />
+            </label>
+          ))}
         </div>
       </Card>
+
+      {btLoading && <div className="flex items-center justify-center gap-2 text-muted text-sm font-mono py-8"><Loader2 size={16} className="animate-spin" /> Backtesting these conditions over history…</div>}
+      {bt && !btLoading && (() => {
+        const s = bt.stats;
+        const tone = (v: number) => (v >= 0 ? "text-up" : "text-down");
+        const Stat = ({ label, value, color = "text-txt" }: any) => (
+          <Card><div className="label">{label}</div><div className={`font-display text-base mt-1 tabular-nums ${color}`}>{value}</div></Card>
+        );
+        return (
+          <div className="mb-4">
+            <div className="label mb-2">Backtest · {s.total_trades} trades on saved conditions</div>
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-3">
+              <Stat label="Win Rate" value={`${s.win_rate}%`} color={s.win_rate >= 45 ? "text-up" : "text-down"} />
+              <Stat label="Expectancy" value={`${s.expectancy >= 0 ? "+" : ""}${s.expectancy}%`} color={tone(s.expectancy)} />
+              <Stat label="Profit Factor" value={s.profit_factor} color={s.profit_factor >= 1.5 ? "text-up" : s.profit_factor >= 1 ? "text-gold" : "text-down"} />
+              <Stat label="Avg R:R" value={s.avg_rr} />
+              <Stat label="Max DD" value={`${s.max_drawdown}%`} color="text-down" />
+              <Stat label="Total Return" value={`${s.total_return >= 0 ? "+" : ""}${s.total_return}%`} color={tone(s.total_return)} />
+            </div>
+            {bt.equity.length > 1 && <Card className="mb-3"><div className="label mb-1">Equity curve (₹1L start)</div><EquityChart data={bt.equity.map((e) => e.value)} height={160} /></Card>}
+            {bt.trades.length > 0 && (
+              <Card className="overflow-x-auto scroll-thin p-0 max-h-[320px] overflow-y-auto">
+                <table className="w-full text-left">
+                  <thead className="sticky top-0 bg-elevated"><tr className="text-faint border-b border-line">
+                    {["Symbol", "Entry", "Exit", "Entry ₹", "Exit ₹", "P&L%", "Days", "Why"].map((h) => <th key={h} className="label py-2 px-3 font-mono">{h}</th>)}
+                  </tr></thead>
+                  <tbody>
+                    {bt.trades.slice(0, 200).map((t, i) => (
+                      <tr key={i} onClick={() => go(t.symbol)} className="border-b border-line/40 hover:bg-elevated/40 cursor-pointer">
+                        <td className="py-1.5 px-3 font-mono text-[0.66rem] text-txt">{t.symbol}</td>
+                        <td className="py-1.5 px-3 font-mono text-[0.62rem] text-faint">{t.entry_date}</td>
+                        <td className="py-1.5 px-3 font-mono text-[0.62rem] text-faint">{t.exit_date}</td>
+                        <td className="py-1.5 px-3 font-mono text-[0.62rem] text-muted">{t.entry}</td>
+                        <td className="py-1.5 px-3 font-mono text-[0.62rem] text-muted">{t.exit}</td>
+                        <td className={`py-1.5 px-3 font-mono text-[0.66rem] ${t.pnl_pct >= 0 ? "text-up" : "text-down"}`}>{t.pnl_pct >= 0 ? "+" : ""}{t.pnl_pct}</td>
+                        <td className="py-1.5 px-3 font-mono text-[0.62rem] text-muted">{t.days}</td>
+                        <td className="py-1.5 px-3 font-mono text-[0.6rem] text-faint">{t.exit_reason}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </Card>
+            )}
+          </div>
+        );
+      })()}
 
       {err && <Card className="mb-3"><div className="text-down text-xs font-mono">{err}</div></Card>}
       {loading && <div className="flex items-center justify-center gap-2 text-muted text-sm font-mono py-10"><Loader2 size={16} className="animate-spin" /> Scanning {universe}…</div>}

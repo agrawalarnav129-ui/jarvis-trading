@@ -238,3 +238,107 @@ def run_builder(symbols: list[str], conditions: list[dict], fetch_fn, nifty_df=N
     with ThreadPoolExecutor(max_workers=workers) as ex:
         out = list(ex.map(lambda s: _scan_one(s, conditions, nifty_df, fetch_fn), symbols))
     return [r for r in out if r]
+
+
+# ── event-driven backtester (replays the same conditions) ───────────────────
+def _bt_one(sym, conditions, ind_df, from_date, to_date, stop_pct, exit_days, exit_rule, target_rr):
+    """Backtest one symbol's pre-computed indicator frame. Returns list of trades."""
+    try:
+        df_bt = ind_df.loc[from_date:to_date]
+    except Exception:
+        return []
+    if len(df_bt) < 10:
+        return []
+    mask = apply_conditions(df_bt, conditions)
+    trades = []
+    for sig_dt in df_bt.index[mask]:
+        i = df_bt.index.get_loc(sig_dt)
+        if i + 1 >= len(df_bt):
+            continue
+        entry_dt = df_bt.index[i + 1]
+        entry = float(df_bt["open"].iloc[i + 1])
+        if entry <= 0:
+            continue
+        sl = entry * (1 - stop_pct / 100)
+        target = entry * (1 + (stop_pct * target_rr) / 100)
+        exit_px = exit_dt = None
+        reason = "timeout"
+        future = df_bt.iloc[i + 2: i + 2 + exit_days]
+        for fdt, row in future.iterrows():
+            lo, hi, cl = float(row["low"]), float(row["high"]), float(row["close"])
+            if lo <= sl:
+                exit_px, exit_dt, reason = sl, fdt, "stop"; break
+            if hi >= target:
+                exit_px, exit_dt, reason = target, fdt, "target"; break
+            if exit_rule == "RSI Overbought (>70)" and float(row.get("rsi14", 50) or 50) > 70:
+                exit_px, exit_dt, reason = cl, fdt, "rsi"; break
+            if exit_rule == "EMA Cross Down" and cl < float(row.get("ema20", cl) or cl):
+                exit_px, exit_dt, reason = cl, fdt, "ema"; break
+        if exit_px is None and len(future):
+            exit_px, exit_dt = float(future["close"].iloc[-1]), future.index[-1]
+        if exit_px is None:
+            continue
+        pnl_pct = (exit_px - entry) / entry * 100
+        trades.append({
+            "symbol": sym.replace(".NS", ""), "entry_date": str(entry_dt.date()),
+            "exit_date": str(exit_dt.date()) if exit_dt is not None else "",
+            "entry": round(entry, 2), "exit": round(exit_px, 2),
+            "sl": round(sl, 2), "target": round(target, 2),
+            "pnl_pct": round(pnl_pct, 2), "rr": round(pnl_pct / stop_pct, 2),
+            "days": (exit_dt - entry_dt).days if exit_dt is not None else exit_days,
+            "result": "WIN" if pnl_pct > 0 else "LOSS", "exit_reason": reason,
+        })
+    return trades
+
+
+def run_backtest(symbols, conditions, fetch_fn, nifty_df=None, from_date="2024-01-01",
+                 to_date=None, stop_pct=3.0, exit_days=8, exit_rule="After N Days",
+                 target_rr=2.0, cap=40):
+    """Replay conditions over history. Risk 2%/trade, next-open entry. Returns trades, equity, stats."""
+    import datetime as _dt
+    to_date = to_date or _dt.date.today().isoformat()
+    capital = 100000.0
+    equity = [{"date": from_date, "value": capital}]
+    all_trades = []
+
+    def _prep(sym):
+        df = fetch_fn(sym, "2y", "1d")
+        if df is None or df.empty or len(df) < 60:
+            return None
+        return (sym, compute_indicators(df, nifty_df))
+
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        prepped = [p for p in ex.map(_prep, symbols[:cap]) if p]
+
+    rows = []
+    for sym, ind in prepped:
+        for t in _bt_one(sym, conditions, ind, from_date, to_date, stop_pct, exit_days, exit_rule, target_rr):
+            rows.append((t["exit_date"] or t["entry_date"], t))
+    rows.sort(key=lambda x: x[0])
+    for exit_date, t in rows:
+        capital += capital * 0.02 / stop_pct * t["pnl_pct"]  # 2% risk → pnl in R × risk
+        t["pnl_rs"] = round(capital * 0.02 / stop_pct * t["pnl_pct"] / 100 * 100, 0)  # display only
+        all_trades.append(t)
+        equity.append({"date": exit_date, "value": round(capital, 2)})
+
+    wins = [t for t in all_trades if t["result"] == "WIN"]
+    losses = [t for t in all_trades if t["result"] == "LOSS"]
+    n = len(all_trades)
+    wr = len(wins) / n * 100 if n else 0
+    aw = float(np.mean([t["pnl_pct"] for t in wins])) if wins else 0
+    al = abs(float(np.mean([t["pnl_pct"] for t in losses]))) if losses else 0
+    rets = pd.Series([t["pnl_pct"] for t in all_trades])
+    sh = round(float(rets.mean() / rets.std() * (252 ** 0.5)), 2) if n > 1 and rets.std() > 0 else 0
+    eq = pd.Series([e["value"] for e in equity])
+    dd = round(float(((eq - eq.cummax()) / eq.cummax() * 100).min()), 2) if len(eq) > 1 else 0
+    gw = sum(t["pnl_pct"] for t in wins); gl = abs(sum(t["pnl_pct"] for t in losses))
+    stats = {
+        "total_trades": n, "wins": len(wins), "losses": len(losses), "win_rate": round(wr, 1),
+        "avg_win_pct": round(aw, 2), "avg_loss_pct": round(al, 2),
+        "expectancy": round(wr / 100 * aw - (1 - wr / 100) * al, 2),
+        "avg_rr": round(float(np.mean([t["rr"] for t in all_trades])), 2) if n else 0,
+        "profit_factor": round(gw / gl, 2) if gl else (999.0 if gw else 0),
+        "max_drawdown": dd, "sharpe": sh,
+        "total_return": round((capital - 100000) / 100000 * 100, 2),
+    }
+    return all_trades, equity, stats

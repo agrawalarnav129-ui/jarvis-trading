@@ -684,6 +684,51 @@ def scan_builder(req: BuilderReq):
         raise HTTPException(status_code=503, detail="Builder scan unavailable")
 
 
+class BuilderBTReq(BaseModel):
+    universe: str = "NIFTY 50"
+    conditions: list[dict] = []
+    from_date: str = "2024-01-01"
+    to_date: str = ""
+    stop_loss: float = 3.0
+    exit_days: int = 8
+    exit_rule: str = "After N Days"
+    min_rr: float = 2.0
+
+
+@app.post("/api/scan/builder/backtest")
+def scan_builder_backtest(req: BuilderBTReq):
+    """Replay the builder conditions over history → trade log, equity curve, stats."""
+    try:
+        if not req.conditions:
+            raise HTTPException(status_code=400, detail="Build a scan first.")
+        import pandas as pd
+        from data.fetcher import fetch_symbol_history
+        from screener.ta_engine import run_backtest
+
+        def _fetch(sym, period="2y", interval="1d"):
+            try:
+                return fetch_symbol_history(sym, period=period, interval=interval)
+            except Exception:
+                return pd.DataFrame()
+        try:
+            nifty = fetch_symbol_history("^NSEI", period="2y", interval="1d")
+        except Exception:
+            nifty = pd.DataFrame()
+        syms = _builder_symbols(req.universe)
+        trades, equity, stats = run_backtest(
+            syms, req.conditions, _fetch, nifty,
+            from_date=req.from_date, to_date=req.to_date or None,
+            stop_pct=req.stop_loss, exit_days=req.exit_days,
+            exit_rule=req.exit_rule, target_rr=req.min_rr, cap=40,
+        )
+        return {"trades": trades, "equity": equity, "stats": stats}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("Builder backtest failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Builder backtest unavailable")
+
+
 @app.get("/api/backtest")
 def backtest(symbol: str, period: str = "2y", rr: float = 2.5, capital: float = 1_000_000):
     """Run the breakout backtest on one symbol. Returns metrics + recent trades."""
