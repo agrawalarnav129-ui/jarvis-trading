@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T03:00:52.198908Z",
+  "updated": "2026-06-21T03:00:58.130115Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -51,6 +51,13 @@
       "symbol": "PATINTLOG",
       "company": "Patel Integrated Logistics Limited",
       "purpose": "Buyback/Other business matters"
+    },
+    {
+      "date": "2026-06-23",
+      "date_str": "23 Jun",
+      "symbol": "RPTECH",
+      "company": "Rashi Peripherals Limited",
+      "purpose": "Other business matters"
     },
     {
       "date": "2026-06-23",
@@ -130,32 +137,25 @@
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "HAL",
-      "company": "Hindustan Aeronautics Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "SRPL",
-      "company": "Shree Ram Proteins Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "SUPERHOUSE",
-      "company": "Superhouse Limited",
+      "date": "2026-06-27",
+      "date_str": "27 Jun",
+      "symbol": "MMP",
+      "company": "MMP Industries Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "NESTLEIND",
-      "company": "Nestle India Limited",
-      "purpose": "Dividend"
+      "date": "2026-06-27",
+      "date_str": "27 Jun",
+      "symbol": "PTCIL",
+      "company": "PTC Industries Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "A2ZINFRA",
+      "company": "A2Z Infra Engineering Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
