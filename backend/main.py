@@ -630,6 +630,60 @@ def trade_review(t: TradeReview):
         raise HTTPException(status_code=503, detail="Trade review unavailable")
 
 
+# ── Condition-builder scanner (QuantEdge engine) ────────────────────────────
+_builder_cache: TTLCache = TTLCache(maxsize=24, ttl=300)
+_BUILDER_UNIVERSES = {"NIFTY 50": 50, "NIFTY 100": 100, "NIFTY 200": 200, "ALL (250)": 250}
+
+
+def _builder_symbols(name: str) -> list[str]:
+    from data.fetcher import load_universe
+    syms = load_universe()["symbol"].dropna().astype(str).tolist()
+    n = _BUILDER_UNIVERSES.get(name, 100)
+    return syms[:n]
+
+
+class BuilderReq(BaseModel):
+    universe: str = "NIFTY 100"
+    conditions: list[dict] = []
+
+
+@app.post("/api/scan/builder")
+def scan_builder(req: BuilderReq):
+    """Chartink-style condition-builder scan over a universe (ported QuantEdge engine)."""
+    try:
+        import json as _json
+
+        if not req.conditions:
+            raise HTTPException(status_code=400, detail="Add at least one condition.")
+        key = f"{req.universe}|{_json.dumps(req.conditions, sort_keys=True)}"
+
+        def _run():
+            import pandas as pd
+            from data.fetcher import fetch_symbol_history
+            from screener.ta_engine import run_builder
+
+            def _fetch(sym, period="1y", interval="1d"):
+                try:
+                    return fetch_symbol_history(sym, period=period, interval=interval)
+                except Exception:
+                    return pd.DataFrame()
+            try:
+                nifty = fetch_symbol_history("^NSEI", period="1y", interval="1d")
+            except Exception:
+                nifty = pd.DataFrame()
+            syms = _builder_symbols(req.universe)
+            rows = run_builder(syms, req.conditions, _fetch, nifty)
+            rows.sort(key=lambda r: (r.get("rs_nifty") or 0), reverse=True)
+            return {"count": len(rows), "scanned": len(syms), "universe": req.universe, "results": rows}
+
+        return _keyed(_builder_cache, key, _run)
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("Builder scan failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Builder scan unavailable")
+
+
 @app.get("/api/backtest")
 def backtest(symbol: str, period: str = "2y", rr: float = 2.5, capital: float = 1_000_000):
     """Run the breakout backtest on one symbol. Returns metrics + recent trades."""

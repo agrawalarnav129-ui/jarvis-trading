@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { ScanSearch, Loader2, TrendingUp, SlidersHorizontal, Sparkles } from "lucide-react";
+import { ScanSearch, Loader2, TrendingUp, SlidersHorizontal, Sparkles, Wrench } from "lucide-react";
 import { api } from "../lib/api";
 import { Section, Card, Empty } from "../components/ui";
 import { useSymbolNav } from "../components/SymbolLink";
+import ScanBuilder from "../components/ScanBuilder";
 
 const gradeColor: Record<string, string> = { A: "text-up", B: "text-gold", C: "text-faint" };
-type Mode = "top" | "rs" | "custom" | "nl";
+type Mode = "top" | "rs" | "custom" | "nl" | "builder";
 const NL_EXAMPLES = ["high RS pharma breaking out on 1.5x volume", "A-grade stocks ADX over 30 above EMA200", "oversold RSI under 35 with rising trend"];
 
 const defFilters = { rsi_min: 0, rsi_max: 100, adx_min: 0, vol_min: 0, score_min: 0, rs20_min: -999, grade: "", above_ema200: false, ema_aligned: false, sort_by: "score" };
@@ -22,7 +23,8 @@ export default function Screener() {
   const [nlFilters, setNlFilters] = useState<Record<string, any> | null>(null);
 
   const run = async (m: Mode) => {
-    setMode(m); setLoading(true); setErr(null); setRows(null); if (m !== "nl") setNlFilters(null);
+    setMode(m); if (m === "builder") return;   // the builder component runs itself
+    setLoading(true); setErr(null); setRows(null); if (m !== "nl") setNlFilters(null);
     try {
       if (m === "top") setRows((await api.screener()).results);
       else if (m === "rs") setRows((await api.rsRanking(rsBy)).results);
@@ -57,9 +59,11 @@ export default function Screener() {
         <Tab m="top" label="Top Picks" Icon={ScanSearch} />
         <Tab m="rs" label="RS Leaders" Icon={TrendingUp} />
         <Tab m="custom" label="Custom" Icon={SlidersHorizontal} />
+        <Tab m="builder" label="Builder" Icon={Wrench} />
         <Tab m="nl" label="Ask AI" Icon={Sparkles} />
       </div>
     }>
+      {mode === "builder" && <ScanBuilder />}
       {mode === "nl" && (
         <Card className="mb-3">
           <div className="flex items-center gap-2">
@@ -125,7 +129,7 @@ export default function Screener() {
 
       {err && <Card className="mb-3"><div className="text-down text-xs font-mono">{err}</div></Card>}
       {loading && <div className="flex items-center justify-center gap-2 text-muted text-sm font-mono py-10"><Loader2 size={16} className="animate-spin" /> Scanning universe…</div>}
-      {!rows && !loading && !err && <Empty msg="Pick a mode above: Top Picks (by score), RS Leaders (vs Nifty), or Custom filters." />}
+      {mode !== "builder" && !rows && !loading && !err && <Empty msg="Pick a mode above: Top Picks (by score), RS Leaders (vs Nifty), Custom filters, or Builder (condition scanner)." />}
 
       {rows && !loading && (
         <>

@@ -43,6 +43,13 @@ export const api = {
   watchlist: () => get<{ watchlist: any[] }>("/api/watchlist"),
   screener: () => get<{ results: any[] }>("/api/screener"),
   rsRanking: (by = "rs_20d") => get<{ by: string; results: any[] }>(`/api/rs-ranking?by=${by}`),
+  scanBuilder: async (universe: string, conditions: any[]) => {
+    const r = await fetch(`${BASE}/api/scan/builder`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ universe, conditions }),
+    });
+    if (!r.ok) throw new Error(`builder -> ${r.status}`);
+    return (await r.json()) as { count: number; scanned: number; universe: string; results: any[] };
+  },
   scanCustom: (params: Record<string, string | number | boolean>) => {
     const qs = Object.entries(params).map(([k, v]) => `${k}=${encodeURIComponent(String(v))}`).join("&");
     return get<{ count: number; results: any[] }>(`/api/scan/custom?${qs}`);
