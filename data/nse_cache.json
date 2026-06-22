@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T03:00:58.130115Z",
+  "updated": "2026-06-22T03:03:21.510244Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,20 +17,6 @@
     "net_combined": 3699.43
   },
   "corporate": [
-    {
-      "date": "2026-06-22",
-      "date_str": "22 Jun",
-      "symbol": "LIKHITHA",
-      "company": "Likhitha Infrastructure Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-22",
-      "date_str": "22 Jun",
-      "symbol": "UEL",
-      "company": "Ujaas Energy Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-06-23",
       "date_str": "23 Jun",
@@ -155,6 +141,20 @@
       "date_str": "29 Jun",
       "symbol": "A2ZINFRA",
       "company": "A2Z Infra Engineering Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "HAL",
+      "company": "Hindustan Aeronautics Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "SRPL",
+      "company": "Shree Ram Proteins Limited",
       "purpose": "Financial Results"
     }
   ]
