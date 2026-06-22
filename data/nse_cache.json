@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T03:03:21.510244Z",
+  "updated": "2026-06-22T09:20:29.620165Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -83,6 +83,20 @@
     {
       "date": "2026-06-25",
       "date_str": "25 Jun",
+      "symbol": "FINKURVE",
+      "company": "Finkurve Financial Services Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-25",
+      "date_str": "25 Jun",
+      "symbol": "GANGAFORGE",
+      "company": "Ganga Forging Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-25",
+      "date_str": "25 Jun",
       "symbol": "GATECH",
       "company": "GACM Technologies Limited",
       "purpose": "Other business matters"
@@ -141,20 +155,6 @@
       "date_str": "29 Jun",
       "symbol": "A2ZINFRA",
       "company": "A2Z Infra Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "HAL",
-      "company": "Hindustan Aeronautics Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "SRPL",
-      "company": "Shree Ram Proteins Limited",
       "purpose": "Financial Results"
     }
   ]
