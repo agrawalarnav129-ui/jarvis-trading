@@ -1,0 +1,36 @@
+{
+  "NOCIL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "DELHIVERY.NS": [],
+  "ABCAPITAL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MANKIND.NS": [
+    "BREAKOUT"
+  ],
+  "SUBROS.NS": [],
+  "KIRLOSENG.NS": [],
+  "TEXRAIL.NS": [],
+  "ENGINERSIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CAPACITE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PRIVISCL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "LALPATHLAB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "CLEAN.NS": [],
+  "RECLTD.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT"
+  ],
+  "IPL.NS": [],
+  "AETHER.NS": []
+}
