@@ -1,57 +1,22 @@
 {
-  "updated": "2026-06-22T09:20:29.620165Z",
+  "updated": "2026-06-23T03:02:21.368416Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "19-Jun-2026",
+    "date": "22-Jun-2026",
     "fii": {
-      "buy": 31442.87,
-      "sell": 26583.8,
-      "net": 4859.07
+      "buy": 10082.08,
+      "sell": 10717.99,
+      "net": -635.91
     },
     "dii": {
-      "buy": 18020.49,
-      "sell": 19180.13,
-      "net": -1159.64
+      "buy": 17391.78,
+      "sell": 16356.06,
+      "net": 1035.72
     },
-    "net_combined": 3699.43
+    "net_combined": 399.81
   },
   "corporate": [
-    {
-      "date": "2026-06-23",
-      "date_str": "23 Jun",
-      "symbol": "CUB",
-      "company": "City Union Bank Limited",
-      "purpose": "Dividend/Fund Raising"
-    },
-    {
-      "date": "2026-06-23",
-      "date_str": "23 Jun",
-      "symbol": "MANAPPURAM",
-      "company": "Manappuram Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-23",
-      "date_str": "23 Jun",
-      "symbol": "PATINTLOG",
-      "company": "Patel Integrated Logistics Limited",
-      "purpose": "Buyback/Other business matters"
-    },
-    {
-      "date": "2026-06-23",
-      "date_str": "23 Jun",
-      "symbol": "RPTECH",
-      "company": "Rashi Peripherals Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-23",
-      "date_str": "23 Jun",
-      "symbol": "SATIN",
-      "company": "Satin Creditcare Network Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-06-24",
       "date_str": "24 Jun",
@@ -79,6 +44,13 @@
       "symbol": "VIKASLIFE",
       "company": "Vikas Lifecare Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-06-25",
+      "date_str": "25 Jun",
+      "symbol": "BANDHANBNK",
+      "company": "Bandhan Bank Limited",
+      "purpose": "Other business matters"
     },
     {
       "date": "2026-06-25",
@@ -111,6 +83,13 @@
     {
       "date": "2026-06-25",
       "date_str": "25 Jun",
+      "symbol": "ICSA",
+      "company": "ICSA (India) Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-25",
+      "date_str": "25 Jun",
       "symbol": "MANYAVAR",
       "company": "Vedant Fashions Limited",
       "purpose": "Other business matters"
@@ -132,8 +111,29 @@
     {
       "date": "2026-06-25",
       "date_str": "25 Jun",
+      "symbol": "NIACL",
+      "company": "The New India Assurance Company Limite",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-25",
+      "date_str": "25 Jun",
       "symbol": "SURYODAY",
       "company": "Suryoday Small Finance Bank Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-26",
+      "date_str": "26 Jun",
+      "symbol": "KMEW",
+      "company": "Knowledge Marine & Engineering Works L",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-27",
+      "date_str": "27 Jun",
+      "symbol": "IIFL",
+      "company": "IIFL Finance Limited",
       "purpose": "Fund Raising"
     },
     {
