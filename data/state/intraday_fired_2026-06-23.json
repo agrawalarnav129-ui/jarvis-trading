@@ -1,0 +1,25 @@
+{
+  "CIPLA.NS": [],
+  "ZFCVINDIA.NS": [],
+  "OPTIEMUS.NS": [],
+  "VSTIND.NS": [],
+  "KIRLOSENG.NS": [],
+  "OBEROIRLTY.NS": [],
+  "CARERATING.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SUNPHARMA.NS": [],
+  "YATHARTH.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "AUROPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "NOCIL.NS": [],
+  "ENGINERSIN.NS": [],
+  "CAPACITE.NS": [],
+  "ZYDUSLIFE.NS": [],
+  "SUBROS.NS": []
+}
