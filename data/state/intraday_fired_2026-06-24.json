@@ -1,0 +1,46 @@
+{
+  "AUBANK.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "ZFCVINDIA.NS": [],
+  "DRREDDY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "JLHL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "AETHER.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "WELSPUNLIV.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "ICIL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "CASTROLIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ACMESOLAR.NS": [],
+  "SUNPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "AJANTPHARM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "AXISBANK.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BAJFINANCE.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT",
+    "MOMENTUM_CONT"
+  ],
+  "DELHIVERY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
