@@ -1,50 +1,22 @@
 {
-  "updated": "2026-06-23T06:58:34.869207Z",
+  "updated": "2026-06-24T03:02:54.567247Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "22-Jun-2026",
+    "date": "23-Jun-2026",
     "fii": {
-      "buy": 10082.08,
-      "sell": 10717.99,
-      "net": -635.91
+      "buy": 15396.07,
+      "sell": 15378.21,
+      "net": 17.86
     },
     "dii": {
-      "buy": 17391.78,
-      "sell": 16356.06,
-      "net": 1035.72
+      "buy": 16863.04,
+      "sell": 16182.83,
+      "net": 680.21
     },
-    "net_combined": 399.81
+    "net_combined": 698.07
   },
   "corporate": [
-    {
-      "date": "2026-06-24",
-      "date_str": "24 Jun",
-      "symbol": "EQUITASBNK",
-      "company": "Equitas Small Finance Bank Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-24",
-      "date_str": "24 Jun",
-      "symbol": "FINKURVE",
-      "company": "Finkurve Financial Services Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-24",
-      "date_str": "24 Jun",
-      "symbol": "ONMOBILE",
-      "company": "OnMobile Global Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-24",
-      "date_str": "24 Jun",
-      "symbol": "VIKASLIFE",
-      "company": "Vikas Lifecare Limited",
-      "purpose": "Financial Results/Other busine"
-    },
     {
       "date": "2026-06-25",
       "date_str": "25 Jun",
@@ -125,8 +97,57 @@
     {
       "date": "2026-06-26",
       "date_str": "26 Jun",
+      "symbol": "ANTGRAPHIC",
+      "company": "Antarctica Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-06-26",
+      "date_str": "26 Jun",
+      "symbol": "GENESYS",
+      "company": "Genesys International Corporation Limi",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-26",
+      "date_str": "26 Jun",
       "symbol": "KMEW",
       "company": "Knowledge Marine & Engineering Works L",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-26",
+      "date_str": "26 Jun",
+      "symbol": "MGEL",
+      "company": "Mangalam Global Enterprise Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-26",
+      "date_str": "26 Jun",
+      "symbol": "MWL",
+      "company": "Mangalam Worldwide Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-26",
+      "date_str": "26 Jun",
+      "symbol": "NDRINVIT",
+      "company": "NDR INVIT Trust",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-26",
+      "date_str": "26 Jun",
+      "symbol": "POWERGRID",
+      "company": "Power Grid Corporation of India Limite",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-26",
+      "date_str": "26 Jun",
+      "symbol": "POWERGRID",
+      "company": "Power Grid Corporation of India Limite",
       "purpose": "Fund Raising"
     },
     {
@@ -135,27 +156,6 @@
       "symbol": "IIFL",
       "company": "IIFL Finance Limited",
       "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-27",
-      "date_str": "27 Jun",
-      "symbol": "MMP",
-      "company": "MMP Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-27",
-      "date_str": "27 Jun",
-      "symbol": "PTCIL",
-      "company": "PTC Industries Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "A2ZINFRA",
-      "company": "A2Z Infra Engineering Limited",
-      "purpose": "Financial Results"
     }
   ]
 }
