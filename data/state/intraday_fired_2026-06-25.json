@@ -1,0 +1,34 @@
+{
+  "AUROPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "LALPATHLAB.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "UNITDSPR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BFINVEST.NS": [],
+  "LT.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "PAGEIND.NS": [],
+  "OFSS.NS": [],
+  "MAXHEALTH.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "MOTHERSON.NS": [],
+  "ARVIND.NS": [],
+  "GODREJPROP.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "BAJFINANCE.NS": [],
+  "GREENLAM.NS": [],
+  "JLHL.NS": [],
+  "CIPLA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
