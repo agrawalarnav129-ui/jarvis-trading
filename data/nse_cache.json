@@ -1,99 +1,22 @@
 {
-  "updated": "2026-06-24T06:56:55.559298Z",
+  "updated": "2026-06-25T03:02:20.035842Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "23-Jun-2026",
+    "date": "24-Jun-2026",
     "fii": {
-      "buy": 15396.07,
-      "sell": 15378.21,
-      "net": 17.86
+      "buy": 16744.73,
+      "sell": 18588.13,
+      "net": -1843.4
     },
     "dii": {
-      "buy": 16863.04,
-      "sell": 16182.83,
-      "net": 680.21
+      "buy": 17274.01,
+      "sell": 13636.75,
+      "net": 3637.26
     },
-    "net_combined": 698.07
+    "net_combined": 1793.86
   },
   "corporate": [
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "BANDHANBNK",
-      "company": "Bandhan Bank Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "FINKURVE",
-      "company": "Finkurve Financial Services Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "GANGAFORGE",
-      "company": "Ganga Forging Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "GATECH",
-      "company": "GACM Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "GATECHDVR",
-      "company": "GACM Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "ICSA",
-      "company": "ICSA (India) Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "MANYAVAR",
-      "company": "Vedant Fashions Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "MCLOUD",
-      "company": "Magellanic Cloud Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "MITTAL",
-      "company": "Mittal Life Style Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "NIACL",
-      "company": "The New India Assurance Company Limite",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-25",
-      "date_str": "25 Jun",
-      "symbol": "SURYODAY",
-      "company": "Suryoday Small Finance Bank Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-06-26",
       "date_str": "26 Jun",
@@ -155,6 +78,83 @@
       "date_str": "27 Jun",
       "symbol": "IIFL",
       "company": "IIFL Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-27",
+      "date_str": "27 Jun",
+      "symbol": "MMP",
+      "company": "MMP Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-27",
+      "date_str": "27 Jun",
+      "symbol": "PTCIL",
+      "company": "PTC Industries Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-28",
+      "date_str": "28 Jun",
+      "symbol": "PFC",
+      "company": "Power Finance Corporation Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-28",
+      "date_str": "28 Jun",
+      "symbol": "RECLTD",
+      "company": "REC Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "A2ZINFRA",
+      "company": "A2Z Infra Engineering Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "AJOONI",
+      "company": "Ajooni Biotech Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "HAL",
+      "company": "Hindustan Aeronautics Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "SIS",
+      "company": "SIS LIMITED",
+      "purpose": "Buyback"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "SRPL",
+      "company": "Shree Ram Proteins Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "VHLTD",
+      "company": "Viceroy Hotels Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-06-29",
+      "date_str": "29 Jun",
+      "symbol": "YESBANK",
+      "company": "Yes Bank Limited",
       "purpose": "Fund Raising"
     }
   ]
