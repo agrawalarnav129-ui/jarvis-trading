@@ -1,78 +1,22 @@
 {
-  "updated": "2026-06-25T06:56:25.539636Z",
+  "updated": "2026-06-26T03:02:20.335119Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "24-Jun-2026",
+    "date": "25-Jun-2026",
     "fii": {
-      "buy": 16744.73,
-      "sell": 18588.13,
-      "net": -1843.4
+      "buy": 18988.03,
+      "sell": 18604.27,
+      "net": 383.76
     },
     "dii": {
-      "buy": 17274.01,
-      "sell": 13636.75,
-      "net": 3637.26
+      "buy": 24844.03,
+      "sell": 19096.28,
+      "net": 5747.75
     },
-    "net_combined": 1793.86
+    "net_combined": 6131.51
   },
   "corporate": [
-    {
-      "date": "2026-06-26",
-      "date_str": "26 Jun",
-      "symbol": "ANTGRAPHIC",
-      "company": "Antarctica Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-06-26",
-      "date_str": "26 Jun",
-      "symbol": "GENESYS",
-      "company": "Genesys International Corporation Limi",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-26",
-      "date_str": "26 Jun",
-      "symbol": "KMEW",
-      "company": "Knowledge Marine & Engineering Works L",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-26",
-      "date_str": "26 Jun",
-      "symbol": "MGEL",
-      "company": "Mangalam Global Enterprise Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-26",
-      "date_str": "26 Jun",
-      "symbol": "MWL",
-      "company": "Mangalam Worldwide Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-26",
-      "date_str": "26 Jun",
-      "symbol": "NDRINVIT",
-      "company": "NDR INVIT Trust",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-26",
-      "date_str": "26 Jun",
-      "symbol": "POWERGRID",
-      "company": "Power Grid Corporation of India Limite",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-26",
-      "date_str": "26 Jun",
-      "symbol": "POWERGRID",
-      "company": "Power Grid Corporation of India Limite",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-06-27",
       "date_str": "27 Jun",
@@ -155,6 +99,62 @@
       "date_str": "29 Jun",
       "symbol": "YESBANK",
       "company": "Yes Bank Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "APARINDS",
+      "company": "Apar Industries Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "BHAGYANGR",
+      "company": "Bhagyanagar India Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "CMRGREEN",
+      "company": "CMR Green Technologies Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "HEXAGON",
+      "company": "Hexagon Nutrition Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "IDBI",
+      "company": "IDBI Bank Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "MAPMYINDIA",
+      "company": "C.E. Info Systems Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "MUTHOOTMF",
+      "company": "Muthoot Microfin Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "SHANTIGOLD",
+      "company": "Shanti Gold International Limited",
       "purpose": "Fund Raising"
     }
   ]
