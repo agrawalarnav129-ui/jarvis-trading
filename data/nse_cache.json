@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T07:02:46.195563Z",
+  "updated": "2026-06-27T03:00:58.288507Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,27 +17,6 @@
     "net_combined": 6131.51
   },
   "corporate": [
-    {
-      "date": "2026-06-27",
-      "date_str": "27 Jun",
-      "symbol": "IIFL",
-      "company": "IIFL Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-27",
-      "date_str": "27 Jun",
-      "symbol": "MMP",
-      "company": "MMP Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-27",
-      "date_str": "27 Jun",
-      "symbol": "PTCIL",
-      "company": "PTC Industries Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-06-28",
       "date_str": "28 Jun",
@@ -155,6 +134,27 @@
       "date_str": "30 Jun",
       "symbol": "SHANTIGOLD",
       "company": "Shanti Gold International Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "SUPERHOUSE",
+      "company": "Superhouse Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "SUPREMEENG",
+      "company": "Supreme Engineering Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
+      "symbol": "SUVIDHAA",
+      "company": "Suvidhaa Infoserve Limited",
       "purpose": "Fund Raising"
     }
   ]
