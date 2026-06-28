@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T03:00:58.288507Z",
+  "updated": "2026-06-28T03:00:53.177006Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,20 +17,6 @@
     "net_combined": 6131.51
   },
   "corporate": [
-    {
-      "date": "2026-06-28",
-      "date_str": "28 Jun",
-      "symbol": "PFC",
-      "company": "Power Finance Corporation Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-28",
-      "date_str": "28 Jun",
-      "symbol": "RECLTD",
-      "company": "REC Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-06-29",
       "date_str": "29 Jun",
@@ -132,6 +118,13 @@
     {
       "date": "2026-06-30",
       "date_str": "30 Jun",
+      "symbol": "NAGAFERT",
+      "company": "Nagarjuna Fertilizers and Chemicals Li",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-06-30",
+      "date_str": "30 Jun",
       "symbol": "SHANTIGOLD",
       "company": "Shanti Gold International Limited",
       "purpose": "Fund Raising"
@@ -155,6 +148,13 @@
       "date_str": "30 Jun",
       "symbol": "SUVIDHAA",
       "company": "Suvidhaa Infoserve Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-01",
+      "date_str": "01 Jul",
+      "symbol": "ADANIENSOL",
+      "company": "Adani Energy Solutions Limited",
       "purpose": "Fund Raising"
     }
   ]
