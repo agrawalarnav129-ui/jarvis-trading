@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T03:00:53.177006Z",
+  "updated": "2026-06-29T03:02:21.875695Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,55 +17,6 @@
     "net_combined": 6131.51
   },
   "corporate": [
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "A2ZINFRA",
-      "company": "A2Z Infra Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "AJOONI",
-      "company": "Ajooni Biotech Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "HAL",
-      "company": "Hindustan Aeronautics Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "SIS",
-      "company": "SIS LIMITED",
-      "purpose": "Buyback"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "SRPL",
-      "company": "Shree Ram Proteins Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "VHLTD",
-      "company": "Viceroy Hotels Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-06-29",
-      "date_str": "29 Jun",
-      "symbol": "YESBANK",
-      "company": "Yes Bank Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-06-30",
       "date_str": "30 Jun",
@@ -156,6 +107,55 @@
       "symbol": "ADANIENSOL",
       "company": "Adani Energy Solutions Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-01",
+      "date_str": "01 Jul",
+      "symbol": "NETWEB",
+      "company": "Netweb Technologies India Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-01",
+      "date_str": "01 Jul",
+      "symbol": "SHIVAMAUTO",
+      "company": "Shivam Autotech Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-07-01",
+      "date_str": "01 Jul",
+      "symbol": "VIKASECO",
+      "company": "Vikas EcoTech Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-01",
+      "date_str": "01 Jul",
+      "symbol": "ZEEL",
+      "company": "Zee Entertainment Enterprises Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-02",
+      "date_str": "02 Jul",
+      "symbol": "KHADIM",
+      "company": "Khadim India Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
+      "symbol": "A2ZINFRA",
+      "company": "A2Z Infra Engineering Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
+      "symbol": "NESTLEIND",
+      "company": "Nestle India Limited",
+      "purpose": "Dividend"
     }
   ]
 }
