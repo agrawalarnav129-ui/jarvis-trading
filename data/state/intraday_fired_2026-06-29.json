@@ -1,0 +1,31 @@
+{
+  "AJANTPHARM.NS": [],
+  "TORNTPHARM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LAURUSLABS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "WELCORP.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TTKPRESTIG.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ZFCVINDIA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "JBCHEPHARM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MARICO.NS": [],
+  "DRREDDY.NS": [],
+  "AUROPHARMA.NS": [],
+  "JLHL.NS": [],
+  "LICI.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CIPLA.NS": [],
+  "AXISBANK.NS": []
+}
