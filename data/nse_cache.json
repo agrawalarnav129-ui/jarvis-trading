@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T03:02:21.875695Z",
+  "updated": "2026-06-29T08:24:20.873493Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -144,18 +144,18 @@
       "purpose": "Fund Raising"
     },
     {
+      "date": "2026-07-02",
+      "date_str": "02 Jul",
+      "symbol": "TIRUPATIFL",
+      "company": "Tirupati Forge Limited",
+      "purpose": "Fund Raising"
+    },
+    {
       "date": "2026-07-03",
       "date_str": "03 Jul",
       "symbol": "A2ZINFRA",
       "company": "A2Z Infra Engineering Limited",
       "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "NESTLEIND",
-      "company": "Nestle India Limited",
-      "purpose": "Dividend"
     }
   ]
 }
