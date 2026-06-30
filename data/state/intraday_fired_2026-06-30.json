@@ -1,0 +1,38 @@
+{
+  "IGPL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "APTUS.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "JLHL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "FLUOROCHEM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ARVIND.NS": [],
+  "MOLDTKPAC.NS": [],
+  "MEDANTA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "PRIVISCL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "HIKAL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "YATHARTH.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MARUTI.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "NAVINFLUOR.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "DRREDDY.NS": [],
+  "GLAND.NS": []
+}
