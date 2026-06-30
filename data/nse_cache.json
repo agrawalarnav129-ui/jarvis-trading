@@ -1,106 +1,22 @@
 {
-  "updated": "2026-06-29T08:24:20.873493Z",
+  "updated": "2026-06-30T03:02:28.743863Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "25-Jun-2026",
+    "date": "29-Jun-2026",
     "fii": {
-      "buy": 18988.03,
-      "sell": 18604.27,
-      "net": 383.76
+      "buy": 24754.26,
+      "sell": 26104.36,
+      "net": -1350.1
     },
     "dii": {
-      "buy": 24844.03,
-      "sell": 19096.28,
-      "net": 5747.75
+      "buy": 55273.85,
+      "sell": 52472.4,
+      "net": 2801.45
     },
-    "net_combined": 6131.51
+    "net_combined": 1451.35
   },
   "corporate": [
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "APARINDS",
-      "company": "Apar Industries Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "BHAGYANGR",
-      "company": "Bhagyanagar India Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "CMRGREEN",
-      "company": "CMR Green Technologies Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "HEXAGON",
-      "company": "Hexagon Nutrition Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "IDBI",
-      "company": "IDBI Bank Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "MAPMYINDIA",
-      "company": "C.E. Info Systems Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "MUTHOOTMF",
-      "company": "Muthoot Microfin Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "NAGAFERT",
-      "company": "Nagarjuna Fertilizers and Chemicals Li",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "SHANTIGOLD",
-      "company": "Shanti Gold International Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "SUPERHOUSE",
-      "company": "Superhouse Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "SUPREMEENG",
-      "company": "Supreme Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-06-30",
-      "date_str": "30 Jun",
-      "symbol": "SUVIDHAA",
-      "company": "Suvidhaa Infoserve Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-07-01",
       "date_str": "01 Jul",
@@ -139,6 +55,20 @@
     {
       "date": "2026-07-02",
       "date_str": "02 Jul",
+      "symbol": "DAVANGERE",
+      "company": "Davangere Sugar Company Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-02",
+      "date_str": "02 Jul",
+      "symbol": "IRBINVIT",
+      "company": "IRB InvIT Fund",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-02",
+      "date_str": "02 Jul",
       "symbol": "KHADIM",
       "company": "Khadim India Limited",
       "purpose": "Fund Raising"
@@ -151,11 +81,81 @@
       "purpose": "Fund Raising"
     },
     {
+      "date": "2026-07-02",
+      "date_str": "02 Jul",
+      "symbol": "VAISHALI",
+      "company": "Vaishali Pharma Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
       "date": "2026-07-03",
       "date_str": "03 Jul",
       "symbol": "A2ZINFRA",
       "company": "A2Z Infra Engineering Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
+      "symbol": "AARTISURF",
+      "company": "Aarti Surfactants Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
+      "symbol": "NESTLEIND",
+      "company": "Nestle India Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
+      "symbol": "PNC",
+      "company": "Pritish Nandy Communications Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
+      "symbol": "TULSI",
+      "company": "Tulsi Extrusions Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
+      "symbol": "VHLTD",
+      "company": "Viceroy Hotels Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-07-04",
+      "date_str": "04 Jul",
+      "symbol": "SUPREMEINF",
+      "company": "Supreme Infrastructure India Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-06",
+      "date_str": "06 Jul",
+      "symbol": "APOLLO",
+      "company": "Apollo Micro Systems Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-06",
+      "date_str": "06 Jul",
+      "symbol": "LICHSGFIN",
+      "company": "LIC Housing Finance Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-07",
+      "date_str": "07 Jul",
+      "symbol": "SUKHJITS",
+      "company": "Sukhjit Starch & Chemicals Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
