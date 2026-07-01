@@ -1,57 +1,22 @@
 {
-  "updated": "2026-06-30T07:03:03.709750Z",
+  "updated": "2026-07-01T03:02:16.944680Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "29-Jun-2026",
+    "date": "30-Jun-2026",
     "fii": {
-      "buy": 24754.26,
-      "sell": 26104.36,
-      "net": -1350.1
+      "buy": 23273.71,
+      "sell": 25830.46,
+      "net": -2556.75
     },
     "dii": {
-      "buy": 55273.85,
-      "sell": 52472.4,
-      "net": 2801.45
+      "buy": 23432.58,
+      "sell": 16590.24,
+      "net": 6842.34
     },
-    "net_combined": 1451.35
+    "net_combined": 4285.59
   },
   "corporate": [
-    {
-      "date": "2026-07-01",
-      "date_str": "01 Jul",
-      "symbol": "ADANIENSOL",
-      "company": "Adani Energy Solutions Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-01",
-      "date_str": "01 Jul",
-      "symbol": "NETWEB",
-      "company": "Netweb Technologies India Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-01",
-      "date_str": "01 Jul",
-      "symbol": "SHIVAMAUTO",
-      "company": "Shivam Autotech Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-07-01",
-      "date_str": "01 Jul",
-      "symbol": "VIKASECO",
-      "company": "Vikas EcoTech Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-01",
-      "date_str": "01 Jul",
-      "symbol": "ZEEL",
-      "company": "Zee Entertainment Enterprises Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-07-02",
       "date_str": "02 Jul",
@@ -104,6 +69,20 @@
     {
       "date": "2026-07-03",
       "date_str": "03 Jul",
+      "symbol": "ARVIND",
+      "company": "Arvind Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
+      "symbol": "DAVANGERE",
+      "company": "Davangere Sugar Company Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-03",
+      "date_str": "03 Jul",
       "symbol": "NESTLEIND",
       "company": "Nestle India Limited",
       "purpose": "Dividend"
@@ -151,11 +130,32 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-07-06",
+      "date_str": "06 Jul",
+      "symbol": "TRIDENT",
+      "company": "Trident Limited",
+      "purpose": "Other business matters"
+    },
+    {
       "date": "2026-07-07",
       "date_str": "07 Jul",
       "symbol": "SUKHJITS",
       "company": "Sukhjit Starch & Chemicals Limited",
       "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "AHLEAST",
+      "company": "Asian Hotels (East) Limited",
+      "purpose": "Financial Results/Dividend/Oth"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "ANANDRATHI",
+      "company": "Anand Rathi Wealth Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
