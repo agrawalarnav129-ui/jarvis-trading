@@ -48,12 +48,12 @@ app.add_middleware(
 
 # Simple in-process TTL caches to avoid hammering upstream sources
 _cache: dict[str, TTLCache] = {
-    "indices":  TTLCache(maxsize=2, ttl=90),
-    "movers":   TTLCache(maxsize=2, ttl=90),
-    "news":     TTLCache(maxsize=2, ttl=300),
-    "calendar": TTLCache(maxsize=2, ttl=900),
-    "fii":      TTLCache(maxsize=2, ttl=600),
-    "regime":   TTLCache(maxsize=2, ttl=600),
+    "indices":  TTLCache(maxsize=2, ttl=180),
+    "movers":   TTLCache(maxsize=2, ttl=180),
+    "news":     TTLCache(maxsize=2, ttl=600),
+    "calendar": TTLCache(maxsize=2, ttl=1800),
+    "fii":      TTLCache(maxsize=2, ttl=900),
+    "regime":   TTLCache(maxsize=2, ttl=900),
 }
 
 

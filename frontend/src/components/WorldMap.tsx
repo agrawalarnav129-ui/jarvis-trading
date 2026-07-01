@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import Globe from "globe.gl";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import { api } from "../lib/api";
@@ -79,22 +78,29 @@ export default function WorldMap() {
   const projection = useMemo(() => geoNaturalEarth1().fitSize([1000, 500], { type: "Sphere" } as any), []);
   const pathGen = useMemo(() => geoPath(projection), [projection]);
 
-  // ── 3D globe (textured + market points) ──
+  // ── 3D globe — globe.gl/three are dynamically imported so 2D users never
+  //    download three.js (~520 KB). Only loads when 3D is opened.
+  const [globeReady, setGlobeReady] = useState(0);
   useEffect(() => {
     if (mode !== "globe" || !wrap.current) return;
-    const g = new (Globe as any)(wrap.current, { animateIn: true })
-      .backgroundColor("rgba(0,0,0,0)")
-      .globeImageUrl(`//unpkg.com/three-globe/example/img/earth-${dark ? "night" : "blue-marble"}.jpg`)
-      .atmosphereColor(dark ? "#8AB07C" : "#7BA5C4").atmosphereAltitude(0.18).showGraticules(true);
-    globeRef.current = g;
-    const c = g.controls(); c.autoRotate = true; c.autoRotateSpeed = 0.45;
-    g.pointOfView({ lat: 20, lng: 60, altitude: 2.3 }, 0);
-    const H = 460;
-    const resize = () => { const el = wrap.current; if (el) g.width(Math.round(el.clientWidth || el.parentElement?.clientWidth || 600)).height(H); };
-    let tries = 0; const settle = () => { resize(); if ((wrap.current?.clientWidth ?? 0) < 50 && tries++ < 40) requestAnimationFrame(settle); };
-    settle();
-    const ro = new ResizeObserver(resize); ro.observe(wrap.current);
-    return () => { ro.disconnect(); try { g._destructor?.(); } catch { /* */ } if (wrap.current) wrap.current.innerHTML = ""; globeRef.current = null; };
+    let g: any; let ro: ResizeObserver | undefined; let cancelled = false;
+    import("globe.gl").then(({ default: Globe }) => {
+      if (cancelled || !wrap.current) return;
+      g = new (Globe as any)(wrap.current, { animateIn: true })
+        .backgroundColor("rgba(0,0,0,0)")
+        .globeImageUrl(`//unpkg.com/three-globe/example/img/earth-${dark ? "night" : "blue-marble"}.jpg`)
+        .atmosphereColor(dark ? "#8AB07C" : "#7BA5C4").atmosphereAltitude(0.18).showGraticules(true);
+      globeRef.current = g;
+      const c = g.controls(); c.autoRotate = true; c.autoRotateSpeed = 0.45;
+      g.pointOfView({ lat: 20, lng: 60, altitude: 2.3 }, 0);
+      const H = 460;
+      const resize = () => { const el = wrap.current; if (el) g.width(Math.round(el.clientWidth || el.parentElement?.clientWidth || 600)).height(H); };
+      let tries = 0; const settle = () => { resize(); if ((wrap.current?.clientWidth ?? 0) < 50 && tries++ < 40) requestAnimationFrame(settle); };
+      settle();
+      ro = new ResizeObserver(resize); ro.observe(wrap.current);
+      setGlobeReady((n) => n + 1);   // trigger the layers effect now that the globe exists
+    });
+    return () => { cancelled = true; ro?.disconnect(); try { g?._destructor?.(); } catch { /* */ } if (wrap.current) wrap.current.innerHTML = ""; globeRef.current = null; };
   }, [theme, mode]);
 
   useEffect(() => {
@@ -112,7 +118,7 @@ export default function WorldMap() {
       el.style.cssText = `width:${r}px;height:${r}px;border-radius:50%;background:${NEWS};box-shadow:0 0 8px ${NEWS};opacity:.85;cursor:pointer`;
       el.title = `${d.place} · ${d.count} stories\n${(d.headlines || []).join("\n")}`; return el;
     });
-  }, [macro.data, indices.data, news.data, mode]); // eslint-disable-line
+  }, [macro.data, indices.data, news.data, mode, globeReady]); // eslint-disable-line
 
   const tone = macro.data?.risk_tone;
   const toneColor = tone === "Risk-On" ? "text-up" : tone === "Risk-Off" ? "text-down" : "text-gold";

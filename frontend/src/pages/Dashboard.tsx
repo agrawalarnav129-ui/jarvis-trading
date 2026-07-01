@@ -11,6 +11,7 @@ import GlobalMacro from "../components/GlobalMacro";
 import LiveNews from "../components/LiveNews";
 import LiveVideo from "../components/LiveVideo";
 import NewsSentiment from "../components/NewsSentiment";
+import Lazy from "../components/Lazy";
 const WorldMap = lazy(() => import("../components/WorldMap"));
 
 function IndexStrip() {
@@ -239,55 +240,54 @@ function CommandRibbon() {
   );
 }
 
-export default function Dashboard() {
+function GainersPanel() {
   const movers = useFetch(() => api.movers(), [], 90_000);
   const go = useSymbolNav();
+  return (
+    <Panel title="Top Gainers & Losers · NIFTY" status="normal"
+      right={<button onClick={() => movers.reload()} className="text-faint hover:text-brand transition-colors cursor-pointer" aria-label="Refresh"><RefreshCw size={12} /></button>}>
+      <div className="grid grid-cols-2 gap-3">
+        <div><div className="label text-up mb-1">▲ Gainers</div><MoversTable rows={movers.data?.gainers ?? []} up onSym={go} /></div>
+        <div><div className="label text-down mb-1">▼ Losers</div><MoversTable rows={movers.data?.losers ?? []} up={false} onSym={go} /></div>
+      </div>
+    </Panel>
+  );
+}
+
+export default function Dashboard() {
   return (
     <div>
       <CommandRibbon />
       <EventGuard />
 
-      {/* Hero: live global markets globe */}
+      {/* Hero: live global markets globe (eager) */}
       <div className="mb-3">
         <Suspense fallback={<div className="card h-[460px] animate-pulse" />}>
           <WorldMap />
         </Suspense>
       </div>
 
-      {/* Signal strips */}
+      {/* Everything below loads as it scrolls into view (Lazy) to spare the backend */}
       <div className="grid grid-cols-1 gap-3 mb-3">
-        <Panel title="Indian Indices · Live" status="info" bodyClass="p-2"><IndexStrip /></Panel>
-        <Panel title="Market Breadth · Internals" status="info" bodyClass="p-2"><MarketBreadth /></Panel>
-        <Panel title="NIFTY Gamma · Options Structure" status="info" bodyClass="p-2"><QuantSignals /></Panel>
-        <Panel title="Sector Rotation · vs NIFTY" status="info" bodyClass="p-2"><RotationSignals /></Panel>
+        <Lazy minHeight={92}><Panel title="Indian Indices · Live" status="info" bodyClass="p-2"><IndexStrip /></Panel></Lazy>
+        <Lazy minHeight={92}><Panel title="Market Breadth · Internals" status="info" bodyClass="p-2"><MarketBreadth /></Panel></Lazy>
+        <Lazy minHeight={92}><Panel title="NIFTY Gamma · Options Structure" status="info" bodyClass="p-2"><QuantSignals /></Panel></Lazy>
+        <Lazy minHeight={92}><Panel title="Sector Rotation · vs NIFTY" status="info" bodyClass="p-2"><RotationSignals /></Panel></Lazy>
       </div>
 
-      {/* Live TV + News */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 mb-3">
-        <div className="lg:col-span-7"><LiveVideo /></div>
-        <div className="lg:col-span-5"><LiveNews /></div>
+        <Lazy minHeight={300} className="lg:col-span-7"><LiveVideo /></Lazy>
+        <Lazy minHeight={300} className="lg:col-span-5"><LiveNews /></Lazy>
       </div>
 
-      {/* Intel grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
-        <div className="lg:col-span-4"><GlobalMacro /></div>
-        <div className="lg:col-span-4"><NewsSentiment /></div>
-        <div className="lg:col-span-4">
-          <Panel title="Economic & Events Calendar" status="warn" bodyClass="p-0"><CalendarPanel /></Panel>
-        </div>
-
-        <div className="lg:col-span-7">
-          <Panel title="Top Gainers & Losers · NIFTY" status="normal"
-            right={<button onClick={() => movers.reload()} className="text-faint hover:text-brand transition-colors cursor-pointer" aria-label="Refresh"><RefreshCw size={12} /></button>}>
-            <div className="grid grid-cols-2 gap-3">
-              <div><div className="label text-up mb-1">▲ Gainers</div><MoversTable rows={movers.data?.gainers ?? []} up onSym={go} /></div>
-              <div><div className="label text-down mb-1">▼ Losers</div><MoversTable rows={movers.data?.losers ?? []} up={false} onSym={go} /></div>
-            </div>
-          </Panel>
-        </div>
-        <div className="lg:col-span-5">
+        <Lazy minHeight={300} className="lg:col-span-4"><GlobalMacro /></Lazy>
+        <Lazy minHeight={300} className="lg:col-span-4"><NewsSentiment /></Lazy>
+        <Lazy minHeight={300} className="lg:col-span-4"><Panel title="Economic & Events Calendar" status="warn" bodyClass="p-0"><CalendarPanel /></Panel></Lazy>
+        <Lazy minHeight={200} className="lg:col-span-7"><GainersPanel /></Lazy>
+        <Lazy minHeight={160} className="lg:col-span-5">
           <Panel title="Sector Heatmap · NSE" status="info"><SectorHeatmap /></Panel>
-        </div>
+        </Lazy>
       </div>
     </div>
   );
