@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { User, LogOut, Loader2, X } from "lucide-react";
 import { useAuth } from "../lib/auth";
 
@@ -39,7 +40,7 @@ export default function AuthMenu() {
         className="rounded-lg border border-brand/40 bg-brand/15 px-3 py-1.5 text-[0.68rem] font-medium text-brand cursor-pointer hover:bg-brand/25 transition-colors">
         Sign in
       </button>
-      {open && (
+      {open && createPortal(
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setOpen(false)}>
           <div className="card p-5 w-full max-w-xs" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-3">
@@ -61,7 +62,8 @@ export default function AuthMenu() {
               {mode === "in" ? "No account? Create one" : "Have an account? Sign in"}
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

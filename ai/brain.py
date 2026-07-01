@@ -1,6 +1,10 @@
 """
-AXIOM AI Brain — powered by Groq (free tier, Llama 3.3 70B)
+AXIOM AI Brain — powered by Groq.
 Get your free API key at: https://console.groq.com
+
+Model is overridable via the GROQ_MODEL env var, so deprecations (e.g. Groq
+retiring older models) are a config change, not a code edit. Default is the
+current Llama 3.3 70B; Groq's recommended lighter model is "openai/gpt-oss-20b".
 """
 from __future__ import annotations
 
@@ -13,7 +17,7 @@ load_dotenv()
 from loguru import logger
 
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = "llama-3.3-70b-versatile"
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 _AXIOM_SYSTEM = (
     "You are AXIOM — Advanced eXpert Intelligence for Operations in Market. "
