@@ -1,0 +1,27 @@
+{
+  "EXIDEIND.NS": [],
+  "SONACOMS.NS": [],
+  "MBAPL.NS": [],
+  "CONTROLPR.NS": [],
+  "APOLLOTYRE.NS": [],
+  "NORTHARC.NS": [],
+  "SUNPHARMA.NS": [],
+  "ICICIBANK.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "GRANULES.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "RHIM.NS": [],
+  "AJANTPHARM.NS": [],
+  "JKTYRE.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "FIVESTAR.NS": [],
+  "TTKPRESTIG.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "CAPACITE.NS": []
+}
