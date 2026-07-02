@@ -1,57 +1,22 @@
 {
-  "updated": "2026-07-01T07:19:48.271447Z",
+  "updated": "2026-07-02T03:02:38.035706Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "30-Jun-2026",
+    "date": "01-Jul-2026",
     "fii": {
-      "buy": 23273.71,
-      "sell": 25830.46,
-      "net": -2556.75
+      "buy": 11623.31,
+      "sell": 12763.81,
+      "net": -1140.5
     },
     "dii": {
-      "buy": 23432.58,
-      "sell": 16590.24,
-      "net": 6842.34
+      "buy": 17136.57,
+      "sell": 13977.33,
+      "net": 3159.24
     },
-    "net_combined": 4285.59
+    "net_combined": 2018.74
   },
   "corporate": [
-    {
-      "date": "2026-07-02",
-      "date_str": "02 Jul",
-      "symbol": "DAVANGERE",
-      "company": "Davangere Sugar Company Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-02",
-      "date_str": "02 Jul",
-      "symbol": "IRBINVIT",
-      "company": "IRB InvIT Fund",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-02",
-      "date_str": "02 Jul",
-      "symbol": "KHADIM",
-      "company": "Khadim India Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-02",
-      "date_str": "02 Jul",
-      "symbol": "TIRUPATIFL",
-      "company": "Tirupati Forge Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-02",
-      "date_str": "02 Jul",
-      "symbol": "VAISHALI",
-      "company": "Vaishali Pharma Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-07-03",
       "date_str": "03 Jul",
@@ -125,6 +90,20 @@
     {
       "date": "2026-07-06",
       "date_str": "06 Jul",
+      "symbol": "ECOSMOBLTY",
+      "company": "Ecos (India) Mobility & Hospitality Li",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-07-06",
+      "date_str": "06 Jul",
+      "symbol": "EMBDL",
+      "company": "Embassy Developments Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-06",
+      "date_str": "06 Jul",
       "symbol": "LICHSGFIN",
       "company": "LIC Housing Finance Limited",
       "purpose": "Other business matters"
@@ -132,9 +111,30 @@
     {
       "date": "2026-07-06",
       "date_str": "06 Jul",
+      "symbol": "MAMATA",
+      "company": "Mamata Machinery Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-07-06",
+      "date_str": "06 Jul",
+      "symbol": "SEPC",
+      "company": "SEPC Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-06",
+      "date_str": "06 Jul",
       "symbol": "TRIDENT",
       "company": "Trident Limited",
       "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-07",
+      "date_str": "07 Jul",
+      "symbol": "RCF",
+      "company": "Rashtriya Chemicals and Fertilizers Li",
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-07-07",
