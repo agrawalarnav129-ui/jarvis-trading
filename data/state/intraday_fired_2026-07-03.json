@@ -1,0 +1,47 @@
+{
+  "COSMOFIRST.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "EPL.NS": [],
+  "CANFINHOME.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "YATHARTH.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "PNBHOUSING.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "3MINDIA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ABCAPITAL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "GATEWAY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "UNITDSPR.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT",
+    "MOMENTUM_CONT"
+  ],
+  "MAHLOG.NS": [],
+  "AJANTPHARM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MANAPPURAM.NS": [],
+  "APOLLOHOSP.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ALKEM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SUNPHARMA.NS": [
+    "MOMENTUM_CONT"
+  ]
+}
