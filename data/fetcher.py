@@ -88,9 +88,39 @@ def fetch_symbol_history(symbol: str, period: str = "1y", interval: str = "1d") 
 
 
 def fetch_symbols_history(symbols: list[str], period: str = "6mo", interval: str = "1d") -> dict[str, pd.DataFrame]:
-    """Fetch OHLCV history for multiple symbols."""
+    """
+    Fetch OHLCV history for multiple symbols.
+
+    Daily bars are served from the committed OHLCV cache when available (built
+    nightly by GitHub Actions) — this is what makes the screener fast/reliable
+    on the cloud. Anything not cached falls back to a live yfinance fetch.
+    """
     results: dict[str, pd.DataFrame] = {}
-    for symbol in symbols:
+    misses: list[str] = []
+
+    if interval == "1d":
+        try:
+            from data.ohlcv_cache import get_cached_ohlcv
+            for symbol in symbols:
+                df = get_cached_ohlcv(symbol)
+                if df is not None and not df.empty:
+                    results[symbol] = df
+                else:
+                    misses.append(symbol)
+        except Exception as exc:
+            logger.debug("OHLCV cache unavailable: {}", exc)
+            misses = [s for s in symbols if s not in results]
+    else:
+        misses = list(symbols)
+
+    if results and misses:
+        # Cache is live: don't serially hammer yfinance for stragglers (delisted
+        # or newly added names) — the screener can proceed without them.
+        logger.info("OHLCV cache hit {}/{} symbols; skipping {} misses",
+                    len(results), len(symbols), len(misses))
+        return results
+
+    for symbol in misses:
         try:
             results[symbol] = fetch_symbol_history(symbol, period=period, interval=interval)
         except Exception as exc:

@@ -17,7 +17,17 @@ load_dotenv()
 from loguru import logger
 
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
+
+
+def _payload_extras(max_tokens: int) -> dict:
+    """Model-specific request tweaks. gpt-oss models are reasoning models on
+    Groq: thinking consumes the completion budget, so cap reasoning effort low
+    and give the budget headroom — otherwise small-token JSON calls come back
+    empty/truncated."""
+    if "gpt-oss" in GROQ_MODEL:
+        return {"reasoning_effort": "low", "max_tokens": max(max_tokens, 700)}
+    return {"max_tokens": max_tokens}
 
 _AXIOM_SYSTEM = (
     "You are AXIOM — Advanced eXpert Intelligence for Operations in Market. "
@@ -37,7 +47,7 @@ def call_groq_stream(system: str, user: str, max_tokens: int = 900):
     payload = {
         "model": GROQ_MODEL,
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-        "max_tokens": max_tokens, "temperature": 0.4, "stream": True,
+        "temperature": 0.4, "stream": True, **_payload_extras(max_tokens),
     }
     try:
         with requests.post(GROQ_API_URL, headers=headers, json=payload, stream=True, timeout=60) as r:
@@ -77,17 +87,17 @@ def _call_groq(system: str, user: str, max_tokens: int = 1024) -> str:
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ],
-        "max_tokens": max_tokens,
         "temperature": 0.4,
+        **_payload_extras(max_tokens),
     }
     try:
-        response = requests.post(GROQ_API_URL, headers=headers, json=payload, timeout=30)
+        response = requests.post(GROQ_API_URL, headers=headers, json=payload, timeout=45)
         if response.status_code == 200:
             return response.json()["choices"][0]["message"]["content"].strip()
         logger.error("Groq API error {}: {}", response.status_code, response.text[:200])
         return ""
     except requests.exceptions.Timeout:
-        logger.error("Groq API timed out after 30s")
+        logger.error("Groq API timed out after 45s")
         return ""
     except Exception as exc:
         logger.exception("Groq API call failed: {}", exc)

@@ -16,7 +16,7 @@ from loguru import logger
 from config import DATA_DIR
 
 CACHE_FILE = DATA_DIR / "ohlcv_cache.json.gz"
-MAX_SYMBOLS = 250          # matches the Builder's largest universe
+MAX_SYMBOLS = 520          # full universe — screener + Builder both read from cache
 BENCH = "^NSEI"
 
 _RAW: dict | None = None   # in-memory {sym: {t,o,h,l,c,v}}, loaded once

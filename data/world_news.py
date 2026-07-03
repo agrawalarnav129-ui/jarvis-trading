@@ -42,7 +42,7 @@ def geocode_news(limit_headlines: int = 60) -> dict:
     from data.news_feed import fetch_market_news
 
     try:
-        items = fetch_market_news()[:limit_headlines]
+        items = fetch_market_news(limit_headlines)
     except Exception as exc:
         logger.warning("world-news fetch failed: {}", exc)
         return {"available": False, "points": []}

@@ -11,6 +11,7 @@ import GlobalMacro from "../components/GlobalMacro";
 import LiveNews from "../components/LiveNews";
 import LiveVideo from "../components/LiveVideo";
 import NewsSentiment from "../components/NewsSentiment";
+import GlobalSitrep from "../components/GlobalSitrep";
 import Lazy from "../components/Lazy";
 const WorldMap = lazy(() => import("../components/WorldMap"));
 
@@ -268,6 +269,8 @@ export default function Dashboard() {
       </div>
 
       {/* Everything below loads as it scrolls into view (Lazy) to spare the backend */}
+      <div className="mb-3"><Lazy minHeight={280}><GlobalSitrep /></Lazy></div>
+
       <div className="grid grid-cols-1 gap-3 mb-3">
         <Lazy minHeight={92}><Panel title="Indian Indices · Live" status="info" bodyClass="p-2"><IndexStrip /></Panel></Lazy>
         <Lazy minHeight={92}><Panel title="Market Breadth · Internals" status="info" bodyClass="p-2"><MarketBreadth /></Panel></Lazy>

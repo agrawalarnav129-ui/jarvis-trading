@@ -171,6 +171,21 @@ def _full_screener() -> list[dict]:
     return rows
 
 
+@app.on_event("startup")
+def _warm_screener() -> None:
+    """Pre-compute the screener in the background at boot (reads the OHLCV
+    cache, ~7s) so the first user request never waits or times out."""
+    import threading
+
+    def _warm():
+        try:
+            rows = _full_screener()
+            logger.info("Screener cache warmed: {} rows", len(rows))
+        except Exception as exc:
+            logger.warning("Screener warm failed: {}", exc)
+    threading.Thread(target=_warm, daemon=True).start()
+
+
 @app.get("/api/screener")
 def screener(limit: int = 30):
     """Top candidates by composite score (cached 10 min)."""
@@ -421,6 +436,20 @@ def live_channels_ep():
     except Exception as exc:
         logger.exception("Live channels failed: {}", exc)
         return {"channels": [], "first_live": None}
+
+
+_sitrep_cache: TTLCache = TTLCache(maxsize=1, ttl=900)
+
+
+@app.get("/api/global-sitrep")
+def global_sitrep():
+    """AI Global Situation Report — per-region market stance + India impact."""
+    try:
+        from ai.sitrep import build_sitrep
+        return _keyed(_sitrep_cache, "v", build_sitrep)
+    except Exception as exc:
+        logger.exception("SITREP failed: {}", exc)
+        return {"available": False, "note": "SITREP unavailable."}
 
 
 _sentiment_cache: TTLCache = TTLCache(maxsize=1, ttl=600)

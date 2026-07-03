@@ -48,7 +48,14 @@ MAX_PRICE = 100_000.0
 # ─────────────────────────────────────────────────────────────────
 
 def _fetch_nifty_benchmark(period: str = "6mo") -> pd.Series:
-    """Fetch Nifty 50 closing prices for RS calculation."""
+    """Fetch Nifty 50 closing prices for RS calculation (OHLCV cache first)."""
+    try:
+        from data.ohlcv_cache import get_cached_ohlcv
+        cached = get_cached_ohlcv("^NSEI")
+        if cached is not None and not cached.empty:
+            return cached["close"].dropna()
+    except Exception:
+        pass
     try:
         df = yf.Ticker("^NSEI").history(period=period, interval="1d")
         df.columns = [c.lower() for c in df.columns]
@@ -426,6 +433,7 @@ def run_screener(symbols: list[str] | None = None) -> pd.DataFrame:
     if symbols is None:
         universe = load_universe()
         symbols = universe["symbol"].tolist()
+    symbols = list(dict.fromkeys(symbols))   # dedupe, keep order
     if not symbols:
         raise ValueError("No symbols provided for screener")
 
