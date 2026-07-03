@@ -1,78 +1,22 @@
 {
-  "updated": "2026-07-02T06:49:47.233352Z",
+  "updated": "2026-07-03T03:02:23.733369Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "01-Jul-2026",
+    "date": "02-Jul-2026",
     "fii": {
-      "buy": 11623.31,
-      "sell": 12763.81,
-      "net": -1140.5
+      "buy": 14018.4,
+      "sell": 14330.22,
+      "net": -311.82
     },
     "dii": {
-      "buy": 17136.57,
-      "sell": 13977.33,
-      "net": 3159.24
+      "buy": 17391.61,
+      "sell": 15607.21,
+      "net": 1784.4
     },
-    "net_combined": 2018.74
+    "net_combined": 1472.58
   },
   "corporate": [
-    {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "A2ZINFRA",
-      "company": "A2Z Infra Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "AARTISURF",
-      "company": "Aarti Surfactants Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "ARVIND",
-      "company": "Arvind Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "DAVANGERE",
-      "company": "Davangere Sugar Company Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "NESTLEIND",
-      "company": "Nestle India Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "PNC",
-      "company": "Pritish Nandy Communications Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "TULSI",
-      "company": "Tulsi Extrusions Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-03",
-      "date_str": "03 Jul",
-      "symbol": "VHLTD",
-      "company": "Viceroy Hotels Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-07-04",
       "date_str": "04 Jul",
@@ -125,9 +69,30 @@
     {
       "date": "2026-07-06",
       "date_str": "06 Jul",
+      "symbol": "SREEL",
+      "company": "Sreeleathers Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-06",
+      "date_str": "06 Jul",
       "symbol": "TRIDENT",
       "company": "Trident Limited",
       "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-07",
+      "date_str": "07 Jul",
+      "symbol": "DSKULKARNI",
+      "company": "DS Kulkarni Developers Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-07",
+      "date_str": "07 Jul",
+      "symbol": "ORBTEXP",
+      "company": "Orbit Exports Limited",
+      "purpose": "Buyback"
     },
     {
       "date": "2026-07-07",
@@ -144,6 +109,13 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-07-08",
+      "date_str": "08 Jul",
+      "symbol": "INDBANK",
+      "company": "Indbank Merchant Banking Services Limi",
+      "purpose": "Financial Results"
+    },
+    {
       "date": "2026-07-09",
       "date_str": "09 Jul",
       "symbol": "AHLEAST",
@@ -156,6 +128,34 @@
       "symbol": "ANANDRATHI",
       "company": "Anand Rathi Wealth Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "COUNCODOS",
+      "company": "Country Condo's Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "EIMCOELECO",
+      "company": "Eimco Elecon (India) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "GMBREW",
+      "company": "GM Breweries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "TCS",
+      "company": "Tata Consultancy Services Limited",
+      "purpose": "Financial Results/Dividend"
     }
   ]
 }
