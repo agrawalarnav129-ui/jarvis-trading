@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-03T06:40:28.674606Z",
+  "updated": "2026-07-04T03:01:13.753356Z",
   "fii_dii": {
     "available": true,
-    "source": "NSE provisional",
+    "source": "NSE provisional (cached)",
     "date": "02-Jul-2026",
     "fii": {
       "buy": 14018.4,
@@ -18,140 +18,120 @@
   },
   "corporate": [
     {
-      "date": "2026-07-04",
       "date_str": "04 Jul",
       "symbol": "SUPREMEINF",
       "company": "Supreme Infrastructure India Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-06",
       "date_str": "06 Jul",
       "symbol": "APOLLO",
       "company": "Apollo Micro Systems Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-07-06",
       "date_str": "06 Jul",
       "symbol": "ECOSMOBLTY",
       "company": "Ecos (India) Mobility & Hospitality Li",
       "purpose": "Dividend"
     },
     {
-      "date": "2026-07-06",
       "date_str": "06 Jul",
       "symbol": "EMBDL",
       "company": "Embassy Developments Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-07-06",
       "date_str": "06 Jul",
       "symbol": "LICHSGFIN",
       "company": "LIC Housing Finance Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-07-06",
       "date_str": "06 Jul",
       "symbol": "MAMATA",
       "company": "Mamata Machinery Limited",
       "purpose": "Dividend"
     },
     {
-      "date": "2026-07-06",
       "date_str": "06 Jul",
       "symbol": "SEPC",
       "company": "SEPC Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-07-06",
       "date_str": "06 Jul",
       "symbol": "SREEL",
       "company": "Sreeleathers Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-07-06",
       "date_str": "06 Jul",
       "symbol": "TRIDENT",
       "company": "Trident Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-07-07",
       "date_str": "07 Jul",
       "symbol": "DSKULKARNI",
       "company": "DS Kulkarni Developers Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-07-07",
       "date_str": "07 Jul",
       "symbol": "ORBTEXP",
       "company": "Orbit Exports Limited",
       "purpose": "Buyback"
     },
     {
-      "date": "2026-07-07",
       "date_str": "07 Jul",
       "symbol": "RCF",
       "company": "Rashtriya Chemicals and Fertilizers Li",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-07-07",
       "date_str": "07 Jul",
       "symbol": "SUKHJITS",
       "company": "Sukhjit Starch & Chemicals Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-07-08",
       "date_str": "08 Jul",
       "symbol": "INDBANK",
       "company": "Indbank Merchant Banking Services Limi",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-09",
       "date_str": "09 Jul",
       "symbol": "AHLEAST",
       "company": "Asian Hotels (East) Limited",
       "purpose": "Financial Results/Dividend/Oth"
     },
     {
-      "date": "2026-07-09",
       "date_str": "09 Jul",
       "symbol": "ANANDRATHI",
       "company": "Anand Rathi Wealth Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-09",
       "date_str": "09 Jul",
       "symbol": "COUNCODOS",
       "company": "Country Condo's Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-07-09",
       "date_str": "09 Jul",
       "symbol": "EIMCOELECO",
       "company": "Eimco Elecon (India) Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-09",
       "date_str": "09 Jul",
       "symbol": "GMBREW",
       "company": "GM Breweries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-09",
       "date_str": "09 Jul",
       "symbol": "TCS",
       "company": "Tata Consultancy Services Limited",
