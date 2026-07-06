@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T03:01:06.676245Z",
+  "updated": "2026-07-06T03:01:24.110902Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,62 +17,6 @@
     "net_combined": -598.56
   },
   "corporate": [
-    {
-      "date": "2026-07-06",
-      "date_str": "06 Jul",
-      "symbol": "APOLLO",
-      "company": "Apollo Micro Systems Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-06",
-      "date_str": "06 Jul",
-      "symbol": "ECOSMOBLTY",
-      "company": "Ecos (India) Mobility & Hospitality Li",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-07-06",
-      "date_str": "06 Jul",
-      "symbol": "EMBDL",
-      "company": "Embassy Developments Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-06",
-      "date_str": "06 Jul",
-      "symbol": "LICHSGFIN",
-      "company": "LIC Housing Finance Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-06",
-      "date_str": "06 Jul",
-      "symbol": "MAMATA",
-      "company": "Mamata Machinery Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-07-06",
-      "date_str": "06 Jul",
-      "symbol": "SEPC",
-      "company": "SEPC Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-06",
-      "date_str": "06 Jul",
-      "symbol": "SREEL",
-      "company": "Sreeleathers Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-06",
-      "date_str": "06 Jul",
-      "symbol": "TRIDENT",
-      "company": "Trident Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-07-07",
       "date_str": "07 Jul",
@@ -156,6 +100,62 @@
       "symbol": "EIMCOELECO",
       "company": "Eimco Elecon (India) Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "GMBREW",
+      "company": "GM Breweries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "SUPREMEINF",
+      "company": "Supreme Infrastructure India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "TCS",
+      "company": "Tata Consultancy Services Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "TIJARIA",
+      "company": "Tijaria Polypipes Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
+      "symbol": "ELECON",
+      "company": "Elecon Engineering Company Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
+      "symbol": "JUSTDIAL",
+      "company": "Just Dial Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
+      "symbol": "LTF",
+      "company": "L&T Finance Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
+      "symbol": "SMLT",
+      "company": "Sarthak Metals Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
