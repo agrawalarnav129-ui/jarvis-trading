@@ -1,0 +1,37 @@
+{
+  "EPL.NS": [],
+  "COSMOFIRST.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CANFINHOME.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "YATHARTH.NS": [],
+  "NESTLEIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SPANDANA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "HUDCO.NS": [],
+  "ABCAPITAL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PNBHOUSING.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "3MINDIA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MANAPPURAM.NS": [],
+  "INDUSINDBK.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "IPCALAB.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LUPIN.NS": [],
+  "APOLLOHOSP.NS": []
+}
