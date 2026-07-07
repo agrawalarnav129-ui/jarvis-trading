@@ -1,0 +1,33 @@
+{
+  "MANAPPURAM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "METROPOLIS.NS": [],
+  "SPARC.NS": [],
+  "WELCORP.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "EPL.NS": [],
+  "PNBHOUSING.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "NAVINFLUOR.NS": [],
+  "RADICO.NS": [],
+  "INDUSINDBK.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TITAN.NS": [],
+  "BALRAMCHIN.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "NESTLEIND.NS": [],
+  "SOBHA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CHOLAFIN.NS": [],
+  "ADANIENSOL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
