@@ -1,50 +1,22 @@
 {
-  "updated": "2026-07-06T07:20:54.000210Z",
+  "updated": "2026-07-07T03:01:33.608302Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "03-Jul-2026",
+    "date": "06-Jul-2026",
     "fii": {
-      "buy": 13337.33,
-      "sell": 11982.0,
-      "net": 1355.33
+      "buy": 11686.1,
+      "sell": 11443.07,
+      "net": 243.03
     },
     "dii": {
-      "buy": 18676.35,
-      "sell": 20630.24,
-      "net": -1953.89
+      "buy": 19727.56,
+      "sell": 15936.14,
+      "net": 3791.42
     },
-    "net_combined": -598.56
+    "net_combined": 4034.45
   },
   "corporate": [
-    {
-      "date": "2026-07-07",
-      "date_str": "07 Jul",
-      "symbol": "DSKULKARNI",
-      "company": "DS Kulkarni Developers Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-07",
-      "date_str": "07 Jul",
-      "symbol": "ORBTEXP",
-      "company": "Orbit Exports Limited",
-      "purpose": "Buyback"
-    },
-    {
-      "date": "2026-07-07",
-      "date_str": "07 Jul",
-      "symbol": "RCF",
-      "company": "Rashtriya Chemicals and Fertilizers Li",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-07",
-      "date_str": "07 Jul",
-      "symbol": "SUKHJITS",
-      "company": "Sukhjit Starch & Chemicals Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-07-08",
       "date_str": "08 Jul",
@@ -90,6 +62,13 @@
     {
       "date": "2026-07-09",
       "date_str": "09 Jul",
+      "symbol": "AQYLON",
+      "company": "Aqylon Nexus Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
       "symbol": "COUNCODOS",
       "company": "Country Condo's Limited",
       "purpose": "Fund Raising"
@@ -104,9 +83,23 @@
     {
       "date": "2026-07-09",
       "date_str": "09 Jul",
+      "symbol": "EXPLEOSOL",
+      "company": "Expleo Solutions Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
       "symbol": "GMBREW",
       "company": "GM Breweries Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-09",
+      "date_str": "09 Jul",
+      "symbol": "PREMEXPLN",
+      "company": "Premier Explosives Limited",
+      "purpose": "Other business matters"
     },
     {
       "date": "2026-07-09",
@@ -139,6 +132,20 @@
     {
       "date": "2026-07-10",
       "date_str": "10 Jul",
+      "symbol": "GRADIENTE",
+      "company": "Gradiente Infotainment Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
+      "symbol": "INDIANB",
+      "company": "Indian Bank",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
       "symbol": "JUSTDIAL",
       "company": "Just Dial Limited",
       "purpose": "Financial Results"
@@ -149,13 +156,6 @@
       "symbol": "LTF",
       "company": "L&T Finance Limited",
       "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "SMLT",
-      "company": "Sarthak Metals Limited",
-      "purpose": "Other business matters"
     }
   ]
 }
