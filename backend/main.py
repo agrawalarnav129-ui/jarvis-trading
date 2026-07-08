@@ -452,6 +452,91 @@ def company(symbol: str):
         raise HTTPException(status_code=503, detail="Company data unavailable")
 
 
+_peers_cache: TTLCache = TTLCache(maxsize=32, ttl=3600)
+
+
+@app.get("/api/company/peers")
+def company_peers(symbol: str):
+    """Peer comparison — same-industry names side by side (COMP panel)."""
+    def _run():
+        import pandas as pd
+        from config import DATA_DIR
+        from data.company import fetch_company
+
+        sym = symbol.upper().replace(".NS", "")
+        uni = pd.read_csv(DATA_DIR / "universe.csv")
+        row = uni[uni["Symbol"].str.upper() == sym]
+        if row.empty:
+            return {"symbol": sym, "available": False, "note": "Symbol not in universe."}
+        industry = row.iloc[0]["Industry"]
+        peers_syms = uni[uni["Industry"] == industry]["Symbol"].str.upper().tolist()
+        # self first, then up to 5 peers (universe order ≈ liquidity)
+        ordered = [sym] + [s for s in peers_syms if s != sym][:5]
+        rows = []
+        for s in ordered:
+            try:
+                c = _keyed(_company_cache, s, lambda s=s: fetch_company(s))
+                if not c.get("available"):
+                    continue
+                rows.append({
+                    "symbol": c["symbol"], "name": (c.get("name") or c["symbol"])[:28],
+                    "market_cap": c.get("market_cap"), "pe": c.get("pe"), "pb": c.get("pb"),
+                    "roe": c.get("roe"), "rev_growth": c.get("rev_growth"),
+                    "profit_margin": c.get("profit_margin"), "div_yield": c.get("div_yield"),
+                    "rs_nifty": (c.get("tech") or {}).get("rs_nifty"),
+                    "pct_chg20": (c.get("tech") or {}).get("pct_chg20"),
+                    "self": c["symbol"] == sym,
+                })
+            except Exception as exc:
+                logger.debug("peer {} failed: {}", s, exc)
+        return {"symbol": sym, "available": bool(rows), "industry": industry, "peers": rows}
+    try:
+        return _keyed(_peers_cache, symbol.upper(), _run)
+    except Exception as exc:
+        logger.exception("Peers failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Peers unavailable")
+
+
+_airead_cache: TTLCache = TTLCache(maxsize=32, ttl=3600)
+
+
+@app.get("/api/company/ai")
+def company_ai(symbol: str):
+    """One-click AI read of the company: valuation vs quality, red flags, verdict."""
+    def _run():
+        import json as _json
+
+        from ai.brain import _call_groq
+        from data.company import fetch_company
+        c = _keyed(_company_cache, symbol.upper(), lambda: fetch_company(symbol))
+        if not c.get("available"):
+            return {"available": False, "note": "No company data."}
+        slim = {k: v for k, v in c.items() if k not in ("summary",) and v is not None}
+        sys_p = ("You are AXIOM's equity analyst for an NSE swing trader. Given fundamentals, "
+                 "shareholding, quarterly results and technicals, give a direct read. Cite the "
+                 "numbers. No disclaimers, no fluff.")
+        user = ("Analyze this company. Output ONLY JSON: "
+                '{"verdict": "QUALITY"|"FAIR"|"EXPENSIVE"|"AVOID", '
+                '"bull": "<2 sentences with numbers>", "bear": "<2 sentences with numbers>", '
+                '"technical": "<1 sentence on current technical posture>", '
+                '"flags": ["<red flag>", ...max 3]}\n\nDATA: ' + _json.dumps(slim, default=str)[:5000])
+        raw = _call_groq(sys_p, user, max_tokens=900)
+        import re
+        m = re.search(r"\{.*\}", raw or "", re.DOTALL)
+        try:
+            out = _json.loads(m.group(0)) if m else {}
+        except Exception:
+            out = {}
+        if not out.get("verdict"):
+            return {"available": False, "note": "AI read unavailable — try again."}
+        return {"available": True, "symbol": c["symbol"], **{k: out.get(k) for k in ("verdict", "bull", "bear", "technical", "flags")}}
+    try:
+        return _keyed(_airead_cache, symbol.upper(), _run)
+    except Exception as exc:
+        logger.exception("AI read failed: {}", exc)
+        raise HTTPException(status_code=503, detail="AI read unavailable")
+
+
 _sitrep_cache: TTLCache = TTLCache(maxsize=1, ttl=900)
 
 
@@ -927,19 +1012,23 @@ def tasks(session: str = "pre-market"):
         raise HTTPException(status_code=503, detail="Checklist generation unavailable")
 
 
+_briefing_cache: TTLCache = TTLCache(maxsize=1, ttl=1800)
+
+
 @app.get("/api/briefing")
 def briefing():
-    """Generate the institutional morning briefing text (cross-asset context + AI)."""
-    try:
+    """Generate the institutional morning briefing text (cross-asset context + AI).
+    Cached 30 min so the dashboard card doesn't re-pay context + AI per load."""
+    def _run():
         from ai.brain import generate_market_briefing
         from data.market_context import build_briefing_context
         context = build_briefing_context()
         text = generate_market_briefing(context)
         if not text:
-            raise HTTPException(status_code=503, detail="AI unavailable — check GROQ_API_KEY")
+            raise RuntimeError("AI unavailable")
         return {"briefing": text, "date": datetime.now(IST).strftime("%d %b %Y")}
-    except HTTPException:
-        raise
+    try:
+        return _keyed(_briefing_cache, "v", _run)
     except Exception as exc:
         logger.exception("Briefing failed: {}", exc)
         raise HTTPException(status_code=503, detail="Briefing unavailable")

@@ -37,6 +37,72 @@ function Sect({ code, title, children }: { code: string; title: string; children
   );
 }
 
+function CompPanel({ sym }: { sym: string }) {
+  const { data, loading } = useFetch(() => api.companyPeers(sym), [sym]);
+  if (loading) return <Sect code="COMP" title="Peer Comparison"><div className="text-[0.66rem]" style={{ color: T.dim }}>Loading peers… (first load fetches each peer)</div></Sect>;
+  if (!data?.available || !data.peers?.length)
+    return <Sect code="COMP" title="Peer Comparison"><div className="text-[0.66rem]" style={{ color: T.dim }}>{data?.note || "Peers unavailable."}</div></Sect>;
+  return (
+    <Sect code="COMP" title={`Peers · ${data.industry ?? ""}`}>
+      <div className="overflow-x-auto">
+        <table className="w-full">
+          <thead><tr>
+            {["NAME", "MCAP", "P/E", "P/B", "ROE", "REV YoY", "RS"].map((h) => (
+              <th key={h} className="text-left text-[0.55rem] pb-1 pr-2" style={{ color: T.dim }}>{h}</th>
+            ))}
+          </tr></thead>
+          <tbody>
+            {data.peers.map((p) => (
+              <tr key={p.symbol} className="border-t" style={{ borderColor: T.line, background: p.self ? "rgba(255,159,10,0.08)" : undefined }}>
+                <td className="py-1 pr-2 text-[0.62rem] font-semibold" style={{ color: p.self ? T.amber : T.txt }}>{p.symbol}</td>
+                <td className="py-1 pr-2 text-[0.6rem] tabular-nums" style={{ color: T.txt }}>{cr(p.market_cap)}</td>
+                <td className="py-1 pr-2 text-[0.6rem] tabular-nums" style={{ color: T.txt }}>{fmtN(p.pe, 1)}</td>
+                <td className="py-1 pr-2 text-[0.6rem] tabular-nums" style={{ color: T.txt }}>{fmtN(p.pb, 1)}</td>
+                <td className="py-1 pr-2 text-[0.6rem] tabular-nums" style={{ color: (p.roe ?? 0) > 0.15 ? T.up : T.txt }}>{pct(p.roe)}</td>
+                <td className="py-1 pr-2 text-[0.6rem] tabular-nums" style={{ color: (p.rev_growth ?? 0) >= 0 ? T.up : T.down }}>{pct(p.rev_growth)}</td>
+                <td className="py-1 text-[0.6rem] tabular-nums" style={{ color: (p.rs_nifty ?? 1) >= 1 ? T.up : T.down }}>{fmtN(p.rs_nifty, 2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Sect>
+  );
+}
+
+function AIPanel({ sym }: { sym: string }) {
+  const [run, setRun] = useState(false);
+  const { data, loading } = useFetch(() => (run ? api.companyAI(sym) : Promise.resolve(null)), [sym, run]);
+  const vcolor: Record<string, string> = { QUALITY: T.up, FAIR: T.amber, EXPENSIVE: "#ffd60a", AVOID: T.down };
+  return (
+    <Sect code="AI" title="AXIOM Read">
+      {!run ? (
+        <button onClick={() => setRun(true)} className="w-full py-2 text-[0.66rem] font-bold cursor-pointer"
+          style={{ background: T.amber, color: "#000" }}>RUN AI ANALYSIS ▸</button>
+      ) : loading ? (
+        <div className="flex items-center gap-2 text-[0.66rem] py-2" style={{ color: T.amber }}>
+          <Loader2 size={13} className="animate-spin" /> ANALYZING {sym}…
+        </div>
+      ) : !data?.available ? (
+        <div className="text-[0.66rem]" style={{ color: T.down }}>{data?.note || "AI read unavailable."}</div>
+      ) : (
+        <>
+          <div className="inline-block text-[0.7rem] font-bold px-2 py-0.5 mb-2"
+            style={{ background: vcolor[data.verdict ?? ""] ?? T.dim, color: "#000" }}>{data.verdict}</div>
+          <div className="text-[0.66rem] leading-relaxed mb-1.5"><span style={{ color: T.up }}>▲ BULL — </span><span style={{ color: T.txt }}>{data.bull}</span></div>
+          <div className="text-[0.66rem] leading-relaxed mb-1.5"><span style={{ color: T.down }}>▼ BEAR — </span><span style={{ color: T.txt }}>{data.bear}</span></div>
+          <div className="text-[0.66rem] leading-relaxed mb-1.5"><span style={{ color: T.blue }}>◆ TECH — </span><span style={{ color: T.txt }}>{data.technical}</span></div>
+          {(data.flags ?? []).length > 0 && (
+            <div className="mt-2 pt-1.5 border-t" style={{ borderColor: T.line }}>
+              {(data.flags ?? []).map((f, i) => <div key={i} className="text-[0.62rem]" style={{ color: "#ffd60a" }}>⚑ {f}</div>)}
+            </div>
+          )}
+        </>
+      )}
+    </Sect>
+  );
+}
+
 export default function Terminal() {
   const { symbol: pSym } = useParams();
   const nav = useNavigate();
@@ -181,6 +247,12 @@ export default function Terminal() {
                 <button onClick={() => nav("/trade-check")} className="text-[0.6rem] px-2 py-1 font-bold cursor-pointer border" style={{ borderColor: T.amber, color: T.amber }}>TRADE CHECK</button>
               </div>
             </Sect>
+
+            {/* AI read */}
+            <AIPanel sym={d.symbol} />
+
+            {/* Peer comparison — spans wider */}
+            <div className="md:col-span-2"><CompPanel sym={d.symbol} /></div>
           </div>
         </div>
       )}

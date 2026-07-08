@@ -1,0 +1,25 @@
+name: Pre-Market Alerts
+
+# ~08:50 IST weekdays: event-guard warnings + top Grade-A setups → Telegram.
+# Complements the 15-min intraday signal scans (intraday.yml).
+on:
+  schedule:
+    - cron: "20 3 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  alerts:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Kolkata
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install requests python-dotenv loguru pandas numpy yfinance
+      - name: Send pre-market alerts
+        run: python -m jobs.run_alerts

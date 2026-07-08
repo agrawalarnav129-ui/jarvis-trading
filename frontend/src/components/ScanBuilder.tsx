@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Plus, Trash2, Loader2, Play, Save, FolderOpen, History } from "lucide-react";
 import { api } from "../lib/api";
 import { Card, Empty } from "./ui";
 import { useSymbolNav } from "./SymbolLink";
 import EquityChart from "./EquityChart";
+import { listScans, persistScans, type SavedScan } from "../lib/scans";
 
 // ── indicator catalog (column names match the backend engine) ──
 const CATALOG: [string, [string, string][]][] = [
@@ -41,8 +42,6 @@ const PRESETS: { name: string; conditions: Cond[] }[] = [
     { ind: "supertrend_dir", op: "eq", vt: "val", val: "1", vi: "", lg: "AND" }] },
 ];
 
-const LS = "axiom_builder_scans";
-const loadSaved = (): { name: string; universe: string; conditions: Cond[] }[] => { try { return JSON.parse(localStorage.getItem(LS) || "[]"); } catch { return []; } };
 
 export default function ScanBuilder() {
   const go = useSymbolNav();
@@ -52,7 +51,8 @@ export default function ScanBuilder() {
   const [meta, setMeta] = useState<{ count: number; scanned: number } | null>(null);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
-  const [saved, setSaved] = useState(loadSaved());
+  const [saved, setSaved] = useState<SavedScan[]>([]);
+  useEffect(() => { listScans().then(setSaved); }, []);   // Supabase-synced when signed in
   // backtest
   const [bt, setBt] = useState<{ trades: any[]; equity: { date: string; value: number }[]; stats: Record<string, number> } | null>(null);
   const [btLoading, setBtLoading] = useState(false);
@@ -79,10 +79,10 @@ export default function ScanBuilder() {
   const save = () => {
     const name = prompt("Name this scan:")?.trim(); if (!name) return;
     const next = [{ name, universe, conditions: conds }, ...saved.filter((s) => s.name !== name)].slice(0, 20);
-    setSaved(next); localStorage.setItem(LS, JSON.stringify(next));
+    setSaved(next); persistScans(next);
   };
-  const loadScan = (s: { universe: string; conditions: Cond[] }) => { setUniverse(s.universe); setConds(s.conditions); };
-  const delScan = (name: string) => { const next = saved.filter((s) => s.name !== name); setSaved(next); localStorage.setItem(LS, JSON.stringify(next)); };
+  const loadScan = (s: SavedScan) => { setUniverse(s.universe); setConds(s.conditions as Cond[]); };
+  const delScan = (name: string) => { const next = saved.filter((s) => s.name !== name); setSaved(next); persistScans(next); };
 
   return (
     <div>
