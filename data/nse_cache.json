@@ -1,50 +1,22 @@
 {
-  "updated": "2026-07-07T06:53:46.722099Z",
+  "updated": "2026-07-08T03:01:29.310326Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "06-Jul-2026",
+    "date": "07-Jul-2026",
     "fii": {
-      "buy": 11686.1,
-      "sell": 11443.07,
-      "net": 243.03
+      "buy": 18414.01,
+      "sell": 18020.82,
+      "net": 393.19
     },
     "dii": {
-      "buy": 19727.56,
-      "sell": 15936.14,
-      "net": 3791.42
+      "buy": 18897.44,
+      "sell": 19280.87,
+      "net": -383.43
     },
-    "net_combined": 4034.45
+    "net_combined": 9.76
   },
   "corporate": [
-    {
-      "date": "2026-07-08",
-      "date_str": "08 Jul",
-      "symbol": "INDBANK",
-      "company": "Indbank Merchant Banking Services Limi",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-08",
-      "date_str": "08 Jul",
-      "symbol": "IRISDOREME",
-      "company": "Iris Clothings Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-08",
-      "date_str": "08 Jul",
-      "symbol": "KRISHIVAL",
-      "company": "Krishival Foods Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-08",
-      "date_str": "08 Jul",
-      "symbol": "VAISHALI",
-      "company": "Vaishali Pharma Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-07-09",
       "date_str": "09 Jul",
@@ -146,6 +118,13 @@
     {
       "date": "2026-07-10",
       "date_str": "10 Jul",
+      "symbol": "INDSWFTLAB",
+      "company": "Ind-Swift Laboratories Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
       "symbol": "JUSTDIAL",
       "company": "Just Dial Limited",
       "purpose": "Financial Results"
@@ -156,6 +135,27 @@
       "symbol": "LTF",
       "company": "L&T Finance Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
+      "symbol": "MAHABANK",
+      "company": "Bank of Maharashtra",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
+      "symbol": "PNBHOUSING",
+      "company": "PNB Housing Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
+      "symbol": "SMLT",
+      "company": "Sarthak Metals Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
