@@ -27,6 +27,7 @@ const Quant = lazy(() => import("./pages/Quant"));
 const TradeCheck = lazy(() => import("./pages/TradeCheck"));
 const YourEdge = lazy(() => import("./pages/YourEdge"));
 const Positions = lazy(() => import("./pages/Positions"));
+const Terminal = lazy(() => import("./pages/Terminal"));
 const StockDetail = lazy(() => import("./pages/StockDetail"));
 const Placeholder = lazy(() => import("./pages/Placeholder"));
 
@@ -67,6 +68,8 @@ export default function App() {
               <Route path="/trade-check" element={<TradeCheck />} />
               <Route path="/edge" element={<YourEdge />} />
               <Route path="/positions" element={<Positions />} />
+              <Route path="/terminal" element={<Terminal />} />
+              <Route path="/terminal/:symbol" element={<Terminal />} />
               <Route path="/assistant" element={<Assistant />} />
               <Route path="/stock/:symbol" element={<StockDetail />} />
               <Route path="*" element={<Placeholder title="Not Found" hint="That page doesn't exist." />} />

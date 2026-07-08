@@ -27,6 +27,20 @@ export interface CalEvent { date: string | null; date_str: string; event?: strin
 export interface Regime { regime: string; nifty_close: number; ema50: number; ema200: number; adx: number; max_positions: number; min_rr: number; reason: string; }
 export interface Candle { t: number; o: number; h: number; l: number; c: number; v: number; }
 export interface MacroQuote { label: string; symbol: string; last: number; pct: number; }
+export interface CompanyResp {
+  symbol: string; available: boolean; note?: string;
+  name?: string; sector?: string; industry?: string; summary?: string;
+  market_cap?: number; shares_out?: number;
+  pe?: number; fwd_pe?: number; pb?: number; ev_ebitda?: number; div_yield?: number;
+  payout?: number; beta?: number; eps?: number; book_value?: number;
+  roe?: number; roa?: number; profit_margin?: number; op_margin?: number;
+  rev_growth?: number; earn_growth?: number;
+  de?: number; current_ratio?: number; total_cash?: number; total_debt?: number; fcf?: number;
+  revenue?: number; net_income?: number; high_52w?: number; low_52w?: number;
+  holding?: { promoters?: number; institutions?: number; inst_count?: number; public?: number };
+  quarters?: { quarter: string; revenue?: number; net_income?: number; ebitda?: number }[];
+  tech?: Record<string, number | null>;
+}
 export interface HistoryResp { symbol: string; interval: string; last: number; change: number; pct: number; rsi: number; adx: number; ema20: number; ema50: number; ema200: number; atr: number; high_52w: number; low_52w: number; candles: Candle[]; }
 export interface PatternMatch { symbol: string; score: number; last: number; pct: number; spark: number[]; }
 export interface FiiDii { available: boolean; date?: string; fii?: { net: number }; dii?: { net: number }; note?: string; }
@@ -85,6 +99,7 @@ export const api = {
   breadth: () => get<{ available: boolean; note?: string; universe: number; pct_above_ema50: number; pct_above_ema200: number; pct_up_20d: number; advancers: number; decliners: number; new_highs: number; new_lows: number; avg_dist_ema50: number; score: number; health: string }>("/api/breadth"),
   globalMacro: () => get<{ available: boolean; note?: string; risk_score: number; risk_tone: string; indices: MacroQuote[]; commodities: MacroQuote[]; crypto: MacroQuote[]; fx: MacroQuote[] }>("/api/global-macro"),
   worldNews: () => get<{ available: boolean; count?: number; points: { lat: number; lng: number; place: string; count: number; headlines: string[] }[] }>("/api/world-news"),
+  company: (symbol: string) => get<CompanyResp>(`/api/company?symbol=${encodeURIComponent(symbol)}`),
   globalSitrep: () => get<{ available: boolean; note?: string; overall: string; regions: { region: string; stance: string; note: string }[]; india_impact: string; risk_score: number; risk_tone: string }>("/api/global-sitrep"),
   newsSentiment: () => get<{ available: boolean; market: { score: number; label: string; bull: number; bear: number; neutral: number }; headlines: { title: string; link: string; source: string; published_str: string; sentiment: string; tickers: string[] }[]; by_symbol: Record<string, { score: number; n: number; label: string }> }>("/api/news-sentiment"),
   liveChannels: () => get<{ channels: { name: string; id: string; live: boolean; videoId: string | null }[]; first_live: string | null }>("/api/live-channels"),

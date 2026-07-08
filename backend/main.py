@@ -438,6 +438,20 @@ def live_channels_ep():
         return {"channels": [], "first_live": None}
 
 
+_company_cache: TTLCache = TTLCache(maxsize=64, ttl=3600)
+
+
+@app.get("/api/company")
+def company(symbol: str):
+    """Company terminal: fundamentals + shareholding + quarterly financials + technicals."""
+    try:
+        from data.company import fetch_company
+        return _keyed(_company_cache, symbol.upper(), lambda: fetch_company(symbol))
+    except Exception as exc:
+        logger.exception("Company data failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Company data unavailable")
+
+
 _sitrep_cache: TTLCache = TTLCache(maxsize=1, ttl=900)
 
 
