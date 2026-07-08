@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08T03:01:29.310326Z",
+  "updated": "2026-07-08T06:05:31.521482Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -97,6 +97,13 @@
     {
       "date": "2026-07-10",
       "date_str": "10 Jul",
+      "symbol": "CORDELIA",
+      "company": "Waterways Leisure Tourism Limited",
+      "purpose": "Stock Split"
+    },
+    {
+      "date": "2026-07-10",
+      "date_str": "10 Jul",
       "symbol": "ELECON",
       "company": "Elecon Engineering Company Limited",
       "purpose": "Financial Results/Other busine"
@@ -149,13 +156,6 @@
       "symbol": "PNBHOUSING",
       "company": "PNB Housing Finance Limited",
       "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "SMLT",
-      "company": "Sarthak Metals Limited",
-      "purpose": "Other business matters"
     }
   ]
 }
