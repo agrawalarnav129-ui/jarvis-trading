@@ -1,0 +1,28 @@
+{
+  "TITAN.NS": [],
+  "EPL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NAUKRI.NS": [],
+  "PNBHOUSING.NS": [],
+  "GLAND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "EQUITASBNK.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LICI.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "UJJIVANSFB.NS": [],
+  "RITES.NS": [],
+  "AJANTPHARM.NS": [],
+  "ALKEM.NS": [],
+  "SUNPHARMA.NS": [],
+  "ICICIBANK.NS": [],
+  "CANFINHOME.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "PHOENIXLTD.NS": []
+}
