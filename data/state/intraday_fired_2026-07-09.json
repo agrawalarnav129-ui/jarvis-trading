@@ -1,0 +1,36 @@
+{
+  "CONSOFINVT.NS": [],
+  "UNITDSPR.NS": [],
+  "SPARC.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "EXIDEIND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SUNPHARMA.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "PNBHOUSING.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "HIKAL.NS": [],
+  "GLAND.NS": [],
+  "EPL.NS": [],
+  "BOSCHLTD.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "CCL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "AJANTPHARM.NS": [],
+  "NUVAMA.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "MARICO.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ADANIENSOL.NS": []
+}
