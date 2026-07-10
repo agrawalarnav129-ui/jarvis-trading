@@ -1,0 +1,38 @@
+name: Fundamentals Cache (Company Terminal)
+
+# Yahoo's quoteSummary API intermittently blocks Render's datacenter IP, so the
+# Company Terminal falls back to this nightly snapshot (yfinance works from
+# GitHub runners). Runs after the OHLCV cache (~18:15 IST).
+on:
+  schedule:
+    - cron: "45 12 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fundamentals:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Kolkata
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install requests python-dotenv loguru pandas numpy yfinance
+      - name: Build fundamentals cache
+        run: python -m jobs.run_fundamentals_cache
+      - name: Commit fundamentals cache
+        run: |
+          git config user.name  "jarvis-bot"
+          git config user.email "jarvis-bot@users.noreply.github.com"
+          git add -f data/fundamentals_cache.json.gz 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: fundamentals cache [skip ci]"
+            git push
+          else
+            echo "Fundamentals cache unchanged."
+          fi

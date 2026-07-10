@@ -103,7 +103,9 @@ def _technicals(symbol: str) -> dict:
         return {}
 
 
-def fetch_company(symbol: str) -> dict:
+def fetch_company(symbol: str, use_cache: bool = True) -> dict:
+    """Live yfinance fetch, falling back to the nightly fundamentals cache when
+    Yahoo's quoteSummary blocks the server IP (intermittent on datacenters)."""
     import yfinance as yf
 
     sym = symbol.upper()
@@ -115,7 +117,19 @@ def fetch_company(symbol: str) -> dict:
         logger.warning("company info failed for {}: {}", ysym, exc)
         info = {}
     if not info.get("longName") and not info.get("marketCap"):
-        return {"symbol": sym, "available": False, "note": f"No company data for {sym}."}
+        if use_cache:
+            try:
+                from data.fundamentals_cache import get_cached_fundamentals
+                cached = get_cached_fundamentals(sym)
+                if cached and cached.get("available"):
+                    out = dict(cached)
+                    out["tech"] = _technicals(ysym)      # technicals stay fresh (OHLCV cache)
+                    out["from_cache"] = True
+                    return out
+            except Exception as exc:
+                logger.debug("fundamentals cache fallback failed: {}", exc)
+        return {"symbol": sym.replace(".NS", ""), "available": False,
+                "note": f"No company data for {sym.replace('.NS', '')}."}
 
     out: dict = {"symbol": sym.replace(".NS", ""), "available": True}
     for k, src in _INFO_MAP.items():

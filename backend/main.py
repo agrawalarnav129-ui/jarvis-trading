@@ -441,12 +441,24 @@ def live_channels_ep():
 _company_cache: TTLCache = TTLCache(maxsize=64, ttl=3600)
 
 
+def _company_get(symbol: str) -> dict:
+    """fetch_company with caching — but never cache failures, so a transient
+    Yahoo block doesn't pin 'no data' for an hour."""
+    from data.company import fetch_company
+    key = symbol.upper()
+    if key in _company_cache:
+        return _company_cache[key]
+    result = fetch_company(symbol)
+    if result.get("available"):
+        _company_cache[key] = result
+    return result
+
+
 @app.get("/api/company")
 def company(symbol: str):
     """Company terminal: fundamentals + shareholding + quarterly financials + technicals."""
     try:
-        from data.company import fetch_company
-        return _keyed(_company_cache, symbol.upper(), lambda: fetch_company(symbol))
+        return _company_get(symbol)
     except Exception as exc:
         logger.exception("Company data failed: {}", exc)
         raise HTTPException(status_code=503, detail="Company data unavailable")
@@ -475,7 +487,7 @@ def company_peers(symbol: str):
         rows = []
         for s in ordered:
             try:
-                c = _keyed(_company_cache, s, lambda s=s: fetch_company(s))
+                c = _company_get(s)
                 if not c.get("available"):
                     continue
                 rows.append({
@@ -491,7 +503,13 @@ def company_peers(symbol: str):
                 logger.debug("peer {} failed: {}", s, exc)
         return {"symbol": sym, "available": bool(rows), "industry": industry, "peers": rows}
     try:
-        return _keyed(_peers_cache, symbol.upper(), _run)
+        key = symbol.upper()
+        if key in _peers_cache:
+            return _peers_cache[key]
+        result = _run()
+        if result.get("available"):
+            _peers_cache[key] = result
+        return result
     except Exception as exc:
         logger.exception("Peers failed: {}", exc)
         raise HTTPException(status_code=503, detail="Peers unavailable")
@@ -507,8 +525,7 @@ def company_ai(symbol: str):
         import json as _json
 
         from ai.brain import _call_groq
-        from data.company import fetch_company
-        c = _keyed(_company_cache, symbol.upper(), lambda: fetch_company(symbol))
+        c = _company_get(symbol)
         if not c.get("available"):
             return {"available": False, "note": "No company data."}
         slim = {k: v for k, v in c.items() if k not in ("summary",) and v is not None}
@@ -531,7 +548,13 @@ def company_ai(symbol: str):
             return {"available": False, "note": "AI read unavailable — try again."}
         return {"available": True, "symbol": c["symbol"], **{k: out.get(k) for k in ("verdict", "bull", "bear", "technical", "flags")}}
     try:
-        return _keyed(_airead_cache, symbol.upper(), _run)
+        key = symbol.upper()
+        if key in _airead_cache:
+            return _airead_cache[key]
+        result = _run()
+        if result.get("available"):
+            _airead_cache[key] = result
+        return result
     except Exception as exc:
         logger.exception("AI read failed: {}", exc)
         raise HTTPException(status_code=503, detail="AI read unavailable")
