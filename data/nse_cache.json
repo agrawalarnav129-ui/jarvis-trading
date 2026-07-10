@@ -1,120 +1,22 @@
 {
-  "updated": "2026-07-09T06:57:17.845931Z",
+  "updated": "2026-07-10T03:01:33.089883Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "08-Jul-2026",
+    "date": "09-Jul-2026",
     "fii": {
-      "buy": 17463.95,
-      "sell": 15501.15,
-      "net": 1962.8
+      "buy": 14388.41,
+      "sell": 14921.27,
+      "net": -532.86
     },
     "dii": {
-      "buy": 19165.13,
-      "sell": 18374.97,
-      "net": 790.16
+      "buy": 18302.87,
+      "sell": 16245.08,
+      "net": 2057.79
     },
-    "net_combined": 2752.96
+    "net_combined": 1524.93
   },
   "corporate": [
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "CORDELIA",
-      "company": "Waterways Leisure Tourism Limited",
-      "purpose": "Stock Split"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "ELECON",
-      "company": "Elecon Engineering Company Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "GRADIENTE",
-      "company": "Gradiente Infotainment Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "INDIANB",
-      "company": "Indian Bank",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "INDSWFTLAB",
-      "company": "Ind-Swift Laboratories Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "JUSTDIAL",
-      "company": "Just Dial Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "LTF",
-      "company": "L&T Finance Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "MAHABANK",
-      "company": "Bank of Maharashtra",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "PNBHOUSING",
-      "company": "PNB Housing Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "SMLT",
-      "company": "Sarthak Metals Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "SOUTHWEST",
-      "company": "South West Pinnacle Exploration Limite",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "TFL",
-      "company": "Transwarranty Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "UMIYA-MRO",
-      "company": "UMIYA BUILDCON LIMITED",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-10",
-      "date_str": "10 Jul",
-      "symbol": "WHEELS",
-      "company": "Wheels India Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-07-11",
       "date_str": "11 Jul",
@@ -155,6 +57,104 @@
       "date_str": "11 Jul",
       "symbol": "LTM",
       "company": "LTM Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-11",
+      "date_str": "11 Jul",
+      "symbol": "SETL",
+      "company": "Standard Engineering Technology Limite",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "BAJAJCON",
+      "company": "Bajaj Consumer Care Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "HCLTECH",
+      "company": "HCL Technologies Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "ICICIAMC",
+      "company": "ICICI Prudential Asset Management Comp",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "INFOBEAN",
+      "company": "InfoBeans Technologies Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "JAYKAY",
+      "company": "Jaykay Enterprises Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "KHAICHEM",
+      "company": "Khaitan Chemicals & Fertilizers Limite",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "KRISHANA",
+      "company": "Krishana Phoschem Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "KRITIKA",
+      "company": "Kritika Wires Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "NUVOCO",
+      "company": "Nuvoco Vistas Corporation Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "PLASTIBLEN",
+      "company": "Plastiblends India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "SIMBHALS",
+      "company": "Simbhaoli Sugars Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "VPRPL",
+      "company": "Vishnu Prakash R Punglia Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "A2ZINFRA",
+      "company": "A2Z Infra Engineering Limited",
       "purpose": "Financial Results"
     }
   ]
