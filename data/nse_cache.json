@@ -1,71 +1,22 @@
 {
-  "updated": "2026-07-10T06:52:44.683975Z",
+  "updated": "2026-07-11T03:01:00.907052Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "09-Jul-2026",
+    "date": "10-Jul-2026",
     "fii": {
-      "buy": 14388.41,
-      "sell": 14921.27,
-      "net": -532.86
+      "buy": 15318.07,
+      "sell": 12714.35,
+      "net": 2603.72
     },
     "dii": {
-      "buy": 18302.87,
-      "sell": 16245.08,
-      "net": 2057.79
+      "buy": 17171.75,
+      "sell": 15152.07,
+      "net": 2019.68
     },
-    "net_combined": 1524.93
+    "net_combined": 4623.4
   },
   "corporate": [
-    {
-      "date": "2026-07-11",
-      "date_str": "11 Jul",
-      "symbol": "AVANTEL",
-      "company": "Avantel Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-11",
-      "date_str": "11 Jul",
-      "symbol": "DGCONTENT",
-      "company": "Digicontent Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-11",
-      "date_str": "11 Jul",
-      "symbol": "DMART",
-      "company": "Avenue Supermarts Limited",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-07-11",
-      "date_str": "11 Jul",
-      "symbol": "GOODLUCK",
-      "company": "Goodluck India Limited",
-      "purpose": "Bonus/Other business matters"
-    },
-    {
-      "date": "2026-07-11",
-      "date_str": "11 Jul",
-      "symbol": "HTMEDIA",
-      "company": "HT Media Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-11",
-      "date_str": "11 Jul",
-      "symbol": "LTM",
-      "company": "LTM Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-11",
-      "date_str": "11 Jul",
-      "symbol": "SETL",
-      "company": "Standard Engineering Technology Limite",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-07-13",
       "date_str": "13 Jul",
@@ -155,6 +106,55 @@
       "date_str": "14 Jul",
       "symbol": "A2ZINFRA",
       "company": "A2Z Infra Engineering Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "ARSSBL",
+      "company": "Anand Rathi Share and Stock Brokers Li",
+      "purpose": "Financial Results/Fund Raising"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "BALLARPUR",
+      "company": "Ballarpur Industries Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "BIRLAMONEY",
+      "company": "Aditya Birla Money Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "DBOL",
+      "company": "Dhampur Bio Organics Limited",
+      "purpose": "Financial Results/Dividend/Oth"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "DEN",
+      "company": "Den Networks Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "INFOMEDIA",
+      "company": "Infomedia Press Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "JINDALSAW",
+      "company": "Jindal Saw Limited",
       "purpose": "Financial Results"
     }
   ]
