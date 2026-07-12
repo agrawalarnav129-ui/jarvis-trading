@@ -33,10 +33,22 @@ def _event_lines() -> list[str]:
     from data.econ_calendar import fetch_corporate_events, macro_events
     want = {s.upper() for s in _watchlist_symbols()}
     lines = []
+
+    def _playbook(sym: str) -> str:
+        try:
+            from analytics.earnings import earnings_stats
+            st = earnings_stats(sym)
+            if st:
+                return f" (hist: avg ±{st['avg_abs_move']}% on results, {st['pct_up']:.0f}% up)"
+        except Exception:
+            pass
+        return ""
+
     try:
         for e in fetch_corporate_events(days_ahead=7, limit=60):
             if e.get("symbol", "").upper() in want:
-                lines.append(f"⚠ <b>{e['symbol']}</b> — {e.get('purpose', 'event')} · {e.get('date_str', '')}")
+                sym = e["symbol"].upper()
+                lines.append(f"⚠ <b>{sym}</b> — {e.get('purpose', 'event')} · {e.get('date_str', '')}{_playbook(sym)}")
     except Exception as exc:
         logger.warning("corporate events failed: {}", exc)
     try:

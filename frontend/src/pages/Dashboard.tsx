@@ -50,7 +50,7 @@ function EventGuard() {
       <div className="flex items-center gap-1.5 mb-1.5"><CalendarClock size={13} className="text-gold" /><span className="label text-gold">Event Guard · next 10 days</span><ChevronRight size={12} className="text-faint ml-auto" /></div>
       <div className="flex flex-wrap gap-1.5">
         {ev.flagged.slice(0, 8).map((e, i) => (
-          <span key={`f${i}`} className="text-[0.62rem] font-mono text-gold bg-gold/10 border border-gold/30 rounded px-1.5 py-0.5">⚠ {e.symbol} · {e.purpose || "event"} · {e.date_str}</span>
+          <span key={`f${i}`} className="text-[0.62rem] font-mono text-gold bg-gold/10 border border-gold/30 rounded px-1.5 py-0.5">⚠ {e.symbol} · {e.purpose || "event"} · {e.date_str}{e.earnings ? <span className="text-brandbright"> · hist ±{e.earnings.avg_abs_move}%</span> : null}</span>
         ))}
         {ev.macro.slice(0, 4).map((e, i) => (
           <span key={`m${i}`} className="text-[0.62rem] font-mono text-down bg-down/10 border border-down/30 rounded px-1.5 py-0.5">{e.event} · {e.date_str}</span>
@@ -187,6 +187,7 @@ function CalendarPanel() {
 }
 
 function SectorHeatmap() {
+  const nav = useNavigate();
   const { data, loading } = useFetch(() => api.sectors(), [], 180_000);
   if (loading) return <Skeleton h={90} />;
   const items = data?.sectors ?? [];
@@ -198,7 +199,9 @@ function SectorHeatmap() {
   return (
     <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
       {items.map((s) => (
-        <div key={s.sector} className="rounded-lg p-2.5 border border-line/60" style={{ background: tile(s.pct) }}>
+        <div key={s.sector} onClick={() => nav(`/sector/${encodeURIComponent(s.sector)}`)}
+          className="rounded-lg p-2.5 border border-line/60 cursor-pointer hover:border-brand/50 transition-colors" style={{ background: tile(s.pct) }}
+          title={`Open ${s.sector} constituents`}>
           <div className="font-mono text-[0.62rem] text-txt/90 truncate">{s.sector}</div>
           <div className={`font-display text-sm mt-1 ${s.pct >= 0 ? "text-up" : "text-down"}`}>{s.pct >= 0 ? "+" : ""}{fmt(s.pct)}%</div>
         </div>

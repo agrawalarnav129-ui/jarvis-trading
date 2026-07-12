@@ -74,6 +74,14 @@ def build_fundamentals_cache(max_symbols: int = 520, workers: int = 6) -> dict:
             c.pop("tech", None)          # technicals are computed fresh at read time
             if c.get("summary"):
                 c["summary"] = str(c["summary"])[:400]
+            # earnings dates (past + scheduled) → powers the earnings playbook
+            try:
+                import yfinance as yf
+                ed = yf.Ticker(f"{sym}.NS").earnings_dates
+                if ed is not None and len(ed):
+                    c["earnings_dates"] = sorted({d.strftime("%Y-%m-%d") for d in ed.index})
+            except Exception:
+                pass
             return (sym, c)
         except Exception:
             return None

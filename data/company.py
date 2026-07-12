@@ -144,6 +144,7 @@ def fetch_company(symbol: str, use_cache: bool = True) -> dict:
                 if cached and cached.get("available"):
                     out = dict(cached)
                     out["tech"] = _technicals(ysym)      # technicals stay fresh (OHLCV cache)
+                    out["earnings"] = _earnings(sym)
                     out["from_cache"] = True
                     return out
             except Exception as exc:
@@ -178,4 +179,13 @@ def fetch_company(symbol: str, use_cache: bool = True) -> dict:
 
     out["quarters"] = _quarters(t)
     out["tech"] = _technicals(ysym)
+    out["earnings"] = _earnings(sym)
     return out
+
+
+def _earnings(sym: str):
+    try:
+        from analytics.earnings import earnings_stats
+        return earnings_stats(sym)
+    except Exception:
+        return None

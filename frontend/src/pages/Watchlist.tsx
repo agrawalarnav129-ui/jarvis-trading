@@ -61,7 +61,7 @@ export default function Watchlist() {
           <div className="flex items-center gap-1.5 mb-1.5"><CalendarClock size={13} className="text-gold" /><span className="label text-gold">Event guard — next 10 days</span></div>
           <div className="flex flex-wrap gap-1.5">
             {ev.flagged.map((e, i) => (
-              <span key={`f${i}`} className="text-[0.62rem] font-mono text-gold bg-gold/10 border border-gold/30 rounded px-1.5 py-0.5">⚠ {e.symbol} · {e.purpose || "event"} · {e.date_str}</span>
+              <span key={`f${i}`} className="text-[0.62rem] font-mono text-gold bg-gold/10 border border-gold/30 rounded px-1.5 py-0.5">⚠ {e.symbol} · {e.purpose || "event"} · {e.date_str}{e.earnings ? <span className="text-brandbright"> · hist ±{e.earnings.avg_abs_move}%</span> : null}</span>
             ))}
             {ev.macro.map((e, i) => (
               <span key={`m${i}`} className="text-[0.62rem] font-mono text-down bg-down/10 border border-down/30 rounded px-1.5 py-0.5">{e.event} · {e.date_str}</span>

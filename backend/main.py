@@ -560,6 +560,41 @@ def company_ai(symbol: str):
         raise HTTPException(status_code=503, detail="AI read unavailable")
 
 
+# heatmap sector name → universe Industry values
+_SECTOR_INDUSTRIES = {
+    "IT": ["IT"], "Banking": ["Financial Services"], "Auto": ["Automobile"],
+    "Pharma": ["Pharma", "Healthcare"], "FMCG": ["FMCG"], "Metal": ["Metals & Mining"],
+    "Energy": ["Oil Gas & Fuels", "Power"], "Infra": ["Construction", "Capital Goods"],
+    "Realty": ["Realty"], "PSU Bank": ["Financial Services"],
+}
+
+
+@app.get("/api/sector/constituents")
+def sector_constituents(sector: str):
+    """Ranked constituents of a heatmap sector (score/RS/MTF from the screener cache)."""
+    try:
+        import pandas as pd
+        from config import DATA_DIR
+        industries = _SECTOR_INDUSTRIES.get(sector)
+        uni = pd.read_csv(DATA_DIR / "universe.csv")
+        if industries:
+            members = uni[uni["Industry"].isin(industries)]
+        else:  # allow direct Industry names too (e.g. "Chemicals")
+            members = uni[uni["Industry"] == sector]
+        if members.empty:
+            return {"sector": sector, "available": False, "note": "Unknown sector."}
+        tickers = {str(t).upper() for t in members["yfinance_Ticker"].dropna()}
+        names = {str(r["yfinance_Ticker"]).upper(): str(r["Company_Name"]) for _, r in members.iterrows()}
+        rows = [dict(r, name=names.get(str(r.get("symbol", "")).upper(), ""))
+                for r in _full_screener() if str(r.get("symbol", "")).upper() in tickers]
+        rows.sort(key=lambda r: r.get("score") or 0, reverse=True)
+        return {"sector": sector, "available": bool(rows),
+                "industries": industries or [sector], "count": len(rows), "results": rows}
+    except Exception as exc:
+        logger.exception("Sector constituents failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Sector data unavailable")
+
+
 _honesty_cache: TTLCache = TTLCache(maxsize=1, ttl=3600)
 
 
@@ -690,12 +725,31 @@ def portfolio_heat(req: HeatReq):
 
 @app.get("/api/events/watch")
 def events_watch(symbols: str = "", days: int = 10):
-    """Flag upcoming corporate (results/board) + high-impact macro events for given symbols."""
+    """Flag upcoming corporate (results/board) + high-impact macro events for given
+    symbols, enriched with each stock's historical post-earnings behavior."""
     try:
+        from analytics.earnings import earnings_stats
         from data.econ_calendar import fetch_corporate_events, macro_events
         want = {s.strip().replace(".NS", "").upper() for s in symbols.split(",") if s.strip()}
         corp = fetch_corporate_events(days_ahead=days, limit=60)
-        hits = [e for e in corp if e.get("symbol", "").replace(".NS", "").upper() in want] if want else []
+        hits = [dict(e) for e in corp if e.get("symbol", "").replace(".NS", "").upper() in want] if want else []
+        seen = {h.get("symbol", "").replace(".NS", "").upper() for h in hits}
+        # merge scheduled earnings from the fundamentals cache (covers gaps in
+        # the NSE calendar) + attach the playbook stats
+        for sym in want:
+            try:
+                st = earnings_stats(sym)
+            except Exception:
+                st = None
+            if not st:
+                continue
+            if sym not in seen and st.get("days_to") is not None and 0 <= st["days_to"] <= days:
+                hits.append({"symbol": sym, "purpose": "Results",
+                             "date_str": st.get("next_date", ""), "date": None})
+                seen.add(sym)
+            for h in hits:
+                if h.get("symbol", "").replace(".NS", "").upper() == sym:
+                    h["earnings"] = st
         macro = [e for e in macro_events(days_ahead=days) if (e.get("impact") or "").upper() == "HIGH"]
         return {"days": days, "flagged": hits, "macro": macro,
                 "count": len(hits), "any": bool(hits or macro)}

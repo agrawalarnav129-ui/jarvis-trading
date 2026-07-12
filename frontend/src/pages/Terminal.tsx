@@ -228,6 +228,17 @@ export default function Terminal() {
                   </div>
                 </>
               ) : <div className="text-[0.66rem]" style={{ color: T.dim }}>Quarterly data unavailable.</div>}
+              {d.earnings && (
+                <div className="mt-2.5 pt-2 border-t" style={{ borderColor: T.line }}>
+                  <div className="text-[0.6rem] font-bold uppercase tracking-wider mb-1" style={{ color: T.amber }}>
+                    Results Playbook{d.earnings.next_date ? ` · next ${d.earnings.next_date}${d.earnings.days_to != null ? ` (${d.earnings.days_to}d)` : ""}` : ""}
+                  </div>
+                  <Row l={`Avg move on results (${d.earnings.n}q)`} v={`±${d.earnings.avg_abs_move}%`} color={T.amber} />
+                  <Row l="Positive reactions" v={`${d.earnings.pct_up}%`} color={d.earnings.pct_up >= 50 ? T.up : T.down} />
+                  {d.earnings.avg_drift5 != null && <Row l="Avg 5-day drift after" v={`${d.earnings.avg_drift5 >= 0 ? "+" : ""}${d.earnings.avg_drift5}%`} color={d.earnings.avg_drift5 >= 0 ? T.up : T.down} />}
+                  <Row l="Last results reaction" v={d.earnings.last_move != null ? `${d.earnings.last_move >= 0 ? "+" : ""}${d.earnings.last_move}%` : "—"} color={(d.earnings.last_move ?? 0) >= 0 ? T.up : T.down} />
+                </div>
+              )}
             </Sect>
 
             {/* TECH */}

@@ -42,6 +42,7 @@ export interface CompanyResp {
   holding?: { promoters?: number; institutions?: number; inst_count?: number; public?: number };
   quarters?: { quarter: string; revenue?: number; net_income?: number; ebitda?: number }[];
   tech?: Record<string, number | null>;
+  earnings?: { n: number; avg_abs_move: number; max_abs_move: number; pct_up: number; avg_drift5?: number; last_move?: number; next_date?: string; days_to?: number } | null;
 }
 export interface HistoryResp { symbol: string; interval: string; last: number; change: number; pct: number; rsi: number; adx: number; ema20: number; ema50: number; ema200: number; atr: number; high_52w: number; low_52w: number; candles: Candle[]; }
 export interface PatternMatch { symbol: string; score: number; last: number; pct: number; spark: number[]; }
@@ -104,6 +105,7 @@ export const api = {
   company: (symbol: string) => get<CompanyResp>(`/api/company?symbol=${encodeURIComponent(symbol)}`),
   companyPeers: (symbol: string) => get<{ symbol: string; available: boolean; note?: string; industry?: string; peers: { symbol: string; name: string; market_cap?: number; pe?: number; pb?: number; roe?: number; rev_growth?: number; profit_margin?: number; div_yield?: number; rs_nifty?: number; pct_chg20?: number; self?: boolean }[] }>(`/api/company/peers?symbol=${encodeURIComponent(symbol)}`),
   companyAI: (symbol: string) => get<{ available: boolean; note?: string; symbol?: string; verdict?: string; bull?: string; bear?: string; technical?: string; flags?: string[] }>(`/api/company/ai?symbol=${encodeURIComponent(symbol)}`),
+  sectorConstituents: (sector: string) => get<{ sector: string; available: boolean; note?: string; industries: string[]; count: number; results: any[] }>(`/api/sector/constituents?sector=${encodeURIComponent(sector)}`),
   signalHonesty: () => get<{ available: boolean; note?: string; horizons: number[]; picks: number; days: number; from: string; to: string; grades: Record<string, any>[] }>("/api/signal-honesty"),
   globalSitrep: () => get<{ available: boolean; note?: string; overall: string; regions: { region: string; stance: string; note: string }[]; india_impact: string; risk_score: number; risk_tone: string }>("/api/global-sitrep"),
   newsSentiment: () => get<{ available: boolean; market: { score: number; label: string; bull: number; bear: number; neutral: number }; headlines: { title: string; link: string; source: string; published_str: string; sentiment: string; tickers: string[] }[]; by_symbol: Record<string, { score: number; n: number; label: string }> }>("/api/news-sentiment"),
@@ -116,7 +118,7 @@ export const api = {
     if (!r.ok) throw new Error(`heat -> ${r.status}`);
     return (await r.json()) as { total_risk: number; cap: number; positions: number; correlation: { available: boolean; symbols: string[]; matrix: number[][]; avg_corr: number }; candidate_pairs: { symbol: string; corr: number }[]; warnings: string[]; ok: boolean };
   },
-  eventsWatch: (symbols: string[], days = 10) => get<{ days: number; flagged: { symbol: string; purpose?: string; date_str: string }[]; macro: { event: string; date_str: string; impact?: string; note?: string }[]; count: number; any: boolean }>(`/api/events/watch?symbols=${encodeURIComponent(symbols.join(","))}&days=${days}`),
+  eventsWatch: (symbols: string[], days = 10) => get<{ days: number; flagged: { symbol: string; purpose?: string; date_str: string; earnings?: { avg_abs_move: number; pct_up: number; n: number } }[]; macro: { event: string; date_str: string; impact?: string; note?: string }[]; count: number; any: boolean }>(`/api/events/watch?symbols=${encodeURIComponent(symbols.join(","))}&days=${days}`),
   scanNL: async (query: string) => {
     const r = await fetch(`${BASE}/api/scan/nl`, {
       method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ query }),

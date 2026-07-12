@@ -5,6 +5,7 @@ import TopBar from "./components/TopBar";
 import BottomNav from "./components/BottomNav";
 import ErrorBoundary from "./components/ErrorBoundary";
 import PullToRefresh from "./components/PullToRefresh";
+import CommandPalette from "./components/CommandPalette";
 import { useAlertsToggle, useSignalAlerts } from "./lib/alerts";
 import { usePriceAlerts } from "./lib/priceAlerts";
 import Dashboard from "./pages/Dashboard"; // eager — it's the landing page
@@ -28,6 +29,7 @@ const TradeCheck = lazy(() => import("./pages/TradeCheck"));
 const YourEdge = lazy(() => import("./pages/YourEdge"));
 const Positions = lazy(() => import("./pages/Positions"));
 const Terminal = lazy(() => import("./pages/Terminal"));
+const Sector = lazy(() => import("./pages/Sector"));
 const StockDetail = lazy(() => import("./pages/StockDetail"));
 const Placeholder = lazy(() => import("./pages/Placeholder"));
 
@@ -45,6 +47,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <TopBar alertsOn={alertsOn} onToggleAlerts={toggleAlerts} />
+      <CommandPalette />
       <main className="flex-1 mx-auto w-full max-w-6xl px-3 sm:px-4 pt-4 pb-24">
         <PullToRefresh onRefresh={() => setRefreshKey((k) => k + 1)}>
         <ErrorBoundary key={`${pathname}-${refreshKey}`}>
@@ -70,6 +73,7 @@ export default function App() {
               <Route path="/positions" element={<Positions />} />
               <Route path="/terminal" element={<Terminal />} />
               <Route path="/terminal/:symbol" element={<Terminal />} />
+              <Route path="/sector/:name" element={<Sector />} />
               <Route path="/assistant" element={<Assistant />} />
               <Route path="/stock/:symbol" element={<StockDetail />} />
               <Route path="*" element={<Placeholder title="Not Found" hint="That page doesn't exist." />} />
