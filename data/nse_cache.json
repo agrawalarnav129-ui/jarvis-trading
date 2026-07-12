@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11T03:01:00.907052Z",
+  "updated": "2026-07-12T03:01:07.876328Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -102,6 +102,13 @@
       "purpose": "Fund Raising"
     },
     {
+      "date": "2026-07-13",
+      "date_str": "13 Jul",
+      "symbol": "VPRPL",
+      "company": "Vishnu Prakash R Punglia Limited",
+      "purpose": "Fund Raising"
+    },
+    {
       "date": "2026-07-14",
       "date_str": "14 Jul",
       "symbol": "A2ZINFRA",
@@ -148,13 +155,6 @@
       "date_str": "14 Jul",
       "symbol": "INFOMEDIA",
       "company": "Infomedia Press Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "JINDALSAW",
-      "company": "Jindal Saw Limited",
       "purpose": "Financial Results"
     }
   ]
