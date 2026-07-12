@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Plus, Trash2, Loader2, Play, Save, FolderOpen, History } from "lucide-react";
+import { Plus, Trash2, Loader2, Play, Save, FolderOpen, History, Bell } from "lucide-react";
 import { api } from "../lib/api";
 import { Card, Empty } from "./ui";
 import { useSymbolNav } from "./SymbolLink";
@@ -83,6 +83,10 @@ export default function ScanBuilder() {
   };
   const loadScan = (s: SavedScan) => { setUniverse(s.universe); setConds(s.conditions as Cond[]); };
   const delScan = (name: string) => { const next = saved.filter((s) => s.name !== name); setSaved(next); persistScans(next); };
+  const toggleAlert = (name: string) => {
+    const next = saved.map((s) => (s.name === name ? { ...s, alert: !s.alert } : s));
+    setSaved(next); persistScans(next);
+  };
 
   return (
     <div>
@@ -96,6 +100,8 @@ export default function ScanBuilder() {
         {saved.map((s) => (
           <span key={s.name} className="flex items-center gap-1 text-[0.6rem] font-mono text-gold border border-gold/30 rounded px-1.5 py-0.5">
             <button onClick={() => loadScan(s)} className="cursor-pointer hover:text-brandbright">{s.name}</button>
+            <button onClick={() => toggleAlert(s.name)} title={s.alert ? "Alerts ON — Telegram pings new matches every 15 min (market hours)" : "Enable Telegram alerts for this scan"}
+              className={`cursor-pointer ${s.alert ? "text-brand" : "text-faint hover:text-brand"}`}><Bell size={10} fill={s.alert ? "currentColor" : "none"} /></button>
             <button onClick={() => delScan(s.name)} className="text-faint hover:text-down cursor-pointer">×</button>
           </span>
         ))}

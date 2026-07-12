@@ -8,14 +8,14 @@ import {
 import type { Candle } from "../lib/api";
 import {
   ema, bollinger, rsi as rsiTA, volume as volTA, normalized,
-  macd as macdTA, stochastic, vwap as vwapTA, supertrend, heikinAshi,
+  macd as macdTA, stochastic, vwap as vwapTA, supertrend, heikinAshi, sdZones,
 } from "../lib/ta";
 import { useTheme, cssRGB } from "../lib/theme";
 
 export type ChartType = "candle" | "heikin" | "line" | "area" | "bars";
 export interface ChartIndicators {
   ema?: boolean; bb?: boolean; rsi?: boolean; volume?: boolean; volumeProfile?: boolean;
-  vwap?: boolean; macd?: boolean; stoch?: boolean; supertrend?: boolean;
+  vwap?: boolean; macd?: boolean; stoch?: boolean; supertrend?: boolean; sd?: boolean;
 }
 
 interface Props {
@@ -176,6 +176,15 @@ export default function PriceChart({ candles, interval, indicators, chartType = 
     if (indicators.vwap) {
       const s = chart.addSeries(LineSeries, { color: "#a855f7", lineWidth: 2, priceLineVisible: false, lastValueVisible: false });
       s.setData(vwapTA(candles).map((x) => ({ time: T(x.time), value: x.value })));
+    }
+
+    if (indicators.sd) {
+      // auto supply/demand zones: top+bottom dashed lines per zone
+      for (const z of sdZones(candles)) {
+        const color = z.type === "supply" ? "rgba(239,68,68,0.65)" : "rgba(34,197,94,0.65)";
+        candleSeries.createPriceLine({ price: z.hi, color, lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: `${z.type === "supply" ? "S" : "D"}×${z.touches}` });
+        candleSeries.createPriceLine({ price: z.lo, color, lineWidth: 1, lineStyle: 2, axisLabelVisible: false, title: "" });
+      }
     }
 
     if (indicators.supertrend) {

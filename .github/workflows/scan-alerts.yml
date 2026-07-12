@@ -1,0 +1,43 @@
+name: Scan Alerts (Builder)
+
+# Every 15 min during market hours: run alert-enabled saved Builder scans
+# (from Supabase) over the OHLCV cache and Telegram NEW matches.
+# Requires secrets: SUPABASE_URL, SUPABASE_SERVICE_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
+on:
+  schedule:
+    - cron: "*/15 4-9 * * 1-5"   # ~09:30–15:30 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scan-alerts:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Kolkata
+      SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      TELEGRAM_BOT_TOKEN:   ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID:     ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install requests python-dotenv loguru pandas numpy
+      - name: Run alert scans
+        run: python -m jobs.run_scan_alerts
+      - name: Commit dedup state
+        run: |
+          git config user.name  "jarvis-bot"
+          git config user.email "jarvis-bot@users.noreply.github.com"
+          git add data/state/scan_alerts_fired.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git pull --rebase -q || true
+            git commit -m "chore: scan-alert state [skip ci]"
+            git push
+          else
+            echo "State unchanged."
+          fi

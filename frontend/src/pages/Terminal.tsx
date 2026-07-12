@@ -235,6 +235,13 @@ export default function Terminal() {
               <Row l="RSI (14)" v={fmtN(t.rsi14 as number, 1)} color={(t.rsi14 as number) > 70 ? T.down : (t.rsi14 as number) < 30 ? T.up : T.txt} />
               <Row l="ADX (14)" v={fmtN(t.adx14 as number, 1)} />
               <Row l="Supertrend" v={trendUp ? "BULLISH ▲" : "BEARISH ▼"} color={trendUp ? T.up : T.down} />
+              {(() => {
+                const m = (d.tech as any)?.mtf;
+                if (!m) return null;
+                const mark = (v: boolean | null) => (v == null ? "·" : v ? "✓" : "✗");
+                return <Row l="MTF Confluence" v={`D${mark(m.daily)} W${mark(m.weekly)} 15m${mark(m.m15)} · ${m.score}/${m.of}`}
+                  color={m.score === m.of && m.of > 0 ? T.up : m.score === 0 ? T.down : T.amber} />;
+              })()}
               <Row l="EMA 20 / 50 / 200" v={`${fmtN(t.ema20 as number, 0)} / ${fmtN(t.ema50 as number, 0)} / ${fmtN(t.ema200 as number, 0)}`} />
               <Row l="MACD Histogram" v={fmtN(t.macd_hist as number, 2)} color={(t.macd_hist as number) >= 0 ? T.up : T.down} />
               <Row l="ATR %" v={t.atr_pct != null ? `${fmtN(t.atr_pct as number)}%` : "—"} />
@@ -250,6 +257,40 @@ export default function Terminal() {
 
             {/* AI read */}
             <AIPanel sym={d.symbol} />
+
+            {/* ANR analyst consensus */}
+            <Sect code="ANR" title="Analyst Consensus">
+              {d.target_mean != null ? (() => {
+                const px = (t.close as number) ?? 0;
+                const upside = px ? ((d.target_mean! - px) / px) * 100 : null;
+                const rec = (d.rec_key || "").replace("_", " ").toUpperCase();
+                const rm = d.rec_mean ?? 3;
+                const recColor = rm <= 1.8 ? T.up : rm <= 2.6 ? "#a6e22e" : rm <= 3.4 ? T.amber : T.down;
+                const range = (d.target_high ?? 0) - (d.target_low ?? 0);
+                const pos = range > 0 ? Math.min(100, Math.max(0, ((px - d.target_low!) / range) * 100)) : 50;
+                return (
+                  <>
+                    <div className="flex items-baseline gap-2 mb-2">
+                      <span className="text-[0.8rem] font-bold px-1.5" style={{ background: recColor, color: "#000" }}>{rec || "—"}</span>
+                      <span className="text-[0.62rem]" style={{ color: T.dim }}>{fmtN(d.analysts, 0)} analysts · score {fmtN(d.rec_mean)} / 5</span>
+                    </div>
+                    <Row l="Mean Target" v={`₹${fmtN(d.target_mean)}`} color={T.amber} />
+                    <Row l="Upside vs CMP" v={upside != null ? `${upside >= 0 ? "+" : ""}${upside.toFixed(1)}%` : "—"} color={(upside ?? 0) >= 0 ? T.up : T.down} />
+                    <Row l="High / Low Target" v={`${fmtN(d.target_high)} / ${fmtN(d.target_low)}`} />
+                    {range > 0 && (
+                      <div className="mt-2">
+                        <div className="relative h-1.5" style={{ background: T.line }}>
+                          <div className="absolute top-0 bottom-0 w-1" style={{ left: `${pos}%`, background: T.txt }} title={`CMP ₹${fmtN(px)}`} />
+                        </div>
+                        <div className="flex justify-between text-[0.5rem] mt-0.5" style={{ color: T.dim }}>
+                          <span>₹{fmtN(d.target_low, 0)}</span><span>CMP position</span><span>₹{fmtN(d.target_high, 0)}</span>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                );
+              })() : <div className="text-[0.66rem]" style={{ color: T.dim }}>No analyst coverage data.</div>}
+            </Sect>
 
             {/* Peer comparison — spans wider */}
             <div className="md:col-span-2"><CompPanel sym={d.symbol} /></div>

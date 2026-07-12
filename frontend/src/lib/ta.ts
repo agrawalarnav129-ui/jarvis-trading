@@ -184,3 +184,49 @@ export function normalized(candles: Candle[]): LinePoint[] {
   const base = candles[0].c;
   return candles.map((c) => ({ time: c.t, value: r(((c.c - base) / base) * 100) }));
 }
+
+export interface SDZone { lo: number; hi: number; touches: number; type: "supply" | "demand"; }
+
+/**
+ * Auto supply/demand zones: swing pivots (local extremes over ±k bars) are
+ * clustered by price proximity; clusters with 2+ touches become zones.
+ * Zones above the last close = supply (resistance), below = demand (support).
+ */
+export function sdZones(candles: Candle[], k = 8, maxZones = 6): SDZone[] {
+  const n = candles.length;
+  if (n < k * 2 + 10) return [];
+  const pivots: { price: number; idx: number }[] = [];
+  for (let i = k; i < n - k; i++) {
+    let isHigh = true, isLow = true;
+    for (let j = i - k; j <= i + k; j++) {
+      if (candles[j].h > candles[i].h) isHigh = false;
+      if (candles[j].l < candles[i].l) isLow = false;
+      if (!isHigh && !isLow) break;
+    }
+    if (isHigh) pivots.push({ price: candles[i].h, idx: i });
+    if (isLow) pivots.push({ price: candles[i].l, idx: i });
+  }
+  if (!pivots.length) return [];
+
+  const last = candles[n - 1].c;
+  const band = last * 0.015; // cluster width ≈1.5%
+  pivots.sort((a, b) => a.price - b.price);
+  const clusters: { prices: number[]; lastIdx: number }[] = [];
+  for (const p of pivots) {
+    const c = clusters[clusters.length - 1];
+    if (c && p.price - c.prices[c.prices.length - 1] <= band) {
+      c.prices.push(p.price); c.lastIdx = Math.max(c.lastIdx, p.idx);
+    } else clusters.push({ prices: [p.price], lastIdx: p.idx });
+  }
+  return clusters
+    .filter((c) => c.prices.length >= 2)
+    .map((c) => ({
+      lo: r(Math.min(...c.prices)), hi: r(Math.max(...c.prices)),
+      touches: c.prices.length,
+      type: (Math.min(...c.prices) + Math.max(...c.prices)) / 2 >= last ? "supply" as const : "demand" as const,
+      _recency: c.lastIdx,
+    }))
+    .sort((a: any, b: any) => b.touches - a.touches || b._recency - a._recency)
+    .slice(0, maxZones)
+    .map(({ lo, hi, touches, type }) => ({ lo, hi, touches, type }));
+}

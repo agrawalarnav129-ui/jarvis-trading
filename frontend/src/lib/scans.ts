@@ -2,7 +2,7 @@
 // devices, like chart layouts), localStorage otherwise.
 import { supabase, supabaseEnabled } from "./supabase";
 
-export interface SavedScan { name: string; universe: string; conditions: any[]; }
+export interface SavedScan { name: string; universe: string; conditions: any[]; alert?: boolean; }
 
 const LS_KEY = "axiom_builder_scans";
 

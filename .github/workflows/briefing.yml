@@ -40,11 +40,14 @@ jobs:
       - name: Cache NSE data (FII/DII + events) for the web backend
         run: python -m jobs.run_nse_cache
 
+      - name: Append picks history (Signal Honesty)
+        run: python -m jobs.append_picks_history
+
       - name: Commit refreshed watchlist + NSE cache
         run: |
           git config user.name  "jarvis-bot"
           git config user.email "jarvis-bot@users.noreply.github.com"
-          git add data/watchlist.csv data/nse_cache.json 2>/dev/null || true
+          git add data/watchlist.csv data/nse_cache.json data/picks_history.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh watchlist + NSE cache [skip ci]"
             git push

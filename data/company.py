@@ -34,7 +34,12 @@ _INFO_MAP = {
     "revenue": "totalRevenue", "net_income": "netIncomeToCommon",
     # 52w
     "high_52w": "fiftyTwoWeekHigh", "low_52w": "fiftyTwoWeekLow",
+    # analyst consensus (ANR)
+    "target_mean": "targetMeanPrice", "target_high": "targetHighPrice",
+    "target_low": "targetLowPrice", "analysts": "numberOfAnalystOpinions",
+    "rec_mean": "recommendationMean", "rec_key": "recommendationKey",
 }
+_STR_FIELDS = ("name", "sector", "industry", "summary", "rec_key")
 
 
 def _num(v):
@@ -89,6 +94,20 @@ def _technicals(symbol: str) -> dict:
                 return None if f != f else round(f, dec)
             except (TypeError, ValueError):
                 return None
+        # multi-timeframe confluence: daily + weekly (cache) + live 15-min (best effort)
+        mtf = None
+        try:
+            from screener.ta_engine import mtf_confluence
+            m15 = None
+            try:
+                from data.fetcher import fetch_symbol_history
+                m15 = fetch_symbol_history(symbol, period="5d", interval="15m")
+            except Exception:
+                pass
+            mtf = mtf_confluence(df, m15)
+        except Exception:
+            pass
+
         return {
             "close": s("close"), "pct_chg": s("pct_chg"), "pct_chg20": s("pct_chg20"),
             "rsi14": s("rsi14", 1), "adx14": s("adx14", 1), "atr_pct": s("atr_pct"),
@@ -97,6 +116,7 @@ def _technicals(symbol: str) -> dict:
             "vol_ratio": s("vol_ratio"), "rs_nifty": s("rs_nifty", 3),
             "pct52h": s("pct52h"), "pct52l": s("pct52l"),
             "macd_hist": s("macd_hist", 3), "bb_pctb": s("bb_pctb", 3),
+            "mtf": mtf,
         }
     except Exception as exc:
         logger.debug("technicals failed for {}: {}", symbol, exc)
@@ -133,7 +153,7 @@ def fetch_company(symbol: str, use_cache: bool = True) -> dict:
 
     out: dict = {"symbol": sym.replace(".NS", ""), "available": True}
     for k, src in _INFO_MAP.items():
-        out[k] = _num(info.get(src)) if k not in ("name", "sector", "industry", "summary") else info.get(src)
+        out[k] = _num(info.get(src)) if k not in _STR_FIELDS else info.get(src)
     if out.get("summary"):
         out["summary"] = str(out["summary"])[:600]
 

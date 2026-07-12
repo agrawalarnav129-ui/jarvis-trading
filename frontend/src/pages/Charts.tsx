@@ -10,7 +10,7 @@ import { saveLayout, loadLayout } from "../lib/layouts";
 const TIMEFRAMES = ["5m", "15m", "30m", "1h", "1d", "1wk"];
 const PERIOD_FOR: Record<string, string> = { "5m": "5d", "15m": "1mo", "30m": "1mo", "1h": "3mo", "1d": "1y", "1wk": "5y" };
 const IND_LIST: [keyof ChartIndicators, string][] = [
-  ["ema", "EMA"], ["bb", "BB"], ["vwap", "VWAP"], ["supertrend", "ST"],
+  ["ema", "EMA"], ["bb", "BB"], ["vwap", "VWAP"], ["supertrend", "ST"], ["sd", "S/D"],
   ["rsi", "RSI"], ["macd", "MACD"], ["stoch", "Stoch"], ["volume", "Vol"], ["volumeProfile", "VP"],
 ];
 const CHART_TYPES: [ChartType, string][] = [["candle", "Candle"], ["heikin", "HA"], ["line", "Line"], ["area", "Area"], ["bars", "Bars"]];

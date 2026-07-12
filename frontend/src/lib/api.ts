@@ -37,6 +37,8 @@ export interface CompanyResp {
   rev_growth?: number; earn_growth?: number;
   de?: number; current_ratio?: number; total_cash?: number; total_debt?: number; fcf?: number;
   revenue?: number; net_income?: number; high_52w?: number; low_52w?: number;
+  target_mean?: number; target_high?: number; target_low?: number;
+  analysts?: number; rec_mean?: number; rec_key?: string;
   holding?: { promoters?: number; institutions?: number; inst_count?: number; public?: number };
   quarters?: { quarter: string; revenue?: number; net_income?: number; ebitda?: number }[];
   tech?: Record<string, number | null>;
@@ -102,6 +104,7 @@ export const api = {
   company: (symbol: string) => get<CompanyResp>(`/api/company?symbol=${encodeURIComponent(symbol)}`),
   companyPeers: (symbol: string) => get<{ symbol: string; available: boolean; note?: string; industry?: string; peers: { symbol: string; name: string; market_cap?: number; pe?: number; pb?: number; roe?: number; rev_growth?: number; profit_margin?: number; div_yield?: number; rs_nifty?: number; pct_chg20?: number; self?: boolean }[] }>(`/api/company/peers?symbol=${encodeURIComponent(symbol)}`),
   companyAI: (symbol: string) => get<{ available: boolean; note?: string; symbol?: string; verdict?: string; bull?: string; bear?: string; technical?: string; flags?: string[] }>(`/api/company/ai?symbol=${encodeURIComponent(symbol)}`),
+  signalHonesty: () => get<{ available: boolean; note?: string; horizons: number[]; picks: number; days: number; from: string; to: string; grades: Record<string, any>[] }>("/api/signal-honesty"),
   globalSitrep: () => get<{ available: boolean; note?: string; overall: string; regions: { region: string; stance: string; note: string }[]; india_impact: string; risk_score: number; risk_tone: string }>("/api/global-sitrep"),
   newsSentiment: () => get<{ available: boolean; market: { score: number; label: string; bull: number; bear: number; neutral: number }; headlines: { title: string; link: string; source: string; published_str: string; sentiment: string; tickers: string[] }[]; by_symbol: Record<string, { score: number; n: number; label: string }> }>("/api/news-sentiment"),
   liveChannels: () => get<{ channels: { name: string; id: string; live: boolean; videoId: string | null }[]; first_live: string | null }>("/api/live-channels"),

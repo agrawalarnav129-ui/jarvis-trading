@@ -137,7 +137,7 @@ export default function Screener() {
           <Card className="overflow-x-auto scroll-thin p-0">
             <table className="w-full text-left">
               <thead><tr className="text-faint border-b border-line">
-                {["Symbol", "Grade", "Score", "Close", "RSI", "ADX", "RS20", "Vol×"].map((h) => <th key={h} className="label py-2.5 px-3 font-mono">{h}</th>)}
+                {["Symbol", "Grade", "Score", "MTF", "Close", "RSI", "ADX", "RS20", "Vol×"].map((h) => <th key={h} className="label py-2.5 px-3 font-mono">{h}</th>)}
               </tr></thead>
               <tbody>
                 {rows.map((r, i) => (
@@ -145,6 +145,10 @@ export default function Screener() {
                     <td className="py-2 px-3 font-mono text-xs text-txt">{String(r.symbol).replace(".NS", "")}</td>
                     <td className={`py-2 px-3 font-mono text-xs font-bold ${gradeColor[r.grade] ?? "text-faint"}`}>{r.grade}</td>
                     <td className="py-2 px-3 font-mono text-xs text-brand">{r.score}</td>
+                    <td className="py-2 px-3">{r.mtf != null ? (
+                      <span className={`text-[0.6rem] font-mono px-1.5 py-0.5 rounded border ${r.mtf === r.mtf_of ? "text-up border-up/40 bg-up/10" : r.mtf === 0 ? "text-down border-down/40 bg-down/10" : "text-gold border-gold/40 bg-gold/10"}`}
+                        title="Daily+Weekly trend agreement">{r.mtf}/{r.mtf_of}</span>
+                    ) : <span className="text-faint text-xs font-mono">—</span>}</td>
                     <td className="py-2 px-3 font-mono text-xs text-muted">₹{Number(r.close).toLocaleString("en-IN")}</td>
                     <td className="py-2 px-3 font-mono text-xs text-muted">{r.rsi ?? "—"}</td>
                     <td className="py-2 px-3 font-mono text-xs text-muted">{r.adx ?? "—"}</td>

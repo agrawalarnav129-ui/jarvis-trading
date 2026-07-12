@@ -344,3 +344,32 @@ def run_backtest(symbols, conditions, fetch_fn, nifty_df=None, from_date="2024-0
         "total_return": round((capital - 100000) / 100000 * 100, 2),
     }
     return all_trades, equity, stats
+
+
+# ── multi-timeframe confluence ──────────────────────────────────────────────
+def tf_trend(df: pd.DataFrame) -> bool | None:
+    """Uptrend test for one timeframe: close > EMA20 > EMA50."""
+    if df is None or df.empty or len(df) < 55 or "close" not in df:
+        return None
+    c = df["close"]
+    e20 = float(c.ewm(span=20, adjust=False).mean().iloc[-1])
+    e50 = float(c.ewm(span=50, adjust=False).mean().iloc[-1])
+    return bool(float(c.iloc[-1]) > e20 > e50)
+
+
+def mtf_confluence(daily_df: pd.DataFrame, m15_df: pd.DataFrame | None = None) -> dict:
+    """Trend agreement across daily / weekly (resampled) / optional 15-min.
+    Score counts uptrending TFs out of those measurable."""
+    daily = tf_trend(daily_df)
+    weekly = None
+    try:
+        wk = daily_df[["open", "high", "low", "close"]].resample("W").agg(
+            {"open": "first", "high": "max", "low": "min", "close": "last"}).dropna()
+        weekly = tf_trend(wk)
+    except Exception:
+        pass
+    m15 = tf_trend(m15_df) if m15_df is not None else None
+    tfs = {"daily": daily, "weekly": weekly, "m15": m15}
+    measured = [v for v in tfs.values() if v is not None]
+    score = sum(1 for v in measured if v)
+    return {**tfs, "score": score, "of": len(measured)}

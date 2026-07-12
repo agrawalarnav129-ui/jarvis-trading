@@ -453,7 +453,15 @@ def run_screener(symbols: list[str] | None = None) -> pd.DataFrame:
             skipped += 1
             continue
         try:
-            results.append(score_symbol(history, symbol, benchmark))
+            row = score_symbol(history, symbol, benchmark)
+            try:
+                from screener.ta_engine import mtf_confluence
+                m = mtf_confluence(history)
+                row["mtf"] = m["score"]
+                row["mtf_of"] = m["of"]
+            except Exception:
+                pass
+            results.append(row)
         except Exception as exc:
             logger.debug("Skipped {}: {}", symbol, exc)
             skipped += 1

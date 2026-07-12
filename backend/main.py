@@ -158,7 +158,7 @@ def watchlist():
 # let the screener / RS-ranking / custom-scan endpoints all read these records.
 _screener_cache: TTLCache = TTLCache(maxsize=1, ttl=600)
 _SCAN_COLS = ["symbol", "grade", "score", "close", "rsi", "adx", "rs_20d", "rs_60d",
-              "volume_ratio", "ema9", "ema21", "ema50", "ema200", "notes"]
+              "volume_ratio", "ema9", "ema21", "ema50", "ema200", "mtf", "mtf_of", "notes"]
 
 
 def _full_screener() -> list[dict]:
@@ -558,6 +558,20 @@ def company_ai(symbol: str):
     except Exception as exc:
         logger.exception("AI read failed: {}", exc)
         raise HTTPException(status_code=503, detail="AI read unavailable")
+
+
+_honesty_cache: TTLCache = TTLCache(maxsize=1, ttl=3600)
+
+
+@app.get("/api/signal-honesty")
+def signal_honesty_ep():
+    """Forward-test of AXIOM's own picks: grade vs 5/10/20-day forward returns."""
+    try:
+        from analytics.honesty import signal_honesty
+        return _keyed(_honesty_cache, "v", signal_honesty)
+    except Exception as exc:
+        logger.exception("Signal honesty failed: {}", exc)
+        return {"available": False, "note": "Signal honesty unavailable."}
 
 
 _sitrep_cache: TTLCache = TTLCache(maxsize=1, ttl=900)
