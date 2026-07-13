@@ -1,0 +1,37 @@
+{
+  "EQUITASBNK.NS": [],
+  "NORTHARC.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ARMANFIN.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "CDSL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BFINVEST.NS": [],
+  "UTIAMC.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "MAHLIFE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CENTURYPLY.NS": [],
+  "IFBIND.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "UJJIVANSFB.NS": [],
+  "ASAHIINDIA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SUMICHEM.NS": [],
+  "ANANTRAJ.NS": [],
+  "CCL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "PAYTM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
