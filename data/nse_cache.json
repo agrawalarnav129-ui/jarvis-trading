@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T03:01:07.876328Z",
+  "updated": "2026-07-13T03:01:25.031756Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,97 +17,6 @@
     "net_combined": 4623.4
   },
   "corporate": [
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "BAJAJCON",
-      "company": "Bajaj Consumer Care Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "HCLTECH",
-      "company": "HCL Technologies Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "ICICIAMC",
-      "company": "ICICI Prudential Asset Management Comp",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "INFOBEAN",
-      "company": "InfoBeans Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "JAYKAY",
-      "company": "Jaykay Enterprises Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "KHAICHEM",
-      "company": "Khaitan Chemicals & Fertilizers Limite",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "KRISHANA",
-      "company": "Krishana Phoschem Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "KRITIKA",
-      "company": "Kritika Wires Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "NUVOCO",
-      "company": "Nuvoco Vistas Corporation Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "PLASTIBLEN",
-      "company": "Plastiblends India Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "SIMBHALS",
-      "company": "Simbhaoli Sugars Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "VPRPL",
-      "company": "Vishnu Prakash R Punglia Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-13",
-      "date_str": "13 Jul",
-      "symbol": "VPRPL",
-      "company": "Vishnu Prakash R Punglia Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-07-14",
       "date_str": "14 Jul",
@@ -156,6 +65,97 @@
       "symbol": "INFOMEDIA",
       "company": "Infomedia Press Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "JINDALSAW",
+      "company": "Jindal Saw Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "LTTS",
+      "company": "L&T Technology Services Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "MANAKCOAT",
+      "company": "Manaksia Coated Metals & Industries Li",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "MBAPL",
+      "company": "Madhya Bharat Agro Products Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "MUFIN",
+      "company": "Mufin Green Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "SGFIN",
+      "company": "SG Finserve Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "TATAELXSI",
+      "company": "Tata Elxsi Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-14",
+      "date_str": "14 Jul",
+      "symbol": "VIJIFIN",
+      "company": "Viji Finance Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "AERONEU",
+      "company": "Aeroflex Neu Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "AGRITECH",
+      "company": "Agri-Tech (India) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "ANGELONE",
+      "company": "Angel One Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "ANGELONE",
+      "company": "Angel One Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "ATHERENERG",
+      "company": "Ather Energy Limited",
+      "purpose": "Fund Raising"
     }
   ]
 }
