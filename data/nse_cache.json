@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T03:01:25.031756Z",
+  "updated": "2026-07-13T06:27:42.191584Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -141,14 +141,14 @@
       "date_str": "15 Jul",
       "symbol": "ANGELONE",
       "company": "Angel One Limited",
-      "purpose": "Financial Results"
+      "purpose": "Financial Results/Dividend"
     },
     {
       "date": "2026-07-15",
       "date_str": "15 Jul",
       "symbol": "ANGELONE",
       "company": "Angel One Limited",
-      "purpose": "Financial Results/Dividend"
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-07-15",
