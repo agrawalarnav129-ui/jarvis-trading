@@ -5,6 +5,7 @@
   "AFFLE.NS": [],
   "BAJAJ-AUTO.NS": [],
   "ARMANFIN.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "ETHOSLTD.NS": [],
