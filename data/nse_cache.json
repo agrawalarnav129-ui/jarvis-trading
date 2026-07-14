@@ -1,127 +1,22 @@
 {
-  "updated": "2026-07-13T06:27:42.191584Z",
+  "updated": "2026-07-14T03:01:21.939052Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "10-Jul-2026",
+    "date": "13-Jul-2026",
     "fii": {
-      "buy": 15318.07,
-      "sell": 12714.35,
-      "net": 2603.72
+      "buy": 10386.48,
+      "sell": 13448.75,
+      "net": -3062.27
     },
     "dii": {
-      "buy": 17171.75,
-      "sell": 15152.07,
-      "net": 2019.68
+      "buy": 17393.46,
+      "sell": 15221.76,
+      "net": 2171.7
     },
-    "net_combined": 4623.4
+    "net_combined": -890.57
   },
   "corporate": [
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "A2ZINFRA",
-      "company": "A2Z Infra Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "ARSSBL",
-      "company": "Anand Rathi Share and Stock Brokers Li",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "BALLARPUR",
-      "company": "Ballarpur Industries Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "BIRLAMONEY",
-      "company": "Aditya Birla Money Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "DBOL",
-      "company": "Dhampur Bio Organics Limited",
-      "purpose": "Financial Results/Dividend/Oth"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "DEN",
-      "company": "Den Networks Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "INFOMEDIA",
-      "company": "Infomedia Press Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "JINDALSAW",
-      "company": "Jindal Saw Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "LTTS",
-      "company": "L&T Technology Services Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "MANAKCOAT",
-      "company": "Manaksia Coated Metals & Industries Li",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "MBAPL",
-      "company": "Madhya Bharat Agro Products Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "MUFIN",
-      "company": "Mufin Green Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "SGFIN",
-      "company": "SG Finserve Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "TATAELXSI",
-      "company": "Tata Elxsi Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-14",
-      "date_str": "14 Jul",
-      "symbol": "VIJIFIN",
-      "company": "Viji Finance Limited",
-      "purpose": "Financial Results/Other busine"
-    },
     {
       "date": "2026-07-15",
       "date_str": "15 Jul",
@@ -141,14 +36,14 @@
       "date_str": "15 Jul",
       "symbol": "ANGELONE",
       "company": "Angel One Limited",
-      "purpose": "Financial Results/Dividend"
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-07-15",
       "date_str": "15 Jul",
       "symbol": "ANGELONE",
       "company": "Angel One Limited",
-      "purpose": "Financial Results"
+      "purpose": "Financial Results/Dividend"
     },
     {
       "date": "2026-07-15",
@@ -156,6 +51,111 @@
       "symbol": "ATHERENERG",
       "company": "Ather Energy Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "BRIGADE",
+      "company": "Brigade Enterprises Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "EMMVEE",
+      "company": "Emmvee Photovoltaic Power Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "FEDFINA",
+      "company": "Fedbank Financial Services Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "GOACARBON",
+      "company": "Goa Carbon Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "GROWW",
+      "company": "Billionbrains Garage Ventures Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "GTPL",
+      "company": "GTPL Hathway Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "HDBFS",
+      "company": "HDB Financial Services Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "HDFCAMC",
+      "company": "HDFC Asset Management Company Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "HDFCLIFE",
+      "company": "HDFC Life Insurance Company Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "HSCL",
+      "company": "Himadri Speciality Chemical Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "ICICIGI",
+      "company": "ICICI Lombard General Insurance Compan",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "ICICIPRULI",
+      "company": "ICICI Prudential Life Insurance Compan",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "JSFB",
+      "company": "Jana Small Finance Bank Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "KALAMANDIR",
+      "company": "Sai Silks (Kalamandir) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-15",
+      "date_str": "15 Jul",
+      "symbol": "KSOLVES",
+      "company": "Ksolves India Limited",
+      "purpose": "Financial Results/Dividend"
     }
   ]
 }
