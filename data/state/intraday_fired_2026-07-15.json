@@ -1,0 +1,39 @@
+{
+  "BALRAMCHIN.NS": [],
+  "CONSOFINVT.NS": [],
+  "JUSTDIAL.NS": [],
+  "DIVISLAB.NS": [],
+  "AJAXENGG.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "KOLTEPATIL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ADANIGREEN.NS": [],
+  "GLENMARK.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SUNPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "LXCHEM.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "WELCORP.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BHARTIARTL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LUPIN.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "CHALET.NS": [],
+  "KALYANKJIL.NS": [
+    "MOMENTUM_CONT"
+  ]
+}
