@@ -19,6 +19,7 @@
     "MOMENTUM_CONT"
   ],
   "LXCHEM.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "WELCORP.NS": [
@@ -32,8 +33,12 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "CHALET.NS": [],
+  "CHALET.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "KALYANKJIL.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ]
 }
