@@ -1,161 +1,161 @@
 {
-  "updated": "2026-07-14T05:38:49.902266Z",
+  "updated": "2026-07-15T03:01:36.718628Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "13-Jul-2026",
+    "date": "14-Jul-2026",
     "fii": {
-      "buy": 10386.48,
-      "sell": 13448.75,
-      "net": -3062.27
+      "buy": 12763.43,
+      "sell": 13503.12,
+      "net": -739.69
     },
     "dii": {
-      "buy": 17393.46,
-      "sell": 15221.76,
-      "net": 2171.7
+      "buy": 20420.87,
+      "sell": 17493.16,
+      "net": 2927.71
     },
-    "net_combined": -890.57
+    "net_combined": 2188.02
   },
   "corporate": [
     {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "AERONEU",
-      "company": "Aeroflex Neu Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "AGRITECH",
-      "company": "Agri-Tech (India) Limited",
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "360ONE",
+      "company": "360 ONE WAM LIMITED",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "ANGELONE",
-      "company": "Angel One Limited",
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "5PAISA",
+      "company": "5Paisa Capital Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "ALOKINDS",
+      "company": "Alok Industries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "ANGELONE",
-      "company": "Angel One Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "ATHERENERG",
-      "company": "Ather Energy Limited",
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "AURUM",
+      "company": "Aurum PropTech Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "BRIGADE",
-      "company": "Brigade Enterprises Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "EMMVEE",
-      "company": "Emmvee Photovoltaic Power Limited",
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "BHEL",
+      "company": "Bharat Heavy Electricals Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "FEDFINA",
-      "company": "Fedbank Financial Services Limited",
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "BORORENEW",
+      "company": "BOROSIL RENEWABLES LIMITED",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "GOACARBON",
-      "company": "Goa Carbon Limited",
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "CEATLTD",
+      "company": "CEAT Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "GROWW",
-      "company": "Billionbrains Garage Ventures Limited",
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "CHEMBONDCH",
+      "company": "Chembond Chemicals Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "GTPL",
-      "company": "GTPL Hathway Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "HDBFS",
-      "company": "HDB Financial Services Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "HDFCAMC",
-      "company": "HDFC Asset Management Company Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "HDFCLIFE",
-      "company": "HDFC Life Insurance Company Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "HSCL",
-      "company": "Himadri Speciality Chemical Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "ICICIGI",
-      "company": "ICICI Lombard General Insurance Compan",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "ICICIPRULI",
-      "company": "ICICI Prudential Life Insurance Compan",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "JSFB",
-      "company": "Jana Small Finance Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "KALAMANDIR",
-      "company": "Sai Silks (Kalamandir) Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-15",
-      "date_str": "15 Jul",
-      "symbol": "KSOLVES",
-      "company": "Ksolves India Limited",
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "DBCORP",
+      "company": "D.B.Corp Limited",
       "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "GNA",
+      "company": "GNA Axles Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "HATHWAY",
+      "company": "Hathway Cable & Datacom Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "HERITGFOOD",
+      "company": "Heritage Foods Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "ITCHOTELS",
+      "company": "ITC Hotels Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "JINDALPHOT",
+      "company": "Jindal Photo Limited",
+      "purpose": "Voluntary Delisting"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "JIOFIN",
+      "company": "Jio Financial Services Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "KECL",
+      "company": "Kirloskar Electric Company Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "MAHEPC",
+      "company": "Mahindra EPC Irrigation Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "MENONBE",
+      "company": "Menon Bearings Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "MUTHOOTCAP",
+      "company": "Muthoot Capital Services Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-16",
+      "date_str": "16 Jul",
+      "symbol": "NELCO",
+      "company": "NELCO Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
