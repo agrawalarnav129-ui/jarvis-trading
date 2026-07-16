@@ -11,13 +11,16 @@
   ],
   "ZODIACLOTH.NS": [],
   "METROPOLIS.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "ASTERDM.NS": [],
   "AARTIIND.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "AJANTPHARM.NS": [],
+  "AJANTPHARM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "3MINDIA.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
