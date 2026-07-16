@@ -1,0 +1,41 @@
+{
+  "FLUOROCHEM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BHEL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BANDHANBNK.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ZODIACLOTH.NS": [],
+  "METROPOLIS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ASTERDM.NS": [],
+  "AARTIIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "AJANTPHARM.NS": [],
+  "3MINDIA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ULTRACEMCO.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CENTURYPLY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BAJAJ-AUTO.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "JUSTDIAL.NS": [],
+  "APOLLOHOSP.NS": [],
+  "AJAXENGG.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
