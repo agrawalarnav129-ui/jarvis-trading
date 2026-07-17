@@ -3,12 +3,15 @@
   "BHEL.NS": [],
   "SRF.NS": [],
   "MASTEK.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "HSCL.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "TANLA.NS": [],
+  "TANLA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "IIFL.NS": [],
   "JLHL.NS": [
     "BB_SQUEEZE_SETUP"
