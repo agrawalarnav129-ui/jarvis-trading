@@ -1,0 +1,23 @@
+{
+  "ABB.NS": [],
+  "BHEL.NS": [],
+  "SRF.NS": [],
+  "MASTEK.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "HSCL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TANLA.NS": [],
+  "IIFL.NS": [],
+  "JLHL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "AFFLE.NS": [],
+  "JBCHEPHARM.NS": [],
+  "BIOCON.NS": [],
+  "RAIN.NS": [],
+  "BASF.NS": [],
+  "APCOTEXIND.NS": [],
+  "DIXON.NS": []
+}
