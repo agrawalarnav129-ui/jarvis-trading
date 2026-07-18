@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-17T05:49:02.869564Z",
+  "updated": "2026-07-18T03:01:03.957609Z",
   "fii_dii": {
     "available": true,
-    "source": "NSE provisional",
+    "source": "NSE provisional (cached)",
     "date": "16-Jul-2026",
     "fii": {
       "buy": 13576.08,
@@ -18,143 +18,143 @@
   },
   "corporate": [
     {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "ASHIMASYN",
-      "company": "Ashima Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "AXISBANK",
-      "company": "Axis Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "BEPL",
-      "company": "Bhansali Engineering Polymers Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "CANFINHOME",
-      "company": "Can Fin Homes Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "GANGAFORGE",
-      "company": "Ganga Forging Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "HDFCBANK",
-      "company": "HDFC Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "ICICIBANK",
-      "company": "ICICI Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "ICICIBANK",
-      "company": "ICICI Bank Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "IDBI",
-      "company": "IDBI Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "INDIACEM",
-      "company": "The India Cements Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "JKCEMENT",
-      "company": "JK Cement Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "KOTAKBANK",
-      "company": "Kotak Mahindra Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "PNB",
-      "company": "Punjab National Bank",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "PREMIERPOL",
-      "company": "Premier Polyfilm Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "PSB",
-      "company": "Punjab & Sind Bank",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "ROSSARI",
-      "company": "Rossari Biotech Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "SANGAMIND",
-      "company": "Sangam (India) Limited",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "UNIINFO",
-      "company": "Uniinfo Telecom Services Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-18",
-      "date_str": "18 Jul",
-      "symbol": "YESBANK",
-      "company": "Yes Bank Limited",
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "ACE",
+      "company": "Action Construction Equipment Limited",
       "purpose": "Financial Results"
     },
     {
       "date": "2026-07-20",
       "date_str": "20 Jul",
-      "symbol": "ACE",
-      "company": "Action Construction Equipment Limited",
+      "symbol": "ADROITINFO",
+      "company": "Adroit Infotech Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "AIIL",
+      "company": "Authum Investment & Infrastructure Lim",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "ALKALI",
+      "company": "Alkali Metals Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "AURUM",
+      "company": "Aurum PropTech Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "BAJAJHCARE",
+      "company": "Bajaj Healthcare Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "BETA",
+      "company": "Beta Drugs Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "BLUESTONE",
+      "company": "BlueStone Jewellery and Lifestyle Limi",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "CALSOFT",
+      "company": "California Software Company Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "CANHLIFE",
+      "company": "Canara HSBC Life Insurance Company Lim",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "CMPDI",
+      "company": "Central Mine Planning & Design Institu",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "CSM",
+      "company": "CSM Technologies Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "DPABHUSHAN",
+      "company": "D. P. Abhushan Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "DYCL",
+      "company": "Dynamic Cables Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "GFSTEELS",
+      "company": "Grand Foundry Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "INDIASHLTR",
+      "company": "India Shelter Finance Corporation Limi",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "INDOTHAI",
+      "company": "Indo Thai Securities Limited",
+      "purpose": "Financial Results/Fund Raising"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "IOB",
+      "company": "Indian Overseas Bank",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "JPPOWER",
+      "company": "Jaiprakash Power Ventures Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-20",
+      "date_str": "20 Jul",
+      "symbol": "KARURVYSYA",
+      "company": "Karur Vysya Bank Limited",
       "purpose": "Financial Results"
     }
   ]
