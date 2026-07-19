@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T03:01:03.957609Z",
+  "updated": "2026-07-19T03:01:21.979032Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional (cached)",
@@ -18,140 +18,120 @@
   },
   "corporate": [
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "ACE",
       "company": "Action Construction Equipment Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "ADROITINFO",
       "company": "Adroit Infotech Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "AIIL",
       "company": "Authum Investment & Infrastructure Lim",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "ALKALI",
       "company": "Alkali Metals Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "AURUM",
       "company": "Aurum PropTech Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "BAJAJHCARE",
       "company": "Bajaj Healthcare Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "BETA",
       "company": "Beta Drugs Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "BLUESTONE",
       "company": "BlueStone Jewellery and Lifestyle Limi",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "CALSOFT",
       "company": "California Software Company Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "CANHLIFE",
       "company": "Canara HSBC Life Insurance Company Lim",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "CMPDI",
       "company": "Central Mine Planning & Design Institu",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "CSM",
       "company": "CSM Technologies Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "DPABHUSHAN",
       "company": "D. P. Abhushan Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "DYCL",
       "company": "Dynamic Cables Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "GFSTEELS",
       "company": "Grand Foundry Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "INDIASHLTR",
       "company": "India Shelter Finance Corporation Limi",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "INDOTHAI",
       "company": "Indo Thai Securities Limited",
       "purpose": "Financial Results/Fund Raising"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "IOB",
       "company": "Indian Overseas Bank",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "JPPOWER",
       "company": "Jaiprakash Power Ventures Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-20",
       "date_str": "20 Jul",
       "symbol": "KARURVYSYA",
       "company": "Karur Vysya Bank Limited",
