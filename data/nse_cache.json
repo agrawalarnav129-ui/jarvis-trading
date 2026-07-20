@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T03:36:30.716150Z",
+  "updated": "2026-07-20T06:24:40.238867Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional (cached)",
@@ -18,140 +18,120 @@
   },
   "corporate": [
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "AAVAS",
       "company": "Aavas Financiers Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "ABSLAMC",
       "company": "Aditya Birla Sun Life AMC Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "ADANIENSOL",
       "company": "Adani Energy Solutions Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "ADOR",
       "company": "Ador Welding Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "ANTHEM",
       "company": "Anthem Biosciences Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "ARVINDFASN",
       "company": "Arvind Fashions Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "ATGL",
       "company": "Adani Total Gas Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "ATLANTAELE",
       "company": "Atlanta Electricals Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "BAJAJ-AUTO",
       "company": "Bajaj Auto Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "BANDHANBNK",
       "company": "Bandhan Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "BHARATCOAL",
       "company": "Bharat Coking Coal Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "CRAMC",
       "company": "Canara Robeco Asset Management Company",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "CRISIL",
       "company": "Crisil Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "CYIENTDLM",
       "company": "Cyient DLM Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "E2E",
       "company": "E2E Networks Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "GABRIEL",
       "company": "Gabriel India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "GRANULES",
       "company": "Granules India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "HATSUN",
       "company": "Hatsun Agro Product Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "HUHTAMAKI",
       "company": "Huhtamaki India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-21",
       "date_str": "21 Jul",
       "symbol": "INDHOTEL",
       "company": "The Indian Hotels Company Limited",
