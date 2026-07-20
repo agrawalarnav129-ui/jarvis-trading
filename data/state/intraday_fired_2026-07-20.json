@@ -1,0 +1,25 @@
+{
+  "AIIL.NS": [],
+  "BHEL.NS": [],
+  "VAIBHAVGBL.NS": [],
+  "TECHM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BAJAJ-AUTO.NS": [],
+  "RESPONIND.NS": [],
+  "HSCL.NS": [],
+  "EXIDEIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SONACOMS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BHARATFORG.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "FEDERALBNK.NS": [],
+  "MBAPL.NS": [],
+  "ANANTRAJ.NS": [],
+  "JBCHEPHARM.NS": [],
+  "ABB.NS": []
+}
