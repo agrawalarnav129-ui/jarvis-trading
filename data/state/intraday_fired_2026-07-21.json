@@ -1,5 +1,7 @@
 {
-  "APCOTEXIND.NS": [],
+  "APCOTEXIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "BPCL.NS": [
     "BB_SQUEEZE_SETUP"
   ],
