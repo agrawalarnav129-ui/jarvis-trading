@@ -1,0 +1,42 @@
+{
+  "APCOTEXIND.NS": [],
+  "BPCL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LXCHEM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "FLUOROCHEM.NS": [],
+  "HSCL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "NAVINFLUOR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MBAPL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SHYAMMETL.NS": [],
+  "SUNPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BAJAJ-AUTO.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ICICIBANK.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "COLPAL.NS": [],
+  "BHARTIARTL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TORNTPHARM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "METROPOLIS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
