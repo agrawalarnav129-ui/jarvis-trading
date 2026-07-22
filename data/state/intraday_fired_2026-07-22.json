@@ -11,6 +11,7 @@
   "MBAPL.NS": [],
   "IIFL.NS": [],
   "BAJAJ-AUTO.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "THYROCARE.NS": [
@@ -21,5 +22,7 @@
   "INDUSINDBK.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "TORNTPHARM.NS": []
+  "TORNTPHARM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
 }
