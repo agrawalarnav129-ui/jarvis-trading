@@ -1,0 +1,31 @@
+{
+  "NESTLEIND.NS": [],
+  "BAJAJ-AUTO.NS": [],
+  "HSCL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "COSMOFIRST.NS": [],
+  "NAVINFLUOR.NS": [],
+  "SRF.NS": [],
+  "MBAPL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "ARVINDFASN.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "CRISIL.NS": [],
+  "TVSMOTOR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CONSOFINVT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MARICO.NS": [],
+  "IIFL.NS": [],
+  "ABB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ADANIENSOL.NS": []
+}
