@@ -1,6 +1,8 @@
 {
   "NESTLEIND.NS": [],
-  "BAJAJ-AUTO.NS": [],
+  "BAJAJ-AUTO.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "HSCL.NS": [
     "BB_SQUEEZE_SETUP"
   ],
@@ -22,7 +24,10 @@
     "BB_SQUEEZE_SETUP"
   ],
   "MARICO.NS": [],
-  "IIFL.NS": [],
+  "IIFL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "ABB.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
