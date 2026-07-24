@@ -6,13 +6,19 @@
   "MANAPPURAM.NS": [],
   "BAJAJ-AUTO.NS": [],
   "MBAPL.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "TANLA.NS": [],
-  "MEDANTA.NS": [],
+  "MEDANTA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "HEROMOTOCO.NS": [],
   "APCOTEXIND.NS": [],
-  "UJJIVANSFB.NS": [],
+  "UJJIVANSFB.NS": [
+    "MOMENTUM_CONT"
+  ],
   "NUVAMA.NS": [],
   "SUNPHARMA.NS": [],
   "M&M.NS": [],
