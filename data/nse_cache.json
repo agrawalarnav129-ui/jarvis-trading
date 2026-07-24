@@ -1,160 +1,160 @@
 {
-  "updated": "2026-07-23T06:08:37.949901Z",
+  "updated": "2026-07-24T03:01:13.053051Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "22-Jul-2026",
+    "date": "23-Jul-2026",
     "fii": {
-      "buy": 12889.82,
-      "sell": 13709.02,
-      "net": -819.2
+      "buy": 11472.08,
+      "sell": 14471.31,
+      "net": -2999.23
     },
     "dii": {
-      "buy": 13665.69,
-      "sell": 14083.95,
-      "net": -418.26
+      "buy": 16575.3,
+      "sell": 13628.16,
+      "net": 2947.14
     },
-    "net_combined": -1237.46
+    "net_combined": -52.09
   },
   "corporate": [
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "AARON",
-      "company": "Aaron Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "ACC",
-      "company": "ACC Limited",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "3PLAND",
+      "company": "3P Land Holdings Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "ACUTAAS",
-      "company": "Acutaas Chemicals Limited",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "AUBANK",
+      "company": "AU Small Finance Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "ALLDIGI",
-      "company": "Alldigi Tech Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "APARINDS",
-      "company": "Apar Industries Limited",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "BIRLACORPN",
+      "company": "Birla Corporation Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "ARIHANTCAP",
-      "company": "Arihant Capital Markets Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "ASAL",
-      "company": "Automotive Stampings and Assemblies Li",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "DODLA",
+      "company": "Dodla Dairy Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "ASALCBR",
-      "company": "Associated Alcohols & Breweries Ltd.",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "EXXARO",
+      "company": "Exxaro Tiles Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "ATUL",
-      "company": "Atul Limited",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "FCSSOFT",
+      "company": "FCS Software Solutions Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "BANKBARODA",
-      "company": "Bank of Baroda",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "FIVESTAR",
+      "company": "Five-Star Business Finance Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "BANKINDIA",
-      "company": "Bank of India",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "CGPOWER",
-      "company": "CG Power and Industrial Solutions Limi",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "CONCOR",
-      "company": "Container Corporation of India Limited",
-      "purpose": "Financial Results/Dividend/Oth"
-    },
-    {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "CREDITACC",
-      "company": "CREDITACCESS GRAMEEN LIMITED",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "CREDITACC",
-      "company": "CREDITACCESS GRAMEEN LIMITED",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "IDFCFIRSTB",
+      "company": "IDFC First Bank Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "CYBERMEDIA",
-      "company": "Cyber Media (India) Limited",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "IDFCFIRSTB",
+      "company": "IDFC First Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "DALBHARAT",
-      "company": "Dalmia Bharat Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "DCBBANK",
-      "company": "DCB Bank Limited",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "MANYAVAR",
+      "company": "Vedant Fashions Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "DOLPHIN",
-      "company": "Dolphin Offshore Enterprises (India) L",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "NILAINFRA",
+      "company": "Nila Infrastructures Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-24",
-      "date_str": "24 Jul",
-      "symbol": "FABTECH",
-      "company": "Fabtech Technologies Limited",
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "PRUDENT",
+      "company": "Prudent Corporate Advisory Services Li",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "SABEVENTS",
+      "company": "Sab Events & Governance Now Media Limi",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "SBFC",
+      "company": "SBFC Finance Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "SESHAPAPER",
+      "company": "Seshasayee Paper and Boards Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "SURANASOL",
+      "company": "Surana Solar Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-25",
+      "date_str": "25 Jul",
+      "symbol": "ZENTEC",
+      "company": "Zen Technologies Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-26",
+      "date_str": "26 Jul",
+      "symbol": "SMCGLOBAL",
+      "company": "SMC Global Securities Limited",
+      "purpose": "Financial Results/Fund Raising"
+    },
+    {
+      "date": "2026-07-27",
+      "date_str": "27 Jul",
+      "symbol": "AASTHA",
+      "company": "Aastha Spintex Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-27",
+      "date_str": "27 Jul",
+      "symbol": "ACL",
+      "company": "Andhra Cements Limited",
       "purpose": "Financial Results"
     }
   ]
