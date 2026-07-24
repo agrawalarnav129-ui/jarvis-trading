@@ -1,0 +1,23 @@
+{
+  "CARERATING.NS": [],
+  "LXCHEM.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "MANAPPURAM.NS": [],
+  "BAJAJ-AUTO.NS": [],
+  "MBAPL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TANLA.NS": [],
+  "MEDANTA.NS": [],
+  "HEROMOTOCO.NS": [],
+  "APCOTEXIND.NS": [],
+  "UJJIVANSFB.NS": [],
+  "NUVAMA.NS": [],
+  "SUNPHARMA.NS": [],
+  "M&M.NS": [],
+  "ADANIENSOL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TORNTPHARM.NS": []
+}
