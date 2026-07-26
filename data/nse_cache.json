@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T03:00:53.259872Z",
+  "updated": "2026-07-26T03:01:00.435832Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,13 +17,6 @@
     "net_combined": 1560.78
   },
   "corporate": [
-    {
-      "date": "2026-07-26",
-      "date_str": "26 Jul",
-      "symbol": "SMCGLOBAL",
-      "company": "SMC Global Securities Limited",
-      "purpose": "Financial Results/Fund Raising"
-    },
     {
       "date": "2026-07-27",
       "date_str": "27 Jul",
@@ -155,6 +148,13 @@
       "date_str": "27 Jul",
       "symbol": "EMKAY",
       "company": "Emkay Global Financial Services Limite",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-27",
+      "date_str": "27 Jul",
+      "symbol": "EPIGRAL",
+      "company": "Epigral Limited",
       "purpose": "Financial Results"
     }
   ]
