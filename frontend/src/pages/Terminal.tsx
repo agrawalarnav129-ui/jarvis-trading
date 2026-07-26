@@ -103,6 +103,28 @@ function AIPanel({ sym }: { sym: string }) {
   );
 }
 
+function EarnPanel({ sym }: { sym: string }) {
+  const { data, loading } = useFetch(() => api.earningsPlaybook(sym), [sym]);
+  if (loading) return <Sect code="EARN" title="Earnings Playbook"><div className="text-[0.66rem]" style={{ color: T.dim }}>Loading…</div></Sect>;
+  if (!data?.available) return <Sect code="EARN" title="Earnings Playbook"><div className="text-[0.66rem]" style={{ color: T.dim }}>{data?.note || "No earnings history."}</div></Sect>;
+  const drift = data.avg_drift5 ?? 0;
+  return (
+    <Sect code="EARN" title="Earnings Playbook">
+      {data.next_date && (
+        <div className="mb-2 px-2 py-1 text-[0.66rem] font-bold" style={{ background: (data.days_to ?? 99) <= 7 ? T.down : T.line, color: (data.days_to ?? 99) <= 7 ? "#000" : T.txt }}>
+          NEXT RESULTS · {data.next_date}{data.days_to != null ? ` (${data.days_to}d)` : ""}
+        </div>
+      )}
+      <Row l="Avg move on results" v={`±${fmtN(data.avg_abs_move)}%`} color={T.amber} />
+      <Row l="Biggest move" v={`±${fmtN(data.max_abs_move)}%`} />
+      <Row l="Reactions positive" v={`${fmtN(data.pct_up, 0)}%`} color={(data.pct_up ?? 50) >= 50 ? T.up : T.down} />
+      <Row l="Avg 5-day drift after" v={`${drift >= 0 ? "+" : ""}${fmtN(drift)}%`} color={drift >= 0 ? T.up : T.down} />
+      <Row l="Last reaction" v={`${(data.last_move ?? 0) >= 0 ? "+" : ""}${fmtN(data.last_move)}%`} color={(data.last_move ?? 0) >= 0 ? T.up : T.down} />
+      <div className="text-[0.55rem] mt-2" style={{ color: T.dim }}>Based on {data.n} past quarters · reaction = first close after announcement.</div>
+    </Sect>
+  );
+}
+
 export default function Terminal() {
   const { symbol: pSym } = useParams();
   const nav = useNavigate();
@@ -268,6 +290,9 @@ export default function Terminal() {
 
             {/* AI read */}
             <AIPanel sym={d.symbol} />
+
+            {/* Earnings playbook */}
+            <EarnPanel sym={d.symbol} />
 
             {/* ANR analyst consensus */}
             <Sect code="ANR" title="Analyst Consensus">

@@ -29,6 +29,7 @@ const TradeCheck = lazy(() => import("./pages/TradeCheck"));
 const YourEdge = lazy(() => import("./pages/YourEdge"));
 const Positions = lazy(() => import("./pages/Positions"));
 const Terminal = lazy(() => import("./pages/Terminal"));
+const Paper = lazy(() => import("./pages/Paper"));
 const Sector = lazy(() => import("./pages/Sector"));
 const StockDetail = lazy(() => import("./pages/StockDetail"));
 const Placeholder = lazy(() => import("./pages/Placeholder"));
@@ -71,6 +72,7 @@ export default function App() {
               <Route path="/trade-check" element={<TradeCheck />} />
               <Route path="/edge" element={<YourEdge />} />
               <Route path="/positions" element={<Positions />} />
+              <Route path="/paper" element={<Paper />} />
               <Route path="/terminal" element={<Terminal />} />
               <Route path="/terminal/:symbol" element={<Terminal />} />
               <Route path="/sector/:name" element={<Sector />} />

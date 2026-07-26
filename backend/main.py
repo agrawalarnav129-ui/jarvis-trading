@@ -595,6 +595,71 @@ def sector_constituents(sector: str):
         raise HTTPException(status_code=503, detail="Sector data unavailable")
 
 
+# Heatmap sector label → matching universe Industry values (substring match)
+_SECTOR_INDUSTRY = {
+    "IT": ["Information Technology", "IT", "Telecom"],
+    "Banking": ["Financial Services", "Bank"],
+    "PSU Bank": ["Financial Services", "Bank"],
+    "Auto": ["Automobile"],
+    "Pharma": ["Pharma", "Healthcare"],
+    "FMCG": ["FMCG", "Consumer"],
+    "Metal": ["Metals & Mining"],
+    "Energy": ["Oil Gas & Fuels", "Power", "Energy"],
+    "Infra": ["Construction", "Capital Goods", "Services"],
+    "Realty": ["Realty", "Construction"],
+}
+_secdd_cache: TTLCache = TTLCache(maxsize=16, ttl=600)
+
+
+@app.get("/api/sector/constituents")
+def sector_constituents(sector: str, limit: int = 25):
+    """Drill-down: screener-scored constituents of a heatmap sector, ranked."""
+    def _run():
+        import pandas as pd
+        from config import DATA_DIR
+        uni = pd.read_csv(DATA_DIR / "universe.csv")
+        pats = _SECTOR_INDUSTRY.get(sector, [sector])
+        mask = uni["Industry"].fillna("").str.contains("|".join(pats), case=False, regex=True)
+        syms = {s.upper() for s in uni[mask]["Symbol"].dropna().astype(str)}
+        rows = [r for r in _full_screener() if str(r.get("symbol", "")).replace(".NS", "").upper() in syms]
+        rows.sort(key=lambda r: (r.get("score") or 0), reverse=True)
+        return {"available": bool(rows), "sector": sector, "count": len(rows),
+                "constituents": rows[:limit]}
+    try:
+        return _keyed(_secdd_cache, f"{sector}|{limit}", _run)
+    except Exception as exc:
+        logger.exception("Sector drill-down failed: {}", exc)
+        return {"available": False, "sector": sector, "constituents": [], "note": "Unavailable."}
+
+
+@app.get("/api/paper")
+def paper_portfolios():
+    """Paper-Trading Autopilot: forward track record per alert-enabled scan."""
+    try:
+        from analytics.paper import all_portfolios
+        return all_portfolios()
+    except Exception as exc:
+        logger.exception("Paper portfolios failed: {}", exc)
+        return {"available": False, "note": "Paper portfolios unavailable."}
+
+
+_earn_cache: TTLCache = TTLCache(maxsize=64, ttl=3600)
+
+
+@app.get("/api/earnings-playbook")
+def earnings_playbook(symbol: str):
+    """Historical post-earnings behavior for a symbol (results-day move, drift)."""
+    try:
+        from analytics.earnings import earnings_stats
+        st = _keyed(_earn_cache, symbol.upper(), lambda: earnings_stats(symbol))
+        if not st:
+            return {"available": False, "note": "No earnings history for this symbol."}
+        return {"available": True, "symbol": symbol.upper().replace(".NS", ""), **st}
+    except Exception as exc:
+        logger.exception("Earnings playbook failed: {}", exc)
+        return {"available": False, "note": "Earnings playbook unavailable."}
+
+
 _honesty_cache: TTLCache = TTLCache(maxsize=1, ttl=3600)
 
 

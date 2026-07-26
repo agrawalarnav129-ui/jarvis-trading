@@ -87,6 +87,10 @@ def main() -> None:
     state = _load_state()
     pings = []
 
+    # Paper-Trading Autopilot: every alert scan also feeds a virtual portfolio
+    from analytics.paper import load_state as paper_load, portfolio_stats, process_signals, save_state as paper_save
+    paper_state = paper_load()
+
     for s in scans:
         name = s.get("name", "scan")
         syms = all_syms[:UNIVERSE_N.get(s.get("universe", "NIFTY 100"), 100)]
@@ -103,6 +107,20 @@ def main() -> None:
         if new:
             pings.append(f"⚡ <b>{name}</b> — {len(new)} new match{'es' if len(new) != 1 else ''}: "
                          + ", ".join(new[:12]) + ("…" if len(new) > 12 else ""))
+
+        # autopilot: take the new signals virtually + mark existing to market
+        try:
+            paper_state = process_signals(name, new, paper_state)
+            st = portfolio_stats(paper_state["portfolios"][name])
+            logger.info("paper '{}': {} open, {} closed, {:+.2f}R total", name,
+                        st["open_positions"], st["trades"], st["total_r"])
+        except Exception as exc:
+            logger.warning("paper autopilot '{}' failed: {}", name, exc)
+
+    try:
+        paper_save(paper_state)
+    except Exception as exc:
+        logger.warning("paper state save failed: {}", exc)
 
     STATE.parent.mkdir(parents=True, exist_ok=True)
     STATE.write_text(json.dumps(state, separators=(",", ":")), encoding="utf-8")
