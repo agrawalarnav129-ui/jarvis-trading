@@ -1,0 +1,30 @@
+{
+  "BHAGERIA.NS": [],
+  "MAHLOG.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "UNITDSPR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LALPATHLAB.NS": [],
+  "THYROCARE.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "PVRINOX.NS": [],
+  "CONFIPET.NS": [],
+  "NUVAMA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MANAPPURAM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "APCOTEXIND.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "MBAPL.NS": [],
+  "LAURUSLABS.NS": [],
+  "TANLA.NS": [],
+  "HSCL.NS": [],
+  "HCLTECH.NS": []
+}
