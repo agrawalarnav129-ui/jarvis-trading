@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T03:01:00.435832Z",
+  "updated": "2026-07-27T03:01:17.423540Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -18,143 +18,143 @@
   },
   "corporate": [
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "AASTHA",
-      "company": "Aastha Spintex Limited",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "5PAISA",
+      "company": "5Paisa Capital Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "AARNAV",
+      "company": "Aarnav Fashions Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "ACL",
-      "company": "Andhra Cements Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "AEROFLEX",
-      "company": "Aeroflex Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "ANTELOPUS",
-      "company": "Antelopus Selan Energy Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "AURIONPRO",
-      "company": "Aurionpro Solutions Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "BALAMINES",
-      "company": "Balaji Amines Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "BEL",
-      "company": "Bharat Electronics Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "BHAGYANGR",
-      "company": "Bhagyanagar India Limited",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "AGI",
+      "company": "AGI Greenpac Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "BKMINDST",
-      "company": "Bkm Industries Limited",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "ALMONDZ",
+      "company": "Almondz Global Securities Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "BYKE",
-      "company": "The Byke Hospitality Ltd",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "CANBK",
-      "company": "Canara Bank",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "AMBUJACEM",
+      "company": "Ambuja Cements Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "CCL",
-      "company": "CCL Products (India) Limited",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "BSOFT",
+      "company": "BIRLASOFT LIMITED",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "CCCL",
+      "company": "Consolidated Construction Consortium L",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "CEMPRO",
+      "company": "Cemindia Projects Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "CENTENKA",
+      "company": "Century Enka Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "CHOLAFIN",
+      "company": "Cholamandalam Investment and Finance C",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "CHOLAFIN",
+      "company": "Cholamandalam Investment and Finance C",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "CUB",
+      "company": "City Union Bank Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "DAVANGERE",
+      "company": "Davangere Sugar Company Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "DCMSHRIRAM",
+      "company": "DCM Shriram Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "DEEPINDS",
+      "company": "Deep Industries Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "CGCL",
-      "company": "Capri Global Capital Limited",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "DWARKESH",
+      "company": "Dwarikesh Sugar Industries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "CINELINE",
-      "company": "Cineline India Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "COALINDIA",
-      "company": "Coal India Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "COFORGE",
-      "company": "Coforge Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "COFORGE",
-      "company": "Coforge Limited",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "EQUITASBNK",
+      "company": "Equitas Small Finance Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "DIGITIDE",
-      "company": "Digitide Solutions Limited",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "GINNIFILA",
+      "company": "Ginni Filaments Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "EMKAY",
-      "company": "Emkay Global Financial Services Limite",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "HINDUNILVR",
+      "company": "Hindustan Unilever Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-27",
-      "date_str": "27 Jul",
-      "symbol": "EPIGRAL",
-      "company": "Epigral Limited",
+      "date": "2026-07-28",
+      "date_str": "28 Jul",
+      "symbol": "HLVLTD",
+      "company": "HLV LIMITED",
       "purpose": "Financial Results"
     }
   ]
