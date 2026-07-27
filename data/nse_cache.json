@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T03:01:17.423540Z",
+  "updated": "2026-07-27T06:37:58.511265Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -85,14 +85,14 @@
       "date_str": "28 Jul",
       "symbol": "CHOLAFIN",
       "company": "Cholamandalam Investment and Finance C",
-      "purpose": "Financial Results"
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-07-28",
       "date_str": "28 Jul",
       "symbol": "CHOLAFIN",
       "company": "Cholamandalam Investment and Finance C",
-      "purpose": "Fund Raising"
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-07-28",
