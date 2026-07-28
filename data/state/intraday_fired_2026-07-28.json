@@ -1,0 +1,30 @@
+{
+  "IGPL.NS": [],
+  "RKFORGE.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "IDFCFIRSTB.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LAURUSLABS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MBAPL.NS": [],
+  "THYROCARE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CONFIPET.NS": [],
+  "VAIBHAVGBL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "COLPAL.NS": [],
+  "SUNFLAG.NS": [],
+  "PVRINOX.NS": [],
+  "MAHLOG.NS": [],
+  "ATUL.NS": [],
+  "SUNPHARMA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "APCOTEXIND.NS": []
+}
