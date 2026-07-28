@@ -10,15 +10,20 @@
   "LAURUSLABS.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "MBAPL.NS": [],
+  "MBAPL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "THYROCARE.NS": [
     "BB_SQUEEZE_SETUP"
   ],
   "CONFIPET.NS": [],
   "VAIBHAVGBL.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "COLPAL.NS": [],
+  "COLPAL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "SUNFLAG.NS": [],
   "PVRINOX.NS": [],
   "MAHLOG.NS": [],
@@ -26,5 +31,7 @@
   "SUNPHARMA.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "APCOTEXIND.NS": []
+  "APCOTEXIND.NS": [
+    "MOMENTUM_CONT"
+  ]
 }
