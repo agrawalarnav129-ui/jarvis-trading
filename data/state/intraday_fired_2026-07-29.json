@@ -1,8 +1,12 @@
 {
-  "AFFLE.NS": [],
+  "AFFLE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "MANKIND.NS": [],
   "PFIZER.NS": [],
-  "MASTEK.NS": [],
+  "MASTEK.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "VAIBHAVGBL.NS": [],
   "MARICO.NS": [
     "BB_SQUEEZE_SETUP"
@@ -14,8 +18,13 @@
     "BB_SQUEEZE_SETUP"
   ],
   "COFORGE.NS": [],
-  "SUNPHARMA.NS": [],
-  "MANAPPURAM.NS": [],
+  "SUNPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MANAPPURAM.NS": [
+    "MOMENTUM_CONT"
+  ],
   "IGPL.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
