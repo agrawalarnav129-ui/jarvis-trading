@@ -1,0 +1,32 @@
+{
+  "AFFLE.NS": [],
+  "MANKIND.NS": [],
+  "PFIZER.NS": [],
+  "MASTEK.NS": [],
+  "VAIBHAVGBL.NS": [],
+  "MARICO.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NESTLEIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "IEX.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "COFORGE.NS": [],
+  "SUNPHARMA.NS": [],
+  "MANAPPURAM.NS": [],
+  "IGPL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "IDFCFIRSTB.NS": [],
+  "RKFORGE.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "TVSMOTOR.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
