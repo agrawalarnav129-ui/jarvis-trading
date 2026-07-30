@@ -1,0 +1,32 @@
+{
+  "CRAFTSMAN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ASIANPAINT.NS": [],
+  "APCOTEXIND.NS": [],
+  "BHARTIARTL.NS": [],
+  "ASHAPURMIN.NS": [],
+  "METROPOLIS.NS": [],
+  "PCBL.NS": [],
+  "REDINGTON.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "LALPATHLAB.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "COLPAL.NS": [],
+  "IGPL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "RECLTD.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PIDILITIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SUNPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "TVSMOTOR.NS": []
+}
