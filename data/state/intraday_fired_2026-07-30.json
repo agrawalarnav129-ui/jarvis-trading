@@ -4,7 +4,9 @@
   ],
   "ASIANPAINT.NS": [],
   "APCOTEXIND.NS": [],
-  "BHARTIARTL.NS": [],
+  "BHARTIARTL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "ASHAPURMIN.NS": [],
   "METROPOLIS.NS": [],
   "PCBL.NS": [],
@@ -16,7 +18,8 @@
   ],
   "COLPAL.NS": [],
   "IGPL.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "RECLTD.NS": [
     "BB_SQUEEZE_SETUP"
@@ -28,5 +31,7 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "TVSMOTOR.NS": []
+  "TVSMOTOR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
 }
