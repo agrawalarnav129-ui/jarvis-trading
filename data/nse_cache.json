@@ -1,160 +1,160 @@
 {
-  "updated": "2026-07-30T05:51:04.392617Z",
+  "updated": "2026-07-31T03:01:34.631851Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "29-Jul-2026",
+    "date": "30-Jul-2026",
     "fii": {
-      "buy": 17358.31,
-      "sell": 14376.44,
-      "net": 2981.87
+      "buy": 17431.96,
+      "sell": 13808.45,
+      "net": 3623.51
     },
     "dii": {
-      "buy": 18176.22,
-      "sell": 17178.2,
-      "net": 998.02
+      "buy": 17979.63,
+      "sell": 19843.66,
+      "net": -1864.03
     },
-    "net_combined": 3979.89
+    "net_combined": 1759.48
   },
   "corporate": [
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "20MICRONS",
-      "company": "20 Microns Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "AARTISURF",
+      "company": "Aarti Surfactants Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "ABLBL",
+      "company": "Aditya Birla Lifestyle Brands Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "AMJLAND",
+      "company": "Amj Land Holdings Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "APLAPOLLO",
+      "company": "APL Apollo Tubes Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "BALMLAWRIE",
+      "company": "Balmer Lawrie & Company Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "AADHARHFC",
-      "company": "Aadhar Housing Finance Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "CDSL",
+      "company": "Central Depository Services (India) Li",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "AARTIDRUGS",
-      "company": "Aarti Drugs Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "CELEBRITY",
+      "company": "Celebrity Fashions Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "ABB",
-      "company": "ABB India Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "ABCAPITAL",
-      "company": "Aditya Birla Capital Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "CLEAN",
+      "company": "Clean Science and Technology Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "AETHER",
-      "company": "Aether Industries Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "COMPUSOFT",
+      "company": "Compucom Software Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "DIAMONDYD",
+      "company": "Prataap Snacks Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "DIVISLAB",
+      "company": "Divi's Laboratories Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "DLINKINDIA",
+      "company": "D-Link (India) Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "APTUS",
-      "company": "Aptus Value Housing Finance India Limi",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "EPACKPEB",
+      "company": "EPack Prefab Technologies Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "ASTEC",
-      "company": "Astec LifeSciences Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "AVL",
-      "company": "Aditya Vision Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "GAEL",
+      "company": "Gujarat Ambuja Exports Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "AVONMORE",
-      "company": "Avonmore Capital & Management Services",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "GHCL",
+      "company": "GHCL Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "BAJAJFINSV",
-      "company": "Bajaj Finserv Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "GPTINFRA",
+      "company": "GPT Infraprojects Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "BAJAJHLDNG",
-      "company": "Bajaj Holdings & Investment Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "BANSWRAS",
-      "company": "Banswara Syntex Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "BLAL",
-      "company": "BEML Land Assets Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "BLUEDART",
-      "company": "Blue Dart Express Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "BLUSPRING",
-      "company": "Bluspring Enterprises Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "CENTURYPLY",
-      "company": "Century Plyboards (India) Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "INDTERRAIN",
+      "company": "Indian Terrain Fashions Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "CLEANMAX",
-      "company": "Clean Max Enviro Energy Solutions Limi",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "CONCORDBIO",
-      "company": "Concord Biotech Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "IPL",
+      "company": "India Pesticides Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-07-31",
-      "date_str": "31 Jul",
-      "symbol": "CORONA",
-      "company": "CORONA Remedies Limited",
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "LATENTVIEW",
+      "company": "Latent View Analytics Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-01",
+      "date_str": "01 Aug",
+      "symbol": "MGEL",
+      "company": "Mangalam Global Enterprise Limited",
       "purpose": "Financial Results"
     }
   ]
