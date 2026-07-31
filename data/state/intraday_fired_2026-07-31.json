@@ -6,7 +6,10 @@
   "REDINGTON.NS": [
     "MOMENTUM_CONT"
   ],
-  "EXIDEIND.NS": [],
+  "EXIDEIND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "NESTLEIND.NS": [],
   "TVSMOTOR.NS": [],
   "IGPL.NS": [
@@ -18,7 +21,9 @@
   ],
   "STARHEALTH.NS": [],
   "LXCHEM.NS": [],
-  "METROPOLIS.NS": [],
+  "METROPOLIS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "SAPPHIRE.NS": [],
   "HEROMOTOCO.NS": [
     "BB_SQUEEZE_SETUP",
