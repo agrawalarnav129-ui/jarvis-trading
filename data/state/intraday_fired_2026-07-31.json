@@ -1,0 +1,31 @@
+{
+  "ALKEM.NS": [],
+  "EICHERMOT.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "REDINGTON.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "EXIDEIND.NS": [],
+  "NESTLEIND.NS": [],
+  "TVSMOTOR.NS": [],
+  "IGPL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "PFIZER.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "STARHEALTH.NS": [],
+  "LXCHEM.NS": [],
+  "METROPOLIS.NS": [],
+  "SAPPHIRE.NS": [],
+  "HEROMOTOCO.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "HAVELLS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ZEEL.NS": []
+}
