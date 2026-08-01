@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-31T06:20:29.091521Z",
+  "updated": "2026-08-01T03:01:05.859462Z",
   "fii_dii": {
     "available": true,
-    "source": "NSE provisional",
+    "source": "NSE provisional (cached)",
     "date": "30-Jul-2026",
     "fii": {
       "buy": 17431.96,
@@ -18,143 +18,143 @@
   },
   "corporate": [
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "AARTISURF",
-      "company": "Aarti Surfactants Limited",
+      "date": "2026-08-02",
+      "date_str": "02 Aug",
+      "symbol": "BIRLACABLE",
+      "company": "Birla Cable Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "ABLBL",
-      "company": "Aditya Birla Lifestyle Brands Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "AMJLAND",
-      "company": "Amj Land Holdings Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "APLAPOLLO",
-      "company": "APL Apollo Tubes Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "BALMLAWRIE",
-      "company": "Balmer Lawrie & Company Limited",
+      "date": "2026-08-02",
+      "date_str": "02 Aug",
+      "symbol": "PERSISTENT",
+      "company": "Persistent Systems Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "CDSL",
-      "company": "Central Depository Services (India) Li",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "AEROPLANE",
+      "company": "Amir Chand Jagdish Kumar (Exports) Lim",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "CELEBRITY",
-      "company": "Celebrity Fashions Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "ARTEMISMED",
+      "company": "Artemis Medicare Services Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "CLEAN",
-      "company": "Clean Science and Technology Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "ATHERENERG",
+      "company": "Ather Energy Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "COMPUSOFT",
-      "company": "Compucom Software Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "AVADHSUGAR",
+      "company": "Avadh Sugar & Energy Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "DIAMONDYD",
-      "company": "Prataap Snacks Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "DIVISLAB",
-      "company": "Divi's Laboratories Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "DLINKINDIA",
-      "company": "D-Link (India) Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "BHAGCHEM",
+      "company": "Bhagiradha Chemicals & Industries Limi",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "EPACKPEB",
-      "company": "EPack Prefab Technologies Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "BHARATGEAR",
+      "company": "Bharat Gears Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "GAEL",
-      "company": "Gujarat Ambuja Exports Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "BLUEJET",
+      "company": "Blue Jet Healthcare Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "BOROSCI",
+      "company": "Borosil Scientific Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "BUTTERFLY",
+      "company": "Butterfly Gandhimathi Appliances Limit",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "CAMS",
+      "company": "Computer Age Management Services Limit",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "CHEMCON",
+      "company": "Chemcon Speciality Chemicals Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "GHCL",
-      "company": "GHCL Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "GPTINFRA",
-      "company": "GPT Infraprojects Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "INDTERRAIN",
-      "company": "Indian Terrain Fashions Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "COASTCORP",
+      "company": "Coastal Corporation Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "IPL",
-      "company": "India Pesticides Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "CRIZAC",
+      "company": "Crizac Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "LATENTVIEW",
-      "company": "Latent View Analytics Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "DGCONTENT",
+      "company": "Digicontent Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-01",
-      "date_str": "01 Aug",
-      "symbol": "MGEL",
-      "company": "Mangalam Global Enterprise Limited",
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "DHANUKA",
+      "company": "Dhanuka Agritech Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "DLF",
+      "company": "DLF Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "DOMS",
+      "company": "DOMS Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "ESCORTS",
+      "company": "Escorts Kubota Limited",
       "purpose": "Financial Results"
     }
   ]
