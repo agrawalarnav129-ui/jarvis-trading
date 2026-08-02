@@ -1,36 +1,22 @@
 {
-  "updated": "2026-08-01T03:01:05.859462Z",
+  "updated": "2026-08-02T03:01:01.760713Z",
   "fii_dii": {
     "available": true,
-    "source": "NSE provisional (cached)",
-    "date": "30-Jul-2026",
+    "source": "NSE provisional",
+    "date": "31-Jul-2026",
     "fii": {
-      "buy": 17431.96,
-      "sell": 13808.45,
-      "net": 3623.51
+      "buy": 19045.51,
+      "sell": 18768.03,
+      "net": 277.48
     },
     "dii": {
-      "buy": 17979.63,
-      "sell": 19843.66,
-      "net": -1864.03
+      "buy": 19885.8,
+      "sell": 17625.43,
+      "net": 2260.37
     },
-    "net_combined": 1759.48
+    "net_combined": 2537.85
   },
   "corporate": [
-    {
-      "date": "2026-08-02",
-      "date_str": "02 Aug",
-      "symbol": "BIRLACABLE",
-      "company": "Birla Cable Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-02",
-      "date_str": "02 Aug",
-      "symbol": "PERSISTENT",
-      "company": "Persistent Systems Limited",
-      "purpose": "Financial Results/Other busine"
-    },
     {
       "date": "2026-08-03",
       "date_str": "03 Aug",
@@ -155,6 +141,20 @@
       "date_str": "03 Aug",
       "symbol": "ESCORTS",
       "company": "Escorts Kubota Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "ETHOSLTD",
+      "company": "Ethos Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-03",
+      "date_str": "03 Aug",
+      "symbol": "GANECOS",
+      "company": "Ganesha Ecosphere Limited",
       "purpose": "Financial Results"
     }
   ]
