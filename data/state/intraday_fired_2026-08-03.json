@@ -1,0 +1,31 @@
+{
+  "GAIL.NS": [],
+  "QUESS.NS": [],
+  "BAJFINANCE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "REDINGTON.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "AETHER.NS": [],
+  "MOTHERSON.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ASTRAMICRO.NS": [],
+  "EICHERMOT.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "HAL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SIEMENS.NS": [],
+  "IGPL.NS": [],
+  "TVSMOTOR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "RKFORGE.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "BAJAJFINSV.NS": [],
+  "TORNTPHARM.NS": []
+}
