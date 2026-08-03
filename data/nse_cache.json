@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T03:01:01.760713Z",
+  "updated": "2026-08-03T03:01:18.888423Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -18,144 +18,144 @@
   },
   "corporate": [
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "AEROPLANE",
-      "company": "Amir Chand Jagdish Kumar (Exports) Lim",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "ADROITINFO",
+      "company": "Adroit Infotech Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "ARTEMISMED",
-      "company": "Artemis Medicare Services Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "AGARWALEYE",
+      "company": "Dr. Agarwal's Health Care Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "ATHERENERG",
-      "company": "Ather Energy Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "AJMERA",
+      "company": "Ajmera Realty & Infra India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "AVADHSUGAR",
-      "company": "Avadh Sugar & Energy Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "ALKYLAMINE",
+      "company": "Alkyl Amines Chemicals Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "BHAGCHEM",
-      "company": "Bhagiradha Chemicals & Industries Limi",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "BHARATGEAR",
-      "company": "Bharat Gears Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "ANDHRAPAP",
+      "company": "ANDHRA PAPER LIMITED",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "BLUEJET",
-      "company": "Blue Jet Healthcare Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "BOROSCI",
-      "company": "Borosil Scientific Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "BUTTERFLY",
-      "company": "Butterfly Gandhimathi Appliances Limit",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "CAMS",
-      "company": "Computer Age Management Services Limit",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "ANZEN",
+      "company": "Anzen India Energy Yield Plus Trust",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "CHEMCON",
-      "company": "Chemcon Speciality Chemicals Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "APLLTD",
+      "company": "Alembic Pharmaceuticals Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "COASTCORP",
-      "company": "Coastal Corporation Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "ASKAUTOLTD",
+      "company": "ASK Automotive Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "CRIZAC",
-      "company": "Crizac Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "AVALON",
+      "company": "Avalon Technologies Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "DGCONTENT",
-      "company": "Digicontent Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "BASF",
+      "company": "BASF India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "DHANUKA",
-      "company": "Dhanuka Agritech Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "BBL",
+      "company": "Bharat Bijlee Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "DLF",
-      "company": "DLF Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "BHARATSE",
+      "company": "Bharat Seats Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "DOMS",
-      "company": "DOMS Industries Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "BHARTIARTL",
+      "company": "Bharti Airtel Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "ESCORTS",
-      "company": "Escorts Kubota Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "BHARTIHEXA",
+      "company": "Bharti Hexacom Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "ETHOSLTD",
-      "company": "Ethos Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "BSE",
+      "company": "BSE Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-03",
-      "date_str": "03 Aug",
-      "symbol": "GANECOS",
-      "company": "Ganesha Ecosphere Limited",
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "CAPILLARY",
+      "company": "Capillary Technologies India Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "CASTROLIND",
+      "company": "Castrol India Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "CLEDUCATE",
+      "company": "CL Educate Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "CNL",
+      "company": "Creative Newtech Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-04",
+      "date_str": "04 Aug",
+      "symbol": "DEEDEV",
+      "company": "DEE Development Engineers Limited",
+      "purpose": "Financial Results/Other busine"
     }
   ]
 }
