@@ -1,11 +1,27 @@
 {
   "ABCAPITAL.NS": [],
-  "CONFIPET.NS": [],
-  "MINDACORP.NS": [],
-  "REDINGTON.NS": [],
-  "IGPL.NS": [],
-  "GULFOILLUB.NS": [],
-  "PAYTM.NS": [],
+  "CONFIPET.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MINDACORP.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "REDINGTON.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "IGPL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "GULFOILLUB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "PAYTM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "GRASIM.NS": [],
   "MOTHERSON.NS": [],
   "GLAND.NS": [
@@ -15,8 +31,13 @@
   "SHRIRAMFIN.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "BALRAMCHIN.NS": [],
+  "BALRAMCHIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "ABB.NS": [],
-  "MEDANTA.NS": [],
+  "MEDANTA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "ETHOSLTD.NS": []
 }
