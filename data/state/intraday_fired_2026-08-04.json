@@ -1,0 +1,22 @@
+{
+  "ABCAPITAL.NS": [],
+  "CONFIPET.NS": [],
+  "MINDACORP.NS": [],
+  "REDINGTON.NS": [],
+  "IGPL.NS": [],
+  "GULFOILLUB.NS": [],
+  "PAYTM.NS": [],
+  "GRASIM.NS": [],
+  "MOTHERSON.NS": [],
+  "GLAND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SHRIRAMFIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BALRAMCHIN.NS": [],
+  "ABB.NS": [],
+  "MEDANTA.NS": [],
+  "ETHOSLTD.NS": []
+}
