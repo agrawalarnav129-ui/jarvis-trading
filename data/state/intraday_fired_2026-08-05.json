@@ -28,6 +28,7 @@
     "MOMENTUM_CONT"
   ],
   "MOTHERSON.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "CONFIPET.NS": [
@@ -36,5 +37,7 @@
   "REDINGTON.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "RAIN.NS": []
+  "RAIN.NS": [
+    "MOMENTUM_CONT"
+  ]
 }
