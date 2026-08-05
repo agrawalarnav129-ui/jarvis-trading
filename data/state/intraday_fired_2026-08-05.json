@@ -1,0 +1,40 @@
+{
+  "AETHER.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "JSWSTEEL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "APARINDS.NS": [],
+  "BASF.NS": [],
+  "ASTERDM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "IGPL.NS": [],
+  "SIEMENS.NS": [],
+  "BERGEPAINT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TRENT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "THYROCARE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PAYTM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MOTHERSON.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "CONFIPET.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "REDINGTON.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "RAIN.NS": []
+}
