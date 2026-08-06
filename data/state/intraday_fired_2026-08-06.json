@@ -1,0 +1,31 @@
+{
+  "PNBHOUSING.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "GREENLAM.NS": [],
+  "SAPPHIRE.NS": [],
+  "ASAHIINDIA.NS": [],
+  "BATAINDIA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BOSCHLTD.NS": [],
+  "PIDILITIND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BERGEPAINT.NS": [],
+  "BASF.NS": [],
+  "ASTERDM.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "ARMANFIN.NS": [],
+  "SHRIRAMFIN.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "GNFC.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "IFBIND.NS": [],
+  "BHARTIARTL.NS": []
+}
