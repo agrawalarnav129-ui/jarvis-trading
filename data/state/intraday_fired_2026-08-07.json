@@ -10,8 +10,13 @@
     "MOMENTUM_CONT"
   ],
   "GNFC.NS": [],
-  "APARINDS.NS": [],
-  "AARTIIND.NS": [],
+  "APARINDS.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "AARTIIND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "CHOLAFIN.NS": [],
   "PNBHOUSING.NS": [],
   "AUBANK.NS": [],
