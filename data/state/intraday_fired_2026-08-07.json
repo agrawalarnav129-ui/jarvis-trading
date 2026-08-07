@@ -23,7 +23,9 @@
     "MOMENTUM_CONT"
   ],
   "CHOLAFIN.NS": [],
-  "PNBHOUSING.NS": [],
+  "PNBHOUSING.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "AUBANK.NS": [],
   "AIIL.NS": [
     "BB_SQUEEZE_SETUP"
