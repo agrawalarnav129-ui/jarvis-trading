@@ -1,160 +1,160 @@
 {
-  "updated": "2026-08-06T06:00:22.567679Z",
+  "updated": "2026-08-07T03:01:16.754007Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "05-Aug-2026",
+    "date": "06-Aug-2026",
     "fii": {
-      "buy": 15940.5,
-      "sell": 16883.92,
-      "net": -943.42
+      "buy": 16161.35,
+      "sell": 16179.21,
+      "net": -17.86
     },
     "dii": {
-      "buy": 19353.43,
-      "sell": 16470.26,
-      "net": 2883.17
+      "buy": 19723.68,
+      "sell": 15710.08,
+      "net": 4013.6
     },
-    "net_combined": 1939.75
+    "net_combined": 3995.74
   },
   "corporate": [
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "AARTIPHARM",
-      "company": "Aarti Pharmalabs Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "ABFRL",
+      "company": "Aditya Birla Fashion and Retail Limite",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "ADVAIT",
-      "company": "Advait Energy Transitions Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "ADVENZYMES",
+      "company": "Advanced Enzyme Technologies Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "AFCONS",
-      "company": "Afcons Infrastructure Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "ADVENZYMES",
+      "company": "Advanced Enzyme Technologies Limited",
+      "purpose": "Buyback"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "AFFLE",
+      "company": "Affle 3i Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "AKSHAR",
-      "company": "Akshar Spintex Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "AKUMS",
+      "company": "Akums Drugs and Pharmaceuticals Limite",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "AMBIKCO",
+      "company": "Ambika Cotton Mills Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "ANANTRAJ",
+      "company": "Anant Raj Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "ANDHRSUGAR",
+      "company": "The Andhra Sugars Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "ANMOL",
+      "company": "Anmol India Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "APOLLO",
+      "company": "Apollo Micro Systems Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "ATULAUTO",
+      "company": "Atul Auto Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "BANCOINDIA",
+      "company": "Banco Products (I) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "BEARDSELL",
+      "company": "Beardsell Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "ALANKIT",
-      "company": "Alankit Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "CEIGALL",
+      "company": "Ceigall India Limited",
       "purpose": "Financial Results/Fund Raising"
     },
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "ANUHPHR",
-      "company": "Anuh Pharma Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "COMSYN",
+      "company": "Commercial Syn Bags Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "AQYLON",
-      "company": "Aqylon Nexus Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "CPL",
+      "company": "Captain Polyplast Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "DAMODARIND",
+      "company": "Damodar Industries Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "ARCHIDPLY",
-      "company": "Archidply Industries Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "DELHIVERY",
+      "company": "Delhivery Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "ARIHANTSUP",
-      "company": "Arihant Superstructures Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "AROGRANITE",
-      "company": "Aro Granite Industries Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "EVEREADY",
+      "company": "Eveready Industries India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "ARVEE",
-      "company": "Arvee Laboratories (India) Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "ARVSMART",
-      "company": "Arvind SmartSpaces Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "ASHAPURMIN",
-      "company": "Ashapura Minechem Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "AZAD",
-      "company": "Azad Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "BAJEL",
-      "company": "Bajel Projects Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "BECTORFOOD",
-      "company": "Mrs. Bectors Food Specialities Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "BEML",
-      "company": "BEML Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "BHARATWIRE",
-      "company": "Bharat Wire Ropes Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "BIGBLOC",
-      "company": "Bigbloc Construction Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-07",
-      "date_str": "07 Aug",
-      "symbol": "BLS",
-      "company": "BLS International Services Limited",
+      "date": "2026-08-08",
+      "date_str": "08 Aug",
+      "symbol": "GREENPANEL",
+      "company": "Greenpanel Industries Limited",
       "purpose": "Financial Results"
     }
   ]
