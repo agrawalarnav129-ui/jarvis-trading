@@ -1,0 +1,24 @@
+{
+  "MIDHANI.NS": [],
+  "NAVINFLUOR.NS": [],
+  "ASTERDM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "HAL.NS": [],
+  "PTCIL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "GNFC.NS": [],
+  "APARINDS.NS": [],
+  "AARTIIND.NS": [],
+  "CHOLAFIN.NS": [],
+  "PNBHOUSING.NS": [],
+  "AUBANK.NS": [],
+  "AIIL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BIOCON.NS": [],
+  "YATHARTH.NS": [],
+  "SHRIRAMFIN.NS": []
+}
