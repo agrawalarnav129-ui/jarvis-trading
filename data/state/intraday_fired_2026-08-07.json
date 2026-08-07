@@ -1,11 +1,16 @@
 {
-  "MIDHANI.NS": [],
+  "MIDHANI.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "NAVINFLUOR.NS": [],
   "ASTERDM.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "HAL.NS": [],
+  "HAL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "PTCIL.NS": [
     "MOMENTUM_CONT"
   ],
@@ -24,6 +29,9 @@
     "BB_SQUEEZE_SETUP"
   ],
   "BIOCON.NS": [],
-  "YATHARTH.NS": [],
+  "YATHARTH.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "SHRIRAMFIN.NS": []
 }
