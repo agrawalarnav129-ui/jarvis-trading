@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T03:00:54.377528Z",
+  "updated": "2026-08-10T03:01:15.995890Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -18,143 +18,143 @@
   },
   "corporate": [
     {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "AFSL",
-      "company": "Abans Financial Services Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "ARE&M",
-      "company": "Amara Raja Energy & Mobility Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "ASIANHOTNR",
-      "company": "Asian Hotels (North) Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "ASTRAMICRO",
-      "company": "Astra Microwave Products Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "ASTRAZEN",
-      "company": "AstraZeneca Pharma India Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "ATCOM",
-      "company": "Atcom Technologies Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "AWHCL",
-      "company": "Antony Waste Handling Cell Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "BALLARPUR",
-      "company": "Ballarpur Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "BASML",
-      "company": "Bannari Amman Spinning Mills Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "BHARATFORG",
-      "company": "Bharat Forge Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "BHARATFORG",
-      "company": "Bharat Forge Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "BOMDYEING",
-      "company": "Bombay Dyeing & Mfg Company Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "BOSCHLTD",
-      "company": "Bosch Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "BYKE",
-      "company": "The Byke Hospitality Ltd",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "CARYSIL",
-      "company": "CARYSIL LIMITED",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "CHOICEIN",
-      "company": "Choice International Limited",
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "AAKASH",
+      "company": "Aakash Exploration Services Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "CMRGREEN",
-      "company": "CMR Green Technologies Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "CMSINFO",
-      "company": "CMS Info Systems Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "DBL",
-      "company": "Dilip Buildcon Limited",
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "AARON",
+      "company": "Aaron Industries Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-08-10",
-      "date_str": "10 Aug",
-      "symbol": "DBSTOCKBRO",
-      "company": "DB (International) Stock Brokers Limit",
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "AEROENTER",
+      "company": "Aeroflex Enterprises Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "AHCL",
+      "company": "Anlon Healthcare Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "AKI",
+      "company": "AKI India Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "ALEMBICLTD",
+      "company": "Alembic Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "ALPHAGEO",
+      "company": "Alphageo (India) Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "AMDIND",
+      "company": "AMD Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "AMRUTANJAN",
+      "company": "Amrutanjan Health Care Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "APOLSINHOT",
+      "company": "Apollo Sindoori Hotels Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "ARFIN",
+      "company": "Arfin India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "ARIES",
+      "company": "Aries Agro Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "ARKADE",
+      "company": "Arkade Developers Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "ASHIANA",
+      "company": "Ashiana Housing Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "ASHOKA",
+      "company": "Ashoka Buildcon Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "ASIANTILES",
+      "company": "Asian Granito India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "ATL",
+      "company": "Allcargo Terminals Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "AYMSYNTEX",
+      "company": "AYM Syntex Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "BAFNAPH",
+      "company": "Bafna Pharmaceuticals Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-11",
+      "date_str": "11 Aug",
+      "symbol": "BALRAMCHIN",
+      "company": "Balrampur Chini Mills Limited",
       "purpose": "Financial Results"
     }
   ]
