@@ -1,6 +1,8 @@
 {
   "FINEORG.NS": [],
-  "GRASIM.NS": [],
+  "GRASIM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "BHARATFORG.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
