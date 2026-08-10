@@ -1,0 +1,42 @@
+{
+  "FINEORG.NS": [],
+  "GRASIM.NS": [],
+  "BHARATFORG.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MOTHERSON.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PTCIL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "KENNAMET.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NAVINFLUOR.NS": [],
+  "JUBLFOOD.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ARVIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "IGPL.NS": [],
+  "SUPRIYA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SAPPHIRE.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "AUROPHARMA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "DEEPAKNTR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "APARINDS.NS": [
+    "MOMENTUM_CONT"
+  ]
+}
