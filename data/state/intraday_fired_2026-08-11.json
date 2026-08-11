@@ -1,6 +1,8 @@
 {
   "YATHARTH.NS": [],
-  "BRIGADE.NS": [],
+  "BRIGADE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "SUMICHEM.NS": [
     "BB_SQUEEZE_SETUP"
   ],
@@ -9,6 +11,7 @@
   "MEDANTA.NS": [],
   "CONFIPET.NS": [
     "BB_SQUEEZE_SETUP",
+    "BREAKOUT",
     "MOMENTUM_CONT"
   ],
   "CARBORUNIV.NS": [
