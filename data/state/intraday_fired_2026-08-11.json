@@ -29,6 +29,7 @@
     "BB_SQUEEZE_SETUP"
   ],
   "GLAND.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "NAUKRI.NS": [],
