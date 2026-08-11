@@ -1,0 +1,32 @@
+{
+  "YATHARTH.NS": [],
+  "BRIGADE.NS": [],
+  "SUMICHEM.NS": [],
+  "GRASIM.NS": [],
+  "MINDACORP.NS": [],
+  "MEDANTA.NS": [],
+  "CONFIPET.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "CARBORUNIV.NS": [],
+  "PAYTM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TITAN.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BRITANNIA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "GLAND.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "NAUKRI.NS": [],
+  "KOLTEPATIL.NS": [],
+  "JSWENERGY.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
