@@ -1,7 +1,9 @@
 {
   "YATHARTH.NS": [],
   "BRIGADE.NS": [],
-  "SUMICHEM.NS": [],
+  "SUMICHEM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "GRASIM.NS": [],
   "MINDACORP.NS": [],
   "MEDANTA.NS": [],
@@ -10,7 +12,8 @@
     "MOMENTUM_CONT"
   ],
   "CARBORUNIV.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "PAYTM.NS": [
     "BB_SQUEEZE_SETUP"
