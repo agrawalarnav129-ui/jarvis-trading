@@ -9,7 +9,9 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "CARBORUNIV.NS": [],
+  "CARBORUNIV.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "PAYTM.NS": [
     "BB_SQUEEZE_SETUP"
   ],
