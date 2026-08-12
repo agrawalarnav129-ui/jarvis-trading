@@ -2,170 +2,170 @@
   "NIFTY": {
     "symbol": "NIFTY",
     "available": true,
-    "spot": 24331.45,
+    "spot": 24435.95,
     "expiry": "2026-08-18",
-    "pcr": 0.64,
-    "total_ce_oi": 159717220,
-    "total_pe_oi": 102796525,
+    "pcr": 0.75,
+    "total_ce_oi": 125712795,
+    "total_pe_oi": 94759990,
     "max_pain": 24400.0,
-    "support": 24300.0,
-    "resistance": 24500.0,
+    "support": 24000.0,
+    "resistance": 25000.0,
     "atm_iv": null,
     "chain": [
       {
-        "strike": 23600.0,
-        "ceOI": 19370,
-        "peOI": 2205515
-      },
-      {
-        "strike": 23650.0,
-        "ceOI": 1690,
-        "peOI": 1125670
-      },
-      {
         "strike": 23700.0,
-        "ceOI": 28795,
-        "peOI": 2584075
+        "ceOI": 29250,
+        "peOI": 3016130
       },
       {
         "strike": 23750.0,
-        "ceOI": 3380,
-        "peOI": 1433445
+        "ceOI": 3510,
+        "peOI": 1117155
       },
       {
         "strike": 23800.0,
-        "ceOI": 68250,
-        "peOI": 6733610
+        "ceOI": 64350,
+        "peOI": 4941755
       },
       {
         "strike": 23850.0,
-        "ceOI": 23790,
-        "peOI": 1884935
+        "ceOI": 21905,
+        "peOI": 1673945
       },
       {
         "strike": 23900.0,
-        "ceOI": 242385,
-        "peOI": 4890795
+        "ceOI": 231465,
+        "peOI": 4628780
       },
       {
         "strike": 23950.0,
-        "ceOI": 39910,
-        "peOI": 1589965
+        "ceOI": 32825,
+        "peOI": 1437150
       },
       {
         "strike": 24000.0,
-        "ceOI": 613210,
-        "peOI": 7423780
+        "ceOI": 469105,
+        "peOI": 7726485
       },
       {
         "strike": 24050.0,
-        "ceOI": 91130,
-        "peOI": 1368380
+        "ceOI": 78260,
+        "peOI": 1189110
       },
       {
         "strike": 24100.0,
-        "ceOI": 537030,
-        "peOI": 3142490
+        "ceOI": 321555,
+        "peOI": 3261245
       },
       {
         "strike": 24150.0,
-        "ceOI": 278525,
-        "peOI": 1751165
+        "ceOI": 168025,
+        "peOI": 1483430
       },
       {
         "strike": 24200.0,
-        "ceOI": 1491815,
-        "peOI": 5252910
+        "ceOI": 836615,
+        "peOI": 4725500
       },
       {
         "strike": 24250.0,
-        "ceOI": 1130025,
-        "peOI": 3307525
+        "ceOI": 352300,
+        "peOI": 2509910
       },
       {
         "strike": 24300.0,
-        "ceOI": 5757960,
-        "peOI": 8053890
+        "ceOI": 2416115,
+        "peOI": 5794685
       },
       {
         "strike": 24350.0,
-        "ceOI": 3510845,
-        "peOI": 3446690
+        "ceOI": 1495910,
+        "peOI": 2365350
       },
       {
         "strike": 24400.0,
-        "ceOI": 9934340,
-        "peOI": 5804240
+        "ceOI": 6155370,
+        "peOI": 5025800
       },
       {
         "strike": 24450.0,
-        "ceOI": 5567250,
-        "peOI": 1713075
+        "ceOI": 3178175,
+        "peOI": 1459315
       },
       {
         "strike": 24500.0,
-        "ceOI": 13295945,
-        "peOI": 3764215
+        "ceOI": 9031035,
+        "peOI": 3140475
       },
       {
         "strike": 24550.0,
-        "ceOI": 5219500,
-        "peOI": 679900
+        "ceOI": 2922270,
+        "peOI": 472160
       },
       {
         "strike": 24600.0,
-        "ceOI": 9474530,
-        "peOI": 1883115
+        "ceOI": 7173530,
+        "peOI": 1681030
       },
       {
         "strike": 24650.0,
-        "ceOI": 3380065,
-        "peOI": 397735
+        "ceOI": 2530515,
+        "peOI": 335335
       },
       {
         "strike": 24700.0,
-        "ceOI": 6794645,
-        "peOI": 977210
+        "ceOI": 5944250,
+        "peOI": 850200
       },
       {
         "strike": 24750.0,
-        "ceOI": 2782130,
-        "peOI": 156130
+        "ceOI": 2129725,
+        "peOI": 125580
       },
       {
         "strike": 24800.0,
-        "ceOI": 6949280,
-        "peOI": 485485
+        "ceOI": 5717790,
+        "peOI": 452400
       },
       {
         "strike": 24850.0,
-        "ceOI": 3464630,
-        "peOI": 49920
+        "ceOI": 3224910,
+        "peOI": 38480
       },
       {
         "strike": 24900.0,
-        "ceOI": 5013060,
-        "peOI": 361725
+        "ceOI": 4700930,
+        "peOI": 354510
       },
       {
         "strike": 24950.0,
-        "ceOI": 1977560,
-        "peOI": 40105
+        "ceOI": 2133495,
+        "peOI": 35555
       },
       {
         "strike": 25000.0,
-        "ceOI": 9222330,
-        "peOI": 429195
+        "ceOI": 9160125,
+        "peOI": 430365
       },
       {
         "strike": 25050.0,
-        "ceOI": 1747460,
+        "ceOI": 1419730,
         "peOI": 36660
       },
       {
         "strike": 25100.0,
-        "ceOI": 3819595,
-        "peOI": 83655
+        "ceOI": 3149510,
+        "peOI": 82680
+      },
+      {
+        "strike": 25150.0,
+        "ceOI": 1421030,
+        "peOI": 18915
+      },
+      {
+        "strike": 25200.0,
+        "ceOI": 4343625,
+        "peOI": 102375
       }
     ],
     "source": "Moneycontrol"
@@ -173,26 +173,16 @@
   "BANKNIFTY": {
     "symbol": "BANKNIFTY",
     "available": true,
-    "spot": 57698.45,
+    "spot": 57885.85,
     "expiry": "2026-08-25",
-    "pcr": 0.86,
-    "total_ce_oi": 15088830,
-    "total_pe_oi": 13020450,
-    "max_pain": 57800.0,
+    "pcr": 0.88,
+    "total_ce_oi": 14461800,
+    "total_pe_oi": 12671340,
+    "max_pain": 57900.0,
     "support": 58000.0,
     "resistance": 58000.0,
     "atm_iv": null,
     "chain": [
-      {
-        "strike": 50200.0,
-        "ceOI": 0,
-        "peOI": 1710
-      },
-      {
-        "strike": 50300.0,
-        "ceOI": 0,
-        "peOI": 810
-      },
       {
         "strike": 50400.0,
         "ceOI": 0,
@@ -201,12 +191,12 @@
       {
         "strike": 50500.0,
         "ceOI": 210,
-        "peOI": 29670
+        "peOI": 28650
       },
       {
         "strike": 50600.0,
         "ceOI": 0,
-        "peOI": 540
+        "peOI": 510
       },
       {
         "strike": 50700.0,
@@ -216,42 +206,42 @@
       {
         "strike": 50800.0,
         "ceOI": 0,
-        "peOI": 600
+        "peOI": 630
       },
       {
         "strike": 50900.0,
         "ceOI": 0,
-        "peOI": 1950
+        "peOI": 1920
       },
       {
         "strike": 51000.0,
         "ceOI": 8310,
-        "peOI": 213480
+        "peOI": 211530
       },
       {
         "strike": 51100.0,
         "ceOI": 60,
-        "peOI": 1050
+        "peOI": 1080
       },
       {
         "strike": 51200.0,
         "ceOI": 0,
-        "peOI": 8040
+        "peOI": 22860
       },
       {
         "strike": 51300.0,
         "ceOI": 0,
-        "peOI": 1230
+        "peOI": 1170
       },
       {
         "strike": 51400.0,
         "ceOI": 0,
-        "peOI": 990
+        "peOI": 960
       },
       {
         "strike": 51500.0,
         "ceOI": 360,
-        "peOI": 76950
+        "peOI": 73170
       },
       {
         "strike": 51600.0,
@@ -276,12 +266,12 @@
       {
         "strike": 52000.0,
         "ceOI": 20580,
-        "peOI": 326130
+        "peOI": 322800
       },
       {
         "strike": 52100.0,
         "ceOI": 0,
-        "peOI": 2010
+        "peOI": 1890
       },
       {
         "strike": 52200.0,
@@ -291,47 +281,47 @@
       {
         "strike": 52300.0,
         "ceOI": 0,
-        "peOI": 4770
+        "peOI": 4710
       },
       {
         "strike": 52400.0,
         "ceOI": 0,
-        "peOI": 6540
+        "peOI": 6450
       },
       {
         "strike": 52500.0,
         "ceOI": 330,
-        "peOI": 139710
+        "peOI": 135630
       },
       {
         "strike": 52600.0,
         "ceOI": 0,
-        "peOI": 3210
+        "peOI": 3180
       },
       {
         "strike": 52700.0,
         "ceOI": 0,
-        "peOI": 11220
+        "peOI": 10860
       },
       {
         "strike": 52800.0,
         "ceOI": 0,
-        "peOI": 11430
+        "peOI": 11610
       },
       {
         "strike": 52900.0,
         "ceOI": 0,
-        "peOI": 9270
+        "peOI": 9330
       },
       {
         "strike": 53000.0,
-        "ceOI": 44790,
-        "peOI": 398340
+        "ceOI": 44760,
+        "peOI": 389880
       },
       {
         "strike": 53100.0,
         "ceOI": 0,
-        "peOI": 4680
+        "peOI": 4710
       },
       {
         "strike": 53200.0,
@@ -341,371 +331,371 @@
       {
         "strike": 53300.0,
         "ceOI": 0,
-        "peOI": 6060
+        "peOI": 6030
       },
       {
         "strike": 53400.0,
         "ceOI": 0,
-        "peOI": 6180
+        "peOI": 4980
       },
       {
         "strike": 53500.0,
         "ceOI": 7800,
-        "peOI": 150270
+        "peOI": 144000
       },
       {
         "strike": 53600.0,
         "ceOI": 120,
-        "peOI": 16830
+        "peOI": 14580
       },
       {
         "strike": 53700.0,
         "ceOI": 0,
-        "peOI": 24390
+        "peOI": 17670
       },
       {
         "strike": 53800.0,
         "ceOI": 90,
-        "peOI": 26760
+        "peOI": 19590
       },
       {
         "strike": 53900.0,
         "ceOI": 120,
-        "peOI": 21510
+        "peOI": 14850
       },
       {
         "strike": 54000.0,
-        "ceOI": 30930,
-        "peOI": 376410
+        "ceOI": 30900,
+        "peOI": 352710
       },
       {
         "strike": 54100.0,
         "ceOI": 0,
-        "peOI": 21720
+        "peOI": 16620
       },
       {
         "strike": 54200.0,
         "ceOI": 0,
-        "peOI": 25710
+        "peOI": 20250
       },
       {
         "strike": 54300.0,
         "ceOI": 60,
-        "peOI": 33900
+        "peOI": 28590
       },
       {
         "strike": 54400.0,
         "ceOI": 210,
-        "peOI": 33330
+        "peOI": 29760
       },
       {
         "strike": 54500.0,
         "ceOI": 3450,
-        "peOI": 201750
+        "peOI": 207450
       },
       {
         "strike": 54600.0,
         "ceOI": 60,
-        "peOI": 36150
+        "peOI": 32760
       },
       {
         "strike": 54700.0,
         "ceOI": 0,
-        "peOI": 26790
+        "peOI": 36300
       },
       {
         "strike": 54800.0,
         "ceOI": 0,
-        "peOI": 38970
+        "peOI": 44760
       },
       {
         "strike": 54900.0,
         "ceOI": 0,
-        "peOI": 35370
+        "peOI": 20790
       },
       {
         "strike": 55000.0,
-        "ceOI": 59790,
-        "peOI": 597210
+        "ceOI": 59820,
+        "peOI": 563940
       },
       {
         "strike": 55100.0,
         "ceOI": 390,
-        "peOI": 96090
+        "peOI": 100920
       },
       {
         "strike": 55200.0,
         "ceOI": 300,
-        "peOI": 60810
+        "peOI": 49560
       },
       {
         "strike": 55300.0,
         "ceOI": 690,
-        "peOI": 65130
+        "peOI": 48750
       },
       {
         "strike": 55400.0,
         "ceOI": 540,
-        "peOI": 48900
+        "peOI": 57900
       },
       {
         "strike": 55500.0,
-        "ceOI": 14610,
-        "peOI": 267210
+        "ceOI": 14670,
+        "peOI": 290520
       },
       {
         "strike": 55600.0,
-        "ceOI": 1620,
-        "peOI": 62370
+        "ceOI": 1560,
+        "peOI": 60990
       },
       {
         "strike": 55700.0,
         "ceOI": 540,
-        "peOI": 38160
+        "peOI": 41040
       },
       {
         "strike": 55800.0,
-        "ceOI": 1980,
-        "peOI": 89280
+        "ceOI": 1920,
+        "peOI": 91440
       },
       {
         "strike": 55900.0,
-        "ceOI": 2130,
-        "peOI": 51570
+        "ceOI": 2100,
+        "peOI": 39630
       },
       {
         "strike": 56000.0,
-        "ceOI": 123840,
-        "peOI": 745980
+        "ceOI": 122970,
+        "peOI": 764940
       },
       {
         "strike": 56100.0,
-        "ceOI": 10470,
-        "peOI": 63960
+        "ceOI": 10380,
+        "peOI": 63300
       },
       {
         "strike": 56200.0,
-        "ceOI": 8880,
-        "peOI": 82110
+        "ceOI": 9030,
+        "peOI": 89010
       },
       {
         "strike": 56300.0,
-        "ceOI": 8910,
-        "peOI": 93510
+        "ceOI": 8730,
+        "peOI": 88410
       },
       {
         "strike": 56400.0,
-        "ceOI": 12330,
-        "peOI": 84690
+        "ceOI": 12120,
+        "peOI": 76740
       },
       {
         "strike": 56500.0,
-        "ceOI": 158280,
-        "peOI": 502230
+        "ceOI": 158160,
+        "peOI": 471840
       },
       {
         "strike": 56600.0,
-        "ceOI": 11220,
-        "peOI": 75150
+        "ceOI": 11040,
+        "peOI": 76980
       },
       {
         "strike": 56700.0,
-        "ceOI": 23040,
-        "peOI": 99150
+        "ceOI": 22140,
+        "peOI": 101340
       },
       {
         "strike": 56800.0,
-        "ceOI": 48150,
-        "peOI": 135540
+        "ceOI": 47820,
+        "peOI": 137700
       },
       {
         "strike": 56900.0,
-        "ceOI": 72630,
-        "peOI": 125550
+        "ceOI": 71940,
+        "peOI": 123300
       },
       {
         "strike": 57000.0,
-        "ceOI": 630090,
-        "peOI": 1034040
+        "ceOI": 621480,
+        "peOI": 1027710
       },
       {
         "strike": 57100.0,
-        "ceOI": 86880,
-        "peOI": 131400
+        "ceOI": 85440,
+        "peOI": 118860
       },
       {
         "strike": 57200.0,
-        "ceOI": 103320,
-        "peOI": 192900
+        "ceOI": 88110,
+        "peOI": 180810
       },
       {
         "strike": 57300.0,
-        "ceOI": 136740,
-        "peOI": 202830
+        "ceOI": 124680,
+        "peOI": 187890
       },
       {
         "strike": 57400.0,
-        "ceOI": 115140,
-        "peOI": 193830
+        "ceOI": 95670,
+        "peOI": 193920
       },
       {
         "strike": 57500.0,
-        "ceOI": 693360,
-        "peOI": 686490
+        "ceOI": 574770,
+        "peOI": 630930
       },
       {
         "strike": 57600.0,
-        "ceOI": 265380,
-        "peOI": 271710
+        "ceOI": 187890,
+        "peOI": 209550
       },
       {
         "strike": 57700.0,
-        "ceOI": 336300,
-        "peOI": 237510
+        "ceOI": 276300,
+        "peOI": 216900
       },
       {
         "strike": 57800.0,
-        "ceOI": 380490,
-        "peOI": 176520
+        "ceOI": 336480,
+        "peOI": 174420
       },
       {
         "strike": 57900.0,
-        "ceOI": 266790,
-        "peOI": 165390
+        "ceOI": 242670,
+        "peOI": 173100
       },
       {
         "strike": 58000.0,
-        "ceOI": 2249430,
-        "peOI": 1486440
+        "ceOI": 2131440,
+        "peOI": 1459320
       },
       {
         "strike": 58100.0,
-        "ceOI": 232230,
-        "peOI": 210330
+        "ceOI": 236760,
+        "peOI": 215190
       },
       {
         "strike": 58200.0,
-        "ceOI": 290250,
-        "peOI": 136110
+        "ceOI": 303420,
+        "peOI": 132180
       },
       {
         "strike": 58300.0,
-        "ceOI": 154860,
-        "peOI": 76080
+        "ceOI": 162780,
+        "peOI": 73740
       },
       {
         "strike": 58400.0,
-        "ceOI": 98130,
-        "peOI": 22380
+        "ceOI": 96330,
+        "peOI": 23070
       },
       {
         "strike": 58500.0,
-        "ceOI": 846150,
-        "peOI": 263850
+        "ceOI": 825150,
+        "peOI": 260850
       },
       {
         "strike": 58600.0,
-        "ceOI": 151770,
-        "peOI": 15930
+        "ceOI": 152520,
+        "peOI": 15900
       },
       {
         "strike": 58700.0,
-        "ceOI": 150960,
-        "peOI": 12990
+        "ceOI": 141240,
+        "peOI": 12150
       },
       {
         "strike": 58800.0,
-        "ceOI": 157470,
-        "peOI": 27930
+        "ceOI": 151650,
+        "peOI": 27750
       },
       {
         "strike": 58900.0,
-        "ceOI": 134970,
-        "peOI": 9930
+        "ceOI": 130500,
+        "peOI": 10680
       },
       {
         "strike": 59000.0,
-        "ceOI": 1278630,
-        "peOI": 305730
+        "ceOI": 1283610,
+        "peOI": 303300
       },
       {
         "strike": 59100.0,
-        "ceOI": 84420,
-        "peOI": 6000
+        "ceOI": 83970,
+        "peOI": 6150
       },
       {
         "strike": 59200.0,
-        "ceOI": 110700,
-        "peOI": 14070
+        "ceOI": 104490,
+        "peOI": 13680
       },
       {
         "strike": 59300.0,
-        "ceOI": 72090,
-        "peOI": 6630
+        "ceOI": 71010,
+        "peOI": 6810
       },
       {
         "strike": 59400.0,
-        "ceOI": 56640,
-        "peOI": 5370
+        "ceOI": 55560,
+        "peOI": 5310
       },
       {
         "strike": 59500.0,
-        "ceOI": 461250,
-        "peOI": 70140
+        "ceOI": 448320,
+        "peOI": 68130
       },
       {
         "strike": 59600.0,
-        "ceOI": 81810,
+        "ceOI": 82650,
         "peOI": 750
       },
       {
         "strike": 59700.0,
-        "ceOI": 80280,
+        "ceOI": 82770,
         "peOI": 630
       },
       {
         "strike": 59800.0,
-        "ceOI": 89670,
+        "ceOI": 88140,
         "peOI": 300
       },
       {
         "strike": 59900.0,
-        "ceOI": 78300,
+        "ceOI": 71220,
         "peOI": 60
       },
       {
         "strike": 60000.0,
-        "ceOI": 1443540,
-        "peOI": 299910
+        "ceOI": 1366530,
+        "peOI": 298410
       },
       {
         "strike": 60100.0,
-        "ceOI": 98400,
+        "ceOI": 93060,
         "peOI": 210
       },
       {
         "strike": 60200.0,
-        "ceOI": 28740,
+        "ceOI": 35190,
         "peOI": 360
       },
       {
         "strike": 60300.0,
-        "ceOI": 25170,
+        "ceOI": 23280,
         "peOI": 30
       },
       {
         "strike": 60400.0,
-        "ceOI": 89490,
+        "ceOI": 85920,
         "peOI": 0
       },
       {
         "strike": 60500.0,
-        "ceOI": 421050,
-        "peOI": 10380
+        "ceOI": 401220,
+        "peOI": 10410
       },
       {
         "strike": 60600.0,
-        "ceOI": 14550,
+        "ceOI": 19320,
         "peOI": 300
       },
       {
@@ -715,13 +705,13 @@
       },
       {
         "strike": 60800.0,
-        "ceOI": 32850,
+        "ceOI": 35580,
         "peOI": 60
       },
       {
         "strike": 61000.0,
-        "ceOI": 699510,
-        "peOI": 67440
+        "ceOI": 710250,
+        "peOI": 67320
       },
       {
         "strike": 61100.0,
@@ -730,67 +720,67 @@
       },
       {
         "strike": 61200.0,
-        "ceOI": 67470,
+        "ceOI": 65520,
         "peOI": 30
       },
       {
         "strike": 61500.0,
-        "ceOI": 160920,
-        "peOI": 10200
+        "ceOI": 170700,
+        "peOI": 10410
       },
       {
         "strike": 62000.0,
-        "ceOI": 384660,
+        "ceOI": 386280,
         "peOI": 72270
       },
       {
         "strike": 62200.0,
-        "ceOI": 660,
+        "ceOI": 570,
         "peOI": 0
       },
       {
         "strike": 62300.0,
-        "ceOI": 4020,
+        "ceOI": 4440,
         "peOI": 0
       },
       {
         "strike": 62400.0,
-        "ceOI": 2520,
+        "ceOI": 2610,
         "peOI": 0
       },
       {
         "strike": 62500.0,
-        "ceOI": 96660,
+        "ceOI": 102120,
         "peOI": 3150
       },
       {
         "strike": 62600.0,
-        "ceOI": 2280,
-        "peOI": 0
-      },
-      {
-        "strike": 62700.0,
-        "ceOI": 1800,
-        "peOI": 0
-      },
-      {
-        "strike": 62800.0,
         "ceOI": 2220,
         "peOI": 0
       },
       {
+        "strike": 62700.0,
+        "ceOI": 1830,
+        "peOI": 0
+      },
+      {
+        "strike": 62800.0,
+        "ceOI": 2160,
+        "peOI": 0
+      },
+      {
         "strike": 62900.0,
-        "ceOI": 2790,
+        "ceOI": 2610,
         "peOI": 0
       },
       {
         "strike": 63000.0,
-        "ceOI": 220350,
-        "peOI": 69810
+        "ceOI": 216300,
+        "peOI": 69750
       },
       {
         "strike": 63100.0,
-        "ceOI": 720,
+        "ceOI": 750,
         "peOI": 0
       },
       {
@@ -800,42 +790,42 @@
       },
       {
         "strike": 63300.0,
-        "ceOI": 10800,
+        "ceOI": 10830,
         "peOI": 0
       },
       {
         "strike": 63400.0,
-        "ceOI": 1890,
+        "ceOI": 1980,
         "peOI": 0
       },
       {
         "strike": 63500.0,
-        "ceOI": 25590,
+        "ceOI": 23940,
         "peOI": 900
       },
       {
         "strike": 63600.0,
-        "ceOI": 450,
+        "ceOI": 810,
         "peOI": 0
       },
       {
         "strike": 63700.0,
-        "ceOI": 1650,
+        "ceOI": 1560,
         "peOI": 0
       },
       {
         "strike": 63800.0,
-        "ceOI": 1530,
+        "ceOI": 930,
         "peOI": 0
       },
       {
         "strike": 63900.0,
-        "ceOI": 1800,
+        "ceOI": 1260,
         "peOI": 0
       },
       {
         "strike": 64000.0,
-        "ceOI": 50460,
+        "ceOI": 50280,
         "peOI": 2310
       },
       {
@@ -845,21 +835,21 @@
       },
       {
         "strike": 64200.0,
-        "ceOI": 8460,
+        "ceOI": 8430,
         "peOI": 30
       },
       {
         "strike": 64500.0,
-        "ceOI": 44550,
+        "ceOI": 38070,
         "peOI": 0
       },
       {
         "strike": 65000.0,
-        "ceOI": 280890,
+        "ceOI": 276570,
         "peOI": 66990
       }
     ],
     "source": "Moneycontrol"
   },
-  "updated": "2026-08-12T09:17:06.481927Z"
+  "updated": "2026-08-12T10:31:25.417093Z"
 }
