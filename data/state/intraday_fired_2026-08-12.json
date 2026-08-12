@@ -1,5 +1,7 @@
 {
-  "ZYDUSLIFE.NS": [],
+  "ZYDUSLIFE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "ARVIND.NS": [
     "BB_SQUEEZE_SETUP"
   ],
@@ -7,7 +9,9 @@
   "YATHARTH.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "CARBORUNIV.NS": [],
+  "CARBORUNIV.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "BOSCHLTD.NS": [
     "MOMENTUM_CONT"
   ],
