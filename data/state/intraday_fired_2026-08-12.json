@@ -4,12 +4,16 @@
     "BB_SQUEEZE_SETUP"
   ],
   "NAUKRI.NS": [],
-  "YATHARTH.NS": [],
+  "YATHARTH.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "CARBORUNIV.NS": [],
   "BOSCHLTD.NS": [
     "MOMENTUM_CONT"
   ],
-  "SAPPHIRE.NS": [],
+  "SAPPHIRE.NS": [
+    "MOMENTUM_CONT"
+  ],
   "BEML.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
@@ -23,12 +27,15 @@
   "AETHER.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "POLICYBZR.NS": [],
+  "POLICYBZR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "MINDACORP.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "SIEMENS.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "BIRLACABLE.NS": []
