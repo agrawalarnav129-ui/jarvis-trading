@@ -1,0 +1,28 @@
+{
+  "AARTIIND.NS": [],
+  "FINEORG.NS": [],
+  "KENNAMET.NS": [],
+  "MINDACORP.NS": [],
+  "APARINDS.NS": [],
+  "BERGEPAINT.NS": [],
+  "PIDILITIND.NS": [],
+  "HAL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "ZYDUSLIFE.NS": [],
+  "STLTECH.NS": [],
+  "VIJAYA.NS": [],
+  "BIRLACABLE.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "EPL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "BOSCHLTD.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PNBHOUSING.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
