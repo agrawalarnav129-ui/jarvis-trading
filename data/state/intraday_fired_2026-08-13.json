@@ -15,12 +15,15 @@
     "MOMENTUM_CONT"
   ],
   "ZYDUSLIFE.NS": [],
-  "STLTECH.NS": [],
+  "STLTECH.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "VIJAYA.NS": [],
   "BIRLACABLE.NS": [
     "MOMENTUM_CONT"
   ],
   "EPL.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "BOSCHLTD.NS": [
