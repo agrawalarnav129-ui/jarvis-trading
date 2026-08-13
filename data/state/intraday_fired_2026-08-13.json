@@ -1,11 +1,16 @@
 {
-  "AARTIIND.NS": [],
+  "AARTIIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "FINEORG.NS": [],
   "KENNAMET.NS": [],
   "MINDACORP.NS": [],
   "APARINDS.NS": [],
   "BERGEPAINT.NS": [],
-  "PIDILITIND.NS": [],
+  "PIDILITIND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "HAL.NS": [
     "MOMENTUM_CONT"
   ],
