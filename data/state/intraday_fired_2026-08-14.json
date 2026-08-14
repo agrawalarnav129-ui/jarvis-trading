@@ -1,0 +1,31 @@
+{
+  "CONCOR.NS": [],
+  "MIDHANI.NS": [],
+  "EPL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "AJANTPHARM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "CARBORUNIV.NS": [],
+  "PRINCEPIPE.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "RAYMOND.NS": [],
+  "HONASA.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "CLEAN.NS": [],
+  "HFCL.NS": [],
+  "APARINDS.NS": [],
+  "STLTECH.NS": [],
+  "BIRLACABLE.NS": [],
+  "GLAND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MINDACORP.NS": [
+    "MOMENTUM_CONT"
+  ]
+}
