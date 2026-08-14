@@ -13,7 +13,8 @@
     "MOMENTUM_CONT"
   ],
   "RAYMOND.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "HONASA.NS": [
     "MOMENTUM_CONT"
@@ -23,7 +24,9 @@
   "APARINDS.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "STLTECH.NS": [],
+  "STLTECH.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "BIRLACABLE.NS": [],
   "GLAND.NS": [
     "BB_SQUEEZE_SETUP",
