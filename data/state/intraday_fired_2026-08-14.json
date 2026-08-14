@@ -12,13 +12,17 @@
   "PRINCEPIPE.NS": [
     "MOMENTUM_CONT"
   ],
-  "RAYMOND.NS": [],
+  "RAYMOND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "HONASA.NS": [
     "MOMENTUM_CONT"
   ],
   "CLEAN.NS": [],
   "HFCL.NS": [],
-  "APARINDS.NS": [],
+  "APARINDS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "STLTECH.NS": [],
   "BIRLACABLE.NS": [],
   "GLAND.NS": [
