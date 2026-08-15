@@ -1,20 +1,20 @@
 {
-  "updated": "2026-08-14T04:56:45.086152Z",
+  "updated": "2026-08-15T03:00:57.135364Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "13-Aug-2026",
+    "date": "14-Aug-2026",
     "fii": {
-      "buy": 14492.46,
-      "sell": 15003.15,
-      "net": -510.69
+      "buy": 12854.44,
+      "sell": 12346.32,
+      "net": 508.12
     },
     "dii": {
-      "buy": 16565.14,
-      "sell": 12212.05,
-      "net": 4353.09
+      "buy": 14295.49,
+      "sell": 13939.09,
+      "net": 356.4
     },
-    "net_combined": 3842.4
+    "net_combined": 864.52
   },
   "corporate": [
     {
@@ -50,6 +50,20 @@
       "date_str": "17 Aug",
       "symbol": "SRPL",
       "company": "Shree Ram Proteins Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-17",
+      "date_str": "17 Aug",
+      "symbol": "SRPL",
+      "company": "Shree Ram Proteins Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-18",
+      "date_str": "18 Aug",
+      "symbol": "ANNAPURNA",
+      "company": "Annapurna Swadisht Limited",
       "purpose": "Financial Results"
     },
     {
@@ -111,6 +125,27 @@
     {
       "date": "2026-08-19",
       "date_str": "19 Aug",
+      "symbol": "CPPLUS",
+      "company": "Aditya Infotech Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-19",
+      "date_str": "19 Aug",
+      "symbol": "DHANBANK",
+      "company": "Dhanlaxmi Bank Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-19",
+      "date_str": "19 Aug",
+      "symbol": "DUCON",
+      "company": "Ducon Infratechnologies Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-08-19",
+      "date_str": "19 Aug",
       "symbol": "GULFPETRO",
       "company": "GP Petroleums Limited",
       "purpose": "Fund Raising/Other business ma"
@@ -121,41 +156,6 @@
       "symbol": "LCL",
       "company": "Lohia Corp Limited",
       "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-19",
-      "date_str": "19 Aug",
-      "symbol": "WHEELS",
-      "company": "Wheels India Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-19",
-      "date_str": "19 Aug",
-      "symbol": "XTRANET",
-      "company": "Xtranet Technologies Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "ARIHANTCAP",
-      "company": "Arihant Capital Markets Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "RUBFILA",
-      "company": "Rubfila International Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "SUPREMEENG",
-      "company": "Supreme Engineering Limited",
-      "purpose": "Financial Results/Fund Raising"
     }
   ]
 }
