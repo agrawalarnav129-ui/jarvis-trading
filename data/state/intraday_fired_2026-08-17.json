@@ -25,7 +25,8 @@
     "MOMENTUM_CONT"
   ],
   "ASHOKLEY.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT"
   ],
   "PNBHOUSING.NS": [
     "BB_SQUEEZE_SETUP"
