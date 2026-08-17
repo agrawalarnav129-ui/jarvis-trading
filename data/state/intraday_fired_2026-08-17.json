@@ -16,7 +16,10 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "KENNAMET.NS": [],
+  "KENNAMET.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "ASHOKLEY.NS": [],
   "PNBHOUSING.NS": [],
   "AUBANK.NS": [
