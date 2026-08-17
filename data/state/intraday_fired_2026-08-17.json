@@ -1,0 +1,36 @@
+{
+  "ELGIEQUIP.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BATAINDIA.NS": [],
+  "ASAHIINDIA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "GNFC.NS": [],
+  "ARVIND.NS": [],
+  "HONASA.NS": [],
+  "EPL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "KENNAMET.NS": [],
+  "ASHOKLEY.NS": [],
+  "PNBHOUSING.NS": [],
+  "AUBANK.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "NAVINFLUOR.NS": [],
+  "HAVELLS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ZENTEC.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "RAYMOND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT",
+    "MOMENTUM_CONT"
+  ]
+}
