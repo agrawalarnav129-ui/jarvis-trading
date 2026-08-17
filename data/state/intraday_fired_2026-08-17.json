@@ -3,7 +3,10 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "BATAINDIA.NS": [],
+  "BATAINDIA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "ASAHIINDIA.NS": [
     "BB_SQUEEZE_SETUP"
   ],
@@ -28,7 +31,8 @@
   ],
   "NAVINFLUOR.NS": [],
   "HAVELLS.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "ZENTEC.NS": [
     "BB_SQUEEZE_SETUP",
