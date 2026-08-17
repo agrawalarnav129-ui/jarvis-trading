@@ -1,12 +1,15 @@
 {
   "ELGIEQUIP.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "BATAINDIA.NS": [],
   "ASAHIINDIA.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "GNFC.NS": [],
+  "GNFC.NS": [
+    "MOMENTUM_CONT"
+  ],
   "ARVIND.NS": [],
   "HONASA.NS": [],
   "EPL.NS": [
