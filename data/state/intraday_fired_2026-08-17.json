@@ -11,6 +11,7 @@
     "BB_SQUEEZE_SETUP"
   ],
   "GNFC.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "ARVIND.NS": [],
@@ -23,7 +24,9 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "ASHOKLEY.NS": [],
+  "ASHOKLEY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "PNBHOUSING.NS": [
     "BB_SQUEEZE_SETUP"
   ],
