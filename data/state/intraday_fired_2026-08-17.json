@@ -24,7 +24,9 @@
     "MOMENTUM_CONT"
   ],
   "ASHOKLEY.NS": [],
-  "PNBHOUSING.NS": [],
+  "PNBHOUSING.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "AUBANK.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
