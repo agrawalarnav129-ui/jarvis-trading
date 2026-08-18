@@ -2,7 +2,9 @@
   "OBEROIRLTY.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "WELSPUNLIV.NS": [],
+  "WELSPUNLIV.NS": [
+    "MOMENTUM_CONT"
+  ],
   "ELGIEQUIP.NS": [
     "BB_SQUEEZE_SETUP"
   ],
@@ -14,11 +16,15 @@
   ],
   "BHEL.NS": [],
   "HONASA.NS": [],
-  "EPL.NS": [],
+  "EPL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "SUPREMEIND.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "LT.NS": [],
+  "LT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "ARVIND.NS": [],
   "HAL.NS": [
     "BB_SQUEEZE_SETUP",
