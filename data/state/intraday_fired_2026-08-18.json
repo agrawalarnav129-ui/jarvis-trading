@@ -1,7 +1,11 @@
 {
-  "OBEROIRLTY.NS": [],
+  "OBEROIRLTY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "WELSPUNLIV.NS": [],
-  "ELGIEQUIP.NS": [],
+  "ELGIEQUIP.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "IPCALAB.NS": [],
   "RAYMOND.NS": [],
   "PTCIL.NS": [],
@@ -17,7 +21,8 @@
   "LT.NS": [],
   "ARVIND.NS": [],
   "HAL.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "PIDILITIND.NS": []
 }
