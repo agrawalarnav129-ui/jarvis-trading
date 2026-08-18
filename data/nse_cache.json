@@ -1,85 +1,22 @@
 {
-  "updated": "2026-08-17T03:57:36.805087Z",
+  "updated": "2026-08-18T03:01:24.344781Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "14-Aug-2026",
+    "date": "17-Aug-2026",
     "fii": {
-      "buy": 12854.44,
-      "sell": 12346.32,
-      "net": 508.12
+      "buy": 11546.16,
+      "sell": 14081.26,
+      "net": -2535.1
     },
     "dii": {
-      "buy": 14295.49,
-      "sell": 13939.09,
-      "net": 356.4
+      "buy": 16654.08,
+      "sell": 11552.62,
+      "net": 5101.46
     },
-    "net_combined": 864.52
+    "net_combined": 2566.36
   },
   "corporate": [
-    {
-      "date": "2026-08-18",
-      "date_str": "18 Aug",
-      "symbol": "ANNAPURNA",
-      "company": "Annapurna Swadisht Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-18",
-      "date_str": "18 Aug",
-      "symbol": "BAGFILMS",
-      "company": "B.A.G Films and Media Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-08-18",
-      "date_str": "18 Aug",
-      "symbol": "BALKRISIND",
-      "company": "Balkrishna Industries Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-18",
-      "date_str": "18 Aug",
-      "symbol": "BPCL",
-      "company": "Bharat Petroleum Corporation Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-18",
-      "date_str": "18 Aug",
-      "symbol": "EFCIL",
-      "company": "EFC (I) Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-18",
-      "date_str": "18 Aug",
-      "symbol": "IGIL",
-      "company": "International Gemological Institute Li",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-08-18",
-      "date_str": "18 Aug",
-      "symbol": "PICCADIL",
-      "company": "Piccadily Agro Industries Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-08-18",
-      "date_str": "18 Aug",
-      "symbol": "SIGMA",
-      "company": "Sigma Solve Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-08-18",
-      "date_str": "18 Aug",
-      "symbol": "SIGMA",
-      "company": "Sigma Solve Limited",
-      "purpose": "Dividend"
-    },
     {
       "date": "2026-08-19",
       "date_str": "19 Aug",
@@ -139,9 +76,23 @@
     {
       "date": "2026-08-20",
       "date_str": "20 Aug",
+      "symbol": "BONLON",
+      "company": "Bonlon Industries Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-20",
+      "date_str": "20 Aug",
       "symbol": "MANIPALHOS",
       "company": "Manipal Health Enterprises Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-20",
+      "date_str": "20 Aug",
+      "symbol": "RATNAVEER",
+      "company": "Ratnaveer Precision Engineering Limite",
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-08-20",
@@ -156,6 +107,48 @@
       "symbol": "SUPREMEENG",
       "company": "Supreme Engineering Limited",
       "purpose": "Financial Results/Fund Raising"
+    },
+    {
+      "date": "2026-08-20",
+      "date_str": "20 Aug",
+      "symbol": "UMAEXPORTS",
+      "company": "Uma Exports Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-08-21",
+      "date_str": "21 Aug",
+      "symbol": "FLEXITUFF",
+      "company": "Flexituff Ventures International Limit",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-21",
+      "date_str": "21 Aug",
+      "symbol": "GLOBE",
+      "company": "GLOBE ENTERPRISES (INDIA) LIMITED",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-22",
+      "date_str": "22 Aug",
+      "symbol": "PAR",
+      "company": "Par Drugs and Chemicals Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-22",
+      "date_str": "22 Aug",
+      "symbol": "SHUKRAPHAR",
+      "company": "Shukra Pharmaceuticals Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-25",
+      "date_str": "25 Aug",
+      "symbol": "STCINDIA",
+      "company": "The State Trading Corporation of India",
+      "purpose": "Financial Results"
     }
   ]
 }
