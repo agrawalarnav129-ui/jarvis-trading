@@ -12,6 +12,7 @@
   "RAYMOND.NS": [],
   "PTCIL.NS": [],
   "GNFC.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "BHEL.NS": [],
