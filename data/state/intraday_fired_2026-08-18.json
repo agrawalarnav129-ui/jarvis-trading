@@ -1,0 +1,23 @@
+{
+  "OBEROIRLTY.NS": [],
+  "WELSPUNLIV.NS": [],
+  "ELGIEQUIP.NS": [],
+  "IPCALAB.NS": [],
+  "RAYMOND.NS": [],
+  "PTCIL.NS": [],
+  "GNFC.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "BHEL.NS": [],
+  "HONASA.NS": [],
+  "EPL.NS": [],
+  "SUPREMEIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LT.NS": [],
+  "ARVIND.NS": [],
+  "HAL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PIDILITIND.NS": []
+}
