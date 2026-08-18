@@ -8,7 +8,9 @@
   "ELGIEQUIP.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "IPCALAB.NS": [],
+  "IPCALAB.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "RAYMOND.NS": [],
   "PTCIL.NS": [],
   "GNFC.NS": [
