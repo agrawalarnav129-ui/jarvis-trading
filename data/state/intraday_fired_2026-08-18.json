@@ -23,7 +23,8 @@
     "BB_SQUEEZE_SETUP"
   ],
   "LT.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "ARVIND.NS": [],
   "HAL.NS": [
