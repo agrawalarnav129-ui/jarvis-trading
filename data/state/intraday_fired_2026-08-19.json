@@ -16,7 +16,9 @@
     "BB_SQUEEZE_SETUP"
   ],
   "APARINDS.NS": [],
-  "BOROLTD.NS": [],
+  "BOROLTD.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "EPL.NS": [
     "BREAKOUT",
     "MOMENTUM_CONT"
