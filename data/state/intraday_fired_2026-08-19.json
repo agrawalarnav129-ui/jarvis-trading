@@ -1,0 +1,22 @@
+{
+  "WELSPUNLIV.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MSTCLTD.NS": [],
+  "MINDACORP.NS": [],
+  "ZENTEC.NS": [],
+  "GLAXO.NS": [],
+  "PTCIL.NS": [],
+  "ASAHIINDIA.NS": [],
+  "HFCL.NS": [],
+  "JYOTICNC.NS": [],
+  "BEML.NS": [],
+  "APARINDS.NS": [],
+  "BOROLTD.NS": [],
+  "EPL.NS": [],
+  "ZFCVINDIA.NS": [],
+  "IPCALAB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
