@@ -1,71 +1,22 @@
 {
-  "updated": "2026-08-18T03:52:13.885167Z",
+  "updated": "2026-08-19T03:01:16.302570Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "17-Aug-2026",
+    "date": "18-Aug-2026",
     "fii": {
-      "buy": 11546.16,
-      "sell": 14081.26,
-      "net": -2535.1
+      "buy": 13543.3,
+      "sell": 11891.77,
+      "net": 1651.53
     },
     "dii": {
-      "buy": 16654.08,
-      "sell": 11552.62,
-      "net": 5101.46
+      "buy": 15566.07,
+      "sell": 12986.76,
+      "net": 2579.31
     },
-    "net_combined": 2566.36
+    "net_combined": 4230.84
   },
   "corporate": [
-    {
-      "date": "2026-08-19",
-      "date_str": "19 Aug",
-      "symbol": "CPPLUS",
-      "company": "Aditya Infotech Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-19",
-      "date_str": "19 Aug",
-      "symbol": "DHANBANK",
-      "company": "Dhanlaxmi Bank Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-19",
-      "date_str": "19 Aug",
-      "symbol": "DUCON",
-      "company": "Ducon Infratechnologies Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-08-19",
-      "date_str": "19 Aug",
-      "symbol": "GULFPETRO",
-      "company": "GP Petroleums Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-08-19",
-      "date_str": "19 Aug",
-      "symbol": "LCL",
-      "company": "Lohia Corp Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-19",
-      "date_str": "19 Aug",
-      "symbol": "WHEELS",
-      "company": "Wheels India Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-19",
-      "date_str": "19 Aug",
-      "symbol": "XTRANET",
-      "company": "Xtranet Technologies Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-08-20",
       "date_str": "20 Aug",
@@ -118,6 +69,27 @@
     {
       "date": "2026-08-21",
       "date_str": "21 Aug",
+      "symbol": "DEEDEV",
+      "company": "DEE Development Engineers Limited",
+      "purpose": "Dividend/Other business matter"
+    },
+    {
+      "date": "2026-08-21",
+      "date_str": "21 Aug",
+      "symbol": "EMKAY",
+      "company": "Emkay Global Financial Services Limite",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-21",
+      "date_str": "21 Aug",
+      "symbol": "FEDERALBNK",
+      "company": "The Federal Bank  Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-21",
+      "date_str": "21 Aug",
       "symbol": "FLEXITUFF",
       "company": "Flexituff Ventures International Limit",
       "purpose": "Financial Results"
@@ -128,6 +100,27 @@
       "symbol": "GLOBE",
       "company": "GLOBE ENTERPRISES (INDIA) LIMITED",
       "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-21",
+      "date_str": "21 Aug",
+      "symbol": "ICICIBANK",
+      "company": "ICICI Bank Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-21",
+      "date_str": "21 Aug",
+      "symbol": "INNOVACAP",
+      "company": "Innova Captab Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-22",
+      "date_str": "22 Aug",
+      "symbol": "HERANBA",
+      "company": "Heranba Industries Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
       "date": "2026-08-22",
@@ -144,11 +137,25 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-08-24",
+      "date_str": "24 Aug",
+      "symbol": "DHRUV",
+      "company": "Dhruv Consultancy Services Limited",
+      "purpose": "Other business matters"
+    },
+    {
       "date": "2026-08-25",
       "date_str": "25 Aug",
       "symbol": "STCINDIA",
       "company": "The State Trading Corporation of India",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-26",
+      "date_str": "26 Aug",
+      "symbol": "BAIDFIN",
+      "company": "Baid Finserv Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
