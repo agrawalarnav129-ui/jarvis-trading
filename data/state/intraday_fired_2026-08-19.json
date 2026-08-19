@@ -9,11 +9,18 @@
   "PTCIL.NS": [],
   "ASAHIINDIA.NS": [],
   "HFCL.NS": [],
-  "JYOTICNC.NS": [],
-  "BEML.NS": [],
+  "JYOTICNC.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "BEML.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "APARINDS.NS": [],
   "BOROLTD.NS": [],
-  "EPL.NS": [],
+  "EPL.NS": [
+    "BREAKOUT",
+    "MOMENTUM_CONT"
+  ],
   "ZFCVINDIA.NS": [],
   "IPCALAB.NS": [
     "BB_SQUEEZE_SETUP",
