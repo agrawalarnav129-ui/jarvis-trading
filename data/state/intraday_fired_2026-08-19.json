@@ -8,12 +8,16 @@
     "BB_SQUEEZE_SETUP"
   ],
   "ZENTEC.NS": [],
-  "GLAXO.NS": [],
-  "PTCIL.NS": [
+  "GLAXO.NS": [
     "BB_SQUEEZE_SETUP"
   ],
+  "PTCIL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT"
+  ],
   "ASAHIINDIA.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "HFCL.NS": [
     "BB_SQUEEZE_SETUP"
