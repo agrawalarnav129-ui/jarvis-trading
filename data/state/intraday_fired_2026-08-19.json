@@ -7,7 +7,9 @@
   "MINDACORP.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "ZENTEC.NS": [],
+  "ZENTEC.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "GLAXO.NS": [
     "BB_SQUEEZE_SETUP"
   ],
