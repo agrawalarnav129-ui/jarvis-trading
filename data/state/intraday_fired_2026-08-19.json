@@ -9,11 +9,15 @@
   ],
   "ZENTEC.NS": [],
   "GLAXO.NS": [],
-  "PTCIL.NS": [],
+  "PTCIL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "ASAHIINDIA.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "HFCL.NS": [],
+  "HFCL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "JYOTICNC.NS": [
     "MOMENTUM_CONT"
   ],
@@ -26,6 +30,7 @@
     "BB_SQUEEZE_SETUP"
   ],
   "EPL.NS": [
+    "BB_SQUEEZE_SETUP",
     "BREAKOUT",
     "MOMENTUM_CONT"
   ],
