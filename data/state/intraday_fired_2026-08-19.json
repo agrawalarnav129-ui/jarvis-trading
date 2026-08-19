@@ -4,17 +4,22 @@
     "MOMENTUM_CONT"
   ],
   "MSTCLTD.NS": [],
-  "MINDACORP.NS": [],
+  "MINDACORP.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "ZENTEC.NS": [],
   "GLAXO.NS": [],
   "PTCIL.NS": [],
-  "ASAHIINDIA.NS": [],
+  "ASAHIINDIA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "HFCL.NS": [],
   "JYOTICNC.NS": [
     "MOMENTUM_CONT"
   ],
   "BEML.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "APARINDS.NS": [],
   "BOROLTD.NS": [
