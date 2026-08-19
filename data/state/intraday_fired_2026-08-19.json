@@ -1,6 +1,7 @@
 {
   "WELSPUNLIV.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "MSTCLTD.NS": [],
   "MINDACORP.NS": [],
