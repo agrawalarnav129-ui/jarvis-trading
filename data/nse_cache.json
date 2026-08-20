@@ -1,71 +1,22 @@
 {
-  "updated": "2026-08-19T03:53:39.376647Z",
+  "updated": "2026-08-20T03:01:27.706484Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "18-Aug-2026",
+    "date": "19-Aug-2026",
     "fii": {
-      "buy": 13543.3,
-      "sell": 11891.77,
-      "net": 1651.53
+      "buy": 12875.76,
+      "sell": 12467.77,
+      "net": 407.99
     },
     "dii": {
-      "buy": 15566.07,
-      "sell": 12986.76,
-      "net": 2579.31
+      "buy": 17288.58,
+      "sell": 13314.86,
+      "net": 3973.72
     },
-    "net_combined": 4230.84
+    "net_combined": 4381.71
   },
   "corporate": [
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "ARIHANTCAP",
-      "company": "Arihant Capital Markets Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "BONLON",
-      "company": "Bonlon Industries Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "MANIPALHOS",
-      "company": "Manipal Health Enterprises Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "RATNAVEER",
-      "company": "Ratnaveer Precision Engineering Limite",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "RUBFILA",
-      "company": "Rubfila International Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "SUPREMEENG",
-      "company": "Supreme Engineering Limited",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-08-20",
-      "date_str": "20 Aug",
-      "symbol": "UMAEXPORTS",
-      "company": "Uma Exports Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-08-21",
       "date_str": "21 Aug",
@@ -125,6 +76,13 @@
     {
       "date": "2026-08-22",
       "date_str": "22 Aug",
+      "symbol": "MAHASTEEL",
+      "company": "Mahamaya Steel Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-22",
+      "date_str": "22 Aug",
       "symbol": "PAR",
       "company": "Par Drugs and Chemicals Limited",
       "purpose": "Other business matters"
@@ -137,6 +95,20 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-08-22",
+      "date_str": "22 Aug",
+      "symbol": "SIGACHI",
+      "company": "Sigachi Industries Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-22",
+      "date_str": "22 Aug",
+      "symbol": "TEGA",
+      "company": "Tega Industries Limited",
+      "purpose": "Fund Raising"
+    },
+    {
       "date": "2026-08-24",
       "date_str": "24 Aug",
       "symbol": "DHRUV",
@@ -144,18 +116,46 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-08-24",
+      "date_str": "24 Aug",
+      "symbol": "GABRIEL",
+      "company": "Gabriel India Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-24",
+      "date_str": "24 Aug",
+      "symbol": "PATINTLOG",
+      "company": "Patel Integrated Logistics Limited",
+      "purpose": "Dividend/Other business matter"
+    },
+    {
+      "date": "2026-08-24",
+      "date_str": "24 Aug",
+      "symbol": "PIRAMALFIN",
+      "company": "Piramal Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-24",
+      "date_str": "24 Aug",
+      "symbol": "UCOBANK",
+      "company": "UCO Bank",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-25",
+      "date_str": "25 Aug",
+      "symbol": "FEDFINA",
+      "company": "Fedbank Financial Services Limited",
+      "purpose": "Fund Raising"
+    },
+    {
       "date": "2026-08-25",
       "date_str": "25 Aug",
       "symbol": "STCINDIA",
       "company": "The State Trading Corporation of India",
       "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "BAIDFIN",
-      "company": "Baid Finserv Limited",
-      "purpose": "Other business matters"
     }
   ]
 }
