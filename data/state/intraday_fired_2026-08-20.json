@@ -1,0 +1,32 @@
+{
+  "ELGIEQUIP.NS": [],
+  "EPL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CASTROLIND.NS": [],
+  "MGL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "IPCALAB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "WELSPUNLIV.NS": [],
+  "ZENTEC.NS": [],
+  "MSTCLTD.NS": [],
+  "PNBHOUSING.NS": [],
+  "GLAXO.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "DALBHARAT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SUPREMEIND.NS": [],
+  "MINDACORP.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "HAL.NS": [],
+  "HFCL.NS": []
+}
