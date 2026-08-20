@@ -16,7 +16,9 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "WELSPUNLIV.NS": [],
+  "WELSPUNLIV.NS": [
+    "MOMENTUM_CONT"
+  ],
   "ZENTEC.NS": [],
   "MSTCLTD.NS": [],
   "PNBHOUSING.NS": [
