@@ -22,6 +22,7 @@
   "ZENTEC.NS": [],
   "MSTCLTD.NS": [],
   "PNBHOUSING.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "GLAXO.NS": [
