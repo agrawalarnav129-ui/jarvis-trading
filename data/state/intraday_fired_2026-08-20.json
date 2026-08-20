@@ -7,7 +7,9 @@
     "BREAKOUT",
     "MOMENTUM_CONT"
   ],
-  "CASTROLIND.NS": [],
+  "CASTROLIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "MGL.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
@@ -20,7 +22,9 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "ZENTEC.NS": [],
+  "ZENTEC.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "MSTCLTD.NS": [],
   "PNBHOUSING.NS": [
     "BB_SQUEEZE_SETUP",
