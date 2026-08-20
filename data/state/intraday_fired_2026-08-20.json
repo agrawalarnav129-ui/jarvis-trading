@@ -1,7 +1,11 @@
 {
-  "ELGIEQUIP.NS": [],
-  "EPL.NS": [
+  "ELGIEQUIP.NS": [
     "BB_SQUEEZE_SETUP"
+  ],
+  "EPL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT",
+    "MOMENTUM_CONT"
   ],
   "CASTROLIND.NS": [],
   "MGL.NS": [
@@ -15,14 +19,19 @@
   "WELSPUNLIV.NS": [],
   "ZENTEC.NS": [],
   "MSTCLTD.NS": [],
-  "PNBHOUSING.NS": [],
+  "PNBHOUSING.NS": [
+    "MOMENTUM_CONT"
+  ],
   "GLAXO.NS": [
     "BB_SQUEEZE_SETUP"
   ],
   "DALBHARAT.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "SUPREMEIND.NS": [],
+  "SUPREMEIND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "MINDACORP.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
