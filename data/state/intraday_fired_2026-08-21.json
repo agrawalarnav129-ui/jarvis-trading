@@ -8,7 +8,8 @@
     "BB_SQUEEZE_SETUP"
   ],
   "WELSPUNLIV.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "BRIGADE.NS": [
     "MOMENTUM_CONT"
