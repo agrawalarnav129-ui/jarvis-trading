@@ -23,7 +23,9 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "BALRAMCHIN.NS": [],
+  "BALRAMCHIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "DALBHARAT.NS": [],
   "AUBANK.NS": [
     "BB_SQUEEZE_SETUP",
@@ -34,7 +36,8 @@
     "MOMENTUM_CONT"
   ],
   "BOROLTD.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "DIXON.NS": [
     "BB_SQUEEZE_SETUP",
