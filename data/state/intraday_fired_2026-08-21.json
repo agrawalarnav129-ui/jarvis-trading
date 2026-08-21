@@ -33,9 +33,12 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "BOROLTD.NS": [],
-  "DIXON.NS": [
+  "BOROLTD.NS": [
     "BB_SQUEEZE_SETUP"
+  ],
+  "DIXON.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "MMTC.NS": [
     "BB_SQUEEZE_SETUP"
