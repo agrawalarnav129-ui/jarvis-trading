@@ -8,7 +8,9 @@
     "BB_SQUEEZE_SETUP"
   ],
   "WELSPUNLIV.NS": [],
-  "BRIGADE.NS": [],
+  "BRIGADE.NS": [
+    "MOMENTUM_CONT"
+  ],
   "RAYMOND.NS": [],
   "BALRAMCHIN.NS": [],
   "DALBHARAT.NS": [],
@@ -21,12 +23,15 @@
     "MOMENTUM_CONT"
   ],
   "BOROLTD.NS": [],
-  "DIXON.NS": [],
+  "DIXON.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "MMTC.NS": [
     "BB_SQUEEZE_SETUP"
   ],
   "KPRMILL.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "OBEROIRLTY.NS": [
     "BB_SQUEEZE_SETUP"
