@@ -7,7 +7,9 @@
   "ALEMBICLTD.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "WELSPUNLIV.NS": [],
+  "WELSPUNLIV.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "BRIGADE.NS": [
     "MOMENTUM_CONT"
   ],
