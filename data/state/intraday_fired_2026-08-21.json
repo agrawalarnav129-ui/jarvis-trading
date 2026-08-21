@@ -1,0 +1,34 @@
+{
+  "ACMESOLAR.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "EPL.NS": [],
+  "ALEMBICLTD.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "WELSPUNLIV.NS": [],
+  "BRIGADE.NS": [],
+  "RAYMOND.NS": [],
+  "BALRAMCHIN.NS": [],
+  "DALBHARAT.NS": [],
+  "AUBANK.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MOTILALOFS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BOROLTD.NS": [],
+  "DIXON.NS": [],
+  "MMTC.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "KPRMILL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "OBEROIRLTY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
