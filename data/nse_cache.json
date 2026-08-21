@@ -1,71 +1,22 @@
 {
-  "updated": "2026-08-20T03:53:34.200898Z",
+  "updated": "2026-08-21T03:01:18.631123Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "19-Aug-2026",
+    "date": "20-Aug-2026",
     "fii": {
-      "buy": 12875.76,
-      "sell": 12467.77,
-      "net": 407.99
+      "buy": 11411.73,
+      "sell": 11995.09,
+      "net": -583.36
     },
     "dii": {
-      "buy": 17288.58,
-      "sell": 13314.86,
-      "net": 3973.72
+      "buy": 16932.72,
+      "sell": 13395.01,
+      "net": 3537.71
     },
-    "net_combined": 4381.71
+    "net_combined": 2954.35
   },
   "corporate": [
-    {
-      "date": "2026-08-21",
-      "date_str": "21 Aug",
-      "symbol": "DEEDEV",
-      "company": "DEE Development Engineers Limited",
-      "purpose": "Dividend/Other business matter"
-    },
-    {
-      "date": "2026-08-21",
-      "date_str": "21 Aug",
-      "symbol": "EMKAY",
-      "company": "Emkay Global Financial Services Limite",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-21",
-      "date_str": "21 Aug",
-      "symbol": "FEDERALBNK",
-      "company": "The Federal Bank  Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-21",
-      "date_str": "21 Aug",
-      "symbol": "FLEXITUFF",
-      "company": "Flexituff Ventures International Limit",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-21",
-      "date_str": "21 Aug",
-      "symbol": "GLOBE",
-      "company": "GLOBE ENTERPRISES (INDIA) LIMITED",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-21",
-      "date_str": "21 Aug",
-      "symbol": "ICICIBANK",
-      "company": "ICICI Bank Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-21",
-      "date_str": "21 Aug",
-      "symbol": "INNOVACAP",
-      "company": "Innova Captab Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-08-22",
       "date_str": "22 Aug",
@@ -146,6 +97,20 @@
     {
       "date": "2026-08-25",
       "date_str": "25 Aug",
+      "symbol": "ARDEE",
+      "company": "Ardee Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-25",
+      "date_str": "25 Aug",
+      "symbol": "ARDEE",
+      "company": "Ardee Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-25",
+      "date_str": "25 Aug",
       "symbol": "FEDFINA",
       "company": "Fedbank Financial Services Limited",
       "purpose": "Fund Raising"
@@ -153,9 +118,44 @@
     {
       "date": "2026-08-25",
       "date_str": "25 Aug",
+      "symbol": "HMAAGRO",
+      "company": "HMA Agro Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-25",
+      "date_str": "25 Aug",
+      "symbol": "LAXMIINDIA",
+      "company": "Laxmi India Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-25",
+      "date_str": "25 Aug",
+      "symbol": "MVELECTRO",
+      "company": "MV Electrosystems Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-25",
+      "date_str": "25 Aug",
+      "symbol": "PIGL",
+      "company": "Power & Instrumentation (Gujarat) Limi",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-25",
+      "date_str": "25 Aug",
       "symbol": "STCINDIA",
       "company": "The State Trading Corporation of India",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-25",
+      "date_str": "25 Aug",
+      "symbol": "TEAMLEASE",
+      "company": "Teamlease Services Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
