@@ -6,9 +6,12 @@
   "WONDERLA.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "ACMESOLAR.NS": [],
-  "PTCIL.NS": [
+  "ACMESOLAR.NS": [
     "BB_SQUEEZE_SETUP"
+  ],
+  "PTCIL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "AUBANK.NS": [
     "BB_SQUEEZE_SETUP",
@@ -36,7 +39,10 @@
   "ALEMBICLTD.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "GRASIM.NS": [],
+  "GRASIM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "FINEORG.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
