@@ -1,0 +1,39 @@
+{
+  "CDSL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "WONDERLA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ACMESOLAR.NS": [],
+  "PTCIL.NS": [],
+  "AUBANK.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "KENNAMET.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "IIFL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "WELCORP.NS": [],
+  "KOTAKBANK.NS": [],
+  "BALRAMCHIN.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "AGI.NS": [],
+  "MOTILALOFS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "ALEMBICLTD.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "GRASIM.NS": [],
+  "FINEORG.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
