@@ -7,7 +7,9 @@
     "BB_SQUEEZE_SETUP"
   ],
   "ACMESOLAR.NS": [],
-  "PTCIL.NS": [],
+  "PTCIL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "AUBANK.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
