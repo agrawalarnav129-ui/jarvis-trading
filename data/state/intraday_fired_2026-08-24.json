@@ -24,7 +24,9 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "WELCORP.NS": [],
+  "WELCORP.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "KOTAKBANK.NS": [],
   "BALRAMCHIN.NS": [
     "MOMENTUM_CONT"
