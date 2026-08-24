@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T03:00:56.469410Z",
+  "updated": "2026-08-24T03:01:26.402169Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,41 +17,6 @@
     "net_combined": 1581.43
   },
   "corporate": [
-    {
-      "date": "2026-08-24",
-      "date_str": "24 Aug",
-      "symbol": "DHRUV",
-      "company": "Dhruv Consultancy Services Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-24",
-      "date_str": "24 Aug",
-      "symbol": "GABRIEL",
-      "company": "Gabriel India Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-24",
-      "date_str": "24 Aug",
-      "symbol": "PATINTLOG",
-      "company": "Patel Integrated Logistics Limited",
-      "purpose": "Dividend/Other business matter"
-    },
-    {
-      "date": "2026-08-24",
-      "date_str": "24 Aug",
-      "symbol": "PIRAMALFIN",
-      "company": "Piramal Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-24",
-      "date_str": "24 Aug",
-      "symbol": "UCOBANK",
-      "company": "UCO Bank",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-08-25",
       "date_str": "25 Aug",
@@ -125,6 +90,13 @@
     {
       "date": "2026-08-26",
       "date_str": "26 Aug",
+      "symbol": "IRBINVIT",
+      "company": "IRB InvIT Fund",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-26",
+      "date_str": "26 Aug",
       "symbol": "JNPR",
       "company": "Juniper Green Energy Limited",
       "purpose": "Financial Results"
@@ -156,6 +128,34 @@
       "symbol": "RUSTOMJEE",
       "company": "Keystone Realtors Limited",
       "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-08-26",
+      "date_str": "26 Aug",
+      "symbol": "SIMBHALS",
+      "company": "Simbhaoli Sugars Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-26",
+      "date_str": "26 Aug",
+      "symbol": "TIMETECHNO",
+      "company": "Time Technoplast Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-26",
+      "date_str": "26 Aug",
+      "symbol": "TPLPLASTEH",
+      "company": "TPL Plastech Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-26",
+      "date_str": "26 Aug",
+      "symbol": "VIKASECO",
+      "company": "Vikas EcoTech Limited",
+      "purpose": "Financial Results/Other busine"
     }
   ]
 }
