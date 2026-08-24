@@ -16,14 +16,17 @@
     "MOMENTUM_CONT"
   ],
   "IIFL.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "WELCORP.NS": [],
   "KOTAKBANK.NS": [],
   "BALRAMCHIN.NS": [
     "MOMENTUM_CONT"
   ],
-  "AGI.NS": [],
+  "AGI.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "MOTILALOFS.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
