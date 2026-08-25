@@ -15,7 +15,8 @@
     "MOMENTUM_CONT"
   ],
   "GLENMARK.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "WELCORP.NS": [
     "BB_SQUEEZE_SETUP"
