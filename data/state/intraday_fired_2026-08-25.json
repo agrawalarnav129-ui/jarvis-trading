@@ -10,7 +10,10 @@
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "HFCL.NS": [],
+  "HFCL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
   "FINEORG.NS": [],
   "EPIGRAL.NS": [
     "BB_SQUEEZE_SETUP",
