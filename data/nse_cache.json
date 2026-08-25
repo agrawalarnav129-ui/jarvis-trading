@@ -1,85 +1,22 @@
 {
-  "updated": "2026-08-24T04:01:16.854642Z",
+  "updated": "2026-08-25T03:01:26.702504Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "21-Aug-2026",
+    "date": "24-Aug-2026",
     "fii": {
-      "buy": 12560.91,
-      "sell": 13103.62,
-      "net": -542.71
+      "buy": 12332.64,
+      "sell": 11150.98,
+      "net": 1181.66
     },
     "dii": {
-      "buy": 15258.71,
-      "sell": 13134.57,
-      "net": 2124.14
+      "buy": 15337.18,
+      "sell": 12843.77,
+      "net": 2493.41
     },
-    "net_combined": 1581.43
+    "net_combined": 3675.07
   },
   "corporate": [
-    {
-      "date": "2026-08-25",
-      "date_str": "25 Aug",
-      "symbol": "ARDEE",
-      "company": "Ardee Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-25",
-      "date_str": "25 Aug",
-      "symbol": "ARDEE",
-      "company": "Ardee Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-25",
-      "date_str": "25 Aug",
-      "symbol": "FEDFINA",
-      "company": "Fedbank Financial Services Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-25",
-      "date_str": "25 Aug",
-      "symbol": "HMAAGRO",
-      "company": "HMA Agro Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-25",
-      "date_str": "25 Aug",
-      "symbol": "LAXMIINDIA",
-      "company": "Laxmi India Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-25",
-      "date_str": "25 Aug",
-      "symbol": "MVELECTRO",
-      "company": "MV Electrosystems Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-25",
-      "date_str": "25 Aug",
-      "symbol": "PIGL",
-      "company": "Power & Instrumentation (Gujarat) Limi",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-25",
-      "date_str": "25 Aug",
-      "symbol": "STCINDIA",
-      "company": "The State Trading Corporation of India",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-25",
-      "date_str": "25 Aug",
-      "symbol": "TEAMLEASE",
-      "company": "Teamlease Services Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-08-26",
       "date_str": "26 Aug",
@@ -156,6 +93,69 @@
       "symbol": "VIKASECO",
       "company": "Vikas EcoTech Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-08-27",
+      "date_str": "27 Aug",
+      "symbol": "AARTIDRUGS",
+      "company": "Aarti Drugs Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-27",
+      "date_str": "27 Aug",
+      "symbol": "FMGOETZE",
+      "company": "Federal-Mogul Goetze (India) Limited.",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-08-27",
+      "date_str": "27 Aug",
+      "symbol": "GENUSPOWER",
+      "company": "Genus Power Infrastructures Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-08-27",
+      "date_str": "27 Aug",
+      "symbol": "GESHIP",
+      "company": "The Great Eastern Shipping Company Lim",
+      "purpose": "Buyback"
+    },
+    {
+      "date": "2026-08-27",
+      "date_str": "27 Aug",
+      "symbol": "MAHESHWARI",
+      "company": "Maheshwari Logistics Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-28",
+      "date_str": "28 Aug",
+      "symbol": "GOLDTECH",
+      "company": "AION-TECH SOLUTIONS LIMITED",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-29",
+      "date_str": "29 Aug",
+      "symbol": "ANMOL",
+      "company": "Anmol India Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-29",
+      "date_str": "29 Aug",
+      "symbol": "CANFINHOME",
+      "company": "Can Fin Homes Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-29",
+      "date_str": "29 Aug",
+      "symbol": "SETCO",
+      "company": "Setco Automotive Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
