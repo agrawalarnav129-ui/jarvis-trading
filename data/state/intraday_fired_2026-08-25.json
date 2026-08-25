@@ -1,12 +1,18 @@
 {
-  "YATHARTH.NS": [],
-  "BHAGERIA.NS": [],
+  "YATHARTH.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "BHAGERIA.NS": [
+    "MOMENTUM_CONT"
+  ],
   "ENGINERSIN.NS": [
     "MOMENTUM_CONT"
   ],
   "HFCL.NS": [],
   "FINEORG.NS": [],
-  "EPIGRAL.NS": [],
+  "EPIGRAL.NS": [
+    "MOMENTUM_CONT"
+  ],
   "GLENMARK.NS": [
     "BB_SQUEEZE_SETUP"
   ],
@@ -17,7 +23,9 @@
     "BB_SQUEEZE_SETUP"
   ],
   "MSTCLTD.NS": [],
-  "PTCIL.NS": [],
+  "PTCIL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "ACMESOLAR.NS": [],
   "RATNAMANI.NS": [
     "MOMENTUM_CONT"
