@@ -38,7 +38,10 @@
     "MOMENTUM_CONT"
   ],
   "DIXON.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
-  "ENGINERSIN.NS": []
+  "ENGINERSIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
 }
