@@ -1,6 +1,8 @@
 {
   "BALAMINES.NS": [],
-  "BHAGERIA.NS": [],
+  "BHAGERIA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "CHALET.NS": [
     "BB_SQUEEZE_SETUP"
   ],
@@ -11,23 +13,29 @@
   ],
   "BOROLTD.NS": [],
   "IDBI.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "EPIGRAL.NS": [
     "BB_SQUEEZE_SETUP"
   ],
-  "EPIGRAL.NS": [],
   "MAZDOCK.NS": [
+    "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "EPL.NS": [],
   "YATHARTH.NS": [
     "BB_SQUEEZE_SETUP",
-    "BREAKOUT"
+    "BREAKOUT",
+    "MOMENTUM_CONT"
   ],
   "GLENMARK.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
   ],
   "LAURUSLABS.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "DIXON.NS": [
     "MOMENTUM_CONT"
