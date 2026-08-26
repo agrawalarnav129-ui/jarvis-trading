@@ -1,5 +1,7 @@
 {
-  "BALAMINES.NS": [],
+  "BALAMINES.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
   "BHAGERIA.NS": [
     "BB_SQUEEZE_SETUP",
     "MOMENTUM_CONT"
@@ -23,6 +25,7 @@
   ],
   "MAZDOCK.NS": [
     "BB_SQUEEZE_SETUP",
+    "BREAKOUT",
     "MOMENTUM_CONT"
   ],
   "EPL.NS": [],
