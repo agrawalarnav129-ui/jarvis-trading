@@ -1,99 +1,22 @@
 {
-  "updated": "2026-08-25T03:54:53.294344Z",
+  "updated": "2026-08-26T03:01:24.901351Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "24-Aug-2026",
+    "date": "25-Aug-2026",
     "fii": {
-      "buy": 12332.64,
-      "sell": 11150.98,
-      "net": 1181.66
+      "buy": 13259.03,
+      "sell": 11665.5,
+      "net": 1593.53
     },
     "dii": {
-      "buy": 15337.18,
-      "sell": 12843.77,
-      "net": 2493.41
+      "buy": 14280.18,
+      "sell": 14049.92,
+      "net": 230.26
     },
-    "net_combined": 3675.07
+    "net_combined": 1823.79
   },
   "corporate": [
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "BAIDFIN",
-      "company": "Baid Finserv Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "IRBINVIT",
-      "company": "IRB InvIT Fund",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "JNPR",
-      "company": "Juniper Green Energy Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "KRISHIVAL",
-      "company": "Krishival Foods Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "MOLDTECH",
-      "company": "Mold-Tek Technologies Limited",
-      "purpose": "Dividend/Bonus"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "MOLDTKPAC",
-      "company": "Mold-Tek Packaging Limited",
-      "purpose": "Dividend/Bonus/Other business "
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "RUSTOMJEE",
-      "company": "Keystone Realtors Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "SIMBHALS",
-      "company": "Simbhaoli Sugars Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "TIMETECHNO",
-      "company": "Time Technoplast Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "TPLPLASTEH",
-      "company": "TPL Plastech Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-26",
-      "date_str": "26 Aug",
-      "symbol": "VIKASECO",
-      "company": "Vikas EcoTech Limited",
-      "purpose": "Financial Results/Other busine"
-    },
     {
       "date": "2026-08-27",
       "date_str": "27 Aug",
@@ -137,11 +60,39 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-08-28",
+      "date_str": "28 Aug",
+      "symbol": "GSS",
+      "company": "GSS Infotech Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-28",
+      "date_str": "28 Aug",
+      "symbol": "MAXESTATES",
+      "company": "Max Estates Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-28",
+      "date_str": "28 Aug",
+      "symbol": "ONEPOINT",
+      "company": "One Point One Solutions Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
       "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "ANMOL",
       "company": "Anmol India Limited",
       "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-29",
+      "date_str": "29 Aug",
+      "symbol": "ATAM",
+      "company": "Atam Valves Limited",
+      "purpose": "Dividend/Other business matter"
     },
     {
       "date": "2026-08-29",
@@ -153,8 +104,57 @@
     {
       "date": "2026-08-29",
       "date_str": "29 Aug",
+      "symbol": "NGIL",
+      "company": "Nakoda Group of Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-29",
+      "date_str": "29 Aug",
       "symbol": "SETCO",
       "company": "Setco Automotive Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-29",
+      "date_str": "29 Aug",
+      "symbol": "STEELCITY",
+      "company": "Steel City Securities Limited",
+      "purpose": "Dividend/Other business matter"
+    },
+    {
+      "date": "2026-08-29",
+      "date_str": "29 Aug",
+      "symbol": "SUPREMEENG",
+      "company": "Supreme Engineering Limited",
+      "purpose": "Financial Results/Fund Raising"
+    },
+    {
+      "date": "2026-08-29",
+      "date_str": "29 Aug",
+      "symbol": "WEWIN",
+      "company": "WE WIN LIMITED",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "AFFORDABLE",
+      "company": "Affordable Robotic & Automation Limite",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "APOLLOPIPE",
+      "company": "Apollo Pipes Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "LEAPIND",
+      "company": "LEAP India Limited",
       "purpose": "Financial Results"
     }
   ]
