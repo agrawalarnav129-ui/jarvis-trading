@@ -1,10 +1,12 @@
 {
   "BALAMINES.NS": [],
   "BHAGERIA.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "CHALET.NS": [
-    "BB_SQUEEZE_SETUP"
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
   ],
   "AUBANK.NS": [],
   "ALEMBICLTD.NS": [
