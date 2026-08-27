@@ -1,20 +1,20 @@
 {
-  "updated": "2026-08-27T03:01:19.194661Z",
+  "updated": "2026-08-27T14:04:53.519596Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "26-Aug-2026",
+    "date": "27-Aug-2026",
     "fii": {
-      "buy": 17520.49,
-      "sell": 17017.86,
-      "net": 502.63
+      "buy": 15276.94,
+      "sell": 15575.2,
+      "net": -298.26
     },
     "dii": {
-      "buy": 17710.07,
-      "sell": 11284.91,
-      "net": 6425.16
+      "buy": 19605.6,
+      "sell": 14628.43,
+      "net": 4977.17
     },
-    "net_combined": 6927.79
+    "net_combined": 4678.91
   },
   "corporate": [
     {
@@ -109,6 +109,13 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-08-30",
+      "date_str": "30 Aug",
+      "symbol": "NAGAFERT",
+      "company": "Nagarjuna Fertilizers and Chemicals Li",
+      "purpose": "Financial Results"
+    },
+    {
       "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "AFFORDABLE",
@@ -148,13 +155,6 @@
       "date_str": "31 Aug",
       "symbol": "KIRIINDUS",
       "company": "Kiri Industries Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "KROSS",
-      "company": "Kross Limited",
       "purpose": "Fund Raising/Other business ma"
     }
   ]
