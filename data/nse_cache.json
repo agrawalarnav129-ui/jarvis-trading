@@ -1,57 +1,22 @@
 {
-  "updated": "2026-08-26T03:59:50.339802Z",
+  "updated": "2026-08-27T03:01:19.194661Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "25-Aug-2026",
+    "date": "26-Aug-2026",
     "fii": {
-      "buy": 13259.03,
-      "sell": 11665.5,
-      "net": 1593.53
+      "buy": 17520.49,
+      "sell": 17017.86,
+      "net": 502.63
     },
     "dii": {
-      "buy": 14280.18,
-      "sell": 14049.92,
-      "net": 230.26
+      "buy": 17710.07,
+      "sell": 11284.91,
+      "net": 6425.16
     },
-    "net_combined": 1823.79
+    "net_combined": 6927.79
   },
   "corporate": [
-    {
-      "date": "2026-08-27",
-      "date_str": "27 Aug",
-      "symbol": "AARTIDRUGS",
-      "company": "Aarti Drugs Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-27",
-      "date_str": "27 Aug",
-      "symbol": "FMGOETZE",
-      "company": "Federal-Mogul Goetze (India) Limited.",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-08-27",
-      "date_str": "27 Aug",
-      "symbol": "GENUSPOWER",
-      "company": "Genus Power Infrastructures Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-08-27",
-      "date_str": "27 Aug",
-      "symbol": "GESHIP",
-      "company": "The Great Eastern Shipping Company Lim",
-      "purpose": "Buyback"
-    },
-    {
-      "date": "2026-08-27",
-      "date_str": "27 Aug",
-      "symbol": "MAHESHWARI",
-      "company": "Maheshwari Logistics Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-08-28",
       "date_str": "28 Aug",
@@ -132,6 +97,13 @@
     {
       "date": "2026-08-29",
       "date_str": "29 Aug",
+      "symbol": "VOEPL",
+      "company": "Virtuoso Optoelectronics Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-08-29",
+      "date_str": "29 Aug",
       "symbol": "WEWIN",
       "company": "WE WIN LIMITED",
       "purpose": "Other business matters"
@@ -153,9 +125,37 @@
     {
       "date": "2026-08-31",
       "date_str": "31 Aug",
-      "symbol": "LEAPIND",
-      "company": "LEAP India Limited",
-      "purpose": "Financial Results"
+      "symbol": "BPL",
+      "company": "BPL Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "GATECH",
+      "company": "GACM Technologies Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "GATECHDVR",
+      "company": "GACM Technologies Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "KIRIINDUS",
+      "company": "Kiri Industries Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "KROSS",
+      "company": "Kross Limited",
+      "purpose": "Fund Raising/Other business ma"
     }
   ]
 }
