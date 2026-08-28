@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T14:04:53.519596Z",
+  "updated": "2026-08-28T03:01:25.032590Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,34 +17,6 @@
     "net_combined": 4678.91
   },
   "corporate": [
-    {
-      "date": "2026-08-28",
-      "date_str": "28 Aug",
-      "symbol": "GOLDTECH",
-      "company": "AION-TECH SOLUTIONS LIMITED",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-28",
-      "date_str": "28 Aug",
-      "symbol": "GSS",
-      "company": "GSS Infotech Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-28",
-      "date_str": "28 Aug",
-      "symbol": "MAXESTATES",
-      "company": "Max Estates Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-28",
-      "date_str": "28 Aug",
-      "symbol": "ONEPOINT",
-      "company": "One Point One Solutions Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-08-29",
       "date_str": "29 Aug",
@@ -156,6 +128,34 @@
       "symbol": "KIRIINDUS",
       "company": "Kiri Industries Limited",
       "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "KROSS",
+      "company": "Kross Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "LEAPIND",
+      "company": "LEAP India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "MAHASTEEL",
+      "company": "Mahamaya Steel Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "MANOMAY",
+      "company": "Manomay Tex India Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
