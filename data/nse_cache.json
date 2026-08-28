@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-28T03:01:25.032590Z",
+  "updated": "2026-08-28T15:16:28.460012Z",
   "fii_dii": {
     "available": true,
-    "source": "NSE provisional",
+    "source": "NSE provisional (cached)",
     "date": "27-Aug-2026",
     "fii": {
       "buy": 15276.94,
@@ -18,140 +18,120 @@
   },
   "corporate": [
     {
-      "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "ANMOL",
       "company": "Anmol India Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "ATAM",
       "company": "Atam Valves Limited",
       "purpose": "Dividend/Other business matter"
     },
     {
-      "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "CANFINHOME",
       "company": "Can Fin Homes Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "NGIL",
       "company": "Nakoda Group of Industries Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "SETCO",
       "company": "Setco Automotive Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "STEELCITY",
       "company": "Steel City Securities Limited",
       "purpose": "Dividend/Other business matter"
     },
     {
-      "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "SUPREMEENG",
       "company": "Supreme Engineering Limited",
       "purpose": "Financial Results/Fund Raising"
     },
     {
-      "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "VOEPL",
       "company": "Virtuoso Optoelectronics Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-08-29",
       "date_str": "29 Aug",
       "symbol": "WEWIN",
       "company": "WE WIN LIMITED",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-08-30",
       "date_str": "30 Aug",
       "symbol": "NAGAFERT",
       "company": "Nagarjuna Fertilizers and Chemicals Li",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "AFFORDABLE",
       "company": "Affordable Robotic & Automation Limite",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "APOLLOPIPE",
       "company": "Apollo Pipes Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "BPL",
       "company": "BPL Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "GATECH",
       "company": "GACM Technologies Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "GATECHDVR",
       "company": "GACM Technologies Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "KIRIINDUS",
       "company": "Kiri Industries Limited",
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "KROSS",
       "company": "Kross Limited",
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "LEAPIND",
       "company": "LEAP India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "MAHASTEEL",
       "company": "Mahamaya Steel Industries Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-08-31",
       "date_str": "31 Aug",
       "symbol": "MANOMAY",
       "company": "Manomay Tex India Limited",
