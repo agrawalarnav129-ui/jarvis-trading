@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29T03:00:54.366022Z",
+  "updated": "2026-08-30T03:00:56.731307Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,13 +17,6 @@
     "net_combined": 144.13
   },
   "corporate": [
-    {
-      "date": "2026-08-30",
-      "date_str": "30 Aug",
-      "symbol": "NAGAFERT",
-      "company": "Nagarjuna Fertilizers and Chemicals Li",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-08-31",
       "date_str": "31 Aug",
@@ -142,6 +135,13 @@
       "symbol": "SETCO",
       "company": "Setco Automotive Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-08-31",
+      "date_str": "31 Aug",
+      "symbol": "SUPREMEENG",
+      "company": "Supreme Engineering Limited",
+      "purpose": "Financial Results/Fund Raising"
     },
     {
       "date": "2026-09-01",
