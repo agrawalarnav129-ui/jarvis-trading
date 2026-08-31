@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T03:00:56.731307Z",
+  "updated": "2026-08-31T03:01:19.629373Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -18,132 +18,6 @@
   },
   "corporate": [
     {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "AFFORDABLE",
-      "company": "Affordable Robotic & Automation Limite",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "APOLLOPIPE",
-      "company": "Apollo Pipes Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "BPL",
-      "company": "BPL Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "GATECH",
-      "company": "GACM Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "GATECHDVR",
-      "company": "GACM Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "KIRIINDUS",
-      "company": "Kiri Industries Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "KROSS",
-      "company": "Kross Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "LEAPIND",
-      "company": "LEAP India Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "MAHASTEEL",
-      "company": "Mahamaya Steel Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "MANOMAY",
-      "company": "Manomay Tex India Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "MILKYMIST",
-      "company": "Milky Mist Dairy Food Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "NAVKARURB",
-      "company": "Navkar Urbanstructure Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "ORCHASP",
-      "company": "Orchasp Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "PVRINOX",
-      "company": "PVR INOX Limited",
-      "purpose": "Buyback"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "RITCO",
-      "company": "Ritco Logistics Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "RMCL",
-      "company": "Radha Madhav Corporation Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "SETCO",
-      "company": "Setco Automotive Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-08-31",
-      "date_str": "31 Aug",
-      "symbol": "SUPREMEENG",
-      "company": "Supreme Engineering Limited",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
       "date": "2026-09-01",
       "date_str": "01 Sep",
       "symbol": "AVONMORE",
@@ -155,6 +29,132 @@
       "date_str": "01 Sep",
       "symbol": "BESTAGRO",
       "company": "Best Agrolife Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-01",
+      "date_str": "01 Sep",
+      "symbol": "FINKURVE",
+      "company": "Finkurve Financial Services Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-01",
+      "date_str": "01 Sep",
+      "symbol": "GUJTHEM",
+      "company": "Gujarat Themis Biosyn Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-01",
+      "date_str": "01 Sep",
+      "symbol": "LOTUSDEV",
+      "company": "Sri Lotus Developers and Realty Limite",
+      "purpose": "Dividend/Other business matter"
+    },
+    {
+      "date": "2026-09-01",
+      "date_str": "01 Sep",
+      "symbol": "MANINFRA",
+      "company": "Man Infraconstruction Limited",
+      "purpose": "Buyback"
+    },
+    {
+      "date": "2026-09-01",
+      "date_str": "01 Sep",
+      "symbol": "SADBHAV",
+      "company": "Sadbhav Engineering Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-01",
+      "date_str": "01 Sep",
+      "symbol": "VERTOZ",
+      "company": "Vertoz Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "ATALREAL",
+      "company": "Atal Realtech Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "CTE",
+      "company": "Cambridge Technology Enterprises Limit",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "DSSL",
+      "company": "Dynacons Systems & Solutions Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "GANESHBE",
+      "company": "Ganesh Benzoplast Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "GENESYS",
+      "company": "Genesys International Corporation Limi",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "KRISHIVAL",
+      "company": "Krishival Foods Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "LATTEYS",
+      "company": "Latteys Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "ONELIFECAP",
+      "company": "Onelife Capital Advisors Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "PERSISTENT",
+      "company": "Persistent Systems Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "QPOWER",
+      "company": "Quality Power Electrical Equipments Li",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "SAHLIBHFI",
+      "company": "Shalibhadra Finance Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "SILGO",
+      "company": "Silgo Retail Limited",
       "purpose": "Other business matters"
     }
   ]
