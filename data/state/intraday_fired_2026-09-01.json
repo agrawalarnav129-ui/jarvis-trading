@@ -1,0 +1,30 @@
+{
+  "BHAGERIA.NS": [],
+  "OFSS.NS": [],
+  "SHYAMMETL.NS": [],
+  "PERSISTENT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "COFORGE.NS": [],
+  "ZYDUSLIFE.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MEDANTA.NS": [],
+  "CRISIL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NEWGEN.NS": [],
+  "PTCIL.NS": [],
+  "GLENMARK.NS": [],
+  "AGI.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "BHEL.NS": [],
+  "IPCALAB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "APLAPOLLO.NS": []
+}
