@@ -1,78 +1,22 @@
 {
-  "updated": "2026-08-31T09:38:00.906895Z",
+  "updated": "2026-09-01T03:01:34.979882Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "28-Aug-2026",
+    "date": "31-Aug-2026",
     "fii": {
-      "buy": 13263.62,
-      "sell": 18303.42,
-      "net": -5039.8
+      "buy": 60025.88,
+      "sell": 68011.76,
+      "net": -7985.88
     },
     "dii": {
-      "buy": 16539.38,
-      "sell": 11355.45,
-      "net": 5183.93
+      "buy": 19730.38,
+      "sell": 15141.5,
+      "net": 4588.88
     },
-    "net_combined": 144.13
+    "net_combined": -3397.0
   },
   "corporate": [
-    {
-      "date": "2026-09-01",
-      "date_str": "01 Sep",
-      "symbol": "AVONMORE",
-      "company": "Avonmore Capital & Management Services",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-01",
-      "date_str": "01 Sep",
-      "symbol": "BESTAGRO",
-      "company": "Best Agrolife Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-01",
-      "date_str": "01 Sep",
-      "symbol": "FINKURVE",
-      "company": "Finkurve Financial Services Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-01",
-      "date_str": "01 Sep",
-      "symbol": "GUJTHEM",
-      "company": "Gujarat Themis Biosyn Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-01",
-      "date_str": "01 Sep",
-      "symbol": "LOTUSDEV",
-      "company": "Sri Lotus Developers and Realty Limite",
-      "purpose": "Dividend/Other business matter"
-    },
-    {
-      "date": "2026-09-01",
-      "date_str": "01 Sep",
-      "symbol": "MANINFRA",
-      "company": "Man Infraconstruction Limited",
-      "purpose": "Buyback"
-    },
-    {
-      "date": "2026-09-01",
-      "date_str": "01 Sep",
-      "symbol": "SADBHAV",
-      "company": "Sadbhav Engineering Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-01",
-      "date_str": "01 Sep",
-      "symbol": "VERTOZ",
-      "company": "Vertoz Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-09-02",
       "date_str": "02 Sep",
@@ -155,6 +99,62 @@
       "date_str": "02 Sep",
       "symbol": "SILGO",
       "company": "Silgo Retail Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-02",
+      "date_str": "02 Sep",
+      "symbol": "TECHNOCRAF",
+      "company": "Technocraft Ventures Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-03",
+      "date_str": "03 Sep",
+      "symbol": "ASMS",
+      "company": "Avio Smart Market Stack Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-03",
+      "date_str": "03 Sep",
+      "symbol": "BETA",
+      "company": "Beta Drugs Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-03",
+      "date_str": "03 Sep",
+      "symbol": "CANBK",
+      "company": "Canara Bank",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-03",
+      "date_str": "03 Sep",
+      "symbol": "MASTERTR",
+      "company": "Master Trust Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-03",
+      "date_str": "03 Sep",
+      "symbol": "SOMICONVEY",
+      "company": "Somi Conveyor Beltings Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "BCG",
+      "company": "Brightcom Group Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "COUNCODOS",
+      "company": "Country Condo's Limited",
       "purpose": "Other business matters"
     }
   ]
