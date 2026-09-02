@@ -1,113 +1,22 @@
 {
-  "updated": "2026-09-01T08:33:51.245072Z",
+  "updated": "2026-09-02T03:01:23.316639Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "31-Aug-2026",
+    "date": "01-Sep-2026",
     "fii": {
-      "buy": 60025.88,
-      "sell": 68011.76,
-      "net": -7985.88
+      "buy": 17807.53,
+      "sell": 16664.15,
+      "net": 1143.38
     },
     "dii": {
-      "buy": 19730.38,
-      "sell": 15141.5,
-      "net": 4588.88
+      "buy": 15635.49,
+      "sell": 13788.55,
+      "net": 1846.94
     },
-    "net_combined": -3397.0
+    "net_combined": 2990.32
   },
   "corporate": [
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "ATALREAL",
-      "company": "Atal Realtech Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "CTE",
-      "company": "Cambridge Technology Enterprises Limit",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "DSSL",
-      "company": "Dynacons Systems & Solutions Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "GANESHBE",
-      "company": "Ganesh Benzoplast Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "GENESYS",
-      "company": "Genesys International Corporation Limi",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "KRISHIVAL",
-      "company": "Krishival Foods Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "LATTEYS",
-      "company": "Latteys Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "ONELIFECAP",
-      "company": "Onelife Capital Advisors Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "PERSISTENT",
-      "company": "Persistent Systems Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "QPOWER",
-      "company": "Quality Power Electrical Equipments Li",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "SAHLIBHFI",
-      "company": "Shalibhadra Finance Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "SILGO",
-      "company": "Silgo Retail Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-02",
-      "date_str": "02 Sep",
-      "symbol": "TECHNOCRAF",
-      "company": "Technocraft Ventures Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-09-03",
       "date_str": "03 Sep",
@@ -146,6 +55,13 @@
     {
       "date": "2026-09-04",
       "date_str": "04 Sep",
+      "symbol": "ANTGRAPHIC",
+      "company": "Antarctica Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
       "symbol": "BCG",
       "company": "Brightcom Group Limited",
       "purpose": "Other business matters"
@@ -155,6 +71,90 @@
       "date_str": "04 Sep",
       "symbol": "COUNCODOS",
       "company": "Country Condo's Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "DHOOTTRANS",
+      "company": "Dhoot Transmission Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "JAIPURKURT",
+      "company": "Nandani Creation Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "KAVDEFENCE",
+      "company": "Kavveri Defence & Wireless Technologie",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "LANDSMILL",
+      "company": "Landsmill Green Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "LAXMICOT",
+      "company": "Laxmi Cotspin Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "NITIRAJ",
+      "company": "Nitiraj Engineers Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "PALREDTEC",
+      "company": "Palred Technologies Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "PFOCUS",
+      "company": "Prime Focus Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "PRUDMOULI",
+      "company": "Prudential Sugar Corporation Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "SPECTRUM",
+      "company": "Spectrum Electrical Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "SUMEETINDS",
+      "company": "Sumeet Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "SVPGLOB",
+      "company": "SVP GLOBAL TEXTILES LIMITED",
       "purpose": "Other business matters"
     }
   ]
