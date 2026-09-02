@@ -1,0 +1,27 @@
+{
+  "CAPLIPOINT.NS": [],
+  "JKPAPER.NS": [],
+  "ENGINERSIN.NS": [],
+  "BAJAJ-AUTO.NS": [],
+  "TEXRAIL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "AUROPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "CRAFTSMAN.NS": [],
+  "NYKAA.NS": [],
+  "BIRLACABLE.NS": [],
+  "WELCORP.NS": [],
+  "PTCIL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SUNPHARMA.NS": [],
+  "MEDANTA.NS": [],
+  "OFSS.NS": [],
+  "STLTECH.NS": [
+    "MOMENTUM_CONT"
+  ]
+}
