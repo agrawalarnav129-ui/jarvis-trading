@@ -1,0 +1,24 @@
+{
+  "RAYMOND.NS": [],
+  "NUVAMA.NS": [],
+  "OIL.NS": [],
+  "CAPLIPOINT.NS": [],
+  "JKPAPER.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "ARVIND.NS": [],
+  "BEML.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BIRLACABLE.NS": [],
+  "BHAGERIA.NS": [],
+  "OFSS.NS": [],
+  "BAJAJ-AUTO.NS": [],
+  "CONFIPET.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "STLTECH.NS": [],
+  "CLEAN.NS": [],
+  "REDINGTON.NS": []
+}
