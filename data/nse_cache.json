@@ -1,57 +1,22 @@
 {
-  "updated": "2026-09-02T07:51:11.545189Z",
+  "updated": "2026-09-03T03:01:24.679616Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "01-Sep-2026",
+    "date": "02-Sep-2026",
     "fii": {
-      "buy": 17807.53,
-      "sell": 16664.15,
-      "net": 1143.38
+      "buy": 26715.88,
+      "sell": 20027.51,
+      "net": 6688.37
     },
     "dii": {
-      "buy": 15635.49,
-      "sell": 13788.55,
-      "net": 1846.94
+      "buy": 17639.89,
+      "sell": 14826.91,
+      "net": 2812.98
     },
-    "net_combined": 2990.32
+    "net_combined": 9501.35
   },
   "corporate": [
-    {
-      "date": "2026-09-03",
-      "date_str": "03 Sep",
-      "symbol": "ASMS",
-      "company": "Avio Smart Market Stack Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-03",
-      "date_str": "03 Sep",
-      "symbol": "BETA",
-      "company": "Beta Drugs Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-03",
-      "date_str": "03 Sep",
-      "symbol": "CANBK",
-      "company": "Canara Bank",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-03",
-      "date_str": "03 Sep",
-      "symbol": "MASTERTR",
-      "company": "Master Trust Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-03",
-      "date_str": "03 Sep",
-      "symbol": "SOMICONVEY",
-      "company": "Somi Conveyor Beltings Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-09-04",
       "date_str": "04 Sep",
@@ -155,6 +120,41 @@
       "date_str": "04 Sep",
       "symbol": "SVPGLOB",
       "company": "SVP GLOBAL TEXTILES LIMITED",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "UNIINFO",
+      "company": "Uniinfo Telecom Services Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-04",
+      "date_str": "04 Sep",
+      "symbol": "VINCOFE",
+      "company": "Vintage Coffee And Beverages Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "AARTECH",
+      "company": "Aartech Solonics Limited",
+      "purpose": "Dividend/Other business matter"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "AGIIL",
+      "company": "Agi Infra Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "AURUS",
+      "company": "AURUS GEM CORPORATION LIMITED",
       "purpose": "Other business matters"
     }
   ]
