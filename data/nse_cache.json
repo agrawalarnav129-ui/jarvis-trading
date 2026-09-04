@@ -1,141 +1,22 @@
 {
-  "updated": "2026-09-03T07:58:53.152673Z",
+  "updated": "2026-09-04T03:01:15.901391Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "02-Sep-2026",
+    "date": "03-Sep-2026",
     "fii": {
-      "buy": 26715.88,
-      "sell": 20027.51,
-      "net": 6688.37
+      "buy": 13596.04,
+      "sell": 15941.91,
+      "net": -2345.87
     },
     "dii": {
-      "buy": 17639.89,
-      "sell": 14826.91,
-      "net": 2812.98
+      "buy": 17063.65,
+      "sell": 12086.19,
+      "net": 4977.46
     },
-    "net_combined": 9501.35
+    "net_combined": 2631.59
   },
   "corporate": [
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "ANTGRAPHIC",
-      "company": "Antarctica Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "BCG",
-      "company": "Brightcom Group Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "COUNCODOS",
-      "company": "Country Condo's Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "DHOOTTRANS",
-      "company": "Dhoot Transmission Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "JAIPURKURT",
-      "company": "Nandani Creation Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "KAVDEFENCE",
-      "company": "Kavveri Defence & Wireless Technologie",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "LANDSMILL",
-      "company": "Landsmill Green Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "LAXMICOT",
-      "company": "Laxmi Cotspin Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "NITIRAJ",
-      "company": "Nitiraj Engineers Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "PALREDTEC",
-      "company": "Palred Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "PFOCUS",
-      "company": "Prime Focus Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "PRUDMOULI",
-      "company": "Prudential Sugar Corporation Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "SPECTRUM",
-      "company": "Spectrum Electrical Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "SUMEETINDS",
-      "company": "Sumeet Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "SVPGLOB",
-      "company": "SVP GLOBAL TEXTILES LIMITED",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "UNIINFO",
-      "company": "Uniinfo Telecom Services Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-04",
-      "date_str": "04 Sep",
-      "symbol": "VINCOFE",
-      "company": "Vintage Coffee And Beverages Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-09-05",
       "date_str": "05 Sep",
@@ -155,6 +36,125 @@
       "date_str": "05 Sep",
       "symbol": "AURUS",
       "company": "AURUS GEM CORPORATION LIMITED",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "AXISCADES",
+      "company": "AXISCADES Technologies Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "COMSYN",
+      "company": "Commercial Syn Bags Limited",
+      "purpose": "Dividend/Fund Raising"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "DPWIRES",
+      "company": "D P Wires Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "KELLTONTEC",
+      "company": "Kellton Tech Solutions Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "MOLBIO",
+      "company": "Molbio Diagnostics Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "OLAELEC",
+      "company": "Ola Electric Mobility Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "SARVESHWAR",
+      "company": "Sarveshwar Foods Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "SDBL",
+      "company": "Som Distilleries & Breweries Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "SIGIND",
+      "company": "Signet Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "SRM",
+      "company": "SRM Contractors Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "VCL",
+      "company": "Vaxtex Cotfab Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "VPRPL",
+      "company": "Vishnu Prakash R Punglia Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-05",
+      "date_str": "05 Sep",
+      "symbol": "XTGLOBAL",
+      "company": "Xtglobal Infotech Limited",
+      "purpose": "Dividend/Other business matter"
+    },
+    {
+      "date": "2026-09-07",
+      "date_str": "07 Sep",
+      "symbol": "AGROPHOS",
+      "company": "Agro Phos India Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-07",
+      "date_str": "07 Sep",
+      "symbol": "ARCOTECH",
+      "company": "Arcotech Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-07",
+      "date_str": "07 Sep",
+      "symbol": "BALUFORGE",
+      "company": "Balu Forge Industries Limited",
+      "purpose": "Dividend/Other business matter"
+    },
+    {
+      "date": "2026-09-07",
+      "date_str": "07 Sep",
+      "symbol": "BGLOBAL",
+      "company": "Bharatiya Global Infomedia Limited",
       "purpose": "Other business matters"
     }
   ]
