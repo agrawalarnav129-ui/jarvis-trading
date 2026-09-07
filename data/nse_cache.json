@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T03:01:15.574144Z",
+  "updated": "2026-09-07T08:11:50.686765Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -151,11 +151,11 @@
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-09-17",
-      "date_str": "17 Sep",
-      "symbol": "SKYWAYS",
-      "company": "Skyways Air Services Limited",
-      "purpose": "Financial Results/Dividend/Oth"
+      "date": "2026-09-11",
+      "date_str": "11 Sep",
+      "symbol": "PRAXIS",
+      "company": "Praxis Home Retail Limited",
+      "purpose": "Fund Raising"
     }
   ]
 }
