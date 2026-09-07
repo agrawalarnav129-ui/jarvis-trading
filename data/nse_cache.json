@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06T03:00:57.748865Z",
+  "updated": "2026-09-07T03:01:15.574144Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,90 +17,6 @@
     "net_combined": 5818.18
   },
   "corporate": [
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "AGROPHOS",
-      "company": "Agro Phos India Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "ARCOTECH",
-      "company": "Arcotech Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "BALUFORGE",
-      "company": "Balu Forge Industries Limited",
-      "purpose": "Dividend/Other business matter"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "BGLOBAL",
-      "company": "Bharatiya Global Infomedia Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "BLEL",
-      "company": "Behari Lal Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "GRADIENTE",
-      "company": "Gradiente Infotainment Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "KOTYARK",
-      "company": "Kotyark Industries Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "PNBHOUSING",
-      "company": "PNB Housing Finance Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "RBLBANK",
-      "company": "RBL Bank Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "SAMMAANCAP",
-      "company": "Sammaan Capital Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "SHIPROCKET",
-      "company": "Shiprocket Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-07",
-      "date_str": "07 Sep",
-      "symbol": "VIVIDHA",
-      "company": "Visagar Polytex Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-09-08",
       "date_str": "08 Sep",
@@ -156,6 +72,90 @@
       "symbol": "KMEW",
       "company": "Knowledge Marine & Engineering Works L",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-08",
+      "date_str": "08 Sep",
+      "symbol": "MELSTAR",
+      "company": "Melstar Information Technologies Limit",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-08",
+      "date_str": "08 Sep",
+      "symbol": "RAYMOND",
+      "company": "Raymond Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-08",
+      "date_str": "08 Sep",
+      "symbol": "USK",
+      "company": "Udayshivakumar Infra Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-09",
+      "date_str": "09 Sep",
+      "symbol": "GANESHCP",
+      "company": "Ganesh Consumer Products Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-09",
+      "date_str": "09 Sep",
+      "symbol": "LIBAS",
+      "company": "Libas Consumer Products Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-09",
+      "date_str": "09 Sep",
+      "symbol": "NATCOPHARM",
+      "company": "Natco Pharma Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-09",
+      "date_str": "09 Sep",
+      "symbol": "SANGINITA",
+      "company": "Sanginita Chemicals Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-09",
+      "date_str": "09 Sep",
+      "symbol": "SUMEETINDS",
+      "company": "Sumeet Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-10",
+      "date_str": "10 Sep",
+      "symbol": "AJMERA",
+      "company": "Ajmera Realty & Infra India Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-10",
+      "date_str": "10 Sep",
+      "symbol": "GAJA",
+      "company": "Gaja Alternative Asset Management Limi",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-11",
+      "date_str": "11 Sep",
+      "symbol": "LALITHAA",
+      "company": "Lalithaa Jewellery Mart Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
+      "symbol": "SKYWAYS",
+      "company": "Skyways Air Services Limited",
+      "purpose": "Financial Results/Dividend/Oth"
     }
   ]
 }
