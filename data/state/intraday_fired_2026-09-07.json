@@ -1,0 +1,25 @@
+{
+  "WOCKPHARMA.NS": [],
+  "ACMESOLAR.NS": [],
+  "BALAMINES.NS": [],
+  "TEXRAIL.NS": [],
+  "CARERATING.NS": [],
+  "TITAGARH.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CASTROLIND.NS": [],
+  "LICHSGFIN.NS": [],
+  "ELGIEQUIP.NS": [],
+  "ARMANFIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CRISIL.NS": [],
+  "CONFIPET.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "JKPAPER.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BHAGERIA.NS": [],
+  "MEDANTA.NS": []
+}
