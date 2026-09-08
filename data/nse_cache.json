@@ -1,99 +1,22 @@
 {
-  "updated": "2026-09-07T08:11:50.686765Z",
+  "updated": "2026-09-08T03:01:19.099007Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "04-Sep-2026",
+    "date": "07-Sep-2026",
     "fii": {
-      "buy": 13857.58,
-      "sell": 16969.52,
-      "net": -3111.94
+      "buy": 9581.19,
+      "sell": 9301.06,
+      "net": 280.13
     },
     "dii": {
-      "buy": 19254.19,
-      "sell": 10324.07,
-      "net": 8930.12
+      "buy": 13154.13,
+      "sell": 12587.37,
+      "net": 566.76
     },
-    "net_combined": 5818.18
+    "net_combined": 846.89
   },
   "corporate": [
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "CCHHL",
-      "company": "Country Club Hospitality & Holidays Li",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "CENTEXT",
-      "company": "Century Extrusions Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "GANGAFORGE",
-      "company": "Ganga Forging Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "GATECH",
-      "company": "GACM Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "GATECHDVR",
-      "company": "GACM Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "HMAAGRO",
-      "company": "HMA Agro Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "KMEW",
-      "company": "Knowledge Marine & Engineering Works L",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "KMEW",
-      "company": "Knowledge Marine & Engineering Works L",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "MELSTAR",
-      "company": "Melstar Information Technologies Limit",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "RAYMOND",
-      "company": "Raymond Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-08",
-      "date_str": "08 Sep",
-      "symbol": "USK",
-      "company": "Udayshivakumar Infra Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-09-09",
       "date_str": "09 Sep",
@@ -144,6 +67,41 @@
       "purpose": "Financial Results"
     },
     {
+      "date": "2026-09-10",
+      "date_str": "10 Sep",
+      "symbol": "GUJTHEM",
+      "company": "Gujarat Themis Biosyn Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-10",
+      "date_str": "10 Sep",
+      "symbol": "LANDSMILL",
+      "company": "Landsmill Green Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-10",
+      "date_str": "10 Sep",
+      "symbol": "LEEL",
+      "company": "LEEL Electricals Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-10",
+      "date_str": "10 Sep",
+      "symbol": "SHANKESH",
+      "company": "Shankesh Jewellers Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-09-11",
+      "date_str": "11 Sep",
+      "symbol": "HORIZONIND",
+      "company": "Horizon Industrial Parks Limited",
+      "purpose": "Financial Results"
+    },
+    {
       "date": "2026-09-11",
       "date_str": "11 Sep",
       "symbol": "LALITHAA",
@@ -156,6 +114,20 @@
       "symbol": "PRAXIS",
       "company": "Praxis Home Retail Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
+      "symbol": "SKYWAYS",
+      "company": "Skyways Air Services Limited",
+      "purpose": "Financial Results/Dividend/Oth"
+    },
+    {
+      "date": "2026-09-22",
+      "date_str": "22 Sep",
+      "symbol": "MANBA",
+      "company": "Manba Finance Limited",
+      "purpose": "Fund Raising/Other business ma"
     }
   ]
 }
