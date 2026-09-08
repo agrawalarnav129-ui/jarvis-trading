@@ -1,0 +1,26 @@
+{
+  "GRANULES.NS": [],
+  "JKPAPER.NS": [],
+  "WOCKPHARMA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "RAYMOND.NS": [],
+  "CONSOFINVT.NS": [],
+  "MSTCLTD.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "PENIND.NS": [],
+  "BALAMINES.NS": [],
+  "SOLARA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ANANTRAJ.NS": [],
+  "TITAGARH.NS": [],
+  "CARERATING.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TEXRAIL.NS": [],
+  "VIPIND.NS": [],
+  "BIRLACABLE.NS": []
+}
