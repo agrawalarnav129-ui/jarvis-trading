@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09T03:01:14.371044Z",
+  "updated": "2026-09-09T08:03:52.912546Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -114,6 +114,13 @@
       "symbol": "MAHSCOOTER",
       "company": "Maharashtra Scooters Limited",
       "purpose": "Dividend"
+    },
+    {
+      "date": "2026-09-15",
+      "date_str": "15 Sep",
+      "symbol": "SUNSHINE",
+      "company": "Sunshine Pictures Limited",
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-09-16",
