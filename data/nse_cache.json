@@ -1,57 +1,22 @@
 {
-  "updated": "2026-09-08T08:00:08.963678Z",
+  "updated": "2026-09-09T03:01:14.371044Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "07-Sep-2026",
+    "date": "08-Sep-2026",
     "fii": {
-      "buy": 9581.19,
-      "sell": 9301.06,
-      "net": 280.13
+      "buy": 11704.84,
+      "sell": 11828.03,
+      "net": -123.19
     },
     "dii": {
-      "buy": 13154.13,
-      "sell": 12587.37,
-      "net": 566.76
+      "buy": 14678.53,
+      "sell": 13328.89,
+      "net": 1349.64
     },
-    "net_combined": 846.89
+    "net_combined": 1226.45
   },
   "corporate": [
-    {
-      "date": "2026-09-09",
-      "date_str": "09 Sep",
-      "symbol": "GANESHCP",
-      "company": "Ganesh Consumer Products Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-09",
-      "date_str": "09 Sep",
-      "symbol": "LIBAS",
-      "company": "Libas Consumer Products Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-09",
-      "date_str": "09 Sep",
-      "symbol": "NATCOPHARM",
-      "company": "Natco Pharma Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-09",
-      "date_str": "09 Sep",
-      "symbol": "SANGINITA",
-      "company": "Sanginita Chemicals Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-09",
-      "date_str": "09 Sep",
-      "symbol": "SUMEETINDS",
-      "company": "Sumeet Industries Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-09-10",
       "date_str": "10 Sep",
@@ -97,6 +62,13 @@
     {
       "date": "2026-09-11",
       "date_str": "11 Sep",
+      "symbol": "CMICABLES",
+      "company": "CMI Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-11",
+      "date_str": "11 Sep",
       "symbol": "HORIZONIND",
       "company": "Horizon Industrial Parks Limited",
       "purpose": "Financial Results"
@@ -114,6 +86,41 @@
       "symbol": "PRAXIS",
       "company": "Praxis Home Retail Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-11",
+      "date_str": "11 Sep",
+      "symbol": "RAYMONDREL",
+      "company": "Raymond Realty Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-14",
+      "date_str": "14 Sep",
+      "symbol": "UNOMINDA",
+      "company": "UNO Minda Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-15",
+      "date_str": "15 Sep",
+      "symbol": "BAJAJHLDNG",
+      "company": "Bajaj Holdings & Investment Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-09-15",
+      "date_str": "15 Sep",
+      "symbol": "MAHSCOOTER",
+      "company": "Maharashtra Scooters Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-09-16",
+      "date_str": "16 Sep",
+      "symbol": "REPL",
+      "company": "Rudrabhishek Enterprises Limited",
+      "purpose": "Other business matters"
     },
     {
       "date": "2026-09-17",
