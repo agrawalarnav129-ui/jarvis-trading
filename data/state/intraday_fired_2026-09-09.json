@@ -1,0 +1,26 @@
+{
+  "GRANULES.NS": [],
+  "MIDHANI.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "RAYMOND.NS": [],
+  "LXCHEM.NS": [],
+  "ARVIND.NS": [],
+  "CONSOFINVT.NS": [],
+  "NOCIL.NS": [],
+  "GRAPHITE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NAVINFLUOR.NS": [],
+  "HAL.NS": [],
+  "CONFIPET.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "LICHSGFIN.NS": [],
+  "JKPAPER.NS": [],
+  "AUROPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "KIRLOSENG.NS": []
+}
