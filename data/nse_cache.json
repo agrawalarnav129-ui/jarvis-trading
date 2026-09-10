@@ -1,64 +1,22 @@
 {
-  "updated": "2026-09-09T08:03:52.912546Z",
+  "updated": "2026-09-10T03:01:22.406130Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "08-Sep-2026",
+    "date": "09-Sep-2026",
     "fii": {
-      "buy": 11704.84,
-      "sell": 11828.03,
-      "net": -123.19
+      "buy": 16392.9,
+      "sell": 16975.89,
+      "net": -582.99
     },
     "dii": {
-      "buy": 14678.53,
-      "sell": 13328.89,
-      "net": 1349.64
+      "buy": 18130.76,
+      "sell": 16621.72,
+      "net": 1509.04
     },
-    "net_combined": 1226.45
+    "net_combined": 926.05
   },
   "corporate": [
-    {
-      "date": "2026-09-10",
-      "date_str": "10 Sep",
-      "symbol": "AJMERA",
-      "company": "Ajmera Realty & Infra India Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-10",
-      "date_str": "10 Sep",
-      "symbol": "GAJA",
-      "company": "Gaja Alternative Asset Management Limi",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-10",
-      "date_str": "10 Sep",
-      "symbol": "GUJTHEM",
-      "company": "Gujarat Themis Biosyn Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-10",
-      "date_str": "10 Sep",
-      "symbol": "LANDSMILL",
-      "company": "Landsmill Green Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-10",
-      "date_str": "10 Sep",
-      "symbol": "LEEL",
-      "company": "LEEL Electricals Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-10",
-      "date_str": "10 Sep",
-      "symbol": "SHANKESH",
-      "company": "Shankesh Jewellers Limited",
-      "purpose": "Financial Results/Other busine"
-    },
     {
       "date": "2026-09-11",
       "date_str": "11 Sep",
@@ -95,6 +53,20 @@
       "purpose": "Fund Raising"
     },
     {
+      "date": "2026-09-12",
+      "date_str": "12 Sep",
+      "symbol": "RMC",
+      "company": "RMC Switchgears Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-14",
+      "date_str": "14 Sep",
+      "symbol": "CMICABLES",
+      "company": "CMI Limited",
+      "purpose": "Financial Results"
+    },
+    {
       "date": "2026-09-14",
       "date_str": "14 Sep",
       "symbol": "UNOMINDA",
@@ -125,9 +97,23 @@
     {
       "date": "2026-09-16",
       "date_str": "16 Sep",
+      "symbol": "EQUITASBNK",
+      "company": "Equitas Small Finance Bank Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-16",
+      "date_str": "16 Sep",
       "symbol": "REPL",
       "company": "Rudrabhishek Enterprises Limited",
       "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-16",
+      "date_str": "16 Sep",
+      "symbol": "TEMPSENS",
+      "company": "Tempsens Instruments (India) Limited",
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-09-17",
