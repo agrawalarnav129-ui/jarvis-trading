@@ -1,0 +1,31 @@
+{
+  "GRANULES.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "WABAG.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "NOCIL.NS": [],
+  "CONFIPET.NS": [],
+  "REDINGTON.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "GRAPHITE.NS": [],
+  "OIL.NS": [],
+  "UTIAMC.NS": [],
+  "TEXRAIL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "JSL.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "RAYMOND.NS": [],
+  "WOCKPHARMA.NS": [],
+  "SOLARA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "METROPOLIS.NS": [],
+  "RAIN.NS": []
+}
