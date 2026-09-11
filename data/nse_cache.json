@@ -1,57 +1,22 @@
 {
-  "updated": "2026-09-10T08:03:40.006289Z",
+  "updated": "2026-09-11T03:01:21.455077Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "09-Sep-2026",
+    "date": "10-Sep-2026",
     "fii": {
-      "buy": 16392.9,
-      "sell": 16975.89,
-      "net": -582.99
+      "buy": 11882.95,
+      "sell": 12321.19,
+      "net": -438.24
     },
     "dii": {
-      "buy": 18130.76,
-      "sell": 16621.72,
-      "net": 1509.04
+      "buy": 13326.33,
+      "sell": 12300.48,
+      "net": 1025.85
     },
-    "net_combined": 926.05
+    "net_combined": 587.61
   },
   "corporate": [
-    {
-      "date": "2026-09-11",
-      "date_str": "11 Sep",
-      "symbol": "CMICABLES",
-      "company": "CMI Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-11",
-      "date_str": "11 Sep",
-      "symbol": "HORIZONIND",
-      "company": "Horizon Industrial Parks Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-11",
-      "date_str": "11 Sep",
-      "symbol": "LALITHAA",
-      "company": "Lalithaa Jewellery Mart Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-09-11",
-      "date_str": "11 Sep",
-      "symbol": "PRAXIS",
-      "company": "Praxis Home Retail Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-11",
-      "date_str": "11 Sep",
-      "symbol": "RAYMONDREL",
-      "company": "Raymond Realty Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-09-12",
       "date_str": "12 Sep",
@@ -83,6 +48,13 @@
     {
       "date": "2026-09-15",
       "date_str": "15 Sep",
+      "symbol": "CMICABLES",
+      "company": "CMI Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-15",
+      "date_str": "15 Sep",
       "symbol": "MAHSCOOTER",
       "company": "Maharashtra Scooters Limited",
       "purpose": "Dividend"
@@ -92,6 +64,13 @@
       "date_str": "15 Sep",
       "symbol": "SUNSHINE",
       "company": "Sunshine Pictures Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-16",
+      "date_str": "16 Sep",
+      "symbol": "CMICABLES",
+      "company": "CMI Limited",
       "purpose": "Financial Results"
     },
     {
@@ -111,9 +90,37 @@
     {
       "date": "2026-09-16",
       "date_str": "16 Sep",
+      "symbol": "SUPREMEENG",
+      "company": "Supreme Engineering Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-16",
+      "date_str": "16 Sep",
       "symbol": "TEMPSENS",
       "company": "Tempsens Instruments (India) Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-16",
+      "date_str": "16 Sep",
+      "symbol": "VENUSPIPES",
+      "company": "Venus Pipes & Tubes Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
+      "symbol": "DBSTOCKBRO",
+      "company": "DB (International) Stock Brokers Limit",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
+      "symbol": "RESPONIND",
+      "company": "Responsive Industries Limited",
+      "purpose": "Buyback"
     },
     {
       "date": "2026-09-17",
@@ -121,6 +128,20 @@
       "symbol": "SKYWAYS",
       "company": "Skyways Air Services Limited",
       "purpose": "Financial Results/Dividend/Oth"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
+      "symbol": "SKYWAYS",
+      "company": "Skyways Air Services Limited",
+      "purpose": "Financial Results/Dividend/Oth"
+    },
+    {
+      "date": "2026-09-18",
+      "date_str": "18 Sep",
+      "symbol": "BTML",
+      "company": "Bodhi Tree Multimedia Limited",
+      "purpose": "Fund Raising/Other business ma"
     },
     {
       "date": "2026-09-22",
