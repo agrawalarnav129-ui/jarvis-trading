@@ -1,29 +1,22 @@
 {
-  "updated": "2026-09-11T07:59:05.962626Z",
+  "updated": "2026-09-12T03:01:00.081102Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "10-Sep-2026",
+    "date": "11-Sep-2026",
     "fii": {
-      "buy": 11882.95,
-      "sell": 12321.19,
-      "net": -438.24
+      "buy": 12616.89,
+      "sell": 13547.79,
+      "net": -930.9
     },
     "dii": {
-      "buy": 13326.33,
-      "sell": 12300.48,
-      "net": 1025.85
+      "buy": 15109.58,
+      "sell": 13141.41,
+      "net": 1968.17
     },
-    "net_combined": 587.61
+    "net_combined": 1037.27
   },
   "corporate": [
-    {
-      "date": "2026-09-12",
-      "date_str": "12 Sep",
-      "symbol": "RMC",
-      "company": "RMC Switchgears Limited",
-      "purpose": "Other business matters"
-    },
     {
       "date": "2026-09-14",
       "date_str": "14 Sep",
@@ -118,9 +111,23 @@
     {
       "date": "2026-09-17",
       "date_str": "17 Sep",
+      "symbol": "FEDERALBNK",
+      "company": "The Federal Bank  Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
       "symbol": "RESPONIND",
       "company": "Responsive Industries Limited",
       "purpose": "Buyback"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
+      "symbol": "SAHLIBHFI",
+      "company": "Shalibhadra Finance Limited",
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-09-17",
@@ -144,11 +151,11 @@
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-09-22",
-      "date_str": "22 Sep",
-      "symbol": "MANBA",
-      "company": "Manba Finance Limited",
-      "purpose": "Fund Raising/Other business ma"
+      "date": "2026-09-19",
+      "date_str": "19 Sep",
+      "symbol": "PNGJL",
+      "company": "P N Gadgil Jewellers Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
