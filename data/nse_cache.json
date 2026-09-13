@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T03:01:00.081102Z",
+  "updated": "2026-09-13T03:00:58.502146Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -104,6 +104,13 @@
     {
       "date": "2026-09-17",
       "date_str": "17 Sep",
+      "symbol": "CUBEXTUB",
+      "company": "Cubex Tubings Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
       "symbol": "DBSTOCKBRO",
       "company": "DB (International) Stock Brokers Limit",
       "purpose": "Other business matters"
@@ -114,6 +121,20 @@
       "symbol": "FEDERALBNK",
       "company": "The Federal Bank  Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
+      "symbol": "GFSTEELS",
+      "company": "Grand Foundry Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
+      "symbol": "MOTISONS",
+      "company": "Motisons Jewellers Limited",
+      "purpose": "Other business matters"
     },
     {
       "date": "2026-09-17",
@@ -135,27 +156,6 @@
       "symbol": "SKYWAYS",
       "company": "Skyways Air Services Limited",
       "purpose": "Financial Results/Dividend/Oth"
-    },
-    {
-      "date": "2026-09-17",
-      "date_str": "17 Sep",
-      "symbol": "SKYWAYS",
-      "company": "Skyways Air Services Limited",
-      "purpose": "Financial Results/Dividend/Oth"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "BTML",
-      "company": "Bodhi Tree Multimedia Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-19",
-      "date_str": "19 Sep",
-      "symbol": "PNGJL",
-      "company": "P N Gadgil Jewellers Limited",
-      "purpose": "Other business matters"
     }
   ]
 }
