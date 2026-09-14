@@ -1,0 +1,43 @@
+{
+  "WABAG.NS": [],
+  "GRANULES.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "FIVESTAR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BIRLACABLE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LICHSGFIN.NS": [],
+  "PAYTM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "WOCKPHARMA.NS": [],
+  "CONFIPET.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "PRIVISCL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SOLARA.NS": [
+    "BREAKOUT",
+    "MOMENTUM_CONT"
+  ],
+  "LAURUSLABS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NOCIL.NS": [],
+  "SHYAMMETL.NS": [],
+  "JSWINFRA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "REDINGTON.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
