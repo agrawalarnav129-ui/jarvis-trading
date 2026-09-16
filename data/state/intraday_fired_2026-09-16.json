@@ -1,0 +1,30 @@
+{
+  "ACMESOLAR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "OPTIEMUS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "XCHANGING.NS": [],
+  "SOLARA.NS": [],
+  "GRAPHITE.NS": [],
+  "GRANULES.NS": [],
+  "LICHSGFIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "RATNAMANI.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TATAINVEST.NS": [],
+  "LAURUSLABS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ARVIND.NS": [],
+  "PAYTM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "WELSPUNLIV.NS": [],
+  "CONFIPET.NS": [],
+  "QUICKHEAL.NS": []
+}
