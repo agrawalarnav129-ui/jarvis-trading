@@ -1,64 +1,22 @@
 {
-  "updated": "2026-09-15T08:35:43.887045Z",
+  "updated": "2026-09-16T03:01:15.772786Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "11-Sep-2026",
+    "date": "15-Sep-2026",
     "fii": {
-      "buy": 12616.89,
-      "sell": 13547.79,
-      "net": -930.9
+      "buy": 13194.76,
+      "sell": 16172.62,
+      "net": -2977.86
     },
     "dii": {
-      "buy": 15109.58,
-      "sell": 13141.41,
-      "net": 1968.17
+      "buy": 15221.98,
+      "sell": 12535.93,
+      "net": 2686.05
     },
-    "net_combined": 1037.27
+    "net_combined": -291.81
   },
   "corporate": [
-    {
-      "date": "2026-09-16",
-      "date_str": "16 Sep",
-      "symbol": "CMICABLES",
-      "company": "CMI Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-16",
-      "date_str": "16 Sep",
-      "symbol": "EQUITASBNK",
-      "company": "Equitas Small Finance Bank Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-16",
-      "date_str": "16 Sep",
-      "symbol": "REPL",
-      "company": "Rudrabhishek Enterprises Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-16",
-      "date_str": "16 Sep",
-      "symbol": "SUPREMEENG",
-      "company": "Supreme Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-16",
-      "date_str": "16 Sep",
-      "symbol": "TEMPSENS",
-      "company": "Tempsens Instruments (India) Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-16",
-      "date_str": "16 Sep",
-      "symbol": "VENUSPIPES",
-      "company": "Venus Pipes & Tubes Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-09-17",
       "date_str": "17 Sep",
@@ -156,6 +114,48 @@
       "symbol": "SKYWAYS",
       "company": "Skyways Air Services Limited",
       "purpose": "Financial Results/Dividend/Oth"
+    },
+    {
+      "date": "2026-09-17",
+      "date_str": "17 Sep",
+      "symbol": "YATHARTH",
+      "company": "Yatharth Hospital & Trauma Care Servic",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-18",
+      "date_str": "18 Sep",
+      "symbol": "ARFIN",
+      "company": "Arfin India Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-09-18",
+      "date_str": "18 Sep",
+      "symbol": "AVANTEL",
+      "company": "Avantel Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-18",
+      "date_str": "18 Sep",
+      "symbol": "BTML",
+      "company": "Bodhi Tree Multimedia Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-18",
+      "date_str": "18 Sep",
+      "symbol": "HTEL",
+      "company": "Hy-Tech Engineers Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-18",
+      "date_str": "18 Sep",
+      "symbol": "POWERGRID",
+      "company": "Power Grid Corporation of India Limite",
+      "purpose": "Fund Raising"
     }
   ]
 }
