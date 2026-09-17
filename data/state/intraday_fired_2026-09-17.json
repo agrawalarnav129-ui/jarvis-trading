@@ -1,0 +1,23 @@
+{
+  "PAYTM.NS": [],
+  "TATAINVEST.NS": [],
+  "JKPAPER.NS": [],
+  "OPTIEMUS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "STAR.NS": [],
+  "GRAPHITE.NS": [],
+  "STLTECH.NS": [],
+  "POLICYBZR.NS": [],
+  "PVRINOX.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LALPATHLAB.NS": [],
+  "ACMESOLAR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CONSOFINVT.NS": [],
+  "CONFIPET.NS": [],
+  "CMRSL.NS": [],
+  "FIVESTAR.NS": []
+}
