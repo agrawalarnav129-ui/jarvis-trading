@@ -1,0 +1,44 @@
+{
+  "CASTROLIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TATAINVEST.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "REDINGTON.NS": [],
+  "YATHARTH.NS": [],
+  "AXISCADES.NS": [],
+  "JKPAPER.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT",
+    "MOMENTUM_CONT"
+  ],
+  "GNFC.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "WELSPUNLIV.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LALPATHLAB.NS": [],
+  "OPTIEMUS.NS": [],
+  "APARINDS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT"
+  ],
+  "IPCALAB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "AUROPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "STAR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "VIJAYA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
