@@ -1,106 +1,22 @@
 {
-  "updated": "2026-09-17T08:35:09.490970Z",
+  "updated": "2026-09-18T03:01:21.233936Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "16-Sep-2026",
+    "date": "17-Sep-2026",
     "fii": {
-      "buy": 12959.04,
-      "sell": 14991.65,
-      "net": -2032.61
+      "buy": 8761.71,
+      "sell": 11970.47,
+      "net": -3208.76
     },
     "dii": {
-      "buy": 15279.59,
-      "sell": 11371.36,
-      "net": 3908.23
+      "buy": 14105.01,
+      "sell": 10487.26,
+      "net": 3617.75
     },
-    "net_combined": 1875.62
+    "net_combined": 408.99
   },
   "corporate": [
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "ARFIN",
-      "company": "Arfin India Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "AVANTEL",
-      "company": "Avantel Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "BTML",
-      "company": "Bodhi Tree Multimedia Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "HTEL",
-      "company": "Hy-Tech Engineers Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "POWERGRID",
-      "company": "Power Grid Corporation of India Limite",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "ROSSTECH",
-      "company": "Rossell Techsys Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "SABEVENTS",
-      "company": "Sab Events & Governance Now Media Limi",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "SHAREINDIA",
-      "company": "Share India Securities Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "SHREMINVIT",
-      "company": "Shrem Invit",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "SUPREMEENG",
-      "company": "Supreme Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "VEDL",
-      "company": "Vedanta Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-18",
-      "date_str": "18 Sep",
-      "symbol": "VIPIND",
-      "company": "VIP Industries Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-09-19",
       "date_str": "19 Sep",
@@ -156,6 +72,55 @@
       "symbol": "RELIABLE",
       "company": "Reliable Data Services Limited",
       "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-21",
+      "date_str": "21 Sep",
+      "symbol": "SHAREINDIA",
+      "company": "Share India Securities Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-21",
+      "date_str": "21 Sep",
+      "symbol": "SURYODAY",
+      "company": "Suryoday Small Finance Bank Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-21",
+      "date_str": "21 Sep",
+      "symbol": "SYMBIOTEC",
+      "company": "Symbiotec Pharmalab Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-22",
+      "date_str": "22 Sep",
+      "symbol": "CINEVISTA",
+      "company": "Cinevista Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-22",
+      "date_str": "22 Sep",
+      "symbol": "MANBA",
+      "company": "Manba Finance Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-22",
+      "date_str": "22 Sep",
+      "symbol": "RAMASTEEL",
+      "company": "Rama Steel Tubes Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-23",
+      "date_str": "23 Sep",
+      "symbol": "ESAFSFB",
+      "company": "ESAF Small Finance Bank Limited",
+      "purpose": "Fund Raising"
     }
   ]
 }
