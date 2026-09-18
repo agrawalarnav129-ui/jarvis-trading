@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18T03:01:21.233936Z",
+  "updated": "2026-09-18T08:10:12.210250Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -118,9 +118,23 @@
     {
       "date": "2026-09-23",
       "date_str": "23 Sep",
+      "symbol": "AERONEU",
+      "company": "Aeroflex Neu Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-23",
+      "date_str": "23 Sep",
       "symbol": "ESAFSFB",
       "company": "ESAF Small Finance Bank Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-23",
+      "date_str": "23 Sep",
+      "symbol": "WINSOME",
+      "company": "Winsome Yarns Limited",
+      "purpose": "Financial Results/Other busine"
     }
   ]
 }
