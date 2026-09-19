@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-18T08:10:12.210250Z",
+  "updated": "2026-09-19T03:01:14.387624Z",
   "fii_dii": {
     "available": true,
-    "source": "NSE provisional",
+    "source": "NSE provisional (cached)",
     "date": "17-Sep-2026",
     "fii": {
       "buy": 8761.71,
@@ -18,119 +18,102 @@
   },
   "corporate": [
     {
-      "date": "2026-09-19",
       "date_str": "19 Sep",
       "symbol": "ANURAS",
       "company": "Anupam Rasayan India Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-09-19",
       "date_str": "19 Sep",
       "symbol": "EMBDL",
       "company": "Embassy Developments Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-09-19",
       "date_str": "19 Sep",
       "symbol": "PNGJL",
       "company": "P N Gadgil Jewellers Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-09-20",
       "date_str": "20 Sep",
       "symbol": "SPECTRUM",
       "company": "Spectrum Electrical Industries Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-09-21",
       "date_str": "21 Sep",
       "symbol": "AUGMONT",
       "company": "Augmont Enterprises Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-09-21",
       "date_str": "21 Sep",
       "symbol": "LUMINO",
       "company": "Lumino Industries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-09-21",
       "date_str": "21 Sep",
       "symbol": "RELIABLE",
       "company": "Reliable Data Services Limited",
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-09-21",
       "date_str": "21 Sep",
       "symbol": "RELIABLE",
       "company": "Reliable Data Services Limited",
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-09-21",
       "date_str": "21 Sep",
       "symbol": "SHAREINDIA",
       "company": "Share India Securities Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-09-21",
       "date_str": "21 Sep",
       "symbol": "SURYODAY",
       "company": "Suryoday Small Finance Bank Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-09-21",
       "date_str": "21 Sep",
       "symbol": "SYMBIOTEC",
       "company": "Symbiotec Pharmalab Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-09-22",
       "date_str": "22 Sep",
       "symbol": "CINEVISTA",
       "company": "Cinevista Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-09-22",
       "date_str": "22 Sep",
       "symbol": "MANBA",
       "company": "Manba Finance Limited",
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-09-22",
       "date_str": "22 Sep",
       "symbol": "RAMASTEEL",
       "company": "Rama Steel Tubes Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-09-23",
       "date_str": "23 Sep",
       "symbol": "AERONEU",
       "company": "Aeroflex Neu Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-09-23",
       "date_str": "23 Sep",
       "symbol": "ESAFSFB",
       "company": "ESAF Small Finance Bank Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-09-23",
       "date_str": "23 Sep",
       "symbol": "WINSOME",
       "company": "Winsome Yarns Limited",
