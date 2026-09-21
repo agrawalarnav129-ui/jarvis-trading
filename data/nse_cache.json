@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T03:00:59.327051Z",
+  "updated": "2026-09-21T03:01:21.669536Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,55 +17,6 @@
     "net_combined": 1619.23
   },
   "corporate": [
-    {
-      "date": "2026-09-21",
-      "date_str": "21 Sep",
-      "symbol": "AUGMONT",
-      "company": "Augmont Enterprises Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-21",
-      "date_str": "21 Sep",
-      "symbol": "LUMINO",
-      "company": "Lumino Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-21",
-      "date_str": "21 Sep",
-      "symbol": "RELIABLE",
-      "company": "Reliable Data Services Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-21",
-      "date_str": "21 Sep",
-      "symbol": "RELIABLE",
-      "company": "Reliable Data Services Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-21",
-      "date_str": "21 Sep",
-      "symbol": "SHAREINDIA",
-      "company": "Share India Securities Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-21",
-      "date_str": "21 Sep",
-      "symbol": "SURYODAY",
-      "company": "Suryoday Small Finance Bank Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-21",
-      "date_str": "21 Sep",
-      "symbol": "SYMBIOTEC",
-      "company": "Symbiotec Pharmalab Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-09-22",
       "date_str": "22 Sep",
@@ -153,9 +104,30 @@
     {
       "date": "2026-09-23",
       "date_str": "23 Sep",
+      "symbol": "QPOWER",
+      "company": "Quality Power Electrical Equipments Li",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-23",
+      "date_str": "23 Sep",
       "symbol": "WINSOME",
       "company": "Winsome Yarns Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-09-24",
+      "date_str": "24 Sep",
+      "symbol": "GLOBAL",
+      "company": "Global Education Limited",
+      "purpose": "Buyback/Other business matters"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "HCLTECH",
+      "company": "HCL Technologies Limited",
+      "purpose": "Financial Results/Dividend"
     }
   ]
 }
