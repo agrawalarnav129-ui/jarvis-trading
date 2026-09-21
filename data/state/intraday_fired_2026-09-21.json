@@ -1,0 +1,32 @@
+{
+  "APARINDS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PVRINOX.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ADANIPORTS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "AUROPHARMA.NS": [],
+  "ACMESOLAR.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "VIJAYA.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "YATHARTH.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "JYOTICNC.NS": [],
+  "CASTROLIND.NS": [],
+  "BEML.NS": [],
+  "IPCALAB.NS": [],
+  "APLAPOLLO.NS": [],
+  "CONFIPET.NS": [],
+  "SHYAMMETL.NS": [],
+  "JSL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
