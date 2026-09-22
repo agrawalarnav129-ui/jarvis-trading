@@ -1,43 +1,22 @@
 {
-  "updated": "2026-09-21T08:50:41.934324Z",
+  "updated": "2026-09-22T03:01:26.714246Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "18-Sep-2026",
+    "date": "21-Sep-2026",
     "fii": {
-      "buy": 38461.63,
-      "sell": 37862.09,
-      "net": 599.54
+      "buy": 10637.17,
+      "sell": 11213.37,
+      "net": -576.2
     },
     "dii": {
-      "buy": 17310.04,
-      "sell": 16290.35,
-      "net": 1019.69
+      "buy": 14098.64,
+      "sell": 11301.37,
+      "net": 2797.27
     },
-    "net_combined": 1619.23
+    "net_combined": 2221.07
   },
   "corporate": [
-    {
-      "date": "2026-09-22",
-      "date_str": "22 Sep",
-      "symbol": "CINEVISTA",
-      "company": "Cinevista Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-22",
-      "date_str": "22 Sep",
-      "symbol": "MANBA",
-      "company": "Manba Finance Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-22",
-      "date_str": "22 Sep",
-      "symbol": "RAMASTEEL",
-      "company": "Rama Steel Tubes Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-09-23",
       "date_str": "23 Sep",
@@ -118,16 +97,65 @@
     {
       "date": "2026-09-24",
       "date_str": "24 Sep",
+      "symbol": "AIFL",
+      "company": "Ashapura Intimates Fashion Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-24",
+      "date_str": "24 Sep",
+      "symbol": "ESDS",
+      "company": "ESDS Software Solution Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-24",
+      "date_str": "24 Sep",
+      "symbol": "GATECH",
+      "company": "GACM Technologies Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-24",
+      "date_str": "24 Sep",
+      "symbol": "GATECHDVR",
+      "company": "GACM Technologies Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-24",
+      "date_str": "24 Sep",
       "symbol": "GLOBAL",
       "company": "Global Education Limited",
       "purpose": "Buyback/Other business matters"
     },
     {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "HCLTECH",
-      "company": "HCL Technologies Limited",
-      "purpose": "Financial Results/Dividend"
+      "date": "2026-09-24",
+      "date_str": "24 Sep",
+      "symbol": "MINDACORP",
+      "company": "Minda Corporation Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-24",
+      "date_str": "24 Sep",
+      "symbol": "PERNIASPOP",
+      "company": "Purple Style Labs Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-24",
+      "date_str": "24 Sep",
+      "symbol": "SSDL",
+      "company": "Saraswati Saree Depot Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-09-24",
+      "date_str": "24 Sep",
+      "symbol": "TALWALKARS",
+      "company": "Talwalkars Better Value Fitness Limite",
+      "purpose": "Fund Raising/Other business ma"
     }
   ]
 }
