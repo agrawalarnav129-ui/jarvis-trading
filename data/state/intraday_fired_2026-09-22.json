@@ -1,0 +1,34 @@
+{
+  "AGI.NS": [],
+  "CASTROLIND.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "INDHOTEL.NS": [],
+  "BHAGERIA.NS": [],
+  "LAURUSLABS.NS": [],
+  "LICHSGFIN.NS": [],
+  "SUPRIYA.NS": [],
+  "PVRINOX.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SHYAMMETL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ENGINERSIN.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "JYOTICNC.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PCBL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "GNFC.NS": [],
+  "APARINDS.NS": [],
+  "CARBORUNIV.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
