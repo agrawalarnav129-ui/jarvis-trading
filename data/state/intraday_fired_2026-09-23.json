@@ -1,0 +1,31 @@
+{
+  "JSWINFRA.NS": [],
+  "CARBORUNIV.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ENGINERSIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "OPTIEMUS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CASTROLIND.NS": [],
+  "GNFC.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "CHEMPLASTS.NS": [],
+  "TEXRAIL.NS": [],
+  "REDINGTON.NS": [],
+  "BHAGERIA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "AUROPHARMA.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "APARINDS.NS": [],
+  "WELSPUNLIV.NS": [],
+  "AGI.NS": [],
+  "JUBLFOOD.NS": []
+}
