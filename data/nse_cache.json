@@ -1,99 +1,22 @@
 {
-  "updated": "2026-09-22T08:27:32.483521Z",
+  "updated": "2026-09-23T03:01:14.885088Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "21-Sep-2026",
+    "date": "22-Sep-2026",
     "fii": {
-      "buy": 10637.17,
-      "sell": 11213.37,
-      "net": -576.2
+      "buy": 9845.81,
+      "sell": 13655.8,
+      "net": -3809.99
     },
     "dii": {
-      "buy": 14098.64,
-      "sell": 11301.37,
-      "net": 2797.27
+      "buy": 14599.72,
+      "sell": 10479.65,
+      "net": 4120.07
     },
-    "net_combined": 2221.07
+    "net_combined": 310.08
   },
   "corporate": [
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "AERONEU",
-      "company": "Aeroflex Neu Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "ANNU",
-      "company": "Annu Projects Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "BCPL",
-      "company": "BCPL Railway Infrastructure Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "CONCORDBIO",
-      "company": "Concord Biotech Limited",
-      "purpose": "Bonus"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "CONSOFINVT",
-      "company": "Consolidated Finvest & Holdings Limite",
-      "purpose": "Voluntary Delisting"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "ESAFSFB",
-      "company": "ESAF Small Finance Bank Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "KELLTONTEC",
-      "company": "Kellton Tech Solutions Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "NEUEON",
-      "company": "Neueon Corporation Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "NOIDATOLL",
-      "company": "Noida Toll Bridge Company Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "QPOWER",
-      "company": "Quality Power Electrical Equipments Li",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-23",
-      "date_str": "23 Sep",
-      "symbol": "WINSOME",
-      "company": "Winsome Yarns Limited",
-      "purpose": "Financial Results/Other busine"
-    },
     {
       "date": "2026-09-24",
       "date_str": "24 Sep",
@@ -156,6 +79,83 @@
       "symbol": "TALWALKARS",
       "company": "Talwalkars Better Value Fitness Limite",
       "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-25",
+      "date_str": "25 Sep",
+      "symbol": "AEQUS",
+      "company": "Aequs Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-25",
+      "date_str": "25 Sep",
+      "symbol": "AGIIL",
+      "company": "Agi Infra Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-25",
+      "date_str": "25 Sep",
+      "symbol": "FORCEMOT",
+      "company": "FORCE MOTORS LTD",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-25",
+      "date_str": "25 Sep",
+      "symbol": "NATCOPHARM",
+      "company": "Natco Pharma Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-25",
+      "date_str": "25 Sep",
+      "symbol": "RSYSTEMS",
+      "company": "R Systems International Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-09-25",
+      "date_str": "25 Sep",
+      "symbol": "VGL",
+      "company": "VARVEE GLOBAL LIMITED",
+      "purpose": "Stock Split"
+    },
+    {
+      "date": "2026-09-26",
+      "date_str": "26 Sep",
+      "symbol": "POWERGRID",
+      "company": "Power Grid Corporation of India Limite",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-28",
+      "date_str": "28 Sep",
+      "symbol": "PRASOLCHEM",
+      "company": "Prasol Chemicals Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-08",
+      "date_str": "08 Oct",
+      "symbol": "TCS",
+      "company": "Tata Consultancy Services Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "HCLTECH",
+      "company": "HCL Technologies Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "STCINDIA",
+      "company": "The State Trading Corporation of India",
+      "purpose": "Financial Results/Other busine"
     }
   ]
 }
