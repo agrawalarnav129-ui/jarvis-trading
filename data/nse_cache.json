@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T03:01:14.885088Z",
+  "updated": "2026-09-23T08:29:36.658841Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -139,6 +139,13 @@
     {
       "date": "2026-10-08",
       "date_str": "08 Oct",
+      "symbol": "GMBREW",
+      "company": "GM Breweries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-08",
+      "date_str": "08 Oct",
       "symbol": "TCS",
       "company": "Tata Consultancy Services Limited",
       "purpose": "Financial Results/Dividend"
@@ -149,13 +156,6 @@
       "symbol": "HCLTECH",
       "company": "HCL Technologies Limited",
       "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "STCINDIA",
-      "company": "The State Trading Corporation of India",
-      "purpose": "Financial Results/Other busine"
     }
   ]
 }
