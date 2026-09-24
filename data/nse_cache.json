@@ -1,85 +1,22 @@
 {
-  "updated": "2026-09-23T08:29:36.658841Z",
+  "updated": "2026-09-24T03:01:19.065340Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "22-Sep-2026",
+    "date": "23-Sep-2026",
     "fii": {
-      "buy": 9845.81,
-      "sell": 13655.8,
-      "net": -3809.99
+      "buy": 13580.4,
+      "sell": 11962.95,
+      "net": 1617.45
     },
     "dii": {
-      "buy": 14599.72,
-      "sell": 10479.65,
-      "net": 4120.07
+      "buy": 14404.9,
+      "sell": 12063.44,
+      "net": 2341.46
     },
-    "net_combined": 310.08
+    "net_combined": 3958.91
   },
   "corporate": [
-    {
-      "date": "2026-09-24",
-      "date_str": "24 Sep",
-      "symbol": "AIFL",
-      "company": "Ashapura Intimates Fashion Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-24",
-      "date_str": "24 Sep",
-      "symbol": "ESDS",
-      "company": "ESDS Software Solution Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-24",
-      "date_str": "24 Sep",
-      "symbol": "GATECH",
-      "company": "GACM Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-24",
-      "date_str": "24 Sep",
-      "symbol": "GATECHDVR",
-      "company": "GACM Technologies Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-24",
-      "date_str": "24 Sep",
-      "symbol": "GLOBAL",
-      "company": "Global Education Limited",
-      "purpose": "Buyback/Other business matters"
-    },
-    {
-      "date": "2026-09-24",
-      "date_str": "24 Sep",
-      "symbol": "MINDACORP",
-      "company": "Minda Corporation Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-24",
-      "date_str": "24 Sep",
-      "symbol": "PERNIASPOP",
-      "company": "Purple Style Labs Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-24",
-      "date_str": "24 Sep",
-      "symbol": "SSDL",
-      "company": "Saraswati Saree Depot Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-09-24",
-      "date_str": "24 Sep",
-      "symbol": "TALWALKARS",
-      "company": "Talwalkars Better Value Fitness Limite",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-09-25",
       "date_str": "25 Sep",
@@ -132,9 +69,65 @@
     {
       "date": "2026-09-28",
       "date_str": "28 Sep",
+      "symbol": "AEGISLOG",
+      "company": "Aegis Logistics Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-28",
+      "date_str": "28 Sep",
+      "symbol": "DEEPA",
+      "company": "Deepa Jewellers Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-28",
+      "date_str": "28 Sep",
+      "symbol": "GANESHCP",
+      "company": "Ganesh Consumer Products Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-28",
+      "date_str": "28 Sep",
+      "symbol": "MOMSBELIEF",
+      "company": "Rays of Belief Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-28",
+      "date_str": "28 Sep",
+      "symbol": "OLAELEC",
+      "company": "Ola Electric Mobility Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-28",
+      "date_str": "28 Sep",
       "symbol": "PRASOLCHEM",
       "company": "Prasol Chemicals Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-28",
+      "date_str": "28 Sep",
+      "symbol": "SWARAJ",
+      "company": "Swaraj Suiting Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "GULFPETRO",
+      "company": "GP Petroleums Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-01",
+      "date_str": "01 Oct",
+      "symbol": "BAJFINANCE",
+      "company": "Bajaj Finance Limited",
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-10-08",
@@ -149,6 +142,13 @@
       "symbol": "TCS",
       "company": "Tata Consultancy Services Limited",
       "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "CRAMC",
+      "company": "Canara Robeco Asset Management Company",
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-10-12",
