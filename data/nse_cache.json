@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T03:01:19.065340Z",
+  "updated": "2026-09-24T08:22:03.935320Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -130,6 +130,13 @@
       "purpose": "Fund Raising"
     },
     {
+      "date": "2026-10-05",
+      "date_str": "05 Oct",
+      "symbol": "STEAMHOUSE",
+      "company": "Steamhouse India Limited",
+      "purpose": "Financial Results"
+    },
+    {
       "date": "2026-10-08",
       "date_str": "08 Oct",
       "symbol": "GMBREW",
@@ -149,13 +156,6 @@
       "symbol": "CRAMC",
       "company": "Canara Robeco Asset Management Company",
       "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "HCLTECH",
-      "company": "HCL Technologies Limited",
-      "purpose": "Financial Results/Dividend"
     }
   ]
 }
