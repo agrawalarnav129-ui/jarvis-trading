@@ -1,0 +1,32 @@
+{
+  "CAPLIPOINT.NS": [],
+  "MAHLOG.NS": [],
+  "LALPATHLAB.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SUNFLAG.NS": [],
+  "CARBORUNIV.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SHYAMMETL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TEXRAIL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SONACOMS.NS": [],
+  "MCX.NS": [],
+  "ZYDUSLIFE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "IGPL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MANKIND.NS": [],
+  "JYOTICNC.NS": [],
+  "STAR.NS": [],
+  "VIJAYA.NS": []
+}
