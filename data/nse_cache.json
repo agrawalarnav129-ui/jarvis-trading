@@ -1,64 +1,22 @@
 {
-  "updated": "2026-09-24T08:22:03.935320Z",
+  "updated": "2026-09-25T03:01:09.858940Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "23-Sep-2026",
+    "date": "24-Sep-2026",
     "fii": {
-      "buy": 13580.4,
-      "sell": 11962.95,
-      "net": 1617.45
+      "buy": 13111.22,
+      "sell": 18138.58,
+      "net": -5027.36
     },
     "dii": {
-      "buy": 14404.9,
-      "sell": 12063.44,
-      "net": 2341.46
+      "buy": 18196.9,
+      "sell": 13895.72,
+      "net": 4301.18
     },
-    "net_combined": 3958.91
+    "net_combined": -726.18
   },
   "corporate": [
-    {
-      "date": "2026-09-25",
-      "date_str": "25 Sep",
-      "symbol": "AEQUS",
-      "company": "Aequs Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-25",
-      "date_str": "25 Sep",
-      "symbol": "AGIIL",
-      "company": "Agi Infra Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-25",
-      "date_str": "25 Sep",
-      "symbol": "FORCEMOT",
-      "company": "FORCE MOTORS LTD",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-25",
-      "date_str": "25 Sep",
-      "symbol": "NATCOPHARM",
-      "company": "Natco Pharma Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-25",
-      "date_str": "25 Sep",
-      "symbol": "RSYSTEMS",
-      "company": "R Systems International Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-09-25",
-      "date_str": "25 Sep",
-      "symbol": "VGL",
-      "company": "VARVEE GLOBAL LIMITED",
-      "purpose": "Stock Split"
-    },
     {
       "date": "2026-09-26",
       "date_str": "26 Sep",
@@ -116,11 +74,67 @@
       "purpose": "Fund Raising"
     },
     {
+      "date": "2026-09-29",
+      "date_str": "29 Sep",
+      "symbol": "ANSALAPI",
+      "company": "Ansal Properties & Infrastructure Limi",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-09-29",
+      "date_str": "29 Sep",
+      "symbol": "PSB",
+      "company": "Punjab & Sind Bank",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-29",
+      "date_str": "29 Sep",
+      "symbol": "TCI",
+      "company": "Transport Corporation of India Limited",
+      "purpose": "Buyback"
+    },
+    {
+      "date": "2026-09-29",
+      "date_str": "29 Sep",
+      "symbol": "TIMETECHNO",
+      "company": "Time Technoplast Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-29",
+      "date_str": "29 Sep",
+      "symbol": "TPLPLASTEH",
+      "company": "TPL Plastech Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-29",
+      "date_str": "29 Sep",
+      "symbol": "VIPULLTD",
+      "company": "Vipul Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "BFUTILITIE",
+      "company": "BF Utilities Limited",
+      "purpose": "Other business matters"
+    },
+    {
       "date": "2026-09-30",
       "date_str": "30 Sep",
       "symbol": "GULFPETRO",
       "company": "GP Petroleums Limited",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
+      "purpose": "Fund Raising/Other business ma"
     },
     {
       "date": "2026-10-01",
@@ -130,31 +144,17 @@
       "purpose": "Fund Raising"
     },
     {
+      "date": "2026-10-01",
+      "date_str": "01 Oct",
+      "symbol": "MPIMANIPAL",
+      "company": "Manipal Payment and Identity Solutions",
+      "purpose": "Financial Results"
+    },
+    {
       "date": "2026-10-05",
       "date_str": "05 Oct",
       "symbol": "STEAMHOUSE",
       "company": "Steamhouse India Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-08",
-      "date_str": "08 Oct",
-      "symbol": "GMBREW",
-      "company": "GM Breweries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-08",
-      "date_str": "08 Oct",
-      "symbol": "TCS",
-      "company": "Tata Consultancy Services Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "CRAMC",
-      "company": "Canara Robeco Asset Management Company",
       "purpose": "Financial Results"
     }
   ]
