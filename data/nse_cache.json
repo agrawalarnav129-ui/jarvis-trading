@@ -1,29 +1,22 @@
 {
-  "updated": "2026-09-25T08:44:29.486879Z",
+  "updated": "2026-09-26T03:00:53.783795Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "24-Sep-2026",
+    "date": "25-Sep-2026",
     "fii": {
-      "buy": 13111.22,
-      "sell": 18138.58,
-      "net": -5027.36
+      "buy": 12327.36,
+      "sell": 16021.29,
+      "net": -3693.93
     },
     "dii": {
-      "buy": 18196.9,
-      "sell": 13895.72,
-      "net": 4301.18
+      "buy": 14035.77,
+      "sell": 11197.6,
+      "net": 2838.17
     },
-    "net_combined": -726.18
+    "net_combined": -855.76
   },
   "corporate": [
-    {
-      "date": "2026-09-26",
-      "date_str": "26 Sep",
-      "symbol": "POWERGRID",
-      "company": "Power Grid Corporation of India Limite",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-09-28",
       "date_str": "28 Sep",
@@ -137,6 +130,20 @@
       "purpose": "Fund Raising/Other business ma"
     },
     {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
+      "purpose": "Board meeting Rescheduled"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
+      "purpose": "Board meeting Rescheduled"
+    },
+    {
       "date": "2026-10-01",
       "date_str": "01 Oct",
       "symbol": "BAJFINANCE",
@@ -148,13 +155,6 @@
       "date_str": "01 Oct",
       "symbol": "MPIMANIPAL",
       "company": "Manipal Payment and Identity Solutions",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-05",
-      "date_str": "05 Oct",
-      "symbol": "STEAMHOUSE",
-      "company": "Steamhouse India Limited",
       "purpose": "Financial Results"
     }
   ]
