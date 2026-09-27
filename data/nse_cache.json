@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26T03:00:53.783795Z",
+  "updated": "2026-09-27T03:00:53.572791Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -125,37 +125,37 @@
     {
       "date": "2026-09-30",
       "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
-    {
-      "date": "2026-10-01",
-      "date_str": "01 Oct",
-      "symbol": "BAJFINANCE",
-      "company": "Bajaj Finance Limited",
+      "symbol": "GVPTECH",
+      "company": "GVP Infotech Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-10-01",
-      "date_str": "01 Oct",
-      "symbol": "MPIMANIPAL",
-      "company": "Manipal Payment and Identity Solutions",
-      "purpose": "Financial Results"
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "HEXAGON",
+      "company": "Hexagon Nutrition Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
+      "purpose": "Board meeting Rescheduled"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
+      "purpose": "Board meeting Rescheduled"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
+      "purpose": "Fund Raising/Other business ma"
     }
   ]
 }
