@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T03:01:20.574472Z",
+  "updated": "2026-09-28T09:39:18.577707Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -92,21 +92,21 @@
       "date_str": "30 Sep",
       "symbol": "SAKUMA",
       "company": "Sakuma Exports Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
       "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
+      "purpose": "Board meeting Rescheduled"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
+      "purpose": "Board meeting Rescheduled"
     },
     {
       "date": "2026-10-01",
