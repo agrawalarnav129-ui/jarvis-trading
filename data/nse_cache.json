@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27T03:00:53.572791Z",
+  "updated": "2026-09-28T03:01:20.574472Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,55 +17,6 @@
     "net_combined": -855.76
   },
   "corporate": [
-    {
-      "date": "2026-09-28",
-      "date_str": "28 Sep",
-      "symbol": "AEGISLOG",
-      "company": "Aegis Logistics Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-28",
-      "date_str": "28 Sep",
-      "symbol": "DEEPA",
-      "company": "Deepa Jewellers Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-28",
-      "date_str": "28 Sep",
-      "symbol": "GANESHCP",
-      "company": "Ganesh Consumer Products Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-28",
-      "date_str": "28 Sep",
-      "symbol": "MOMSBELIEF",
-      "company": "Rays of Belief Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-28",
-      "date_str": "28 Sep",
-      "symbol": "OLAELEC",
-      "company": "Ola Electric Mobility Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-28",
-      "date_str": "28 Sep",
-      "symbol": "PRASOLCHEM",
-      "company": "Prasol Chemicals Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-09-28",
-      "date_str": "28 Sep",
-      "symbol": "SWARAJ",
-      "company": "Swaraj Suiting Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-09-29",
       "date_str": "29 Sep",
@@ -156,6 +107,55 @@
       "symbol": "SAKUMA",
       "company": "Sakuma Exports Limited",
       "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-01",
+      "date_str": "01 Oct",
+      "symbol": "BAJFINANCE",
+      "company": "Bajaj Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-01",
+      "date_str": "01 Oct",
+      "symbol": "MPIMANIPAL",
+      "company": "Manipal Payment and Identity Solutions",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-03",
+      "date_str": "03 Oct",
+      "symbol": "BCG",
+      "company": "Brightcom Group Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-10-05",
+      "date_str": "05 Oct",
+      "symbol": "LCCPROJECT",
+      "company": "LCC Projects Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-05",
+      "date_str": "05 Oct",
+      "symbol": "STEAMHOUSE",
+      "company": "Steamhouse India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-08",
+      "date_str": "08 Oct",
+      "symbol": "GMBREW",
+      "company": "GM Breweries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-08",
+      "date_str": "08 Oct",
+      "symbol": "TCS",
+      "company": "Tata Consultancy Services Limited",
+      "purpose": "Financial Results/Dividend"
     }
   ]
 }
