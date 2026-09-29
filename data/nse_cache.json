@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29T03:01:20.945090Z",
+  "updated": "2026-09-29T09:43:25.341568Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -57,14 +57,14 @@
       "date_str": "30 Sep",
       "symbol": "SAKUMA",
       "company": "Sakuma Exports Limited",
-      "purpose": "Board meeting Rescheduled"
+      "purpose": "Fund Raising/Other business ma"
     },
     {
       "date": "2026-09-30",
       "date_str": "30 Sep",
       "symbol": "SAKUMA",
       "company": "Sakuma Exports Limited",
-      "purpose": "Fund Raising/Other business ma"
+      "purpose": "Board meeting Rescheduled"
     },
     {
       "date": "2026-10-01",
@@ -123,6 +123,13 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-10-03",
+      "date_str": "03 Oct",
+      "symbol": "PASHUPATI",
+      "company": "Pashupati Cotspin Limited",
+      "purpose": "Bonus/Other business matters"
+    },
+    {
       "date": "2026-10-05",
       "date_str": "05 Oct",
       "symbol": "LCCPROJECT",
@@ -148,13 +155,6 @@
       "date_str": "06 Oct",
       "symbol": "VEEGALAND",
       "company": "Veegaland Developers Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-08",
-      "date_str": "08 Oct",
-      "symbol": "GMBREW",
-      "company": "GM Breweries Limited",
       "purpose": "Financial Results"
     }
   ]
