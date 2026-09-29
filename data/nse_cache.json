@@ -1,64 +1,22 @@
 {
-  "updated": "2026-09-28T09:39:18.577707Z",
+  "updated": "2026-09-29T03:01:20.945090Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "25-Sep-2026",
+    "date": "28-Sep-2026",
     "fii": {
-      "buy": 12327.36,
-      "sell": 16021.29,
-      "net": -3693.93
+      "buy": 9047.56,
+      "sell": 14400.78,
+      "net": -5353.22
     },
     "dii": {
-      "buy": 14035.77,
-      "sell": 11197.6,
-      "net": 2838.17
+      "buy": 15918.32,
+      "sell": 10729.3,
+      "net": 5189.02
     },
-    "net_combined": -855.76
+    "net_combined": -164.2
   },
   "corporate": [
-    {
-      "date": "2026-09-29",
-      "date_str": "29 Sep",
-      "symbol": "ANSALAPI",
-      "company": "Ansal Properties & Infrastructure Limi",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-09-29",
-      "date_str": "29 Sep",
-      "symbol": "PSB",
-      "company": "Punjab & Sind Bank",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-29",
-      "date_str": "29 Sep",
-      "symbol": "TCI",
-      "company": "Transport Corporation of India Limited",
-      "purpose": "Buyback"
-    },
-    {
-      "date": "2026-09-29",
-      "date_str": "29 Sep",
-      "symbol": "TIMETECHNO",
-      "company": "Time Technoplast Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-29",
-      "date_str": "29 Sep",
-      "symbol": "TPLPLASTEH",
-      "company": "TPL Plastech Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-29",
-      "date_str": "29 Sep",
-      "symbol": "VIPULLTD",
-      "company": "Vipul Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-09-30",
       "date_str": "30 Sep",
@@ -92,21 +50,28 @@
       "date_str": "30 Sep",
       "symbol": "SAKUMA",
       "company": "Sakuma Exports Limited",
+      "purpose": "Board meeting Rescheduled"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
+      "purpose": "Board meeting Rescheduled"
+    },
+    {
+      "date": "2026-09-30",
+      "date_str": "30 Sep",
+      "symbol": "SAKUMA",
+      "company": "Sakuma Exports Limited",
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
-      "purpose": "Board meeting Rescheduled"
+      "date": "2026-10-01",
+      "date_str": "01 Oct",
+      "symbol": "AARTIIND",
+      "company": "Aarti Industries Limited",
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-10-01",
@@ -118,8 +83,36 @@
     {
       "date": "2026-10-01",
       "date_str": "01 Oct",
+      "symbol": "BLISSGVS",
+      "company": "Bliss GVS Pharma Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-01",
+      "date_str": "01 Oct",
+      "symbol": "GFSTEELS",
+      "company": "Grand Foundry Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-01",
+      "date_str": "01 Oct",
       "symbol": "MPIMANIPAL",
       "company": "Manipal Payment and Identity Solutions",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-01",
+      "date_str": "01 Oct",
+      "symbol": "NECCLTD",
+      "company": "North Eastern Carrying Corporation Lim",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-10-01",
+      "date_str": "01 Oct",
+      "symbol": "PRANAV",
+      "company": "Pranav Constructions Limited",
       "purpose": "Financial Results"
     },
     {
@@ -139,8 +132,22 @@
     {
       "date": "2026-10-05",
       "date_str": "05 Oct",
+      "symbol": "OLAELEC",
+      "company": "Ola Electric Mobility Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-05",
+      "date_str": "05 Oct",
       "symbol": "STEAMHOUSE",
       "company": "Steamhouse India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-06",
+      "date_str": "06 Oct",
+      "symbol": "VEEGALAND",
+      "company": "Veegaland Developers Limited",
       "purpose": "Financial Results"
     },
     {
@@ -149,13 +156,6 @@
       "symbol": "GMBREW",
       "company": "GM Breweries Limited",
       "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-08",
-      "date_str": "08 Oct",
-      "symbol": "TCS",
-      "company": "Tata Consultancy Services Limited",
-      "purpose": "Financial Results/Dividend"
     }
   ]
 }
