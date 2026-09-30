@@ -1,71 +1,22 @@
 {
-  "updated": "2026-09-29T09:43:25.341568Z",
+  "updated": "2026-09-30T03:01:18.093757Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "28-Sep-2026",
+    "date": "29-Sep-2026",
     "fii": {
-      "buy": 9047.56,
-      "sell": 14400.78,
-      "net": -5353.22
+      "buy": 22472.7,
+      "sell": 32452.92,
+      "net": -9980.22
     },
     "dii": {
-      "buy": 15918.32,
-      "sell": 10729.3,
-      "net": 5189.02
+      "buy": 46261.11,
+      "sell": 39308.4,
+      "net": 6952.71
     },
-    "net_combined": -164.2
+    "net_combined": -3027.51
   },
   "corporate": [
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "BFUTILITIE",
-      "company": "BF Utilities Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "GULFPETRO",
-      "company": "GP Petroleums Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "GVPTECH",
-      "company": "GVP Infotech Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "HEXAGON",
-      "company": "Hexagon Nutrition Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-09-30",
-      "date_str": "30 Sep",
-      "symbol": "SAKUMA",
-      "company": "Sakuma Exports Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
     {
       "date": "2026-10-01",
       "date_str": "01 Oct",
@@ -118,6 +69,13 @@
     {
       "date": "2026-10-03",
       "date_str": "03 Oct",
+      "symbol": "ADROITINFO",
+      "company": "Adroit Infotech Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-10-03",
+      "date_str": "03 Oct",
       "symbol": "BCG",
       "company": "Brightcom Group Limited",
       "purpose": "Other business matters"
@@ -128,6 +86,20 @@
       "symbol": "PASHUPATI",
       "company": "Pashupati Cotspin Limited",
       "purpose": "Bonus/Other business matters"
+    },
+    {
+      "date": "2026-10-03",
+      "date_str": "03 Oct",
+      "symbol": "TIL",
+      "company": "TIL Limited",
+      "purpose": "Board meeting Rescheduled"
+    },
+    {
+      "date": "2026-10-05",
+      "date_str": "05 Oct",
+      "symbol": "DPABHUSHAN",
+      "company": "D. P. Abhushan Limited",
+      "purpose": "Fund Raising/Other business ma"
     },
     {
       "date": "2026-10-05",
@@ -153,8 +125,36 @@
     {
       "date": "2026-10-06",
       "date_str": "06 Oct",
+      "symbol": "ARCIL",
+      "company": "Asset Reconstruction Company (India) L",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-06",
+      "date_str": "06 Oct",
       "symbol": "VEEGALAND",
       "company": "Veegaland Developers Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-08",
+      "date_str": "08 Oct",
+      "symbol": "GMBREW",
+      "company": "GM Breweries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-08",
+      "date_str": "08 Oct",
+      "symbol": "TCS",
+      "company": "Tata Consultancy Services Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "CANFINHOME",
+      "company": "Can Fin Homes Limited",
       "purpose": "Financial Results"
     }
   ]
