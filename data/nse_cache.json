@@ -1,71 +1,22 @@
 {
-  "updated": "2026-09-30T09:35:29.965707Z",
+  "updated": "2026-10-01T03:01:18.691194Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "29-Sep-2026",
+    "date": "30-Sep-2026",
     "fii": {
-      "buy": 22472.7,
-      "sell": 32452.92,
-      "net": -9980.22
+      "buy": 14967.82,
+      "sell": 25116.23,
+      "net": -10148.41
     },
     "dii": {
-      "buy": 46261.11,
-      "sell": 39308.4,
-      "net": 6952.71
+      "buy": 24413.76,
+      "sell": 13142.03,
+      "net": 11271.73
     },
-    "net_combined": -3027.51
+    "net_combined": 1123.32
   },
   "corporate": [
-    {
-      "date": "2026-10-01",
-      "date_str": "01 Oct",
-      "symbol": "AARTIIND",
-      "company": "Aarti Industries Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-01",
-      "date_str": "01 Oct",
-      "symbol": "BAJFINANCE",
-      "company": "Bajaj Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-01",
-      "date_str": "01 Oct",
-      "symbol": "BLISSGVS",
-      "company": "Bliss GVS Pharma Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-01",
-      "date_str": "01 Oct",
-      "symbol": "GFSTEELS",
-      "company": "Grand Foundry Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-01",
-      "date_str": "01 Oct",
-      "symbol": "MPIMANIPAL",
-      "company": "Manipal Payment and Identity Solutions",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-01",
-      "date_str": "01 Oct",
-      "symbol": "NECCLTD",
-      "company": "North Eastern Carrying Corporation Lim",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-10-01",
-      "date_str": "01 Oct",
-      "symbol": "PRANAV",
-      "company": "Pranav Constructions Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-10-03",
       "date_str": "03 Oct",
@@ -118,6 +69,13 @@
     {
       "date": "2026-10-05",
       "date_str": "05 Oct",
+      "symbol": "RENTOMOJO",
+      "company": "Rentomojo Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-05",
+      "date_str": "05 Oct",
       "symbol": "STEAMHOUSE",
       "company": "Steamhouse India Limited",
       "purpose": "Financial Results"
@@ -128,6 +86,20 @@
       "symbol": "ARCIL",
       "company": "Asset Reconstruction Company (India) L",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-06",
+      "date_str": "06 Oct",
+      "symbol": "GLASSWALL",
+      "company": "Glass Wall Systems (India) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-06",
+      "date_str": "06 Oct",
+      "symbol": "KANOHAR",
+      "company": "Kanohar Electricals Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
       "date": "2026-10-06",
@@ -153,9 +125,37 @@
     {
       "date": "2026-10-09",
       "date_str": "09 Oct",
+      "symbol": "ANANDRATHI",
+      "company": "Anand Rathi Wealth Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
       "symbol": "CANFINHOME",
       "company": "Can Fin Homes Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "CRAMC",
+      "company": "Canara Robeco Asset Management Company",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "POONAWALLA",
+      "company": "Poonawalla Fincorp Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "HCLTECH",
+      "company": "HCL Technologies Limited",
+      "purpose": "Financial Results/Dividend"
     }
   ]
 }
