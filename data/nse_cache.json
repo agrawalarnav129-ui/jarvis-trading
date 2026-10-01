@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T03:01:18.691194Z",
+  "updated": "2026-10-01T10:01:28.887652Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -151,11 +151,11 @@
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "HCLTECH",
-      "company": "HCL Technologies Limited",
-      "purpose": "Financial Results/Dividend"
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "RMC",
+      "company": "RMC Switchgears Limited",
+      "purpose": "Fund Raising/Other business ma"
     }
   ]
 }
