@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-01T10:01:28.887652Z",
+  "updated": "2026-10-02T03:01:34.316808Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "30-Sep-2026",
+    "date": "01-Oct-2026",
     "fii": {
-      "buy": 14967.82,
-      "sell": 25116.23,
-      "net": -10148.41
+      "buy": 12260.26,
+      "sell": 21744.48,
+      "net": -9484.22
     },
     "dii": {
-      "buy": 24413.76,
-      "sell": 13142.03,
-      "net": 11271.73
+      "buy": 25420.04,
+      "sell": 15378.2,
+      "net": 10041.84
     },
-    "net_combined": 1123.32
+    "net_combined": 557.62
   },
   "corporate": [
     {
