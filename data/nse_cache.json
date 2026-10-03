@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T09:38:01.711450Z",
+  "updated": "2026-10-03T03:00:52.615229Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,34 +17,6 @@
     "net_combined": 557.62
   },
   "corporate": [
-    {
-      "date": "2026-10-03",
-      "date_str": "03 Oct",
-      "symbol": "ADROITINFO",
-      "company": "Adroit Infotech Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-10-03",
-      "date_str": "03 Oct",
-      "symbol": "BCG",
-      "company": "Brightcom Group Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-10-03",
-      "date_str": "03 Oct",
-      "symbol": "PASHUPATI",
-      "company": "Pashupati Cotspin Limited",
-      "purpose": "Bonus/Other business matters"
-    },
-    {
-      "date": "2026-10-03",
-      "date_str": "03 Oct",
-      "symbol": "TIL",
-      "company": "TIL Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
     {
       "date": "2026-10-05",
       "date_str": "05 Oct",
@@ -109,6 +81,13 @@
       "purpose": "Financial Results"
     },
     {
+      "date": "2026-10-07",
+      "date_str": "07 Oct",
+      "symbol": "DCAL",
+      "company": "Dishman Carbogen Amcis Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
       "date": "2026-10-08",
       "date_str": "08 Oct",
       "symbol": "GMBREW",
@@ -156,6 +135,27 @@
       "symbol": "RMC",
       "company": "RMC Switchgears Limited",
       "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-10",
+      "date_str": "10 Oct",
+      "symbol": "DMART",
+      "company": "Avenue Supermarts Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "HCLTECH",
+      "company": "HCL Technologies Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "HINDCOMPOS",
+      "company": "Hindustan Composites Limited",
+      "purpose": "Dividend"
     }
   ]
 }
