@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T03:00:52.615229Z",
+  "updated": "2026-10-04T03:00:53.346172Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -144,18 +144,18 @@
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "HCLTECH",
-      "company": "HCL Technologies Limited",
-      "purpose": "Financial Results/Dividend"
+      "date": "2026-10-10",
+      "date_str": "10 Oct",
+      "symbol": "PREMIERPOL",
+      "company": "Premier Polyfilm Limited",
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-10-12",
       "date_str": "12 Oct",
-      "symbol": "HINDCOMPOS",
-      "company": "Hindustan Composites Limited",
-      "purpose": "Dividend"
+      "symbol": "GSFC",
+      "company": "Gujarat State Fertilizers & Chemicals ",
+      "purpose": "Financial Results"
     }
   ]
 }
