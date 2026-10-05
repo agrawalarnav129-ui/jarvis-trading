@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T03:00:53.346172Z",
+  "updated": "2026-10-05T03:01:21.337995Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,41 +17,6 @@
     "net_combined": 557.62
   },
   "corporate": [
-    {
-      "date": "2026-10-05",
-      "date_str": "05 Oct",
-      "symbol": "DPABHUSHAN",
-      "company": "D. P. Abhushan Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-05",
-      "date_str": "05 Oct",
-      "symbol": "LCCPROJECT",
-      "company": "LCC Projects Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-05",
-      "date_str": "05 Oct",
-      "symbol": "OLAELEC",
-      "company": "Ola Electric Mobility Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-05",
-      "date_str": "05 Oct",
-      "symbol": "RENTOMOJO",
-      "company": "Rentomojo Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-05",
-      "date_str": "05 Oct",
-      "symbol": "STEAMHOUSE",
-      "company": "Steamhouse India Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-10-06",
       "date_str": "06 Oct",
@@ -155,6 +120,41 @@
       "date_str": "12 Oct",
       "symbol": "GSFC",
       "company": "Gujarat State Fertilizers & Chemicals ",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "HCLTECH",
+      "company": "HCL Technologies Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "HINDCOMPOS",
+      "company": "Hindustan Composites Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "ICICIAMC",
+      "company": "ICICI Prudential Asset Management Comp",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "PLASTIBLEN",
+      "company": "Plastiblends India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "SWARAJENG",
+      "company": "Swaraj Engines Limited",
       "purpose": "Financial Results"
     }
   ]
