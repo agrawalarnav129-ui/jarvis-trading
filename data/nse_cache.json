@@ -1,57 +1,22 @@
 {
-  "updated": "2026-10-05T10:18:26.748081Z",
+  "updated": "2026-10-06T03:01:30.904158Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "01-Oct-2026",
+    "date": "05-Oct-2026",
     "fii": {
-      "buy": 12260.26,
-      "sell": 21744.48,
-      "net": -9484.22
+      "buy": 15674.61,
+      "sell": 20373.75,
+      "net": -4699.14
     },
     "dii": {
-      "buy": 25420.04,
-      "sell": 15378.2,
-      "net": 10041.84
+      "buy": 20492.93,
+      "sell": 15311.31,
+      "net": 5181.62
     },
-    "net_combined": 557.62
+    "net_combined": 482.48
   },
   "corporate": [
-    {
-      "date": "2026-10-06",
-      "date_str": "06 Oct",
-      "symbol": "ARCIL",
-      "company": "Asset Reconstruction Company (India) L",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-06",
-      "date_str": "06 Oct",
-      "symbol": "GLASSWALL",
-      "company": "Glass Wall Systems (India) Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-06",
-      "date_str": "06 Oct",
-      "symbol": "KANOHAR",
-      "company": "Kanohar Electricals Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-06",
-      "date_str": "06 Oct",
-      "symbol": "KARAMTARA",
-      "company": "Karamtara Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-06",
-      "date_str": "06 Oct",
-      "symbol": "VEEGALAND",
-      "company": "Veegaland Developers Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-10-07",
       "date_str": "07 Oct",
@@ -69,9 +34,30 @@
     {
       "date": "2026-10-08",
       "date_str": "08 Oct",
+      "symbol": "HILINFRA",
+      "company": "Highway Infrastructure Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-08",
+      "date_str": "08 Oct",
+      "symbol": "SHIVAMAUTO",
+      "company": "Shivam Autotech Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-10-08",
+      "date_str": "08 Oct",
       "symbol": "TCS",
       "company": "Tata Consultancy Services Limited",
       "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-08",
+      "date_str": "08 Oct",
+      "symbol": "VEDL",
+      "company": "Vedanta Limited",
+      "purpose": "Dividend"
     },
     {
       "date": "2026-10-09",
@@ -90,8 +76,22 @@
     {
       "date": "2026-10-09",
       "date_str": "09 Oct",
+      "symbol": "CORDELIA",
+      "company": "Waterways Leisure Tourism Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
       "symbol": "CRAMC",
       "company": "Canara Robeco Asset Management Company",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "INDBANK",
+      "company": "Indbank Merchant Banking Services Limi",
       "purpose": "Financial Results"
     },
     {
@@ -132,30 +132,30 @@
     {
       "date": "2026-10-12",
       "date_str": "12 Oct",
-      "symbol": "GSFC",
-      "company": "Gujarat State Fertilizers & Chemicals ",
+      "symbol": "AGRITECH",
+      "company": "Agri-Tech (India) Limited",
       "purpose": "Financial Results"
     },
     {
       "date": "2026-10-12",
       "date_str": "12 Oct",
-      "symbol": "HCLTECH",
-      "company": "HCL Technologies Limited",
-      "purpose": "Financial Results/Dividend"
+      "symbol": "ALKALI",
+      "company": "Alkali Metals Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
       "date": "2026-10-12",
       "date_str": "12 Oct",
-      "symbol": "HINDCOMPOS",
-      "company": "Hindustan Composites Limited",
-      "purpose": "Dividend"
+      "symbol": "GRADIENTE",
+      "company": "Gradiente Infotainment Limited",
+      "purpose": "Financial Results/Fund Raising"
     },
     {
       "date": "2026-10-12",
       "date_str": "12 Oct",
-      "symbol": "ICICIAMC",
-      "company": "ICICI Prudential Asset Management Comp",
-      "purpose": "Financial Results/Dividend"
+      "symbol": "GSFC",
+      "company": "Gujarat State Fertilizers & Chemicals ",
+      "purpose": "Financial Results"
     }
   ]
 }
