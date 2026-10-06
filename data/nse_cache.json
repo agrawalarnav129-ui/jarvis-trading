@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T03:01:30.904158Z",
+  "updated": "2026-10-06T10:05:46.324974Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -76,6 +76,20 @@
     {
       "date": "2026-10-09",
       "date_str": "09 Oct",
+      "symbol": "CANHLIFE",
+      "company": "Canara HSBC Life Insurance Company Lim",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "CANHLIFE",
+      "company": "Canara HSBC Life Insurance Company Lim",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
       "symbol": "CORDELIA",
       "company": "Waterways Leisure Tourism Limited",
       "purpose": "Financial Results"
@@ -123,6 +137,13 @@
       "purpose": "Financial Results"
     },
     {
+      "date": "2026-10-10",
+      "date_str": "10 Oct",
+      "symbol": "VIVIANA",
+      "company": "Viviana Power Tech Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
       "date": "2026-10-12",
       "date_str": "12 Oct",
       "symbol": "ADROITIND",
@@ -134,27 +155,6 @@
       "date_str": "12 Oct",
       "symbol": "AGRITECH",
       "company": "Agri-Tech (India) Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "ALKALI",
-      "company": "Alkali Metals Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "GRADIENTE",
-      "company": "Gradiente Infotainment Limited",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "GSFC",
-      "company": "Gujarat State Fertilizers & Chemicals ",
       "purpose": "Financial Results"
     }
   ]
