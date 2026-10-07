@@ -1,29 +1,22 @@
 {
-  "updated": "2026-10-06T10:05:46.324974Z",
+  "updated": "2026-10-07T03:01:20.094002Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "05-Oct-2026",
+    "date": "06-Oct-2026",
     "fii": {
-      "buy": 15674.61,
-      "sell": 20373.75,
-      "net": -4699.14
+      "buy": 11258.72,
+      "sell": 14220.02,
+      "net": -2961.3
     },
     "dii": {
-      "buy": 20492.93,
-      "sell": 15311.31,
-      "net": 5181.62
+      "buy": 20146.4,
+      "sell": 15057.48,
+      "net": 5088.92
     },
-    "net_combined": 482.48
+    "net_combined": 2127.62
   },
   "corporate": [
-    {
-      "date": "2026-10-07",
-      "date_str": "07 Oct",
-      "symbol": "DCAL",
-      "company": "Dishman Carbogen Amcis Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-10-08",
       "date_str": "08 Oct",
@@ -69,6 +62,13 @@
     {
       "date": "2026-10-09",
       "date_str": "09 Oct",
+      "symbol": "BALLARPUR",
+      "company": "Ballarpur Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
       "symbol": "CANFINHOME",
       "company": "Can Fin Homes Limited",
       "purpose": "Financial Results"
@@ -93,6 +93,20 @@
       "symbol": "CORDELIA",
       "company": "Waterways Leisure Tourism Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "CPCAP",
+      "company": "CP Capital Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "CRAMC",
+      "company": "Canara Robeco Asset Management Company",
+      "purpose": "Dividend"
     },
     {
       "date": "2026-10-09",
@@ -123,6 +137,13 @@
       "purpose": "Fund Raising/Other business ma"
     },
     {
+      "date": "2026-10-09",
+      "date_str": "09 Oct",
+      "symbol": "TFL",
+      "company": "Transwarranty Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
       "date": "2026-10-10",
       "date_str": "10 Oct",
       "symbol": "DMART",
@@ -134,27 +155,6 @@
       "date_str": "10 Oct",
       "symbol": "PREMIERPOL",
       "company": "Premier Polyfilm Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-10",
-      "date_str": "10 Oct",
-      "symbol": "VIVIANA",
-      "company": "Viviana Power Tech Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "ADROITIND",
-      "company": "Adroit Industries (India) Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "AGRITECH",
-      "company": "Agri-Tech (India) Limited",
       "purpose": "Financial Results"
     }
   ]
