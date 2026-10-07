@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T03:01:20.094002Z",
+  "updated": "2026-10-07T10:08:54.302455Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -78,14 +78,14 @@
       "date_str": "09 Oct",
       "symbol": "CANHLIFE",
       "company": "Canara HSBC Life Insurance Company Lim",
-      "purpose": "Financial Results"
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-10-09",
       "date_str": "09 Oct",
       "symbol": "CANHLIFE",
       "company": "Canara HSBC Life Insurance Company Lim",
-      "purpose": "Fund Raising"
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-10-09",
@@ -106,14 +106,14 @@
       "date_str": "09 Oct",
       "symbol": "CRAMC",
       "company": "Canara Robeco Asset Management Company",
-      "purpose": "Dividend"
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-10-09",
       "date_str": "09 Oct",
       "symbol": "CRAMC",
       "company": "Canara Robeco Asset Management Company",
-      "purpose": "Financial Results"
+      "purpose": "Dividend"
     },
     {
       "date": "2026-10-09",
