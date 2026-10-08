@@ -1,57 +1,22 @@
 {
-  "updated": "2026-10-07T10:08:54.302455Z",
+  "updated": "2026-10-08T03:01:21.333095Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "06-Oct-2026",
+    "date": "07-Oct-2026",
     "fii": {
-      "buy": 11258.72,
-      "sell": 14220.02,
-      "net": -2961.3
+      "buy": 12577.96,
+      "sell": 18699.33,
+      "net": -6121.37
     },
     "dii": {
-      "buy": 20146.4,
-      "sell": 15057.48,
-      "net": 5088.92
+      "buy": 18707.03,
+      "sell": 14110.46,
+      "net": 4596.57
     },
-    "net_combined": 2127.62
+    "net_combined": -1524.8
   },
   "corporate": [
-    {
-      "date": "2026-10-08",
-      "date_str": "08 Oct",
-      "symbol": "GMBREW",
-      "company": "GM Breweries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-08",
-      "date_str": "08 Oct",
-      "symbol": "HILINFRA",
-      "company": "Highway Infrastructure Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-08",
-      "date_str": "08 Oct",
-      "symbol": "SHIVAMAUTO",
-      "company": "Shivam Autotech Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-10-08",
-      "date_str": "08 Oct",
-      "symbol": "TCS",
-      "company": "Tata Consultancy Services Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-10-08",
-      "date_str": "08 Oct",
-      "symbol": "VEDL",
-      "company": "Vedanta Limited",
-      "purpose": "Dividend"
-    },
     {
       "date": "2026-10-09",
       "date_str": "09 Oct",
@@ -106,14 +71,14 @@
       "date_str": "09 Oct",
       "symbol": "CRAMC",
       "company": "Canara Robeco Asset Management Company",
-      "purpose": "Financial Results"
+      "purpose": "Dividend"
     },
     {
       "date": "2026-10-09",
       "date_str": "09 Oct",
       "symbol": "CRAMC",
       "company": "Canara Robeco Asset Management Company",
-      "purpose": "Dividend"
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-10-09",
@@ -146,6 +111,13 @@
     {
       "date": "2026-10-10",
       "date_str": "10 Oct",
+      "symbol": "AFIL",
+      "company": "Akme Fintrade (India) Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-10",
+      "date_str": "10 Oct",
       "symbol": "DMART",
       "company": "Avenue Supermarts Limited",
       "purpose": "Financial Results"
@@ -156,6 +128,34 @@
       "symbol": "PREMIERPOL",
       "company": "Premier Polyfilm Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-10",
+      "date_str": "10 Oct",
+      "symbol": "VIVIANA",
+      "company": "Viviana Power Tech Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "ADROITIND",
+      "company": "Adroit Industries (India) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "AGRITECH",
+      "company": "Agri-Tech (India) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "ALKALI",
+      "company": "Alkali Metals Limited",
+      "purpose": "Financial Results/Other busine"
     }
   ]
 }
