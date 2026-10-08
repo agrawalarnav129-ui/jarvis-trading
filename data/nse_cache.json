@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T03:01:21.333095Z",
+  "updated": "2026-10-08T10:24:36.989903Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -43,14 +43,14 @@
       "date_str": "09 Oct",
       "symbol": "CANHLIFE",
       "company": "Canara HSBC Life Insurance Company Lim",
-      "purpose": "Fund Raising"
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-10-09",
       "date_str": "09 Oct",
       "symbol": "CANHLIFE",
       "company": "Canara HSBC Life Insurance Company Lim",
-      "purpose": "Financial Results"
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-10-09",
