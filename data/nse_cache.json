@@ -1,113 +1,22 @@
 {
-  "updated": "2026-10-08T10:24:36.989903Z",
+  "updated": "2026-10-09T03:01:17.842793Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "07-Oct-2026",
+    "date": "08-Oct-2026",
     "fii": {
-      "buy": 12577.96,
-      "sell": 18699.33,
-      "net": -6121.37
+      "buy": 15725.45,
+      "sell": 28669.03,
+      "net": -12943.58
     },
     "dii": {
-      "buy": 18707.03,
-      "sell": 14110.46,
-      "net": 4596.57
+      "buy": 22987.97,
+      "sell": 12284.86,
+      "net": 10703.11
     },
-    "net_combined": -1524.8
+    "net_combined": -2240.47
   },
   "corporate": [
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "ANANDRATHI",
-      "company": "Anand Rathi Wealth Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "BALLARPUR",
-      "company": "Ballarpur Industries Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "CANFINHOME",
-      "company": "Can Fin Homes Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "CANHLIFE",
-      "company": "Canara HSBC Life Insurance Company Lim",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "CANHLIFE",
-      "company": "Canara HSBC Life Insurance Company Lim",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "CORDELIA",
-      "company": "Waterways Leisure Tourism Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "CPCAP",
-      "company": "CP Capital Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "CRAMC",
-      "company": "Canara Robeco Asset Management Company",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "CRAMC",
-      "company": "Canara Robeco Asset Management Company",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "INDBANK",
-      "company": "Indbank Merchant Banking Services Limi",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "POONAWALLA",
-      "company": "Poonawalla Fincorp Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "RMC",
-      "company": "RMC Switchgears Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-09",
-      "date_str": "09 Oct",
-      "symbol": "TFL",
-      "company": "Transwarranty Finance Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-10-10",
       "date_str": "10 Oct",
@@ -156,6 +65,97 @@
       "symbol": "ALKALI",
       "company": "Alkali Metals Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "DHRUV",
+      "company": "Dhruv Consultancy Services Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "GRADIENTE",
+      "company": "Gradiente Infotainment Limited",
+      "purpose": "Financial Results/Fund Raising"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "GSFC",
+      "company": "Gujarat State Fertilizers & Chemicals ",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "GSFC",
+      "company": "Gujarat State Fertilizers & Chemicals ",
+      "purpose": "Board meeting Rescheduled"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "HCLTECH",
+      "company": "HCL Technologies Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "HINDCOMPOS",
+      "company": "Hindustan Composites Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "ICICIAMC",
+      "company": "ICICI Prudential Asset Management Comp",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "JUBLPHARMA",
+      "company": "Jubilant Pharmova Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "KOTYARK",
+      "company": "Kotyark Industries Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "NXST",
+      "company": "Nexus Select Trust",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "PACEDIGITK",
+      "company": "Pace Digitek Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "PLASTIBLEN",
+      "company": "Plastiblends India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "RBLBANK",
+      "company": "RBL Bank Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
