@@ -1,50 +1,22 @@
 {
-  "updated": "2026-10-09T10:23:21.456974Z",
+  "updated": "2026-10-10T03:00:55.805289Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "08-Oct-2026",
+    "date": "09-Oct-2026",
     "fii": {
-      "buy": 15725.45,
-      "sell": 28669.03,
-      "net": -12943.58
+      "buy": 10373.99,
+      "sell": 13942.89,
+      "net": -3568.9
     },
     "dii": {
-      "buy": 22987.97,
-      "sell": 12284.86,
-      "net": 10703.11
+      "buy": 15626.53,
+      "sell": 10883.27,
+      "net": 4743.26
     },
-    "net_combined": -2240.47
+    "net_combined": 1174.36
   },
   "corporate": [
-    {
-      "date": "2026-10-10",
-      "date_str": "10 Oct",
-      "symbol": "AFIL",
-      "company": "Akme Fintrade (India) Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-10",
-      "date_str": "10 Oct",
-      "symbol": "DMART",
-      "company": "Avenue Supermarts Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-10",
-      "date_str": "10 Oct",
-      "symbol": "PREMIERPOL",
-      "company": "Premier Polyfilm Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-10",
-      "date_str": "10 Oct",
-      "symbol": "VIVIANA",
-      "company": "Viviana Power Tech Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-10-12",
       "date_str": "12 Oct",
@@ -132,6 +104,13 @@
     {
       "date": "2026-10-12",
       "date_str": "12 Oct",
+      "symbol": "KOTYARK",
+      "company": "Kotyark Industries Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
       "symbol": "NXST",
       "company": "Nexus Select Trust",
       "purpose": "Fund Raising"
@@ -155,6 +134,27 @@
       "date_str": "12 Oct",
       "symbol": "RBLBANK",
       "company": "RBL Bank Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "SUNPHARMA",
+      "company": "Sun Pharmaceutical Industries Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "SWANDEF",
+      "company": "Swan Defence and Heavy Industries Limi",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-12",
+      "date_str": "12 Oct",
+      "symbol": "SWARAJENG",
+      "company": "Swaraj Engines Limited",
       "purpose": "Financial Results"
     }
   ]
