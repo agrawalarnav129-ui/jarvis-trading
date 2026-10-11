@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T03:00:55.805289Z",
+  "updated": "2026-10-11T03:01:01.368027Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -57,14 +57,14 @@
       "date_str": "12 Oct",
       "symbol": "GSFC",
       "company": "Gujarat State Fertilizers & Chemicals ",
-      "purpose": "Financial Results"
+      "purpose": "Board meeting Rescheduled"
     },
     {
       "date": "2026-10-12",
       "date_str": "12 Oct",
       "symbol": "GSFC",
       "company": "Gujarat State Fertilizers & Chemicals ",
-      "purpose": "Board meeting Rescheduled"
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-10-12",
