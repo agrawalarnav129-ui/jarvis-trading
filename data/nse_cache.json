@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T03:01:01.368027Z",
+  "updated": "2026-10-12T03:01:18.028418Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -18,143 +18,143 @@
   },
   "corporate": [
     {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "ADROITIND",
-      "company": "Adroit Industries (India) Limited",
-      "purpose": "Financial Results"
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "AHCL",
+      "company": "Anlon Healthcare Limited",
+      "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "AGRITECH",
-      "company": "Agri-Tech (India) Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "ALKALI",
-      "company": "Alkali Metals Limited",
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "ARSSBL",
+      "company": "Anand Rathi Share and Stock Brokers Li",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "DHRUV",
-      "company": "Dhruv Consultancy Services Limited",
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "DEN",
+      "company": "Den Networks Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "EIMCOELECO",
+      "company": "Eimco Elecon (India) Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "GTPL",
+      "company": "GTPL Hathway Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "HEROMOTORS",
+      "company": "Hero Motors Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "ICICIPRULI",
+      "company": "ICICI Prudential Life Insurance Compan",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "PNBGILTS",
+      "company": "PNB Gilts Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "SAHLIBHFI",
+      "company": "Shalibhadra Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "SEJALLTD",
+      "company": "Sejal Glass Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "SSRETAIL",
+      "company": "SS Retail Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "SSRETAIL",
+      "company": "SS Retail Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "STCINDIA",
+      "company": "The State Trading Corporation of India",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "TALWALKARS",
+      "company": "Talwalkars Better Value Fitness Limite",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "TARIL",
+      "company": "Transformers And Rectifiers (India) Li",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "TATAELXSI",
+      "company": "Tata Elxsi Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "TEXMOPIPES",
+      "company": "Texmo Pipes and Products Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "GRADIENTE",
-      "company": "Gradiente Infotainment Limited",
-      "purpose": "Financial Results/Fund Raising"
+      "date": "2026-10-13",
+      "date_str": "13 Oct",
+      "symbol": "TRF",
+      "company": "TRF Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "GSFC",
-      "company": "Gujarat State Fertilizers & Chemicals ",
-      "purpose": "Board meeting Rescheduled"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "GSFC",
-      "company": "Gujarat State Fertilizers & Chemicals ",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "HCLTECH",
-      "company": "HCL Technologies Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "HINDCOMPOS",
-      "company": "Hindustan Composites Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "ICICIAMC",
-      "company": "ICICI Prudential Asset Management Comp",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "JUBLPHARMA",
-      "company": "Jubilant Pharmova Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "KOTYARK",
-      "company": "Kotyark Industries Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "KOTYARK",
-      "company": "Kotyark Industries Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "NXST",
-      "company": "Nexus Select Trust",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "PACEDIGITK",
-      "company": "Pace Digitek Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "PLASTIBLEN",
-      "company": "Plastiblends India Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "RBLBANK",
-      "company": "RBL Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "SUNPHARMA",
-      "company": "Sun Pharmaceutical Industries Limited",
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "AEROFLEX",
+      "company": "Aeroflex Industries Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "SWANDEF",
-      "company": "Swan Defence and Heavy Industries Limi",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-12",
-      "date_str": "12 Oct",
-      "symbol": "SWARAJENG",
-      "company": "Swaraj Engines Limited",
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "BAJAJCON",
+      "company": "Bajaj Consumer Care Limited",
       "purpose": "Financial Results"
     }
   ]
