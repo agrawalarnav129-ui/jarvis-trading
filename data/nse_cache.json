@@ -1,148 +1,22 @@
 {
-  "updated": "2026-10-12T10:37:38.969752Z",
+  "updated": "2026-10-13T03:01:27.647812Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "09-Oct-2026",
+    "date": "12-Oct-2026",
     "fii": {
-      "buy": 10373.99,
-      "sell": 13942.89,
-      "net": -3568.9
+      "buy": 12583.21,
+      "sell": 14291.69,
+      "net": -1708.48
     },
     "dii": {
-      "buy": 15626.53,
-      "sell": 10883.27,
-      "net": 4743.26
+      "buy": 15506.73,
+      "sell": 12461.71,
+      "net": 3045.02
     },
-    "net_combined": 1174.36
+    "net_combined": 1336.54
   },
   "corporate": [
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "AHCL",
-      "company": "Anlon Healthcare Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "ARSSBL",
-      "company": "Anand Rathi Share and Stock Brokers Li",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "DEN",
-      "company": "Den Networks Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "EIMCOELECO",
-      "company": "Eimco Elecon (India) Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "GTPL",
-      "company": "GTPL Hathway Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "HEROMOTORS",
-      "company": "Hero Motors Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "ICICIPRULI",
-      "company": "ICICI Prudential Life Insurance Compan",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "PNBGILTS",
-      "company": "PNB Gilts Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "SAHLIBHFI",
-      "company": "Shalibhadra Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "SEJALLTD",
-      "company": "Sejal Glass Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "SSRETAIL",
-      "company": "SS Retail Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "SSRETAIL",
-      "company": "SS Retail Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "STCINDIA",
-      "company": "The State Trading Corporation of India",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "TALWALKARS",
-      "company": "Talwalkars Better Value Fitness Limite",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "TARIL",
-      "company": "Transformers And Rectifiers (India) Li",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "TATAELXSI",
-      "company": "Tata Elxsi Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "TEXMOPIPES",
-      "company": "Texmo Pipes and Products Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-10-13",
-      "date_str": "13 Oct",
-      "symbol": "TRF",
-      "company": "TRF Limited",
-      "purpose": "Financial Results/Other busine"
-    },
     {
       "date": "2026-10-14",
       "date_str": "14 Oct",
@@ -156,6 +30,132 @@
       "symbol": "BAJAJCON",
       "company": "Bajaj Consumer Care Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "BHEL",
+      "company": "Bharat Heavy Electricals Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "BIRLAMONEY",
+      "company": "Aditya Birla Money Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "CANBK",
+      "company": "Canara Bank",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "CEATLTD",
+      "company": "CEAT Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "CGCL",
+      "company": "Capri Global Capital Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "CUBEXTUB",
+      "company": "Cubex Tubings Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "DIL",
+      "company": "Debock Industries Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "ELECON",
+      "company": "Elecon Engineering Company Limited",
+      "purpose": "Financial Results/Dividend/Oth"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "EMMVEE",
+      "company": "Emmvee Photovoltaic Power Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "GROWW",
+      "company": "Billionbrains Garage Ventures Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "HATHWAY",
+      "company": "Hathway Cable & Datacom Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "HDBFS",
+      "company": "HDB Financial Services Limited",
+      "purpose": "Dividend"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "HDBFS",
+      "company": "HDB Financial Services Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "HILINFRA",
+      "company": "Highway Infrastructure Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "ICICIGI",
+      "company": "ICICI Lombard General Insurance Compan",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "LLOYDSME",
+      "company": "Lloyds Metals And Energy Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "MRPL",
+      "company": "Mangalore Refinery and Petrochemicals ",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-14",
+      "date_str": "14 Oct",
+      "symbol": "MRPL",
+      "company": "Mangalore Refinery and Petrochemicals ",
+      "purpose": "Financial Results/Dividend"
     }
   ]
 }
