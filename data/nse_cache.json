@@ -1,161 +1,161 @@
 {
-  "updated": "2026-10-14T08:36:35.206815Z",
+  "updated": "2026-10-15T03:01:26.122164Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "13-Oct-2026",
+    "date": "14-Oct-2026",
     "fii": {
-      "buy": 13465.39,
-      "sell": 14770.52,
-      "net": -1305.13
+      "buy": 16381.85,
+      "sell": 18239.29,
+      "net": -1857.44
     },
     "dii": {
-      "buy": 16232.97,
-      "sell": 13793.73,
-      "net": 2439.24
+      "buy": 17428.61,
+      "sell": 14758.17,
+      "net": 2670.44
     },
-    "net_combined": 1134.11
+    "net_combined": 813.0
   },
   "corporate": [
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "360ONE",
-      "company": "360 ONE WAM LIMITED",
-      "purpose": "Financial Results/Dividend"
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "AURUM",
+      "company": "Aurum PropTech Limited",
+      "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "5PAISA",
-      "company": "5Paisa Capital Limited",
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "BAJAJHFL",
+      "company": "Bajaj Housing Finance Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "CROMPTON",
+      "company": "Crompton Greaves Consumer Electricals ",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "DLF",
+      "company": "DLF Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "E2E",
+      "company": "E2E Networks Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "FEDERALBNK",
+      "company": "The Federal Bank  Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "HSCL",
+      "company": "Himadri Speciality Chemical Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "INDORAMA",
+      "company": "Indo Rama Synthetics (India) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "JAYNECOIND",
+      "company": "Jayaswal Neco Industries Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "AEPL",
-      "company": "Artemis Electricals and Projects Limit",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "AERONEU",
-      "company": "Aeroflex Neu Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "ALOKINDS",
-      "company": "Alok Industries Limited",
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "JINDALSAW",
+      "company": "Jindal Saw Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "ANGELONE",
-      "company": "Angel One Limited",
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "LTM",
+      "company": "LTM Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "MGEL",
+      "company": "Mangalam Global Enterprise Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "MODISONLTD",
+      "company": "MODISON LIMITED",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "ANGELONE",
-      "company": "Angel One Limited",
-      "purpose": "Dividend"
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "OBEROIRLTY",
+      "company": "Oberoi Realty Limited",
+      "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "ARMEE",
-      "company": "ArMee Infotech Limited",
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "ONWARDTEC",
+      "company": "Onward Technologies Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "BUTTERFLY",
-      "company": "Butterfly Gandhimathi Appliances Limit",
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "PAUSHAKLTD",
+      "company": "Paushak Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "PNB",
+      "company": "Punjab National Bank",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "CCL",
-      "company": "CCL Products (India) Limited",
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "RPEL",
+      "company": "Raghav Productivity Enhancers Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "CYIENTDLM",
-      "company": "Cyient DLM Limited",
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "SGFIN",
+      "company": "SG Finserve Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "DBCORP",
-      "company": "D.B.Corp Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "FEDFINA",
-      "company": "Fedbank Financial Services Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "GARUDA",
-      "company": "Garuda Construction and Engineering Li",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "GRADIENTE",
-      "company": "Gradiente Infotainment Limited",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "HDFCAMC",
-      "company": "HDFC Asset Management Company Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "HDFCLIFE",
-      "company": "HDFC Life Insurance Company Limited",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "HERITGFOOD",
-      "company": "Heritage Foods Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "IIFL",
-      "company": "IIFL Finance Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-15",
-      "date_str": "15 Oct",
-      "symbol": "INDIANB",
-      "company": "Indian Bank",
-      "purpose": "Financial Results/Fund Raising"
+      "date": "2026-10-16",
+      "date_str": "16 Oct",
+      "symbol": "SHOPERSTOP",
+      "company": "Shoppers Stop Limited",
+      "purpose": "Financial Results/Other busine"
     }
   ]
 }
