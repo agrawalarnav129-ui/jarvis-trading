@@ -1,0 +1,25 @@
+{
+  "RAIN.NS": [],
+  "BHEL.NS": [],
+  "FLUOROCHEM.NS": [],
+  "HAL.NS": [],
+  "SHYAMMETL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TATAELXSI.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "IDBI.NS": [],
+  "LTTS.NS": [],
+  "SUPREMEIND.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ICICIGI.NS": [],
+  "PVRINOX.NS": [],
+  "GLAND.NS": [],
+  "PTCIL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PNBHOUSING.NS": [],
+  "FINEORG.NS": []
+}
