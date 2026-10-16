@@ -1,161 +1,161 @@
 {
-  "updated": "2026-10-15T08:11:54.507435Z",
+  "updated": "2026-10-16T03:01:23.272656Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "14-Oct-2026",
+    "date": "15-Oct-2026",
     "fii": {
-      "buy": 16381.85,
-      "sell": 18239.29,
-      "net": -1857.44
+      "buy": 12735.59,
+      "sell": 18020.96,
+      "net": -5285.37
     },
     "dii": {
-      "buy": 17428.61,
-      "sell": 14758.17,
-      "net": 2670.44
+      "buy": 19438.65,
+      "sell": 16119.26,
+      "net": 3319.39
     },
-    "net_combined": 813.0
+    "net_combined": -1965.98
   },
   "corporate": [
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "AURUM",
-      "company": "Aurum PropTech Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "AXISBANK",
+      "company": "Axis Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "BAJAJHFL",
-      "company": "Bajaj Housing Finance Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "BAJAJHCARE",
+      "company": "Bajaj Healthcare Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "CROMPTON",
-      "company": "Crompton Greaves Consumer Electricals ",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "CENTRALBK",
+      "company": "Central Bank of India",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "DLF",
-      "company": "DLF Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "HDFCBANK",
+      "company": "HDFC Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "E2E",
-      "company": "E2E Networks Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "ICICIBANK",
+      "company": "ICICI Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "FEDERALBNK",
-      "company": "The Federal Bank  Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "IDBI",
+      "company": "IDBI Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "HSCL",
-      "company": "Himadri Speciality Chemical Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "INDIACEM",
+      "company": "The India Cements Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "INDORAMA",
-      "company": "Indo Rama Synthetics (India) Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "IXIGO",
+      "company": "Le Travenues Technology Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "JAYNECOIND",
-      "company": "Jayaswal Neco Industries Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "KELLTONTEC",
+      "company": "Kellton Tech Solutions Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "KROSS",
+      "company": "Kross Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "JINDALSAW",
-      "company": "Jindal Saw Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "LAGNAM",
+      "company": "Lagnam Spintex Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "LTM",
-      "company": "LTM Limited",
-      "purpose": "Financial Results/Dividend"
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "PAKKA",
+      "company": "PAKKA LIMITED",
+      "purpose": "Fund Raising"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "MGEL",
-      "company": "Mangalam Global Enterprise Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "MODISONLTD",
-      "company": "MODISON LIMITED",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "PARIN",
+      "company": "Parin Enterprises Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "OBEROIRLTY",
-      "company": "Oberoi Realty Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "ONWARDTEC",
-      "company": "Onward Technologies Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "PSB",
+      "company": "Punjab & Sind Bank",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "PAUSHAKLTD",
-      "company": "Paushak Limited",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "ROSSARI",
+      "company": "Rossari Biotech Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "TGBHOTELS",
+      "company": "TGB Banquets And Hotels Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "PNB",
-      "company": "Punjab National Bank",
+      "date": "2026-10-17",
+      "date_str": "17 Oct",
+      "symbol": "YESBANK",
+      "company": "Yes Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "RPEL",
-      "company": "Raghav Productivity Enhancers Limited",
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "AKSHARCHEM",
+      "company": "AksharChem India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "SGFIN",
-      "company": "SG Finserve Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-16",
-      "date_str": "16 Oct",
-      "symbol": "SHOPERSTOP",
-      "company": "Shoppers Stop Limited",
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "AONESTEELS",
+      "company": "A-One Steels India Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "BAJFINANCE",
+      "company": "Bajaj Finance Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
