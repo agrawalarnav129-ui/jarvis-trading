@@ -1,0 +1,33 @@
+{
+  "TECHM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ICICIBANK.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "BGRENERGY.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "COFORGE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "MBAPL.NS": [],
+  "KOTAKBANK.NS": [],
+  "ANGELONE.NS": [],
+  "ELECON.NS": [],
+  "RAIN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "ICICIGI.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SHYAMMETL.NS": [],
+  "BSOFT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PVRINOX.NS": [],
+  "FINEORG.NS": [],
+  "HAL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
