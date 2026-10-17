@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-16T08:04:42.626290Z",
+  "updated": "2026-10-17T03:01:21.976544Z",
   "fii_dii": {
     "available": true,
-    "source": "NSE provisional",
+    "source": "NSE provisional (cached)",
     "date": "15-Oct-2026",
     "fii": {
       "buy": 12735.59,
@@ -18,140 +18,120 @@
   },
   "corporate": [
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "AXISBANK",
       "company": "Axis Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "BAJAJHCARE",
       "company": "Bajaj Healthcare Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "CENTRALBK",
       "company": "Central Bank of India",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "HDFCBANK",
       "company": "HDFC Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "ICICIBANK",
       "company": "ICICI Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "IDBI",
       "company": "IDBI Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "INDIACEM",
       "company": "The India Cements Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "IXIGO",
       "company": "Le Travenues Technology Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "KELLTONTEC",
       "company": "Kellton Tech Solutions Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "KROSS",
       "company": "Kross Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "LAGNAM",
       "company": "Lagnam Spintex Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "PAKKA",
       "company": "PAKKA LIMITED",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "PARIN",
       "company": "Parin Enterprises Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "PSB",
       "company": "Punjab & Sind Bank",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "ROSSARI",
       "company": "Rossari Biotech Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "TGBHOTELS",
       "company": "TGB Banquets And Hotels Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-17",
       "date_str": "17 Oct",
       "symbol": "YESBANK",
       "company": "Yes Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
       "date_str": "19 Oct",
       "symbol": "AKSHARCHEM",
       "company": "AksharChem India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
       "date_str": "19 Oct",
       "symbol": "AONESTEELS",
       "company": "A-One Steels India Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-19",
       "date_str": "19 Oct",
       "symbol": "BAJFINANCE",
       "company": "Bajaj Finance Limited",
