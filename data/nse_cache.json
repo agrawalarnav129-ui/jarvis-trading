@@ -1,140 +1,160 @@
 {
-  "updated": "2026-10-17T03:01:21.976544Z",
+  "updated": "2026-10-18T03:01:01.054600Z",
   "fii_dii": {
     "available": true,
-    "source": "NSE provisional (cached)",
-    "date": "15-Oct-2026",
+    "source": "NSE provisional",
+    "date": "16-Oct-2026",
     "fii": {
-      "buy": 12735.59,
-      "sell": 18020.96,
-      "net": -5285.37
+      "buy": 19951.59,
+      "sell": 18785.67,
+      "net": 1165.92
     },
     "dii": {
-      "buy": 19438.65,
-      "sell": 16119.26,
-      "net": 3319.39
+      "buy": 17201.8,
+      "sell": 20863.08,
+      "net": -3661.28
     },
-    "net_combined": -1965.98
+    "net_combined": -2495.36
   },
   "corporate": [
     {
-      "date_str": "17 Oct",
-      "symbol": "AXISBANK",
-      "company": "Axis Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "BAJAJHCARE",
-      "company": "Bajaj Healthcare Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "CENTRALBK",
-      "company": "Central Bank of India",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "HDFCBANK",
-      "company": "HDFC Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "ICICIBANK",
-      "company": "ICICI Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "IDBI",
-      "company": "IDBI Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "INDIACEM",
-      "company": "The India Cements Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "IXIGO",
-      "company": "Le Travenues Technology Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "KELLTONTEC",
-      "company": "Kellton Tech Solutions Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "KROSS",
-      "company": "Kross Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "LAGNAM",
-      "company": "Lagnam Spintex Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "PAKKA",
-      "company": "PAKKA LIMITED",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "PARIN",
-      "company": "Parin Enterprises Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "PSB",
-      "company": "Punjab & Sind Bank",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "ROSSARI",
-      "company": "Rossari Biotech Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "TGBHOTELS",
-      "company": "TGB Banquets And Hotels Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date_str": "17 Oct",
-      "symbol": "YESBANK",
-      "company": "Yes Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
+      "date": "2026-10-19",
       "date_str": "19 Oct",
       "symbol": "AKSHARCHEM",
       "company": "AksharChem India Limited",
       "purpose": "Financial Results"
     },
     {
+      "date": "2026-10-19",
       "date_str": "19 Oct",
       "symbol": "AONESTEELS",
       "company": "A-One Steels India Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
+      "date": "2026-10-19",
       "date_str": "19 Oct",
       "symbol": "BAJFINANCE",
       "company": "Bajaj Finance Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "BEPL",
+      "company": "Bhansali Engineering Polymers Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "DELTACORP",
+      "company": "Delta Corp Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "ELEVATE",
+      "company": "Elevate Campuses Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "GALLANTT",
+      "company": "Gallantt Ispat Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "GOCLCORP",
+      "company": "GOCL Corporation Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "GTECJAINX",
+      "company": "G-TEC JAINX EDUCATION LIMITED",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "HFCL",
+      "company": "HFCL Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "HINDZINC",
+      "company": "Hindustan Zinc Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "IREDA",
+      "company": "Indian Renewable Energy Development Ag",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "JPPOWER",
+      "company": "Jaiprakash Power Ventures Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "JUSTDIAL",
+      "company": "Just Dial Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "LTTS",
+      "company": "L&T Technology Services Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "MELSTAR",
+      "company": "Melstar Information Technologies Limit",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "MGEL",
+      "company": "Mangalam Global Enterprise Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "MOTOGENFIN",
+      "company": "The Motor & General Finance Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "NELCO",
+      "company": "NELCO Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-19",
+      "date_str": "19 Oct",
+      "symbol": "PIRAMALFIN",
+      "company": "Piramal Finance Limited",
       "purpose": "Financial Results"
     }
   ]
