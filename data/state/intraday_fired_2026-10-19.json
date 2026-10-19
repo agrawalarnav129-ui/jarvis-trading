@@ -1,0 +1,24 @@
+{
+  "INDHOTEL.NS": [],
+  "JUSTDIAL.NS": [],
+  "AIIL.NS": [],
+  "TECHM.NS": [],
+  "MPHASIS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "SHYAMMETL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "HAL.NS": [],
+  "INFY.NS": [],
+  "COFORGE.NS": [],
+  "BGRENERGY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "NYKAA.NS": [],
+  "BHARTIARTL.NS": [],
+  "PVRINOX.NS": [],
+  "PERSISTENT.NS": [],
+  "HFCL.NS": []
+}
