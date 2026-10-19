@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T03:01:01.054600Z",
+  "updated": "2026-10-19T03:01:23.221970Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -18,143 +18,143 @@
   },
   "corporate": [
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "AKSHARCHEM",
-      "company": "AksharChem India Limited",
+      "date": "2026-10-20",
+      "date_str": "20 Oct",
+      "symbol": "KAPSTON",
+      "company": "Kapston Services Limited",
+      "purpose": "Financial Results/Stock split/"
+    },
+    {
+      "date": "2026-10-20",
+      "date_str": "20 Oct",
+      "symbol": "ORCHPHARMA",
+      "company": "Orchid Pharma Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-20",
+      "date_str": "20 Oct",
+      "symbol": "SRTL",
+      "company": "Shree Ram Twistex Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "AONESTEELS",
-      "company": "A-One Steels India Limited",
-      "purpose": "Financial Results/Other busine"
+      "date": "2026-10-20",
+      "date_str": "20 Oct",
+      "symbol": "VINCOFE",
+      "company": "Vintage Coffee And Beverages Limited",
+      "purpose": "Fund Raising"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "BAJFINANCE",
-      "company": "Bajaj Finance Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "ABSLAMC",
+      "company": "Aditya Birla Sun Life AMC Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "BEPL",
-      "company": "Bhansali Engineering Polymers Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "ADANIGREEN",
+      "company": "Adani Green Energy Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "ADOR",
+      "company": "Ador Welding Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "DELTACORP",
-      "company": "Delta Corp Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "AYE",
+      "company": "Aye Finance Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "ELEVATE",
-      "company": "Elevate Campuses Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "GALLANTT",
-      "company": "Gallantt Ispat Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "GOCLCORP",
-      "company": "GOCL Corporation Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "DBSTOCKBRO",
+      "company": "DB (International) Stock Brokers Limit",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "GTECJAINX",
-      "company": "G-TEC JAINX EDUCATION LIMITED",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "HFCL",
-      "company": "HFCL Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "DIGJAMLMTD",
+      "company": "Digjam Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "HINDZINC",
-      "company": "Hindustan Zinc Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "ETERNAL",
+      "company": "ETERNAL LIMITED",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "IREDA",
-      "company": "Indian Renewable Energy Development Ag",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "IGIL",
+      "company": "International Gemological Institute Li",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "JPPOWER",
-      "company": "Jaiprakash Power Ventures Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "INDHOTEL",
+      "company": "The Indian Hotels Company Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "JUSTDIAL",
-      "company": "Just Dial Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "KEI",
+      "company": "KEI Industries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "LTTS",
-      "company": "L&T Technology Services Limited",
-      "purpose": "Financial Results/Dividend"
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "LMW",
+      "company": "LMW Limited",
+      "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "MELSTAR",
-      "company": "Melstar Information Technologies Limit",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "M&MFIN",
+      "company": "Mahindra & Mahindra Financial Services",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "MARATHON",
+      "company": "Marathon Nextgen Realty Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "MGEL",
-      "company": "Mangalam Global Enterprise Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "MHRIL",
+      "company": "Mahindra Holidays & Resorts India Limi",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "MOTOGENFIN",
-      "company": "The Motor & General Finance Limited",
-      "purpose": "Other business matters"
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "NURECA",
+      "company": "Nureca Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "NELCO",
-      "company": "NELCO Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-19",
-      "date_str": "19 Oct",
-      "symbol": "PIRAMALFIN",
-      "company": "Piramal Finance Limited",
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "PCJEWELLER",
+      "company": "PC Jeweller Limited",
       "purpose": "Financial Results"
     }
   ]
