@@ -1,50 +1,22 @@
 {
-  "updated": "2026-10-19T08:44:48.671329Z",
+  "updated": "2026-10-20T03:01:21.872068Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "16-Oct-2026",
+    "date": "19-Oct-2026",
     "fii": {
-      "buy": 19951.59,
-      "sell": 18785.67,
-      "net": 1165.92
+      "buy": 11240.64,
+      "sell": 12389.28,
+      "net": -1148.64
     },
     "dii": {
-      "buy": 17201.8,
-      "sell": 20863.08,
-      "net": -3661.28
+      "buy": 14781.31,
+      "sell": 11580.12,
+      "net": 3201.19
     },
-    "net_combined": -2495.36
+    "net_combined": 2052.55
   },
   "corporate": [
-    {
-      "date": "2026-10-20",
-      "date_str": "20 Oct",
-      "symbol": "KAPSTON",
-      "company": "Kapston Services Limited",
-      "purpose": "Financial Results/Stock split/"
-    },
-    {
-      "date": "2026-10-20",
-      "date_str": "20 Oct",
-      "symbol": "ORCHPHARMA",
-      "company": "Orchid Pharma Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-10-20",
-      "date_str": "20 Oct",
-      "symbol": "SRTL",
-      "company": "Shree Ram Twistex Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-20",
-      "date_str": "20 Oct",
-      "symbol": "VINCOFE",
-      "company": "Vintage Coffee And Beverages Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-10-21",
       "date_str": "21 Oct",
@@ -156,6 +128,34 @@
       "symbol": "PCJEWELLER",
       "company": "PC Jeweller Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "PILITA",
+      "company": "PIL ITALICA LIFESTYLE LIMITED",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "RAJRATAN",
+      "company": "Rajratan Global Wire Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "SHEKHAWATI",
+      "company": "Shekhawati Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-21",
+      "date_str": "21 Oct",
+      "symbol": "SONAMLTD",
+      "company": "SONAM LIMITED",
+      "purpose": "Financial Results/Other busine"
     }
   ]
 }
