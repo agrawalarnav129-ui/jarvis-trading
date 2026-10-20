@@ -1,0 +1,34 @@
+{
+  "JUSTDIAL.NS": [],
+  "HFCL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "INDHOTEL.NS": [],
+  "CRAFTSMAN.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "SYNGENE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "FEDERALBNK.NS": [],
+  "UNIONBANK.NS": [],
+  "PVRINOX.NS": [],
+  "COFORGE.NS": [],
+  "ESTER.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "MPHASIS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "LTTS.NS": [],
+  "SHYAMMETL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TECHM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "APOLLOTYRE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
