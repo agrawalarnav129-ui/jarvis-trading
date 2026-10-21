@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T08:25:13.914616Z",
+  "updated": "2026-10-21T03:01:26.175470Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -18,144 +18,144 @@
   },
   "corporate": [
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "ABSLAMC",
-      "company": "Aditya Birla Sun Life AMC Limited",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "ACCELYA",
+      "company": "Accelya Solutions India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "ADANIGREEN",
-      "company": "Adani Green Energy Limited",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "ADANIENSOL",
+      "company": "Adani Energy Solutions Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "ADOR",
-      "company": "Ador Welding Limited",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "ATGL",
+      "company": "Adani Total Gas Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "BANSALWIRE",
+      "company": "Bansal Wire Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "BETA",
+      "company": "Beta Drugs Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "BLUESTONE",
+      "company": "BlueStone Jewellery and Lifestyle Limi",
+      "purpose": "Financial Results/Fund Raising"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "BONLON",
+      "company": "Bonlon Industries Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "CHENNPETRO",
+      "company": "Chennai Petroleum Corporation Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "CIEINDIA",
+      "company": "CIE Automotive India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "COLPAL",
+      "company": "Colgate Palmolive (India) Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "AYE",
-      "company": "Aye Finance Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "DBSTOCKBRO",
-      "company": "DB (International) Stock Brokers Limit",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "CREDITACC",
+      "company": "CREDITACCESS GRAMEEN LIMITED",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "DIGJAMLMTD",
-      "company": "Digjam Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "ETERNAL",
-      "company": "ETERNAL LIMITED",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "IGIL",
-      "company": "International Gemological Institute Li",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "INDHOTEL",
-      "company": "The Indian Hotels Company Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "KEI",
-      "company": "KEI Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "LMW",
-      "company": "LMW Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "M&MFIN",
-      "company": "Mahindra & Mahindra Financial Services",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "MARATHON",
-      "company": "Marathon Nextgen Realty Limited",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "CYBERTECH",
+      "company": "Cybertech Systems And Software Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "MHRIL",
-      "company": "Mahindra Holidays & Resorts India Limi",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "CYIENT",
+      "company": "Cyient Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "FAIRCHEMOR",
+      "company": "Fairchem Organics Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "NURECA",
-      "company": "Nureca Limited",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "GRWRHITECH",
+      "company": "Garware Hi-Tech Films Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "HATSUN",
+      "company": "Hatsun Agro Product Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "PCJEWELLER",
-      "company": "PC Jeweller Limited",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "HAVELLS",
+      "company": "Havells India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "PILITA",
-      "company": "PIL ITALICA LIFESTYLE LIMITED",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "HINDPETRO",
+      "company": "Hindustan Petroleum Corporation Limite",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "RAJRATAN",
-      "company": "Rajratan Global Wire Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "SHEKHAWATI",
-      "company": "Shekhawati Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-21",
-      "date_str": "21 Oct",
-      "symbol": "SONAMLTD",
-      "company": "SONAM LIMITED",
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "INDOTHAI",
+      "company": "Indo Thai Securities Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-22",
+      "date_str": "22 Oct",
+      "symbol": "J&KBANK",
+      "company": "The Jammu & Kashmir Bank Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
