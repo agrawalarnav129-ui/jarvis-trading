@@ -1,160 +1,160 @@
 {
-  "updated": "2026-10-21T08:28:30.047270Z",
+  "updated": "2026-10-22T03:01:21.038364Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "19-Oct-2026",
+    "date": "21-Oct-2026",
     "fii": {
-      "buy": 11240.64,
-      "sell": 12389.28,
-      "net": -1148.64
+      "buy": 17003.9,
+      "sell": 15981.58,
+      "net": 1022.32
     },
     "dii": {
-      "buy": 14781.31,
-      "sell": 11580.12,
-      "net": 3201.19
+      "buy": 14931.57,
+      "sell": 13317.25,
+      "net": 1614.32
     },
-    "net_combined": 2052.55
+    "net_combined": 2636.64
   },
   "corporate": [
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "ACCELYA",
-      "company": "Accelya Solutions India Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "ADANIPOWER",
+      "company": "Adani Power Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "ADANIENSOL",
-      "company": "Adani Energy Solutions Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "ASAL",
+      "company": "Automotive Stampings and Assemblies Li",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "ATGL",
-      "company": "Adani Total Gas Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "ASMS",
+      "company": "Avio Smart Market Stack Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "ATUL",
+      "company": "Atul Limited",
+      "purpose": "Buyback"
+    },
+    {
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "ATUL",
+      "company": "Atul Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "BANSALWIRE",
-      "company": "Bansal Wire Industries Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "BANKINDIA",
+      "company": "Bank of India",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "BETA",
-      "company": "Beta Drugs Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "BPCL",
+      "company": "Bharat Petroleum Corporation Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "BLUESTONE",
-      "company": "BlueStone Jewellery and Lifestyle Limi",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "BONLON",
-      "company": "Bonlon Industries Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "CHENNPETRO",
-      "company": "Chennai Petroleum Corporation Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "CGPOWER",
+      "company": "CG Power and Industrial Solutions Limi",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "CIEINDIA",
-      "company": "CIE Automotive India Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "COLPAL",
-      "company": "Colgate Palmolive (India) Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "CMPDI",
+      "company": "Central Mine Planning & Design Institu",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "CREDITACC",
-      "company": "CREDITACCESS GRAMEEN LIMITED",
-      "purpose": "Financial Results/Other busine"
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "COFORGE",
+      "company": "Coforge Limited",
+      "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "CYBERTECH",
-      "company": "Cybertech Systems And Software Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "CYIENT",
-      "company": "Cyient Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "CRISIL",
+      "company": "Crisil Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "FAIRCHEMOR",
-      "company": "Fairchem Organics Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "CSBBANK",
+      "company": "CSB Bank Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "GRWRHITECH",
-      "company": "Garware Hi-Tech Films Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "CUBEXTUB",
+      "company": "Cubex Tubings Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "HATSUN",
-      "company": "Hatsun Agro Product Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "DCBBANK",
+      "company": "DCB Bank Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "DRREDDY",
+      "company": "Dr. Reddy's Laboratories Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "GEOJITFSL",
+      "company": "Geojit Financial Services Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "HAVELLS",
-      "company": "Havells India Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "GNA",
+      "company": "GNA Axles Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "HINDPETRO",
-      "company": "Hindustan Petroleum Corporation Limite",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "GODREJPROP",
+      "company": "Godrej Properties Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "INDOTHAI",
-      "company": "Indo Thai Securities Limited",
-      "purpose": "Financial Results/Other busine"
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "GRADIENTE",
+      "company": "Gradiente Infotainment Limited",
+      "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-22",
-      "date_str": "22 Oct",
-      "symbol": "J&KBANK",
-      "company": "The Jammu & Kashmir Bank Limited",
+      "date": "2026-10-23",
+      "date_str": "23 Oct",
+      "symbol": "INDUSINDBK",
+      "company": "IndusInd Bank Limited",
       "purpose": "Financial Results"
     }
   ]
