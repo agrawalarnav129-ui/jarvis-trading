@@ -28,6 +28,7 @@ export default function RiskCalculator() {
   const [target, setTarget] = useState(0);
   const [regime, setRegime] = useState<"BULLISH" | "NEUTRAL" | "BEARISH">("BULLISH");
   const [side, setSide] = useState<"LONG" | "SHORT">("LONG");
+  const [lotSize, setLotSize] = useState(0);
 
   const [r, setR] = useState<RiskResp | null>(null);
   const [loading, setLoading] = useState(false);
@@ -49,7 +50,7 @@ export default function RiskCalculator() {
     setLoading(true);
     const t = setTimeout(async () => {
       try {
-        const res = await api.risk({ entry, stop, target, capital, regime, side });
+        const res = await api.risk({ entry, stop, target, capital, regime, side, lot_size: lotSize });
         if (mine === seq.current) { setR(res); setErr(null); }
       } catch (e: any) {
         // Never fall back to a local calculation: a wrong position size shown
@@ -60,7 +61,7 @@ export default function RiskCalculator() {
       }
     }, 350);
     return () => clearTimeout(t);
-  }, [entry, stop, target, capital, regime, side, ready]);
+  }, [entry, stop, target, capital, regime, side, lotSize, ready]);
 
   return (
     <Section title="Risk Calculator · Position Sizing">
@@ -80,6 +81,7 @@ export default function RiskCalculator() {
         <Field label="Entry" value={entry} onChange={setEntry} />
         <Field label="Stop Loss" value={stop} onChange={setStop} />
         <Field label="Target" value={target} onChange={setTarget} />
+        <Field label="Lot size (0 = cash)" value={lotSize} step={25} onChange={setLotSize} />
         <div>
           <label className="label block mb-1">Side</label>
           <select value={side} onChange={(e) => setSide(e.target.value as any)}
@@ -131,7 +133,7 @@ export default function RiskCalculator() {
               <span className={`font-display text-lg ${r.passed ? "text-up" : "text-down"}`}>{r.passed ? "APPROVED" : "REJECTED"}</span>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <div><div className="label">Shares</div><div className="font-display text-lg text-txt mt-1">{fmtInt(r.shares)}</div></div>
+              <div><div className="label">{r.lot_size > 0 ? "Lots × size" : "Shares"}</div><div className="font-display text-lg text-txt mt-1">{r.lot_size > 0 ? `${r.lots} × ${fmtInt(r.lot_size)}` : fmtInt(r.shares)}</div>{r.lot_size > 0 && r.shares > 0 && <div className="label mt-0.5">{fmtInt(r.shares)} shares</div>}</div>
               <div><div className="label">Capital at Risk</div><div className="font-display text-lg text-gold mt-1">₹{fmtInt(r.risk_amount)}</div></div>
               <div><div className="label">Risk %</div><div className="font-display text-lg text-txt mt-1">{fmt(r.risk_pct)}%</div></div>
               <div><div className="label">R:R Ratio</div><div className={`font-display text-lg mt-1 ${r.rr_ratio >= r.min_rr ? "text-up" : "text-down"}`}>{fmt(r.rr_ratio)}:1</div></div>

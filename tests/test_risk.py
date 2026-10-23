@@ -379,3 +379,100 @@ def test_long_never_carries_the_short_warning() -> None:
 def test_wide_stop_warning_reads_above_for_a_short() -> None:
     r = calculate_position(100.0, 110.0, 70.0, CAPITAL, regime="BEARISH", side="SHORT")
     assert any("above entry" in w and "unusually wide" in w for w in r.warnings)
+
+
+# ── lot sizing (futures) ────────────────────────────────────────────────────
+# A futures position trades in whole lots, so the share count the 2% cap
+# implies is rarely placeable. Rounding DOWN is the only direction that cannot
+# breach the cap — these tests exist so nobody "fixes" it to round-nearest.
+
+def test_lot_size_rounds_down_to_whole_lots() -> None:
+    """HDFCBANK: 823 shares by the 2% cap, lot 650 -> 1 lot, risk falls to 1.58%."""
+    r = calculate_position(694.05, 718.33, 645.49, CAPITAL,
+                           regime="BEARISH", side="SHORT", lot_size=650)
+    assert r.lots == 1
+    assert r.shares == 650
+    assert r.lot_size == 650
+    assert r.risk_pct == pytest.approx(1.58, abs=0.01)
+    assert r.passed is True
+
+
+def test_lot_sizing_never_rounds_up_past_the_cap() -> None:
+    """2 lots of HDFCBANK would be 3.16% — the rounding must not reach for it."""
+    r = calculate_position(694.05, 718.33, 645.49, CAPITAL,
+                           regime="BEARISH", side="SHORT", lot_size=650)
+    assert r.shares == 650
+    assert r.risk_pct <= CAPITAL_RISK_PCT * 100
+
+
+def test_lot_size_zero_leaves_cash_sizing_untouched() -> None:
+    r = calculate_position(694.05, 718.33, 645.49, CAPITAL, regime="BEARISH", side="SHORT")
+    assert r.shares == 823
+    assert r.lots == 0
+    assert r.lot_size == 0
+    assert r.risk_pct == pytest.approx(2.0, abs=0.01)
+
+
+def test_shares_are_always_a_whole_multiple_of_the_lot() -> None:
+    for lot in (20, 100, 125, 650, 1425, 6975):
+        r = calculate_position(500.0, 510.0, 470.0, 10_000_000,
+                               regime="BEARISH", side="SHORT", lot_size=lot)
+        assert r.shares % lot == 0
+        assert r.shares == r.lots * lot
+
+
+@pytest.mark.parametrize("lot", [20, 125, 650, 2250, 6975])
+@pytest.mark.parametrize("capital", [1_000_000.0, 5_000_000.0, 25_000_000.0])
+def test_lot_sizing_never_breaches_two_percent(lot: int, capital: float) -> None:
+    r = calculate_position(400.0, 412.0, 376.0, capital,
+                           regime="BEARISH", side="SHORT", lot_size=lot)
+    assert r.risk_pct <= CAPITAL_RISK_PCT * 100
+    assert r.risk_amount <= capital * CAPITAL_RISK_PCT + 1e-6
+
+
+def test_one_lot_over_the_cap_is_rejected_with_the_real_reason() -> None:
+    """
+    Not "stop too wide" — the stop is fine. One lot simply costs more risk
+    than 2% allows at this capital, and the message must say which, because
+    the fix is more capital or a different name, not a tighter stop.
+    """
+    r = calculate_position(87.40, 91.13, 79.94, CAPITAL,
+                           regime="BEARISH", side="SHORT", lot_size=6975)
+    assert r.passed is False
+    assert r.shares == 0
+    assert r.lots == 0
+    assert any("1 lot (6975 shares)" in x and "over the 2% cap" in x
+               for x in r.rejection_reasons)
+    assert not any("stop too wide" in x for x in r.rejection_reasons)
+
+
+def test_cash_sizing_still_says_stop_too_wide() -> None:
+    """The lot message must not leak into the cash path."""
+    r = calculate_position(100.0, 50.0, 200.0, 1_000.0)
+    assert any("stop too wide" in x for x in r.rejection_reasons)
+    assert not any("1 lot" in x for x in r.rejection_reasons)
+
+
+def test_regime_block_zeroes_lots_too() -> None:
+    r = calculate_position(694.05, 718.33, 645.49, CAPITAL,
+                           regime="BULLISH", side="SHORT", lot_size=650)
+    assert r.shares == 0
+    assert r.lots == 0
+    assert any("BULLISH" in x for x in r.rejection_reasons)
+
+
+def test_lot_sizing_applies_to_longs_as_well() -> None:
+    """Futures are not short-only — a long future rounds the same way."""
+    r = calculate_position(1000.0, 980.0, 1060.0, 10_000_000,
+                           regime="BULLISH", side="LONG", lot_size=250)
+    assert r.lots > 0
+    assert r.shares == r.lots * 250
+    assert r.risk_pct <= CAPITAL_RISK_PCT * 100
+
+
+def test_negative_lot_size_is_treated_as_cash() -> None:
+    r = calculate_position(694.05, 718.33, 645.49, CAPITAL,
+                           regime="BEARISH", side="SHORT", lot_size=-5)
+    assert r.lots == 0
+    assert r.lot_size == 0
+    assert r.shares == 823

@@ -711,7 +711,7 @@ _shorts_cache: TTLCache = TTLCache(maxsize=4, ttl=900)
 
 
 @app.get("/api/shorts")
-def shorts(limit: int = 40, fno_only: bool = True):
+def shorts(limit: int = 40, fno_only: bool = True, capital: float = 0):
     """
     Short candidates — the mirror of /api/screener.
 
@@ -729,17 +729,31 @@ def shorts(limit: int = 40, fno_only: bool = True):
         if df.empty:
             return {"available": False, "note": "No short candidates scored.",
                     "regime": _regime_name(), "count": 0, "results": []}
+        rows = df.head(limit).to_dict("records")
+        if capital > 0:
+            # Annotate what is actually placeable: NSE lot sizes mean one lot
+            # of many names costs more than the 2% cap allows.
+            from risk.risk import calculate_position
+            for row in rows:
+                sized = calculate_position(
+                    row["entry"], row["stop"], row["target"], capital,
+                    regime="BEARISH", side="SHORT", lot_size=int(row.get("lot_size") or 0))
+                row["lots"] = sized.lots
+                row["sized_shares"] = sized.shares
+                row["sized_risk_pct"] = sized.risk_pct
+                row["takeable"] = sized.lots > 0
         return {
             "available": True,
             "regime": _regime_name(),
             "fno_only": fno_only,
+            "capital": capital,
             "note": ("Grades are not comparable to the long screener — rank on pct_rank. "
                      "A cash short cannot be held overnight on NSE; only F&O names can."),
             "count": len(df),
-            "results": df.head(limit).to_dict("records"),
+            "results": rows,
         }
     try:
-        return _keyed(_shorts_cache, f"{limit}|{fno_only}", _run)
+        return _keyed(_shorts_cache, f"{limit}|{fno_only}|{capital}", _run)
     except Exception as exc:
         logger.exception("Short screener failed: {}", exc)
         raise HTTPException(status_code=503, detail="Short screener unavailable")
@@ -925,6 +939,7 @@ class RiskReq(BaseModel):
     symbol: str = ""
     regime: str = "BULLISH"
     side: str = "LONG"
+    lot_size: int = 0
 
 
 @app.post("/api/risk")
@@ -952,6 +967,7 @@ def risk(req: RiskReq):
         symbol=req.symbol,
         regime=req.regime,
         side=req.side,
+        lot_size=req.lot_size,
     )
     return asdict(result)
 
