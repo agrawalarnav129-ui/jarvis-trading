@@ -32,7 +32,9 @@ from config import (
     MAX_ATR_PCT,
     MIN_ADX,
     MIN_ATR_PCT,
+    MIN_AVG_VOLUME,
     MIN_PRICE,
+    MIN_TURNOVER_CR,
     RSI_PERIOD,
     SCORE_WEIGHTS,
     VOLUME_SMA_PERIOD,
@@ -365,6 +367,17 @@ def score_symbol(
     if atr_pct < MIN_ATR_PCT or atr_pct > MAX_ATR_PCT:
         raise ValueError(f"ATR filter failed: {atr_pct:.4f}")
 
+    # Liquidity gate — turnover leads, share count is only an absolute floor.
+    # See config.py: a share-count-only gate excludes liquid high-priced names.
+    vol_sma = latest.get("volume_sma")
+    if pd.isna(vol_sma) or vol_sma <= 0:
+        raise ValueError("Liquidity filter failed: no 20D volume baseline")
+    turnover_cr = float(latest["close"]) * float(vol_sma) / 1e7
+    if turnover_cr < MIN_TURNOVER_CR:
+        raise ValueError(f"Turnover filter failed: {turnover_cr:.2f}cr < {MIN_TURNOVER_CR}cr")
+    if vol_sma < MIN_AVG_VOLUME:
+        raise ValueError(f"Volume floor failed: {vol_sma:.0f} < {MIN_AVG_VOLUME}")
+
     # Score each dimension (raw 0–100)
     pa_raw,   pa_notes                     = _price_action_score(history, latest)
     tr_raw,   tr_notes                     = _trend_strength_score(latest, history)
@@ -397,6 +410,7 @@ def score_symbol(
         "close":          round(float(latest["close"]), 2),
         "volume":         int(latest["volume"]),
         "volume_ratio":   vol_ratio,
+        "turnover_cr":    round(turnover_cr, 2),
         "score":          round(float(total), 1),
         "grade":          grade,
         "pa_score":       round(pa_raw, 1),
