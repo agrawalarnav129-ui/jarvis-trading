@@ -267,3 +267,115 @@ def test_outputs_are_rounded_for_display() -> None:
     assert r.stop == round(1200.1234, 2)
     assert r.target == round(1333.9876, 2)
     assert r.symbol == ""
+
+
+# ── SHORT side ──────────────────────────────────────────────────────────────
+# A short inverts the geometry (stop above entry, target below) and the regime
+# gate with it. These tests exist because the long path and the short path share
+# one function: a change to either must not silently reshape the other.
+
+def test_short_sizes_to_exactly_two_percent() -> None:
+    """entry 100 / stop 102 / target 94 on ₹10L → 10,000 shares, ₹20k at risk."""
+    r = calculate_position(100.0, 102.0, 94.0, CAPITAL, regime="BEARISH", side="SHORT")
+    assert r.side == "SHORT"
+    assert r.shares == 10_000
+    assert r.risk_amount == pytest.approx(20_000.0)
+    assert r.risk_pct == pytest.approx(2.0)
+    assert r.rr_ratio == pytest.approx(3.0)        # 6 points reward / 2 points risk
+    assert r.reward == pytest.approx(60_000.0)
+    assert r.passed is True
+
+
+def test_short_requires_the_stop_above_entry() -> None:
+    r = calculate_position(100.0, 98.0, 94.0, CAPITAL, regime="BEARISH", side="SHORT")
+    assert r.passed is False
+    assert any("must be above entry" in x for x in r.rejection_reasons)
+    assert r.shares == 0
+
+
+def test_short_requires_the_target_below_entry() -> None:
+    """A target above entry is not a short target — R:R is undefined, not negative."""
+    r = calculate_position(100.0, 102.0, 110.0, CAPITAL, regime="BEARISH", side="SHORT")
+    assert r.rr_ratio == 0.0
+    assert r.reward == 0.0
+    assert any("No target set" in w for w in r.warnings)
+
+
+@pytest.mark.parametrize("entry,stop", [(100.0, 102.0), (250.0, 258.0), (1500.0, 1530.0)])
+@pytest.mark.parametrize("capital", [50_000.0, 1_000_000.0, 7_500_000.0])
+def test_short_risk_never_exceeds_two_percent(entry: float, stop: float, capital: float) -> None:
+    r = calculate_position(entry, stop, entry * 0.9, capital, regime="BEARISH", side="SHORT")
+    assert r.risk_pct <= CAPITAL_RISK_PCT * 100
+    assert r.risk_amount <= capital * CAPITAL_RISK_PCT + 1e-6
+
+
+# ── the regime gate mirrors ─────────────────────────────────────────────────
+
+def test_bullish_regime_blocks_short_entries() -> None:
+    """The mirror of the BEARISH long block: never trade against the regime."""
+    r = calculate_position(100.0, 102.0, 90.0, CAPITAL, regime="BULLISH", side="SHORT")
+    assert r.passed is False
+    assert r.shares == 0
+    assert r.risk_amount == 0.0
+    assert any("BULLISH" in x and "short" in x for x in r.rejection_reasons)
+
+
+def test_bearish_regime_permits_shorts() -> None:
+    """BEARISH blocks longs and allows shorts — the whole point of the side flag."""
+    long_r = calculate_position(100.0, 98.0, 106.0, CAPITAL, regime="BEARISH", side="LONG")
+    short_r = calculate_position(100.0, 102.0, 94.0, CAPITAL, regime="BEARISH", side="SHORT")
+    assert long_r.passed is False
+    assert short_r.passed is True
+
+
+def test_neutral_demands_2point5_from_both_sides() -> None:
+    kw = dict(capital=CAPITAL, regime="NEUTRAL")
+    short_22 = calculate_position(100.0, 102.0, 95.6, side="SHORT", **kw)    # 2.2:1
+    assert short_22.passed is False
+    assert any("below minimum 2.5" in x for x in short_22.rejection_reasons)
+    short_30 = calculate_position(100.0, 102.0, 94.0, side="SHORT", **kw)    # 3.0:1
+    assert short_30.passed is True
+
+
+def test_blocked_short_is_not_muddied_by_sizing_noise() -> None:
+    r = calculate_position(100.0, 102.0, 90.0, CAPITAL, regime="BULLISH", side="SHORT")
+    assert not any("rounds to 0 shares" in x for x in r.rejection_reasons)
+    assert not any("is low" in w for w in r.warnings)
+
+
+@pytest.mark.parametrize("side", ["SHORT", "short", " Short "])
+def test_short_side_is_case_and_whitespace_insensitive(side: str) -> None:
+    r = calculate_position(100.0, 102.0, 94.0, CAPITAL, regime="BEARISH", side=side)
+    assert r.side == "SHORT"
+    assert r.shares > 0
+
+
+@pytest.mark.parametrize("side", ["LONG", "", "buy", "anything-else"])
+def test_unrecognised_side_is_treated_as_long(side: str) -> None:
+    """Defaulting to LONG keeps an unknown value from silently inverting the gate."""
+    r = calculate_position(100.0, 98.0, 106.0, CAPITAL, regime="BULLISH", side=side)
+    assert r.side == "LONG"
+    assert r.passed is True
+
+
+# ── short-specific warnings ─────────────────────────────────────────────────
+
+def test_short_always_warns_about_uncapped_loss_and_overnight_holds() -> None:
+    """
+    A short's loss has no ceiling, and on NSE a cash short must be squared off
+    intraday — only F&O names can be carried. That warning must ride on every
+    short, including an approved one.
+    """
+    r = calculate_position(100.0, 102.0, 94.0, CAPITAL, regime="BEARISH", side="SHORT")
+    assert r.passed is True
+    assert any("uncapped" in w and "F&O" in w for w in r.warnings)
+
+
+def test_long_never_carries_the_short_warning() -> None:
+    r = calculate_position(100.0, 98.0, 106.0, CAPITAL, regime="BULLISH")
+    assert not any("uncapped" in w for w in r.warnings)
+
+
+def test_wide_stop_warning_reads_above_for_a_short() -> None:
+    r = calculate_position(100.0, 110.0, 70.0, CAPITAL, regime="BEARISH", side="SHORT")
+    assert any("above entry" in w and "unusually wide" in w for w in r.warnings)

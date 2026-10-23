@@ -324,6 +324,44 @@ enters the funnel, when it becomes a trade, and when it leaves.
 - **Held 5 days → exit or re-justify from scratch.** Swing setups that have
   not worked in a week are no longer the setup that was entered.
 
+## Short Entries
+
+Shorts are the mirror of longs, not an exception to them. The 2% cap, the
+regime R:R floors and the max-2-positions limit all apply unchanged; only the
+direction flips. `risk/risk.py` takes `side="SHORT"` and enforces this.
+
+| Regime | Longs | Shorts |
+|---|---|---|
+| BULLISH | Full (2%) | **blocked** |
+| NEUTRAL | Half (1%), R:R ≥ 2.5 | Half (1%), R:R ≥ 2.5 |
+| BEARISH | **blocked** | Full (2%) |
+
+Never trade against the regime — in either direction. A BULLISH tape blocks
+shorts for the same reason a BEARISH one blocks longs.
+
+**Geometry:** stop ABOVE entry, target BELOW it. The screener plans a stop at
+1.5 × ATR(14) above entry and a target 2R below.
+
+**Two things a short is not symmetric about:**
+
+1. **Loss is uncapped.** A long can lose its entry price; a short cannot bound
+   its loss. The stop is not a suggestion — there is no floor beneath it.
+2. **Overnight needs F&O.** A cash-market short on NSE must be squared off the
+   same session; there is no delivery to make. Only the ~213 names with stock
+   futures can be carried. `data/universe.csv` carries `FnO` and `Lot_Size`,
+   and the short screener filters on it by default.
+
+> **Open gap:** position sizing returns *shares*, but a futures short trades in
+> *lots*. Rounding 823 shares to 1 lot of 650 changes realised risk from 2.0%
+> to ~1.6%; rounding up to 2 lots makes it ~3.2% and breaches the cap. Size
+> down to the nearest whole lot, never up, until the calculator does it for you.
+
+> **Grades do not transfer.** The A/B/C thresholds were set on the long engine.
+> On one measured session the long screen graded 2.7% of names A and the short
+> screen graded 34%, because the F&O set is large, liquid and falls together.
+> Rank short candidates on `pct_rank`, not grade, until the thresholds are
+> re-derived from forward-tested outcomes.
+
 ## Screener Hard Filters
 
 `config.py` is authoritative; this is the rationale.

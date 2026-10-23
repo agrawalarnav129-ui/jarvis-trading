@@ -707,6 +707,54 @@ def quant_rrg(symbols: str = "", tail: int = 8):
         raise HTTPException(status_code=503, detail="RRG unavailable")
 
 
+_shorts_cache: TTLCache = TTLCache(maxsize=4, ttl=900)
+
+
+@app.get("/api/shorts")
+def shorts(limit: int = 40, fno_only: bool = True):
+    """
+    Short candidates — the mirror of /api/screener.
+
+    `fno_only` defaults to True: a cash-market short on NSE must be squared off
+    the same session, so only the ~213 names with stock futures can be held
+    overnight. Set it False only for intraday work.
+
+    Note the grades are NOT comparable to the long screener's. Measured on one
+    session the long screen graded 2.7% of names A; this one graded 34%. Rank
+    on `pct_rank` instead — see screener/short_screener.py for why.
+    """
+    def _run():
+        from screener.short_screener import run_short_screener
+        df = run_short_screener(fno_only=fno_only)
+        if df.empty:
+            return {"available": False, "note": "No short candidates scored.",
+                    "regime": _regime_name(), "count": 0, "results": []}
+        return {
+            "available": True,
+            "regime": _regime_name(),
+            "fno_only": fno_only,
+            "note": ("Grades are not comparable to the long screener — rank on pct_rank. "
+                     "A cash short cannot be held overnight on NSE; only F&O names can."),
+            "count": len(df),
+            "results": df.head(limit).to_dict("records"),
+        }
+    try:
+        return _keyed(_shorts_cache, f"{limit}|{fno_only}", _run)
+    except Exception as exc:
+        logger.exception("Short screener failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Short screener unavailable")
+
+
+def _regime_name() -> str:
+    """Current regime, or UNKNOWN — context for a board, never a precondition."""
+    try:
+        from screener.regime_classifier import classify_regime
+        return classify_regime().regime
+    except Exception as exc:
+        logger.debug("Regime lookup failed: {}", exc)
+        return "UNKNOWN"
+
+
 _defensive_cache: TTLCache = TTLCache(maxsize=8, ttl=1800)
 
 
@@ -876,6 +924,7 @@ class RiskReq(BaseModel):
     capital: float = 1_000_000
     symbol: str = ""
     regime: str = "BULLISH"
+    side: str = "LONG"
 
 
 @app.post("/api/risk")
@@ -902,6 +951,7 @@ def risk(req: RiskReq):
         capital=req.capital,
         symbol=req.symbol,
         regime=req.regime,
+        side=req.side,
     )
     return asdict(result)
 

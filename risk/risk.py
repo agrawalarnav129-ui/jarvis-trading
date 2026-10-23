@@ -31,6 +31,7 @@ class RiskResult:
     reward: float            # ₹ potential reward
     rr_ratio: float          # reward:risk
     min_rr: float            # R:R floor this regime demanded
+    side: str                # LONG / SHORT
     passed: bool             # cleared all checks
     verdict: str             # APPROVED / REJECTED
     rejection_reasons: list[str]
@@ -44,18 +45,26 @@ def calculate_position(
     capital: float,
     symbol: str = "",
     regime: str = "BULLISH",
+    side: str = "LONG",
 ) -> RiskResult:
     """
     Calculate position size and validate against all risk rules.
 
-    Formula: shares = (capital × 0.02) / (entry - stop)
+    Formula: shares = (capital × 0.02) / |entry - stop|
 
-    A BEARISH regime zeroes the position and rejects outright, per CLAUDE.md
-    Section 6. The regime string is matched case-insensitively.
+    A SHORT inverts the geometry — the stop sits ABOVE entry and the target
+    BELOW it — and inverts the regime gate with it: CLAUDE.md Section 6 blocks
+    longs in BEARISH, so it blocks shorts in BULLISH, on the same principle of
+    never trading against the regime. NEUTRAL demands 2.5:1 from both sides.
+
+    `side` and `regime` are matched case-insensitively; an unrecognised side
+    is treated as LONG.
     """
     rejections: list[str] = []
     warnings: list[str] = []
     regime_norm = (regime or "").strip().upper()
+    is_short = (side or "").strip().upper() == "SHORT"
+    side_norm = "SHORT" if is_short else "LONG"
     # Computed up front so it is reported even on an early validation exit —
     # callers (including the API and its clients) read the floor from here
     # rather than re-deriving the rule.
@@ -66,7 +75,10 @@ def calculate_position(
         rejections.append("Entry price must be > 0")
     if stop <= 0:
         rejections.append("Stop price must be > 0")
-    if stop >= entry:
+    if is_short:
+        if stop <= entry:
+            rejections.append(f"Stop ({stop:.2f}) must be above entry ({entry:.2f}) for a SHORT")
+    elif stop >= entry:
         rejections.append(f"Stop ({stop:.2f}) must be below entry ({entry:.2f})")
     if capital <= 0:
         rejections.append("Capital must be > 0")
@@ -75,26 +87,32 @@ def calculate_position(
         return RiskResult(
             symbol=symbol, entry=entry, stop=stop, target=target, capital=capital,
             shares=0, risk_amount=0, risk_pct=0, reward=0, rr_ratio=0, min_rr=min_rr,
+            side=side_norm,
             passed=False, verdict="REJECTED", rejection_reasons=rejections, warnings=warnings,
         )
 
-    risk_per_share = entry - stop
+    # Distance to the stop is the risk either way; only its direction differs.
+    risk_per_share = (stop - entry) if is_short else (entry - stop)
     max_risk_amt   = capital * CAPITAL_RISK_PCT          # 2% of capital
     shares         = int(max_risk_amt / risk_per_share)
     risk_amount    = shares * risk_per_share
     risk_pct       = (risk_amount / capital) * 100
 
-    reward         = shares * (target - entry) if target > entry else 0.0
-    rr_ratio       = round((target - entry) / risk_per_share, 2) if target > entry else 0.0
+    # A short profits as price falls, so a valid target is BELOW entry.
+    has_target     = (0 < target < entry) if is_short else (target > entry)
+    reward_ps      = (entry - target) if is_short else (target - entry)
+    reward         = shares * reward_ps if has_target else 0.0
+    rr_ratio       = round(reward_ps / risk_per_share, 2) if has_target else 0.0
 
     # ── Hard rejection rules ──
-    # BEARISH is a policy stop, not a sizing failure: CLAUDE.md Section 6 sets
-    # position size to 0 and forbids long entries outright. The position is
+    # The regime gate is a policy stop, not a sizing failure: CLAUDE.md
+    # Section 6 sets position size to 0 against the regime. The position is
     # zeroed, while rr_ratio is left intact so the UI can still show what the
     # trade would have been worth had the regime allowed it.
-    is_bearish = regime_norm == "BEARISH"
-    if is_bearish:
-        rejections.append("BEARISH regime — no long entries permitted (position size 0)")
+    blocked_by_regime = (regime_norm == "BULLISH") if is_short else (regime_norm == "BEARISH")
+    if blocked_by_regime:
+        rejections.append(
+            f"{regime_norm} regime — no {side_norm.lower()} entries permitted (position size 0)")
         shares      = 0
         risk_amount = 0.0
         risk_pct    = 0.0
@@ -103,23 +121,30 @@ def calculate_position(
     if risk_pct > 2.05:   # small float buffer
         rejections.append(f"Risk {risk_pct:.2f}% exceeds 2% limit")
 
-    # Suppressed under BEARISH: the position is 0 by policy, not a wide stop.
-    if shares <= 0 and not is_bearish:
+    # Suppressed when the regime blocks: the position is 0 by policy, not a wide stop.
+    if shares <= 0 and not blocked_by_regime:
         rejections.append("Position size rounds to 0 shares — stop too wide")
 
     # Min R:R by regime (floor computed above)
-    if target > entry and rr_ratio < min_rr and not is_bearish:
+    if has_target and rr_ratio < min_rr and not blocked_by_regime:
         rejections.append(f"R:R {rr_ratio:.2f} below minimum {min_rr} for {regime_norm} regime")
 
     # ── Soft warnings ──
-    # Suppressed under BEARISH: 0% risk there is the intended outcome, so
-    # "consider a wider stop" would be actively misleading advice.
-    if risk_pct < 1.0 and not is_bearish:
+    # Suppressed when the regime blocks: 0% risk there is the intended outcome,
+    # so "consider a wider stop" would be actively misleading advice.
+    if risk_pct < 1.0 and not blocked_by_regime:
         warnings.append(f"Risk {risk_pct:.2f}% is low — consider wider stop or more capital")
-    if target <= entry:
+    if not has_target:
         warnings.append("No target set — R:R cannot be calculated")
-    if (entry - stop) / entry > 0.05:
-        warnings.append(f"Stop is {(entry-stop)/entry*100:.1f}% below entry — unusually wide")
+    stop_distance_pct = risk_per_share / entry * 100
+    if stop_distance_pct > 5.0:
+        side_word = "above" if is_short else "below"
+        warnings.append(f"Stop is {stop_distance_pct:.1f}% {side_word} entry — unusually wide")
+    if is_short:
+        # A short's loss is unbounded in a way a long's is not, and on NSE a
+        # cash short must be squared off the same day — only F&O names can be
+        # held. The screener flags eligibility; this is the standing reminder.
+        warnings.append("SHORT — loss is uncapped above entry; overnight holds need an F&O name")
 
     passed  = len(rejections) == 0
     verdict = "APPROVED ✓" if passed else "REJECTED ✗"
@@ -136,6 +161,7 @@ def calculate_position(
         reward=round(reward, 2),
         rr_ratio=rr_ratio,
         min_rr=min_rr,
+        side=side_norm,
         passed=passed,
         verdict=verdict,
         rejection_reasons=rejections,
