@@ -5,6 +5,7 @@ Run once: python tools/build_universe.py
 from __future__ import annotations
 
 import csv
+import io
 from pathlib import Path
 
 UNIVERSE_PATH = Path(__file__).resolve().parent.parent / "data" / "universe.csv"
@@ -537,22 +538,141 @@ SYMBOLS = [
 ]
 
 
-def build() -> None:
-    # Deduplicate by symbol keeping first occurrence
-    seen: set[str] = set()
+# ── NSE index constituents (authoritative source) ───────────────────────────
+# The SYMBOLS list above is a hand-maintained snapshot and drifts: 154 of its
+# entries have since fallen out of NSE's top 750, including the untradeable
+# tail (ASCOM, AGRITECH, CELESTIAL …) that the liquidity gate has to filter at
+# screen time. Fetching the published lists keeps membership current and drops
+# that tail at the source. SYMBOLS remains the fallback for when NSE is
+# unreachable — it blocks datacenter IPs, so CI may well get nothing.
+
+NSE_BASE = "https://nsearchives.nseindia.com/content/indices"
+NSE_LISTS = {
+    "total":    "ind_niftytotalmarket_list",   # ~755 — the universe we want
+    "nifty100": "ind_nifty100list",
+    "midcap":   "ind_niftymidcap150list",
+    "smallcap": "ind_niftysmallcap250list",
+    "nifty500": "ind_nifty500list",
+}
+
+# NSE renamed several industries; normalise to the vocabulary the rest of the
+# system already matches on (backend/main.py::_SECTOR_INDUSTRIES uses exact
+# matching, so an unmapped rename would silently empty a heatmap sector).
+INDUSTRY_ALIASES = {
+    "Automobile and Auto Components": "Automobile",
+    "Fast Moving Consumer Goods": "FMCG",
+    "Information Technology": "IT",
+    "Media Entertainment & Publication": "Media",
+    "Oil Gas & Consumable Fuels": "Oil Gas & Fuels",
+    "Telecommunication": "Telecom",
+    "Construction Materials": "Construction",
+    "Utilities": "Power",
+}
+
+
+def _fetch_index(session, slug: str) -> list[dict]:
+    """Fetch one NSE index constituent CSV.
+
+    Args:
+        session: A requests.Session already primed with NSE cookies.
+        slug: The archive filename without extension, e.g. "ind_nifty100list".
+
+    Returns:
+        Rows as dicts with NSE's own column names.
+    """
+    resp = session.get(f"{NSE_BASE}/{slug}.csv", timeout=25)
+    resp.raise_for_status()
+    return list(csv.DictReader(io.StringIO(resp.text)))
+
+
+def fetch_nse_universe() -> list[tuple] | None:
+    """Build the universe from NSE's published index constituents.
+
+    Returns:
+        Rows of (symbol, company, industry, ticker, cap, in_500, in_mid), or
+        None if NSE could not be reached — the caller then falls back to the
+        hand-maintained SYMBOLS list rather than writing a truncated universe.
+    """
+    import requests
+
+    session = requests.Session()
+    session.headers.update({
+        "User-Agent": ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"),
+        "Accept": "text/csv,*/*",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
+    try:
+        session.get("https://www.nseindia.com", timeout=15)   # prime cookies
+        total = _fetch_index(session, NSE_LISTS["total"])
+    except Exception as exc:
+        print(f"NSE unreachable ({type(exc).__name__}: {exc}) — falling back to SYMBOLS")
+        return None
+    if len(total) < 500:
+        print(f"NSE returned only {len(total)} rows — suspect; falling back to SYMBOLS")
+        return None
+
+    # Membership lists drive Cap_Category and the two flags. Each is optional:
+    # a failure degrades that one classification rather than the whole build.
+    members: dict[str, set[str]] = {}
+    for key in ("nifty100", "midcap", "smallcap", "nifty500"):
+        try:
+            members[key] = {r["Symbol"].strip() for r in _fetch_index(session, NSE_LISTS[key])}
+        except Exception as exc:
+            print(f"  warning: {key} list unavailable ({type(exc).__name__}) — cap tiers degrade")
+            members[key] = set()
+
     rows: list[tuple] = []
-    for row in SYMBOLS:
-        sym = row[0]
-        if sym not in seen:
+    for r in total:
+        sym = r["Symbol"].strip()
+        if r.get("Series", "EQ").strip() != "EQ":
+            continue                                   # skip non-equity series
+        industry = r["Industry"].strip()
+        industry = INDUSTRY_ALIASES.get(industry, industry)
+        if sym in members["nifty100"]:
+            cap = "Large Cap"
+        elif sym in members["midcap"]:
+            cap = "Mid Cap"
+        elif sym in members["smallcap"]:
+            cap = "Small Cap"
+        else:
+            cap = "Micro Cap"                          # ranks ~501-750
+        rows.append((
+            sym,
+            r["Company Name"].strip(),
+            industry,
+            f"{sym}.NS",
+            cap,
+            1 if sym in members["nifty500"] else 0,
+            1 if sym in members["midcap"] else 0,
+        ))
+    print(f"NSE universe fetched: {len(rows)} symbols")
+    return rows
+
+
+def build() -> None:
+    """Write data/universe.csv from NSE if reachable, else from SYMBOLS."""
+    fetched = fetch_nse_universe()
+
+    if fetched is not None:
+        rows = fetched
+    else:
+        # Fallback shape: SYMBOLS carries no ISIN and no micro-cap tier.
+        seen: set[str] = set()
+        rows = []
+        for sym, company, sector, ticker, cap in SYMBOLS:
+            if sym in seen:
+                continue
             seen.add(sym)
-            rows.append(row)
+            rows.append((sym, company, sector, ticker, cap, 1, 1 if cap == "Mid Cap" else 0))
 
     UNIVERSE_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(UNIVERSE_PATH, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["Symbol", "Company_Name", "Industry", "ISIN", "yfinance_Ticker", "Cap_Category", "In_Nifty500", "In_MidCap150"])
-        for sym, company, sector, ticker, cap in rows:
-            writer.writerow([sym, company, sector, "", ticker, cap, 1, 1 if cap == "Mid Cap" else 0])
+        writer.writerow(["Symbol", "Company_Name", "Industry", "ISIN",
+                         "yfinance_Ticker", "Cap_Category", "In_Nifty500", "In_MidCap150"])
+        for sym, company, industry, ticker, cap, in500, inmid in rows:
+            writer.writerow([sym, company, industry, "", ticker, cap, in500, inmid])
 
     print(f"Universe written: {len(rows)} symbols -> {UNIVERSE_PATH}")
 
