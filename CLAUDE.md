@@ -127,7 +127,7 @@ You operate in two modes simultaneously:
 | Parameter | Value |
 |---|---|
 | Market | NSE (National Stock Exchange, India) |
-| Universe | Nifty 100 + Nifty Midcap 150 (~200–300 stocks) |
+| Universe | `data/universe.csv` — 510 Nifty 500 names (121 large, 314 mid, 75 small). Wider than the stated Nifty 100 + Midcap 150 mandate; the liquidity gate is what keeps the thin tail out. |
 | Style | Swing + Intraday Hybrid |
 | Holding Period | Hours to Days |
 | Primary Setups | Breakouts, Momentum Continuation |
@@ -178,41 +178,50 @@ You operate in two modes simultaneously:
 ## Project Directory Structure
 
 ```
-trading_system/
-├── CLAUDE.md
-├── config.py                    # All constants — no magic numbers elsewhere
-├── data/
-│   ├── fetcher.py
-│   ├── cache/                   # Parquet format
-│   └── universe.csv
-├── screener/
-│   ├── screener.py
-│   ├── filters.py
-│   └── regime_filter.py
-├── scorer/
-│   ├── scorer.py
-│   └── ranking.py
-├── risk/
-│   ├── risk.py
-│   └── portfolio.py
-├── backtest/
-│   ├── backtest.py
-│   └── metrics.py
-├── reports/
-│   ├── daily_watchlist.py
-│   ├── trade_log.py
-│   └── weekly_review.py
-├── utils/
-│   ├── indicators.py            # Single source of truth for all TA
-│   └── logger.py
-├── tests/
-│   └── test_screener.py
-├── workflows/                   # WAT workflows live here
-├── tools/                       # WAT tools live here
-├── .tmp/                        # Disposable intermediates
-├── requirements.txt
-└── .env
+CLAUDE.md
+config.py                        # All constants — no magic numbers elsewhere
+data/
+├── fetcher.py                   # cache-first OHLCV access
+├── ohlcv_cache.py               # committed gzip cache, built by Actions
+├── cache/                       # parquet, best-effort local only
+└── universe.csv
+screener/
+├── screener.py                  # filters + 5-factor scorer (the engine)
+├── ta_engine.py                 # multi-timeframe confluence
+└── regime_classifier.py         # BULLISH / NEUTRAL / BEARISH
+risk/
+└── risk.py                      # position sizing — single source of truth
+analytics/                       # quant lab, RRG, footprint, paper, honesty
+ai/                              # Groq briefings, sitrep, sentiment
+backtest/
+├── backtest.py
+└── metrics.py
+reports/
+├── pdf_generator.py
+├── trade_log.py
+└── weekly_review.py
+utils/
+├── indicators.py                # Single source of truth for all TA
+├── timez.py                     # IST helpers — never use naive datetime
+└── logger.py
+backend/main.py                  # FastAPI, /api/* over the engine
+frontend/                        # React + Vite, the current UI
+jobs/                            # entry points for GitHub Actions cron
+monitors/                        # intraday watcher, Telegram
+storage/                         # SQLite (legacy dashboard) + CSV fallback
+tests/
+├── test_risk.py
+└── test_indicators.py
+workflows/                       # WAT workflows live here
+tools/                           # WAT tools live here
+.tmp/                            # Disposable intermediates
 ```
+
+There is no `scorer/` package: scoring lives in `screener/screener.py`, and the
+regime classifier is `screener/regime_classifier.py`. Empty placeholder modules
+(`scorer/`, `screener/filters.py`, `screener/regime_filter.py`,
+`risk/portfolio.py`, `reports/daily_watchlist.py`) were removed once the real
+implementations outgrew them — do not recreate them from this tree.
 
 ## Mandatory Coding Standards
 
@@ -281,32 +290,86 @@ Never average down on a losing trade
 Reject any setup where stop > 2% of capital
 ```
 
+## Trade Lifecycle
+
+The stop rules above say *what* to do at 1R and 2R; this says when a name
+enters the funnel, when it becomes a trade, and when it leaves.
+
+**Add to watchlist** — all must hold:
+1. Screener grade A or B
+2. Clears the liquidity gate (see Screener Hard Filters below)
+3. Price > ₹50
+4. ADX ≥ 18
+5. Above EMA200 (bullish bias)
+6. Relative strength positive vs its sector
+
+**Execute** — all must hold at the moment of entry, not when it was screened:
+1. Regime is BULLISH or NEUTRAL (never a BEARISH long)
+2. Setup grade is A or B — in NEUTRAL, A only
+3. Breakout confirmed on volume ≥ 1.5× the 20-day average **today**
+4. Stop honours the 2% capital limit without resizing to fit
+5. R:R ≥ 2:1 (NEUTRAL: 2.5:1)
+6. Not between 9:15–9:30 AM IST
+7. Conviction ≥ 7/10 and no FOMO (Section 7)
+
+**Manage:**
+- At +1R → stop to breakeven
+- At +2R → trail at 1.5 × ATR(14)
+
+**Exit:**
+- Stop hit → exit, log the outcome, no re-entry on the same setup
+- Target 1 hit → hold for Target 2 on the trailed stop
+- Target 2 hit → full exit, record the win
+- Structure breaks (setup invalidated) → exit, whatever the P&L
+- **Held 5 days → exit or re-justify from scratch.** Swing setups that have
+  not worked in a week are no longer the setup that was entered.
+
 ## Screener Hard Filters
 
+`config.py` is authoritative; this is the rationale.
+
 ```python
-MIN_AVG_VOLUME    = 500_000        # shares/day
+MIN_TURNOVER_CR   = 5.0            # ₹ crore/day, 20D avg — liquidity gate
+MIN_AVG_VOLUME    = 5_000          # shares/day, 20D avg — absolute floor only
 MIN_PRICE         = 50             # INR
 MIN_ATR_PCT       = 0.01           # 1% daily ATR
 MAX_ATR_PCT       = 0.06           # 6% daily ATR
 MIN_ADX           = 18
-EMA_ALIGNMENT     = True           # EMA9 > EMA21 > EMA50
-ABOVE_EMA200      = True
 VOLUME_CONFIRM    = 1.5            # × 20-day avg for breakouts
 ```
 
+**Liquidity is measured in rupees, not shares.** NSE prices span ₹50–₹150k, so
+a share-count floor excludes liquid large caps whose share count is low only
+because their price is high — MARUTI and ULTRACEMCO both trade under 500k
+shares/day on ₹300cr+ of turnover. A 500k-share floor drops ~140 such names.
+So turnover is the gate and `MIN_AVG_VOLUME` is only a zombie floor.
+
+EMA alignment and position above EMA200 are **scored, not gated** — they are
+points in the Price Action and Trend components, not pass/fail filters. A name
+with a broken EMA stack can still rank if everything else is strong.
+
 ## Scoring Engine Weights
 
+Five components, not four — Momentum was added and Volume reduced. `config.py`
+`SCORE_WEIGHTS` is authoritative.
+
 ```
-Price Action Score   → 35 points
-Relative Strength    → 25 points
-Volume Quality       → 20 points
-Trend Strength       → 20 points
-Total                → 100 points
+Price Action      → 30%     structure, 52W-high proximity, breakout, candle body
+Trend Strength    → 25%     ADX level, DI alignment, EMA21 slope
+Relative Strength → 20%     vs Nifty 50 over 20D and 60D
+Momentum          → 15%     RSI sweet spot, MACD histogram and cross
+Volume Quality    → 10%     ratio vs 20D SMA, scaled
+Total             → 100 points
 
 Grade A: ≥ 75   → Eligible for watchlist
 Grade B: 55–74  → Monitor, wait for confirmation
 Grade C: < 55   → Ignore
 ```
+
+> **Caveat:** the A/B/C thresholds were set against the older four-component
+> weighting and have not been re-calibrated since Momentum was added. Run
+> `analytics/honesty.py` — it forward-tests past picks by grade — before
+> trusting 75 as a cutoff.
 
 ## Backtesting Minimum Standards
 
@@ -324,7 +387,8 @@ Grade C: < 55   → Ignore
 
 # 🧠 SECTION 7 — PSYCHOLOGICAL OVERRIDE RULES
 
-Run these checks BEFORE issuing any trade recommendation:
+Run these checks BEFORE issuing any trade recommendation. Any one of them is a
+rejection on its own — they do not trade off against each other.
 
 - Entering because "it's already moved a lot" → **FOMO — reject**
 - Stop wider than 2% of capital → **reject; never resize to force-fit**
@@ -332,6 +396,13 @@ Run these checks BEFORE issuing any trade recommendation:
 - Daily drawdown ≥ 3% → **warning** | at 4% → **hard stop, block all entries**
 - Setup grade C → **do not present as a trading opportunity**
 - Regime BEARISH → **no long setups, even A-grade**
+- Volume on the entry bar < 1.5× 20-day average → **reject, unconfirmed breakout**
+- ADX < 18 at entry → **reject, no trend to ride**
+- Entry between 9:15–9:30 AM IST → **reject, opening noise**
+
+The last three are entry-time checks, not screener filters. A name that
+qualified yesterday can fail any of them today, and the screener will not
+re-check them for you.
 
 ---
 

@@ -14,6 +14,30 @@ from loguru import logger
 from config import CACHE_DIR, UNIVERSE_CSV
 
 
+_parquet_warned = False
+
+
+def _warn_parquet_once(action: str, exc: Exception) -> None:
+    """Report a dead parquet cache once per process instead of per symbol.
+
+    Args:
+        action: "read" or "write", whichever failed.
+        exc: The underlying exception, usually a missing pyarrow engine.
+
+    Returns:
+        None.
+    """
+    global _parquet_warned
+    if _parquet_warned:
+        return
+    _parquet_warned = True
+    logger.warning(
+        "Parquet cache unavailable ({} failed: {}) — every fetch for the rest "
+        "of this process will go to the network. Install pyarrow to enable it.",
+        action, exc,
+    )
+
+
 def ensure_cache_dir() -> None:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -61,21 +85,25 @@ def fetch_symbol_history(symbol: str, period: str = "1y", interval: str = "1d") 
     ensure_cache_dir()
     safe = symbol.replace(":", "_").replace(".", "_")
     symbol_path = CACHE_DIR / f"{safe}_{interval}_{period}.parquet"
-    # Parquet cache is best-effort — needs a parquet engine (pyarrow). On hosts
-    # without it (lean cloud backend), we silently skip caching and re-fetch.
+    # Parquet cache is best-effort — it needs a parquet engine (pyarrow), which
+    # the lean cloud backend does not install. Falling back to a live fetch is
+    # correct, but it should not be invisible: _warn_parquet_once says so one
+    # time per process, so a missing engine is discoverable without emitting a
+    # warning for all ~500 symbols.
     if symbol_path.exists():
         try:
             df = pd.read_parquet(symbol_path)
             if not df.empty:
                 return _normalise(df)
         except Exception as exc:
-            logger.debug("Parquet cache read skipped for %s: %s", symbol, exc)
+            logger.debug("Parquet cache read skipped for {}: {}", symbol, exc)
+            _warn_parquet_once("read", exc)
 
-    logger.info("Fetching history for %s", symbol)
+    logger.info("Fetching history for {}", symbol)
     try:
         df = _normalise(_fetch_history_from_yfinance(symbol, period, interval))
     except Exception as exc:
-        logger.exception("yfinance fetch failed for %s: %s", symbol, exc)
+        logger.exception("yfinance fetch failed for {}: {}", symbol, exc)
         raise
 
     if df.empty:
@@ -83,7 +111,8 @@ def fetch_symbol_history(symbol: str, period: str = "1y", interval: str = "1d") 
     try:
         df.to_parquet(symbol_path)
     except Exception as exc:
-        logger.debug("Parquet cache write skipped for %s: %s", symbol, exc)
+        logger.debug("Parquet cache write skipped for {}: {}", symbol, exc)
+        _warn_parquet_once("write", exc)
     return df
 
 
@@ -124,7 +153,7 @@ def fetch_symbols_history(symbols: list[str], period: str = "6mo", interval: str
         try:
             results[symbol] = fetch_symbol_history(symbol, period=period, interval=interval)
         except Exception as exc:
-            logger.warning("Failed to fetch %s: %s", symbol, exc)
+            logger.warning("Failed to fetch {}: {}", symbol, exc)
     return results
 
 

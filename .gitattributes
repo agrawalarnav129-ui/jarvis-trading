@@ -1,0 +1,15 @@
+# Normalise line endings. Without this the repo churns CRLF<->LF wholesale and
+# every real change is buried in a 160-file diff.
+* text=auto eol=lf
+
+# Binary / generated — never line-ending-converted.
+*.ttf     binary
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.ico     binary
+*.gz      binary
+*.zip     binary
+*.pdf     binary
+*.parquet binary
+*.db      binary

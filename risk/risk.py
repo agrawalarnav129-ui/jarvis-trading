@@ -4,7 +4,12 @@ Rules per CLAUDE.md:
   - Never risk > 2% capital per trade
   - Max 4% daily (2 positions)
   - Min R:R 2:1 (BULLISH), 2.5:1 (NEUTRAL)
+  - BEARISH regime: no long entries at all (position size 0)
   - Never average down
+
+This engine models LONG entries only — a stop at or above entry is rejected —
+so the BEARISH block is unconditional. If short setups are added later it will
+need a `side` argument so shorts are not blocked by the same rule.
 """
 from __future__ import annotations
 
@@ -25,6 +30,7 @@ class RiskResult:
     risk_pct: float          # % of capital
     reward: float            # ₹ potential reward
     rr_ratio: float          # reward:risk
+    min_rr: float            # R:R floor this regime demanded
     passed: bool             # cleared all checks
     verdict: str             # APPROVED / REJECTED
     rejection_reasons: list[str]
@@ -43,9 +49,17 @@ def calculate_position(
     Calculate position size and validate against all risk rules.
 
     Formula: shares = (capital × 0.02) / (entry - stop)
+
+    A BEARISH regime zeroes the position and rejects outright, per CLAUDE.md
+    Section 6. The regime string is matched case-insensitively.
     """
     rejections: list[str] = []
     warnings: list[str] = []
+    regime_norm = (regime or "").strip().upper()
+    # Computed up front so it is reported even on an early validation exit —
+    # callers (including the API and its clients) read the floor from here
+    # rather than re-deriving the rule.
+    min_rr = 2.5 if regime_norm == "NEUTRAL" else 2.0
 
     # ── Input validation ──
     if entry <= 0:
@@ -60,7 +74,7 @@ def calculate_position(
     if rejections:
         return RiskResult(
             symbol=symbol, entry=entry, stop=stop, target=target, capital=capital,
-            shares=0, risk_amount=0, risk_pct=0, reward=0, rr_ratio=0,
+            shares=0, risk_amount=0, risk_pct=0, reward=0, rr_ratio=0, min_rr=min_rr,
             passed=False, verdict="REJECTED", rejection_reasons=rejections, warnings=warnings,
         )
 
@@ -74,19 +88,33 @@ def calculate_position(
     rr_ratio       = round((target - entry) / risk_per_share, 2) if target > entry else 0.0
 
     # ── Hard rejection rules ──
+    # BEARISH is a policy stop, not a sizing failure: CLAUDE.md Section 6 sets
+    # position size to 0 and forbids long entries outright. The position is
+    # zeroed, while rr_ratio is left intact so the UI can still show what the
+    # trade would have been worth had the regime allowed it.
+    is_bearish = regime_norm == "BEARISH"
+    if is_bearish:
+        rejections.append("BEARISH regime — no long entries permitted (position size 0)")
+        shares      = 0
+        risk_amount = 0.0
+        risk_pct    = 0.0
+        reward      = 0.0
+
     if risk_pct > 2.05:   # small float buffer
         rejections.append(f"Risk {risk_pct:.2f}% exceeds 2% limit")
 
-    if shares <= 0:
+    # Suppressed under BEARISH: the position is 0 by policy, not a wide stop.
+    if shares <= 0 and not is_bearish:
         rejections.append("Position size rounds to 0 shares — stop too wide")
 
-    # Min R:R by regime
-    min_rr = 2.5 if regime == "NEUTRAL" else 2.0
-    if target > entry and rr_ratio < min_rr:
-        rejections.append(f"R:R {rr_ratio:.2f} below minimum {min_rr} for {regime} regime")
+    # Min R:R by regime (floor computed above)
+    if target > entry and rr_ratio < min_rr and not is_bearish:
+        rejections.append(f"R:R {rr_ratio:.2f} below minimum {min_rr} for {regime_norm} regime")
 
     # ── Soft warnings ──
-    if risk_pct < 1.0:
+    # Suppressed under BEARISH: 0% risk there is the intended outcome, so
+    # "consider a wider stop" would be actively misleading advice.
+    if risk_pct < 1.0 and not is_bearish:
         warnings.append(f"Risk {risk_pct:.2f}% is low — consider wider stop or more capital")
     if target <= entry:
         warnings.append("No target set — R:R cannot be calculated")
@@ -107,6 +135,7 @@ def calculate_position(
         risk_pct=round(risk_pct, 2),
         reward=round(reward, 2),
         rr_ratio=rr_ratio,
+        min_rr=min_rr,
         passed=passed,
         verdict=verdict,
         rejection_reasons=rejections,

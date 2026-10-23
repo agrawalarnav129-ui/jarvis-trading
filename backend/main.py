@@ -569,10 +569,18 @@ _SECTOR_INDUSTRIES = {
 }
 
 
+_secdd_cache: TTLCache = TTLCache(maxsize=16, ttl=600)
+
+
 @app.get("/api/sector/constituents")
 def sector_constituents(sector: str):
-    """Ranked constituents of a heatmap sector (score/RS/MTF from the screener cache)."""
-    try:
+    """Ranked constituents of a heatmap sector (score/RS/MTF from the screener cache).
+
+    Matching is exact against the universe's 19 closed Industry values. Do NOT
+    switch this to substring matching: "IT" then also matches "Capital Goods"
+    (cap-IT-al) and drags 54 unrelated names into the IT sector.
+    """
+    def _run():
         import pandas as pd
         from config import DATA_DIR
         industries = _SECTOR_INDUSTRIES.get(sector)
@@ -590,46 +598,11 @@ def sector_constituents(sector: str):
         rows.sort(key=lambda r: r.get("score") or 0, reverse=True)
         return {"sector": sector, "available": bool(rows),
                 "industries": industries or [sector], "count": len(rows), "results": rows}
+    try:
+        return _keyed(_secdd_cache, sector, _run)
     except Exception as exc:
         logger.exception("Sector constituents failed: {}", exc)
         raise HTTPException(status_code=503, detail="Sector data unavailable")
-
-
-# Heatmap sector label → matching universe Industry values (substring match)
-_SECTOR_INDUSTRY = {
-    "IT": ["Information Technology", "IT", "Telecom"],
-    "Banking": ["Financial Services", "Bank"],
-    "PSU Bank": ["Financial Services", "Bank"],
-    "Auto": ["Automobile"],
-    "Pharma": ["Pharma", "Healthcare"],
-    "FMCG": ["FMCG", "Consumer"],
-    "Metal": ["Metals & Mining"],
-    "Energy": ["Oil Gas & Fuels", "Power", "Energy"],
-    "Infra": ["Construction", "Capital Goods", "Services"],
-    "Realty": ["Realty", "Construction"],
-}
-_secdd_cache: TTLCache = TTLCache(maxsize=16, ttl=600)
-
-
-@app.get("/api/sector/constituents")
-def sector_constituents(sector: str, limit: int = 25):
-    """Drill-down: screener-scored constituents of a heatmap sector, ranked."""
-    def _run():
-        import pandas as pd
-        from config import DATA_DIR
-        uni = pd.read_csv(DATA_DIR / "universe.csv")
-        pats = _SECTOR_INDUSTRY.get(sector, [sector])
-        mask = uni["Industry"].fillna("").str.contains("|".join(pats), case=False, regex=True)
-        syms = {s.upper() for s in uni[mask]["Symbol"].dropna().astype(str)}
-        rows = [r for r in _full_screener() if str(r.get("symbol", "")).replace(".NS", "").upper() in syms]
-        rows.sort(key=lambda r: (r.get("score") or 0), reverse=True)
-        return {"available": bool(rows), "sector": sector, "count": len(rows),
-                "constituents": rows[:limit]}
-    try:
-        return _keyed(_secdd_cache, f"{sector}|{limit}", _run)
-    except Exception as exc:
-        logger.exception("Sector drill-down failed: {}", exc)
-        return {"available": False, "sector": sector, "constituents": [], "note": "Unavailable."}
 
 
 @app.get("/api/paper")
@@ -870,6 +843,43 @@ def scan_nl(req: NLScanReq):
     except Exception as exc:
         logger.exception("NL scan failed: {}", exc)
         raise HTTPException(status_code=503, detail="NL scan unavailable")
+
+
+class RiskReq(BaseModel):
+    entry: float
+    stop: float
+    target: float = 0.0
+    capital: float = 1_000_000
+    symbol: str = ""
+    regime: str = "BULLISH"
+
+
+@app.post("/api/risk")
+def risk(req: RiskReq):
+    """
+    Position sizing — the single source of truth for the 2% rule.
+
+    Thin wrapper over risk.risk.calculate_position so the React calculator does
+    not re-implement the rulebook in TypeScript. Every threshold (2% cap, the
+    regime R:R floor, the BEARISH block) is decided here and only here; the
+    client renders what it is told, including `min_rr`.
+
+    Invalid input is a valid answer, not an error: the engine returns a
+    REJECTED result with reasons, so this never raises on bad numbers.
+    """
+    from dataclasses import asdict
+
+    from risk.risk import calculate_position
+
+    result = calculate_position(
+        entry=req.entry,
+        stop=req.stop,
+        target=req.target,
+        capital=req.capital,
+        symbol=req.symbol,
+        regime=req.regime,
+    )
+    return asdict(result)
 
 
 class TradeReview(BaseModel):

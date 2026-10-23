@@ -1,9 +1,14 @@
-import { useMemo, useState } from "react";
-import { Calculator, CheckCircle2, XCircle, AlertTriangle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { CheckCircle2, XCircle, AlertTriangle, Loader2, PlugZap } from "lucide-react";
+import { api, type RiskResp } from "../lib/api";
 import { Section, Card } from "../components/ui";
 import { fmt, fmtInt } from "../lib/format";
 
-const CAPITAL_RISK = 0.02; // 2% per trade
+// There are deliberately NO rule constants in this file. The 2% cap, the
+// regime R:R floor (`min_rr`) and the BEARISH long block all live in
+// risk/risk.py and reach this page through POST /api/risk. If you are about to
+// add a threshold here, add it to config.py instead — a second copy of the
+// rulebook in TypeScript is how the two drifted apart in the first place.
 
 // Module-scope so it isn't recreated each render (which would drop input focus).
 function Field({ label, value, onChange, step = 0.05 }: { label: string; value: number; onChange: (v: number) => void; step?: number }) {
@@ -23,38 +28,49 @@ export default function RiskCalculator() {
   const [target, setTarget] = useState(0);
   const [regime, setRegime] = useState<"BULLISH" | "NEUTRAL" | "BEARISH">("BULLISH");
 
-  const r = useMemo(() => {
-    const rejects: string[] = [];
-    const warns: string[] = [];
-    if (entry <= 0) rejects.push("Entry must be > 0");
-    if (stop <= 0) rejects.push("Stop must be > 0");
-    if (stop >= entry && entry > 0) rejects.push(`Stop (${stop}) must be below entry (${entry})`);
-    if (capital <= 0) rejects.push("Capital must be > 0");
+  const [r, setR] = useState<RiskResp | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  const seq = useRef(0);
 
-    const riskPerShare = entry - stop;
-    const maxRisk = capital * CAPITAL_RISK;
-    const shares = riskPerShare > 0 ? Math.floor(maxRisk / riskPerShare) : 0;
-    const riskAmt = shares * riskPerShare;
-    const riskPct = capital > 0 ? (riskAmt / capital) * 100 : 0;
-    const reward = target > entry ? shares * (target - entry) : 0;
-    const rr = riskPerShare > 0 && target > entry ? (target - entry) / riskPerShare : 0;
-    const minRR = regime === "NEUTRAL" ? 2.5 : 2.0;
+  // Below this the engine would only echo "entry must be > 0", so stay idle
+  // rather than greeting an untouched form with a REJECTED banner.
+  const ready = entry > 0 && stop > 0 && capital > 0;
 
-    if (riskPct > 2.05) rejects.push(`Risk ${fmt(riskPct)}% exceeds 2% limit`);
-    if (shares <= 0 && !rejects.length) rejects.push("Position rounds to 0 shares — stop too wide");
-    if (target > entry && rr < minRR) rejects.push(`R:R ${fmt(rr)} below ${minRR} for ${regime}`);
-    if (regime === "BEARISH") warns.push("BEARISH regime — no long entries advised");
-    if (target <= entry) warns.push("No target set — R:R not computed");
-    if (riskPerShare > 0 && riskPerShare / entry > 0.05) warns.push(`Stop is ${fmt((riskPerShare / entry) * 100, 1)}% wide — unusually large`);
-
-    return { shares, riskAmt, riskPct, reward, rr, minRR, passed: rejects.length === 0 && shares > 0, rejects, warns };
-  }, [capital, entry, stop, target, regime]);
+  useEffect(() => {
+    if (!ready) {
+      setR(null);
+      setErr(null);
+      setLoading(false);
+      return;
+    }
+    const mine = ++seq.current;   // ignore responses from superseded keystrokes
+    setLoading(true);
+    const t = setTimeout(async () => {
+      try {
+        const res = await api.risk({ entry, stop, target, capital, regime });
+        if (mine === seq.current) { setR(res); setErr(null); }
+      } catch (e: any) {
+        // Never fall back to a local calculation: a wrong position size shown
+        // confidently is worse than none at all.
+        if (mine === seq.current) { setErr(e?.message ?? "request failed"); setR(null); }
+      } finally {
+        if (mine === seq.current) setLoading(false);
+      }
+    }, 350);
+    return () => clearTimeout(t);
+  }, [entry, stop, target, capital, regime, ready]);
 
   return (
     <Section title="Risk Calculator · Position Sizing">
       <Card className="mb-3">
-        <div className="font-mono text-[0.66rem] text-muted">
-          Shares = (Capital × 2%) ÷ (Entry − Stop) · Max risk 2% · Min R:R {regime === "NEUTRAL" ? "2.5" : "2.0"}:1
+        <div className="font-mono text-[0.66rem] text-muted flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span>
+            Shares = (Capital × 2%) ÷ (Entry − Stop) · Max risk 2% · Min R:R{" "}
+            {r ? `${fmt(r.min_rr, 1)}:1` : "—"}
+          </span>
+          {loading && <Loader2 size={11} className="animate-spin text-brand shrink-0" />}
+          <span className="text-faint shrink-0 w-full sm:w-auto sm:ml-auto">sized by risk/risk.py</span>
         </div>
       </Card>
 
@@ -72,26 +88,57 @@ export default function RiskCalculator() {
         </div>
       </div>
 
-      <div className={`card p-4 mb-3 border-l-2 ${r.passed ? "border-l-up" : "border-l-down"}`}>
-        <div className="flex items-center gap-2 mb-3">
-          {r.passed ? <CheckCircle2 className="text-up" size={20} /> : <XCircle className="text-down" size={20} />}
-          <span className={`font-display text-lg ${r.passed ? "text-up" : "text-down"}`}>{r.passed ? "APPROVED" : "REJECTED"}</span>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div><div className="label">Shares</div><div className="font-display text-lg text-txt mt-1">{fmtInt(r.shares)}</div></div>
-          <div><div className="label">Capital at Risk</div><div className="font-display text-lg text-gold mt-1">₹{fmtInt(r.riskAmt)}</div></div>
-          <div><div className="label">Risk %</div><div className="font-display text-lg text-txt mt-1">{fmt(r.riskPct)}%</div></div>
-          <div><div className="label">R:R Ratio</div><div className={`font-display text-lg mt-1 ${r.rr >= r.minRR ? "text-up" : "text-down"}`}>{fmt(r.rr)}:1</div></div>
-        </div>
-        {r.reward > 0 && <div className="label mt-3">Potential reward: <span className="text-up font-mono">₹{fmtInt(r.reward)}</span></div>}
-      </div>
+      {!ready && (
+        <Card>
+          <div className="label">Enter a capital, entry and stop to size the position.</div>
+        </Card>
+      )}
 
-      {r.rejects.map((x, i) => (
-        <div key={i} className="flex items-center gap-2 text-down text-xs font-mono py-1"><XCircle size={13} />{x}</div>
-      ))}
-      {r.warns.map((x, i) => (
-        <div key={i} className="flex items-center gap-2 text-gold text-xs font-mono py-1"><AlertTriangle size={13} />{x}</div>
-      ))}
+      {ready && err && (
+        <div className="card p-4 mb-3 border-l-2 border-l-gold">
+          <div className="flex items-center gap-2 mb-1">
+            <PlugZap className="text-gold" size={18} />
+            <span className="font-display text-sm text-gold">Risk engine unreachable</span>
+          </div>
+          <div className="label">
+            No position size shown — the sizing rules run on the backend, and this page
+            will not guess them. Retry once the API responds. ({err})
+          </div>
+        </div>
+      )}
+
+      {ready && !err && !r && loading && (
+        <Card>
+          <div className="flex items-center gap-2 label">
+            <Loader2 size={13} className="animate-spin text-brand" /> Sizing…
+          </div>
+        </Card>
+      )}
+
+      {ready && !err && r && (
+        <>
+          <div className={`card p-4 mb-3 border-l-2 ${r.passed ? "border-l-up" : "border-l-down"} ${loading ? "opacity-60" : ""}`}>
+            <div className="flex items-center gap-2 mb-3">
+              {r.passed ? <CheckCircle2 className="text-up" size={20} /> : <XCircle className="text-down" size={20} />}
+              <span className={`font-display text-lg ${r.passed ? "text-up" : "text-down"}`}>{r.passed ? "APPROVED" : "REJECTED"}</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div><div className="label">Shares</div><div className="font-display text-lg text-txt mt-1">{fmtInt(r.shares)}</div></div>
+              <div><div className="label">Capital at Risk</div><div className="font-display text-lg text-gold mt-1">₹{fmtInt(r.risk_amount)}</div></div>
+              <div><div className="label">Risk %</div><div className="font-display text-lg text-txt mt-1">{fmt(r.risk_pct)}%</div></div>
+              <div><div className="label">R:R Ratio</div><div className={`font-display text-lg mt-1 ${r.rr_ratio >= r.min_rr ? "text-up" : "text-down"}`}>{fmt(r.rr_ratio)}:1</div></div>
+            </div>
+            {r.reward > 0 && <div className="label mt-3">Potential reward: <span className="text-up font-mono">₹{fmtInt(r.reward)}</span></div>}
+          </div>
+
+          {r.rejection_reasons.map((x, i) => (
+            <div key={i} className="flex items-center gap-2 text-down text-xs font-mono py-1"><XCircle size={13} />{x}</div>
+          ))}
+          {r.warnings.map((x, i) => (
+            <div key={i} className="flex items-center gap-2 text-gold text-xs font-mono py-1"><AlertTriangle size={13} />{x}</div>
+          ))}
+        </>
+      )}
     </Section>
   );
 }
