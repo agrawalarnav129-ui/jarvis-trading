@@ -56,8 +56,11 @@ def _fetch_nifty_benchmark(period: str = "6mo") -> pd.Series:
         cached = get_cached_ohlcv("^NSEI")
         if cached is not None and not cached.empty:
             return cached["close"].dropna()
-    except Exception:
-        pass
+    except Exception as exc:
+        # Falling through to a live fetch is fine, but a cache that never
+        # answers should not be invisible — it costs a network round trip on
+        # every run and is the first thing to check when a run is slow.
+        logger.debug("Benchmark not served from OHLCV cache: {}", exc)
     try:
         df = yf.Ticker("^NSEI").history(period=period, interval="1d")
         df.columns = [c.lower() for c in df.columns]
@@ -461,6 +464,7 @@ def run_screener(symbols: list[str] | None = None) -> pd.DataFrame:
 
     results: list[dict[str, Any]] = []
     skipped = 0
+    mtf_failed = 0
     for symbol in symbols:
         history = histories.get(symbol)
         if history is None:
@@ -473,14 +477,26 @@ def run_screener(symbols: list[str] | None = None) -> pd.DataFrame:
                 m = mtf_confluence(history)
                 row["mtf"] = m["score"]
                 row["mtf_of"] = m["of"]
-            except Exception:
-                pass
+            except Exception as exc:
+                # Confluence is optional, so a failure must not drop the row —
+                # but set the keys anyway. Omitting them made the column appear
+                # only if some other symbol succeeded, so consumers could not
+                # tell "unavailable" from "not computed".
+                row["mtf"] = None
+                row["mtf_of"] = None
+                mtf_failed += 1
+                logger.debug("MTF confluence failed for {}: {}", symbol, exc)
             results.append(row)
         except Exception as exc:
             logger.debug("Skipped {}: {}", symbol, exc)
             skipped += 1
 
     logger.info("Scored {} symbols, skipped {}", len(results), skipped)
+    if mtf_failed:
+        # One line per run rather than per symbol: if this equals the scored
+        # count, confluence is broken outright rather than thin on data.
+        logger.warning("MTF confluence unavailable for {}/{} scored symbols",
+                       mtf_failed, len(results))
 
     if not results:
         return pd.DataFrame()
