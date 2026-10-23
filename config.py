@@ -21,11 +21,14 @@ REQUIREMENTS = [
 
 # ── SCREENER FILTERS ──────────────────────────────────────────────
 # Liquidity: on NSE rupee turnover is the real tradeability test, because share
-# prices span ₹50–₹150k. A share-count floor alone wrongly excludes liquid large
-# caps (ULTRACEMCO ~271k shares/day = ₹318cr; BOSCHLTD ~36k = ₹146cr). Measured
-# against the OHLCV cache, a 500k share floor would drop 138 liquid names, while
-# a ₹5cr turnover gate drops 40 genuinely thin ones (verified end-to-end), of
-# which 6 were scoring Grade A/B — BHAGERIA scored 95.0 on ₹1.21cr/day.
+# prices span ₹50–₹150k, so a share-count floor excludes liquid large caps whose
+# share count is low only because their price is high — MARUTI and ULTRACEMCO
+# both trade under 500k shares/day on ₹300cr+ of turnover.
+# Measured end-to-end against the OHLCV cache, on the Jul-2026 and Oct-2026
+# snapshots alike: a 500k share floor wrongly drops ~140 liquid names, while this
+# ₹5cr turnover gate drops 40–50 genuinely thin ones, some scoring well enough to
+# be presented as tradeable setups. Which names those are churns as stocks
+# re-rate, so treat the counts as orders of magnitude, not fixed facts.
 # So turnover is the gate and MIN_AVG_VOLUME is only an absolute floor, set low
 # enough to drop zero liquid names — it currently rejects none on its own.
 MIN_TURNOVER_CR   = 5.0        # ₹ crore/day, 20D avg — primary liquidity gate
