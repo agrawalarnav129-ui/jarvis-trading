@@ -290,6 +290,40 @@ Never average down on a losing trade
 Reject any setup where stop > 2% of capital
 ```
 
+## Trade Lifecycle
+
+The stop rules above say *what* to do at 1R and 2R; this says when a name
+enters the funnel, when it becomes a trade, and when it leaves.
+
+**Add to watchlist** — all must hold:
+1. Screener grade A or B
+2. Clears the liquidity gate (see Screener Hard Filters below)
+3. Price > ₹50
+4. ADX ≥ 18
+5. Above EMA200 (bullish bias)
+6. Relative strength positive vs its sector
+
+**Execute** — all must hold at the moment of entry, not when it was screened:
+1. Regime is BULLISH or NEUTRAL (never a BEARISH long)
+2. Setup grade is A or B — in NEUTRAL, A only
+3. Breakout confirmed on volume ≥ 1.5× the 20-day average **today**
+4. Stop honours the 2% capital limit without resizing to fit
+5. R:R ≥ 2:1 (NEUTRAL: 2.5:1)
+6. Not between 9:15–9:30 AM IST
+7. Conviction ≥ 7/10 and no FOMO (Section 7)
+
+**Manage:**
+- At +1R → stop to breakeven
+- At +2R → trail at 1.5 × ATR(14)
+
+**Exit:**
+- Stop hit → exit, log the outcome, no re-entry on the same setup
+- Target 1 hit → hold for Target 2 on the trailed stop
+- Target 2 hit → full exit, record the win
+- Structure breaks (setup invalidated) → exit, whatever the P&L
+- **Held 5 days → exit or re-justify from scratch.** Swing setups that have
+  not worked in a week are no longer the setup that was entered.
+
 ## Screener Hard Filters
 
 `config.py` is authoritative; this is the rationale.
@@ -353,7 +387,8 @@ Grade C: < 55   → Ignore
 
 # 🧠 SECTION 7 — PSYCHOLOGICAL OVERRIDE RULES
 
-Run these checks BEFORE issuing any trade recommendation:
+Run these checks BEFORE issuing any trade recommendation. Any one of them is a
+rejection on its own — they do not trade off against each other.
 
 - Entering because "it's already moved a lot" → **FOMO — reject**
 - Stop wider than 2% of capital → **reject; never resize to force-fit**
@@ -361,6 +396,13 @@ Run these checks BEFORE issuing any trade recommendation:
 - Daily drawdown ≥ 3% → **warning** | at 4% → **hard stop, block all entries**
 - Setup grade C → **do not present as a trading opportunity**
 - Regime BEARISH → **no long setups, even A-grade**
+- Volume on the entry bar < 1.5× 20-day average → **reject, unconfirmed breakout**
+- ADX < 18 at entry → **reject, no trend to ride**
+- Entry between 9:15–9:30 AM IST → **reject, opening noise**
+
+The last three are entry-time checks, not screener filters. A name that
+qualified yesterday can fail any of them today, and the screener will not
+re-check them for you.
 
 ---
 
