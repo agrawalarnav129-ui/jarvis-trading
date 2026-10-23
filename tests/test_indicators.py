@@ -108,16 +108,30 @@ def test_rsi_warmup_is_nan_before_the_period() -> None:
     assert vals.iloc[:13].isna().all()
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="BUG: with zero down-closes avg_loss is 0, and `avg_loss.replace(0, "
-           "pd.NA)` makes RS undefined, so RSI is <NA> instead of 100. One live "
-           "symbol in the OHLCV cache hits this, silently forfeiting the 50 "
-           "momentum points in _momentum_score. Remove marker once fixed.",
-)
-def test_rsi_of_a_pure_uptrend_should_be_one_hundred() -> None:
+def test_rsi_of_a_pure_uptrend_is_one_hundred() -> None:
+    """No down-closes means avg_loss is 0, RS is +inf, and RSI pins at 100."""
     rising = pd.Series([float(x) for x in range(1, 61)])
     assert float(rsi(rising, 14).iloc[-1]) == pytest.approx(100.0)
+
+
+def test_rsi_stays_float_dtype_on_a_pure_uptrend() -> None:
+    """
+    Regression guard: the old `.replace(0, pd.NA)` divisor produced object
+    dtype and <NA>, which `pd.notna()` reads as missing — so a clean uptrend
+    would silently score zero momentum instead of maximum.
+
+    Latent, not observed: no symbol in the OHLCV cache has 14 consecutive bars
+    without a down-close. It needs a guard anyway, because the failure is a
+    silent zero rather than an error.
+    """
+    vals = rsi(pd.Series([float(x) for x in range(1, 61)]), 14)
+    assert vals.dtype == "float64"
+    assert pd.notna(vals.iloc[-1])
+
+
+def test_rsi_of_a_flat_series_is_nan() -> None:
+    """Zero gains and zero losses: RSI is genuinely undefined, not 0 or 100."""
+    assert pd.isna(rsi(pd.Series([100.0] * 60), 14).iloc[-1])
 
 
 # ── Bollinger Bands ─────────────────────────────────────────────────────────
@@ -248,20 +262,28 @@ def test_adx_of_a_flat_series_is_nan_not_an_error() -> None:
     assert pd.isna(adx_full(flat, 14)["adx"].iloc[-1])
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="BUG: when high and low rise in exact lockstep both DM legs are zero, "
-           "so `(di_plus + di_minus).replace(0, pd.NA)` turns the series to "
-           "object dtype and the following .ewm() raises pandas DataError "
-           "instead of yielding NaN. No symbol in the current OHLCV cache hits "
-           "it, so this is latent. Remove marker once fixed.",
-)
 def test_adx_survives_lockstep_high_low_movement() -> None:
+    """
+    High and low rising in exact lockstep zeroes both DM legs. That used to
+    make the DX series object dtype and the following .ewm() raised pandas
+    DataError; it must yield NaN instead.
+    """
     n = 60
     df = pd.DataFrame({
         "high": [float(i) + 2 for i in range(n)],
         "low": [float(i) for i in range(n)],
         "close": [float(i) + 1 for i in range(n)],
     })
-    out = adx_full(df, 14)          # currently raises pandas.errors.DataError
+    out = adx_full(df, 14)
     assert pd.isna(out["adx"].iloc[-1]) or 0.0 <= float(out["adx"].iloc[-1]) <= 100.0
+
+
+def test_adx_dx_series_stays_float_dtype() -> None:
+    """Regression guard for the object-dtype path that caused the DataError."""
+    n = 60
+    df = pd.DataFrame({
+        "high": [float(i) + 2 for i in range(n)],
+        "low": [float(i) for i in range(n)],
+        "close": [float(i) + 1 for i in range(n)],
+    })
+    assert adx_full(df, 14)["adx"].dtype == "float64"

@@ -17,13 +17,22 @@ def ema(series: pd.Series, period: int) -> pd.Series:
 
 
 def rsi(series: pd.Series, period: int = 14) -> pd.Series:
-    """Calculate RSI using Wilder's smoothing."""
+    """Calculate RSI using Wilder's smoothing.
+
+    Returns 100 when there are no down-closes in the window and 0 when there
+    are no up-closes; NaN only during the warmup or on a perfectly flat series,
+    where RSI is genuinely undefined. Plain float division is what gives those
+    edges: gain/0 is +inf, so 100 - 100/(1+inf) collapses to 100. Guarding the
+    divisor with `.replace(0, pd.NA)` instead turns the series to object dtype
+    and yields <NA> for a clean uptrend — which reads as "no data" to every
+    caller that checks pd.notna().
+    """
     delta = series.diff()
     gain = delta.clip(lower=0.0)
     loss = -delta.clip(upper=0.0)
     avg_gain = gain.ewm(alpha=1 / period, min_periods=period, adjust=False).mean()
     avg_loss = loss.ewm(alpha=1 / period, min_periods=period, adjust=False).mean()
-    rs = avg_gain / avg_loss.replace(0, pd.NA)
+    rs = avg_gain / avg_loss
     return 100 - (100 / (1 + rs))
 
 
@@ -77,6 +86,11 @@ def adx_full(df: pd.DataFrame, period: int = 14) -> pd.DataFrame:
     atr_series = tr.ewm(span=period, adjust=False, min_periods=period).mean()
     plus_di = 100 * (plus_dm.ewm(span=period, adjust=False, min_periods=period).mean() / atr_series)
     minus_di = 100 * (minus_dm.ewm(span=period, adjust=False, min_periods=period).mean() / atr_series)
-    dx = 100 * (plus_di - minus_di).abs() / (plus_di + minus_di).replace(0, pd.NA)
+    # Plain float division, not `.replace(0, pd.NA)`. Both DI legs are
+    # non-negative, so a zero sum means both are zero and the numerator is zero
+    # too — 0/0 is NaN, which is the right answer for "no directional movement".
+    # The pd.NA guard instead made the series object dtype, and the .ewm() below
+    # then raised pandas DataError rather than yielding NaN.
+    dx = 100 * (plus_di - minus_di).abs() / (plus_di + minus_di)
     adx_series = dx.ewm(span=period, adjust=False, min_periods=period).mean()
     return pd.DataFrame({"adx": adx_series, "di_plus": plus_di, "di_minus": minus_di})
