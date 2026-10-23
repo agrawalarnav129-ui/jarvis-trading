@@ -143,6 +143,14 @@ export const api = {
     if (!r.ok) throw new Error(`trade-review -> ${r.status}`);
     return (await r.json()) as { symbol: string; rr: number; stop_pct: number; regime: string; checks: { rule: string; pass: boolean; detail: string }[]; verdict: string; passed: number; total: number; ai: string };
   },
+  defensive: (limit = 40, max_beta = 0.75) => get<{
+    available: boolean; note: string; regime: string; beta_window: number; max_beta: number;
+    scanned: number; skipped_illiquid: number; skipped_short_history: number; count: number;
+    results: { symbol: string; close: number; turnover_cr: number; beta: number;
+      corr_60d: number | null; corr_120d: number | null; corr_250d: number | null;
+      down_capture: number | null; up_capture: number | null;
+      bench_down_mean: number | null; down_days: number }[];
+  }>(`/api/defensive?limit=${limit}&max_beta=${max_beta}`),
   risk: async (body: { entry: number; stop: number; target: number; capital: number; regime: string; symbol?: string }) => {
     const r = await fetch(`${BASE}/api/risk`, {
       method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),

@@ -1,6 +1,6 @@
 import {
   LayoutDashboard, ScanSearch, Star, BookOpen, Sparkles,
-  Calculator, Activity, History, Radar, ListChecks, FileText, Grid3x3, CandlestickChart, Layers, PenTool, Sigma, ShieldCheck, Brain, Briefcase, MonitorDot, Bot,
+  Calculator, Activity, History, Radar, ListChecks, FileText, Grid3x3, CandlestickChart, Layers, PenTool, Sigma, ShieldCheck, ShieldHalf, Brain, Briefcase, MonitorDot, Bot,
 } from "lucide-react";
 
 export interface NavItem { path: string; label: string; icon: any; }
@@ -20,6 +20,7 @@ export const SECONDARY: NavItem[] = [
   { path: "/paper", label: "Paper Autopilot", icon: Bot },
   { path: "/patterns", label: "Pattern Finder", icon: PenTool },
   { path: "/quant", label: "Quant Lab", icon: Sigma },
+  { path: "/defensive", label: "Defensive Board", icon: ShieldHalf },
   { path: "/trade-check", label: "Trade Check", icon: ShieldCheck },
   { path: "/positions", label: "Live Positions", icon: Briefcase },
   { path: "/edge", label: "Your Edge", icon: Brain },

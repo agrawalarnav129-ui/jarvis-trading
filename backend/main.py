@@ -707,6 +707,30 @@ def quant_rrg(symbols: str = "", tail: int = 8):
         raise HTTPException(status_code=503, detail="RRG unavailable")
 
 
+_defensive_cache: TTLCache = TTLCache(maxsize=8, ttl=1800)
+
+
+@app.get("/api/defensive")
+def defensive(limit: int = 40, max_beta: float = 0.75):
+    """
+    Defensive board — liquid names with the lowest beta to the Nifty.
+
+    Deliberately NOT a "negatively correlated" screen: measured over 250
+    sessions the most negative name on NSE sits near -0.09 and nothing clears
+    -0.10, so such a screen returns noise. These names fall less; they do not
+    rise when the index falls. Every row carries down_capture so the client can
+    show that rather than imply a hedge.
+    """
+    def _run():
+        from analytics.defensive import defensive_board
+        return defensive_board(limit=limit, max_beta=max_beta)
+    try:
+        return _keyed(_defensive_cache, f"{limit}|{max_beta}", _run)
+    except Exception as exc:
+        logger.exception("Defensive board failed: {}", exc)
+        raise HTTPException(status_code=503, detail="Defensive board unavailable")
+
+
 class Position(BaseModel):
     symbol: str
     risk_pct: float = 2.0

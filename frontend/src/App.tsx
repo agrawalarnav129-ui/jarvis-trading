@@ -31,6 +31,7 @@ const Positions = lazy(() => import("./pages/Positions"));
 const Terminal = lazy(() => import("./pages/Terminal"));
 const Paper = lazy(() => import("./pages/Paper"));
 const Sector = lazy(() => import("./pages/Sector"));
+const Defensive = lazy(() => import("./pages/Defensive"));
 const StockDetail = lazy(() => import("./pages/StockDetail"));
 const Placeholder = lazy(() => import("./pages/Placeholder"));
 
@@ -69,6 +70,7 @@ export default function App() {
               <Route path="/options" element={<Options />} />
               <Route path="/patterns" element={<PatternFinder />} />
               <Route path="/quant" element={<Quant />} />
+              <Route path="/defensive" element={<Defensive />} />
               <Route path="/trade-check" element={<TradeCheck />} />
               <Route path="/edge" element={<YourEdge />} />
               <Route path="/positions" element={<Positions />} />
