@@ -1,511 +1,746 @@
 Symbol,Company_Name,Industry,ISIN,yfinance_Ticker,Cap_Category,In_Nifty500,In_MidCap150
-ADANIENT,Adani Enterprises,Metals & Mining,,ADANIENT.NS,Large Cap,1,0
-ADANIPORTS,Adani Ports & SEZ,Services,,ADANIPORTS.NS,Large Cap,1,0
-APOLLOHOSP,Apollo Hospitals,Healthcare,,APOLLOHOSP.NS,Large Cap,1,0
-ASIANPAINT,Asian Paints,Consumer Durables,,ASIANPAINT.NS,Large Cap,1,0
-AXISBANK,Axis Bank,Financial Services,,AXISBANK.NS,Large Cap,1,0
-BAJAJ-AUTO,Bajaj Auto,Automobile,,BAJAJ-AUTO.NS,Large Cap,1,0
-BAJFINANCE,Bajaj Finance,Financial Services,,BAJFINANCE.NS,Large Cap,1,0
-BAJAJFINSV,Bajaj Finserv,Financial Services,,BAJAJFINSV.NS,Large Cap,1,0
-BEL,Bharat Electronics,Capital Goods,,BEL.NS,Large Cap,1,0
-BPCL,BPCL,Oil Gas & Fuels,,BPCL.NS,Large Cap,1,0
-BHARTIARTL,Bharti Airtel,Telecom,,BHARTIARTL.NS,Large Cap,1,0
-BRITANNIA,Britannia Industries,FMCG,,BRITANNIA.NS,Large Cap,1,0
-CIPLA,Cipla,Pharma,,CIPLA.NS,Large Cap,1,0
-COALINDIA,Coal India,Metals & Mining,,COALINDIA.NS,Large Cap,1,0
-DRREDDY,Dr Reddys Labs,Pharma,,DRREDDY.NS,Large Cap,1,0
-EICHERMOT,Eicher Motors,Automobile,,EICHERMOT.NS,Large Cap,1,0
-GRASIM,Grasim Industries,Construction,,GRASIM.NS,Large Cap,1,0
-HCLTECH,HCL Technologies,IT,,HCLTECH.NS,Large Cap,1,0
-HDFCBANK,HDFC Bank,Financial Services,,HDFCBANK.NS,Large Cap,1,0
-HDFCLIFE,HDFC Life Insurance,Financial Services,,HDFCLIFE.NS,Large Cap,1,0
-HEROMOTOCO,Hero MotoCorp,Automobile,,HEROMOTOCO.NS,Large Cap,1,0
-HINDALCO,Hindalco Industries,Metals & Mining,,HINDALCO.NS,Large Cap,1,0
-HINDUNILVR,Hindustan Unilever,FMCG,,HINDUNILVR.NS,Large Cap,1,0
-ICICIBANK,ICICI Bank,Financial Services,,ICICIBANK.NS,Large Cap,1,0
-ITC,ITC,FMCG,,ITC.NS,Large Cap,1,0
-INDUSINDBK,IndusInd Bank,Financial Services,,INDUSINDBK.NS,Large Cap,1,0
-INFY,Infosys,IT,,INFY.NS,Large Cap,1,0
-JSWSTEEL,JSW Steel,Metals & Mining,,JSWSTEEL.NS,Large Cap,1,0
-KOTAKBANK,Kotak Mahindra Bank,Financial Services,,KOTAKBANK.NS,Large Cap,1,0
-LT,Larsen & Toubro,Capital Goods,,LT.NS,Large Cap,1,0
-M&M,Mahindra & Mahindra,Automobile,,M&M.NS,Large Cap,1,0
-MARUTI,Maruti Suzuki,Automobile,,MARUTI.NS,Large Cap,1,0
-NESTLEIND,Nestle India,FMCG,,NESTLEIND.NS,Large Cap,1,0
-NTPC,NTPC,Power,,NTPC.NS,Large Cap,1,0
-ONGC,ONGC,Oil Gas & Fuels,,ONGC.NS,Large Cap,1,0
-POWERGRID,Power Grid Corp,Power,,POWERGRID.NS,Large Cap,1,0
-RELIANCE,Reliance Industries,Oil Gas & Fuels,,RELIANCE.NS,Large Cap,1,0
-SBILIFE,SBI Life Insurance,Financial Services,,SBILIFE.NS,Large Cap,1,0
-SHRIRAMFIN,Shriram Finance,Financial Services,,SHRIRAMFIN.NS,Large Cap,1,0
-SBIN,State Bank of India,Financial Services,,SBIN.NS,Large Cap,1,0
-SUNPHARMA,Sun Pharmaceutical,Pharma,,SUNPHARMA.NS,Large Cap,1,0
-TCS,Tata Consultancy Services,IT,,TCS.NS,Large Cap,1,0
-TATACONSUM,Tata Consumer Products,FMCG,,TATACONSUM.NS,Large Cap,1,0
-TATAMOTORS,Tata Motors,Automobile,,TATAMOTORS.NS,Large Cap,1,0
-TATASTEEL,Tata Steel,Metals & Mining,,TATASTEEL.NS,Large Cap,1,0
-TECHM,Tech Mahindra,IT,,TECHM.NS,Large Cap,1,0
-TITAN,Titan Company,Consumer Durables,,TITAN.NS,Large Cap,1,0
-TRENT,Trent,Consumer Durables,,TRENT.NS,Large Cap,1,0
-ULTRACEMCO,UltraTech Cement,Construction,,ULTRACEMCO.NS,Large Cap,1,0
-WIPRO,Wipro,IT,,WIPRO.NS,Large Cap,1,0
-ABB,ABB India,Capital Goods,,ABB.NS,Large Cap,1,0
-ADANIGREEN,Adani Green Energy,Power,,ADANIGREEN.NS,Large Cap,1,0
-ADANITRANS,Adani Transmission,Power,,ADANITRANS.NS,Large Cap,1,0
-AMBUJACEM,Ambuja Cements,Construction,,AMBUJACEM.NS,Large Cap,1,0
-AUROPHARMA,Aurobindo Pharma,Pharma,,AUROPHARMA.NS,Large Cap,1,0
-BAJAJHLDNG,Bajaj Holdings,Financial Services,,BAJAJHLDNG.NS,Large Cap,1,0
+360ONE,360 ONE WAM Ltd.,Financial Services,,360ONE.NS,Mid Cap,1,1
+ABB,ABB India Ltd.,Capital Goods,,ABB.NS,Large Cap,1,0
+ACC,ACC Ltd.,Construction,,ACC.NS,Small Cap,1,0
+ACMESOLAR,ACME Solar Holdings Ltd.,Power,,ACMESOLAR.NS,Small Cap,1,0
+AIAENG,AIA Engineering Ltd.,Capital Goods,,AIAENG.NS,Mid Cap,1,1
+APLAPOLLO,APL Apollo Tubes Ltd.,Capital Goods,,APLAPOLLO.NS,Mid Cap,1,1
+AUBANK,AU Small Finance Bank Ltd.,Financial Services,,AUBANK.NS,Mid Cap,1,1
+AWL,AWL Agri Business Ltd.,FMCG,,AWL.NS,Small Cap,1,0
+AXISCADES,AXISCADES Technologies Ltd.,Capital Goods,,AXISCADES.NS,Micro Cap,0,0
+AADHARHFC,Aadhar Housing Finance Ltd.,Financial Services,,AADHARHFC.NS,Small Cap,1,0
+AARTIIND,Aarti Industries Ltd.,Chemicals,,AARTIIND.NS,Small Cap,1,0
+AARTIPHARM,Aarti Pharmalabs Ltd.,Healthcare,,AARTIPHARM.NS,Micro Cap,0,0
+AAVAS,Aavas Financiers Ltd.,Financial Services,,AAVAS.NS,Small Cap,1,0
+ABBOTINDIA,Abbott India Ltd.,Healthcare,,ABBOTINDIA.NS,Mid Cap,1,1
+ACE,Action Construction Equipment Ltd.,Capital Goods,,ACE.NS,Small Cap,1,0
+ACUTAAS,Acutaas Chemicals Ltd.,Healthcare,,ACUTAAS.NS,Small Cap,1,0
+ADANIENSOL,Adani Energy Solutions Ltd.,Power,,ADANIENSOL.NS,Large Cap,1,0
+ADANIENT,Adani Enterprises Ltd.,Metals & Mining,,ADANIENT.NS,Large Cap,1,0
+ADANIGREEN,Adani Green Energy Ltd.,Power,,ADANIGREEN.NS,Large Cap,1,0
+ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,Services,,ADANIPORTS.NS,Large Cap,1,0
+ADANIPOWER,Adani Power Ltd.,Power,,ADANIPOWER.NS,Large Cap,1,0
+ATGL,Adani Total Gas Ltd.,Oil Gas & Fuels,,ATGL.NS,Mid Cap,1,1
+ABCAPITAL,Aditya Birla Capital Ltd.,Financial Services,,ABCAPITAL.NS,Mid Cap,1,1
+ABFRL,Aditya Birla Fashion and Retail Ltd.,Consumer Services,,ABFRL.NS,Micro Cap,0,0
+ABLBL,Aditya Birla Lifestyle Brands Ltd.,Consumer Services,,ABLBL.NS,Micro Cap,0,0
+ABREL,Aditya Birla Real Estate Ltd.,Realty,,ABREL.NS,Small Cap,1,0
+ABSLAMC,Aditya Birla Sun Life AMC Ltd.,Financial Services,,ABSLAMC.NS,Small Cap,1,0
+CPPLUS,Aditya Infotech Ltd.,Capital Goods,,CPPLUS.NS,Small Cap,1,0
+AVL,Aditya Vision Ltd.,Consumer Services,,AVL.NS,Micro Cap,0,0
+ADVENZYMES,Advanced Enzyme Tech Ltd.,Healthcare,,ADVENZYMES.NS,Micro Cap,0,0
+AEGISLOG,Aegis Logistics Ltd.,Oil Gas & Fuels,,AEGISLOG.NS,Small Cap,1,0
+AEGISVOPAK,Aegis Vopak Terminals Ltd.,Oil Gas & Fuels,,AEGISVOPAK.NS,Small Cap,1,0
+AEQUS,Aequs Ltd.,Capital Goods,,AEQUS.NS,Micro Cap,0,0
+AEROFLEX,Aeroflex Industries Ltd.,Capital Goods,,AEROFLEX.NS,Micro Cap,0,0
+AETHER,Aether Industries Ltd.,Chemicals,,AETHER.NS,Small Cap,1,0
+AFCONS,Afcons Infrastructure Ltd.,Construction,,AFCONS.NS,Small Cap,1,0
+AFFLE,Affle 3i Ltd.,IT,,AFFLE.NS,Small Cap,1,0
+AJANTPHARM,Ajanta Pharmaceuticals Ltd.,Healthcare,,AJANTPHARM.NS,Mid Cap,1,1
+AKUMS,Akums Drugs and Pharmaceuticals Ltd.,Healthcare,,AKUMS.NS,Micro Cap,0,0
+ALKEM,Alkem Laboratories Ltd.,Healthcare,,ALKEM.NS,Mid Cap,1,1
+ALKYLAMINE,Alkyl Amines Chemicals Ltd.,Chemicals,,ALKYLAMINE.NS,Micro Cap,0,0
+ABDL,Allied Blenders and Distillers Ltd.,FMCG,,ABDL.NS,Small Cap,1,0
+AMAGI,Amagi Media Labs Ltd.,IT,,AMAGI.NS,Micro Cap,0,0
+ARE&M,Amara Raja Energy & Mobility Ltd.,Automobile,,ARE&M.NS,Small Cap,1,0
+AMBER,Amber Enterprises India Ltd.,Consumer Durables,,AMBER.NS,Small Cap,1,0
+AMBUJACEM,Ambuja Cements Ltd.,Construction,,AMBUJACEM.NS,Large Cap,1,0
+ANANDRATHI,Anand Rathi Wealth Ltd.,Financial Services,,ANANDRATHI.NS,Small Cap,1,0
+ANANTRAJ,Anant Raj Ltd.,Realty,,ANANTRAJ.NS,Small Cap,1,0
+ANGELONE,Angel One Ltd.,Financial Services,,ANGELONE.NS,Small Cap,1,0
+ANTHEM,Anthem Biosciences Ltd.,Healthcare,,ANTHEM.NS,Mid Cap,1,1
+ANURAS,Anupam Rasayan India Ltd.,Chemicals,,ANURAS.NS,Small Cap,1,0
+APARINDS,Apar Industries Ltd.,Capital Goods,,APARINDS.NS,Mid Cap,1,1
+APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,Healthcare,,APOLLOHOSP.NS,Large Cap,1,0
+APOLLO,Apollo Micro Systems Ltd.,Capital Goods,,APOLLO.NS,Micro Cap,0,0
+APOLLOTYRE,Apollo Tyres Ltd.,Automobile,,APOLLOTYRE.NS,Small Cap,1,0
+APTUS,Aptus Value Housing Finance India Ltd.,Financial Services,,APTUS.NS,Small Cap,1,0
+ACI,Archean Chemical Industries Ltd.,Chemicals,,ACI.NS,Micro Cap,0,0
+ARVINDFASN,Arvind Fashions Ltd.,Consumer Services,,ARVINDFASN.NS,Micro Cap,0,0
+ARVIND,Arvind Ltd.,Textiles,,ARVIND.NS,Micro Cap,0,0
+ASAHIINDIA,Asahi India Glass Ltd.,Automobile,,ASAHIINDIA.NS,Small Cap,1,0
+ASHAPURMIN,Ashapura Minechem Ltd.,Metals & Mining,,ASHAPURMIN.NS,Micro Cap,0,0
+ASHOKLEY,Ashok Leyland Ltd.,Capital Goods,,ASHOKLEY.NS,Mid Cap,1,1
+ASHOKA,Ashoka Buildcon Ltd.,Construction,,ASHOKA.NS,Micro Cap,0,0
+ASIANPAINT,Asian Paints Ltd.,Consumer Durables,,ASIANPAINT.NS,Large Cap,1,0
+ASTERDM,Aster DM Quality Care Ltd.,Healthcare,,ASTERDM.NS,Mid Cap,1,1
+ASTRAMICRO,Astra Microwave Products Ltd.,Capital Goods,,ASTRAMICRO.NS,Micro Cap,0,0
+ASTRAL,Astral Ltd.,Capital Goods,,ASTRAL.NS,Mid Cap,1,1
+ATHERENERG,Ather Energy Ltd.,Automobile,,ATHERENERG.NS,Small Cap,1,0
+ATLANTAELE,Atlanta Electricals Ltd.,Capital Goods,,ATLANTAELE.NS,Micro Cap,0,0
+ATUL,Atul Ltd.,Chemicals,,ATUL.NS,Small Cap,1,0
+AURIONPRO,Aurionpro Solution Ltd.,IT,,AURIONPRO.NS,Micro Cap,0,0
+AUROPHARMA,Aurobindo Pharma Ltd.,Healthcare,,AUROPHARMA.NS,Mid Cap,1,1
+AIIL,Authum Investment & Infrastructure Ltd.,Financial Services,,AIIL.NS,Mid Cap,1,1
+AVALON,Avalon Technologies Ltd.,Capital Goods,,AVALON.NS,Micro Cap,0,0
+AVANTIFEED,Avanti Feeds Ltd.,FMCG,,AVANTIFEED.NS,Small Cap,1,0
+DMART,Avenue Supermarts Ltd.,Consumer Services,,DMART.NS,Large Cap,1,0
+AXISBANK,Axis Bank Ltd.,Financial Services,,AXISBANK.NS,Large Cap,1,0
+AZAD,Azad Engineering Ltd.,Capital Goods,,AZAD.NS,Small Cap,1,0
+BEML,BEML Ltd.,Capital Goods,,BEML.NS,Small Cap,1,0
+BLS,BLS International Services Ltd.,Consumer Services,,BLS.NS,Small Cap,1,0
+BSE,BSE Ltd.,Financial Services,,BSE.NS,Large Cap,1,0
+BAJAJ-AUTO,Bajaj Auto Ltd.,Automobile,,BAJAJ-AUTO.NS,Large Cap,1,0
+BAJAJCON,Bajaj Consumer Care Ltd.,FMCG,,BAJAJCON.NS,Micro Cap,0,0
+BAJFINANCE,Bajaj Finance Ltd.,Financial Services,,BAJFINANCE.NS,Large Cap,1,0
+BAJAJFINSV,Bajaj Finserv Ltd.,Financial Services,,BAJAJFINSV.NS,Large Cap,1,0
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd.,Financial Services,,BAJAJHLDNG.NS,Large Cap,1,0
+BAJAJHFL,Bajaj Housing Finance Ltd.,Financial Services,,BAJAJHFL.NS,Mid Cap,1,1
+BALAMINES,Balaji Amines Ltd.,Chemicals,,BALAMINES.NS,Micro Cap,0,0
+BALKRISIND,Balkrishna Industries Ltd.,Automobile,,BALKRISIND.NS,Mid Cap,1,1
+BALRAMCHIN,Balrampur Chini Mills Ltd.,FMCG,,BALRAMCHIN.NS,Small Cap,1,0
+BALUFORGE,Balu Forge Industries Ltd.,Capital Goods,,BALUFORGE.NS,Micro Cap,0,0
+BANCOINDIA,Banco Products (India) Ltd.,Automobile,,BANCOINDIA.NS,Micro Cap,0,0
+BANDHANBNK,Bandhan Bank Ltd.,Financial Services,,BANDHANBNK.NS,Small Cap,1,0
 BANKBARODA,Bank of Baroda,Financial Services,,BANKBARODA.NS,Large Cap,1,0
-BERGEPAINT,Berger Paints,Consumer Durables,,BERGEPAINT.NS,Large Cap,1,0
-BOSCHLTD,Bosch,Automobile,,BOSCHLTD.NS,Large Cap,1,0
+BANKINDIA,Bank of India,Financial Services,,BANKINDIA.NS,Mid Cap,1,1
+MAHABANK,Bank of Maharashtra,Financial Services,,MAHABANK.NS,Mid Cap,1,1
+BATAINDIA,Bata India Ltd.,Consumer Durables,,BATAINDIA.NS,Small Cap,1,0
+BELRISE,Belrise Industries Ltd.,Automobile,,BELRISE.NS,Small Cap,1,0
+BERGEPAINT,Berger Paints India Ltd.,Consumer Durables,,BERGEPAINT.NS,Mid Cap,1,1
+BHARATCOAL,Bharat Coking Coal Ltd.,Oil Gas & Fuels,,BHARATCOAL.NS,Small Cap,1,0
+BDL,Bharat Dynamics Ltd.,Capital Goods,,BDL.NS,Mid Cap,1,1
+BEL,Bharat Electronics Ltd.,Capital Goods,,BEL.NS,Large Cap,1,0
+BHARATFORG,Bharat Forge Ltd.,Automobile,,BHARATFORG.NS,Mid Cap,1,1
+BHEL,Bharat Heavy Electricals Ltd.,Capital Goods,,BHEL.NS,Mid Cap,1,1
+BPCL,Bharat Petroleum Corporation Ltd.,Oil Gas & Fuels,,BPCL.NS,Large Cap,1,0
+BHARTIARTL,Bharti Airtel Ltd.,Telecom,,BHARTIARTL.NS,Large Cap,1,0
+BHARTIHEXA,Bharti Hexacom Ltd.,Telecom,,BHARTIHEXA.NS,Mid Cap,1,1
+GROWW,Billionbrains Garage Ventures Ltd.,Financial Services,,GROWW.NS,Mid Cap,1,1
+BIOCON,Biocon Ltd.,Healthcare,,BIOCON.NS,Mid Cap,1,1
+BIRLACORPN,Birla Corporation Ltd.,Construction,,BIRLACORPN.NS,Micro Cap,0,0
+BSOFT,Birlasoft Ltd.,IT,,BSOFT.NS,Small Cap,1,0
+BBOX,Black Box Ltd.,IT,,BBOX.NS,Small Cap,1,0
+BLACKBUCK,Blackbuck Ltd.,Services,,BLACKBUCK.NS,Micro Cap,0,0
+BLUEJET,Blue Jet Healthcare Ltd.,Healthcare,,BLUEJET.NS,Micro Cap,0,0
+BLUESTARCO,Blue Star Ltd.,Consumer Durables,,BLUESTARCO.NS,Mid Cap,1,1
+BLUESTONE,BlueStone Jewellery and Lifestyle Ltd.,Consumer Durables,,BLUESTONE.NS,Micro Cap,0,0
+BORORENEW,Borosil Renewables Ltd.,Capital Goods,,BORORENEW.NS,Micro Cap,0,0
+BOSCHLTD,Bosch Ltd.,Automobile,,BOSCHLTD.NS,Large Cap,1,0
+FIRSTCRY,Brainbees Solutions Ltd.,Consumer Services,,FIRSTCRY.NS,Small Cap,1,0
+BRIGADE,Brigade Enterprises Ltd.,Realty,,BRIGADE.NS,Small Cap,1,0
+BRITANNIA,Britannia Industries Ltd.,FMCG,,BRITANNIA.NS,Large Cap,1,0
+MAPMYINDIA,C.E. Info Systems Ltd.,IT,,MAPMYINDIA.NS,Micro Cap,0,0
+CCL,CCL Products (I) Ltd.,FMCG,,CCL.NS,Small Cap,1,0
+CESC,CESC Ltd.,Power,,CESC.NS,Small Cap,1,0
+CGPOWER,CG Power and Industrial Solutions Ltd.,Capital Goods,,CGPOWER.NS,Large Cap,1,0
+CIEINDIA,CIE Automotive India Ltd.,Automobile,,CIEINDIA.NS,Small Cap,1,0
+CMRGREEN,CMR Green Technologies Ltd.,Capital Goods,,CMRGREEN.NS,Micro Cap,0,0
+CMSINFO,CMS Info Systems Ltd.,Services,,CMSINFO.NS,Micro Cap,0,0
+CRISIL,CRISIL Ltd.,Financial Services,,CRISIL.NS,Mid Cap,1,1
+CSBBANK,CSB Bank Ltd.,Financial Services,,CSBBANK.NS,Micro Cap,0,0
+CAMPUS,Campus Activewear Ltd.,Consumer Durables,,CAMPUS.NS,Micro Cap,0,0
+CANFINHOME,Can Fin Homes Ltd.,Financial Services,,CANFINHOME.NS,Small Cap,1,0
 CANBK,Canara Bank,Financial Services,,CANBK.NS,Large Cap,1,0
-CHOLAFIN,Cholamandalam Investment,Financial Services,,CHOLAFIN.NS,Large Cap,1,0
-COLPAL,Colgate-Palmolive,FMCG,,COLPAL.NS,Large Cap,1,0
-DLF,DLF,Realty,,DLF.NS,Large Cap,1,0
-DABUR,Dabur India,FMCG,,DABUR.NS,Large Cap,1,0
-DIVISLAB,Divi's Laboratories,Pharma,,DIVISLAB.NS,Large Cap,1,0
-GAIL,GAIL India,Oil Gas & Fuels,,GAIL.NS,Large Cap,1,0
-GODREJCP,Godrej Consumer Products,FMCG,,GODREJCP.NS,Large Cap,1,0
-HAVELLS,Havells India,Capital Goods,,HAVELLS.NS,Large Cap,1,0
-HAL,Hindustan Aeronautics,Capital Goods,,HAL.NS,Large Cap,1,0
-ICICIGI,ICICI Lombard,Financial Services,,ICICIGI.NS,Large Cap,1,0
-ICICIPRULI,ICICI Prudential Life,Financial Services,,ICICIPRULI.NS,Large Cap,1,0
-IOC,Indian Oil Corp,Oil Gas & Fuels,,IOC.NS,Large Cap,1,0
-IRCTC,IRCTC,Services,,IRCTC.NS,Large Cap,1,0
-JINDALSTEL,Jindal Steel & Power,Metals & Mining,,JINDALSTEL.NS,Large Cap,1,0
-LICI,Life Insurance Corp,Financial Services,,LICI.NS,Large Cap,1,0
-LTIM,LTIMindtree,IT,,LTIM.NS,Large Cap,1,0
-LTTS,L&T Technology Services,IT,,LTTS.NS,Large Cap,1,0
-MARICO,Marico,FMCG,,MARICO.NS,Large Cap,1,0
-MCDOWELL-N,United Spirits,FMCG,,MCDOWELL-N.NS,Large Cap,1,0
-MUTHOOTFIN,Muthoot Finance,Financial Services,,MUTHOOTFIN.NS,Large Cap,1,0
-NAUKRI,Info Edge,IT,,NAUKRI.NS,Large Cap,1,0
-NHPC,NHPC,Power,,NHPC.NS,Large Cap,1,0
-NMDC,NMDC,Metals & Mining,,NMDC.NS,Large Cap,1,0
-OFSS,Oracle Financial Services,IT,,OFSS.NS,Large Cap,1,0
-PIDILITIND,Pidilite Industries,Consumer Durables,,PIDILITIND.NS,Large Cap,1,0
-PFC,Power Finance Corp,Financial Services,,PFC.NS,Large Cap,1,0
-RECLTD,REC,Financial Services,,RECLTD.NS,Large Cap,1,0
-SAIL,Steel Authority of India,Metals & Mining,,SAIL.NS,Large Cap,1,0
-SIEMENS,Siemens,Capital Goods,,SIEMENS.NS,Large Cap,1,0
-SRF,SRF,Chemicals,,SRF.NS,Large Cap,1,0
-TORNTPHARM,Torrent Pharmaceuticals,Pharma,,TORNTPHARM.NS,Large Cap,1,0
-UPL,UPL,Chemicals,,UPL.NS,Large Cap,1,0
-VBL,Varun Beverages,FMCG,,VBL.NS,Large Cap,1,0
-VEDL,Vedanta,Metals & Mining,,VEDL.NS,Large Cap,1,0
-ZOMATO,Zomato,Consumer Services,,ZOMATO.NS,Large Cap,1,0
-ABCAPITAL,Aditya Birla Capital,Financial Services,,ABCAPITAL.NS,Mid Cap,1,1
-ABFRL,Aditya Birla Fashion,Consumer Durables,,ABFRL.NS,Mid Cap,1,1
-ALKEM,Alkem Laboratories,Pharma,,ALKEM.NS,Mid Cap,1,1
-APOLLOTYRE,Apollo Tyres,Automobile,,APOLLOTYRE.NS,Mid Cap,1,1
-ASHOKLEY,Ashok Leyland,Automobile,,ASHOKLEY.NS,Mid Cap,1,1
-ASTRAL,Astral,Construction,,ASTRAL.NS,Mid Cap,1,1
-ATUL,Atul,Chemicals,,ATUL.NS,Mid Cap,1,1
-AUBANK,AU Small Finance Bank,Financial Services,,AUBANK.NS,Mid Cap,1,1
-APLAPOLLO,APL Apollo Tubes,Metals & Mining,,APLAPOLLO.NS,Mid Cap,1,1
-BALKRISIND,Balkrishna Industries,Automobile,,BALKRISIND.NS,Mid Cap,1,1
-BANDHANBNK,Bandhan Bank,Financial Services,,BANDHANBNK.NS,Mid Cap,1,1
-BATAINDIA,Bata India,Consumer Durables,,BATAINDIA.NS,Mid Cap,1,1
-BHEL,Bharat Heavy Electricals,Capital Goods,,BHEL.NS,Mid Cap,1,1
-BIOCON,Biocon,Pharma,,BIOCON.NS,Mid Cap,1,1
-BRIGADE,Brigade Enterprises,Realty,,BRIGADE.NS,Mid Cap,1,1
-CESC,CESC,Power,,CESC.NS,Mid Cap,1,1
-CGPOWER,CG Power,Capital Goods,,CGPOWER.NS,Mid Cap,1,1
-COFORGE,Coforge,IT,,COFORGE.NS,Mid Cap,1,1
-CROMPTON,Crompton Greaves Consumer,Capital Goods,,CROMPTON.NS,Mid Cap,1,1
-CUMMINSIND,Cummins India,Capital Goods,,CUMMINSIND.NS,Mid Cap,1,1
-DALBHARAT,Dalmia Bharat,Construction,,DALBHARAT.NS,Mid Cap,1,1
-DEEPAKNTR,Deepak Nitrite,Chemicals,,DEEPAKNTR.NS,Mid Cap,1,1
-DELHIVERY,Delhivery,Services,,DELHIVERY.NS,Mid Cap,1,1
-DIXON,Dixon Technologies,Consumer Durables,,DIXON.NS,Mid Cap,1,1
-ESCORTS,Escorts Kubota,Automobile,,ESCORTS.NS,Mid Cap,1,1
-EXIDEIND,Exide Industries,Automobile,,EXIDEIND.NS,Mid Cap,1,1
-FEDERALBNK,Federal Bank,Financial Services,,FEDERALBNK.NS,Mid Cap,1,1
-GLENMARK,Glenmark Pharma,Pharma,,GLENMARK.NS,Mid Cap,1,1
-GMRAIRPORT,GMR Airports,Services,,GMRAIRPORT.NS,Mid Cap,1,1
-GODREJPROP,Godrej Properties,Realty,,GODREJPROP.NS,Mid Cap,1,1
-GRANULES,Granules India,Pharma,,GRANULES.NS,Mid Cap,1,1
-GSPL,Gujarat State Petronet,Oil Gas & Fuels,,GSPL.NS,Mid Cap,1,1
-HINDCOPPER,Hindustan Copper,Metals & Mining,,HINDCOPPER.NS,Mid Cap,1,1
-HINDPETRO,Hindustan Petroleum,Oil Gas & Fuels,,HINDPETRO.NS,Mid Cap,1,1
-HONASA,Honasa Consumer,FMCG,,HONASA.NS,Mid Cap,1,1
-IDFCFIRSTB,IDFC First Bank,Financial Services,,IDFCFIRSTB.NS,Mid Cap,1,1
-IEX,Indian Energy Exchange,Financial Services,,IEX.NS,Mid Cap,1,1
+CANHLIFE,Canara HSBC Life Insurance Company Ltd.,Financial Services,,CANHLIFE.NS,Small Cap,1,0
+CRAMC,Canara Robeco Asset Management Company Ltd.,Financial Services,,CRAMC.NS,Micro Cap,0,0
+CAPILLARY,Capillary Technologies India Ltd.,IT,,CAPILLARY.NS,Micro Cap,0,0
+CAPLIPOINT,Caplin Point Laboratories Ltd.,Healthcare,,CAPLIPOINT.NS,Small Cap,1,0
+CGCL,Capri Global Capital Ltd.,Financial Services,,CGCL.NS,Small Cap,1,0
+CARBORUNIV,Carborundum Universal Ltd.,Capital Goods,,CARBORUNIV.NS,Small Cap,1,0
+CARTRADE,Cartrade Tech Ltd.,Consumer Services,,CARTRADE.NS,Small Cap,1,0
+CASTROLIND,Castrol India Ltd.,Oil Gas & Fuels,,CASTROLIND.NS,Small Cap,1,0
+CEATLTD,Ceat Ltd.,Automobile,,CEATLTD.NS,Small Cap,1,0
+CEIGALL,Ceigall India Ltd.,Construction,,CEIGALL.NS,Micro Cap,0,0
+CELLO,Cello World Ltd.,Consumer Durables,,CELLO.NS,Micro Cap,0,0
+CEMPRO,Cemindia Projects Ltd.,Construction,,CEMPRO.NS,Small Cap,1,0
+CENTRALBK,Central Bank of India,Financial Services,,CENTRALBK.NS,Small Cap,1,0
+CDSL,Central Depository Services (India) Ltd.,Financial Services,,CDSL.NS,Small Cap,1,0
+CMPDI,Central Mine Planning & Design Institute Ltd.,Services,,CMPDI.NS,Small Cap,1,0
+CENTUM,Centum Electronics Ltd.,Capital Goods,,CENTUM.NS,Micro Cap,0,0
+CERA,Cera Sanitaryware Ltd,Consumer Durables,,CERA.NS,Micro Cap,0,0
+CHALET,Chalet Hotels Ltd.,Consumer Services,,CHALET.NS,Micro Cap,0,0
+CHAMBLFERT,Chambal Fertilizers & Chemicals Ltd.,Chemicals,,CHAMBLFERT.NS,Small Cap,1,0
+CHENNPETRO,Chennai Petroleum Corporation Ltd.,Oil Gas & Fuels,,CHENNPETRO.NS,Small Cap,1,0
+CHOICEIN,Choice International Ltd.,Financial Services,,CHOICEIN.NS,Small Cap,1,0
+CHOLAHLDNG,Cholamandalam Financial Holdings Ltd.,Financial Services,,CHOLAHLDNG.NS,Small Cap,1,0
+CHOLAFIN,Cholamandalam Investment and Finance Company Ltd.,Financial Services,,CHOLAFIN.NS,Large Cap,1,0
+CIPLA,Cipla Ltd.,Healthcare,,CIPLA.NS,Large Cap,1,0
+CUB,City Union Bank Ltd.,Financial Services,,CUB.NS,Small Cap,1,0
+CLEANMAX,Clean Max Enviro Energy Solutions Ltd.,Power,,CLEANMAX.NS,Small Cap,1,0
+CLEAN,Clean Science and Technology Ltd.,Chemicals,,CLEAN.NS,Small Cap,1,0
+COALINDIA,Coal India Ltd.,Oil Gas & Fuels,,COALINDIA.NS,Large Cap,1,0
+COCHINSHIP,Cochin Shipyard Ltd.,Capital Goods,,COCHINSHIP.NS,Mid Cap,1,1
+COFORGE,Coforge Ltd.,IT,,COFORGE.NS,Mid Cap,1,1
+COHANCE,Cohance Lifesciences Ltd.,Healthcare,,COHANCE.NS,Small Cap,1,0
+COLPAL,Colgate Palmolive (India) Ltd.,FMCG,,COLPAL.NS,Mid Cap,1,1
+CAMS,Computer Age Management Services Ltd.,Financial Services,,CAMS.NS,Small Cap,1,0
+CONCORDBIO,Concord Biotech Ltd.,Healthcare,,CONCORDBIO.NS,Small Cap,1,0
+CONCOR,Container Corporation of India Ltd.,Services,,CONCOR.NS,Mid Cap,1,1
+COROMANDEL,Coromandel International Ltd.,Chemicals,,COROMANDEL.NS,Mid Cap,1,1
+CRAFTSMAN,Craftsman Automation Ltd.,Automobile,,CRAFTSMAN.NS,Small Cap,1,0
+CREDITACC,CreditAccess Grameen Ltd.,Financial Services,,CREDITACC.NS,Small Cap,1,0
+CROMPTON,Crompton Greaves Consumer Electricals Ltd.,Consumer Durables,,CROMPTON.NS,Small Cap,1,0
+CUMMINSIND,Cummins India Ltd.,Capital Goods,,CUMMINSIND.NS,Large Cap,1,0
+CUPID,Cupid Ltd.,FMCG,,CUPID.NS,Small Cap,1,0
+CYIENT,Cyient Ltd.,IT,,CYIENT.NS,Small Cap,1,0
+DCBBANK,DCB Bank Ltd.,Financial Services,,DCBBANK.NS,Micro Cap,0,0
+DLF,DLF Ltd.,Realty,,DLF.NS,Large Cap,1,0
+DOMS,DOMS Industries Ltd.,FMCG,,DOMS.NS,Small Cap,1,0
+DABUR,Dabur India Ltd.,FMCG,,DABUR.NS,Mid Cap,1,1
+DALBHARAT,Dalmia Bharat Ltd.,Construction,,DALBHARAT.NS,Mid Cap,1,1
+DATAPATTNS,Data Patterns (India) Ltd.,Capital Goods,,DATAPATTNS.NS,Small Cap,1,0
+DATAMATICS,Datamatics Global Services Ltd.,IT,,DATAMATICS.NS,Micro Cap,0,0
+DEEPAKFERT,Deepak Fertilisers & Petrochemicals Corp. Ltd.,Chemicals,,DEEPAKFERT.NS,Small Cap,1,0
+DEEPAKNTR,Deepak Nitrite Ltd.,Chemicals,,DEEPAKNTR.NS,Small Cap,1,0
+DELHIVERY,Delhivery Ltd.,Services,,DELHIVERY.NS,Small Cap,1,0
+DEVYANI,Devyani International Ltd.,Consumer Services,,DEVYANI.NS,Small Cap,1,0
+DBL,Dilip Buildcon Ltd.,Construction,,DBL.NS,Micro Cap,0,0
+DIVISLAB,Divi's Laboratories Ltd.,Healthcare,,DIVISLAB.NS,Large Cap,1,0
+DIXON,Dixon Technologies (India) Ltd.,Consumer Durables,,DIXON.NS,Mid Cap,1,1
+LALPATHLAB,Dr. Lal Path Labs Ltd.,Healthcare,,LALPATHLAB.NS,Small Cap,1,0
+DRREDDY,Dr. Reddy's Laboratories Ltd.,Healthcare,,DRREDDY.NS,Large Cap,1,0
+DUMMYHEG,Dummy HEG Ltd.,Capital Goods,,DUMMYHEG.NS,Small Cap,1,0
+DUMMYINGL1,Dummy India Glycols ltd. 1,Healthcare,,DUMMYINGL1.NS,Micro Cap,0,0
+DUMMYINGL2,Dummy India Glycols ltd. 2,FMCG,,DUMMYINGL2.NS,Micro Cap,0,0
+DUMMYINXGN,Dummy Inox Green Ltd.,Construction,,DUMMYINXGN.NS,Micro Cap,0,0
+DYNAMATECH,Dynamatic Technologies Ltd.,Capital Goods,,DYNAMATECH.NS,Micro Cap,0,0
+EIDPARRY,E.I.D. Parry (India) Ltd.,FMCG,,EIDPARRY.NS,Small Cap,1,0
+EIHOTEL,EIH Ltd.,Consumer Services,,EIHOTEL.NS,Small Cap,1,0
+EPL,EPL Ltd.,Capital Goods,,EPL.NS,Micro Cap,0,0
+EDELWEISS,Edelweiss Financial Services Ltd.,Financial Services,,EDELWEISS.NS,Micro Cap,0,0
+EICHERMOT,Eicher Motors Ltd.,Automobile,,EICHERMOT.NS,Large Cap,1,0
+ELECON,Elecon Engineering Co. Ltd.,Capital Goods,,ELECON.NS,Small Cap,1,0
+EMIL,Electronics Mart India Ltd.,Consumer Services,,EMIL.NS,Micro Cap,0,0
+ELECTCAST,Electrosteel Castings Ltd.,Capital Goods,,ELECTCAST.NS,Micro Cap,0,0
+ELGIEQUIP,Elgi Equipments Ltd.,Capital Goods,,ELGIEQUIP.NS,Small Cap,1,0
+ELLEN,Ellenbarrie Industrial Gases Ltd.,Chemicals,,ELLEN.NS,Micro Cap,0,0
+EMAMILTD,Emami Ltd.,FMCG,,EMAMILTD.NS,Small Cap,1,0
+EMBDL,Embassy Developments Ltd.,Realty,,EMBDL.NS,Micro Cap,0,0
+EMCURE,Emcure Pharmaceuticals Ltd.,Healthcare,,EMCURE.NS,Small Cap,1,0
+EMMVEE,Emmvee Photovoltaic Power Ltd.,Capital Goods,,EMMVEE.NS,Small Cap,1,0
+ENDURANCE,Endurance Technologies Ltd.,Automobile,,ENDURANCE.NS,Mid Cap,1,1
+ENGINERSIN,Engineers India Ltd.,Construction,,ENGINERSIN.NS,Small Cap,1,0
+ENTERO,Entero Healthcare Solutions Ltd.,Consumer Services,,ENTERO.NS,Micro Cap,0,0
+EIEL,Enviro Infra Engineers Ltd.,Power,,EIEL.NS,Micro Cap,0,0
+EQUITASBNK,Equitas Small Finance Bank Ltd.,Financial Services,,EQUITASBNK.NS,Micro Cap,0,0
+ERIS,Eris Lifesciences Ltd.,Healthcare,,ERIS.NS,Micro Cap,0,0
+ESCORTS,Escorts Kubota Ltd.,Capital Goods,,ESCORTS.NS,Mid Cap,1,1
+ETERNAL,Eternal Ltd.,Consumer Services,,ETERNAL.NS,Large Cap,1,0
+EXIDEIND,Exide Industries Ltd.,Automobile,,EXIDEIND.NS,Mid Cap,1,1
+NYKAA,FSN E-Commerce Ventures Ltd.,Consumer Services,,NYKAA.NS,Mid Cap,1,1
+FEDFINA,Fedbank Financial Services Ltd.,Financial Services,,FEDFINA.NS,Micro Cap,0,0
+FEDERALBNK,Federal Bank Ltd.,Financial Services,,FEDERALBNK.NS,Mid Cap,1,1
+FACT,Fertilisers and Chemicals Travancore Ltd.,Chemicals,,FACT.NS,Mid Cap,1,1
+FIEMIND,Fiem Industries Ltd,Automobile,,FIEMIND.NS,Micro Cap,0,0
+FINCABLES,Finolex Cables Ltd.,Capital Goods,,FINCABLES.NS,Small Cap,1,0
+FINPIPE,Finolex Industries Ltd.,Capital Goods,,FINPIPE.NS,Micro Cap,0,0
+FSL,Firstsource Solutions Ltd.,Services,,FSL.NS,Small Cap,1,0
+FIVESTAR,Five-Star Business Finance Ltd.,Financial Services,,FIVESTAR.NS,Small Cap,1,0
+FORCEMOT,Force Motors Ltd.,Automobile,,FORCEMOT.NS,Small Cap,1,0
+FORTIS,Fortis Healthcare Ltd.,Healthcare,,FORTIS.NS,Mid Cap,1,1
+FRACTAL,Fractal Analytics Ltd.,IT,,FRACTAL.NS,Small Cap,1,0
+UTLSOLAR,Fujiyama Power Systems Ltd.,Capital Goods,,UTLSOLAR.NS,Micro Cap,0,0
+GAIL,GAIL (India) Ltd.,Oil Gas & Fuels,,GAIL.NS,Large Cap,1,0
+GVT&D,GE Vernova T&D India Ltd.,Capital Goods,,GVT&D.NS,Mid Cap,1,1
+GMRAIRPORT,GMR Airports Ltd.,Services,,GMRAIRPORT.NS,Mid Cap,1,1
+GMRP&UI,GMR Power and Urban Infra Ltd.,Power,,GMRP&UI.NS,Micro Cap,0,0
+EBGNG,GNG Electronics Ltd.,IT,,EBGNG.NS,Micro Cap,0,0
+GABRIEL,Gabriel India Ltd.,Automobile,,GABRIEL.NS,Small Cap,1,0
+GALLANTT,Gallantt Ispat Ltd.,Capital Goods,,GALLANTT.NS,Small Cap,1,0
+GRSE,Garden Reach Shipbuilders & Engineers Ltd.,Capital Goods,,GRSE.NS,Small Cap,1,0
+GRWRHITECH,Garware Hi-Tech Films Ltd.,Capital Goods,,GRWRHITECH.NS,Micro Cap,0,0
+GICRE,General Insurance Corporation of India,Financial Services,,GICRE.NS,Mid Cap,1,1
+GENUSPOWER,Genus Power Infrastructures Ltd.,Capital Goods,,GENUSPOWER.NS,Micro Cap,0,0
+GILLETTE,Gillette India Ltd.,FMCG,,GILLETTE.NS,Small Cap,1,0
+GLAND,Gland Pharma Ltd.,Healthcare,,GLAND.NS,Small Cap,1,0
+GLAXO,Glaxosmithkline Pharmaceuticals Ltd.,Healthcare,,GLAXO.NS,Mid Cap,1,1
+GLENMARK,Glenmark Pharmaceuticals Ltd.,Healthcare,,GLENMARK.NS,Mid Cap,1,1
+MEDANTA,Global Health Ltd.,Healthcare,,MEDANTA.NS,Mid Cap,1,1
+GPIL,Godawari Power & Ispat Ltd.,Capital Goods,,GPIL.NS,Small Cap,1,0
+GODFRYPHLP,Godfrey Phillips India Ltd.,FMCG,,GODFRYPHLP.NS,Mid Cap,1,1
+GODREJAGRO,Godrej Agrovet Ltd.,FMCG,,GODREJAGRO.NS,Micro Cap,0,0
+GODREJCP,Godrej Consumer Products Ltd.,FMCG,,GODREJCP.NS,Large Cap,1,0
+GODREJIND,Godrej Industries Ltd.,Diversified,,GODREJIND.NS,Mid Cap,1,1
+GODREJPROP,Godrej Properties Ltd.,Realty,,GODREJPROP.NS,Mid Cap,1,1
+GOKEX,Gokaldas Exports Ltd.,Textiles,,GOKEX.NS,Micro Cap,0,0
+GOKULAGRO,Gokul Agro Resources Ltd.,FMCG,,GOKULAGRO.NS,Micro Cap,0,0
+GOLDIAM,Goldiam International Ltd.,Consumer Durables,,GOLDIAM.NS,Micro Cap,0,0
+GRANULES,Granules India Ltd.,Healthcare,,GRANULES.NS,Small Cap,1,0
+GRAPHITE,Graphite India Ltd.,Capital Goods,,GRAPHITE.NS,Small Cap,1,0
+GRASIM,Grasim Industries Ltd.,Construction,,GRASIM.NS,Large Cap,1,0
+GRAVITA,Gravita India Ltd.,Metals & Mining,,GRAVITA.NS,Small Cap,1,0
+GESHIP,Great Eastern Shipping Co. Ltd.,Services,,GESHIP.NS,Small Cap,1,0
+GREAVESCOT,Greaves Cotton Ltd.,Capital Goods,,GREAVESCOT.NS,Micro Cap,0,0
+GRINDWELL,Grindwell Norton Ltd.,Capital Goods,,GRINDWELL.NS,Micro Cap,0,0
+GUJALKALI,Gujarat Alkalies & Chemicals Ltd.,Chemicals,,GUJALKALI.NS,Micro Cap,0,0
+GAEL,Gujarat Ambuja Exports Ltd.,FMCG,,GAEL.NS,Micro Cap,0,0
+FLUOROCHEM,Gujarat Fluorochemicals Ltd.,Chemicals,,FLUOROCHEM.NS,Mid Cap,1,1
+GMDCLTD,Gujarat Mineral Development Corporation Ltd.,Metals & Mining,,GMDCLTD.NS,Small Cap,1,0
+GNFC,Gujarat Narmada Valley Fertilizers and Chemicals Ltd.,Chemicals,,GNFC.NS,Micro Cap,0,0
+GPPL,Gujarat Pipavav Port Ltd.,Services,,GPPL.NS,Micro Cap,0,0
+GSFC,Gujarat State Fertilizers & Chemicals Ltd.,Chemicals,,GSFC.NS,Micro Cap,0,0
+HGINFRA,H.G. Infra Engineering Ltd.,Construction,,HGINFRA.NS,Micro Cap,0,0
+HBLENGINE,HBL Engineering Ltd.,Capital Goods,,HBLENGINE.NS,Small Cap,1,0
+HCLTECH,HCL Technologies Ltd.,IT,,HCLTECH.NS,Large Cap,1,0
+HDBFS,HDB Financial Services Ltd.,Financial Services,,HDBFS.NS,Mid Cap,1,1
+HDFCAMC,HDFC Asset Management Company Ltd.,Financial Services,,HDFCAMC.NS,Large Cap,1,0
+HDFCBANK,HDFC Bank Ltd.,Financial Services,,HDFCBANK.NS,Large Cap,1,0
+HDFCLIFE,HDFC Life Insurance Company Ltd.,Financial Services,,HDFCLIFE.NS,Large Cap,1,0
+HEGAM,HEG Advanced Materials Ltd.,Capital Goods,,HEGAM.NS,Small Cap,1,0
+HAPPSTMNDS,Happiest Minds Technologies Ltd.,IT,,HAPPSTMNDS.NS,Micro Cap,0,0
+HAPPYFORGE,Happy Forgings Ltd.,Capital Goods,,HAPPYFORGE.NS,Micro Cap,0,0
+HAVELLS,Havells India Ltd.,Consumer Durables,,HAVELLS.NS,Mid Cap,1,1
+HCG,Healthcare Global Enterprises Ltd.,Healthcare,,HCG.NS,Micro Cap,0,0
+HERITGFOOD,Heritage Foods Ltd.,FMCG,,HERITGFOOD.NS,Micro Cap,0,0
+HEROMOTOCO,Hero MotoCorp Ltd.,Automobile,,HEROMOTOCO.NS,Mid Cap,1,1
+HEXT,Hexaware Technologies Ltd.,IT,,HEXT.NS,Mid Cap,1,1
+HSCL,Himadri Speciality Chemical Ltd.,Chemicals,,HSCL.NS,Small Cap,1,0
+HINDALCO,Hindalco Industries Ltd.,Metals & Mining,,HINDALCO.NS,Large Cap,1,0
+HAL,Hindustan Aeronautics Ltd.,Capital Goods,,HAL.NS,Large Cap,1,0
+HCC,Hindustan Construction Co. Ltd.,Construction,,HCC.NS,Micro Cap,0,0
+HINDCOPPER,Hindustan Copper Ltd.,Metals & Mining,,HINDCOPPER.NS,Mid Cap,1,1
+HINDPETRO,Hindustan Petroleum Corporation Ltd.,Oil Gas & Fuels,,HINDPETRO.NS,Mid Cap,1,1
+HINDUNILVR,Hindustan Unilever Ltd.,FMCG,,HINDUNILVR.NS,Large Cap,1,0
+HINDZINC,Hindustan Zinc Ltd.,Metals & Mining,,HINDZINC.NS,Large Cap,1,0
+POWERINDIA,Hitachi Energy India Ltd.,Capital Goods,,POWERINDIA.NS,Large Cap,1,0
+HOMEFIRST,Home First Finance Company India Ltd.,Financial Services,,HOMEFIRST.NS,Small Cap,1,0
+HONASA,Honasa Consumer Ltd.,FMCG,,HONASA.NS,Small Cap,1,0
+HONAUT,Honeywell Automation India Ltd.,Capital Goods,,HONAUT.NS,Small Cap,1,0
+HUDCO,Housing & Urban Development Corporation Ltd.,Financial Services,,HUDCO.NS,Mid Cap,1,1
+HYUNDAI,Hyundai Motor India Ltd.,Automobile,,HYUNDAI.NS,Large Cap,1,0
+ICICIBANK,ICICI Bank Ltd.,Financial Services,,ICICIBANK.NS,Large Cap,1,0
+ICICILIFE,ICICI Life Insurance Ltd.,Financial Services,,ICICILIFE.NS,Mid Cap,1,1
+ICICIGI,ICICI Lombard General Insurance Company Ltd.,Financial Services,,ICICIGI.NS,Mid Cap,1,1
+ICICIAMC,ICICI Prudential Asset Management Company Ltd.,Financial Services,,ICICIAMC.NS,Mid Cap,1,1
+IDBI,IDBI Bank Ltd.,Financial Services,,IDBI.NS,Small Cap,1,0
+IDFCFIRSTB,IDFC First Bank Ltd.,Financial Services,,IDFCFIRSTB.NS,Mid Cap,1,1
+IFBIND,IFB Industries Ltd.,Consumer Durables,,IFBIND.NS,Micro Cap,0,0
+IFCI,IFCI Ltd.,Financial Services,,IFCI.NS,Small Cap,1,0
+IIFLCAPS,IIFL Capital Services Ltd.,Financial Services,,IIFLCAPS.NS,Micro Cap,0,0
+IIFL,IIFL Finance Ltd.,Financial Services,,IIFL.NS,Small Cap,1,0
+INOXINDIA,INOX India Ltd.,Capital Goods,,INOXINDIA.NS,Small Cap,1,0
+IRB,IRB Infrastructure Developers Ltd.,Construction,,IRB.NS,Small Cap,1,0
+IRCON,IRCON International Ltd.,Construction,,IRCON.NS,Small Cap,1,0
+ITCHOTELS,ITC Hotels Ltd.,Consumer Services,,ITCHOTELS.NS,Mid Cap,1,1
+ITC,ITC Ltd.,FMCG,,ITC.NS,Large Cap,1,0
+ITI,ITI Ltd.,Telecom,,ITI.NS,Small Cap,1,0
+INDGN,Indegene Ltd.,Healthcare,,INDGN.NS,Micro Cap,0,0
+INDIACEM,India Cements Ltd.,Construction,,INDIACEM.NS,Small Cap,1,0
+INDIAGLYCO,India Glycols Ltd.,FMCG,,INDIAGLYCO.NS,Micro Cap,0,0
+INDIAMART,Indiamart Intermesh Ltd.,Consumer Services,,INDIAMART.NS,Small Cap,1,0
 INDIANB,Indian Bank,Financial Services,,INDIANB.NS,Mid Cap,1,1
-INDHOTEL,Indian Hotels,Consumer Services,,INDHOTEL.NS,Mid Cap,1,1
-INDUSTOWER,Indus Towers,Telecom,,INDUSTOWER.NS,Mid Cap,1,1
-INOXWIND,Inox Wind,Capital Goods,,INOXWIND.NS,Mid Cap,1,1
-IPL,India Power,Power,,IPL.NS,Mid Cap,1,1
-JKCEMENT,JK Cement,Construction,,JKCEMENT.NS,Mid Cap,1,1
-JSL,Jindal Stainless,Metals & Mining,,JSL.NS,Mid Cap,1,1
-JUBLFOOD,Jubilant Foodworks,Consumer Services,,JUBLFOOD.NS,Mid Cap,1,1
-KALYANKJIL,Kalyan Jewellers,Consumer Durables,,KALYANKJIL.NS,Mid Cap,1,1
-KPITTECH,KPIT Technologies,IT,,KPITTECH.NS,Mid Cap,1,1
-KPRMILL,KPR Mill,Textiles,,KPRMILL.NS,Mid Cap,1,1
-KRISHNADEF,Krishna Defence,Capital Goods,,KRISHNADEF.NS,Mid Cap,1,1
-LAURUSLABS,Laurus Labs,Pharma,,LAURUSLABS.NS,Mid Cap,1,1
-LICHSGFIN,LIC Housing Finance,Financial Services,,LICHSGFIN.NS,Mid Cap,1,1
-LUPIN,Lupin,Pharma,,LUPIN.NS,Mid Cap,1,1
-MANAPPURAM,Manappuram Finance,Financial Services,,MANAPPURAM.NS,Mid Cap,1,1
-MAZDOCK,Mazagon Dock,Capital Goods,,MAZDOCK.NS,Mid Cap,1,1
-MCX,MCX,Financial Services,,MCX.NS,Mid Cap,1,1
-METROPOLIS,Metropolis Healthcare,Healthcare,,METROPOLIS.NS,Mid Cap,1,1
-MFSL,Max Financial Services,Financial Services,,MFSL.NS,Mid Cap,1,1
-MGL,Mahanagar Gas,Oil Gas & Fuels,,MGL.NS,Mid Cap,1,1
-MOTHERSON,Samvardhana Motherson,Automobile,,MOTHERSON.NS,Mid Cap,1,1
-MPHASIS,Mphasis,IT,,MPHASIS.NS,Mid Cap,1,1
-MRF,MRF,Automobile,,MRF.NS,Large Cap,1,0
-NATIONALUM,National Aluminium,Metals & Mining,,NATIONALUM.NS,Mid Cap,1,1
-NYKAA,FSN E-Commerce (Nykaa),Consumer Services,,NYKAA.NS,Mid Cap,1,1
-OIL,Oil India,Oil Gas & Fuels,,OIL.NS,Mid Cap,1,1
-PAGEIND,Page Industries,Textiles,,PAGEIND.NS,Mid Cap,1,1
-PATANJALI,Patanjali Foods,FMCG,,PATANJALI.NS,Mid Cap,1,1
-PAYTM,One 97 Communications,IT,,PAYTM.NS,Mid Cap,1,1
-PERSISTENT,Persistent Systems,IT,,PERSISTENT.NS,Mid Cap,1,1
-PGHH,Procter & Gamble,FMCG,,PGHH.NS,Large Cap,1,0
-POONAWALLA,Poonawalla Fincorp,Financial Services,,POONAWALLA.NS,Mid Cap,1,1
-PRESTIGE,Prestige Estates,Realty,,PRESTIGE.NS,Mid Cap,1,1
-PRINCEPIPE,Prince Pipes,Construction,,PRINCEPIPE.NS,Mid Cap,1,1
-PVRINOX,PVR Inox,Consumer Services,,PVRINOX.NS,Mid Cap,1,1
-RADICO,Radico Khaitan,FMCG,,RADICO.NS,Mid Cap,1,1
-RAILTEL,RailTel Corp,IT,,RAILTEL.NS,Mid Cap,1,1
-RAIN,Rain Industries,Chemicals,,RAIN.NS,Mid Cap,1,1
-RAMCOCEM,Ramco Cements,Construction,,RAMCOCEM.NS,Mid Cap,1,1
-RKFORGE,Ramkrishna Forgings,Capital Goods,,RKFORGE.NS,Mid Cap,1,1
-RVNL,Rail Vikas Nigam,Capital Goods,,RVNL.NS,Mid Cap,1,1
-SJVN,SJVN,Power,,SJVN.NS,Mid Cap,1,1
-SKFINDIA,SKF India,Capital Goods,,SKFINDIA.NS,Mid Cap,1,1
-SONACOMS,Sona BLW Precision,Automobile,,SONACOMS.NS,Mid Cap,1,1
-STARHEALTH,Star Health Insurance,Financial Services,,STARHEALTH.NS,Mid Cap,1,1
-SUMICHEM,Sumitomo Chemical,Chemicals,,SUMICHEM.NS,Mid Cap,1,1
-SUPREMEIND,Supreme Industries,Construction,,SUPREMEIND.NS,Mid Cap,1,1
-SYNGENE,Syngene International,Pharma,,SYNGENE.NS,Mid Cap,1,1
-TATACHEM,Tata Chemicals,Chemicals,,TATACHEM.NS,Large Cap,1,0
-TATACOMM,Tata Communications,Telecom,,TATACOMM.NS,Large Cap,1,0
-TATAELXSI,Tata Elxsi,IT,,TATAELXSI.NS,Mid Cap,1,1
-TATAPOWER,Tata Power,Power,,TATAPOWER.NS,Large Cap,1,0
-TIINDIA,Tube Investments,Automobile,,TIINDIA.NS,Mid Cap,1,1
-TORNTPOWER,Torrent Power,Power,,TORNTPOWER.NS,Mid Cap,1,1
-TVSMOTOR,TVS Motor Company,Automobile,,TVSMOTOR.NS,Large Cap,1,0
-UBL,United Breweries,FMCG,,UBL.NS,Mid Cap,1,1
-UNIONBANK,Union Bank of India,Financial Services,,UNIONBANK.NS,Mid Cap,1,1
-UNITDSPR,United Spirits,FMCG,,UNITDSPR.NS,Mid Cap,1,1
-VOLTAS,Voltas,Capital Goods,,VOLTAS.NS,Mid Cap,1,1
-WHIRLPOOL,Whirlpool of India,Consumer Durables,,WHIRLPOOL.NS,Mid Cap,1,1
-ZEEL,Zee Entertainment,Media,,ZEEL.NS,Mid Cap,1,1
-ZYDUSLIFE,Zydus Lifesciences,Pharma,,ZYDUSLIFE.NS,Mid Cap,1,1
-AARTIIND,Aarti Industries,Chemicals,,AARTIIND.NS,Mid Cap,1,1
-ABBOTINDIA,Abbott India,Pharma,,ABBOTINDIA.NS,Large Cap,1,0
-AEGISCHEM,Aegis Chemicals,Chemicals,,AEGISCHEM.NS,Mid Cap,1,1
-AFFLE,Affle India,IT,,AFFLE.NS,Mid Cap,1,1
-AGROPHOS,Agro Phos India,Chemicals,,AGROPHOS.NS,Small Cap,1,0
-AJANTPHARM,Ajanta Pharma,Pharma,,AJANTPHARM.NS,Mid Cap,1,1
-AKZOINDIA,Akzo Nobel India,Consumer Durables,,AKZOINDIA.NS,Mid Cap,1,1
-ALEMBICLTD,Alembic,Pharma,,ALEMBICLTD.NS,Mid Cap,1,1
-ANGELONE,Angel One,Financial Services,,ANGELONE.NS,Mid Cap,1,1
-ANURAS,Anuras,Consumer Services,,ANURAS.NS,Small Cap,1,0
-APARINDS,Apar Industries,Capital Goods,,APARINDS.NS,Mid Cap,1,1
-APTUS,Aptus Value Housing,Financial Services,,APTUS.NS,Mid Cap,1,1
-ARCHIES,Archies,Consumer Durables,,ARCHIES.NS,Small Cap,1,0
-ARVINDFASN,Arvind Fashions,Textiles,,ARVINDFASN.NS,Mid Cap,1,1
-ASAHIINDIA,Asahi India Glass,Consumer Durables,,ASAHIINDIA.NS,Mid Cap,1,1
-ASHAPURMIN,Ashapura Minechem,Metals & Mining,,ASHAPURMIN.NS,Small Cap,1,0
-ASTRAZEN,AstraZeneca Pharma,Pharma,,ASTRAZEN.NS,Mid Cap,1,1
-ATGL,Adani Total Gas,Oil Gas & Fuels,,ATGL.NS,Large Cap,1,0
-AVANTIFEED,Avanti Feeds,FMCG,,AVANTIFEED.NS,Mid Cap,1,1
-BAJAJCON,Bajaj Consumer Care,FMCG,,BAJAJCON.NS,Small Cap,1,0
-BALAMINES,Balaji Amines,Chemicals,,BALAMINES.NS,Mid Cap,1,1
-BALRAMCHIN,Balrampur Chini Mills,FMCG,,BALRAMCHIN.NS,Mid Cap,1,1
-BARBEQUE,Barbeque Nation,Consumer Services,,BARBEQUE.NS,Small Cap,1,0
-BAYERCROP,Bayer Cropscience,Chemicals,,BAYERCROP.NS,Mid Cap,1,1
-BEML,BEML,Capital Goods,,BEML.NS,Mid Cap,1,1
-BIKAJI,Bikaji Foods,FMCG,,BIKAJI.NS,Mid Cap,1,1
-BLUESTARCO,Blue Star,Capital Goods,,BLUESTARCO.NS,Mid Cap,1,1
-BORORENEW,BORO Renewables,Power,,BORORENEW.NS,Small Cap,1,0
-BSOFT,Birlasoft,IT,,BSOFT.NS,Mid Cap,1,1
-CANFINHOME,Can Fin Homes,Financial Services,,CANFINHOME.NS,Mid Cap,1,1
-CAPACITE,Capacite Infraprojects,Construction,,CAPACITE.NS,Small Cap,1,0
-CARBORUNIV,Carborundum Universal,Capital Goods,,CARBORUNIV.NS,Mid Cap,1,1
-CASTROLIND,Castrol India,Oil Gas & Fuels,,CASTROLIND.NS,Mid Cap,1,1
-CDSL,CDSL,Financial Services,,CDSL.NS,Mid Cap,1,1
-CENTURYPLY,Century Plyboards,Construction,,CENTURYPLY.NS,Mid Cap,1,1
-CENTURYTEX,Century Textiles,Textiles,,CENTURYTEX.NS,Mid Cap,1,1
-CERA,Cera Sanitaryware,Consumer Durables,,CERA.NS,Mid Cap,1,1
-CHALET,Chalet Hotels,Consumer Services,,CHALET.NS,Mid Cap,1,1
-CHAMBLFERT,Chambal Fertilisers,Chemicals,,CHAMBLFERT.NS,Mid Cap,1,1
-CLEAN,Clean Science & Tech,Chemicals,,CLEAN.NS,Mid Cap,1,1
-COCHINSHIP,Cochin Shipyard,Capital Goods,,COCHINSHIP.NS,Mid Cap,1,1
-CONCOR,Container Corp of India,Services,,CONCOR.NS,Large Cap,1,0
-CRAFTSMAN,Craftsman Automation,Automobile,,CRAFTSMAN.NS,Mid Cap,1,1
-CRISIL,CRISIL,Financial Services,,CRISIL.NS,Mid Cap,1,1
-DCMSHRIRAM,DCM Shriram,Chemicals,,DCMSHRIRAM.NS,Mid Cap,1,1
-DELTACORP,Delta Corp,Consumer Services,,DELTACORP.NS,Small Cap,1,0
-DHANUKA,Dhanuka Agritech,Chemicals,,DHANUKA.NS,Mid Cap,1,1
-DHANI,Dhani Services,Financial Services,,DHANI.NS,Small Cap,1,0
-DOMS,DOMS Industries,Consumer Durables,,DOMS.NS,Mid Cap,1,1
-DRREDDYS,Dr Reddys,Pharma,,DRREDDY.NS,Large Cap,1,0
-EASEMYTRIP,Easy Trip Planners,Consumer Services,,EASEMYTRIP.NS,Small Cap,1,0
-ELECON,Elecon Engineering,Capital Goods,,ELECON.NS,Mid Cap,1,1
-ELGIEQUIP,Elgi Equipments,Capital Goods,,ELGIEQUIP.NS,Mid Cap,1,1
-EMAMILTD,Emami,FMCG,,EMAMILTD.NS,Mid Cap,1,1
-ENGINERSIN,Engineers India,Capital Goods,,ENGINERSIN.NS,Mid Cap,1,1
-EPIGRAL,Epigral,Chemicals,,EPIGRAL.NS,Mid Cap,1,1
-EPL,EPL,Consumer Durables,,EPL.NS,Mid Cap,1,1
-EQUITASBNK,Equitas Small Finance Bank,Financial Services,,EQUITASBNK.NS,Mid Cap,1,1
-EROSMEDIA,Eros STX Global Media,Media,,EROSMEDIA.NS,Small Cap,1,0
-ESTER,Ester Industries,Chemicals,,ESTER.NS,Small Cap,1,0
-ETHOSLTD,Ethos,Consumer Durables,,ETHOSLTD.NS,Mid Cap,1,1
-FINEORG,Fine Organic Industries,Chemicals,,FINEORG.NS,Mid Cap,1,1
-FINPIPE,Finolex Industries,Construction,,FINPIPE.NS,Mid Cap,1,1
-FIVESTAR,Five-Star Business Finance,Financial Services,,FIVESTAR.NS,Mid Cap,1,1
-FLEXITUFF,Flexituff Ventures,Consumer Durables,,FLEXITUFF.NS,Small Cap,1,0
-FLUOROCHEM,Gujarat Fluorochemicals,Chemicals,,FLUOROCHEM.NS,Mid Cap,1,1
-FORTIS,Fortis Healthcare,Healthcare,,FORTIS.NS,Mid Cap,1,1
-GATEWAY,Gateway Distriparks,Services,,GATEWAY.NS,Mid Cap,1,1
-GHCL,GHCL,Chemicals,,GHCL.NS,Mid Cap,1,1
-GICRE,GIC of India,Financial Services,,GICRE.NS,Large Cap,1,0
-GILLETTE,Gillette India,FMCG,,GILLETTE.NS,Mid Cap,1,1
-GLAND,Gland Pharma,Pharma,,GLAND.NS,Mid Cap,1,1
-GLAXO,GSK Pharmaceuticals,Pharma,,GLAXO.NS,Mid Cap,1,1
-GNFC,Gujarat Narmada Valley Fertilisers,Chemicals,,GNFC.NS,Mid Cap,1,1
-GODFRYPHLP,Godfrey Phillips,FMCG,,GODFRYPHLP.NS,Mid Cap,1,1
-GPIL,Godawari Power & Ispat,Metals & Mining,,GPIL.NS,Mid Cap,1,1
-GRAPHITE,Graphite India,Capital Goods,,GRAPHITE.NS,Mid Cap,1,1
-GREENPANEL,Greenpanel Industries,Construction,,GREENPANEL.NS,Mid Cap,1,1
-GREENLAM,Greenlam Industries,Construction,,GREENLAM.NS,Mid Cap,1,1
-GUJGASLTD,Gujarat Gas,Oil Gas & Fuels,,GUJGASLTD.NS,Mid Cap,1,1
-GULFOILLUB,Gulf Oil Lubricants,Oil Gas & Fuels,,GULFOILLUB.NS,Mid Cap,1,1
-HBLPOWER,HBL Power Systems,Capital Goods,,HBLPOWER.NS,Mid Cap,1,1
-HFCL,HFCL,Telecom,,HFCL.NS,Mid Cap,1,1
-HIKAL,Hikal,Chemicals,,HIKAL.NS,Mid Cap,1,1
-HSCL,Himadri Speciality Chemical,Chemicals,,HSCL.NS,Mid Cap,1,1
-HUDCO,HUDCO,Financial Services,,HUDCO.NS,Mid Cap,1,1
-IBREALEST,Indiabulls Real Estate,Realty,,IBREALEST.NS,Small Cap,1,0
-ICIL,Indo Count Industries,Textiles,,ICIL.NS,Mid Cap,1,1
-IDBI,IDBI Bank,Financial Services,,IDBI.NS,Mid Cap,1,1
-IFBIND,IFB Industries,Consumer Durables,,IFBIND.NS,Mid Cap,1,1
-IGPL,IG Petrochemicals,Chemicals,,IGPL.NS,Mid Cap,1,1
-IIFL,IIFL Finance,Financial Services,,IIFL.NS,Mid Cap,1,1
-IPCALAB,IPCA Laboratories,Pharma,,IPCALAB.NS,Mid Cap,1,1
-IRB,IRB Infrastructure,Construction,,IRB.NS,Mid Cap,1,1
-IRCON,IRCON International,Construction,,IRCON.NS,Mid Cap,1,1
-IREDA,IREDA,Financial Services,,IREDA.NS,Mid Cap,1,1
-ISEC,ICICI Securities,Financial Services,,ISEC.NS,Mid Cap,1,1
-ITES,IT Enabled Services,IT,,ITES.NS,Small Cap,1,0
-JAMNAUTO,Jamna Auto Industries,Automobile,,JAMNAUTO.NS,Mid Cap,1,1
-JBCHEPHARM,JB Chemicals & Pharma,Pharma,,JBCHEPHARM.NS,Mid Cap,1,1
-JBMA,JBM Auto,Automobile,,JBMA.NS,Mid Cap,1,1
-JKPAPER,JK Paper,Consumer Durables,,JKPAPER.NS,Mid Cap,1,1
-JKTYRE,JK Tyre & Industries,Automobile,,JKTYRE.NS,Mid Cap,1,1
-JLHL,Jupiter Life Line Hospitals,Healthcare,,JLHL.NS,Mid Cap,1,1
-JMFINANCIL,JM Financial,Financial Services,,JMFINANCIL.NS,Mid Cap,1,1
-JSWENERGY,JSW Energy,Power,,JSWENERGY.NS,Large Cap,1,0
-JSWINFRA,JSW Infrastructure,Services,,JSWINFRA.NS,Large Cap,1,0
-JTEKTINDIA,JTEKT India,Automobile,,JTEKTINDIA.NS,Mid Cap,1,1
-JUSTDIAL,Just Dial,IT,,JUSTDIAL.NS,Mid Cap,1,1
-JYOTICNC,Jyoti CNC Automation,Capital Goods,,JYOTICNC.NS,Mid Cap,1,1
-KALPATPOWR,Kalpataru Projects,Capital Goods,,KALPATPOWR.NS,Mid Cap,1,1
-KANSAINER,Kansai Nerolac Paints,Consumer Durables,,KANSAINER.NS,Mid Cap,1,1
-KAYNES,Kaynes Technology,Capital Goods,,KAYNES.NS,Mid Cap,1,1
-KEC,KEC International,Capital Goods,,KEC.NS,Mid Cap,1,1
-KENNAMET,Kennametal India,Capital Goods,,KENNAMET.NS,Mid Cap,1,1
-KESORAMIND,Kesoram Industries,Construction,,KESORAMIND.NS,Small Cap,1,0
-KHAITANELE,Khaitan Electricals,Capital Goods,,KHAITANELE.NS,Small Cap,1,0
-KIOCL,KIOCL,Metals & Mining,,KIOCL.NS,Mid Cap,1,1
-KIRLOSENG,Kirloskar Electric,Capital Goods,,KIRLOSENG.NS,Mid Cap,1,1
-KNRCON,KNR Constructions,Construction,,KNRCON.NS,Mid Cap,1,1
-KOLTEPATIL,Kolte-Patil Developers,Realty,,KOLTEPATIL.NS,Mid Cap,1,1
-KSCL,Kaveri Seed Company,Chemicals,,KSCL.NS,Mid Cap,1,1
-LALPATHLAB,Dr. Lal PathLabs,Healthcare,,LALPATHLAB.NS,Mid Cap,1,1
-LATENTVIEW,Latent View Analytics,IT,,LATENTVIEW.NS,Mid Cap,1,1
-LEMONTREE,Lemon Tree Hotels,Consumer Services,,LEMONTREE.NS,Mid Cap,1,1
-LIQTECH,Liquid Technologies,IT,,LIQTECH.NS,Small Cap,1,0
-LXCHEM,Laxmi Organic Industries,Chemicals,,LXCHEM.NS,Mid Cap,1,1
-LUXIND,Lux Industries,Textiles,,LUXIND.NS,Mid Cap,1,1
-MAHINDCIE,Mahindra CIE Automotive,Automobile,,MAHINDCIE.NS,Mid Cap,1,1
-MAHLIFE,Mahindra Lifespace,Realty,,MAHLIFE.NS,Mid Cap,1,1
-MAHLOG,Mahindra Logistics,Services,,MAHLOG.NS,Mid Cap,1,1
-MANKIND,Mankind Pharma,Pharma,,MANKIND.NS,Large Cap,1,0
-MAPMYINDIA,C.E. Info Systems,IT,,MAPMYINDIA.NS,Mid Cap,1,1
-MASTEK,Mastek,IT,,MASTEK.NS,Mid Cap,1,1
-MAXHEALTH,Max Healthcare,Healthcare,,MAXHEALTH.NS,Large Cap,1,0
-MBAPL,Maharashtra Seamless,Metals & Mining,,MBAPL.NS,Mid Cap,1,1
-MEDANTA,Global Health (Medanta),Healthcare,,MEDANTA.NS,Mid Cap,1,1
-MEDPLUS,MedPlus Health Services,Healthcare,,MEDPLUS.NS,Mid Cap,1,1
-MESCON,Mesco Steel,Metals & Mining,,MESCON.NS,Small Cap,1,0
-MIDHANI,Mishra Dhatu Nigam,Metals & Mining,,MIDHANI.NS,Mid Cap,1,1
-MINDA,Minda Corporation,Automobile,,MINDA.NS,Mid Cap,1,1
-MINDACORP,Minda Industries,Automobile,,MINDACORP.NS,Mid Cap,1,1
-MMTC,MMTC,Services,,MMTC.NS,Mid Cap,1,1
-MOLDTKPAC,Mold-Tek Packaging,Consumer Durables,,MOLDTKPAC.NS,Mid Cap,1,1
-MOTILALOFS,Motilal Oswal Financial,Financial Services,,MOTILALOFS.NS,Mid Cap,1,1
-MSTCLTD,MSTC,Services,,MSTCLTD.NS,Mid Cap,1,1
-NATCOPHARM,Natco Pharma,Pharma,,NATCOPHARM.NS,Mid Cap,1,1
-NAVA,NAVA,Power,,NAVA.NS,Mid Cap,1,1
-NAVINFLUOR,Navin Fluorine,Chemicals,,NAVINFLUOR.NS,Mid Cap,1,1
-NDTV,NDTV,Media,,NDTV.NS,Small Cap,1,0
-NETWORK18,Network18 Media,Media,,NETWORK18.NS,Mid Cap,1,1
-NEWGEN,Newgen Software,IT,,NEWGEN.NS,Mid Cap,1,1
-NOCIL,NOCIL,Chemicals,,NOCIL.NS,Mid Cap,1,1
-NORTHARC,Northern Arc Capital,Financial Services,,NORTHARC.NS,Mid Cap,1,1
-NUVAMA,Nuvama Wealth Management,Financial Services,,NUVAMA.NS,Mid Cap,1,1
-NCC,NCC,Construction,,NCC.NS,Mid Cap,1,1
-OBEROIRLTY,Oberoi Realty,Realty,,OBEROIRLTY.NS,Mid Cap,1,1
-OLECTRA,Olectra Greentech,Automobile,,OLECTRA.NS,Mid Cap,1,1
-OPTIEMUS,Optiemus Infracom,Telecom,,OPTIEMUS.NS,Small Cap,1,0
-PATELENG,Patel Engineering,Construction,,PATELENG.NS,Mid Cap,1,1
-PCBL,PCBL,Chemicals,,PCBL.NS,Mid Cap,1,1
-PDSL,PDS,Textiles,,PDSL.NS,Mid Cap,1,1
-PENIND,Pennar Industries,Metals & Mining,,PENIND.NS,Small Cap,1,0
-PFIZER,Pfizer,Pharma,,PFIZER.NS,Mid Cap,1,1
-PHOENIXLTD,Phoenix Mills,Realty,,PHOENIXLTD.NS,Large Cap,1,0
-PNBHOUSING,PNB Housing Finance,Financial Services,,PNBHOUSING.NS,Mid Cap,1,1
-POLICYBZR,PB Fintech (Policybazaar),Financial Services,,POLICYBZR.NS,Large Cap,1,0
-POLYMED,Poly Medicure,Healthcare,,POLYMED.NS,Mid Cap,1,1
-PRAJIND,Praj Industries,Capital Goods,,PRAJIND.NS,Mid Cap,1,1
-PRIVISCL,Privi Speciality Chemicals,Chemicals,,PRIVISCL.NS,Mid Cap,1,1
-PRSMJOHNSN,Prism Johnson,Construction,,PRSMJOHNSN.NS,Mid Cap,1,1
-PSB,Punjab & Sind Bank,Financial Services,,PSB.NS,Small Cap,1,0
-PTCIL,PTC India Financial Services,Financial Services,,PTCIL.NS,Small Cap,1,0
-PUREIT,Pureit,Consumer Durables,,PUREIT.NS,Small Cap,1,0
-QUESS,Quess Corp,Services,,QUESS.NS,Mid Cap,1,1
-QUICKHEAL,Quick Heal Technologies,IT,,QUICKHEAL.NS,Small Cap,1,0
-RALLIS,Rallis India,Chemicals,,RALLIS.NS,Mid Cap,1,1
-RAMKY,Ramky Infrastructure,Construction,,RAMKY.NS,Small Cap,1,0
-RATNAMANI,Ratnamani Metals & Tubes,Metals & Mining,,RATNAMANI.NS,Mid Cap,1,1
-RAYMOND,Raymond,Textiles,,RAYMOND.NS,Mid Cap,1,1
-REDINGTON,Redington India,IT,,REDINGTON.NS,Mid Cap,1,1
-RENUKA,Shree Renuka Sugars,FMCG,,RENUKA.NS,Mid Cap,1,1
-RESPONIND,Responsive Industries,Consumer Durables,,RESPONIND.NS,Small Cap,1,0
-RHIM,RHI Magnesita,Capital Goods,,RHIM.NS,Mid Cap,1,1
-RITES,RITES,Services,,RITES.NS,Mid Cap,1,1
-ROSSARI,Rossari Biotech,Chemicals,,ROSSARI.NS,Mid Cap,1,1
-RPOWER,Reliance Power,Power,,RPOWER.NS,Mid Cap,1,1
-RTNPOWER,Rattanindia Power,Power,,RTNPOWER.NS,Small Cap,1,0
-SANOFI,Sanofi India,Pharma,,SANOFI.NS,Mid Cap,1,1
-SAPPHIRE,Sapphire Foods,Consumer Services,,SAPPHIRE.NS,Mid Cap,1,1
-SCHAEFFLER,Schaeffler India,Automobile,,SCHAEFFLER.NS,Mid Cap,1,1
-SEQUENT,Sequent Scientific,Pharma,,SEQUENT.NS,Mid Cap,1,1
-SHALBY,Shalby,Healthcare,,SHALBY.NS,Mid Cap,1,1
-SHYAMMETL,Shyam Metalics,Metals & Mining,,SHYAMMETL.NS,Mid Cap,1,1
-SOBHA,Sobha,Realty,,SOBHA.NS,Mid Cap,1,1
-SOLARA,Solara Active Pharma,Pharma,,SOLARA.NS,Mid Cap,1,1
-SPANDANA,Spandana Sphoorty Financial,Financial Services,,SPANDANA.NS,Mid Cap,1,1
-SPARC,Sun Pharma Advanced Research,Pharma,,SPARC.NS,Mid Cap,1,1
-SPCENET,Spc Net,IT,,SPCENET.NS,Small Cap,1,0
-SRTRANSFIN,Shriram Transport Finance,Financial Services,,SRTRANSFIN.NS,Large Cap,1,0
-STAR,Strides Pharma,Pharma,,STAR.NS,Mid Cap,1,1
-STLTECH,STL Technologies,Telecom,,STLTECH.NS,Mid Cap,1,1
-SUBROS,Subros,Automobile,,SUBROS.NS,Mid Cap,1,1
-SUNFLAG,Sunflag Iron & Steel,Metals & Mining,,SUNFLAG.NS,Small Cap,1,0
-SUPRIYA,Supriya Lifescience,Pharma,,SUPRIYA.NS,Small Cap,1,0
-SURYAROSNI,Surya Roshni,Capital Goods,,SURYAROSNI.NS,Mid Cap,1,1
-SWSOLAR,Sterling and Wilson Renewable,Power,,SWSOLAR.NS,Mid Cap,1,1
-SYMPHONY,Symphony,Capital Goods,,SYMPHONY.NS,Mid Cap,1,1
-TANLA,Tanla Platforms,IT,,TANLA.NS,Mid Cap,1,1
-TATAINVEST,Tata Investment Corp,Financial Services,,TATAINVEST.NS,Large Cap,1,0
-TATAMETALI,Tata Metaliks,Metals & Mining,,TATAMETALI.NS,Mid Cap,1,1
-TCNSBRANDS,TCNS Clothing,Consumer Durables,,TCNSBRANDS.NS,Mid Cap,1,1
-TEAMLEASE,TeamLease Services,Services,,TEAMLEASE.NS,Mid Cap,1,1
-TECHNOE,Techno Electric,Power,,TECHNOE.NS,Mid Cap,1,1
-TEXRAIL,Texmaco Rail,Capital Goods,,TEXRAIL.NS,Mid Cap,1,1
-THYROCARE,Thyrocare Technologies,Healthcare,,THYROCARE.NS,Mid Cap,1,1
-TITAGARH,Titagarh Rail Systems,Capital Goods,,TITAGARH.NS,Mid Cap,1,1
-TTKPRESTIG,TTK Prestige,Consumer Durables,,TTKPRESTIG.NS,Mid Cap,1,1
-UCOBANK,UCO Bank,Financial Services,,UCOBANK.NS,Mid Cap,1,1
-UJJIVANSFB,Ujjivan Small Finance Bank,Financial Services,,UJJIVANSFB.NS,Mid Cap,1,1
-UTIAMC,UTI Asset Management,Financial Services,,UTIAMC.NS,Mid Cap,1,1
-VAIBHAVGBL,Vaibhav Global,Consumer Durables,,VAIBHAVGBL.NS,Mid Cap,1,1
-VARDHACRLC,Vardhman Acrylics,Textiles,,VARDHACRLC.NS,Small Cap,1,0
-VDMDREALTY,VDM Dream Realty,Realty,,VDMDREALTY.NS,Small Cap,1,0
-VIJAYA,Vijaya Diagnostic Centre,Healthcare,,VIJAYA.NS,Mid Cap,1,1
-VINATIORGA,Vinati Organics,Chemicals,,VINATIORGA.NS,Mid Cap,1,1
-VIPIND,VIP Industries,Consumer Durables,,VIPIND.NS,Mid Cap,1,1
-VSTIND,VST Industries,FMCG,,VSTIND.NS,Mid Cap,1,1
-WABAG,WABAG,Capital Goods,,WABAG.NS,Mid Cap,1,1
-WELCORP,Welspun Corp,Metals & Mining,,WELCORP.NS,Mid Cap,1,1
-WELSPUNLIV,Welspun Living,Textiles,,WELSPUNLIV.NS,Mid Cap,1,1
-WESTLIFE,Westlife Foodworld,Consumer Services,,WESTLIFE.NS,Mid Cap,1,1
-WONDERLA,Wonderla Holidays,Consumer Services,,WONDERLA.NS,Mid Cap,1,1
-WOCKPHARMA,Wockhardt,Pharma,,WOCKPHARMA.NS,Mid Cap,1,1
-XCHANGING,Xchanging Solutions,IT,,XCHANGING.NS,Small Cap,1,0
-YATHARTH,Yatharth Hospital,Healthcare,,YATHARTH.NS,Mid Cap,1,1
-ZAGGLE,Zaggle Prepaid Ocean,Financial Services,,ZAGGLE.NS,Mid Cap,1,1
-ZENSARTECH,Zensar Technologies,IT,,ZENSARTECH.NS,Mid Cap,1,1
-ZENTEC,Zen Technologies,Capital Goods,,ZENTEC.NS,Mid Cap,1,1
-ZFCVINDIA,ZF Commercial Vehicle,Automobile,,ZFCVINDIA.NS,Mid Cap,1,1
-ZODIACLOTH,Zodiac Clothing,Textiles,,ZODIACLOTH.NS,Small Cap,1,0
-3MINDIA,3M India,Capital Goods,,3MINDIA.NS,Large Cap,1,0
-ACCELYA,Accelya Solutions,IT,,ACCELYA.NS,Mid Cap,1,1
-ACMESOLAR,Acme Solar Holdings,Power,,ACMESOLAR.NS,Mid Cap,1,1
-ACRYSIL,Acrysil,Consumer Durables,,ACRYSIL.NS,Small Cap,1,0
-ADANIENSOL,Adani Energy Solutions,Power,,ADANIENSOL.NS,Large Cap,1,0
-ADANIPOWER,Adani Power,Power,,ADANIPOWER.NS,Large Cap,1,0
-ADANIWILMAR,Adani Wilmar,FMCG,,ADANIWILMAR.NS,Large Cap,1,0
-AETHER,Aether Industries,Chemicals,,AETHER.NS,Mid Cap,1,1
-AGCNET,AGC Networks,IT,,AGCNET.NS,Small Cap,1,0
-AGI,AGI Greenpac,Consumer Durables,,AGI.NS,Mid Cap,1,1
-AGRITECH,National Agri Mktg Fed,Services,,AGRITECH.NS,Small Cap,1,0
-AHLUCONT,Ahlu Containers,Capital Goods,,AHLUCONT.NS,Small Cap,1,0
-AIIL,Authum Investment,Financial Services,,AIIL.NS,Mid Cap,1,1
-AINM,Aster India,Healthcare,,AINM.NS,Mid Cap,1,1
-AJAXENGG,Ajax Engineering,Capital Goods,,AJAXENGG.NS,Mid Cap,1,1
-ALMONDZ,Almondz Global,Financial Services,,ALMONDZ.NS,Small Cap,1,0
-AMBER,Amber Enterprises,Capital Goods,,AMBER.NS,Mid Cap,1,1
-AMJLAND,AMJ Land Holdings,Realty,,AMJLAND.NS,Small Cap,1,0
-AMNPLST,Amines & Plasticizers,Chemicals,,AMNPLST.NS,Small Cap,1,0
-ANANTRAJ,Anant Raj,Realty,,ANANTRAJ.NS,Mid Cap,1,1
-ANDHRAPET,Andhra Petrochemicals,Chemicals,,ANDHRAPET.NS,Small Cap,1,0
-ANDHRASUGAR,Andhra Sugars,FMCG,,ANDHRASUGAR.NS,Small Cap,1,0
-ANIL,Anil,Chemicals,,ANIL.NS,Small Cap,1,0
-ANKITMETAL,Ankit Metal & Power,Metals & Mining,,ANKITMETAL.NS,Small Cap,1,0
-APCOTEXIND,Apcotex Industries,Chemicals,,APCOTEXIND.NS,Small Cap,1,0
-APICINDIA,Asian Paints Ind,Consumer Durables,,APICINDIA.NS,Small Cap,1,0
-ARMANFIN,Arman Financial Services,Financial Services,,ARMANFIN.NS,Small Cap,1,0
-ARVIND,Arvind,Textiles,,ARVIND.NS,Mid Cap,1,1
-ASCOM,Ascom Leasing,Financial Services,,ASCOM.NS,Small Cap,1,0
-ASHOKA,Ashoka Buildcon,Construction,,ASHOKA.NS,Mid Cap,1,1
-ASTER,Aster DM Healthcare,Healthcare,,ASTER.NS,Mid Cap,1,1
-ASTERDM,Aster DM Healthcare,Healthcare,,ASTERDM.NS,Mid Cap,1,1
-ASTRAMICRO,Astra Microwave Products,Capital Goods,,ASTRAMICRO.NS,Mid Cap,1,1
-ATFL,Agro Tech Foods,FMCG,,ATFL.NS,Mid Cap,1,1
-ATNL,ATNL,Capital Goods,,ATNL.NS,Small Cap,1,0
-AXISCADES,Axiscades Technologies,IT,,AXISCADES.NS,Small Cap,1,0
-BAJAJELEC,Bajaj Electricals,Capital Goods,,BAJAJELEC.NS,Mid Cap,1,1
-BASF,BASF India,Chemicals,,BASF.NS,Mid Cap,1,1
-BBTC,Bombay Burmah Trading,Consumer Durables,,BBTC.NS,Mid Cap,1,1
-BFINVEST,BF Investment,Financial Services,,BFINVEST.NS,Small Cap,1,0
-BFUTILITIE,BF Utilities,Power,,BFUTILITIE.NS,Small Cap,1,0
-BGRENERGY,BGR Energy Systems,Capital Goods,,BGRENERGY.NS,Small Cap,1,0
-BHAGERIA,Bhageria Industries,Chemicals,,BHAGERIA.NS,Small Cap,1,0
-BHANDARI,Bhandari Hosiery Exports,Textiles,,BHANDARI.NS,Small Cap,1,0
-BHARAT,Bharat Dynamics,Capital Goods,,BHARAT.NS,Mid Cap,1,1
-BHARATFORG,Bharat Forge,Capital Goods,,BHARATFORG.NS,Large Cap,1,0
-BHARATRAS,Bharat Rasayan,Chemicals,,BHARATRAS.NS,Mid Cap,1,1
-BHARATWIRE,Bharat Wire Ropes,Metals & Mining,,BHARATWIRE.NS,Small Cap,1,0
-BHEEMITE,Bheema Cements,Construction,,BHEEMITE.NS,Small Cap,1,0
-BIRLACABLE,Birla Cable,Capital Goods,,BIRLACABLE.NS,Small Cap,1,0
-BLAL,Bombay Live Artworks,Consumer Services,,BLAL.NS,Small Cap,1,0
-BLBLIMITED,BLB,Financial Services,,BLBLIMITED.NS,Small Cap,1,0
-BOROLTD,Borosil,Consumer Durables,,BOROLTD.NS,Mid Cap,1,1
-BRNL,Bharat Road Network,Construction,,BRNL.NS,Small Cap,1,0
-BSE,BSE,Financial Services,,BSE.NS,Large Cap,1,0
-BSELIMITED,BSE,Financial Services,,BSELIMITED.NS,Large Cap,1,0
-CAPLIPOINT,Caplin Point Labs,Pharma,,CAPLIPOINT.NS,Mid Cap,1,1
-CARERATING,CARE Ratings,Financial Services,,CARERATING.NS,Mid Cap,1,1
-CASTEXTECH,Castex Technologies,Automobile,,CASTEXTECH.NS,Small Cap,1,0
-CCHHL,Country Club Hospitality,Consumer Services,,CCHHL.NS,Small Cap,1,0
-CCL,CCL Products India,FMCG,,CCL.NS,Mid Cap,1,1
-CELESTIAL,Celestial Biopharma,Pharma,,CELESTIAL.NS,Small Cap,1,0
-CENTURYENKA,Century Enka,Textiles,,CENTURYENKA.NS,Mid Cap,1,1
-CEREBRAINT,Cerebra Integrated,IT,,CEREBRAINT.NS,Small Cap,1,0
-CHEMFAB,Chemfab Alkalis,Chemicals,,CHEMFAB.NS,Small Cap,1,0
-CHEMPLASTS,Chemplast Sanmar,Chemicals,,CHEMPLASTS.NS,Mid Cap,1,1
-CIGNITITEC,Cigniti Technologies,IT,,CIGNITITEC.NS,Mid Cap,1,1
-CLNINDIA,CLN India,Services,,CLNINDIA.NS,Small Cap,1,0
-CMRSL,CMR Steel,Metals & Mining,,CMRSL.NS,Small Cap,1,0
-CONFIPET,Confidence Petroleum,Oil Gas & Fuels,,CONFIPET.NS,Small Cap,1,0
-CONSOFINVT,Consolidated Finvest,Financial Services,,CONSOFINVT.NS,Small Cap,1,0
-CONTROLPR,Control Print,Capital Goods,,CONTROLPR.NS,Small Cap,1,0
-COSMOFIRST,Cosmo First,Chemicals,,COSMOFIRST.NS,Mid Cap,1,1
-COSMOFILMS,Cosmo Films,Consumer Durables,,COSMOFILMS.NS,Mid Cap,1,1
+IEX,Indian Energy Exchange Ltd.,Financial Services,,IEX.NS,Small Cap,1,0
+INDHOTEL,Indian Hotels Co. Ltd.,Consumer Services,,INDHOTEL.NS,Mid Cap,1,1
+IMFA,Indian Metals & Ferro Alloys Ltd.,Metals & Mining,,IMFA.NS,Micro Cap,0,0
+IOC,Indian Oil Corporation Ltd.,Oil Gas & Fuels,,IOC.NS,Large Cap,1,0
+IOB,Indian Overseas Bank,Financial Services,,IOB.NS,Mid Cap,1,1
+IRCTC,Indian Railway Catering And Tourism Corporation Ltd.,Consumer Services,,IRCTC.NS,Mid Cap,1,1
+IRFC,Indian Railway Finance Corporation Ltd.,Financial Services,,IRFC.NS,Large Cap,1,0
+IREDA,Indian Renewable Energy Development Agency Ltd.,Financial Services,,IREDA.NS,Mid Cap,1,1
+INDIGOPNTS,Indigo Paints Ltd.,Consumer Durables,,INDIGOPNTS.NS,Micro Cap,0,0
+ICIL,Indo Count Industries Ltd.,Textiles,,ICIL.NS,Micro Cap,0,0
+IGL,Indraprastha Gas Ltd.,Oil Gas & Fuels,,IGL.NS,Small Cap,1,0
+INDUSTOWER,Indus Towers Ltd.,Telecom,,INDUSTOWER.NS,Mid Cap,1,1
+INDUSINDBK,IndusInd Bank Ltd.,Financial Services,,INDUSINDBK.NS,Mid Cap,1,1
+NAUKRI,Info Edge (India) Ltd.,Consumer Services,,NAUKRI.NS,Mid Cap,1,1
+INFY,Infosys Ltd.,IT,,INFY.NS,Large Cap,1,0
+INOXWIND,Inox Wind Ltd.,Capital Goods,,INOXWIND.NS,Small Cap,1,0
+INTELLECT,Intellect Design Arena Ltd.,IT,,INTELLECT.NS,Small Cap,1,0
+INDIGO,InterGlobe Aviation Ltd.,Services,,INDIGO.NS,Large Cap,1,0
+IGIL,International Gemological Institute Ltd.,Services,,IGIL.NS,Small Cap,1,0
+IKS,Inventurus Knowledge Solutions Ltd.,IT,,IKS.NS,Small Cap,1,0
+IONEXCHANG,Ion Exchange (India) Ltd.,Power,,IONEXCHANG.NS,Micro Cap,0,0
+IPCALAB,Ipca Laboratories Ltd.,Healthcare,,IPCALAB.NS,Mid Cap,1,1
+JKCEMENT,J.K. Cement Ltd.,Construction,,JKCEMENT.NS,Mid Cap,1,1
+JAIBALAJI,JAI BALAJI INDUSTRIES Ltd.,Metals & Mining,,JAIBALAJI.NS,Micro Cap,0,0
+JBMA,JBM Auto Ltd.,Automobile,,JBMA.NS,Small Cap,1,0
+JKPAPER,JK Paper Ltd.,Forest Materials,,JKPAPER.NS,Micro Cap,0,0
+JKTYRE,JK Tyre & Industries Ltd.,Automobile,,JKTYRE.NS,Small Cap,1,0
+JMFINANCIL,JM Financial Ltd.,Financial Services,,JMFINANCIL.NS,Small Cap,1,0
+JSWCEMENT,JSW Cement Ltd.,Construction,,JSWCEMENT.NS,Small Cap,1,0
+JSWENERGY,JSW Energy Ltd.,Power,,JSWENERGY.NS,Mid Cap,1,1
+JSWINFRA,JSW Infrastructure Ltd.,Services,,JSWINFRA.NS,Mid Cap,1,1
+JSWSTEEL,JSW Steel Ltd.,Metals & Mining,,JSWSTEEL.NS,Large Cap,1,0
+JAINREC,Jain Resource Recycling Ltd.,Metals & Mining,,JAINREC.NS,Small Cap,1,0
+JPPOWER,Jaiprakash Power Ventures Ltd.,Power,,JPPOWER.NS,Small Cap,1,0
+J&KBANK,Jammu & Kashmir Bank Ltd.,Financial Services,,J&KBANK.NS,Small Cap,1,0
+JAMNAAUTO,Jamna Auto Industries Ltd.,Automobile,,JAMNAAUTO.NS,Micro Cap,0,0
+JSFB,Jana Small Finance Bank Ltd.,Financial Services,,JSFB.NS,Micro Cap,0,0
+JAYNECOIND,Jayaswal Neco Industries Ltd.,Capital Goods,,JAYNECOIND.NS,Micro Cap,0,0
+JSLL,Jeena Sikho Lifecare Ltd.,Consumer Services,,JSLL.NS,Micro Cap,0,0
+JINDALSAW,Jindal Saw Ltd.,Capital Goods,,JINDALSAW.NS,Small Cap,1,0
+JSL,Jindal Stainless Ltd.,Metals & Mining,,JSL.NS,Mid Cap,1,1
+JINDALSTEL,Jindal Steel Ltd.,Metals & Mining,,JINDALSTEL.NS,Large Cap,1,0
+JIOFIN,Jio Financial Services Ltd.,Financial Services,,JIOFIN.NS,Large Cap,1,0
+JUBLFOOD,Jubilant Foodworks Ltd.,Consumer Services,,JUBLFOOD.NS,Mid Cap,1,1
+JUBLINGREA,Jubilant Ingrevia Ltd.,Chemicals,,JUBLINGREA.NS,Small Cap,1,0
+JUBLPHARMA,Jubilant Pharmova Ltd.,Healthcare,,JUBLPHARMA.NS,Micro Cap,0,0
+JWL,Jupiter Wagons Ltd.,Capital Goods,,JWL.NS,Small Cap,1,0
+JUSTDIAL,Justdial Ltd.,Consumer Services,,JUSTDIAL.NS,Micro Cap,0,0
+JYOTHYLAB,Jyothy Labs Ltd.,FMCG,,JYOTHYLAB.NS,Micro Cap,0,0
+JYOTICNC,Jyoti CNC Automation Ltd.,Capital Goods,,JYOTICNC.NS,Small Cap,1,0
+KPRMILL,K.P.R. Mill Ltd.,Textiles,,KPRMILL.NS,Mid Cap,1,1
+KEI,KEI Industries Ltd.,Capital Goods,,KEI.NS,Mid Cap,1,1
+KNRCON,KNR Constructions Ltd.,Construction,,KNRCON.NS,Micro Cap,0,0
+KPIGREEN,KPI Green Energy Ltd.,Power,,KPIGREEN.NS,Micro Cap,0,0
+KPITTECH,KPIT Technologies Ltd.,IT,,KPITTECH.NS,Small Cap,1,0
+KRBL,KRBL Ltd.,FMCG,,KRBL.NS,Micro Cap,0,0
+KRN,KRN HEAT EXCHANGER AND REFRIGERATION Ltd.,Capital Goods,,KRN.NS,Micro Cap,0,0
+KSB,KSB Ltd.,Capital Goods,,KSB.NS,Small Cap,1,0
+KAJARIACER,Kajaria Ceramics Ltd.,Consumer Durables,,KAJARIACER.NS,Small Cap,1,0
+KPIL,Kalpataru Projects International Ltd.,Construction,,KPIL.NS,Small Cap,1,0
+KALYANKJIL,Kalyan Jewellers India Ltd.,Consumer Durables,,KALYANKJIL.NS,Mid Cap,1,1
+KANSAINER,Kansai Nerolac Paints Ltd.,Consumer Durables,,KANSAINER.NS,Micro Cap,0,0
+KTKBANK,Karnataka Bank Ltd.,Financial Services,,KTKBANK.NS,Micro Cap,0,0
+KARURVYSYA,Karur Vysya Bank Ltd.,Financial Services,,KARURVYSYA.NS,Small Cap,1,0
+KSCL,Kaveri Seed Company Ltd.,FMCG,,KSCL.NS,Micro Cap,0,0
+KAYNES,Kaynes Technology India Ltd.,Capital Goods,,KAYNES.NS,Small Cap,1,0
+KEC,Kec International Ltd.,Construction,,KEC.NS,Small Cap,1,0
+KFINTECH,Kfin Technologies Ltd.,Financial Services,,KFINTECH.NS,Small Cap,1,0
+KIRLOSBROS,Kirloskar Brothers Ltd.,Capital Goods,,KIRLOSBROS.NS,Small Cap,1,0
+KIRLOSENG,Kirloskar Oil Eng Ltd.,Capital Goods,,KIRLOSENG.NS,Small Cap,1,0
+KIRLPNU,Kirloskar Pneumatic Company Ltd.,Capital Goods,,KIRLPNU.NS,Micro Cap,0,0
+KITEX,Kitex Garments Ltd.,Textiles,,KITEX.NS,Micro Cap,0,0
+KMEW,Knowledge Marine & Engineering Works Ltd.,Services,,KMEW.NS,Micro Cap,0,0
+KOTAKBANK,Kotak Mahindra Bank Ltd.,Financial Services,,KOTAKBANK.NS,Large Cap,1,0
+KIMS,Krishna Institute of Medical Sciences Ltd.,Healthcare,,KIMS.NS,Small Cap,1,0
+KWIL,Kwality Wall's (India) Ltd.,FMCG,,KWIL.NS,Micro Cap,0,0
+LTF,L&T Finance Ltd.,Financial Services,,LTF.NS,Mid Cap,1,1
+LTTS,L&T Technology Services Ltd.,IT,,LTTS.NS,Mid Cap,1,1
+LGEINDIA,LG Electronics India Ltd.,Consumer Durables,,LGEINDIA.NS,Mid Cap,1,1
+LICHSGFIN,LIC Housing Finance Ltd.,Financial Services,,LICHSGFIN.NS,Mid Cap,1,1
+LTFOODS,LT Foods Ltd.,FMCG,,LTFOODS.NS,Small Cap,1,0
+LTM,LTM Ltd.,IT,,LTM.NS,Large Cap,1,0
+LT,Larsen & Toubro Ltd.,Construction,,LT.NS,Large Cap,1,0
+LATENTVIEW,Latent View Analytics Ltd.,IT,,LATENTVIEW.NS,Micro Cap,0,0
+LAURUSLABS,Laurus Labs Ltd.,Healthcare,,LAURUSLABS.NS,Mid Cap,1,1
+LXCHEM,Laxmi Organic Industries Ltd.,Chemicals,,LXCHEM.NS,Micro Cap,0,0
+IXIGO,Le Travenues Technology Ltd.,Consumer Services,,IXIGO.NS,Micro Cap,0,0
+THELEELA,Leela Palaces Hotels & Resorts Ltd.,Consumer Services,,THELEELA.NS,Micro Cap,0,0
+LEMONTREE,Lemon Tree Hotels Ltd.,Consumer Services,,LEMONTREE.NS,Small Cap,1,0
+LENSKART,Lenskart Solutions Ltd.,Consumer Services,,LENSKART.NS,Mid Cap,1,1
+LICI,Life Insurance Corporation of India,Financial Services,,LICI.NS,Mid Cap,1,1
+LINDEINDIA,Linde India Ltd.,Chemicals,,LINDEINDIA.NS,Mid Cap,1,1
+LLOYDSENGG,Lloyds Engineering Works Ltd.,Capital Goods,,LLOYDSENGG.NS,Micro Cap,0,0
+LLOYDSENT,Lloyds Enterprises Ltd.,Metals & Mining,,LLOYDSENT.NS,Micro Cap,0,0
+LLOYDSME,Lloyds Metals And Energy Ltd.,Metals & Mining,,LLOYDSME.NS,Mid Cap,1,1
+LODHA,Lodha Developers Ltd.,Realty,,LODHA.NS,Mid Cap,1,1
+LUMAXTECH,Lumax Auto Technologies Ltd.,Automobile,,LUMAXTECH.NS,Micro Cap,0,0
+LUMAXIND,Lumax Industries Ltd.,Automobile,,LUMAXIND.NS,Micro Cap,0,0
+LUPIN,Lupin Ltd.,Healthcare,,LUPIN.NS,Mid Cap,1,1
+MMTC,MMTC Ltd.,Services,,MMTC.NS,Small Cap,1,0
+MOIL,MOIL Ltd.,Metals & Mining,,MOIL.NS,Micro Cap,0,0
+MRF,MRF Ltd.,Automobile,,MRF.NS,Mid Cap,1,1
+MSTCLTD,MSTC Ltd.,Services,,MSTCLTD.NS,Micro Cap,0,0
+MTARTECH,MTAR Technologies Ltd.,Capital Goods,,MTARTECH.NS,Small Cap,1,0
+MBAPL,Madhya Bharat Agro Products Ltd.,Chemicals,,MBAPL.NS,Micro Cap,0,0
+MGL,Mahanagar Gas Ltd.,Oil Gas & Fuels,,MGL.NS,Small Cap,1,0
+M&MFIN,Mahindra & Mahindra Financial Services Ltd.,Financial Services,,M&MFIN.NS,Mid Cap,1,1
+M&M,Mahindra & Mahindra Ltd.,Automobile,,M&M.NS,Large Cap,1,0
+MANAPPURAM,Manappuram Finance Ltd.,Financial Services,,MANAPPURAM.NS,Small Cap,1,0
+MRPL,Mangalore Refinery & Petrochemicals Ltd.,Oil Gas & Fuels,,MRPL.NS,Small Cap,1,0
+MANKIND,Mankind Pharma Ltd.,Healthcare,,MANKIND.NS,Mid Cap,1,1
+MANORAMA,Manorama Industries Ltd.,FMCG,,MANORAMA.NS,Micro Cap,0,0
+MARICO,Marico Ltd.,FMCG,,MARICO.NS,Mid Cap,1,1
+MARKSANS,Marksans Pharma Ltd.,Healthcare,,MARKSANS.NS,Micro Cap,0,0
+MARUTI,Maruti Suzuki India Ltd.,Automobile,,MARUTI.NS,Large Cap,1,0
+MASTEK,Mastek Ltd.,IT,,MASTEK.NS,Micro Cap,0,0
+MFSL,Max Financial Services Ltd.,Financial Services,,MFSL.NS,Mid Cap,1,1
+MAXHEALTH,Max Healthcare Institute Ltd.,Healthcare,,MAXHEALTH.NS,Large Cap,1,0
+MAZDOCK,Mazagoan Dock Shipbuilders Ltd.,Capital Goods,,MAZDOCK.NS,Large Cap,1,0
+MEDPLUS,Medplus Health Services Ltd.,Consumer Services,,MEDPLUS.NS,Micro Cap,0,0
+MEESHO,Meesho Ltd.,Consumer Services,,MEESHO.NS,Mid Cap,1,1
+METROPOLIS,Metropolis Healthcare Ltd.,Healthcare,,METROPOLIS.NS,Micro Cap,0,0
+MINDACORP,Minda Corporation Ltd.,Automobile,,MINDACORP.NS,Small Cap,1,0
+MIDHANI,Mishra Dhatu Nigam Ltd.,Capital Goods,,MIDHANI.NS,Micro Cap,0,0
+MSUMI,Motherson Sumi Wiring India Ltd.,Automobile,,MSUMI.NS,Small Cap,1,0
+MOTILALOFS,Motilal Oswal Financial Services Ltd.,Financial Services,,MOTILALOFS.NS,Mid Cap,1,1
+MPHASIS,MphasiS Ltd.,IT,,MPHASIS.NS,Mid Cap,1,1
+BECTORFOOD,Mrs. Bectors Food Specialities Ltd.,FMCG,,BECTORFOOD.NS,Micro Cap,0,0
+MCX,Multi Commodity Exchange of India Ltd.,Financial Services,,MCX.NS,Mid Cap,1,1
+MUTHOOTFIN,Muthoot Finance Ltd.,Financial Services,,MUTHOOTFIN.NS,Large Cap,1,0
+NATCOPHARM,NATCO Pharma Ltd.,Healthcare,,NATCOPHARM.NS,Small Cap,1,0
+NBCC,NBCC (India) Ltd.,Construction,,NBCC.NS,Small Cap,1,0
+NCC,NCC Ltd.,Construction,,NCC.NS,Small Cap,1,0
+NEOGEN,NEOGEN CHEMICALS LTD.,Chemicals,,NEOGEN.NS,Micro Cap,0,0
+NHPC,NHPC Ltd.,Power,,NHPC.NS,Mid Cap,1,1
+NLCINDIA,NLC India Ltd.,Power,,NLCINDIA.NS,Mid Cap,1,1
+NMDC,NMDC Ltd.,Metals & Mining,,NMDC.NS,Mid Cap,1,1
+NSLNISP,NMDC Steel Ltd.,Metals & Mining,,NSLNISP.NS,Small Cap,1,0
+NTPCGREEN,NTPC Green Energy Ltd.,Power,,NTPCGREEN.NS,Mid Cap,1,1
+NTPC,NTPC Ltd.,Power,,NTPC.NS,Large Cap,1,0
+NH,Narayana Hrudayalaya Ltd.,Healthcare,,NH.NS,Mid Cap,1,1
+NATIONALUM,National Aluminium Co. Ltd.,Metals & Mining,,NATIONALUM.NS,Mid Cap,1,1
+NFL,National Fertilizers Ltd.,Chemicals,,NFL.NS,Micro Cap,0,0
+NAVA,Nava Ltd.,Power,,NAVA.NS,Small Cap,1,0
+NAVINFLUOR,Navin Fluorine International Ltd.,Chemicals,,NAVINFLUOR.NS,Small Cap,1,0
+NAZARA,Nazara Technologies Ltd.,Media,,NAZARA.NS,Micro Cap,0,0
+NEPHROPLUS,Nephrocare Health Services Ltd.,Healthcare,,NEPHROPLUS.NS,Micro Cap,0,0
+NESTLEIND,Nestle India Ltd.,FMCG,,NESTLEIND.NS,Large Cap,1,0
+NETWEB,Netweb Technologies India Ltd.,IT,,NETWEB.NS,Small Cap,1,0
+NETWORK18,Network18 Media & Investments Ltd.,Media,,NETWORK18.NS,Micro Cap,0,0
+NEULANDLAB,Neuland Laboratories Ltd.,Healthcare,,NEULANDLAB.NS,Small Cap,1,0
+NEWGEN,Newgen Software Technologies Ltd.,IT,,NEWGEN.NS,Micro Cap,0,0
+NAM-INDIA,Nippon Life India Asset Management Ltd.,Financial Services,,NAM-INDIA.NS,Mid Cap,1,1
+NIVABUPA,Niva Bupa Health Insurance Company Ltd.,Financial Services,,NIVABUPA.NS,Micro Cap,0,0
+NORTHARC,Northern Arc Capital Ltd.,Financial Services,,NORTHARC.NS,Micro Cap,0,0
+NUVAMA,Nuvama Wealth Management Ltd.,Financial Services,,NUVAMA.NS,Small Cap,1,0
+NUVOCO,Nuvoco Vistas Corporation Ltd.,Construction,,NUVOCO.NS,Small Cap,1,0
+OBEROIRLTY,Oberoi Realty Ltd.,Realty,,OBEROIRLTY.NS,Mid Cap,1,1
+ONGC,Oil & Natural Gas Corporation Ltd.,Oil Gas & Fuels,,ONGC.NS,Large Cap,1,0
+OIL,Oil India Ltd.,Oil Gas & Fuels,,OIL.NS,Mid Cap,1,1
+OLAELEC,Ola Electric Mobility Ltd.,Automobile,,OLAELEC.NS,Small Cap,1,0
+OLECTRA,Olectra Greentech Ltd.,Automobile,,OLECTRA.NS,Small Cap,1,0
+OMNI,Omnitech Engineering Ltd.,Capital Goods,,OMNI.NS,Micro Cap,0,0
+KISSHT,OnEMI Technology Solutions Ltd.,Financial Services,,KISSHT.NS,Micro Cap,0,0
+PAYTM,One 97 Communications Ltd.,Financial Services,,PAYTM.NS,Mid Cap,1,1
+ONESOURCE,Onesource Specialty Pharma Ltd.,Healthcare,,ONESOURCE.NS,Small Cap,1,0
+OFSS,Oracle Financial Services Software Ltd.,IT,,OFSS.NS,Mid Cap,1,1
+OSWALPUMPS,Oswal Pumps Ltd.,Capital Goods,,OSWALPUMPS.NS,Micro Cap,0,0
+PNGJL,P N Gadgil Jewellers Ltd.,Consumer Durables,,PNGJL.NS,Micro Cap,0,0
+POLICYBZR,PB Fintech Ltd.,Financial Services,,POLICYBZR.NS,Mid Cap,1,1
+PCJEWELLER,PC Jeweller Ltd.,Consumer Durables,,PCJEWELLER.NS,Micro Cap,0,0
+PCBL,PCBL Chemical Ltd.,Chemicals,,PCBL.NS,Small Cap,1,0
+PDSL,PDS Ltd.,Textiles,,PDSL.NS,Micro Cap,0,0
+PGEL,PG Electroplast Ltd.,Consumer Durables,,PGEL.NS,Small Cap,1,0
+PIIND,PI Industries Ltd.,Chemicals,,PIIND.NS,Mid Cap,1,1
+PNBHOUSING,PNB Housing Finance Ltd.,Financial Services,,PNBHOUSING.NS,Small Cap,1,0
+PNCINFRA,PNC Infratech Ltd.,Construction,,PNCINFRA.NS,Micro Cap,0,0
+PTC,PTC India Ltd.,Power,,PTC.NS,Micro Cap,0,0
+PTCIL,PTC Industries Ltd.,Capital Goods,,PTCIL.NS,Small Cap,1,0
+PVRINOX,PVR INOX Ltd.,Media,,PVRINOX.NS,Small Cap,1,0
+PAGEIND,Page Industries Ltd.,Textiles,,PAGEIND.NS,Mid Cap,1,1
+PAISALO,Paisalo Digital Ltd.,Financial Services,,PAISALO.NS,Micro Cap,0,0
+PARADEEP,Paradeep Phosphates Ltd.,Chemicals,,PARADEEP.NS,Small Cap,1,0
+PARAS,Paras Defence and Space Technologies Ltd.,Capital Goods,,PARAS.NS,Micro Cap,0,0
+PARKHOSPS,Park Medi World Ltd.,Healthcare,,PARKHOSPS.NS,Micro Cap,0,0
+PATANJALI,Patanjali Foods Ltd.,FMCG,,PATANJALI.NS,Mid Cap,1,1
+PGIL,Pearl Global Industries Ltd.,Textiles,,PGIL.NS,Micro Cap,0,0
+PERSISTENT,Persistent Systems Ltd.,IT,,PERSISTENT.NS,Mid Cap,1,1
+PETRONET,Petronet LNG Ltd.,Oil Gas & Fuels,,PETRONET.NS,Mid Cap,1,1
+PFIZER,Pfizer Ltd.,Healthcare,,PFIZER.NS,Micro Cap,0,0
+PHOENIXLTD,Phoenix Mills Ltd.,Realty,,PHOENIXLTD.NS,Mid Cap,1,1
+PWL,Physicswallah Ltd.,Consumer Services,,PWL.NS,Small Cap,1,0
+PICCADIL,Piccadily Agro Industries Ltd.,FMCG,,PICCADIL.NS,Micro Cap,0,0
+PIDILITIND,Pidilite Industries Ltd.,Chemicals,,PIDILITIND.NS,Large Cap,1,0
+PINELABS,Pine Labs Ltd.,Financial Services,,PINELABS.NS,Small Cap,1,0
+PIRAMALFIN,Piramal Finance Ltd.,Financial Services,,PIRAMALFIN.NS,Mid Cap,1,1
+PPLPHARMA,Piramal Pharma Ltd.,Healthcare,,PPLPHARMA.NS,Small Cap,1,0
+POLYMED,Poly Medicure Ltd.,Healthcare,,POLYMED.NS,Small Cap,1,0
+POLYCAB,Polycab India Ltd.,Capital Goods,,POLYCAB.NS,Large Cap,1,0
+POONAWALLA,Poonawalla Fincorp Ltd.,Financial Services,,POONAWALLA.NS,Small Cap,1,0
+PFC,Power Finance Corporation Ltd.,Financial Services,,PFC.NS,Large Cap,1,0
+POWERGRID,Power Grid Corporation of India Ltd.,Power,,POWERGRID.NS,Large Cap,1,0
+POWERMECH,Power Mech Projects Ltd.,Construction,,POWERMECH.NS,Micro Cap,0,0
+POWERICA,Powerica Ltd.,Capital Goods,,POWERICA.NS,Micro Cap,0,0
+PRAJIND,Praj Industries Ltd.,Capital Goods,,PRAJIND.NS,Micro Cap,0,0
+PRECWIRE,Precision Wires India Ltd.,Capital Goods,,PRECWIRE.NS,Micro Cap,0,0
+PREMIERENE,Premier Energies Ltd.,Capital Goods,,PREMIERENE.NS,Mid Cap,1,1
+PRESTIGE,Prestige Estates Projects Ltd.,Realty,,PRESTIGE.NS,Mid Cap,1,1
+PRICOLLTD,Pricol Ltd.,Automobile,,PRICOLLTD.NS,Micro Cap,0,0
+PFOCUS,Prime Focus Ltd.,Media,,PFOCUS.NS,Small Cap,1,0
+PRIVISCL,Privi Speciality Chemicals Ltd.,Chemicals,,PRIVISCL.NS,Small Cap,1,0
+PGHL,Procter & Gamble Health Ltd.,Healthcare,,PGHL.NS,Micro Cap,0,0
+PNB,Punjab National Bank,Financial Services,,PNB.NS,Large Cap,1,0
+PURVA,Puravankara Ltd.,Realty,,PURVA.NS,Micro Cap,0,0
+QPOWER,QUALITY POWER ELECTRICAL EQUIPMENTS Ltd.,Capital Goods,,QPOWER.NS,Micro Cap,0,0
+QUESS,Quess Corp Ltd.,Services,,QUESS.NS,Micro Cap,0,0
+RRKABEL,R R Kabel Ltd.,Capital Goods,,RRKABEL.NS,Small Cap,1,0
+RBLBANK,RBL Bank Ltd.,Financial Services,,RBLBANK.NS,Small Cap,1,0
+RECLTD,REC Ltd.,Financial Services,,RECLTD.NS,Mid Cap,1,1
+RHIM,RHI MAGNESITA INDIA LTD.,Capital Goods,,RHIM.NS,Small Cap,1,0
+RITES,RITES Ltd.,Construction,,RITES.NS,Small Cap,1,0
+RADICO,Radico Khaitan Ltd,FMCG,,RADICO.NS,Mid Cap,1,1
+RVNL,Rail Vikas Nigam Ltd.,Construction,,RVNL.NS,Mid Cap,1,1
+RAILTEL,Railtel Corporation Of India Ltd.,Telecom,,RAILTEL.NS,Small Cap,1,0
+RAIN,Rain Industries Ltd,Chemicals,,RAIN.NS,Micro Cap,0,0
+RAINBOW,Rainbow Childrens Medicare Ltd.,Healthcare,,RAINBOW.NS,Small Cap,1,0
+RALLIS,Rallis India Ltd.,Chemicals,,RALLIS.NS,Micro Cap,0,0
+RKFORGE,Ramkrishna Forgings Ltd.,Automobile,,RKFORGE.NS,Small Cap,1,0
+RCF,Rashtriya Chemicals & Fertilizers Ltd.,Chemicals,,RCF.NS,Micro Cap,0,0
+RATEGAIN,Rategain Travel Technologies Ltd.,IT,,RATEGAIN.NS,Micro Cap,0,0
+RATNAMANI,Ratnamani Metals & Tubes Ltd.,Capital Goods,,RATNAMANI.NS,Micro Cap,0,0
+RTNPOWER,RattanIndia Power Ltd.,Power,,RTNPOWER.NS,Micro Cap,0,0
+RAYMONDLSL,Raymond Lifestyle Ltd.,Textiles,,RAYMONDLSL.NS,Micro Cap,0,0
+REDINGTON,Redington Ltd.,Services,,REDINGTON.NS,Small Cap,1,0
+REFEX,Refex Industries Ltd.,Power,,REFEX.NS,Micro Cap,0,0
+RELAXO,Relaxo Footwears Ltd.,Consumer Durables,,RELAXO.NS,Micro Cap,0,0
+RELIANCE,Reliance Industries Ltd.,Oil Gas & Fuels,,RELIANCE.NS,Large Cap,1,0
+RPOWER,Reliance Power Ltd.,Power,,RPOWER.NS,Small Cap,1,0
+RELIGARE,Religare Enterprises Ltd.,Financial Services,,RELIGARE.NS,Micro Cap,0,0
+RESPONIND,Responsive Industries Ltd.,Consumer Durables,,RESPONIND.NS,Micro Cap,0,0
+RBA,Restaurant Brands Asia Ltd.,Consumer Services,,RBA.NS,Micro Cap,0,0
+ROUTE,Route Mobile Ltd.,Telecom,,ROUTE.NS,Micro Cap,0,0
+RUBICON,Rubicon Research Ltd.,Healthcare,,RUBICON.NS,Small Cap,1,0
+SJS,S.J.S. Enterprises Ltd.,Automobile,,SJS.NS,Micro Cap,0,0
+SBFC,SBFC Finance Ltd.,Financial Services,,SBFC.NS,Micro Cap,0,0
+SBICARD,SBI Cards and Payment Services Ltd.,Financial Services,,SBICARD.NS,Mid Cap,1,1
+SBILIFE,SBI Life Insurance Company Ltd.,Financial Services,,SBILIFE.NS,Large Cap,1,0
+SEDEMAC,SEDEMAC Mechatronics Ltd.,Automobile,,SEDEMAC.NS,Micro Cap,0,0
+SGMART,SG Mart Ltd.,Metals & Mining,,SGMART.NS,Micro Cap,0,0
+SJVN,SJVN Ltd.,Power,,SJVN.NS,Small Cap,1,0
+SKYGOLD,SKY GOLD AND DIAMONDS Ltd.,Consumer Durables,,SKYGOLD.NS,Micro Cap,0,0
+SMLMAH,SML Mahindra Ltd.,Capital Goods,,SMLMAH.NS,Micro Cap,0,0
+SHRIPISTON,SPR Auto Technologies Ltd.,Automobile,,SHRIPISTON.NS,Small Cap,1,0
+SRF,SRF Ltd.,Chemicals,,SRF.NS,Mid Cap,1,1
+SAFARI,Safari Industries (India) Ltd.,Consumer Durables,,SAFARI.NS,Micro Cap,0,0
+SAGILITY,Sagility Ltd.,IT,,SAGILITY.NS,Small Cap,1,0
+SAILIFE,Sai Life Sciences Ltd.,Healthcare,,SAILIFE.NS,Small Cap,1,0
+SAMHI,Samhi Hotels Ltd.,Consumer Services,,SAMHI.NS,Micro Cap,0,0
+SAMMAANCAP,Sammaan Capital Ltd.,Financial Services,,SAMMAANCAP.NS,Small Cap,1,0
+MOTHERSON,Samvardhana Motherson International Ltd.,Automobile,,MOTHERSON.NS,Large Cap,1,0
+SANDUMA,Sandur Manganese & Iron Ores Ltd.,Metals & Mining,,SANDUMA.NS,Micro Cap,0,0
+SANSERA,Sansera Engineering Ltd.,Automobile,,SANSERA.NS,Small Cap,1,0
+SAPPHIRE,Sapphire Foods India Ltd.,Consumer Services,,SAPPHIRE.NS,Micro Cap,0,0
+SARDAEN,Sarda Energy and Minerals Ltd.,Metals & Mining,,SARDAEN.NS,Small Cap,1,0
+SAREGAMA,Saregama India Ltd,Media,,SAREGAMA.NS,Micro Cap,0,0
+SCHAEFFLER,Schaeffler India Ltd.,Automobile,,SCHAEFFLER.NS,Mid Cap,1,1
+SCHNEIDER,Schneider Electric Infrastructure Ltd.,Capital Goods,,SCHNEIDER.NS,Small Cap,1,0
+SENCO,Senco Gold Ltd.,Consumer Durables,,SENCO.NS,Micro Cap,0,0
+SENORES,Senores Pharmaceuticals Ltd.,Healthcare,,SENORES.NS,Micro Cap,0,0
+SHADOWFAX,Shadowfax Technologies Ltd.,Services,,SHADOWFAX.NS,Micro Cap,0,0
+SHAILY,Shaily Engineering Plastics Ltd.,Consumer Durables,,SHAILY.NS,Micro Cap,0,0
+SHAKTIPUMP,Shakti Pumps (India) Ltd.,Capital Goods,,SHAKTIPUMP.NS,Micro Cap,0,0
+SHARDACROP,Sharda Cropchem Ltd.,Chemicals,,SHARDACROP.NS,Micro Cap,0,0
+SHAREINDIA,Share India Securities Ltd.,Financial Services,,SHAREINDIA.NS,Micro Cap,0,0
+SFL,Sheela Foam Ltd.,Consumer Durables,,SFL.NS,Micro Cap,0,0
+SHILCTECH,Shilchar Technologies Ltd.,Capital Goods,,SHILCTECH.NS,Micro Cap,0,0
+SHILPAMED,Shilpa Medicare Ltd.,Healthcare,,SHILPAMED.NS,Micro Cap,0,0
+SCI,Shipping Corporation of India Ltd.,Services,,SCI.NS,Small Cap,1,0
+SHREECEM,Shree Cement Ltd.,Construction,,SHREECEM.NS,Mid Cap,1,1
+RENUKA,Shree Renuka Sugars Ltd.,FMCG,,RENUKA.NS,Micro Cap,0,0
+SHREEJISPG,Shreeji Shipping Global Ltd.,Services,,SHREEJISPG.NS,Micro Cap,0,0
+SHRIRAMFIN,Shriram Finance Ltd.,Financial Services,,SHRIRAMFIN.NS,Large Cap,1,0
+SHYAMMETL,Shyam Metalics and Energy Ltd.,Capital Goods,,SHYAMMETL.NS,Small Cap,1,0
+ENRIN,Siemens Energy India Ltd.,Capital Goods,,ENRIN.NS,Large Cap,1,0
+SIEMENS,Siemens Ltd.,Capital Goods,,SIEMENS.NS,Large Cap,1,0
+SIGNATURE,Signatureglobal (India) Ltd.,Realty,,SIGNATURE.NS,Small Cap,1,0
+SKIPPER,Skipper Ltd.,Capital Goods,,SKIPPER.NS,Micro Cap,0,0
+SOBHA,Sobha Ltd.,Realty,,SOBHA.NS,Small Cap,1,0
+SOLARINDS,Solar Industries India Ltd.,Chemicals,,SOLARINDS.NS,Large Cap,1,0
+SONACOMS,Sona BLW Precision Forgings Ltd.,Automobile,,SONACOMS.NS,Small Cap,1,0
+SONATSOFTW,Sonata Software Ltd.,IT,,SONATSOFTW.NS,Micro Cap,0,0
+SOUTHBANK,South Indian Bank Ltd.,Financial Services,,SOUTHBANK.NS,Micro Cap,0,0
+STARHEALTH,Star Health and Allied Insurance Company Ltd.,Financial Services,,STARHEALTH.NS,Small Cap,1,0
+SBIN,State Bank of India,Financial Services,,SBIN.NS,Large Cap,1,0
+SAIL,Steel Authority of India Ltd.,Metals & Mining,,SAIL.NS,Mid Cap,1,1
+SWSOLAR,Sterling and Wilson Renewable Energy Ltd.,Construction,,SWSOLAR.NS,Micro Cap,0,0
+STAR,Strides Pharma Science Ltd.,Healthcare,,STAR.NS,Micro Cap,0,0
+STYLAMIND,Stylam Industries Ltd.,Consumer Durables,,STYLAMIND.NS,Micro Cap,0,0
+SUBROS,Subros Ltd.,Capital Goods,,SUBROS.NS,Micro Cap,0,0
+SUDARSCHEM,Sudarshan Chemical Industries Ltd.,Chemicals,,SUDARSCHEM.NS,Micro Cap,0,0
+SUDEEPPHRM,Sudeep Pharma Ltd.,Chemicals,,SUDEEPPHRM.NS,Micro Cap,0,0
+SUMICHEM,Sumitomo Chemical India Ltd.,Chemicals,,SUMICHEM.NS,Small Cap,1,0
+SPARC,Sun Pharma Advanced Research Company Ltd.,Healthcare,,SPARC.NS,Micro Cap,0,0
+SUNPHARMA,Sun Pharmaceutical Industries Ltd.,Healthcare,,SUNPHARMA.NS,Large Cap,1,0
+SUNTV,Sun TV Network Ltd.,Media,,SUNTV.NS,Small Cap,1,0
+SUNDARMFIN,Sundaram Finance Ltd.,Financial Services,,SUNDARMFIN.NS,Mid Cap,1,1
+SUNDRMFAST,Sundram Fasteners Ltd.,Automobile,,SUNDRMFAST.NS,Micro Cap,0,0
+SUNFLAG,Sunflag Iron & Steel Company Ltd.,Capital Goods,,SUNFLAG.NS,Micro Cap,0,0
+SUNTECK,Sunteck Realty Ltd.,Realty,,SUNTECK.NS,Micro Cap,0,0
+SUPREMEIND,Supreme Industries Ltd.,Capital Goods,,SUPREMEIND.NS,Mid Cap,1,1
+SPLPETRO,Supreme Petrochem Ltd.,Chemicals,,SPLPETRO.NS,Micro Cap,0,0
+SUPRIYA,Supriya Lifescience Ltd.,Healthcare,,SUPRIYA.NS,Micro Cap,0,0
+SURYAROSNI,Surya Roshni Ltd.,Capital Goods,,SURYAROSNI.NS,Micro Cap,0,0
+SUVEN,Suven Life Sciences Ltd.,Healthcare,,SUVEN.NS,Micro Cap,0,0
+SUZLON,Suzlon Energy Ltd.,Capital Goods,,SUZLON.NS,Mid Cap,1,1
+SWANCORP,Swan Corp Ltd.,Chemicals,,SWANCORP.NS,Small Cap,1,0
+SWIGGY,Swiggy Ltd.,Consumer Services,,SWIGGY.NS,Mid Cap,1,1
+SYNGENE,Syngene International Ltd.,Healthcare,,SYNGENE.NS,Small Cap,1,0
+SYRMA,Syrma SGS Technology Ltd.,Capital Goods,,SYRMA.NS,Small Cap,1,0
+TARC,TARC Ltd.,Realty,,TARC.NS,Micro Cap,0,0
+TBOTEK,TBO Tek Ltd.,Consumer Services,,TBOTEK.NS,Small Cap,1,0
+TDPOWERSYS,TD Power Systems Ltd.,Capital Goods,,TDPOWERSYS.NS,Small Cap,1,0
+TTKPRESTIG,TTK Prestige Ltd.,Consumer Durables,,TTKPRESTIG.NS,Micro Cap,0,0
+TVSMOTOR,TVS Motor Company Ltd.,Automobile,,TVSMOTOR.NS,Large Cap,1,0
+TVSSCS,TVS Supply Chain Solutions Ltd.,Services,,TVSSCS.NS,Micro Cap,0,0
+TMB,Tamilnad Mercantile Bank Ltd.,Financial Services,,TMB.NS,Micro Cap,0,0
+TANLA,Tanla Platforms Ltd.,IT,,TANLA.NS,Micro Cap,0,0
+TATACAP,Tata Capital Ltd.,Financial Services,,TATACAP.NS,Large Cap,1,0
+TATACHEM,Tata Chemicals Ltd.,Chemicals,,TATACHEM.NS,Small Cap,1,0
+TATACOMM,Tata Communications Ltd.,Telecom,,TATACOMM.NS,Mid Cap,1,1
+TCS,Tata Consultancy Services Ltd.,IT,,TCS.NS,Large Cap,1,0
+TATACONSUM,Tata Consumer Products Ltd.,FMCG,,TATACONSUM.NS,Large Cap,1,0
+TATAELXSI,Tata Elxsi Ltd.,IT,,TATAELXSI.NS,Small Cap,1,0
+TATAINVEST,Tata Investment Corporation Ltd.,Financial Services,,TATAINVEST.NS,Mid Cap,1,1
+TMCV,Tata Motors Ltd.,Capital Goods,,TMCV.NS,Large Cap,1,0
+TMPV,Tata Motors Passenger Vehicles Ltd.,Automobile,,TMPV.NS,Large Cap,1,0
+TATAPOWER,Tata Power Co. Ltd.,Power,,TATAPOWER.NS,Large Cap,1,0
+TATASTEEL,Tata Steel Ltd.,Metals & Mining,,TATASTEEL.NS,Large Cap,1,0
+TATATECH,Tata Technologies Ltd.,IT,,TATATECH.NS,Small Cap,1,0
+TTML,Tata Teleservices (Maharashtra) Ltd.,Telecom,,TTML.NS,Small Cap,1,0
+TECHM,Tech Mahindra Ltd.,IT,,TECHM.NS,Large Cap,1,0
+TECHNOE,Techno Electric & Engineering Company Ltd.,Construction,,TECHNOE.NS,Small Cap,1,0
+TEGA,Tega Industries Ltd.,Capital Goods,,TEGA.NS,Small Cap,1,0
+TEJASNET,Tejas Networks Ltd.,Telecom,,TEJASNET.NS,Small Cap,1,0
+TENNIND,Tenneco Clean Air India Ltd.,Automobile,,TENNIND.NS,Small Cap,1,0
+TEXRAIL,Texmaco Rail & Eng. Ltd.,Capital Goods,,TEXRAIL.NS,Micro Cap,0,0
+THANGAMAYL,Thangamayil Jewellery Ltd.,Consumer Durables,,THANGAMAYL.NS,Small Cap,1,0
+NIACL,The New India Assurance Company Ltd.,Financial Services,,NIACL.NS,Small Cap,1,0
+RAMCOCEM,The Ramco Cements Ltd.,Construction,,RAMCOCEM.NS,Small Cap,1,0
+THERMAX,Thermax Ltd.,Capital Goods,,THERMAX.NS,Mid Cap,1,1
+THOMASCOOK,Thomas Cook (India) Ltd.,Consumer Services,,THOMASCOOK.NS,Micro Cap,0,0
+THYROCARE,Thyrocare Technologies Ltd.,Healthcare,,THYROCARE.NS,Micro Cap,0,0
+TI,Tilaknagar Industries Ltd.,FMCG,,TI.NS,Micro Cap,0,0
+TIMETECHNO,Time Technoplast Ltd.,Capital Goods,,TIMETECHNO.NS,Micro Cap,0,0
+TIMEX,Timex Group India Ltd.,Consumer Durables,,TIMEX.NS,Micro Cap,0,0
+TIMKEN,Timken India Ltd.,Capital Goods,,TIMKEN.NS,Small Cap,1,0
+TIPSMUSIC,Tips Music Ltd.,Media,,TIPSMUSIC.NS,Micro Cap,0,0
+TITAGARH,Titagarh Rail Systems Ltd.,Capital Goods,,TITAGARH.NS,Small Cap,1,0
+TITAN,Titan Company Ltd.,Consumer Durables,,TITAN.NS,Large Cap,1,0
+TORNTPHARM,Torrent Pharmaceuticals Ltd.,Healthcare,,TORNTPHARM.NS,Large Cap,1,0
+TORNTPOWER,Torrent Power Ltd.,Power,,TORNTPOWER.NS,Mid Cap,1,1
+TARIL,Transformers And Rectifiers (India) Ltd.,Capital Goods,,TARIL.NS,Small Cap,1,0
+TRANSRAILL,Transrail Lighting Ltd.,Capital Goods,,TRANSRAILL.NS,Micro Cap,0,0
+TRENT,Trent Ltd.,Consumer Services,,TRENT.NS,Large Cap,1,0
+TRIDENT,Trident Ltd.,Textiles,,TRIDENT.NS,Small Cap,1,0
+TRITURBINE,Triveni Turbine Ltd.,Capital Goods,,TRITURBINE.NS,Small Cap,1,0
+TIINDIA,Tube Investments of India Ltd.,Automobile,,TIINDIA.NS,Mid Cap,1,1
+UCOBANK,UCO Bank,Financial Services,,UCOBANK.NS,Small Cap,1,0
+UNOMINDA,UNO Minda Ltd.,Automobile,,UNOMINDA.NS,Mid Cap,1,1
+UPL,UPL Ltd.,Chemicals,,UPL.NS,Mid Cap,1,1
+UTIAMC,UTI Asset Management Company Ltd.,Financial Services,,UTIAMC.NS,Small Cap,1,0
+UJJIVANSFB,Ujjivan Small Finance Bank Ltd.,Financial Services,,UJJIVANSFB.NS,Micro Cap,0,0
+ULTRACEMCO,UltraTech Cement Ltd.,Construction,,ULTRACEMCO.NS,Large Cap,1,0
+UNIMECH,Unimech Aerospace and Manufacturing Ltd.,Capital Goods,,UNIMECH.NS,Micro Cap,0,0
+UNIONBANK,Union Bank of India,Financial Services,,UNIONBANK.NS,Large Cap,1,0
+UBL,United Breweries Ltd.,FMCG,,UBL.NS,Mid Cap,1,1
+UNITDSPR,United Spirits Ltd.,FMCG,,UNITDSPR.NS,Mid Cap,1,1
+URBANCO,Urban Company Ltd.,Consumer Services,,URBANCO.NS,Small Cap,1,0
+USHAMART,Usha Martin Ltd.,Capital Goods,,USHAMART.NS,Small Cap,1,0
+VGUARD,V-Guard Industries Ltd.,Consumer Durables,,VGUARD.NS,Micro Cap,0,0
+VMART,V-Mart Retail Ltd.,Consumer Services,,VMART.NS,Micro Cap,0,0
+VIPIND,V.I.P. Industries Ltd.,Consumer Durables,,VIPIND.NS,Micro Cap,0,0
+V2RETAIL,V2 Retail Ltd.,Consumer Services,,V2RETAIL.NS,Micro Cap,0,0
+DBREALTY,VALOR ESTATE Ltd.,Realty,,DBREALTY.NS,Micro Cap,0,0
+WABAG,Va Tech Wabag Ltd.,Power,,WABAG.NS,Micro Cap,0,0
+VAIBHAVGBL,Vaibhav Global Ltd.,Consumer Durables,,VAIBHAVGBL.NS,Micro Cap,0,0
+VTL,Vardhman Textiles Ltd.,Textiles,,VTL.NS,Small Cap,1,0
+VBL,Varun Beverages Ltd.,FMCG,,VBL.NS,Large Cap,1,0
+MANYAVAR,Vedant Fashions Ltd.,Consumer Services,,MANYAVAR.NS,Micro Cap,0,0
+VAML,Vedanta Aluminium Metal Ltd.,Metals & Mining,,VAML.NS,Large Cap,1,0
+VISL,Vedanta Iron and Steel Ltd.,Metals & Mining,,VISL.NS,Small Cap,1,0
+VEDL,Vedanta Ltd.,Metals & Mining,,VEDL.NS,Large Cap,1,0
+VOGL,Vedanta Oil and Gas Ltd.,Oil Gas & Fuels,,VOGL.NS,Small Cap,1,0
+VEDPOWER,Vedanta Power Ltd.,Power,,VEDPOWER.NS,Small Cap,1,0
+VESUVIUS,Vesuvius India Ltd.,Capital Goods,,VESUVIUS.NS,Micro Cap,0,0
+VIJAYA,Vijaya Diagnostic Centre Ltd.,Healthcare,,VIJAYA.NS,Small Cap,1,0
+VIKRAMSOLR,Vikram Solar Ltd.,Capital Goods,,VIKRAMSOLR.NS,Micro Cap,0,0
+VMM,Vishal Mega Mart Ltd.,Consumer Services,,VMM.NS,Mid Cap,1,1
+VIYASH,Viyash Scientific Ltd.,Healthcare,,VIYASH.NS,Micro Cap,0,0
+IDEA,Vodafone Idea Ltd.,Telecom,,IDEA.NS,Large Cap,1,0
+VOLTAMP,Voltamp Transformers Ltd,Capital Goods,,VOLTAMP.NS,Micro Cap,0,0
+VOLTAS,Voltas Ltd.,Consumer Durables,,VOLTAS.NS,Mid Cap,1,1
+WAAREEENER,Waaree Energies Ltd.,Capital Goods,,WAAREEENER.NS,Mid Cap,1,1
+WAAREERTL,Waaree Renewable Technologies Ltd.,Capital Goods,,WAAREERTL.NS,Micro Cap,0,0
+WAKEFIT,Wakefit Innovations Ltd.,Consumer Durables,,WAKEFIT.NS,Micro Cap,0,0
+WEWORK,WeWork India Management Ltd.,Services,,WEWORK.NS,Micro Cap,0,0
+WEBELSOLAR,Websol Energy System Ltd.,Capital Goods,,WEBELSOLAR.NS,Micro Cap,0,0
+WELCORP,Welspun Corp Ltd.,Capital Goods,,WELCORP.NS,Small Cap,1,0
+WELENT,Welspun Enterprises Ltd.,Construction,,WELENT.NS,Micro Cap,0,0
+WELSPUNLIV,Welspun Living Ltd.,Textiles,,WELSPUNLIV.NS,Small Cap,1,0
+WESTLIFE,Westlife Foodworld Ltd.,Consumer Services,,WESTLIFE.NS,Micro Cap,0,0
+WHIRLPOOL,Whirlpool of India Ltd.,Consumer Durables,,WHIRLPOOL.NS,Small Cap,1,0
+WIPRO,Wipro Ltd.,IT,,WIPRO.NS,Large Cap,1,0
+WOCKPHARMA,Wockhardt Ltd.,Healthcare,,WOCKPHARMA.NS,Small Cap,1,0
+YATHARTH,Yatharth Hospital & Trauma Care Services Ltd.,Healthcare,,YATHARTH.NS,Micro Cap,0,0
+YESBANK,Yes Bank Ltd.,Financial Services,,YESBANK.NS,Mid Cap,1,1
+ZFCVINDIA,ZF Commercial Vehicle Control Systems India Ltd.,Automobile,,ZFCVINDIA.NS,Small Cap,1,0
+ZAGGLE,Zaggle Prepaid Ocean Services Ltd.,IT,,ZAGGLE.NS,Micro Cap,0,0
+ZEEL,Zee Entertainment Enterprises Ltd.,Media,,ZEEL.NS,Small Cap,1,0
+ZENTEC,Zen Technologies Ltd.,Capital Goods,,ZENTEC.NS,Small Cap,1,0
+ZENSARTECH,Zensar Technolgies Ltd.,IT,,ZENSARTECH.NS,Small Cap,1,0
+ZYDUSLIFE,Zydus Lifesciences Ltd.,Healthcare,,ZYDUSLIFE.NS,Large Cap,1,0
+ZYDUSWELL,Zydus Wellness Ltd.,FMCG,,ZYDUSWELL.NS,Small Cap,1,0
+ECLERX,eClerx Services Ltd.,Services,,ECLERX.NS,Small Cap,1,0
