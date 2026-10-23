@@ -127,16 +127,60 @@ def test_neutral_requires_2point5to1() -> None:
     assert any("below minimum 2.5" in x for x in neutral.rejection_reasons)
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="BUG: CLAUDE.md Section 6 says BEARISH -> position size 0 / no long "
-           "entries, but calculate_position falls through to the BULLISH 2.0 "
-           "min R:R and approves the trade. Remove this marker once fixed.",
-)
 def test_bearish_regime_blocks_long_entries() -> None:
+    """CLAUDE.md Section 6: BEARISH -> position size 0, no long entries."""
     r = calculate_position(100.0, 98.0, 120.0, CAPITAL, regime="BEARISH")
     assert r.passed is False
+    assert r.verdict.startswith("REJECTED")
     assert r.shares == 0
+    assert r.risk_amount == 0.0
+    assert r.risk_pct == 0.0
+    assert r.reward == 0.0
+    assert any("BEARISH" in x for x in r.rejection_reasons)
+
+
+def test_bearish_blocks_even_an_otherwise_perfect_setup() -> None:
+    """A 10:1 trade well inside the 2% cap is still refused in BEARISH."""
+    r = calculate_position(100.0, 99.0, 110.0, CAPITAL, regime="BEARISH")
+    assert r.rr_ratio == pytest.approx(10.0)   # still reported, for information
+    assert r.shares == 0
+    assert r.passed is False
+
+
+def test_bearish_rejection_is_not_muddied_by_sizing_noise() -> None:
+    """
+    Zeroing the position must not also trip "rounds to 0 shares — stop too
+    wide" or the "risk is low" warning; the regime is the only real reason.
+    """
+    r = calculate_position(100.0, 98.0, 120.0, CAPITAL, regime="BEARISH")
+    assert len(r.rejection_reasons) == 1
+    assert not any("rounds to 0 shares" in x for x in r.rejection_reasons)
+    assert not any("is low" in w for w in r.warnings)
+
+
+@pytest.mark.parametrize("regime", ["BEARISH", "bearish", "Bearish", " bearish "])
+def test_bearish_match_is_case_and_whitespace_insensitive(regime: str) -> None:
+    """
+    Guards a latent bug of the same family: the old `regime == "NEUTRAL"`
+    comparison was case-sensitive, so a lowercase regime silently fell through
+    to the laxer BULLISH threshold.
+    """
+    assert calculate_position(100.0, 98.0, 120.0, CAPITAL, regime=regime).shares == 0
+
+
+@pytest.mark.parametrize("regime", ["neutral", "Neutral", " NEUTRAL "])
+def test_neutral_match_is_case_insensitive_too(regime: str) -> None:
+    """2.2:1 must fail the NEUTRAL 2.5 floor regardless of string casing."""
+    r = calculate_position(100.0, 98.0, 104.4, CAPITAL, regime=regime)
+    assert r.passed is False
+    assert any("below minimum 2.5" in x for x in r.rejection_reasons)
+
+
+def test_unknown_regime_falls_back_to_bullish_thresholds() -> None:
+    """An unrecognised regime must not silently become permissive-or-blocked."""
+    r = calculate_position(100.0, 98.0, 104.0, CAPITAL, regime="UNKNOWN")
+    assert r.passed is True
+    assert r.shares > 0
 
 
 def test_missing_target_skips_the_rr_check() -> None:
