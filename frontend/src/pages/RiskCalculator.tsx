@@ -27,6 +27,7 @@ export default function RiskCalculator() {
   const [stop, setStop] = useState(0);
   const [target, setTarget] = useState(0);
   const [regime, setRegime] = useState<"BULLISH" | "NEUTRAL" | "BEARISH">("BULLISH");
+  const [side, setSide] = useState<"LONG" | "SHORT">("LONG");
 
   const [r, setR] = useState<RiskResp | null>(null);
   const [loading, setLoading] = useState(false);
@@ -48,7 +49,7 @@ export default function RiskCalculator() {
     setLoading(true);
     const t = setTimeout(async () => {
       try {
-        const res = await api.risk({ entry, stop, target, capital, regime });
+        const res = await api.risk({ entry, stop, target, capital, regime, side });
         if (mine === seq.current) { setR(res); setErr(null); }
       } catch (e: any) {
         // Never fall back to a local calculation: a wrong position size shown
@@ -59,18 +60,18 @@ export default function RiskCalculator() {
       }
     }, 350);
     return () => clearTimeout(t);
-  }, [entry, stop, target, capital, regime, ready]);
+  }, [entry, stop, target, capital, regime, side, ready]);
 
   return (
     <Section title="Risk Calculator · Position Sizing">
       <Card className="mb-3">
         <div className="font-mono text-[0.66rem] text-muted flex flex-wrap items-center gap-x-2 gap-y-1">
           <span>
-            Shares = (Capital × 2%) ÷ (Entry − Stop) · Max risk 2% · Min R:R{" "}
+            Shares = (Capital × 2%) ÷ |Entry − Stop| · Max risk 2% · Min R:R{" "}
             {r ? `${fmt(r.min_rr, 1)}:1` : "—"}
           </span>
           {loading && <Loader2 size={11} className="animate-spin text-brand shrink-0" />}
-          <span className="text-faint shrink-0 w-full sm:w-auto sm:ml-auto">sized by risk/risk.py</span>
+          <span className="text-faint shrink-0 w-full sm:w-auto sm:ml-auto">{side} · sized by risk/risk.py</span>
         </div>
       </Card>
 
@@ -79,6 +80,13 @@ export default function RiskCalculator() {
         <Field label="Entry" value={entry} onChange={setEntry} />
         <Field label="Stop Loss" value={stop} onChange={setStop} />
         <Field label="Target" value={target} onChange={setTarget} />
+        <div>
+          <label className="label block mb-1">Side</label>
+          <select value={side} onChange={(e) => setSide(e.target.value as any)}
+            className="w-full bg-base border border-line rounded-lg px-3 py-2 text-sm text-txt outline-none focus:border-brand/60">
+            <option>LONG</option><option>SHORT</option>
+          </select>
+        </div>
         <div>
           <label className="label block mb-1">Regime</label>
           <select value={regime} onChange={(e) => setRegime(e.target.value as any)}

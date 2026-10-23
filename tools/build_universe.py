@@ -570,6 +570,39 @@ INDUSTRY_ALIASES = {
 }
 
 
+def _fetch_fno(session) -> dict[str, int]:
+    """Fetch the F&O-eligible underlyings and their lot sizes.
+
+    This is a tradability fact, not a nicety: on NSE a cash-market short must
+    be squared off the same session, so only a name with stock futures can be
+    held short overnight. About 213 of the 745 names qualify — the short
+    screener needs to say which, or it surfaces signals that cannot be carried.
+
+    Args:
+        session: A requests.Session already primed with NSE cookies.
+
+    Returns:
+        {symbol: lot_size}; empty if the list could not be fetched.
+    """
+    try:
+        resp = session.get("https://nsearchives.nseindia.com/content/fo/fo_mktlots.csv", timeout=25)
+        resp.raise_for_status()
+    except Exception as exc:
+        print(f"  warning: F&O list unavailable ({type(exc).__name__}) — FnO flags will be 0")
+        return {}
+
+    out: dict[str, int] = {}
+    for line in resp.text.splitlines()[1:]:
+        parts = [p.strip() for p in line.split(",")]
+        if len(parts) < 3 or not parts[1]:
+            continue
+        try:
+            out[parts[1]] = int(parts[2])
+        except ValueError:
+            continue                      # header repeats and blank expiry columns
+    return out
+
+
 def _fetch_index(session, slug: str) -> list[dict]:
     """Fetch one NSE index constituent CSV.
 
@@ -622,6 +655,8 @@ def fetch_nse_universe() -> list[tuple] | None:
             print(f"  warning: {key} list unavailable ({type(exc).__name__}) — cap tiers degrade")
             members[key] = set()
 
+    fno = _fetch_fno(session)
+
     rows: list[tuple] = []
     for r in total:
         sym = r["Symbol"].strip()
@@ -645,8 +680,11 @@ def fetch_nse_universe() -> list[tuple] | None:
             cap,
             1 if sym in members["nifty500"] else 0,
             1 if sym in members["midcap"] else 0,
+            1 if sym in fno else 0,
+            fno.get(sym, 0),
         ))
-    print(f"NSE universe fetched: {len(rows)} symbols")
+    print(f"NSE universe fetched: {len(rows)} symbols "
+          f"({sum(1 for r in rows if r[7]) } F&O-eligible)")
     return rows
 
 
@@ -664,15 +702,18 @@ def build() -> None:
             if sym in seen:
                 continue
             seen.add(sym)
-            rows.append((sym, company, sector, ticker, cap, 1, 1 if cap == "Mid Cap" else 0))
+            rows.append((sym, company, sector, ticker, cap, 1,
+                         1 if cap == "Mid Cap" else 0, 0, 0))
 
     UNIVERSE_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(UNIVERSE_PATH, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["Symbol", "Company_Name", "Industry", "ISIN",
-                         "yfinance_Ticker", "Cap_Category", "In_Nifty500", "In_MidCap150"])
-        for sym, company, industry, ticker, cap, in500, inmid in rows:
-            writer.writerow([sym, company, industry, "", ticker, cap, in500, inmid])
+                         "yfinance_Ticker", "Cap_Category", "In_Nifty500", "In_MidCap150",
+                         "FnO", "Lot_Size"])
+        for sym, company, industry, ticker, cap, in500, inmid, fno_flag, lot in rows:
+            writer.writerow([sym, company, industry, "", ticker, cap, in500, inmid,
+                             fno_flag, lot])
 
     print(f"Universe written: {len(rows)} symbols -> {UNIVERSE_PATH}")
 
