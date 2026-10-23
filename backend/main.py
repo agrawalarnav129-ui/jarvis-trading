@@ -845,6 +845,43 @@ def scan_nl(req: NLScanReq):
         raise HTTPException(status_code=503, detail="NL scan unavailable")
 
 
+class RiskReq(BaseModel):
+    entry: float
+    stop: float
+    target: float = 0.0
+    capital: float = 1_000_000
+    symbol: str = ""
+    regime: str = "BULLISH"
+
+
+@app.post("/api/risk")
+def risk(req: RiskReq):
+    """
+    Position sizing — the single source of truth for the 2% rule.
+
+    Thin wrapper over risk.risk.calculate_position so the React calculator does
+    not re-implement the rulebook in TypeScript. Every threshold (2% cap, the
+    regime R:R floor, the BEARISH block) is decided here and only here; the
+    client renders what it is told, including `min_rr`.
+
+    Invalid input is a valid answer, not an error: the engine returns a
+    REJECTED result with reasons, so this never raises on bad numbers.
+    """
+    from dataclasses import asdict
+
+    from risk.risk import calculate_position
+
+    result = calculate_position(
+        entry=req.entry,
+        stop=req.stop,
+        target=req.target,
+        capital=req.capital,
+        symbol=req.symbol,
+        regime=req.regime,
+    )
+    return asdict(result)
+
+
 class TradeReview(BaseModel):
     symbol: str
     entry: float

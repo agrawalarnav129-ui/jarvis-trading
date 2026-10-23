@@ -242,6 +242,25 @@ def test_validate_risk_rejects_inverted_stop_and_zero_capital() -> None:
 
 # ── rounding / reporting hygiene ────────────────────────────────────────────
 
+def test_min_rr_is_reported_so_callers_need_not_know_the_rule() -> None:
+    """
+    The R:R floor is part of the result, not something a client re-derives.
+    This field is what allowed the TypeScript copy of the rulebook to be
+    deleted in favour of POST /api/risk.
+    """
+    assert calculate_position(100.0, 98.0, 106.0, CAPITAL, regime="BULLISH").min_rr == 2.0
+    assert calculate_position(100.0, 98.0, 106.0, CAPITAL, regime="NEUTRAL").min_rr == 2.5
+    assert calculate_position(100.0, 98.0, 106.0, CAPITAL, regime="neutral").min_rr == 2.5
+    assert calculate_position(100.0, 98.0, 106.0, CAPITAL, regime="BEARISH").min_rr == 2.0
+
+
+def test_min_rr_is_populated_even_on_an_early_validation_exit() -> None:
+    """Invalid input returns before sizing — min_rr must still be set."""
+    r = calculate_position(100.0, 101.0, 106.0, CAPITAL, regime="NEUTRAL")
+    assert r.passed is False
+    assert r.min_rr == 2.5
+
+
 def test_outputs_are_rounded_for_display() -> None:
     r = calculate_position(entry=1234.5678, stop=1200.1234, target=1333.9876, capital=CAPITAL)
     assert r.entry == round(1234.5678, 2)

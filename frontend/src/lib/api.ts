@@ -48,6 +48,14 @@ export interface HistoryResp { symbol: string; interval: string; last: number; c
 export interface PatternMatch { symbol: string; score: number; last: number; pct: number; spark: number[]; }
 export interface FiiDii { available: boolean; date?: string; fii?: { net: number }; dii?: { net: number }; note?: string; }
 export interface ClockData { iso: string; ist: string; date: string; market_open: boolean; }
+/** Mirrors risk.risk.RiskResult. The 2% cap, the regime R:R floor (`min_rr`) and
+ *  the BEARISH block all live in Python — never re-derive them client-side. */
+export interface RiskResp {
+  symbol: string; entry: number; stop: number; target: number; capital: number;
+  shares: number; risk_amount: number; risk_pct: number; reward: number;
+  rr_ratio: number; min_rr: number; passed: boolean; verdict: string;
+  rejection_reasons: string[]; warnings: string[];
+}
 
 export const api = {
   clock: () => get<ClockData>("/api/clock"),
@@ -134,6 +142,13 @@ export const api = {
     });
     if (!r.ok) throw new Error(`trade-review -> ${r.status}`);
     return (await r.json()) as { symbol: string; rr: number; stop_pct: number; regime: string; checks: { rule: string; pass: boolean; detail: string }[]; verdict: string; passed: number; total: number; ai: string };
+  },
+  risk: async (body: { entry: number; stop: number; target: number; capital: number; regime: string; symbol?: string }) => {
+    const r = await fetch(`${BASE}/api/risk`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+    });
+    if (!r.ok) throw new Error(`risk -> ${r.status}`);
+    return (await r.json()) as RiskResp;
   },
   symbols: () => get<{ count: number; symbols: { symbol: string; name: string; sector: string }[] }>("/api/symbols"),
   patternMatch: async (shape: number[], window = 60, top = 24, min_price = 0) => {

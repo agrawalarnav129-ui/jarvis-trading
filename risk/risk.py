@@ -30,6 +30,7 @@ class RiskResult:
     risk_pct: float          # % of capital
     reward: float            # ₹ potential reward
     rr_ratio: float          # reward:risk
+    min_rr: float            # R:R floor this regime demanded
     passed: bool             # cleared all checks
     verdict: str             # APPROVED / REJECTED
     rejection_reasons: list[str]
@@ -55,6 +56,10 @@ def calculate_position(
     rejections: list[str] = []
     warnings: list[str] = []
     regime_norm = (regime or "").strip().upper()
+    # Computed up front so it is reported even on an early validation exit —
+    # callers (including the API and its clients) read the floor from here
+    # rather than re-deriving the rule.
+    min_rr = 2.5 if regime_norm == "NEUTRAL" else 2.0
 
     # ── Input validation ──
     if entry <= 0:
@@ -69,7 +74,7 @@ def calculate_position(
     if rejections:
         return RiskResult(
             symbol=symbol, entry=entry, stop=stop, target=target, capital=capital,
-            shares=0, risk_amount=0, risk_pct=0, reward=0, rr_ratio=0,
+            shares=0, risk_amount=0, risk_pct=0, reward=0, rr_ratio=0, min_rr=min_rr,
             passed=False, verdict="REJECTED", rejection_reasons=rejections, warnings=warnings,
         )
 
@@ -102,8 +107,7 @@ def calculate_position(
     if shares <= 0 and not is_bearish:
         rejections.append("Position size rounds to 0 shares — stop too wide")
 
-    # Min R:R by regime
-    min_rr = 2.5 if regime_norm == "NEUTRAL" else 2.0
+    # Min R:R by regime (floor computed above)
     if target > entry and rr_ratio < min_rr and not is_bearish:
         rejections.append(f"R:R {rr_ratio:.2f} below minimum {min_rr} for {regime_norm} regime")
 
@@ -131,6 +135,7 @@ def calculate_position(
         risk_pct=round(risk_pct, 2),
         reward=round(reward, 2),
         rr_ratio=rr_ratio,
+        min_rr=min_rr,
         passed=passed,
         verdict=verdict,
         rejection_reasons=rejections,
