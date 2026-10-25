@@ -351,10 +351,19 @@ shorts for the same reason a BEARISH one blocks longs.
    futures can be carried. `data/universe.csv` carries `FnO` and `Lot_Size`,
    and the short screener filters on it by default.
 
-> **Open gap:** position sizing returns *shares*, but a futures short trades in
-> *lots*. Rounding 823 shares to 1 lot of 650 changes realised risk from 2.0%
-> to ~1.6%; rounding up to 2 lots makes it ~3.2% and breaches the cap. Size
-> down to the nearest whole lot, never up, until the calculator does it for you.
+**Sizing in lots.** `calculate_position(..., lot_size=N)` rounds the position
+down to whole futures lots. Down, never up: rounding up is the only direction
+that breaches the 2% cap, and it does so hard — HDFCBANK's 823 shares is 1 lot
+of 650 (1.58% risk) or 2 lots (3.16%, over the limit). Pass `lot_size=0` for
+cash equity. When a single lot already costs more than 2%, the trade is
+rejected with the arithmetic, because no stop adjustment fixes it.
+
+> **Futures shorting has a capital floor, and it is high.** NSE lot sizes mean
+> one lot of the cheapest name on the short board needs ~₹6.2L of capital to
+> stay inside the 2% cap; the median name needs ~₹13.5L. Measured against the
+> live board: at ₹5L **nothing** is placeable, at ₹10L about 17% of candidates
+> are, and it takes ~₹25L before 94% open up. Below roughly ₹6L the short
+> engine is a watchlist, not a trading tool — intraday cash shorts aside.
 
 > **Grades do not transfer.** The A/B/C thresholds were set on the long engine.
 > On one measured session the long screen graded 2.7% of names A and the short

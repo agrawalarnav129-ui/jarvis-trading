@@ -12,7 +12,8 @@ import SymbolLink from "../components/SymbolLink";
 
 export default function Shorts() {
   const [fnoOnly, setFnoOnly] = useState(true);
-  const { data, loading } = useFetch(() => api.shorts(40, fnoOnly), [fnoOnly]);
+  const [capital, setCapital] = useState(1_000_000);
+  const { data, loading } = useFetch(() => api.shorts(40, fnoOnly, capital), [fnoOnly, capital]);
 
   const bullish = data?.regime === "BULLISH";
 
@@ -49,8 +50,32 @@ export default function Shorts() {
             className="accent-brand" />
           F&amp;O only (holdable overnight)
         </label>
-        {data && <span className="label ml-auto">{data.count} candidates</span>}
+        <label className="label flex items-center gap-2">
+          Capital ₹
+          <input type="number" value={capital || ""} step={100000}
+            onChange={(e) => setCapital(parseFloat(e.target.value) || 0)}
+            className="w-28 bg-base border border-line rounded px-2 py-1 text-xs font-mono text-txt outline-none focus:border-brand/60" />
+        </label>
+        {data && (
+          <span className="label ml-auto">
+            {data.count} candidates
+            {capital > 0 && data.results && (
+              <> · <span className="text-txt">{data.results.filter((r) => r.takeable).length}</span> takeable here</>
+            )}
+          </span>
+        )}
       </div>
+
+      {capital > 0 && data?.available && data.results.every((r) => !r.takeable) && (
+        <div className="card p-3 mb-3 border-l-2 border-l-gold">
+          <div className="label leading-relaxed">
+            <span className="text-gold font-display">Nothing here is placeable at ₹{capital.toLocaleString("en-IN")}.</span>{" "}
+            One NSE futures lot of even the cheapest name on this board risks more than
+            your 2% cap allows. Futures shorting needs roughly ₹6.2L minimum, and about
+            ₹13.5L before a usable number of names open up.
+          </div>
+        </div>
+      )}
 
       {!fnoOnly && (
         <div className="label mb-3 text-gold">
@@ -79,6 +104,7 @@ export default function Shorts() {
                   <th className="py-2 px-3 text-right">Stop</th>
                   <th className="py-2 px-3 text-right">Target</th>
                   <th className="py-2 px-3 text-right">Lot</th>
+                  <th className="py-2 px-3 text-right">Size</th>
                   <th className="py-2 px-3">Setup</th>
                 </tr>
               </thead>
@@ -116,6 +142,12 @@ export default function Shorts() {
                     <td className="py-2 px-3 text-right font-mono text-xs text-faint">
                       {r.lot_size ? fmtInt(r.lot_size) : "—"}
                     </td>
+                    <td className="py-2 px-3 text-right font-mono text-xs">
+                      {r.takeable === undefined ? "—"
+                        : r.takeable
+                          ? <span className="text-up">{r.lots}L · {fmt(r.sized_risk_pct ?? 0, 2)}%</span>
+                          : <span className="text-faint">over cap</span>}
+                    </td>
                     <td className="py-2 px-3 font-mono text-[0.62rem] text-muted truncate max-w-[170px]">
                       {r.setup_flags || "—"}
                     </td>
@@ -128,9 +160,10 @@ export default function Shorts() {
           <div className="label mt-3 flex items-start gap-2">
             <TrendingDown size={13} className="shrink-0 mt-0.5" />
             <span>
-              Stop sits 1.5 × ATR above entry, target 2R below. A short's loss has no
-              ceiling — size it through the Risk Calculator with side SHORT, which enforces
-              the 2% cap and refuses the trade in a BULLISH regime.
+              Stop sits 1.5 × ATR above entry, target 2R below. Size is in whole futures
+              lots rounded down — rounding up is the one direction that breaches the 2%
+              cap. "Over cap" means a single lot already risks more than 2% at this
+              capital, which no stop adjustment fixes.
             </span>
           </div>
         </>

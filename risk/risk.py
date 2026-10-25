@@ -32,6 +32,8 @@ class RiskResult:
     rr_ratio: float          # reward:risk
     min_rr: float            # R:R floor this regime demanded
     side: str                # LONG / SHORT
+    lots: int                # whole lots (0 when sized in cash shares)
+    lot_size: int            # contract lot size, 0 for cash equity
     passed: bool             # cleared all checks
     verdict: str             # APPROVED / REJECTED
     rejection_reasons: list[str]
@@ -46,6 +48,7 @@ def calculate_position(
     symbol: str = "",
     regime: str = "BULLISH",
     side: str = "LONG",
+    lot_size: int = 0,
 ) -> RiskResult:
     """
     Calculate position size and validate against all risk rules.
@@ -56,6 +59,11 @@ def calculate_position(
     BELOW it — and inverts the regime gate with it: CLAUDE.md Section 6 blocks
     longs in BEARISH, so it blocks shorts in BULLISH, on the same principle of
     never trading against the regime. NEUTRAL demands 2.5:1 from both sides.
+
+    `lot_size` > 0 sizes the position in whole futures lots, rounded DOWN —
+    the only direction that cannot breach the 2% cap. Leave it 0 for cash
+    equity. On NSE an overnight short must be a futures position, so a short
+    held past the session needs a lot size.
 
     `side` and `regime` are matched case-insensitively; an unrecognised side
     is treated as LONG.
@@ -87,7 +95,7 @@ def calculate_position(
         return RiskResult(
             symbol=symbol, entry=entry, stop=stop, target=target, capital=capital,
             shares=0, risk_amount=0, risk_pct=0, reward=0, rr_ratio=0, min_rr=min_rr,
-            side=side_norm,
+            side=side_norm, lots=0, lot_size=max(lot_size, 0),
             passed=False, verdict="REJECTED", rejection_reasons=rejections, warnings=warnings,
         )
 
@@ -95,6 +103,18 @@ def calculate_position(
     risk_per_share = (stop - entry) if is_short else (entry - stop)
     max_risk_amt   = capital * CAPITAL_RISK_PCT          # 2% of capital
     shares         = int(max_risk_amt / risk_per_share)
+
+    # ── Lot rounding (derivatives only) ──
+    # A futures position trades in whole lots, so the share count the 2% cap
+    # implies is rarely one you can actually place. Round DOWN: rounding up is
+    # the one direction that breaches the cap, and by a lot — HDFCBANK's 823
+    # shares is 1 lot of 650 (1.58% risk) or 2 lots (3.16%, over the limit).
+    # lot_size <= 0 means cash equity, where any share count is valid.
+    lots = 0
+    if lot_size > 0:
+        lots = shares // lot_size
+        shares = lots * lot_size
+
     risk_amount    = shares * risk_per_share
     risk_pct       = (risk_amount / capital) * 100
 
@@ -114,6 +134,7 @@ def calculate_position(
         rejections.append(
             f"{regime_norm} regime — no {side_norm.lower()} entries permitted (position size 0)")
         shares      = 0
+        lots        = 0
         risk_amount = 0.0
         risk_pct    = 0.0
         reward      = 0.0
@@ -123,7 +144,15 @@ def calculate_position(
 
     # Suppressed when the regime blocks: the position is 0 by policy, not a wide stop.
     if shares <= 0 and not blocked_by_regime:
-        rejections.append("Position size rounds to 0 shares — stop too wide")
+        if lot_size > 0:
+            # Not "stop too wide" — one whole lot simply costs more risk than
+            # the 2% cap allows at this capital. Say which, so the fix is clear.
+            one_lot_risk = lot_size * risk_per_share
+            rejections.append(
+                f"1 lot ({lot_size} shares) risks ₹{one_lot_risk:,.0f} "
+                f"({one_lot_risk / capital * 100:.2f}% of capital) — over the 2% cap")
+        else:
+            rejections.append("Position size rounds to 0 shares — stop too wide")
 
     # Min R:R by regime (floor computed above)
     if has_target and rr_ratio < min_rr and not blocked_by_regime:
@@ -162,6 +191,8 @@ def calculate_position(
         rr_ratio=rr_ratio,
         min_rr=min_rr,
         side=side_norm,
+        lots=lots,
+        lot_size=max(lot_size, 0),
         passed=passed,
         verdict=verdict,
         rejection_reasons=rejections,

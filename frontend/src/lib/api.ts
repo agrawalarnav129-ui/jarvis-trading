@@ -53,7 +53,7 @@ export interface ClockData { iso: string; ist: string; date: string; market_open
 export interface RiskResp {
   symbol: string; entry: number; stop: number; target: number; capital: number;
   shares: number; risk_amount: number; risk_pct: number; reward: number;
-  rr_ratio: number; min_rr: number; side: string; passed: boolean; verdict: string;
+  rr_ratio: number; min_rr: number; side: string; lots: number; lot_size: number; passed: boolean; verdict: string;
   rejection_reasons: string[]; warnings: string[];
 }
 
@@ -143,13 +143,14 @@ export const api = {
     if (!r.ok) throw new Error(`trade-review -> ${r.status}`);
     return (await r.json()) as { symbol: string; rr: number; stop_pct: number; regime: string; checks: { rule: string; pass: boolean; detail: string }[]; verdict: string; passed: number; total: number; ai: string };
   },
-  shorts: (limit = 40, fno_only = true) => get<{
-    available: boolean; note?: string; regime: string; fno_only?: boolean; count: number;
+  shorts: (limit = 40, fno_only = true, capital = 0) => get<{
+    available: boolean; note?: string; regime: string; fno_only?: boolean; capital?: number; count: number;
     results: { symbol: string; score: number; pct_rank: number; grade: string; rsi: number | null;
       adx: number | null; rs_20d: number; rs_60d: number; entry: number; stop: number;
       target: number; fno: number; lot_size: number; turnover_cr: number;
-      setup_flags: string; notes: string }[];
-  }>(`/api/shorts?limit=${limit}&fno_only=${fno_only}`),
+      setup_flags: string; notes: string; lots?: number; sized_shares?: number;
+      sized_risk_pct?: number; takeable?: boolean }[];
+  }>(`/api/shorts?limit=${limit}&fno_only=${fno_only}&capital=${capital}`),
   defensive: (limit = 40, max_beta = 0.75) => get<{
     available: boolean; note: string; regime: string; beta_window: number; max_beta: number;
     scanned: number; skipped_illiquid: number; skipped_short_history: number; count: number;
@@ -158,7 +159,7 @@ export const api = {
       down_capture: number | null; up_capture: number | null;
       bench_down_mean: number | null; down_days: number }[];
   }>(`/api/defensive?limit=${limit}&max_beta=${max_beta}`),
-  risk: async (body: { entry: number; stop: number; target: number; capital: number; regime: string; side?: string; symbol?: string }) => {
+  risk: async (body: { entry: number; stop: number; target: number; capital: number; regime: string; side?: string; lot_size?: number; symbol?: string }) => {
     const r = await fetch(`${BASE}/api/risk`, {
       method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
     });
