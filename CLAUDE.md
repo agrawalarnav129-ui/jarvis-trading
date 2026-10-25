@@ -127,7 +127,7 @@ You operate in two modes simultaneously:
 | Parameter | Value |
 |---|---|
 | Market | NSE (National Stock Exchange, India) |
-| Universe | `data/universe.csv` — 510 Nifty 500 names (121 large, 314 mid, 75 small). Wider than the stated Nifty 100 + Midcap 150 mandate; the liquidity gate is what keeps the thin tail out. |
+| Universe | `data/universe.csv` — 745 names (100 large, 149 mid, 247 small, 249 micro), fetched from NSE's Nifty Total Market list by `tools/build_universe.py`. Far wider than the stated Nifty 100 + Midcap 150 mandate; the liquidity gate is what keeps the thin tail out. 213 of them are F&O-eligible and so shortable overnight. |
 | Style | Swing + Intraday Hybrid |
 | Holding Period | Hours to Days |
 | Primary Setups | Breakouts, Momentum Continuation |
@@ -186,12 +186,14 @@ data/
 ├── cache/                       # parquet, best-effort local only
 └── universe.csv
 screener/
-├── screener.py                  # filters + 5-factor scorer (the engine)
+├── screener.py                  # filters + 5-factor scorer (the long engine)
+├── short_screener.py            # the mirror — breakdowns, F&O-gated
 ├── ta_engine.py                 # multi-timeframe confluence
 └── regime_classifier.py         # BULLISH / NEUTRAL / BEARISH
 risk/
 └── risk.py                      # position sizing — single source of truth
 analytics/                       # quant lab, RRG, footprint, paper, honesty
+└── defensive.py                 # low-beta board (falls less, does not rise)
 ai/                              # Groq briefings, sitrep, sentiment
 backtest/
 ├── backtest.py
@@ -209,9 +211,13 @@ frontend/                        # React + Vite, the current UI
 jobs/                            # entry points for GitHub Actions cron
 monitors/                        # intraday watcher, Telegram
 storage/                         # SQLite (legacy dashboard) + CSV fallback
-tests/
-├── test_risk.py
-└── test_indicators.py
+tests/                           # pytest; run with `python -m pytest`
+├── test_risk.py                 # position sizing, both sides, lot rounding
+├── test_indicators.py           # the TA single source of truth
+├── test_short_screener.py
+├── test_defensive.py
+├── test_logger.py
+└── test_fetcher_logging.py
 workflows/                       # WAT workflows live here
 tools/                           # WAT tools live here
 .tmp/                            # Disposable intermediates
