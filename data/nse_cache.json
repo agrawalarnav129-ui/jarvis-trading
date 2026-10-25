@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T03:00:59.473457Z",
+  "updated": "2026-10-25T03:00:54.290858Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,20 +17,6 @@
     "net_combined": 4123.01
   },
   "corporate": [
-    {
-      "date": "2026-10-25",
-      "date_str": "25 Oct",
-      "symbol": "BHARATCOAL",
-      "company": "Bharat Coking Coal Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-25",
-      "date_str": "25 Oct",
-      "symbol": "RAILTEL",
-      "company": "Railtel Corporation Of India Limited",
-      "purpose": "Financial Results/Dividend"
-    },
     {
       "date": "2026-10-26",
       "date_str": "26 Oct",
@@ -156,6 +142,20 @@
       "symbol": "DRCSYSTEMS",
       "company": "DRC Systems India Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-26",
+      "date_str": "26 Oct",
+      "symbol": "ERIS",
+      "company": "Eris Lifesciences Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-26",
+      "date_str": "26 Oct",
+      "symbol": "EVERESTIND",
+      "company": "Everest Industries Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
