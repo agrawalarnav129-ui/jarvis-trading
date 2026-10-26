@@ -1,0 +1,44 @@
+{
+  "CRISIL.NS": [
+    "BREAKOUT",
+    "MOMENTUM_CONT"
+  ],
+  "MPHASIS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "BREAKOUT"
+  ],
+  "INDHOTEL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "PVRINOX.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "INFY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TECHM.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "LTTS.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TATAELXSI.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TCS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "DRREDDY.NS": [],
+  "BSOFT.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "TANLA.NS": [],
+  "COFORGE.NS": [
+    "MOMENTUM_CONT"
+  ],
+  "SHYAMMETL.NS": [],
+  "WIPRO.NS": [
+    "BB_SQUEEZE_SETUP"
+  ]
+}
