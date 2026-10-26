@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T03:00:54.290858Z",
+  "updated": "2026-10-26T03:01:20.746108Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -18,144 +18,144 @@
   },
   "corporate": [
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "AAVAS",
-      "company": "Aavas Financiers Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "ABDL",
+      "company": "Allied Blenders and Distillers Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "ACC",
+      "company": "ACC Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "ACUTAAS",
+      "company": "Acutaas Chemicals Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "AKSHAR",
+      "company": "Akshar Spintex Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "ABREL",
-      "company": "Aditya Birla Real Estate Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "AVALON",
+      "company": "Avalon Technologies Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "AWL",
+      "company": "AWL Agri Business Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "ACEVECTOR",
-      "company": "AceVector Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "BAJAJ-AUTO",
+      "company": "Bajaj Auto Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "AEGISLOG",
-      "company": "Aegis Logistics Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "BBL",
+      "company": "Bharat Bijlee Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "AEGISVOPAK",
-      "company": "Aegis Vopak Terminals Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "BHARATSE",
+      "company": "Bharat Seats Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "AEQUS",
-      "company": "Aequs Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "CENTENKA",
+      "company": "Century Enka Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "ANTELOPUS",
-      "company": "Antelopus Selan Energy Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "CGCL",
+      "company": "Capri Global Capital Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "APLAPOLLO",
-      "company": "APL Apollo Tubes Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "CINEVISTA",
+      "company": "Cinevista Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "ASTEC",
-      "company": "Astec LifeSciences Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "CIPLA",
+      "company": "Cipla Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "ATHERENERG",
-      "company": "Ather Energy Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "CONCORDBIO",
+      "company": "Concord Biotech Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "AVANTEL",
-      "company": "Avantel Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "DYCL",
+      "company": "Dynamic Cables Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "BRIGHOTEL",
-      "company": "Brigade Hotel Ventures Limited",
-      "purpose": "Financial Results"
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "FDC",
+      "company": "FDC Limited",
+      "purpose": "Buyback"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "CYBERMEDIA",
-      "company": "Cyber Media (India) Limited",
-      "purpose": "Financial Results"
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "FDC",
+      "company": "FDC Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "DALBHARAT",
-      "company": "Dalmia Bharat Limited",
-      "purpose": "Financial Results/Dividend/Oth"
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "GANDHAR",
+      "company": "Gandhar Oil Refinery (India) Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "DCMSHRIRAM",
-      "company": "DCM Shriram Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "GRAVITA",
+      "company": "Gravita India Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "DEEPA",
-      "company": "Deepa Jewellers Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "DHANBANK",
-      "company": "Dhanlaxmi Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "DRCSYSTEMS",
-      "company": "DRC Systems India Limited",
+      "date": "2026-10-27",
+      "date_str": "27 Oct",
+      "symbol": "GULFPETRO",
+      "company": "GP Petroleums Limited",
       "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "ERIS",
-      "company": "Eris Lifesciences Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-26",
-      "date_str": "26 Oct",
-      "symbol": "EVERESTIND",
-      "company": "Everest Industries Limited",
-      "purpose": "Financial Results"
     }
   ]
 }
