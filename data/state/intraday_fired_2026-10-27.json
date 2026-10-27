@@ -1,0 +1,42 @@
+{
+  "DRREDDY.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "COFORGE.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "CRISIL.NS": [],
+  "SGMART.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "INDHOTEL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "IGIL.NS": [],
+  "CYIENT.NS": [],
+  "ITCHOTELS.NS": [],
+  "ACUTAAS.NS": [],
+  "INDUSTOWER.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "INFY.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MRPL.NS": [
+    "BB_SQUEEZE_SETUP"
+  ],
+  "FSL.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "MPHASIS.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ],
+  "TECHM.NS": [
+    "BB_SQUEEZE_SETUP",
+    "MOMENTUM_CONT"
+  ]
+}
