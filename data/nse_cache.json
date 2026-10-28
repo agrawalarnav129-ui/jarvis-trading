@@ -1,160 +1,160 @@
 {
-  "updated": "2026-10-27T08:52:41.128583Z",
+  "updated": "2026-10-28T03:01:30.027932Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "26-Oct-2026",
+    "date": "27-Oct-2026",
     "fii": {
-      "buy": 9324.9,
-      "sell": 10787.39,
-      "net": -1462.49
+      "buy": 24517.65,
+      "sell": 20277.26,
+      "net": 4240.39
     },
     "dii": {
-      "buy": 17389.57,
-      "sell": 14780.0,
-      "net": 2609.57
+      "buy": 15702.74,
+      "sell": 16952.77,
+      "net": -1250.03
     },
-    "net_combined": 1147.08
+    "net_combined": 2990.36
   },
   "corporate": [
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "20MICRONS",
-      "company": "20 Microns Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "21STCENMGM",
+      "company": "21st Century Management Services Limit",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "3IINFOLTD",
+      "company": "3i Infotech Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "AARTIPHARM",
-      "company": "Aarti Pharmalabs Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "ACI",
+      "company": "Archean Chemical Industries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "ACMESOLAR",
-      "company": "Acme Solar Holdings Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "ADANIENT",
-      "company": "Adani Enterprises Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "ADANIPORTS",
-      "company": "Adani Ports and Special Economic Zone ",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "ADROITIND",
-      "company": "Adroit Industries (India) Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "AHCL",
+      "company": "Anlon Healthcare Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "AEROFLEX",
-      "company": "Aeroflex Industries Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "ALIVUS",
+      "company": "Alivus Life Sciences Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "AGI",
-      "company": "AGI Greenpac Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "AIFL",
-      "company": "Ashapura Intimates Fashion Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "ANANTRAJ",
-      "company": "Anant Raj Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "ALLDIGI",
+      "company": "Alldigi Tech Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "APCOTEXIND",
-      "company": "Apcotex Industries Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "ALLDIGI",
+      "company": "Alldigi Tech Limited",
+      "purpose": "Buyback"
+    },
+    {
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "AMBUJACEM",
+      "company": "Ambuja Cements Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "ARKADE",
-      "company": "Arkade Developers Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "AMJLAND",
+      "company": "Amj Land Holdings Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "ARVIND",
-      "company": "Arvind Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "APARINDS",
+      "company": "Apar Industries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "ATLASCYCLE",
-      "company": "Atlas Cycles (Haryana) Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "ARCIL",
+      "company": "Asset Reconstruction Company (India) L",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "BAJAJELEC",
-      "company": "Bajaj Electricals Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "ASHIMASYN",
+      "company": "Ashima Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "BANDHANBNK",
-      "company": "Bandhan Bank Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "BHAGERIA",
-      "company": "Bhageria Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "BOROSCI",
-      "company": "Borosil Scientific Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "BSOFT",
-      "company": "BIRLASOFT LIMITED",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "ASIANPAINT",
+      "company": "Asian Paints Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-10-28",
-      "date_str": "28 Oct",
-      "symbol": "CARTRADE",
-      "company": "Cartrade Tech Limited",
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "ASMS",
+      "company": "Avio Smart Market Stack Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "AXITA",
+      "company": "Axita Cotton Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "AYMSYNTEX",
+      "company": "AYM Syntex Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "BANARBEADS",
+      "company": "Banaras Beads Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "BLACKBUCK",
+      "company": "BLACKBUCK LIMITED",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "BLISSGVS",
+      "company": "Bliss GVS Pharma Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-10-29",
+      "date_str": "29 Oct",
+      "symbol": "BLUESTARCO",
+      "company": "Blue Star Limited",
       "purpose": "Financial Results"
     }
   ]
