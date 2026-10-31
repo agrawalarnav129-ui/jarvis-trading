@@ -1,161 +1,161 @@
 {
-  "updated": "2026-10-30T09:52:56.613955Z",
+  "updated": "2026-10-31T03:00:56.655439Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "29-Oct-2026",
+    "date": "30-Oct-2026",
     "fii": {
-      "buy": 13400.29,
-      "sell": 14343.89,
-      "net": -943.6
+      "buy": 20564.02,
+      "sell": 16965.48,
+      "net": 3598.54
     },
     "dii": {
-      "buy": 18458.64,
-      "sell": 16534.23,
-      "net": 1924.41
+      "buy": 16643.55,
+      "sell": 17461.06,
+      "net": -817.51
     },
-    "net_combined": 980.81
+    "net_combined": 2781.03
   },
   "corporate": [
     {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "ABLBL",
-      "company": "Aditya Birla Lifestyle Brands Limited",
+      "date": "2026-11-01",
+      "date_str": "01 Nov",
+      "symbol": "POWERGRID",
+      "company": "Power Grid Corporation of India Limite",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-11-01",
+      "date_str": "01 Nov",
+      "symbol": "SAIPARENT",
+      "company": "Sai Parenterals Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "ADVENZYMES",
-      "company": "Advanced Enzyme Technologies Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "ATLANTAELE",
-      "company": "Atlanta Electricals Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "ATULAUTO",
-      "company": "Atul Auto Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "AURIONPRO",
-      "company": "Aurionpro Solutions Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "BIRLACORPN",
-      "company": "Birla Corporation Limited",
-      "purpose": "Financial Results/Fund Raising"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "CDSL",
-      "company": "Central Depository Services (India) Li",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "CLEAN",
-      "company": "Clean Science and Technology Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "CPL",
-      "company": "Captain Polyplast Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "DLINKINDIA",
-      "company": "D-Link (India) Limited",
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "AAKASH",
+      "company": "Aakash Exploration Services Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "DOLPHIN",
-      "company": "Dolphin Offshore Enterprises (India) L",
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "AEROPLANE",
+      "company": "Amir Chand Jagdish Kumar (Exports) Lim",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "ESSENTIA",
-      "company": "Integra Essentia Limited",
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "AKUMS",
+      "company": "Akums Drugs and Pharmaceuticals Limite",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "ALANKIT",
+      "company": "Alankit Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "ARE&M",
+      "company": "Amara Raja Energy & Mobility Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "ARVINDFASN",
+      "company": "Arvind Fashions Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "AVONMORE",
+      "company": "Avonmore Capital & Management Services",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "EVEREADY",
-      "company": "Eveready Industries India Limited",
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BAJAJINDEF",
+      "company": "Indef Manufacturing Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "EXXARO",
-      "company": "Exxaro Tiles Limited",
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BALAMINES",
+      "company": "Balaji Amines Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "GANECOS",
-      "company": "Ganesha Ecosphere Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "GANGOTRI",
-      "company": "Gangotri Textiles Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "GEMAROMA",
-      "company": "Gem Aromatics Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "GHCL",
-      "company": "GHCL Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "IITL",
-      "company": "Industrial Investment Trust Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-10-31",
-      "date_str": "31 Oct",
-      "symbol": "KANANIIND",
-      "company": "Kanani Industries Limited",
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BALMLAWRIE",
+      "company": "Balmer Lawrie & Company Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BANSWRAS",
+      "company": "Banswara Syntex Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BCLIND",
+      "company": "Bcl Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BHARATWIRE",
+      "company": "Bharat Wire Ropes Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BIRLANU",
+      "company": "BirlaNu Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BLSE",
+      "company": "BLS E-Services Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BORANA",
+      "company": "Borana Weaves Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BOSCH-HCIL",
+      "company": "BOSCH HOME COMFORT INDIA LIMITED",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "BPL",
+      "company": "BPL Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
