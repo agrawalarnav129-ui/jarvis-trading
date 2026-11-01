@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T03:00:56.655439Z",
+  "updated": "2026-11-01T03:00:59.238541Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,20 +17,6 @@
     "net_combined": 2781.03
   },
   "corporate": [
-    {
-      "date": "2026-11-01",
-      "date_str": "01 Nov",
-      "symbol": "POWERGRID",
-      "company": "Power Grid Corporation of India Limite",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-11-01",
-      "date_str": "01 Nov",
-      "symbol": "SAIPARENT",
-      "company": "Sai Parenterals Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-11-02",
       "date_str": "02 Nov",
@@ -155,6 +141,20 @@
       "date_str": "02 Nov",
       "symbol": "BPL",
       "company": "BPL Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "CAPILLARY",
+      "company": "Capillary Technologies India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-02",
+      "date_str": "02 Nov",
+      "symbol": "CARBORUNIV",
+      "company": "Carborundum Universal Limited",
       "purpose": "Financial Results"
     }
   ]
