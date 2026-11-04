@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T03:01:08.026698Z",
+  "updated": "2026-11-04T10:45:27.431772Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -120,14 +120,14 @@
       "date_str": "05 Nov",
       "symbol": "ASHOKA",
       "company": "Ashoka Buildcon Limited",
-      "purpose": "Financial Results"
+      "purpose": "Fund Raising"
     },
     {
       "date": "2026-11-05",
       "date_str": "05 Nov",
       "symbol": "ASHOKA",
       "company": "Ashoka Buildcon Limited",
-      "purpose": "Fund Raising"
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-11-05",
