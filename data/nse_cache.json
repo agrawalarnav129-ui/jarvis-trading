@@ -1,160 +1,160 @@
 {
-  "updated": "2026-11-05T10:43:19.586951Z",
+  "updated": "2026-11-06T03:01:20.166137Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "04-Nov-2026",
+    "date": "05-Nov-2026",
     "fii": {
-      "buy": 21607.38,
-      "sell": 14323.35,
-      "net": 7284.03
+      "buy": 31797.86,
+      "sell": 16823.18,
+      "net": 14974.68
     },
     "dii": {
-      "buy": 16392.82,
-      "sell": 20105.05,
-      "net": -3712.23
+      "buy": 22168.28,
+      "sell": 32612.82,
+      "net": -10444.54
     },
-    "net_combined": 3571.8
+    "net_combined": 4530.14
   },
   "corporate": [
     {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "3MINDIA",
-      "company": "3M India Limited",
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "AASTHA",
+      "company": "Aastha Spintex Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "ACCURACY",
+      "company": "Accuracy Shipping Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "AIROLAM",
+      "company": "Airo Lam limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "ANDHRSUGAR",
+      "company": "The Andhra Sugars Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "BROOKS",
+      "company": "Brooks Laboratories Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "DCMSRIND",
+      "company": "DCM Shriram Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "DIVISLAB",
+      "company": "Divi's Laboratories Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "EIFFL",
+      "company": "Euro India Fresh Foods Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "FINCABLES",
+      "company": "Finolex Cables Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "GOLDIAM",
+      "company": "Goldiam International Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "HBLENGINE",
+      "company": "HBL Engineering Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "HERANBA",
+      "company": "Heranba Industries Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "AGIIL",
-      "company": "Agi Infra Limited",
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "MAMATA",
+      "company": "Mamata Machinery Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "AGOL",
-      "company": "Ashapuri Gold Ornament Limited",
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "MAWANASUG",
+      "company": "Mawana Sugars Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "MICEL",
+      "company": "MIC Electronics Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "MUKKA",
+      "company": "Mukka Proteins Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "NAGREEKEXP",
+      "company": "Nagreeka Exports Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "PIGL",
+      "company": "Power & Instrumentation (Gujarat) Limi",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "AGROPHOS",
-      "company": "Agro Phos India Limited",
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "PROSTARM",
+      "company": "Prostarm Info Systems Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "AJAXENGG",
-      "company": "Ajax Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "AJRINFRA",
-      "company": "AJR INFRA AND TOLLING LIMITED",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "AKASH",
-      "company": "Akash Infra Projects Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "AKI",
-      "company": "AKI India Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "ALEMBICLTD",
-      "company": "Alembic Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "ANUP",
-      "company": "The Anup Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "ANURAS",
-      "company": "Anupam Rasayan India Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "ASTERDM",
-      "company": "Aster DM Quality Care Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "AUTOIND",
-      "company": "Autoline Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "AZAD",
-      "company": "Azad Engineering Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "BAJEL",
-      "company": "Bajel Projects Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "BANCOINDIA",
-      "company": "Banco Products (I) Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "BEDMUTHA",
-      "company": "Bedmutha Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "BFUTILITIE",
-      "company": "BF Utilities Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "BLUEBLENDS",
-      "company": "Blue Blends (I) Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-06",
-      "date_str": "06 Nov",
-      "symbol": "BLUEDART",
-      "company": "Blue Dart Express Limited",
+      "date": "2026-11-07",
+      "date_str": "07 Nov",
+      "symbol": "REMSONSIND",
+      "company": "Remsons Industries Limited",
       "purpose": "Financial Results"
     }
   ]
