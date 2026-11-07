@@ -1,161 +1,161 @@
 {
-  "updated": "2026-11-06T10:42:25.705775Z",
+  "updated": "2026-11-07T03:00:55.753648Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "05-Nov-2026",
+    "date": "06-Nov-2026",
     "fii": {
-      "buy": 31797.86,
-      "sell": 16823.18,
-      "net": 14974.68
+      "buy": 30455.63,
+      "sell": 16705.81,
+      "net": 13749.82
     },
     "dii": {
-      "buy": 22168.28,
-      "sell": 32612.82,
-      "net": -10444.54
+      "buy": 18084.32,
+      "sell": 24053.02,
+      "net": -5968.7
     },
-    "net_combined": 4530.14
+    "net_combined": 7781.12
   },
   "corporate": [
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "AASTHA",
-      "company": "Aastha Spintex Limited",
+      "date": "2026-11-09",
+      "date_str": "09 Nov",
+      "symbol": "MEDICO",
+      "company": "Medico Remedies Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "ACCURACY",
-      "company": "Accuracy Shipping Limited",
+      "date": "2026-11-09",
+      "date_str": "09 Nov",
+      "symbol": "OLECTRA",
+      "company": "Olectra Greentech Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "AIROLAM",
-      "company": "Airo Lam limited",
+      "date": "2026-11-09",
+      "date_str": "09 Nov",
+      "symbol": "PARKHOSPS",
+      "company": "Park Medi World Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "ANDHRSUGAR",
-      "company": "The Andhra Sugars Limited",
+      "date": "2026-11-09",
+      "date_str": "09 Nov",
+      "symbol": "RMDRIP",
+      "company": "R M Drip and Sprinklers Systems Limite",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "BROOKS",
-      "company": "Brooks Laboratories Limited",
+      "date": "2026-11-09",
+      "date_str": "09 Nov",
+      "symbol": "SVPGLOB",
+      "company": "SVP GLOBAL TEXTILES LIMITED",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "DCMSRIND",
-      "company": "DCM Shriram Industries Limited",
+      "date": "2026-11-09",
+      "date_str": "09 Nov",
+      "symbol": "WHIRLPOOL",
+      "company": "Whirlpool of India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "DIVISLAB",
-      "company": "Divi's Laboratories Limited",
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "ARSSINFRA",
+      "company": "ARSS Infrastructure Projects Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "EIFFL",
-      "company": "Euro India Fresh Foods Limited",
-      "purpose": "Financial Results"
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "AVANTIFEED",
+      "company": "Avanti Feeds Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "FINCABLES",
-      "company": "Finolex Cables Limited",
-      "purpose": "Financial Results"
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "BAJFINANCE",
+      "company": "Bajaj Finance Limited",
+      "purpose": "Other business matters"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "GOLDIAM",
-      "company": "Goldiam International Limited",
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "COCHINSHIP",
+      "company": "Cochin Shipyard Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "HBLENGINE",
-      "company": "HBL Engineering Limited",
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "DREDGECORP",
+      "company": "Dredging Corporation of India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "HERANBA",
-      "company": "Heranba Industries Limited",
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "HIRECT",
+      "company": "Hirect Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "IIFL",
+      "company": "IIFL Finance Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "KALYANKJIL",
+      "company": "Kalyan Jewellers India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "KUNDANMM",
+      "company": "Kundan Minerals and Metals Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "MAMATA",
-      "company": "Mamata Machinery Limited",
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "LEEL",
+      "company": "LEEL Electricals Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "MAWANASUG",
-      "company": "Mawana Sugars Limited",
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "LFIC",
+      "company": "Lakshmi Finance & Industrial Corporati",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "MICEL",
-      "company": "MIC Electronics Limited",
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "MATRIMONY",
+      "company": "Matrimony.Com Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "MUKKA",
-      "company": "Mukka Proteins Limited",
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "MIDWESTLTD",
+      "company": "Midwest Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "NAGREEKEXP",
-      "company": "Nagreeka Exports Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "PIGL",
-      "company": "Power & Instrumentation (Gujarat) Limi",
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "MMTC",
+      "company": "MMTC Limited",
       "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "PROSTARM",
-      "company": "Prostarm Info Systems Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-11-07",
-      "date_str": "07 Nov",
-      "symbol": "REMSONSIND",
-      "company": "Remsons Industries Limited",
-      "purpose": "Financial Results"
     }
   ]
 }
