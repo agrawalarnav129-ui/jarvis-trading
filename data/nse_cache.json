@@ -1,64 +1,22 @@
 {
-  "updated": "2026-11-08T03:01:03.896949Z",
+  "updated": "2026-11-09T03:01:11.961689Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "06-Nov-2026",
+    "date": "08-Nov-2026",
     "fii": {
-      "buy": 30455.63,
-      "sell": 16705.81,
-      "net": 13749.82
+      "buy": 52.39,
+      "sell": 52.64,
+      "net": -0.25
     },
     "dii": {
-      "buy": 18084.32,
-      "sell": 24053.02,
-      "net": -5968.7
+      "buy": 331.11,
+      "sell": 1031.42,
+      "net": -700.31
     },
-    "net_combined": 7781.12
+    "net_combined": -700.56
   },
   "corporate": [
-    {
-      "date": "2026-11-09",
-      "date_str": "09 Nov",
-      "symbol": "MEDICO",
-      "company": "Medico Remedies Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-09",
-      "date_str": "09 Nov",
-      "symbol": "OLECTRA",
-      "company": "Olectra Greentech Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-09",
-      "date_str": "09 Nov",
-      "symbol": "PARKHOSPS",
-      "company": "Park Medi World Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-09",
-      "date_str": "09 Nov",
-      "symbol": "RMDRIP",
-      "company": "R M Drip and Sprinklers Systems Limite",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-09",
-      "date_str": "09 Nov",
-      "symbol": "SVPGLOB",
-      "company": "SVP GLOBAL TEXTILES LIMITED",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-09",
-      "date_str": "09 Nov",
-      "symbol": "WHIRLPOOL",
-      "company": "Whirlpool of India Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-11-10",
       "date_str": "10 Nov",
@@ -156,6 +114,48 @@
       "symbol": "MMTC",
       "company": "MMTC Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "MRF",
+      "company": "MRF Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "PILANIINVS",
+      "company": "Pilani Investment and Industries Corpo",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "QUADFUTURE",
+      "company": "Quadrant Future Tek Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "RENTOMOJO",
+      "company": "Rentomojo Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "ROSSELLIND",
+      "company": "Rossell India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-10",
+      "date_str": "10 Nov",
+      "symbol": "SIMPLEXINF",
+      "company": "Simplex Infrastructures Limited",
+      "purpose": "Financial Results"
     }
   ]
 }
