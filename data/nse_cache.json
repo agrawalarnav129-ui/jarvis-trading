@@ -1,160 +1,160 @@
 {
-  "updated": "2026-11-09T11:18:27.090380Z",
+  "updated": "2026-11-10T03:01:28.611417Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "08-Nov-2026",
+    "date": "09-Nov-2026",
     "fii": {
-      "buy": 52.39,
-      "sell": 52.64,
-      "net": -0.25
+      "buy": 20310.99,
+      "sell": 13098.77,
+      "net": 7212.22
     },
     "dii": {
-      "buy": 331.11,
-      "sell": 1031.42,
-      "net": -700.31
+      "buy": 12764.97,
+      "sell": 19937.5,
+      "net": -7172.53
     },
-    "net_combined": -700.56
+    "net_combined": 39.69
   },
   "corporate": [
     {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "ARSSINFRA",
-      "company": "ARSS Infrastructure Projects Limited",
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "AFSL",
+      "company": "Abans Financial Services Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "AVANTIFEED",
-      "company": "Avanti Feeds Limited",
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "AIRAN",
+      "company": "Airan Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "BAJFINANCE",
-      "company": "Bajaj Finance Limited",
-      "purpose": "Other business matters"
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "AMBIKCO",
+      "company": "Ambika Cotton Mills Limited",
+      "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "COCHINSHIP",
-      "company": "Cochin Shipyard Limited",
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "AVTNPL",
+      "company": "AVT Natural Products Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "BAFNAPH",
+      "company": "Bafna Pharmaceuticals Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "BAJAJHIND",
+      "company": "Bajaj Hindusthan Sugar Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "BALPHARMA",
+      "company": "Bal Pharma Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "BANARISUG",
+      "company": "Bannari Amman Sugars Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "BASML",
+      "company": "Bannari Amman Spinning Mills Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "BURNPUR",
+      "company": "Burnpur Cement Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "CUPID",
+      "company": "Cupid Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "DCXINDIA",
+      "company": "DCX Systems Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "EDELALTS",
+      "company": "EAAA India Alternatives Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "DREDGECORP",
-      "company": "Dredging Corporation of India Limited",
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "EIHAHOTELS",
+      "company": "EIH Associated Hotels Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "HIRECT",
-      "company": "Hirect Limited",
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "GANGOTRI",
+      "company": "Gangotri Textiles Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "IIFL",
-      "company": "IIFL Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "KALYANKJIL",
-      "company": "Kalyan Jewellers India Limited",
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "GLOTTIS",
+      "company": "Glottis Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "KUNDANMM",
-      "company": "Kundan Minerals and Metals Limited",
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "GREENPOWER",
+      "company": "Orient Green Power Company Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "GRSE",
+      "company": "Garden Reach Shipbuilders & Engineers ",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "HALEOSLABS",
+      "company": "HALEOS LABS LIMITED",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "LEEL",
-      "company": "LEEL Electricals Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "LFIC",
-      "company": "Lakshmi Finance & Industrial Corporati",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "MATRIMONY",
-      "company": "Matrimony.Com Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "MIDWESTLTD",
-      "company": "Midwest Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "MMTC",
-      "company": "MMTC Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "MRF",
-      "company": "MRF Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "PILANIINVS",
-      "company": "Pilani Investment and Industries Corpo",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "QUADFUTURE",
-      "company": "Quadrant Future Tek Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "RENTOMOJO",
-      "company": "Rentomojo Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "ROSSELLIND",
-      "company": "Rossell India Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-10",
-      "date_str": "10 Nov",
-      "symbol": "SIMPLEXINF",
-      "company": "Simplex Infrastructures Limited",
+      "date": "2026-11-11",
+      "date_str": "11 Nov",
+      "symbol": "HINDCOPPER",
+      "company": "Hindustan Copper Limited",
       "purpose": "Financial Results"
     }
   ]
