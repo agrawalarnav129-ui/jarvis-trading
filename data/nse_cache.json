@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T10:59:45.305274Z",
+  "updated": "2026-11-11T03:01:25.676455Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -18,143 +18,143 @@
   },
   "corporate": [
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "AFSL",
-      "company": "Abans Financial Services Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ACE",
+      "company": "Action Construction Equipment Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "AIRAN",
-      "company": "Airan Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ACEINTEG",
+      "company": "Ace Integrated Solutions Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "AMBIKCO",
-      "company": "Ambika Cotton Mills Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ADVANIHOTR",
+      "company": "Advani Hotels & Resorts (India) Limite",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "AVTNPL",
-      "company": "AVT Natural Products Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ALBERTDAVD",
+      "company": "Albert David Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "BAFNAPH",
-      "company": "Bafna Pharmaceuticals Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ALICON",
+      "company": "Alicon Castalloy Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "BAJAJHIND",
-      "company": "Bajaj Hindusthan Sugar Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ALKEM",
+      "company": "Alkem Laboratories Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "BALPHARMA",
-      "company": "Bal Pharma Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ALPHAGEO",
+      "company": "Alphageo (India) Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "BANARISUG",
-      "company": "Bannari Amman Sugars Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "AMBER",
+      "company": "Amber Enterprises India Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "BASML",
-      "company": "Bannari Amman Spinning Mills Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ANTGRAPHIC",
+      "company": "Antarctica Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "BURNPUR",
-      "company": "Burnpur Cement Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "APCL",
+      "company": "Anjani Portland Cement Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "CUPID",
-      "company": "Cupid Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "APEX",
+      "company": "Apex Frozen Foods Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "DCXINDIA",
-      "company": "DCX Systems Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "APOLSINHOT",
+      "company": "Apollo Sindoori Hotels Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "EDELALTS",
-      "company": "EAAA India Alternatives Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "EIHAHOTELS",
-      "company": "EIH Associated Hotels Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ARDEE",
+      "company": "Ardee Industries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "GANGOTRI",
-      "company": "Gangotri Textiles Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "AROGRANITE",
+      "company": "Aro Granite Industries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "GLOTTIS",
-      "company": "Glottis Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ASAHISONG",
+      "company": "Asahi Songwon Colors Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "GREENPOWER",
-      "company": "Orient Green Power Company Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ASALCBR",
+      "company": "Associated Alcohols & Breweries Ltd.",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "GRSE",
-      "company": "Garden Reach Shipbuilders & Engineers ",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ASIANHOTNR",
+      "company": "Asian Hotels (North) Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "HALEOSLABS",
-      "company": "HALEOS LABS LIMITED",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "ASTRAMICRO",
+      "company": "Astra Microwave Products Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "AUTOAXLES",
+      "company": "Automotive Axles Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-11",
-      "date_str": "11 Nov",
-      "symbol": "HINDCOPPER",
-      "company": "Hindustan Copper Limited",
+      "date": "2026-11-12",
+      "date_str": "12 Nov",
+      "symbol": "AVALON",
+      "company": "Avalon Technologies Limited",
       "purpose": "Financial Results"
     }
   ]
