@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T03:01:30.856175Z",
+  "updated": "2026-11-13T10:49:41.930328Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -83,6 +83,13 @@
     {
       "date": "2026-11-14",
       "date_str": "14 Nov",
+      "symbol": "AHLUCONT",
+      "company": "Ahluwalia Contracts (India) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
       "symbol": "AHLWEST",
       "company": "Asian Hotels (West) Limited",
       "purpose": "Financial Results"
@@ -148,13 +155,6 @@
       "date_str": "14 Nov",
       "symbol": "ARCOTECH",
       "company": "Arcotech Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-11-14",
-      "date_str": "14 Nov",
-      "symbol": "ARENTERP",
-      "company": "Rajdarshan Industries Limited",
       "purpose": "Financial Results/Other busine"
     }
   ]
