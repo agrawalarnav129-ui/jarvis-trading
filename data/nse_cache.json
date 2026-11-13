@@ -1,160 +1,160 @@
 {
-  "updated": "2026-11-12T10:54:10.570939Z",
+  "updated": "2026-11-13T03:01:30.856175Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "11-Nov-2026",
+    "date": "12-Nov-2026",
     "fii": {
-      "buy": 30087.21,
-      "sell": 17523.88,
-      "net": 12563.33
+      "buy": 20273.32,
+      "sell": 12442.72,
+      "net": 7830.6
     },
     "dii": {
-      "buy": 19704.39,
-      "sell": 28138.92,
-      "net": -8434.53
+      "buy": 15855.13,
+      "sell": 22186.3,
+      "net": -6331.17
     },
-    "net_combined": 4128.8
+    "net_combined": 1499.43
   },
   "corporate": [
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "A2ZINFRA",
-      "company": "A2Z Infra Engineering Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AAREYDRUGS",
+      "company": "Aarey Drugs & Pharmaceuticals Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AAATECH",
-      "company": "Aaa Technologies Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AARVI",
-      "company": "Aarvi Encon Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "ABB",
-      "company": "ABB India Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "ABMINTLLTD",
-      "company": "ABM International Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "ADL",
-      "company": "Archidply Decor Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AEPL",
-      "company": "Artemis Electricals and Projects Limit",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AGARIND",
-      "company": "Agarwal Industrial Corporation Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AHLEAST",
-      "company": "Asian Hotels (East) Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AARTECH",
+      "company": "Aartech Solonics Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AJOONI",
-      "company": "Ajooni Biotech Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AARTISURF",
+      "company": "Aarti Surfactants Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AKG",
-      "company": "Akg Exim Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "ABCIND",
+      "company": "ABC Industries India Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "ABHISHEK",
+      "company": "Abhishek Corporation Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AFFORDABLE",
+      "company": "Affordable Robotic & Automation Limite",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AKSHOPTFBR",
-      "company": "Aksh Optifibre Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AGASTYAEN",
+      "company": "Agastya Energy and Infrastructure Limi",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "ALPSINDUS",
-      "company": "Alps Industries Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AGL",
+      "company": "Allcargo Global Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "ANMOL",
-      "company": "Anmol India Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AHLADA",
+      "company": "Ahlada Engineers Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AHLWEST",
+      "company": "Asian Hotels (West) Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AIRAN",
+      "company": "Airan Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "ANNU",
-      "company": "Annu Projects Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "ALGOQUANT",
+      "company": "Algoquant Fintech Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AONESTEELS",
-      "company": "A-One Steels India Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "ALPA",
+      "company": "Alpa Laboratories Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AMDIND",
+      "company": "AMD Industries Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "ARIES",
-      "company": "Aries Agro Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "ANIKINDS",
+      "company": "Anik Industries Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "ANNAPURNA",
+      "company": "Annapurna Swadisht Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AVG",
-      "company": "AVG Logistics Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "AQYLON",
+      "company": "Aqylon Nexus Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "AXISCADES",
-      "company": "AXISCADES Technologies Limited",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "ARCHIES",
+      "company": "Archies Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-13",
-      "date_str": "13 Nov",
-      "symbol": "BALAJEE",
-      "company": "Shree Tirupati Balajee Agro Trading Co",
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "ARCOTECH",
+      "company": "Arcotech Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-14",
+      "date_str": "14 Nov",
+      "symbol": "ARENTERP",
+      "company": "Rajdarshan Industries Limited",
       "purpose": "Financial Results/Other busine"
     }
   ]
