@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T03:01:06.299522Z",
+  "updated": "2026-11-16T03:01:22.884351Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,27 +17,6 @@
     "net_combined": 3482.97
   },
   "corporate": [
-    {
-      "date": "2026-11-16",
-      "date_str": "16 Nov",
-      "symbol": "SANDHAR",
-      "company": "Sandhar Technologies Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-16",
-      "date_str": "16 Nov",
-      "symbol": "SMLMAH",
-      "company": "SML Mahindra Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-11-16",
-      "date_str": "16 Nov",
-      "symbol": "TTL",
-      "company": "T T Limited",
-      "purpose": "Buyback"
-    },
     {
       "date": "2026-11-17",
       "date_str": "17 Nov",
