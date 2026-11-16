@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T03:01:22.884351Z",
+  "updated": "2026-11-16T10:58:04.673915Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -83,6 +83,13 @@
     {
       "date": "2026-11-19",
       "date_str": "19 Nov",
+      "symbol": "BETA",
+      "company": "Beta Drugs Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-11-19",
+      "date_str": "19 Nov",
       "symbol": "MUTHOOTMF",
       "company": "Muthoot Microfin Limited",
       "purpose": "Financial Results"
@@ -93,6 +100,13 @@
       "symbol": "SUKHJITS",
       "company": "Sukhjit Starch & Chemicals Limited",
       "purpose": "Buyback"
+    },
+    {
+      "date": "2026-11-20",
+      "date_str": "20 Nov",
+      "symbol": "TTKHLTCARE",
+      "company": "TTK Healthcare Limited",
+      "purpose": "Bonus/Other business matters"
     },
     {
       "date": "2026-11-20",
