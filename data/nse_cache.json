@@ -1,36 +1,22 @@
 {
-  "updated": "2026-11-16T10:58:04.673915Z",
+  "updated": "2026-11-17T03:01:22.371234Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "13-Nov-2026",
+    "date": "16-Nov-2026",
     "fii": {
-      "buy": 18339.57,
-      "sell": 12603.02,
-      "net": 5736.55
+      "buy": 15636.88,
+      "sell": 10772.2,
+      "net": 4864.68
     },
     "dii": {
-      "buy": 11745.95,
-      "sell": 13999.53,
-      "net": -2253.58
+      "buy": 11752.03,
+      "sell": 15271.08,
+      "net": -3519.05
     },
-    "net_combined": 3482.97
+    "net_combined": 1345.63
   },
   "corporate": [
-    {
-      "date": "2026-11-17",
-      "date_str": "17 Nov",
-      "symbol": "ADROITINFO",
-      "company": "Adroit Infotech Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-11-17",
-      "date_str": "17 Nov",
-      "symbol": "LIBAS",
-      "company": "Libas Consumer Products Limited",
-      "purpose": "Financial Results/Other busine"
-    },
     {
       "date": "2026-11-18",
       "date_str": "18 Nov",
@@ -97,6 +83,13 @@
     {
       "date": "2026-11-20",
       "date_str": "20 Nov",
+      "symbol": "INDIANB",
+      "company": "Indian Bank",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-11-20",
+      "date_str": "20 Nov",
       "symbol": "SUKHJITS",
       "company": "Sukhjit Starch & Chemicals Limited",
       "purpose": "Buyback"
@@ -113,6 +106,13 @@
       "date_str": "20 Nov",
       "symbol": "VALECHAENG",
       "company": "Valecha Engineering Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-23",
+      "date_str": "23 Nov",
+      "symbol": "BCSSL",
+      "company": "Bombay Coated and Special Steels Limit",
       "purpose": "Financial Results"
     },
     {
