@@ -1,64 +1,22 @@
 {
-  "updated": "2026-11-17T11:41:23.934340Z",
+  "updated": "2026-11-18T03:01:21.221574Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "16-Nov-2026",
+    "date": "17-Nov-2026",
     "fii": {
-      "buy": 15636.88,
-      "sell": 10772.2,
-      "net": 4864.68
+      "buy": 19930.98,
+      "sell": 15735.6,
+      "net": 4195.38
     },
     "dii": {
-      "buy": 11752.03,
-      "sell": 15271.08,
-      "net": -3519.05
+      "buy": 14903.8,
+      "sell": 14706.87,
+      "net": 196.93
     },
-    "net_combined": 1345.63
+    "net_combined": 4392.31
   },
   "corporate": [
-    {
-      "date": "2026-11-18",
-      "date_str": "18 Nov",
-      "symbol": "ANSALAPI",
-      "company": "Ansal Properties & Infrastructure Limi",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-18",
-      "date_str": "18 Nov",
-      "symbol": "ARIHANTCAP",
-      "company": "Arihant Capital Markets Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-11-18",
-      "date_str": "18 Nov",
-      "symbol": "AYE",
-      "company": "Aye Finance Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-18",
-      "date_str": "18 Nov",
-      "symbol": "BLSPOLY",
-      "company": "BLS Polymers Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-18",
-      "date_str": "18 Nov",
-      "symbol": "BONLON",
-      "company": "Bonlon Industries Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-18",
-      "date_str": "18 Nov",
-      "symbol": "GVPTECH",
-      "company": "GVP Infotech Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-11-19",
       "date_str": "19 Nov",
@@ -78,6 +36,13 @@
       "date_str": "19 Nov",
       "symbol": "MUTHOOTMF",
       "company": "Muthoot Microfin Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-20",
+      "date_str": "20 Nov",
+      "symbol": "GVPTECH",
+      "company": "GVP Infotech Limited",
       "purpose": "Financial Results"
     },
     {
@@ -114,6 +79,13 @@
       "symbol": "BCSSL",
       "company": "Bombay Coated and Special Steels Limit",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-24",
+      "date_str": "24 Nov",
+      "symbol": "SETCO",
+      "company": "Setco Automotive Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
       "date": "2026-11-28",
