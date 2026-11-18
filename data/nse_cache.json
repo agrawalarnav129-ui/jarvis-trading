@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T03:01:21.221574Z",
+  "updated": "2026-11-18T11:29:03.269755Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -74,10 +74,24 @@
       "purpose": "Financial Results"
     },
     {
+      "date": "2026-11-21",
+      "date_str": "21 Nov",
+      "symbol": "VIVIANA",
+      "company": "Viviana Power Tech Limited",
+      "purpose": "Fund Raising"
+    },
+    {
       "date": "2026-11-23",
       "date_str": "23 Nov",
       "symbol": "BCSSL",
       "company": "Bombay Coated and Special Steels Limit",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-23",
+      "date_str": "23 Nov",
+      "symbol": "SFCTECH",
+      "company": "SFC Environmental Technologies Limited",
       "purpose": "Financial Results"
     },
     {
