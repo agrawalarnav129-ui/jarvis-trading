@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T03:01:32.403702Z",
+  "updated": "2026-11-19T11:27:37.825578Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -104,9 +104,30 @@
     {
       "date": "2026-11-24",
       "date_str": "24 Nov",
+      "symbol": "LEXUS",
+      "company": "Lexus Granito (India) Limited",
+      "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-24",
+      "date_str": "24 Nov",
       "symbol": "SETCO",
       "company": "Setco Automotive Limited",
       "purpose": "Financial Results/Other busine"
+    },
+    {
+      "date": "2026-11-25",
+      "date_str": "25 Nov",
+      "symbol": "ENRIN",
+      "company": "Siemens Energy India Limited",
+      "purpose": "Financial Results/Dividend"
+    },
+    {
+      "date": "2026-11-25",
+      "date_str": "25 Nov",
+      "symbol": "SIMBHALS",
+      "company": "Simbhaoli Sugars Limited",
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-11-26",
@@ -134,13 +155,6 @@
       "date_str": "05 Dec",
       "symbol": "LATTEYS",
       "company": "Latteys Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-12-05",
-      "date_str": "05 Dec",
-      "symbol": "RNBDENIMS",
-      "company": "R&B Denims Limited",
       "purpose": "Financial Results"
     }
   ]
