@@ -1,43 +1,22 @@
 {
-  "updated": "2026-11-20T11:20:23.492278Z",
+  "updated": "2026-11-21T03:01:09.135737Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "19-Nov-2026",
+    "date": "20-Nov-2026",
     "fii": {
-      "buy": 20706.95,
-      "sell": 13295.54,
-      "net": 7411.41
+      "buy": 23596.4,
+      "sell": 13287.98,
+      "net": 10308.42
     },
     "dii": {
-      "buy": 17651.5,
-      "sell": 19008.07,
-      "net": -1356.57
+      "buy": 18492.63,
+      "sell": 23352.43,
+      "net": -4859.8
     },
-    "net_combined": 6054.84
+    "net_combined": 5448.62
   },
   "corporate": [
-    {
-      "date": "2026-11-21",
-      "date_str": "21 Nov",
-      "symbol": "EMBDL",
-      "company": "Embassy Developments Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-21",
-      "date_str": "21 Nov",
-      "symbol": "LAXMICOT",
-      "company": "Laxmi Cotspin Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-11-21",
-      "date_str": "21 Nov",
-      "symbol": "VIVIANA",
-      "company": "Viviana Power Tech Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-11-23",
       "date_str": "23 Nov",
@@ -123,11 +102,25 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-11-26",
+      "date_str": "26 Nov",
+      "symbol": "PATANJALI",
+      "company": "Patanjali Foods Limited",
+      "purpose": "Dividend"
+    },
+    {
       "date": "2026-11-28",
       "date_str": "28 Nov",
       "symbol": "BRNL",
       "company": "Bharat Road Network Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-11-28",
+      "date_str": "28 Nov",
+      "symbol": "ORTINGLOBE",
+      "company": "ORTIN GLOBAL LIMITED",
+      "purpose": "Fund Raising/Other business ma"
     },
     {
       "date": "2026-12-02",
