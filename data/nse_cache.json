@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T03:01:04.616197Z",
+  "updated": "2026-11-23T03:01:34.489336Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,34 +17,6 @@
     "net_combined": 5448.62
   },
   "corporate": [
-    {
-      "date": "2026-11-23",
-      "date_str": "23 Nov",
-      "symbol": "BCSSL",
-      "company": "Bombay Coated and Special Steels Limit",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-23",
-      "date_str": "23 Nov",
-      "symbol": "DALBHARAT",
-      "company": "Dalmia Bharat Limited",
-      "purpose": "Buyback/Other business matters"
-    },
-    {
-      "date": "2026-11-23",
-      "date_str": "23 Nov",
-      "symbol": "SFCTECH",
-      "company": "SFC Environmental Technologies Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-23",
-      "date_str": "23 Nov",
-      "symbol": "VCL",
-      "company": "Vaxtex Cotfab Limited",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-11-24",
       "date_str": "24 Nov",
@@ -125,6 +97,13 @@
     {
       "date": "2026-11-26",
       "date_str": "26 Nov",
+      "symbol": "SGMART",
+      "company": "SG Mart Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-11-26",
+      "date_str": "26 Nov",
       "symbol": "TEAMGTY",
       "company": "Team India Guaranty Limited",
       "purpose": "Fund Raising/Other business ma"
@@ -155,6 +134,13 @@
       "date_str": "05 Dec",
       "symbol": "LATTEYS",
       "company": "Latteys Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-12-05",
+      "date_str": "05 Dec",
+      "symbol": "RNBDENIMS",
+      "company": "R&B Denims Limited",
       "purpose": "Financial Results"
     }
   ]
