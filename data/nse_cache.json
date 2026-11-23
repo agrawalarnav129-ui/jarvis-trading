@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T03:01:34.489336Z",
+  "updated": "2026-11-23T12:12:45.272694Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -90,6 +90,13 @@
     {
       "date": "2026-11-26",
       "date_str": "26 Nov",
+      "symbol": "MINDACORP",
+      "company": "Minda Corporation Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-11-26",
+      "date_str": "26 Nov",
       "symbol": "PATANJALI",
       "company": "Patanjali Foods Limited",
       "purpose": "Dividend"
@@ -107,6 +114,20 @@
       "symbol": "TEAMGTY",
       "company": "Team India Guaranty Limited",
       "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-11-27",
+      "date_str": "27 Nov",
+      "symbol": "INDIANB",
+      "company": "Indian Bank",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-11-27",
+      "date_str": "27 Nov",
+      "symbol": "SETCO",
+      "company": "Setco Automotive Limited",
+      "purpose": "Financial Results/Other busine"
     },
     {
       "date": "2026-11-28",
@@ -134,13 +155,6 @@
       "date_str": "05 Dec",
       "symbol": "LATTEYS",
       "company": "Latteys Industries Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-12-05",
-      "date_str": "05 Dec",
-      "symbol": "RNBDENIMS",
-      "company": "R&B Denims Limited",
       "purpose": "Financial Results"
     }
   ]
