@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-23T12:12:45.272694Z",
+  "updated": "2026-11-24T03:01:25.317749Z",
   "fii_dii": {
     "available": true,
-    "source": "NSE provisional",
+    "source": "NSE provisional (cached)",
     "date": "20-Nov-2026",
     "fii": {
       "buy": 23596.4,
@@ -18,140 +18,120 @@
   },
   "corporate": [
     {
-      "date": "2026-11-24",
       "date_str": "24 Nov",
       "symbol": "HEADSUP",
       "company": "Heads UP Ventures Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-24",
       "date_str": "24 Nov",
       "symbol": "LEXUS",
       "company": "Lexus Granito (India) Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-24",
       "date_str": "24 Nov",
       "symbol": "MKJEWELS",
       "company": "M. K. Sons Fine Jewels Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-24",
       "date_str": "24 Nov",
       "symbol": "SETCO",
       "company": "Setco Automotive Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-25",
       "date_str": "25 Nov",
       "symbol": "ENRIN",
       "company": "Siemens Energy India Limited",
       "purpose": "Financial Results/Dividend"
     },
     {
-      "date": "2026-11-25",
       "date_str": "25 Nov",
       "symbol": "RAJRATAN",
       "company": "Rajratan Global Wire Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-11-25",
       "date_str": "25 Nov",
       "symbol": "SATIN",
       "company": "Satin Creditcare Network Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-11-25",
       "date_str": "25 Nov",
       "symbol": "SIMBHALS",
       "company": "Simbhaoli Sugars Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-26",
       "date_str": "26 Nov",
       "symbol": "COMSYN",
       "company": "Commercial Syn Bags Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-11-26",
       "date_str": "26 Nov",
       "symbol": "DAVANGERE",
       "company": "Davangere Sugar Company Limited",
       "purpose": "Other business matters"
     },
     {
-      "date": "2026-11-26",
       "date_str": "26 Nov",
       "symbol": "MINDACORP",
       "company": "Minda Corporation Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-11-26",
       "date_str": "26 Nov",
       "symbol": "PATANJALI",
       "company": "Patanjali Foods Limited",
       "purpose": "Dividend"
     },
     {
-      "date": "2026-11-26",
       "date_str": "26 Nov",
       "symbol": "SGMART",
       "company": "SG Mart Limited",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-11-26",
       "date_str": "26 Nov",
       "symbol": "TEAMGTY",
       "company": "Team India Guaranty Limited",
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-11-27",
       "date_str": "27 Nov",
       "symbol": "INDIANB",
       "company": "Indian Bank",
       "purpose": "Fund Raising"
     },
     {
-      "date": "2026-11-27",
       "date_str": "27 Nov",
       "symbol": "SETCO",
       "company": "Setco Automotive Limited",
       "purpose": "Financial Results/Other busine"
     },
     {
-      "date": "2026-11-28",
       "date_str": "28 Nov",
       "symbol": "BRNL",
       "company": "Bharat Road Network Limited",
       "purpose": "Financial Results"
     },
     {
-      "date": "2026-11-28",
       "date_str": "28 Nov",
       "symbol": "ORTINGLOBE",
       "company": "ORTIN GLOBAL LIMITED",
       "purpose": "Fund Raising/Other business ma"
     },
     {
-      "date": "2026-12-02",
       "date_str": "02 Dec",
       "symbol": "SUKHJITS",
       "company": "Sukhjit Starch & Chemicals Limited",
       "purpose": "Buyback"
     },
     {
-      "date": "2026-12-05",
       "date_str": "05 Dec",
       "symbol": "LATTEYS",
       "company": "Latteys Industries Limited",
