@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T13:31:37.072575Z",
+  "updated": "2026-11-25T03:01:16.190560Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -17,34 +17,6 @@
     "net_combined": 2912.87
   },
   "corporate": [
-    {
-      "date": "2026-11-25",
-      "date_str": "25 Nov",
-      "symbol": "ENRIN",
-      "company": "Siemens Energy India Limited",
-      "purpose": "Financial Results/Dividend"
-    },
-    {
-      "date": "2026-11-25",
-      "date_str": "25 Nov",
-      "symbol": "RAJRATAN",
-      "company": "Rajratan Global Wire Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-11-25",
-      "date_str": "25 Nov",
-      "symbol": "SATIN",
-      "company": "Satin Creditcare Network Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-25",
-      "date_str": "25 Nov",
-      "symbol": "SIMBHALS",
-      "company": "Simbhaoli Sugars Limited",
-      "purpose": "Financial Results"
-    },
     {
       "date": "2026-11-26",
       "date_str": "26 Nov",
@@ -121,6 +93,20 @@
       "symbol": "STEELCITY",
       "company": "Steel City Securities Limited",
       "purpose": "Dividend"
+    },
+    {
+      "date": "2026-11-27",
+      "date_str": "27 Nov",
+      "symbol": "VAISHALI",
+      "company": "Vaishali Pharma Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
+      "date": "2026-11-27",
+      "date_str": "27 Nov",
+      "symbol": "VAISHALI",
+      "company": "Vaishali Pharma Limited",
+      "purpose": "Fund Raising/Other business ma"
     },
     {
       "date": "2026-11-28",
