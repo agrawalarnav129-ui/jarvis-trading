@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T03:01:32.262050Z",
+  "updated": "2026-11-26T12:13:27.253479Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
@@ -111,6 +111,13 @@
     {
       "date": "2026-12-01",
       "date_str": "01 Dec",
+      "symbol": "MANCREDIT",
+      "company": "Mangal Credit and Fincorp Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-12-01",
+      "date_str": "01 Dec",
       "symbol": "RUBFILA",
       "company": "Rubfila International Limited",
       "purpose": "Other business matters"
@@ -149,13 +156,6 @@
       "symbol": "RNBDENIMS",
       "company": "R&B Denims Limited",
       "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-12-05",
-      "date_str": "05 Dec",
-      "symbol": "STEAMHOUSE",
-      "company": "Steamhouse India Limited",
-      "purpose": "Other business matters"
     }
   ]
 }
