@@ -1,71 +1,22 @@
 {
-  "updated": "2026-11-25T12:35:39.172287Z",
+  "updated": "2026-11-26T03:01:32.262050Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "23-Nov-2026",
+    "date": "25-Nov-2026",
     "fii": {
-      "buy": 23473.67,
-      "sell": 17800.68,
-      "net": 5672.99
+      "buy": 24309.87,
+      "sell": 19830.79,
+      "net": 4479.08
     },
     "dii": {
-      "buy": 16505.75,
-      "sell": 19265.87,
-      "net": -2760.12
+      "buy": 22379.82,
+      "sell": 18361.1,
+      "net": 4018.72
     },
-    "net_combined": 2912.87
+    "net_combined": 8497.8
   },
   "corporate": [
-    {
-      "date": "2026-11-26",
-      "date_str": "26 Nov",
-      "symbol": "COMSYN",
-      "company": "Commercial Syn Bags Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-11-26",
-      "date_str": "26 Nov",
-      "symbol": "DAVANGERE",
-      "company": "Davangere Sugar Company Limited",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-11-26",
-      "date_str": "26 Nov",
-      "symbol": "MINDACORP",
-      "company": "Minda Corporation Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-26",
-      "date_str": "26 Nov",
-      "symbol": "PATANJALI",
-      "company": "Patanjali Foods Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-11-26",
-      "date_str": "26 Nov",
-      "symbol": "SGMART",
-      "company": "SG Mart Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-26",
-      "date_str": "26 Nov",
-      "symbol": "SGMART",
-      "company": "SG Mart Limited",
-      "purpose": "Board meeting Rescheduled"
-    },
-    {
-      "date": "2026-11-26",
-      "date_str": "26 Nov",
-      "symbol": "TEAMGTY",
-      "company": "Team India Guaranty Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-11-27",
       "date_str": "27 Nov",
@@ -137,6 +88,20 @@
       "purpose": "Fund Raising/Other business ma"
     },
     {
+      "date": "2026-11-28",
+      "date_str": "28 Nov",
+      "symbol": "RIIT",
+      "company": "Raajmarg Infra Investment Trust",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-11-30",
+      "date_str": "30 Nov",
+      "symbol": "POWERGRID",
+      "company": "Power Grid Corporation of India Limite",
+      "purpose": "Fund Raising"
+    },
+    {
       "date": "2026-11-30",
       "date_str": "30 Nov",
       "symbol": "SADHNANIQ",
@@ -155,6 +120,41 @@
       "date_str": "02 Dec",
       "symbol": "DAVANGERE",
       "company": "Davangere Sugar Company Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-12-02",
+      "date_str": "02 Dec",
+      "symbol": "SHUKRAMED",
+      "company": "Shukra Medtech Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-12-02",
+      "date_str": "02 Dec",
+      "symbol": "SUKHJITS",
+      "company": "Sukhjit Starch & Chemicals Limited",
+      "purpose": "Buyback"
+    },
+    {
+      "date": "2026-12-05",
+      "date_str": "05 Dec",
+      "symbol": "LATTEYS",
+      "company": "Latteys Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-12-05",
+      "date_str": "05 Dec",
+      "symbol": "RNBDENIMS",
+      "company": "R&B Denims Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-12-05",
+      "date_str": "05 Dec",
+      "symbol": "STEAMHOUSE",
+      "company": "Steamhouse India Limited",
       "purpose": "Other business matters"
     }
   ]
