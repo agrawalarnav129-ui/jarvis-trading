@@ -1,71 +1,22 @@
 {
-  "updated": "2026-11-26T12:13:27.253479Z",
+  "updated": "2026-11-27T03:01:33.178585Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "25-Nov-2026",
+    "date": "26-Nov-2026",
     "fii": {
-      "buy": 24309.87,
-      "sell": 19830.79,
-      "net": 4479.08
+      "buy": 17879.74,
+      "sell": 12036.41,
+      "net": 5843.33
     },
     "dii": {
-      "buy": 22379.82,
-      "sell": 18361.1,
-      "net": 4018.72
+      "buy": 24352.87,
+      "sell": 18722.15,
+      "net": 5630.72
     },
-    "net_combined": 8497.8
+    "net_combined": 11474.05
   },
   "corporate": [
-    {
-      "date": "2026-11-27",
-      "date_str": "27 Nov",
-      "symbol": "CCCL",
-      "company": "Consolidated Construction Consortium L",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-11-27",
-      "date_str": "27 Nov",
-      "symbol": "GUJTHEM",
-      "company": "Gujarat Themis Biosyn Limited",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-27",
-      "date_str": "27 Nov",
-      "symbol": "INDIANB",
-      "company": "Indian Bank",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-27",
-      "date_str": "27 Nov",
-      "symbol": "SETCO",
-      "company": "Setco Automotive Limited",
-      "purpose": "Financial Results/Other busine"
-    },
-    {
-      "date": "2026-11-27",
-      "date_str": "27 Nov",
-      "symbol": "STEELCITY",
-      "company": "Steel City Securities Limited",
-      "purpose": "Dividend"
-    },
-    {
-      "date": "2026-11-27",
-      "date_str": "27 Nov",
-      "symbol": "VAISHALI",
-      "company": "Vaishali Pharma Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-11-27",
-      "date_str": "27 Nov",
-      "symbol": "VAISHALI",
-      "company": "Vaishali Pharma Limited",
-      "purpose": "Fund Raising/Other business ma"
-    },
     {
       "date": "2026-11-28",
       "date_str": "28 Nov",
@@ -79,6 +30,13 @@
       "symbol": "GARUDA",
       "company": "Garuda Construction and Engineering Li",
       "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-11-28",
+      "date_str": "28 Nov",
+      "symbol": "NDRINVIT",
+      "company": "NDR INVIT Trust",
+      "purpose": "Other business matters"
     },
     {
       "date": "2026-11-28",
@@ -109,10 +67,38 @@
       "purpose": "Other business matters"
     },
     {
+      "date": "2026-11-30",
+      "date_str": "30 Nov",
+      "symbol": "UNITEDPOLY",
+      "company": "United Polyfab Gujarat Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-12-01",
+      "date_str": "01 Dec",
+      "symbol": "COMSYN",
+      "company": "Commercial Syn Bags Limited",
+      "purpose": "Other business matters"
+    },
+    {
+      "date": "2026-12-01",
+      "date_str": "01 Dec",
+      "symbol": "DOLLEX",
+      "company": "Dollex Agrotech Limited",
+      "purpose": "Fund Raising/Other business ma"
+    },
+    {
       "date": "2026-12-01",
       "date_str": "01 Dec",
       "symbol": "MANCREDIT",
       "company": "Mangal Credit and Fincorp Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-12-01",
+      "date_str": "01 Dec",
+      "symbol": "POONAWALLA",
+      "company": "Poonawalla Fincorp Limited",
       "purpose": "Fund Raising"
     },
     {
@@ -142,6 +128,20 @@
       "symbol": "SUKHJITS",
       "company": "Sukhjit Starch & Chemicals Limited",
       "purpose": "Buyback"
+    },
+    {
+      "date": "2026-12-02",
+      "date_str": "02 Dec",
+      "symbol": "SUPRIYA",
+      "company": "Supriya Lifescience Limited",
+      "purpose": "Buyback"
+    },
+    {
+      "date": "2026-12-03",
+      "date_str": "03 Dec",
+      "symbol": "JKSHAH",
+      "company": "J.K.Shah Commerce Education Limited",
+      "purpose": "Financial Results"
     },
     {
       "date": "2026-12-05",
