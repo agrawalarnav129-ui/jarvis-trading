@@ -1,57 +1,22 @@
 {
-  "updated": "2026-11-27T12:00:21.419884Z",
+  "updated": "2026-11-28T03:00:56.901664Z",
   "fii_dii": {
     "available": true,
     "source": "NSE provisional",
-    "date": "26-Nov-2026",
+    "date": "27-Nov-2026",
     "fii": {
-      "buy": 17879.74,
-      "sell": 12036.41,
-      "net": 5843.33
+      "buy": 14259.45,
+      "sell": 12625.12,
+      "net": 1634.33
     },
     "dii": {
-      "buy": 24352.87,
-      "sell": 18722.15,
-      "net": 5630.72
+      "buy": 17263.65,
+      "sell": 17820.07,
+      "net": -556.42
     },
-    "net_combined": 11474.05
+    "net_combined": 1077.91
   },
   "corporate": [
-    {
-      "date": "2026-11-28",
-      "date_str": "28 Nov",
-      "symbol": "BRNL",
-      "company": "Bharat Road Network Limited",
-      "purpose": "Financial Results"
-    },
-    {
-      "date": "2026-11-28",
-      "date_str": "28 Nov",
-      "symbol": "GARUDA",
-      "company": "Garuda Construction and Engineering Li",
-      "purpose": "Fund Raising"
-    },
-    {
-      "date": "2026-11-28",
-      "date_str": "28 Nov",
-      "symbol": "NDRINVIT",
-      "company": "NDR INVIT Trust",
-      "purpose": "Other business matters"
-    },
-    {
-      "date": "2026-11-28",
-      "date_str": "28 Nov",
-      "symbol": "ORTINGLOBE",
-      "company": "ORTIN GLOBAL LIMITED",
-      "purpose": "Fund Raising/Other business ma"
-    },
-    {
-      "date": "2026-11-28",
-      "date_str": "28 Nov",
-      "symbol": "RIIT",
-      "company": "Raajmarg Infra Investment Trust",
-      "purpose": "Fund Raising"
-    },
     {
       "date": "2026-11-30",
       "date_str": "30 Nov",
@@ -125,6 +90,20 @@
     {
       "date": "2026-12-02",
       "date_str": "02 Dec",
+      "symbol": "PATELENG",
+      "company": "Patel Engineering Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-12-02",
+      "date_str": "02 Dec",
+      "symbol": "PATELENG",
+      "company": "Patel Engineering Limited",
+      "purpose": "Fund Raising"
+    },
+    {
+      "date": "2026-12-02",
+      "date_str": "02 Dec",
       "symbol": "SHUKRAMED",
       "company": "Shukra Medtech Limited",
       "purpose": "Fund Raising"
@@ -156,6 +135,27 @@
       "symbol": "JKSHAH",
       "company": "J.K.Shah Commerce Education Limited",
       "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-12-05",
+      "date_str": "05 Dec",
+      "symbol": "LATTEYS",
+      "company": "Latteys Industries Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-12-05",
+      "date_str": "05 Dec",
+      "symbol": "RNBDENIMS",
+      "company": "R&B Denims Limited",
+      "purpose": "Financial Results"
+    },
+    {
+      "date": "2026-12-05",
+      "date_str": "05 Dec",
+      "symbol": "STEAMHOUSE",
+      "company": "Steamhouse India Limited",
+      "purpose": "Other business matters"
     }
   ]
 }
